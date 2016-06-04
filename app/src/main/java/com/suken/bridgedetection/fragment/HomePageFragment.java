@@ -27,6 +27,7 @@ import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
+import com.suken.bridgedetection.activity.MaintenanceActivity;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
@@ -168,6 +169,11 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
                 toast("无权限");
                 return;
             }
+        }
+        if(vid ==  R.drawable.richangyanghu){
+            Intent in = new Intent(getActivity(), MaintenanceActivity.class);
+            startActivity(in);
+            return;
         }
 
         if (vid == R.drawable.qiaoliangjiancha || vid == R.drawable.qiaoliangxuncha || vid == R.drawable.suidaojiancha || vid == R.drawable.suidaoxuncha) {

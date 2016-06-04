@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.suken.bridgedetection.activity.MaintenanceActivity"
+    android:background="@drawable/list_main_bg"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+    <TextView
+        android:id="@+id/maintenance_back"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:background="#95323d4b"
+        android:gravity="center"
+        android:text="返回"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:textSize="13dp"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="日常养护"
+            android:clickable="true"
+            android:onClick="back"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/maintenance_mListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"></ListView>
+
+
+</LinearLayout>

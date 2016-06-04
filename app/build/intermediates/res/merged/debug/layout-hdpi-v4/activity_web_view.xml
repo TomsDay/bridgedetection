@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.suken.bridgedetection.activity.WebViewActivity"
+    android:background="@drawable/list_main_bg"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+    <TextView
+        android:id="@+id/maintenance_back"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:background="#95323d4b"
+        android:gravity="center"
+        android:text="返回"
+        android:clickable="true"
+        android:onClick="onClick"
+        android:textColor="#ffffff"
+        android:textSize="13dp"
+        />
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </WebView>
+
+</LinearLayout>
