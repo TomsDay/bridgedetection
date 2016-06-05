@@ -102,9 +102,18 @@
 
         <service android:name="com.suken.bridgedetection.location.LBSService" />
 
+<<<<<<< HEAD
         <activity android:name="com.suken.bridgedetection.activity.MaintenanceActivity" />
         <activity android:name="com.suken.bridgedetection.activity.WebViewActivity" />
         <activity android:name="com.suken.bridgedetection.activity.MaintenanceTableActivity" />
+=======
+        <activity
+            android:name="com.suken.bridgedetection.activity.MaintenanceActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.suken.bridgedetection.activity.WebViewActivity"
+            android:screenOrientation="landscape" />
+>>>>>>> a7851a943d6840c731fffaf9f129d74cef1bef92
     </application>
 
 </manifest>
