@@ -4,6 +4,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.HomePageActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,9 +56,9 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 
 	@Override
 	public void onClick(View view) {
-		if(view.getId() == R.id.left_frag_video){
-			return;
-		}
+//		if(view.getId() == R.id.left_frag_video){
+//			return;
+//		}
 		HomePageActivity activity = (HomePageActivity) getActivity();
 		mHomeItem.clearFocus();
 		mIpItem.clearFocus();
