@@ -7,9 +7,10 @@
               android:layout_marginTop="5dp"
               android:background="#80ffffff"
               android:orientation="vertical"
-              android:paddingBottom="5dp">
+              android:paddingBottom="8dp">
 
     <LinearLayout
+        android:id="@+id/from_topLayout"
         android:layout_width="match_parent"
         android:layout_height="20dp" >
 
@@ -107,7 +108,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:visibility="gone" >
+        android:visibility="visible" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -335,6 +336,14 @@
                 android:layout_margin="5dp"
                 android:src="@drawable/menu" />
         </LinearLayout>
+
     </LinearLayout>
+    <View
+        android:id="@+id/item_Line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/yuninfo_black_shadow"
+        android:layout_marginTop="8dp"
+        />
 
 </LinearLayout>

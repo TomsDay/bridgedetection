@@ -103,7 +103,8 @@
         <service android:name=".location.LBSService" />
 
         <activity android:name=".activity.MaintenanceActivity" />
-        <activity android:name=".activity.WebViewActivity"></activity>
+        <activity android:name=".activity.WebViewActivity" />
+        <activity android:name=".activity.MaintenanceTableActivity"></activity>
     </application>
 
 </manifest>

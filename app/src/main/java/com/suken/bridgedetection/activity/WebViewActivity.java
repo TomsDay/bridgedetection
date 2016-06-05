@@ -33,7 +33,7 @@ public class WebViewActivity extends Activity {
     }
     public void onClick(View v){
         switch (v.getId()) {
-            case R.id.maintenance_back:
+            case R.id.webView_back:
                 finish();
                 break;
         }

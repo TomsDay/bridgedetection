@@ -1,6 +1,7 @@
 package com.suken.bridgedetection.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 
 import java.util.ArrayList;
 
@@ -51,7 +53,7 @@ public class MaintenanceAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
             view = inflater.inflate(R.layout.maintenance_item, null);
@@ -61,6 +63,15 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
+        holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(position == 0){
+                    Intent in = new Intent(mContext, MaintenanceTableActivity.class);
+                    mContext.startActivity(in);
+                }
+            }
+        });
         return view;
     }
     class HolderView{
