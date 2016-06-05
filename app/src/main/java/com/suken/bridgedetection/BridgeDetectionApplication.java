@@ -57,6 +57,12 @@ public class BridgeDetectionApplication extends Application {
 
     public void write(String message) {
         Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
+        Log.e("BridgeDetection", message);
         try {
             String state = Environment.getExternalStorageState();
             if (TextUtils.equals(state, Environment.MEDIA_MOUNTED)) {
