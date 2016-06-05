@@ -24,9 +24,202 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4477ace-0a83-4bc7-8a85-6a7cff16f0fd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libs/Yuntx_FullLib_v5.2.0r2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libs/arm64-v8a/libserphone.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libs/armeabi/libserphone.so" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Yuntx_FullLib_v5_2_0r2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BridgeDetectionApplication$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BridgeDetectionApplication$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BridgeDetectionApplication.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BridgeDetectionApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BuildConfig.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/Constants.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/Constants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$anim.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$anim.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$array.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$array.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$attr.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R$styleable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/RequestType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/RequestType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BaseActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$2$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$2$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeDetectionListActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$FormBaseDetail.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$FormBaseDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$LastEditBaseClass.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity$LastEditBaseClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/BridgeFormActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/DictionarySpinnerAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/DictionarySpinnerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/HomePageActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/IpSettingActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/IpSettingActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListBean.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$ListFilter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$ListFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$ViewHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter$ViewHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/ListPageAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/LoginActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/MaintenanceActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/MaintenanceActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/MaintenanceActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/MaintenanceActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateBean.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity$UpdateBean.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/UpdateAllActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/WebViewActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/WebViewActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/WebViewActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/activity/WebViewActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/adapter/MaintenanceAdapter$HolderView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/adapter/MaintenanceAdapter$HolderView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/adapter/MaintenanceAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/adapter/MaintenanceAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/BaseFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/BaseFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$ImageDesc.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$ImageDesc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$SpinnerAdapter$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$SpinnerAdapter$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$SpinnerAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$SpinnerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$VideoDesc.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController$VideoDesc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/FormItemController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/GpsFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HeaderFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HeaderFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomeFragmentItemController.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomeFragmentItemController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$3$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$4$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$4$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/HomePageFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/IpConfigFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/IpConfigFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/IpConfigFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/IpConfigFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/LeftFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/LeftFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/LeftFragmentItemController.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/fragment/LeftFragmentItemController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/Base64.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/Base64.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/HttpTask$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/HttpTask$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/HttpTask.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/HttpTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/OnReceivedHttpResponseListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/http/OnReceivedHttpResponseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/GpsSatelliteListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/GpsSatelliteListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService$LBSServiceBinder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService$LBSServiceBinder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSServiceListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LBSServiceListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$DataReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager$DataReceiver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationResult.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/LocationResult.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/NetworkChangedReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/NetworkChangedReceiver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/OnLocationFinishedListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/location/OnLocationFinishedListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckDetail.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckFormAndDetailDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckFormAndDetailDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckFormData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/CheckFormData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/FileDesc.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/FileDesc.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/FileDescDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/FileDescDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GXLuXianInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GXLuXianInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GXLuXianInfoDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GXLuXianInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsDataDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsDataDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsGjData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsGjData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsGjDataDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/GpsGjDataDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/HDBaseData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/HDBaseData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/HDBaseDataDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/HDBaseDataDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QHYHZeRenInfoDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QHYHZeRenInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QHYangHuZeRenInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QHYangHuZeRenInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QLBaseData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QLBaseData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QLBaseDataDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/QLBaseDataDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDBaseData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDBaseData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDBaseDataDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDBaseDataDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDYHZeRenInfoDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDYHZeRenInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDYangHuZeRenInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SDYangHuZeRenInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormAndDetailDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormAndDetailDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormData.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormDetail.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SdxcFormDetail.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SharePreferenceManager.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SharePreferenceManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SqliteOpenHelper.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/SqliteOpenHelper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/UserInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/UserInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/UserInfoDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/UserInfoDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/YWDictionaryDao.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/YWDictionaryDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/YWDictionaryInfo.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/storage/YWDictionaryInfo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/AlarmReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/AlarmReceiver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$ConnectType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$ConnectType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$MobileNetworkType.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil$MobileNetworkType.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/NetWorkUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/OnSyncDataFinishedListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/OnSyncDataFinishedListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$5$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$6$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$6$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8$1$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8$1$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$9.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/util/UiUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/CircleImageView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/CircleImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/CircleTextView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/CircleTextView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/ImageTextButton.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/ImageTextButton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/OnWheelChangedListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/OnWheelChangedListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/OnWheelScrollListener.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/OnWheelScrollListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/StrericWheelAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/StrericWheelAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/TimePickerUtil$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/TimePickerUtil$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/TimePickerUtil.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/TimePickerUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/suken/bridgedetection/widget/WheelView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_10a7e29654073f026fbc8e7844bef1fd225b3d76.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_10a7e29654073f026fbc8e7844bef1fd225b3d76.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/jars/2/1f/main.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
     <ignored path="bridgedetection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +268,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="38" column="5" selection-start-line="32" selection-start-column="2" selection-end-line="38" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +293,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,30 +314,35 @@
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
+              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-39.125">
-              <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+            <state vertical-scroll-proportion="-1.8151261">
+              <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BridgeDetectionApplication.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BridgeDetectionApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7774968">
-              <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
               <folding>
-                <element signature="e#1444#1730#0" expanded="true" />
-                <element signature="e#1729#1730#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#951#952#0" expanded="false" />
+                <element signature="e#986#987#0" expanded="false" />
+                <element signature="e#1043#1044#0" expanded="false" />
+                <element signature="e#1084#1085#0" expanded="false" />
+                <element signature="e#3594#3595#0" expanded="false" />
+                <element signature="e#3626#3627#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1313,6 +1515,11 @@
         </entry>
       </map>
     </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4395327701000" />
+      </map>
+    </option>
     <option name="projectBuildClasspath">
       <map>
         <entry key="$PROJECT_DIR$">
@@ -1533,6 +1740,7 @@
                             <option value="$MODULE_DIR$/libs/imageditor.jar" />
                             <option value="$MODULE_DIR$/libs/ormlite-android-4.48.jar" />
                             <option value="$MODULE_DIR$/libs/ormlite-core-4.48.jar" />
+                            <option value="$MODULE_DIR$/libs/Yuntx_FullLib_v5.2.0r2.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$/app" />
@@ -1573,8 +1781,8 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_web_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout-hdpi/activity_web_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/WebViewActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -1693,6 +1901,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bridgedetection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bridgedetection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bridgedetection" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -1729,8 +1971,10 @@
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="97" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\AndroidStudioProject\Bridgedetection\app\src\main\res\layout-hdpi" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/libs" />
+      <recent name="E:\AndroidStudioProject\Bridgedetection\app\src\main\res\drawable" />
+      <recent name="E:\AndroidStudioProject\Bridgedetection\app\libs" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.suken.bridgedetection.activity" />
@@ -1738,9 +1982,8 @@
     <key name="android.template.parentActivityClass">
       <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\AndroidStudioProject\Bridgedetection\app\src\main\res\drawable" />
-      <recent name="E:\AndroidStudioProject\Bridgedetection\app\libs" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\AndroidStudioProject\Bridgedetection\app\src\main\res\layout-hdpi" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.app">
@@ -2030,14 +2273,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1338" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2450,7 +2693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="5" selection-start-line="32" selection-start-column="2" selection-end-line="38" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2458,7 +2703,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2473,27 +2720,32 @@
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="50" selection-start-line="38" selection-start-column="50" selection-end-line="38" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-39.125">
-          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7774968">
-          <caret line="63" column="42" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
-            <element signature="e#1444#1730#0" expanded="true" />
-            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#951#952#0" expanded="false" />
+            <element signature="e#986#987#0" expanded="false" />
+            <element signature="e#1043#1044#0" expanded="false" />
+            <element signature="e#1084#1085#0" expanded="false" />
+            <element signature="e#3594#3595#0" expanded="false" />
+            <element signature="e#3626#3627#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8151261">
+          <caret line="64" column="40" selection-start-line="64" selection-start-column="40" selection-end-line="64" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
