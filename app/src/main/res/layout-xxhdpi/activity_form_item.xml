@@ -132,7 +132,8 @@
                 android:background="@drawable/form_item_bg"
                 android:gravity="top"
                 android:padding="5dp"
-                android:textSize="9dp" />
+                android:textSize="9dp"
+                /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
             <ImageView
                 android:id="@+id/qslx_menu"
@@ -304,7 +305,8 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                >
 
                 <CheckBox
                     android:id="@+id/item5_1"

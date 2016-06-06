@@ -1482,7 +1482,7 @@
         ]
     },
     {
-        "outputFile": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "outputFile": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -1494,14 +1494,14 @@
                     "endOffset": 171
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 267,
+                        "startOffset": 277,
                         "endLine": 13,
                         "endColumn": 19,
-                        "endOffset": 383
+                        "endOffset": 396
                     }
                 }
             },
@@ -1515,14 +1515,14 @@
                     "endOffset": 378
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 55,
+                        "startOffset": 57,
                         "endLine": 8,
                         "endColumn": 19,
-                        "endOffset": 257
+                        "endOffset": 265
                     }
                 }
             },
@@ -1536,14 +1536,14 @@
                     "endOffset": 495
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 389,
+                        "startOffset": 404,
                         "endLine": 18,
                         "endColumn": 19,
-                        "endOffset": 501
+                        "endOffset": 519
                     }
                 }
             },
@@ -1556,13 +1556,13 @@
                     "endOffset": 536
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 56,
+                        "startOffset": 59,
                         "endColumn": 40,
-                        "endOffset": 92
+                        "endOffset": 95
                     }
                 }
             },
@@ -1575,13 +1575,13 @@
                     "endOffset": 575
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 60,
+                        "startOffset": 63,
                         "endColumn": 38,
-                        "endOffset": 94
+                        "endOffset": 97
                     }
                 }
             },
@@ -1594,13 +1594,13 @@
                     "endOffset": 616
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 97,
+                        "startOffset": 101,
                         "endColumn": 40,
-                        "endOffset": 133
+                        "endOffset": 137
                     }
                 }
             },
@@ -1613,13 +1613,13 @@
                     "endOffset": 654
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 104,
+                        "startOffset": 109,
                         "endColumn": 37,
-                        "endOffset": 137
+                        "endOffset": 142
                     }
                 }
             },
@@ -1632,13 +1632,13 @@
                     "endOffset": 711
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 292,
+                        "startOffset": 301,
                         "endColumn": 56,
-                        "endOffset": 344
+                        "endOffset": 353
                     }
                 }
             },
@@ -1651,13 +1651,13 @@
                     "endOffset": 766
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 530,
+                        "startOffset": 544,
                         "endColumn": 54,
-                        "endOffset": 580
+                        "endOffset": 594
                     }
                 }
             },
@@ -1670,13 +1670,13 @@
                     "endOffset": 821
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 176,
+                        "startOffset": 183,
                         "endColumn": 54,
-                        "endOffset": 226
+                        "endOffset": 233
                     }
                 }
             },
@@ -1689,13 +1689,13 @@
                     "endOffset": 879
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 472,
+                        "startOffset": 485,
                         "endColumn": 57,
-                        "endOffset": 525
+                        "endOffset": 538
                     }
                 }
             },
@@ -1708,13 +1708,13 @@
                     "endOffset": 940
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 231,
+                        "startOffset": 239,
                         "endColumn": 60,
-                        "endOffset": 287
+                        "endOffset": 295
                     }
                 }
             },
@@ -1727,13 +1727,13 @@
                     "endOffset": 1001
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 406,
+                        "startOffset": 417,
                         "endColumn": 60,
-                        "endOffset": 462
+                        "endOffset": 473
                     }
                 }
             },
@@ -1746,13 +1746,13 @@
                     "endOffset": 1054
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 585,
+                        "startOffset": 600,
                         "endColumn": 52,
-                        "endOffset": 633
+                        "endOffset": 648
                     }
                 }
             },
@@ -1765,13 +1765,13 @@
                     "endOffset": 1110
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 60,
+                        "startOffset": 63,
                         "endColumn": 55,
-                        "endOffset": 111
+                        "endOffset": 114
                     }
                 }
             },
@@ -1784,13 +1784,13 @@
                     "endOffset": 1167
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 643,
+                        "startOffset": 660,
                         "endColumn": 56,
-                        "endOffset": 695
+                        "endOffset": 712
                     }
                 }
             },
@@ -1803,13 +1803,13 @@
                     "endOffset": 1228
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 700,
+                        "startOffset": 718,
                         "endColumn": 60,
-                        "endOffset": 756
+                        "endOffset": 774
                     }
                 }
             },
@@ -1822,13 +1822,13 @@
                     "endOffset": 1278
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 121,
+                        "startOffset": 126,
                         "endColumn": 49,
-                        "endOffset": 166
+                        "endOffset": 171
                     }
                 }
             },
@@ -1841,13 +1841,13 @@
                     "endOffset": 1335
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 349,
+                        "startOffset": 359,
                         "endColumn": 56,
-                        "endOffset": 401
+                        "endOffset": 411
                     }
                 }
             },
@@ -1860,13 +1860,13 @@
                     "endOffset": 1548
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 89,
+                        "startOffset": 92,
                         "endColumn": 57,
-                        "endOffset": 142
+                        "endOffset": 145
                     }
                 }
             },
@@ -1879,13 +1879,13 @@
                     "endOffset": 1604
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 147,
+                        "startOffset": 151,
                         "endColumn": 55,
-                        "endOffset": 198
+                        "endOffset": 202
                     }
                 }
             },
@@ -1898,13 +1898,13 @@
                     "endOffset": 1653
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 203,
+                        "startOffset": 208,
                         "endColumn": 48,
-                        "endOffset": 247
+                        "endOffset": 252
                     }
                 }
             },
@@ -1917,13 +1917,13 @@
                     "endOffset": 1708
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 281,
+                        "startOffset": 288,
                         "endColumn": 54,
-                        "endOffset": 331
+                        "endOffset": 338
                     }
                 }
             },
@@ -1936,13 +1936,13 @@
                     "endOffset": 1764
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 336,
+                        "startOffset": 344,
                         "endColumn": 55,
-                        "endOffset": 387
+                        "endOffset": 395
                     }
                 }
             },
@@ -1955,13 +1955,13 @@
                     "endOffset": 1825
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 392,
+                        "startOffset": 401,
                         "endColumn": 60,
-                        "endOffset": 448
+                        "endOffset": 457
                     }
                 }
             },
@@ -1974,13 +1974,13 @@
                     "endOffset": 1904
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 1,
-                        "startOffset": 920,
+                        "startOffset": 940,
                         "endColumn": 75,
-                        "endOffset": 994
+                        "endOffset": 1014
                     }
                 }
             },
@@ -1993,13 +1993,13 @@
                     "endOffset": 1981
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 846,
+                        "startOffset": 865,
                         "endColumn": 76,
-                        "endOffset": 918
+                        "endOffset": 937
                     }
                 }
             },
@@ -2012,13 +2012,13 @@
                     "endOffset": 2053
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 1,
-                        "startOffset": 996,
+                        "startOffset": 1017,
                         "endColumn": 68,
-                        "endOffset": 1063
+                        "endOffset": 1084
                     }
                 }
             },
@@ -2031,13 +2031,13 @@
                     "endOffset": 2125
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 1,
-                        "startOffset": 1138,
+                        "startOffset": 1162,
                         "endColumn": 68,
-                        "endOffset": 1205
+                        "endOffset": 1229
                     }
                 }
             },
@@ -2050,13 +2050,13 @@
                     "endOffset": 2195
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 1,
-                        "startOffset": 1207,
+                        "startOffset": 1232,
                         "endColumn": 66,
-                        "endOffset": 1272
+                        "endOffset": 1297
                     }
                 }
             },
@@ -2069,13 +2069,13 @@
                     "endOffset": 2269
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 1,
-                        "startOffset": 1065,
+                        "startOffset": 1087,
                         "endColumn": 70,
-                        "endOffset": 1134
+                        "endOffset": 1156
                     }
                 }
             },
@@ -2088,13 +2088,13 @@
                     "endOffset": 2332
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 453,
+                        "startOffset": 463,
                         "endColumn": 62,
-                        "endOffset": 511
+                        "endOffset": 521
                     }
                 }
             },
@@ -2107,13 +2107,13 @@
                     "endOffset": 2392
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 516,
+                        "startOffset": 527,
                         "endColumn": 59,
-                        "endOffset": 571
+                        "endOffset": 582
                     }
                 }
             },
@@ -2126,13 +2126,13 @@
                     "endOffset": 2453
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 87,
+                        "startOffset": 90,
                         "endColumn": 60,
-                        "endOffset": 143
+                        "endOffset": 146
                     }
                 }
             },
@@ -2145,13 +2145,13 @@
                     "endOffset": 2507
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 33,
+                        "startOffset": 35,
                         "endColumn": 53,
-                        "endOffset": 82
+                        "endOffset": 84
                     }
                 }
             },
@@ -2164,13 +2164,13 @@
                     "endOffset": 2564
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 577,
+                        "startOffset": 590,
                         "endColumn": 56,
-                        "endOffset": 629
+                        "endOffset": 642
                     }
                 }
             },
@@ -2183,13 +2183,13 @@
                     "endOffset": 2626
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 762,
+                        "startOffset": 778,
                         "endColumn": 61,
-                        "endOffset": 819
+                        "endOffset": 835
                     }
                 }
             },
@@ -2202,13 +2202,13 @@
                     "endOffset": 2687
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 701,
+                        "startOffset": 716,
                         "endColumn": 60,
-                        "endOffset": 757
+                        "endOffset": 772
                     }
                 }
             },
@@ -2221,13 +2221,13 @@
                     "endOffset": 2747
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 153,
+                        "startOffset": 158,
                         "endColumn": 59,
-                        "endOffset": 208
+                        "endOffset": 213
                     }
                 }
             },
@@ -2240,13 +2240,13 @@
                     "endOffset": 2815
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 213,
+                        "startOffset": 219,
                         "endColumn": 67,
-                        "endOffset": 276
+                        "endOffset": 282
                     }
                 }
             },
@@ -2259,13 +2259,13 @@
                     "endOffset": 2882
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 634,
+                        "startOffset": 648,
                         "endColumn": 66,
-                        "endOffset": 696
+                        "endOffset": 710
                     }
                 }
             },
@@ -2278,13 +2278,13 @@
                     "endOffset": 2939
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 5,
-                        "startOffset": 313,
+                        "startOffset": 324,
                         "endColumn": 57,
-                        "endOffset": 365
+                        "endOffset": 376
                     }
                 }
             },
@@ -2297,13 +2297,13 @@
                     "endOffset": 2986
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 147,
+                        "startOffset": 154,
                         "endColumn": 46,
-                        "endOffset": 189
+                        "endOffset": 196
                     }
                 }
             },
@@ -2316,13 +2316,13 @@
                     "endOffset": 3044
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 254,
+                        "startOffset": 264,
                         "endColumn": 57,
-                        "endOffset": 307
+                        "endOffset": 317
                     }
                 }
             },
@@ -2335,13 +2335,13 @@
                     "endOffset": 3100
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 428,
+                        "startOffset": 441,
                         "endColumn": 55,
-                        "endOffset": 479
+                        "endOffset": 492
                     }
                 }
             },
@@ -2354,13 +2354,13 @@
                     "endOffset": 3157
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 5,
-                        "startOffset": 371,
+                        "startOffset": 383,
                         "endColumn": 57,
-                        "endOffset": 423
+                        "endOffset": 435
                     }
                 }
             },
@@ -2373,13 +2373,13 @@
                     "endOffset": 3222
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 484,
+                        "startOffset": 498,
                         "endColumn": 64,
-                        "endOffset": 544
+                        "endOffset": 558
                     }
                 }
             },
@@ -2392,13 +2392,13 @@
                     "endOffset": 3287
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 549,
+                        "startOffset": 564,
                         "endColumn": 64,
-                        "endOffset": 609
+                        "endOffset": 624
                     }
                 }
             },
@@ -2411,13 +2411,13 @@
                     "endOffset": 3342
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 194,
+                        "startOffset": 202,
                         "endColumn": 54,
-                        "endOffset": 244
+                        "endOffset": 252
                     }
                 }
             },
@@ -2430,13 +2430,13 @@
                     "endOffset": 3395
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 155,
+                        "startOffset": 160,
                         "endColumn": 52,
-                        "endOffset": 203
+                        "endOffset": 208
                     }
                 }
             },
@@ -2449,13 +2449,13 @@
                     "endOffset": 3441
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 56,
+                        "startOffset": 59,
                         "endColumn": 45,
-                        "endOffset": 97
+                        "endOffset": 100
                     }
                 }
             },
@@ -2468,13 +2468,13 @@
                     "endOffset": 3494
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 102,
+                        "startOffset": 106,
                         "endColumn": 52,
-                        "endOffset": 150
+                        "endOffset": 154
                     }
                 }
             },
@@ -2487,13 +2487,13 @@
                     "endOffset": 3542
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 208,
+                        "startOffset": 214,
                         "endColumn": 47,
-                        "endOffset": 251
+                        "endOffset": 257
                     }
                 }
             },
@@ -2506,13 +2506,13 @@
                     "endOffset": 3593
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 1,
-                        "startOffset": 316,
+                        "startOffset": 326,
                         "endColumn": 47,
-                        "endOffset": 362
+                        "endOffset": 372
                     }
                 }
             },
@@ -2525,13 +2525,13 @@
                     "endOffset": 3650
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 1,
-                        "startOffset": 52,
+                        "startOffset": 54,
                         "endColumn": 53,
-                        "endOffset": 104
+                        "endOffset": 106
                     }
                 }
             },
@@ -2544,13 +2544,13 @@
                     "endOffset": 3708
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 1,
-                        "startOffset": 809,
+                        "startOffset": 830,
                         "endColumn": 54,
-                        "endOffset": 862
+                        "endOffset": 883
                     }
                 }
             },
@@ -2563,13 +2563,13 @@
                     "endOffset": 3774
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 1,
-                        "startOffset": 864,
+                        "startOffset": 886,
                         "endColumn": 62,
-                        "endOffset": 925
+                        "endOffset": 947
                     }
                 }
             },
@@ -2582,13 +2582,13 @@
                     "endOffset": 3831
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 1,
-                        "startOffset": 1053,
+                        "startOffset": 1079,
                         "endColumn": 59,
-                        "endOffset": 1111
+                        "endOffset": 1137
                     }
                 }
             },
@@ -2601,13 +2601,13 @@
                     "endOffset": 3877
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 1,
-                        "startOffset": 209,
+                        "startOffset": 216,
                         "endColumn": 42,
-                        "endOffset": 250
+                        "endOffset": 257
                     }
                 }
             },
@@ -2620,13 +2620,13 @@
                     "endOffset": 3945
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 1,
-                        "startOffset": 986,
+                        "startOffset": 1010,
                         "endColumn": 64,
-                        "endOffset": 1049
+                        "endOffset": 1073
                     }
                 }
             },
@@ -2639,13 +2639,13 @@
                     "endOffset": 4000
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 1,
-                        "startOffset": 421,
+                        "startOffset": 433,
                         "endColumn": 51,
-                        "endOffset": 471
+                        "endOffset": 483
                     }
                 }
             },
@@ -2658,13 +2658,13 @@
                     "endOffset": 4069
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 1,
-                        "startOffset": 1113,
+                        "startOffset": 1140,
                         "endColumn": 71,
-                        "endOffset": 1183
+                        "endOffset": 1210
                     }
                 }
             },
@@ -2677,13 +2677,13 @@
                     "endOffset": 4111
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 1,
-                        "startOffset": 170,
+                        "startOffset": 176,
                         "endColumn": 38,
-                        "endOffset": 207
+                        "endOffset": 213
                     }
                 }
             },
@@ -2696,13 +2696,13 @@
                     "endOffset": 4162
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 1,
-                        "startOffset": 514,
+                        "startOffset": 528,
                         "endColumn": 47,
-                        "endOffset": 560
+                        "endOffset": 574
                     }
                 }
             },
@@ -2715,13 +2715,13 @@
                     "endOffset": 4206
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 1,
-                        "startOffset": 473,
+                        "startOffset": 486,
                         "endColumn": 40,
-                        "endOffset": 512
+                        "endOffset": 525
                     }
                 }
             },
@@ -2734,13 +2734,13 @@
                     "endOffset": 4265
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 1,
-                        "startOffset": 562,
+                        "startOffset": 577,
                         "endColumn": 55,
-                        "endOffset": 616
+                        "endOffset": 631
                     }
                 }
             },
@@ -2753,13 +2753,13 @@
                     "endOffset": 4322
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 1,
-                        "startOffset": 618,
+                        "startOffset": 634,
                         "endColumn": 59,
-                        "endOffset": 676
+                        "endOffset": 692
                     }
                 }
             },
@@ -2772,13 +2772,13 @@
                     "endOffset": 4380
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 1,
-                        "startOffset": 678,
+                        "startOffset": 695,
                         "endColumn": 54,
-                        "endOffset": 731
+                        "endOffset": 748
                     }
                 }
             },
@@ -2791,13 +2791,13 @@
                     "endOffset": 4440
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 1,
-                        "startOffset": 752,
+                        "startOffset": 772,
                         "endColumn": 56,
-                        "endOffset": 807
+                        "endOffset": 827
                     }
                 }
             },
@@ -2810,13 +2810,13 @@
                     "endOffset": 4502
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 1,
-                        "startOffset": 927,
+                        "startOffset": 950,
                         "endColumn": 58,
-                        "endOffset": 984
+                        "endOffset": 1007
                     }
                 }
             },
@@ -2829,13 +2829,13 @@
                     "endOffset": 4567
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 1,
-                        "startOffset": 254,
+                        "startOffset": 263,
                         "endColumn": 61,
-                        "endOffset": 314
+                        "endOffset": 323
                     }
                 }
             },
@@ -2848,13 +2848,13 @@
                     "endOffset": 4631
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 1,
-                        "startOffset": 107,
+                        "startOffset": 111,
                         "endColumn": 60,
-                        "endOffset": 166
+                        "endOffset": 170
                     }
                 }
             },
@@ -2867,13 +2867,13 @@
                     "endOffset": 4685
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 1,
-                        "startOffset": 364,
+                        "startOffset": 375,
                         "endColumn": 56,
-                        "endOffset": 419
+                        "endOffset": 430
                     }
                 }
             },
@@ -2887,14 +2887,14 @@
                     "endOffset": 5011
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 186,
+                        "startOffset": 192,
                         "endLine": 12,
                         "endColumn": 12,
-                        "endOffset": 507
+                        "endOffset": 519
                     }
                 }
             },
@@ -2908,14 +2908,14 @@
                     "endOffset": 5171
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 545,
+                        "startOffset": 560,
                         "endLine": 17,
                         "endColumn": 12,
-                        "endOffset": 700
+                        "endOffset": 717
                     }
                 }
             },
@@ -2929,14 +2929,14 @@
                     "endOffset": 5665
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 1122,
+                        "startOffset": 1150,
                         "endLine": 35,
                         "endColumn": 12,
-                        "endOffset": 1611
+                        "endOffset": 1646
                     }
                 }
             },
@@ -2950,14 +2950,14 @@
                     "endOffset": 6044
                 },
                 "from": {
-                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 741,
+                        "startOffset": 761,
                         "endLine": 26,
                         "endColumn": 9,
-                        "endOffset": 1115
+                        "endOffset": 1141
                     }
                 }
             }
@@ -4440,6 +4440,1488 @@
                         "endLine": 26,
                         "endColumn": 9,
                         "endOffset": 1141
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 5,
+                    "endColumn": 19,
+                    "endOffset": 171
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 267,
+                        "endLine": 13,
+                        "endColumn": 19,
+                        "endOffset": 383
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 176,
+                    "endLine": 12,
+                    "endColumn": 19,
+                    "endOffset": 378
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 8,
+                        "endColumn": 19,
+                        "endOffset": 257
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 383,
+                    "endLine": 16,
+                    "endColumn": 19,
+                    "endOffset": 495
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_arrays.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 389,
+                        "endLine": 18,
+                        "endColumn": 19,
+                        "endOffset": 501
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 500,
+                    "endColumn": 40,
+                    "endOffset": 536
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 40,
+                        "endOffset": 92
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 541,
+                    "endColumn": 38,
+                    "endOffset": 575
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 60,
+                        "endColumn": 38,
+                        "endOffset": 94
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 580,
+                    "endColumn": 40,
+                    "endOffset": 616
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\color.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 97,
+                        "endColumn": 40,
+                        "endOffset": 133
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 621,
+                    "endColumn": 37,
+                    "endOffset": 654
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 104,
+                        "endColumn": 37,
+                        "endOffset": 137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 659,
+                    "endColumn": 56,
+                    "endOffset": 711
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 292,
+                        "endColumn": 56,
+                        "endOffset": 344
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 716,
+                    "endColumn": 54,
+                    "endOffset": 766
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 530,
+                        "endColumn": 54,
+                        "endOffset": 580
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 771,
+                    "endColumn": 54,
+                    "endOffset": 821
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 176,
+                        "endColumn": 54,
+                        "endOffset": 226
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 826,
+                    "endColumn": 57,
+                    "endOffset": 879
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 472,
+                        "endColumn": 57,
+                        "endOffset": 525
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 884,
+                    "endColumn": 60,
+                    "endOffset": 940
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 231,
+                        "endColumn": 60,
+                        "endOffset": 287
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 26,
+                    "startColumn": 4,
+                    "startOffset": 945,
+                    "endColumn": 60,
+                    "endOffset": 1001
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 406,
+                        "endColumn": 60,
+                        "endOffset": 462
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1006,
+                    "endColumn": 52,
+                    "endOffset": 1054
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 585,
+                        "endColumn": 52,
+                        "endOffset": 633
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1059,
+                    "endColumn": 55,
+                    "endOffset": 1110
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 60,
+                        "endColumn": 55,
+                        "endOffset": 111
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 29,
+                    "startColumn": 4,
+                    "startOffset": 1115,
+                    "endColumn": 56,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 643,
+                        "endColumn": 56,
+                        "endOffset": 695
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1172,
+                    "endColumn": 60,
+                    "endOffset": 1228
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 700,
+                        "endColumn": 60,
+                        "endOffset": 756
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 1233,
+                    "endColumn": 49,
+                    "endOffset": 1278
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 121,
+                        "endColumn": 49,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1283,
+                    "endColumn": 56,
+                    "endOffset": 1335
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_colors.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 349,
+                        "endColumn": 56,
+                        "endOffset": 401
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 34,
+                    "startColumn": 4,
+                    "startOffset": 1495,
+                    "endColumn": 57,
+                    "endOffset": 1548
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 89,
+                        "endColumn": 57,
+                        "endOffset": 142
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1553,
+                    "endColumn": 55,
+                    "endOffset": 1604
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 147,
+                        "endColumn": 55,
+                        "endOffset": 198
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 1609,
+                    "endColumn": 48,
+                    "endOffset": 1653
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 203,
+                        "endColumn": 48,
+                        "endOffset": 247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 37,
+                    "startColumn": 4,
+                    "startOffset": 1658,
+                    "endColumn": 54,
+                    "endOffset": 1708
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 281,
+                        "endColumn": 54,
+                        "endOffset": 331
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 38,
+                    "startColumn": 4,
+                    "startOffset": 1713,
+                    "endColumn": 55,
+                    "endOffset": 1764
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 336,
+                        "endColumn": 55,
+                        "endOffset": 387
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 1769,
+                    "endColumn": 60,
+                    "endOffset": 1825
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 392,
+                        "endColumn": 60,
+                        "endOffset": 448
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 1830,
+                    "endColumn": 78,
+                    "endOffset": 1904
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 1,
+                        "startOffset": 920,
+                        "endColumn": 75,
+                        "endOffset": 994
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 1909,
+                    "endColumn": 76,
+                    "endOffset": 1981
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 846,
+                        "endColumn": 76,
+                        "endOffset": 918
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 1986,
+                    "endColumn": 71,
+                    "endOffset": 2053
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 1,
+                        "startOffset": 996,
+                        "endColumn": 68,
+                        "endOffset": 1063
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2058,
+                    "endColumn": 71,
+                    "endOffset": 2125
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 1,
+                        "startOffset": 1138,
+                        "endColumn": 68,
+                        "endOffset": 1205
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 44,
+                    "startColumn": 4,
+                    "startOffset": 2130,
+                    "endColumn": 69,
+                    "endOffset": 2195
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 1,
+                        "startOffset": 1207,
+                        "endColumn": 66,
+                        "endOffset": 1272
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 45,
+                    "startColumn": 4,
+                    "startOffset": 2200,
+                    "endColumn": 73,
+                    "endOffset": 2269
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 1,
+                        "startOffset": 1065,
+                        "endColumn": 70,
+                        "endOffset": 1134
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 46,
+                    "startColumn": 4,
+                    "startOffset": 2274,
+                    "endColumn": 62,
+                    "endOffset": 2332
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 453,
+                        "endColumn": 62,
+                        "endOffset": 511
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 47,
+                    "startColumn": 4,
+                    "startOffset": 2337,
+                    "endColumn": 59,
+                    "endOffset": 2392
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 516,
+                        "endColumn": 59,
+                        "endOffset": 571
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 48,
+                    "startColumn": 4,
+                    "startOffset": 2397,
+                    "endColumn": 60,
+                    "endOffset": 2453
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 87,
+                        "endColumn": 60,
+                        "endOffset": 143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 49,
+                    "startColumn": 4,
+                    "startOffset": 2458,
+                    "endColumn": 53,
+                    "endOffset": 2507
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 33,
+                        "endColumn": 53,
+                        "endOffset": 82
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 50,
+                    "startColumn": 4,
+                    "startOffset": 2512,
+                    "endColumn": 56,
+                    "endOffset": 2564
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 577,
+                        "endColumn": 56,
+                        "endOffset": 629
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 51,
+                    "startColumn": 4,
+                    "startOffset": 2569,
+                    "endColumn": 61,
+                    "endOffset": 2626
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 762,
+                        "endColumn": 61,
+                        "endOffset": 819
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 2631,
+                    "endColumn": 60,
+                    "endOffset": 2687
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 701,
+                        "endColumn": 60,
+                        "endOffset": 757
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 53,
+                    "startColumn": 4,
+                    "startOffset": 2692,
+                    "endColumn": 59,
+                    "endOffset": 2747
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 153,
+                        "endColumn": 59,
+                        "endOffset": 208
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 54,
+                    "startColumn": 4,
+                    "startOffset": 2752,
+                    "endColumn": 67,
+                    "endOffset": 2815
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 213,
+                        "endColumn": 67,
+                        "endOffset": 276
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 55,
+                    "startColumn": 4,
+                    "startOffset": 2820,
+                    "endColumn": 66,
+                    "endOffset": 2882
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_dimens.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 634,
+                        "endColumn": 66,
+                        "endOffset": 696
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 56,
+                    "startColumn": 4,
+                    "startOffset": 2887,
+                    "endColumn": 56,
+                    "endOffset": 2939
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 5,
+                        "startOffset": 313,
+                        "endColumn": 57,
+                        "endOffset": 365
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 57,
+                    "startColumn": 4,
+                    "startOffset": 2944,
+                    "endColumn": 46,
+                    "endOffset": 2986
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 147,
+                        "endColumn": 46,
+                        "endOffset": 189
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 58,
+                    "startColumn": 4,
+                    "startOffset": 2991,
+                    "endColumn": 57,
+                    "endOffset": 3044
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 254,
+                        "endColumn": 57,
+                        "endOffset": 307
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 59,
+                    "startColumn": 4,
+                    "startOffset": 3049,
+                    "endColumn": 55,
+                    "endOffset": 3100
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 428,
+                        "endColumn": 55,
+                        "endOffset": 479
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 60,
+                    "startColumn": 4,
+                    "startOffset": 3105,
+                    "endColumn": 56,
+                    "endOffset": 3157
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 5,
+                        "startOffset": 371,
+                        "endColumn": 57,
+                        "endOffset": 423
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 61,
+                    "startColumn": 4,
+                    "startOffset": 3162,
+                    "endColumn": 64,
+                    "endOffset": 3222
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 484,
+                        "endColumn": 64,
+                        "endOffset": 544
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 62,
+                    "startColumn": 4,
+                    "startOffset": 3227,
+                    "endColumn": 64,
+                    "endOffset": 3287
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 549,
+                        "endColumn": 64,
+                        "endOffset": 609
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 63,
+                    "startColumn": 4,
+                    "startOffset": 3292,
+                    "endColumn": 54,
+                    "endOffset": 3342
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\colors.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 194,
+                        "endColumn": 54,
+                        "endOffset": 244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 64,
+                    "startColumn": 4,
+                    "startOffset": 3347,
+                    "endColumn": 52,
+                    "endOffset": 3395
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 155,
+                        "endColumn": 52,
+                        "endOffset": 203
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 65,
+                    "startColumn": 4,
+                    "startOffset": 3400,
+                    "endColumn": 45,
+                    "endOffset": 3441
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 45,
+                        "endOffset": 97
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 66,
+                    "startColumn": 4,
+                    "startOffset": 3446,
+                    "endColumn": 52,
+                    "endOffset": 3494
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 102,
+                        "endColumn": 52,
+                        "endOffset": 150
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 67,
+                    "startColumn": 4,
+                    "startOffset": 3499,
+                    "endColumn": 47,
+                    "endOffset": 3542
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 208,
+                        "endColumn": 47,
+                        "endOffset": 251
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 68,
+                    "startColumn": 4,
+                    "startOffset": 3547,
+                    "endColumn": 50,
+                    "endOffset": 3593
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 1,
+                        "startOffset": 316,
+                        "endColumn": 47,
+                        "endOffset": 362
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 69,
+                    "startColumn": 4,
+                    "startOffset": 3598,
+                    "endColumn": 56,
+                    "endOffset": 3650
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 1,
+                        "startOffset": 52,
+                        "endColumn": 53,
+                        "endOffset": 104
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 70,
+                    "startColumn": 4,
+                    "startOffset": 3655,
+                    "endColumn": 57,
+                    "endOffset": 3708
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 1,
+                        "startOffset": 809,
+                        "endColumn": 54,
+                        "endOffset": 862
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 3713,
+                    "endColumn": 65,
+                    "endOffset": 3774
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 1,
+                        "startOffset": 864,
+                        "endColumn": 62,
+                        "endOffset": 925
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 72,
+                    "startColumn": 4,
+                    "startOffset": 3779,
+                    "endColumn": 56,
+                    "endOffset": 3831
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 1,
+                        "startOffset": 1053,
+                        "endColumn": 59,
+                        "endOffset": 1111
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 73,
+                    "startColumn": 4,
+                    "startOffset": 3836,
+                    "endColumn": 45,
+                    "endOffset": 3877
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 1,
+                        "startOffset": 209,
+                        "endColumn": 42,
+                        "endOffset": 250
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 74,
+                    "startColumn": 4,
+                    "startOffset": 3882,
+                    "endColumn": 67,
+                    "endOffset": 3945
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 1,
+                        "startOffset": 986,
+                        "endColumn": 64,
+                        "endOffset": 1049
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 75,
+                    "startColumn": 4,
+                    "startOffset": 3950,
+                    "endColumn": 54,
+                    "endOffset": 4000
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 1,
+                        "startOffset": 421,
+                        "endColumn": 51,
+                        "endOffset": 471
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 76,
+                    "startColumn": 4,
+                    "startOffset": 4005,
+                    "endColumn": 68,
+                    "endOffset": 4069
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 1,
+                        "startOffset": 1113,
+                        "endColumn": 71,
+                        "endOffset": 1183
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 77,
+                    "startColumn": 4,
+                    "startOffset": 4074,
+                    "endColumn": 41,
+                    "endOffset": 4111
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 1,
+                        "startOffset": 170,
+                        "endColumn": 38,
+                        "endOffset": 207
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 4116,
+                    "endColumn": 50,
+                    "endOffset": 4162
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 1,
+                        "startOffset": 514,
+                        "endColumn": 47,
+                        "endOffset": 560
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 79,
+                    "startColumn": 4,
+                    "startOffset": 4167,
+                    "endColumn": 43,
+                    "endOffset": 4206
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 1,
+                        "startOffset": 473,
+                        "endColumn": 40,
+                        "endOffset": 512
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 80,
+                    "startColumn": 4,
+                    "startOffset": 4211,
+                    "endColumn": 58,
+                    "endOffset": 4265
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 1,
+                        "startOffset": 562,
+                        "endColumn": 55,
+                        "endOffset": 616
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 81,
+                    "startColumn": 4,
+                    "startOffset": 4270,
+                    "endColumn": 56,
+                    "endOffset": 4322
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 1,
+                        "startOffset": 618,
+                        "endColumn": 59,
+                        "endOffset": 676
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 82,
+                    "startColumn": 4,
+                    "startOffset": 4327,
+                    "endColumn": 57,
+                    "endOffset": 4380
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 1,
+                        "startOffset": 678,
+                        "endColumn": 54,
+                        "endOffset": 731
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 83,
+                    "startColumn": 4,
+                    "startOffset": 4385,
+                    "endColumn": 59,
+                    "endOffset": 4440
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 1,
+                        "startOffset": 752,
+                        "endColumn": 56,
+                        "endOffset": 807
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 84,
+                    "startColumn": 4,
+                    "startOffset": 4445,
+                    "endColumn": 61,
+                    "endOffset": 4502
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 1,
+                        "startOffset": 927,
+                        "endColumn": 58,
+                        "endOffset": 984
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 85,
+                    "startColumn": 4,
+                    "startOffset": 4507,
+                    "endColumn": 64,
+                    "endOffset": 4567
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 1,
+                        "startOffset": 254,
+                        "endColumn": 61,
+                        "endOffset": 314
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 86,
+                    "startColumn": 4,
+                    "startOffset": 4572,
+                    "endColumn": 63,
+                    "endOffset": 4631
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 1,
+                        "startOffset": 107,
+                        "endColumn": 60,
+                        "endOffset": 166
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 87,
+                    "startColumn": 4,
+                    "startOffset": 4636,
+                    "endColumn": 53,
+                    "endOffset": 4685
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\yuninfo_strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 1,
+                        "startOffset": 364,
+                        "endColumn": 56,
+                        "endOffset": 419
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 4690,
+                    "endLine": 94,
+                    "endColumn": 12,
+                    "endOffset": 5011
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endLine": 12,
+                        "endColumn": 12,
+                        "endOffset": 507
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 95,
+                    "startColumn": 4,
+                    "startOffset": 5016,
+                    "endLine": 97,
+                    "endColumn": 12,
+                    "endOffset": 5171
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 545,
+                        "endLine": 17,
+                        "endColumn": 12,
+                        "endOffset": 700
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 98,
+                    "startColumn": 4,
+                    "startOffset": 5176,
+                    "endLine": 105,
+                    "endColumn": 12,
+                    "endOffset": 5665
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1122,
+                        "endLine": 35,
+                        "endColumn": 12,
+                        "endOffset": 1611
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 106,
+                    "startColumn": 4,
+                    "startOffset": 5670,
+                    "endLine": 112,
+                    "endColumn": 9,
+                    "endOffset": 6044
+                },
+                "from": {
+                    "file": "E:\\Users\\wudi\\AndroidStudioProjects\\bridgedetection\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 741,
+                        "endLine": 26,
+                        "endColumn": 9,
+                        "endOffset": 1115
                     }
                 }
             }
