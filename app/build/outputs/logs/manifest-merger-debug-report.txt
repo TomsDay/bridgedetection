@@ -1,319 +1,319 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:2:1-196:12
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:2:1-196:12
 	xmlns:android
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:2:11-69
 	package
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:3:5-40
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:5:5-32
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:5:5-32
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
 	android:versionCode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:4:5-29
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:4:5-29
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
 uses-sdk
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:7:5-9:41
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:7:5-9:41
 	android:targetSdkVersion
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:9:9-38
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:8:9-35
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
-		INJECTED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:8:9-35
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:12:5-81
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:12:5-81
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:12:22-78
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:14:5-79
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:14:5-79
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:14:22-76
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:14:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:16:5-76
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:16:5-76
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:16:22-73
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:16:22-73
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:18:5-79
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:18:5-79
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:18:22-76
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:18:22-76
 uses-permission#android.permission.CHANGE_WIFI_STATE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:20:5-76
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:20:5-76
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:20:22-73
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:20:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:22:5-75
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:22:5-75
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:22:22-72
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:22:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:24:5-81
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:24:5-81
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:24:22-78
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:24:22-78
 uses-permission#android.permission.INTERNET
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:26:5-67
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:26:5-67
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:26:22-64
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:26:22-64
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:28:5-84
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:28:5-84
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:28:22-81
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:28:22-81
 uses-permission#android.permission.VIBRATE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:29:5-66
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:29:5-66
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:29:22-63
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:29:22-63
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:31:5-80
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:31:5-80
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:31:22-77
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:31:22-77
 permission#com.suken.bridgedetection.permission.RECEIVE_MSG
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:36:5-37:46
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:36:5-37:46
 	android:protectionLevel
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:37:9-44
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:37:9-44
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:36:17-80
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:36:17-80
 permission#com.suken.bridgedetection.permission.INCOMING_CALL
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:38:5-39:46
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:38:5-39:46
 	android:protectionLevel
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:39:9-44
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:39:9-44
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:38:17-82
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:38:17-82
 uses-permission#com.suken.bridgedetection.permission.RECEIVE_MSG
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:41:5-88
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:41:5-88
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:41:22-85
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:41:22-85
 uses-permission#android.permission.GET_TASKS
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:48:5-68
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:48:5-68
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:48:22-65
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:48:22-65
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:50:5-71
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:50:5-71
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:50:22-68
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:50:22-68
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:52:5-80
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:52:5-80
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:52:22-77
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:52:22-77
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:54:5-67
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:54:5-67
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:54:22-65
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:54:22-65
 uses-permission#android.permission.CAMERA
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:56:5-65
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:56:5-65
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:56:22-62
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:56:22-62
 application
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:59:5-139:19
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:59:5-139:19
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:63:9-41
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:63:9-41
 	android:allowBackup
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:61:9-35
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:61:9-35
 	android:icon
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:62:9-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:62:9-45
 	android:theme
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:65:9-40
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:65:9-40
 	android:largeHeap
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:64:9-33
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:64:9-33
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:60:9-51
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:60:9-51
 meta-data#com.baidu.lbsapi.API_KEY
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:66:9-68:64
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:66:9-68:64
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:67:13-52
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:67:13-52
 	android:value
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:68:13-61
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:68:13-61
 activity#com.suken.bridgedetection.activity.HomePageActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:70:9-75:57
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:70:9-75:57
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:75:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:75:13-54
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:74:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:74:13-50
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:73:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:73:13-45
 	android:configChanges
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:72:13-48
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:72:13-48
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:71:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:71:13-54
 activity#com.suken.bridgedetection.activity.LoginActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:76:9-86:20
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:76:9-86:20
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:80:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:80:13-54
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:79:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:79:13-50
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:78:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:78:13-45
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:77:13-51
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:77:13-51
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:81:13-85:29
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:81:13-85:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:82:17-69
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:82:17-69
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:82:25-66
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:82:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:84:17-77
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:84:17-77
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:84:27-74
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:84:27-74
 activity#com.suken.bridgedetection.activity.BridgeFormActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:87:9-91:57
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:87:9-91:57
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:91:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:91:13-54
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:90:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:90:13-50
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:89:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:89:13-45
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:88:13-56
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:88:13-56
 activity#com.suken.bridgedetection.activity.IpSettingActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:92:9-96:57
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:92:9-96:57
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:96:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:96:13-54
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:95:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:95:13-50
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:94:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:94:13-45
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:93:13-55
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:93:13-55
 activity#com.suken.bridgedetection.activity.BridgeDetectionListActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:97:9-101:57
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:97:9-101:57
 	android:windowSoftInputMode
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:101:13-54
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:101:13-54
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:100:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:100:13-50
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:99:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:99:13-45
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:98:13-65
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:98:13-65
 activity#com.suken.imageditor.ImageditorActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:102:9-106:75
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:102:9-106:75
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:105:13-49
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:105:13-49
 	android:label
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:104:13-45
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:104:13-45
 	android:theme
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:106:13-72
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:106:13-72
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:103:13-67
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:103:13-67
 activity#com.suken.bridgedetection.activity.UpdateAllActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:110:9-113:56
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:110:9-113:56
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:112:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:112:13-50
 	android:theme
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:113:13-53
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:113:13-53
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:111:13-55
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:111:13-55
 receiver#com.suken.bridgedetection.location.NetworkChangedReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:115:9-119:20
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:115:9-119:20
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:115:19-66
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:115:19-66
 intent-filter#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:116:13-118:29
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:116:13-118:29
 action#android.net.conn.CONNECTIVITY_CHANGE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:117:17-79
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:117:17-79
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:117:25-76
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:117:25-76
 receiver#com.suken.bridgedetection.util.AlarmReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:120:9-127:20
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:120:9-127:20
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:120:19-53
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:120:19-53
 intent-filter#android.suken.action.checkdata
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:121:13-123:29
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:121:13-123:29
 action#android.suken.action.checkdata
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:122:17-73
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:122:17-73
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:122:25-70
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:122:25-70
 intent-filter#android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:124:13-126:29
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:124:13-126:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:125:17-79
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:125:17-79
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:125:25-76
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:125:25-76
 service#com.suken.bridgedetection.location.LBSService
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:129:9-56
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:129:9-56
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:129:18-53
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:129:18-53
 activity#com.suken.bridgedetection.activity.MaintenanceActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:131:9-132:52
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:131:9-132:52
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:132:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:132:13-50
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:131:19-63
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:131:19-63
 activity#com.suken.bridgedetection.activity.WebViewActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:133:9-134:52
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:133:9-134:52
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:134:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:134:13-50
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:133:19-59
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:133:19-59
 activity#com.suken.bridgedetection.activity.MaintenanceTableActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:135:9-136:62
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:135:9-136:62
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:136:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:136:13-50
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:135:19-68
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:135:19-68
 activity#com.suken.bridgedetection.activity.VideoActivity
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:137:9-138:62
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:137:9-138:62
 	android:screenOrientation
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:138:13-50
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:138:13-50
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:137:19-57
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:137:19-57
 service#com.yuntongxun.ecsdk.ECClientService
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:144:5-145:58
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:144:5-145:58
 	android:process
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:145:32-55
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:145:32-55
 	android:enabled
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:145:9-31
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:145:9-31
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:144:14-65
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:144:14-65
 receiver#com.yuntongxun.ecsdk.booter.CCPReceivers$AlarmReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:147:5-148:35
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:147:5-148:35
 	android:process
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:148:9-32
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:148:9-32
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:147:15-84
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:147:15-84
 receiver#com.yuntongxun.ecsdk.booter.Alarm
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:150:5-151:59
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:150:5-151:59
 	android:process
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:151:34-57
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:151:34-57
 	android:exported
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:151:9-33
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:151:9-33
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:150:15-63
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:150:15-63
 receiver#com.yuntongxun.ecsdk.booter.CCPReceivers$ConnectionReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:153:5-159:16
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:153:5-159:16
 	android:process
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:155:9-32
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:155:9-32
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:154:9-83
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:154:9-83
 receiver#com.yuntongxun.ecsdk.booter.CCPReceivers$BootReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:162:5-168:16
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:162:5-168:16
 	android:process
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:164:9-32
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:164:9-32
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:163:9-77
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:163:9-77
 receiver#com.suken.bridgedetection.service.YuntxNotifyReceiver
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:182:5-193:16
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:182:5-193:16
 	android:exported
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:184:9-33
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:184:9-33
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:183:9-52
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:183:9-52
 intent-filter#com.suken.bridgedetection.action.MESSAGE+com.suken.bridgedetection.action.NOTIFICATION_CLICK+com.suken.bridgedetection.action.PERSON_VERSION+com.suken.bridgedetection.action.VOIP_CALL
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:185:9-192:25
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:185:9-192:25
 action#com.suken.bridgedetection.action.VOIP_CALL
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:188:13-81
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:188:13-81
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:188:21-78
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:188:21-78
 action#com.suken.bridgedetection.action.MESSAGE
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:189:13-79
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:189:13-79
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:189:21-76
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:189:21-76
 action#com.suken.bridgedetection.action.NOTIFICATION_CLICK
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:190:13-90
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:190:13-90
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:190:21-87
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:190:21-87
 action#com.suken.bridgedetection.action.PERSON_VERSION
-ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:191:13-86
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:191:13-86
 	android:name
-		ADDED from D:\AndroidStudioProject\bridgedetection\app\src\main\AndroidManifest.xml:191:21-83
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:191:21-83

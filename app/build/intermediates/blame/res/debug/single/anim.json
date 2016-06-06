@@ -1,5 +1,9 @@
 [
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading_animation.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\loading_animation.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading_animation.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\loading_animation.xml"
     }
