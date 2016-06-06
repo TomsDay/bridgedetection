@@ -133,7 +133,7 @@
                 android:gravity="top"
                 android:padding="5dp"
                 android:textSize="9dp"
-                android:imeOptions="flagNoExtractUi"/>
+                /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
             <ImageView
                 android:id="@+id/qslx_menu"
