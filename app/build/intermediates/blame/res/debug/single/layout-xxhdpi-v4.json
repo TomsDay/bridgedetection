@@ -86,5 +86,9 @@
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\home_fragment_view.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\home_fragment_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\maintenance_table_item.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\maintenance_table_item.xml"
     }
 ]

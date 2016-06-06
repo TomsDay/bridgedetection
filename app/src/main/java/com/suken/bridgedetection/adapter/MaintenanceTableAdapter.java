@@ -54,7 +54,7 @@ public class MaintenanceTableAdapter extends BaseAdapter{
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
-            view = inflater.inflate(R.layout.activity_form_item, null);
+            view = inflater.inflate(R.layout.maintenance_table_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
         }else{
@@ -68,11 +68,11 @@ public class MaintenanceTableAdapter extends BaseAdapter{
             holder.form_item_edit_layout.setVisibility(View.GONE);
             holder.arrow_img.setImageResource(R.drawable.shang);
         }
-        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
-        holder.form_column.setText("查看情况:"+(position+1));
-        holder.qslx_title.setText("位置");
-        holder.qslx_title.setText("检查内容");
-        holder.byyj_title.setText("检查时间");
+//        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
+//        holder.form_column.setText("查看情况:"+(position+1));
+//        holder.qslx_title.setText("位置");
+//        holder.qslx_title.setText("检查内容");
+//        holder.byyj_title.setText("检查时间");
 
 
 

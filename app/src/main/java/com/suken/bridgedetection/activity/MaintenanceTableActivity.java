@@ -54,10 +54,10 @@ public class MaintenanceTableActivity extends Activity {
     }
     public void onClick(View view){
         switch (view.getId()) {
-            case R.id.maintenancetable__back:
+            case R.id.maintenancetable_back:
                 finish();
                 break;
-            case R.id.maintenancetable__save:
+            case R.id.maintenancetable_save:
 
                 break;
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +8,14 @@
     tools:context="com.suken.bridgedetection.activity.MaintenanceTableActivity">
 
     <RelativeLayout
+        android:id="@+id/maintenancetable_titleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
         <TextView
-            android:id="@+id/maintenancetable__back"
+            android:id="@+id/maintenancetable_back"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -27,7 +28,7 @@
             android:textSize="10dp" />
 
         <TextView
-            android:id="@+id/maintenancetable__save"
+            android:id="@+id/maintenancetable_save"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
@@ -41,12 +42,83 @@
             android:textSize="10dp" />
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/maintenancetable_bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/maintenancetable_jcry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:background="#80ffffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/maintenancetable_jcr_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="巡查人："
+                    android:textSize="9dp" />
+
+                <EditText
+                    android:id="@+id/maintenancetable_jcr_ev"
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/line"
+                    android:textColor="#333333"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/maintenancetable_jlr_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记录人："
+                    android:textSize="9dp" />
+
+                <EditText
+                    android:id="@+id/maintenancetable_jlr_ev"
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/line"
+                    android:textColor="#333333"
+                    android:textSize="9dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#40A59F"
+            android:text="保存"
+            android:gravity="center"
+            android:textColor="@color/yuninfo_white"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_below="@id/maintenancetable_titleLayout"
+        android:layout_above="@id/maintenancetable_bottomLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -251,7 +323,7 @@
                                     android:id="@+id/maintenancetable_xcr_tv"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="巡查人："
+                                    android:text="表单编号："
                                     android:textSize="9dp" />
 
                                 <EditText
@@ -264,26 +336,7 @@
                             </LinearLayout>
                         </LinearLayout>
 
-                        <!--<LinearLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_weight="1" >-->
 
-                        <!--<TextView-->
-                        <!--android:id="@+id/maintenancetable_xcr_tv"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="巡查人："-->
-                        <!--android:textSize="9dp" />-->
-
-                        <!--<EditText-->
-                        <!--android:id="@+id/maintenancetable_xcr_ev"-->
-                        <!--android:layout_width="200dp"-->
-                        <!--android:layout_height="20dp"-->
-                        <!--android:background="@drawable/line"-->
-                        <!--android:textColor="#333333"-->
-                        <!--android:textSize="9dp" />-->
-                        <!--</LinearLayout>-->
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -341,7 +394,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:divider="@null"
-                    android:dividerHeight="0dp">
+                    android:dividerHeight="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@color/transparency">
 
                 </com.suken.bridgedetection.widget.ListViewForScrollView>
             </LinearLayout>
@@ -349,4 +405,4 @@
     </ScrollView>
 
 
-</LinearLayout>
+</RelativeLayout>
