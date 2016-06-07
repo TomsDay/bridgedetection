@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_main_bg"
+    tools:context="com.suken.bridgedetection.activity.MaintenanceLogActivity">
+    <RelativeLayout
+        android:id="@+id/maintenancelog_titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/maintenancelog_back"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/maintenancelog_save"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="保存"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/maintenancelog_bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:id="@+id/maintenancelog_jcry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:background="#80ffffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/maintenancelog_jcr_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="检查人："
+                    android:textSize="9dp" />
+
+                <EditText
+                    android:id="@+id/maintenancelog_jcr_ev"
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/line"
+                    android:textColor="#333333"
+                    android:textSize="9dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/maintenancelog_jlr_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="负责人："
+                    android:textSize="9dp" />
+
+                <EditText
+                    android:id="@+id/maintenancelog_jlr_ev"
+                    android:layout_width="200dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/line"
+                    android:textColor="#333333"
+                    android:textSize="9dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#40A59F"
+            android:text="保存"
+            android:gravity="center"
+            android:textColor="@color/yuninfo_white"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_below="@id/maintenancelog_titleLayout"
+        android:layout_above="@id/maintenancelog_bottomLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/maintenancelog_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#80ffffff"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="#3ea49d"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/maintenancelog_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="高速公路维修保养日志"
+                        android:textColor="#ffffff"
+                        android:textSize="10dp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/gps_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="GPS定位中..."
+                            android:textColor="#ffffff"
+                            android:textSize="10dp" />
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@id/gps_text"
+                            android:src="@drawable/list_gps" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/maintenancelog_qlbh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/maintenancelog_gydw_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="管养单位："
+                                android:textSize="9dp" />
+
+                            <EditText
+                                android:id="@+id/maintenancelog_gydw_ev"
+                                android:layout_width="200dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/line"
+                                android:textColor="#333333"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/maintenancelog_cxld_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="编号："
+                                android:textSize="9dp" />
+
+                            <EditText
+                                android:id="@+id/maintenancelog_cxld_ev"
+                                android:layout_width="200dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/line"
+                                android:textColor="#333333"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/maintenancelog_zxzh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/maintenancelog_tq_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="天气："
+                                    android:textSize="9dp" />
+
+                                <EditText
+                                    android:id="@+id/maintenancelog_tq_ev"
+                                    android:layout_width="200dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/line"
+                                    android:textColor="#333333"
+                                    android:textSize="9dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:id="@+id/maintenancelog_xcr_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="日期："
+                                    android:textSize="9dp" />
+
+                                <EditText
+                                    android:id="@+id/maintenancelog_xcr_ev"
+                                    android:layout_width="200dp"
+                                    android:layout_height="20dp"
+                                    android:background="@drawable/line"
+                                    android:textColor="#333333"
+                                    android:textSize="9dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/maintenancelog_xclx_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="维修部门："
+                                android:textSize="9dp" />
+
+                            <EditText
+                                android:id="@+id/maintenancelog_xclx_ev"
+                                android:layout_width="200dp"
+                                android:layout_height="20dp"
+                                android:background="@drawable/line"
+                                android:textColor="#333333"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/operateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <Button
+                        android:id="@+id/operateAdd"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="10dp"
+                        android:onClick="operate"
+                        android:text="添加"
+                        android:textSize="11dp" />
+
+                    <Button
+                        android:id="@+id/operateDelete"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:onClick="operate"
+                        android:text="删除"
+                        android:textSize="11dp" />
+                </LinearLayout>
+
+                <com.suken.bridgedetection.widget.ListViewForScrollView
+                    android:id="@+id/maintenancelog_listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="@color/transparency">
+
+                </com.suken.bridgedetection.widget.ListViewForScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

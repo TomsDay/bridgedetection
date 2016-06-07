@@ -9,7 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
+import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 
 import java.util.ArrayList;
 
@@ -66,10 +68,16 @@ public class MaintenanceAdapter extends BaseAdapter {
         holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent in = new Intent();
+
                 if(position == 0){
-                    Intent in = new Intent(mContext, MaintenanceTableActivity.class);
-                    mContext.startActivity(in);
+                    in.setClass(mContext, MaintenanceTableActivity.class);
+                }else if(position == 3){
+                    in.setClass(mContext, MaintenanceLogActivity.class);
+                } else if(position == 6){
+                    in.setClass(mContext, ProjectAcceptanceActivity.class);
                 }
+                mContext.startActivity(in);
             }
         });
         return view;

@@ -1,11 +1,11 @@
 [
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\suidaoxuncha.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\suidaoxuncha.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\zhiliangchoujian.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\zhiliangchoujian.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\suidaoxuncha.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\suidaoxuncha.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\jiahao.png",
@@ -48,12 +48,12 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\warning.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gpsgjwarn.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\gpsgjwarn.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\suidaojiancha.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\suidaojiancha.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gpsgjwarn.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\gpsgjwarn.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\yuninfo_btn_video_start.png",
@@ -76,12 +76,12 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\tongbu.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tongbu.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\tongbu.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\xiangji.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\xiangji.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\tongbu.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\tongbu.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gps_color.png",
@@ -124,32 +124,32 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\list_search.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\three_point.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\three_point.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video_gray.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\video_gray.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\three_point.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\three_point.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ip_gray.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ip_gray.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video_color.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\video_color.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gps_red.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\gps_red.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\wifi_gray.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\wifi_gray.png"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video_color.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\video_color.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\demo.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\demo.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\wifi_gray.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\wifi_gray.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\jiahao.png",
@@ -172,12 +172,12 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\video_gray.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\logo.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\hd_white.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\hd_white.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\logo.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\logo.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\sxj.png",
@@ -192,24 +192,24 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\xia.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\luzhengxunshi.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\luzhengxunshi.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\richangyanghu.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\richangyanghu.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\luzhengxunshi.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\luzhengxunshi.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\three_point.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\three_point.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ip_color.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ip_color.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\yingjishijian.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\yingjishijian.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ip_color.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ip_color.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\last_login.png",
@@ -252,24 +252,24 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\main_bg.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\list_search.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\list_search.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\zhiliangchoujian.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\zhiliangchoujian.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\list_search.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\list_search.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\yuninfo_ic_video_ok.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\yuninfo_ic_video_ok.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ip_color.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ip_color.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\menu.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\menu.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ip_color.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ip_color.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\guanbi.png",
@@ -332,12 +332,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\qiaoliangxuncha.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\qbsc.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\qbsc.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gps_gray.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\gps_gray.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\qbsc.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\qbsc.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\list_gps_red.png",
@@ -360,12 +360,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\luzhengxunshi.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\exit_gray.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\exit_gray.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\gps_global.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\gps_global.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\exit_gray.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\exit_gray.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\wifi.png",
@@ -376,12 +376,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\warning.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\exit_color.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\exit_color.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\suidaoxuncha.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\suidaoxuncha.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\exit_color.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\exit_color.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\shang.png",

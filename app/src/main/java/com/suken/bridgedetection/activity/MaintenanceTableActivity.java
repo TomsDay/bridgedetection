@@ -24,6 +24,9 @@ import java.util.ArrayList;
 
 import com.suken.bridgedetection.util.Logger;
 
+/**
+ * 高速公路养护巡查日志
+ */
 public class MaintenanceTableActivity extends Activity {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
@@ -42,7 +45,6 @@ public class MaintenanceTableActivity extends Activity {
     private void initView() {
         mListView = (ListViewForScrollView) findViewById(R.id.maintenancetable_listview);
         mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
-        mAdapter.setImageOrVideoClick(mImageOrVideoClick);
         mListView.setAdapter(mAdapter);
         mAdapter.setData(list);
         MaintenanceItemBean bean = new MaintenanceItemBean();
@@ -52,17 +54,6 @@ public class MaintenanceTableActivity extends Activity {
 
     }
 
-    ImageOrVideoClick mImageOrVideoClick = new ImageOrVideoClick() {
-        @Override
-        public void clickImage(int position) {
-            mPosition = position;
-        }
-
-        @Override
-        public void clickVideo(int position) {
-            mPosition = position;
-        }
-    };
     public void operate(View view){
         switch (view.getId()) {
             case R.id.operateAdd:
