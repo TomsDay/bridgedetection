@@ -872,7 +872,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 			path1.mkdirs();
 		}
 		String name = "";
-		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
+		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
 			name = path1 + File.separator + con.generateMediaName(true);
 		} else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
 			name = desc.path;
@@ -883,7 +883,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		mOutPutFileUri = Uri.fromFile(file);
 		Intent intent = new Intent();
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
+		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
 			intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
 			startActivityForResult(intent, requestCode);
 		} else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -909,7 +909,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
-		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
+		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
 			ImageDesc desc = new ImageDesc();
 			desc.name = f.getName();
 			desc.path = f.getPath();

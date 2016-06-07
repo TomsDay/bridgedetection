@@ -39,7 +39,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, FileDesc.class);
 
 			TableUtils.createTable(connectionSource, MaintenanceBean.class);
-			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
+//			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -66,7 +66,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, FileDesc.class, true);
 
 			TableUtils.dropTable(connectionSource, MaintenanceBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
 
 
 			onCreate(database, connectionSource);

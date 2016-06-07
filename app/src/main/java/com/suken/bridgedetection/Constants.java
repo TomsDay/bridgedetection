@@ -2,6 +2,8 @@ package com.suken.bridgedetection;
 
 public class Constants {
 
+	public static boolean DEBUG = true;
+
 	public static final String FIRST_LOGIN = "first_login";
 	public static final String USER_INFO = "user_info";
 
@@ -16,7 +18,7 @@ public class Constants {
 	public static final String INTERVAL = "interval";
 	public static final String GPS_SWITCH = "gps_switch";
 
-	public static final int REQUEST_CODE_CAPTURE = 1;
+	public static final int REQUEST_CODE_CAMERA = 1;
 	public static final int REQUEST_CODE_EDIT_IMG = 2;
 	public static final int REQUEST_CODE_VIDEO = 3;
 

@@ -391,7 +391,7 @@ public class FormItemController implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == xiangji.getId()) {
-			mContext.jumpToMedia(this, Constants.REQUEST_CODE_CAPTURE, null);
+			mContext.jumpToMedia(this, Constants.REQUEST_CODE_CAMERA, null);
 		} else if (v.getId() == sxj.getId()) {
 			mContext.jumpToMedia(this, Constants.REQUEST_CODE_VIDEO, null);
 		}
