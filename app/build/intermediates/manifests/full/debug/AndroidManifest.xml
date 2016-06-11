@@ -90,12 +90,12 @@
     // 配置SDK消息通知广播 ,SDK通知会分三种提醒方式
     // 1、直接通过设置的回调接口（OnChatReceiveListener）Push给应用
     // 2、如果应用没有设置回调接口则采用（BroadcastReceiver）广播通知（v5.1.8版本）
-    //    此时如果应用处于未运行状态则会直接唤醒应用处理
+    // 此时如果应用处于未运行状态则会直接唤醒应用处理
     // 3、如果应用未处于运行状态并且不想被唤醒应用运行则采用状态栏通知处理（SDK直接提醒，不会通知应用）,比如调用
     // ECDevice#logout(ECDevice.NotifyMode, ECDevice.OnLogoutListener)退出接口传入后台接收消息才会有提醒
 
     // 注意：以上在a和b的场景下，SDK都会将消息直接给应用处理，只有在c的情况SDK才会直接处理消息提醒，
-    //    所以应用需要处理a和b两种情况
+    // 所以应用需要处理a和b两种情况
     // 声明自定义通知的广播接收器，第三方 APP 集成时，action 中的 com.yuntongxun.ecdemo 请替换为自己的包名
     <!-- 需要权限声明 -->
     // 如果没有VOIP功能可以忽略
@@ -197,6 +197,9 @@
         <activity
             android:name="com.suken.bridgedetection.activity.VideoActivity"
             android:screenOrientation="landscape" />
+        <activity android:name="com.suken.bridgedetection.activity.MaintenanceLogActivity" />
+        <activity android:name="com.suken.bridgedetection.activity.ProjectAcceptanceActivity" />
+        <activity android:name="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity" />
     </application>
 
 </manifest>
