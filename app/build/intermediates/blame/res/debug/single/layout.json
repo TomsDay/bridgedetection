@@ -1,7 +1,15 @@
 [
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_of_order.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_of_order.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_of_order.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_of_order.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_project_acceptance.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_project_acceptance.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_log.xml",
@@ -10,6 +18,14 @@
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_table.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_table.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_log.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_log.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_table.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_table.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_project_acceptance.xml",
