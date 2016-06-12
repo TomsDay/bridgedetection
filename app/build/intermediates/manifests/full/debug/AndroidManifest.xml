@@ -199,6 +199,10 @@
             android:screenOrientation="landscape" />
         <activity android:name="com.suken.bridgedetection.activity.MaintenanceLogActivity" />
         <activity android:name="com.suken.bridgedetection.activity.ProjectAcceptanceActivity" />
+<<<<<<< HEAD
+=======
+        <activity android:name="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity" />
+>>>>>>> 9838a1e1f934e554b7f983acb988f40369eb8b3b
     </application>
 
 </manifest>

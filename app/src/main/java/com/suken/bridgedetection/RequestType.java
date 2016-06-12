@@ -22,7 +22,13 @@ public enum RequestType {
     updateGpsgjInfo("上传GPS轨迹信息", "/m/gps/subGPSDatas.ht"),
     uploadFile("上传附件", "/m/file/upload.ht"),
     updateGps("更新gps", "/m/base/updateGPS.ht"),
-    syncData("同步基础数据", "/m/base/synBaseData.ht");
+    syncData("同步基础数据", "/m/base/synBaseData.ht"),
+
+    geteDeseaseByUID("获取病害信息","/m/base/geteDeseaseByUID.ht"),
+    getCatalogueByUID("获取细目基本信息","/m/base/getCatalogueByUID.ht"),
+    geteCooperationByUID("获取外协单位基本信息","/m/base/geteCooperationByUID.ht"),
+    geteQualityDemandByUID("获取质量要求信息","/m/base/geteQualityDemandByUID.ht"),
+    geteMaterialByUID("获取材料基本信息","/m/base/geteMaterialByUID.ht");
 
     private String desc;
     private String url;
@@ -31,6 +37,7 @@ public enum RequestType {
         this.desc = desc;
         this.url = url;
     }
+
 
     public String getDesc() {
         return desc;

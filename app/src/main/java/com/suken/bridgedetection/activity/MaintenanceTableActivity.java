@@ -9,11 +9,21 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.googlecode.androidannotations.api.BackgroundExecutor;
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter.ImageOrVideoClick;
 import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.http.HttpTask;
+import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.storage.UserInfo;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
 
@@ -21,8 +31,12 @@ import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.suken.bridgedetection.util.Logger;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 /**
  * 高速公路养护巡查日志
@@ -50,6 +64,7 @@ public class MaintenanceTableActivity extends Activity {
         MaintenanceItemBean bean = new MaintenanceItemBean();
         bean.setShow(true);
         list.add(bean);
+        loadDate();
 
 
     }
@@ -162,5 +177,38 @@ public class MaintenanceTableActivity extends Activity {
 //            mEditController.updateVideo(desc);
         }
     }
+    private void loadDate(){
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()"+result.toString());
+                JSONArray array = result.getJSONArray("datas");
+                String datas = array.getString(0);
+                Logger.e("aaa", "datas=="+datas);
+                Gson gson = new Gson();
+                MaintenanceTableBean bean = gson.fromJson(datas, MaintenanceTableBean.class);
+                Logger.e("aaa",bean.toString());
+            }
 
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa",result + "(" + resultCode + ")");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.geteDeseaseByUID).executePost(list);
+            }
+        });
+    }
 }
