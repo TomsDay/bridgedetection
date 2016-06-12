@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:2:1-205:12
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:2:1-206:12
 	xmlns:android
 		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:2:11-69
 	package
@@ -176,7 +176,7 @@ ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.
 	android:name
 		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:112:21-83
 application
-ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:116:5-203:19
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:116:5-204:19
 	android:label
 		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:120:9-41
 	android:allowBackup
@@ -329,3 +329,7 @@ activity#com.suken.bridgedetection.activity.MaintenanceOfOrderActivity
 ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:202:9-73
 	android:name
 		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:202:19-70
+activity#com.suken.bridgedetection.activity.MaintenanceLogListActivity
+ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:203:9-82
+	android:name
+		ADDED from E:\AndroidStudioProject\Bridgedetection\app\src\main\AndroidManifest.xml:203:19-70

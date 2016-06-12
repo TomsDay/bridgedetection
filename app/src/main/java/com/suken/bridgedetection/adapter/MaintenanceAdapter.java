@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
+import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
@@ -67,6 +68,11 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
+        if(position == 3){
+            holder.maintenance_item_new.setText("查看");
+        }else{
+            holder.maintenance_item_new.setText("新建");
+        }
         holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +82,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 }else if(position == 2){
                     in.setClass(mContext, MaintenanceOfOrderActivity.class);
                 }else if(position == 3){
-                    in.setClass(mContext, MaintenanceLogActivity.class);
+                    in.setClass(mContext, MaintenanceLogListActivity.class);
                 } else if(position == 6){
                     in.setClass(mContext, ProjectAcceptanceActivity.class);
 

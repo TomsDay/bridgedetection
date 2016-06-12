@@ -200,6 +200,7 @@
         <activity android:name="com.suken.bridgedetection.activity.MaintenanceLogActivity" />
         <activity android:name="com.suken.bridgedetection.activity.ProjectAcceptanceActivity" />
         <activity android:name="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity" />
+        <activity android:name="com.suken.bridgedetection.activity.MaintenanceLogListActivity" />
     </application>
 
 </manifest>

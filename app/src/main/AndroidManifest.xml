@@ -200,6 +200,7 @@
         <activity android:name=".activity.MaintenanceLogActivity" />
         <activity android:name=".activity.ProjectAcceptanceActivity" />
         <activity android:name=".activity.MaintenanceOfOrderActivity" />
+        <activity android:name=".activity.MaintenanceLogListActivity"></activity>
     </application>
 
 </manifest>
