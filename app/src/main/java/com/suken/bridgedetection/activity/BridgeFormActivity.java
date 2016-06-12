@@ -45,7 +45,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class BridgeFormActivity extends BaseActivity implements OnClickListener {
+public class  BridgeFormActivity extends BaseActivity implements OnClickListener {
 
 	private String[] detailNames = null;
 	private String[] mItemTexts = null;
