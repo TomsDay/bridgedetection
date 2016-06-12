@@ -56,7 +56,7 @@ public class MaintenanceTableBean implements Serializable{
     private String gydwId;//管养单位ID
     @DatabaseField
     private String gydwName;//管养单位名称
-    @DatabaseField
+    @DatabaseField(generatedId = true)
     private String id;//记录ID
     @DatabaseField
     private String yjml;//一级分类
