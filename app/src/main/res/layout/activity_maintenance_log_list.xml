@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/list_main_bg"
     android:orientation="vertical"
-    tools:context="com.suken.bridgedetection.activity.MaintenanceLogListActivity">
+    tools:context=".activity.MaintenanceTableListActivity">
 
     <RelativeLayout
         android:id="@+id/maintenanceLogList_titleLayout"

@@ -7,6 +7,9 @@ import android.view.View;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.bean.MaintenanceItemBean;
 
+/**
+ * 高速公路施工安全检查表
+ */
 public class MaintenanceOfOrderActivity extends Activity {
 
     @Override

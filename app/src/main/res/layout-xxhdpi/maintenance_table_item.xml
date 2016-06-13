@@ -46,7 +46,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="上行"
+                        android:text="上行内侧"
                         android:textSize="9dp" >
                     </RadioButton>
 
@@ -54,21 +54,21 @@
                         android:id="@+id/radiodown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="下行"
+                        android:text="下行内侧"
                         android:textSize="9dp" >
                     </RadioButton>
                     <RadioButton
                         android:id="@+id/radioleft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="左幅"
+                        android:text="上行外侧"
                         android:textSize="9dp" >
                     </RadioButton>
                     <RadioButton
                         android:id="@+id/radioright"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="右幅"
+                        android:text="下行外侧"
                         android:textSize="9dp" >
                     </RadioButton>
                 </RadioGroup>
@@ -170,6 +170,7 @@
                     android:gravity="top"
                     android:padding="5dp"
                     android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
                 <ImageView
@@ -204,7 +205,8 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
                     android:id="@+id/qsfw_menu"
@@ -237,7 +239,8 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
                     android:id="@+id/byyj_menu"
@@ -272,7 +275,8 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
 
 
@@ -310,6 +314,7 @@
                     android:gravity="top"
                     android:padding="5dp"
                     android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"
                     />
 
                 <ImageView

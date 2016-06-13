@@ -9,12 +9,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
-import com.suken.bridgedetection.activity.MaintenanceLogActivity;
-import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
+import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
-import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 
@@ -32,14 +30,16 @@ public class MaintenanceAdapter extends BaseAdapter {
     }
     public void getData(){
         String str = "高速公路";
+
         list.add(str + "日常巡查");
-        list.add(str + "养护下单");
-        list.add(str + "维修保养通知单");
+//        list.add(str + "养护下单");
+//        list.add(str + "维修保养通知单");
         list.add(str + "维修保养日志");
+
         list.add(str + "施工安全检查表");
-        list.add(str + "验收申请");
+//        list.add(str + "验收申请");
         list.add(str + "维修保养验收");
-        list.add(str + "综合查询页面");
+//        list.add(str + "综合查询页面");
     }
 
     @Override
@@ -79,11 +79,11 @@ public class MaintenanceAdapter extends BaseAdapter {
                 Intent in = new Intent();
                 if(position == 0){
                     in.setClass(mContext, MaintenanceTableActivity.class);
+                }else if(position == 1){
+                    in.setClass(mContext, MaintenanceTableListActivity.class);
                 }else if(position == 2){
-                    in.setClass(mContext, MaintenanceOfOrderActivity.class);
-                }else if(position == 3){
-                    in.setClass(mContext, MaintenanceLogListActivity.class);
-                } else if(position == 6){
+                    in.setClass(mContext,MaintenanceOfOrderActivity .class);
+                } else if(position == 3){
                     in.setClass(mContext, ProjectAcceptanceActivity.class);
 
                 }else{
