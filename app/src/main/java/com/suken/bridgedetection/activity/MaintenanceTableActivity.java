@@ -1,6 +1,7 @@
 package com.suken.bridgedetection.activity;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -8,6 +9,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -18,12 +24,12 @@ import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
-import com.suken.bridgedetection.adapter.MaintenanceTableAdapter.ImageOrVideoClick;
+import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.MaintenanceItemBean;
-import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
-import com.suken.bridgedetection.storage.UserInfo;
+import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
 
@@ -31,6 +37,7 @@ import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.suken.bridgedetection.util.Logger;
@@ -45,8 +52,21 @@ public class MaintenanceTableActivity extends Activity {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
     private MaintenanceTableAdapter mAdapter;
+    private EditText maintenancetable_time_ev,
+            maintenancetable_date_ev;
+
+
+    private String checkTime;
+
     private Context mContext;
     private int mPosition;
+    int years,months,days;
+
+    private Spinner maintenancetable_weather_spinner,
+            maintenancetable_searchType_spinner;
+    private ArrayAdapter<String> mArrayWeatherAdapter, mArraySearchTypeAdapter;
+    private String [] mStringArrayWeather,mStringArraySearchType;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +81,11 @@ public class MaintenanceTableActivity extends Activity {
         mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
         mListView.setAdapter(mAdapter);
         mAdapter.setData(list);
+
+        setTime();
+
+        initSpinner();
+
         MaintenanceItemBean bean = new MaintenanceItemBean();
         bean.setShow(true);
         list.add(bean);
@@ -69,7 +94,114 @@ public class MaintenanceTableActivity extends Activity {
 
     }
 
-    public void operate(View view){
+    private void initSpinner() {
+        maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
+        mStringArrayWeather =getResources().getStringArray(R.array.spinnerWeather);
+        mArrayWeatherAdapter = new TestArrayAdapter(MaintenanceTableActivity.this, mStringArrayWeather);
+        //设置下拉列表风格(这句不些也行)
+        //mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maintenancetable_weather_spinner.setAdapter(mArrayWeatherAdapter);
+        //监听Item选中事件
+        maintenancetable_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
+
+        maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
+        mStringArraySearchType = getResources().getStringArray(R.array.spinnerSearchType);
+        mArraySearchTypeAdapter = new TestArrayAdapter(MaintenanceTableActivity.this,mStringArraySearchType);
+        //设置下拉列表风格(这句不些也行)
+        //mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maintenancetable_searchType_spinner.setAdapter(mArraySearchTypeAdapter);
+        //监听Item选中事件
+        maintenancetable_searchType_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
+    }
+
+    private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
+            switch (view.getId()) {
+                case R.id.maintenancetable_searchType_spinner:
+                    System.out.println("maintenancetable_searchType_spinner==选中了:"+ mStringArrayWeather[position]);
+                    break;
+                case R.id.maintenancetable_weather_spinner:
+                    System.out.println("maintenancetable_weather_spinner==选中了:"+ mStringArrayWeather[position]);
+                    break;
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {}
+
+    }
+
+    public void setTime() {
+        maintenancetable_time_ev = (EditText) findViewById(R.id.maintenancetable_time_ev);
+        maintenancetable_date_ev = (EditText) findViewById(R.id.maintenancetable_date_ev);
+        Calendar c = Calendar.getInstance();
+        years = c.get(Calendar.YEAR);
+        months = c.get(Calendar.MONTH)+1;
+        days = c.get(Calendar.DATE);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        int minute = c.get(Calendar.MINUTE);
+        checkTime = (hour < 10 ? "0" + hour : hour)
+                + ":" +
+                (minute < 10 ? "0" + minute : minute) +
+                ("-") +
+                (hour + 1 < 10 ? "0" + (hour + 1) : (hour + 1)) +
+                (":") +
+                (minute < 10 ? "0" + minute : minute);
+
+        initCheckDate(years,months,days);
+
+
+
+
+        maintenancetable_time_ev.setText(checkTime);
+        maintenancetable_time_ev.setKeyListener(null);
+        maintenancetable_time_ev.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Logger.e("aaa","点击选择！！！！");
+                // 最后一个false表示不显示日期，如果要显示日期，最后参数可以是true或者不用输入
+                new DoubleDatePickerDialog(MaintenanceTableActivity.this, new DoubleDatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(String times) {
+                        checkTime = times;
+                        maintenancetable_time_ev.setText(checkTime);
+                    }
+                }, checkTime).show();
+            }
+        });
+
+        maintenancetable_date_ev.setKeyListener(null);
+        maintenancetable_date_ev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(mContext, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int returnYear, int returnMonth, int returnDay) {
+                        years = returnYear;
+                        months = returnMonth + 1;
+                        days = returnDay;
+                        initCheckDate(years,months,days);
+                    }
+                },years,months-1,days);
+                datePickerDialog.setTitle("日期：");
+                datePickerDialog.show();
+            }
+        });
+
+
+    }
+    public void initCheckDate(int year,int month,int day){
+        String checkDate = year + ("-") +
+                (month < 10 ? "0" + month : month) +
+                ("-") +
+                (day < 10 ? "0" + day : day);
+        maintenancetable_date_ev.setText(checkDate);
+    }
+
+    public void operate(View view) {
         switch (view.getId()) {
             case R.id.operateAdd:
                 list = mAdapter.getData();
@@ -88,7 +220,8 @@ public class MaintenanceTableActivity extends Activity {
         }
 
     }
-    public void onClick(View view){
+
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.maintenancetable_back:
                 finish();
@@ -99,6 +232,7 @@ public class MaintenanceTableActivity extends Activity {
         }
 
     }
+
     public String generateMediaName(boolean isImg) {
         if (isImg) {
             return "pic-" + System.currentTimeMillis() + "-image.png";
@@ -106,9 +240,11 @@ public class MaintenanceTableActivity extends Activity {
             return "vdo-" + System.currentTimeMillis() + "-video.mp4";
         }
     }
+
     private Uri mOutPutFileUri = null;
-//    private FormItemController mEditController;
-    public void jumpToMedia(int position ,int requestCode, MaintenanceItemBean.ImageDesc desc) {
+
+    //    private FormItemController mEditController;
+    public void jumpToMedia(int position, int requestCode, MaintenanceItemBean.ImageDesc desc) {
 //        mEditController = con;
         mPosition = position;
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
@@ -141,6 +277,7 @@ public class MaintenanceTableActivity extends Activity {
             startActivityForResult(intent, requestCode);
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -157,8 +294,8 @@ public class MaintenanceTableActivity extends Activity {
             MaintenanceItemBean.ImageDesc desc = new MaintenanceItemBean.ImageDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
-            Logger.e("aaa"," desc.name==="+ desc.name);
-            Logger.e("aaa"," desc.path==="+ desc.path);
+            Logger.e("aaa", " desc.name===" + desc.name);
+            Logger.e("aaa", " desc.path===" + desc.path);
             list.get(mPosition).getmImages().add(desc);
             mAdapter.setData(list);
             mAdapter.notifyDataSetChanged();
@@ -177,22 +314,23 @@ public class MaintenanceTableActivity extends Activity {
 //            mEditController.updateVideo(desc);
         }
     }
-    private void loadDate(){
+
+    private void loadDate() {
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
-                Logger.e("aaa", "result.toString()"+result.toString());
+                Logger.e("aaa", "result.toString()" + result.toString());
                 JSONArray array = result.getJSONArray("datas");
                 String datas = array.getString(0);
-                Logger.e("aaa", "datas=="+datas);
+                Logger.e("aaa", "datas==" + datas);
                 Gson gson = new Gson();
-                MaintenanceTableBean bean = gson.fromJson(datas, MaintenanceTableBean.class);
-                Logger.e("aaa",bean.toString());
+                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
+                Logger.e("aaa", bean.toString());
             }
 
             @Override
             public void onRequestFail(RequestType type, String resultCode, String result) {
-                Logger.e("aaa",result + "(" + resultCode + ")");
+                Logger.e("aaa", result + "(" + resultCode + ")");
             }
         };
 

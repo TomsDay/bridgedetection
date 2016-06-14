@@ -306,7 +306,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/item5_edit"
+                    android:id="@+id/item_checkTime_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -314,7 +314,7 @@
                     android:gravity="top"
                     android:padding="5dp"
                     android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"
+
                     />
 
                 <ImageView

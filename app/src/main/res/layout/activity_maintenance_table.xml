@@ -5,7 +5,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/list_main_bg"
     android:orientation="vertical"
-    tools:context="com.suken.bridgedetection.activity.MaintenanceTableActivity">
+    tools:context="com.suken.bridgedetection.activity.MaintenanceTableActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <RelativeLayout
         android:id="@+id/maintenancetable_titleLayout"
@@ -229,20 +231,19 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenancetable_sjd_tv"
+                                android:id="@+id/maintenancetable_time_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="时间段："
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/maintenancetable_sjd_ev"
+                                android:id="@+id/maintenancetable_time_ev"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:textSize="9dp"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -251,14 +252,14 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenancetable_rq_tv"
+                                android:id="@+id/maintenancetable_date_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="日期："
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/maintenancetable_rq_ev"
+                                android:id="@+id/maintenancetable_date_ev"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
@@ -289,14 +290,15 @@
                                     android:text="天气："
                                     android:textSize="9dp" />
 
-                                <EditText
-                                    android:id="@+id/maintenancetable_tq_ev"
+                                <Spinner
+                                    android:id="@+id/maintenancetable_weather_spinner"
                                     android:layout_width="match_parent"
                                     android:layout_height="20dp"
                                     android:background="@drawable/line"
                                     android:textColor="#333333"
                                     android:textSize="9dp"
-                                    android:imeOptions="flagNoExtractUi"/>
+                                    android:entries="@array/spinnerWeather"
+                                    />
 
                         </LinearLayout>
 
@@ -307,20 +309,21 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenancetable_xclx_tv"
+                                android:id="@+id/maintenancetable_searchType_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="巡查类型："
                                 android:textSize="9dp" />
 
-                            <EditText
-                                android:id="@+id/maintenancetable_xclx_ev"
+                            <Spinner
+                                android:id="@+id/maintenancetable_searchType_spinner"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:entries="@array/spinnerWeather"
+                                />
                         </LinearLayout>
                     </LinearLayout>
 

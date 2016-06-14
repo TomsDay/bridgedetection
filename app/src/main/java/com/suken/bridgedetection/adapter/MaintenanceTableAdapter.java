@@ -16,7 +16,9 @@ import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.UiUtil;
+import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +31,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     private MaintenanceTableActivity mActivity;
     private LayoutInflater inflater;
     private int ClickImagePositon;
+    private String dateTime;
 
 
     public MaintenanceTableAdapter(MaintenanceTableActivity context) {
@@ -80,6 +83,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.form_item_edit_layout.setVisibility(View.GONE);
             holder.arrow_img.setImageResource(R.drawable.shang);
         }
+        setDateTime(holder);
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
 //        holder.qslx_title.setText("位置");
@@ -123,7 +127,26 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             }
         });
 
+
         return view;
+    }
+    public void setDateTime(final HolderView holder){
+        dateTime = DateUtil.getDate();
+        holder.item_checkTime_edit.setText(dateTime);
+        holder.item_checkTime_edit.setKeyListener(null);
+        holder.item_checkTime_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+                        mActivity, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+                    @Override
+                    public void getTime(String time) {
+                        dateTime = time;
+                        holder.item_checkTime_edit.setText(dateTime);
+                    }
+                });
+            }
+        });
     }
 
     class HolderView {
@@ -142,7 +165,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
         private EditText qslx_edit,
                 qsfw_edit,
-                byyj_edit;
+                byyj_edit,
+                item_checkTime_edit;
 
         private Spinner img_spinner;
 
@@ -166,6 +190,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             qslx_edit = (EditText) view.findViewById(R.id.qslx_edit);
             qsfw_edit = (EditText) view.findViewById(R.id.qsfw_edit);
             byyj_edit = (EditText) view.findViewById(R.id.byyj_edit);
+            item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 

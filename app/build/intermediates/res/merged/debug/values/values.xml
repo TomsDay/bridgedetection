@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="spinnerSearchType">
+        <item>日常巡查</item>
+        <item>徒步巡查</item>
+        <item>夜间巡查</item>
+    </string-array>
+    <string-array name="spinnerWeather">
+        <item>晴</item>
+        <item>阴</item>
+        <item>雨</item>
+        <item>雪</item>
+        <item>雾霾</item>
+    </string-array>
     <string-array name="yuninfo_add_video_menu">
         <item>拍摄视频</item>
         <item>本地视频</item>
