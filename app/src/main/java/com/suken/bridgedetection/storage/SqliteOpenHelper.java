@@ -7,6 +7,8 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.suken.bridgedetection.bean.MaintenanceBean;
 import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -39,6 +41,8 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, FileDesc.class);
 
 			TableUtils.createTable(connectionSource, MaintenanceBean.class);
+			TableUtils.createTable(connectionSource, MaintenanceTableBean.class);
+			TableUtils.createTable(connectionSource, MaintenanceTableItemBean.class);
 //			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
 
 		} catch (SQLException e) {
@@ -66,6 +70,8 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, FileDesc.class, true);
 
 			TableUtils.dropTable(connectionSource, MaintenanceBean.class, true);
+			TableUtils.dropTable(connectionSource, MaintenanceTableBean.class, true);
+			TableUtils.dropTable(connectionSource, MaintenanceTableItemBean.class, true);
 //			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
 
 
