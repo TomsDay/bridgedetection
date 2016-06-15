@@ -197,10 +197,18 @@
         <activity
             android:name="com.suken.bridgedetection.activity.VideoActivity"
             android:screenOrientation="landscape" />
-        <activity android:name="com.suken.bridgedetection.activity.MaintenanceLogActivity" />
-        <activity android:name="com.suken.bridgedetection.activity.ProjectAcceptanceActivity" />
-        <activity android:name="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity" />
-        <activity android:name="com.suken.bridgedetection.activity.MaintenanceTableListActivity" />
+        <activity
+            android:name="com.suken.bridgedetection.activity.MaintenanceLogActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.suken.bridgedetection.activity.ProjectAcceptanceActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.suken.bridgedetection.activity.MaintenanceTableListActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

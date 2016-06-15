@@ -57,7 +57,8 @@ import org.apache.http.message.BasicNameValuePair;
  */
 public class MaintenanceTableActivity extends Activity {
     ListViewForScrollView mListView;
-    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
+    private ArrayList<MaintenanceTableItemBean> maintenanceTableItemBeen = new ArrayList<MaintenanceTableItemBean>();
+    private ArrayList<MaintenanceTableBean> maintenanceTableBeen = new ArrayList<MaintenanceTableBean>();
     private MaintenanceTableAdapter mAdapter;
     private EditText maintenancetable_time_ev,
             maintenancetable_date_ev,
@@ -78,41 +79,93 @@ public class MaintenanceTableActivity extends Activity {
     private String [] mStringArrayWeather,mStringArraySearchType;
     private String strWeather = "晴", strSearchType = "日常巡查";
     private MaintenanceTableDao maintenanceTableDao;
+    private int id;
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_table);
+        maintenanceTableDao = new MaintenanceTableDao();
+        id = getIntent().getIntExtra("id", 0);
         mContext = this;
+
         initView();
     }
 
+    public void getData() {
+        if (id != 0) {
+            maintenanceTableBeen = (ArrayList<MaintenanceTableBean>) maintenanceTableDao.queryByID(id);
+            Logger.e("aaa","maintenanceTableBeanList++"+maintenanceTableBeen.toString());
+            if(maintenanceTableBeen.size()>0){
+                MaintenanceTableBean bean = maintenanceTableBeen.get(0);
+                maintenancetable_gydw_ev.setText(bean.getCustodyUnit());
+                maintenancetable_cxld_ev.setText(bean.getPatrolSection());
+                maintenancetable_xcr_ev.setText(bean.getInspectOne());
+                maintenancetable_time_ev.setText(bean.getTimeQuantum());
+                maintenancetable_date_ev.setText(bean.getDatetime());
+                maintenancetable_weather_spinner.setSelection(2);
+                maintenancetable_searchType_spinner.setSelection(2);
+
+
+
+                ForeignCollection<MaintenanceTableItemBean> orders = bean.getMaintenanceTableItemBeen();
+                CloseableIterator<MaintenanceTableItemBean> iterator = orders.closeableIterator();
+                try {
+                    while(iterator.hasNext()){
+                        MaintenanceTableItemBean b = iterator.next();
+                        maintenanceTableItemBeen.add(b);
+                        Logger.e("aaa",b.toString());
+                    }
+                } finally {
+
+                    try {
+                        iterator.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }else{
+                MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
+                bean.setShow(true);
+                maintenanceTableItemBeen.add(bean);
+            }
+
+        }else{
+            MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
+            bean.setShow(true);
+            maintenanceTableItemBeen.add(bean);
+        }
+        mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
+        mAdapter.setData(maintenanceTableItemBeen);
+        mListView.setAdapter(mAdapter);
+
+    }
     private void initView() {
-        maintenanceTableDao = new MaintenanceTableDao();
         mListView = (ListViewForScrollView) findViewById(R.id.maintenancetable_listview);
         maintenancetable_gydw_ev = (EditText) findViewById(R.id.maintenancetable_gydw_ev);
         maintenancetable_cxld_ev = (EditText) findViewById(R.id.maintenancetable_cxld_ev);
         maintenancetable_xcr_ev = (EditText) findViewById(R.id.maintenancetable_xcr_ev);
+        maintenancetable_time_ev = (EditText) findViewById(R.id.maintenancetable_time_ev);
+        maintenancetable_date_ev = (EditText) findViewById(R.id.maintenancetable_date_ev);
+        maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
+        maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
 
-        mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
-        mListView.setAdapter(mAdapter);
-        mAdapter.setData(list);
+        getData();
 
         setTime();
 
         initSpinner();
 
-        MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
-        bean.setShow(true);
-        list.add(bean);
-        loadDate();
+
+//        loadDate();
 
 
     }
 
     private void initSpinner() {
-        maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
+
         mStringArrayWeather =getResources().getStringArray(R.array.spinnerWeather);
         mArrayWeatherAdapter = new TestArrayAdapter(MaintenanceTableActivity.this, mStringArrayWeather);
         //设置下拉列表风格(这句不些也行)
@@ -121,7 +174,7 @@ public class MaintenanceTableActivity extends Activity {
         //监听Item选中事件
         maintenancetable_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
 
-        maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
+
         mStringArraySearchType = getResources().getStringArray(R.array.spinnerSearchType);
         mArraySearchTypeAdapter = new TestArrayAdapter(MaintenanceTableActivity.this,mStringArraySearchType);
         //设置下拉列表风格(这句不些也行)
@@ -130,6 +183,8 @@ public class MaintenanceTableActivity extends Activity {
         //监听Item选中事件
         maintenancetable_searchType_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
     }
+
+
 
     private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
         @Override
@@ -152,8 +207,7 @@ public class MaintenanceTableActivity extends Activity {
     }
 
     public void setTime() {
-        maintenancetable_time_ev = (EditText) findViewById(R.id.maintenancetable_time_ev);
-        maintenancetable_date_ev = (EditText) findViewById(R.id.maintenancetable_date_ev);
+
         Calendar c = Calendar.getInstance();
         years = c.get(Calendar.YEAR);
         months = c.get(Calendar.MONTH)+1;
@@ -223,17 +277,17 @@ public class MaintenanceTableActivity extends Activity {
     public void operate(View view) {
         switch (view.getId()) {
             case R.id.operateAdd:
-                list = mAdapter.getData();
+                maintenanceTableItemBeen = mAdapter.getData();
                 MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
-                list.add(bean);
-                mAdapter.setData(list);
+                maintenanceTableItemBeen.add(bean);
+                mAdapter.setData(maintenanceTableItemBeen);
                 mAdapter.notifyDataSetChanged();
 
                 break;
             case R.id.operateDelete:
-                list = mAdapter.getData();
-                list.remove(list.size() - 1);
-                mAdapter.setData(list);
+                maintenanceTableItemBeen = mAdapter.getData();
+                maintenanceTableItemBeen.remove(maintenanceTableItemBeen.size() - 1);
+                mAdapter.setData(maintenanceTableItemBeen);
                 mAdapter.notifyDataSetChanged();
                 break;
         }
@@ -258,8 +312,8 @@ public class MaintenanceTableActivity extends Activity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        list = mAdapter.getData();
-                        Logger.e("aaa","list===="+list.toString());
+                        maintenanceTableItemBeen = mAdapter.getData();
+                        Logger.e("aaa","itemlist===="+ maintenanceTableItemBeen.toString());
                         String gydw = maintenancetable_gydw_ev.getText().toString();
                         String xcld = maintenancetable_cxld_ev.getText().toString();
                         String time = maintenancetable_time_ev.getText().toString();
@@ -276,34 +330,14 @@ public class MaintenanceTableActivity extends Activity {
 
                         Logger.e("aaa","maintenanceTableBean.toString()===="+maintenanceTableBean.toString());
                         maintenanceTableDao.add(maintenanceTableBean);
-                        list = mAdapter.getData();
-                        for (int j = 0; j < list.size(); j++) {
-                            MaintenanceTableItemBean itemBean = list.get(i);
+                        maintenanceTableItemBeen = mAdapter.getData();
+                        for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
+                            MaintenanceTableItemBean itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
                             maintenanceTableDao.addItem(itemBean);
                         }
 
-                        List<MaintenanceTableBean> maintenanceTableBeanList= maintenanceTableDao.queryAll();
-                        MaintenanceTableBean bean = maintenanceTableBeanList.get(0);
-                        if(maintenanceTableBeanList.size()>0){
-                            ForeignCollection<MaintenanceTableItemBean> orders = bean.getMaintenanceTableItemBeen();
-                            CloseableIterator<MaintenanceTableItemBean> iterator = orders.closeableIterator();
-                            try {
-                                while(iterator.hasNext()){
-                                    MaintenanceTableItemBean b = iterator.next();
-                                    Logger.e("aaa",b.toString());
-                                }
-                            } finally {
-                                try {
-                                    iterator.close();
-                                } catch (SQLException e) {
-                                    e.printStackTrace();
-                                }
-                            }
 
-                        }else{
-
-                        }
 
 
 
@@ -383,8 +417,8 @@ public class MaintenanceTableActivity extends Activity {
             desc.path = f.getPath();
             Logger.e("aaa", " desc.name===" + desc.name);
             Logger.e("aaa", " desc.path===" + desc.path);
-            list.get(mPosition).getmImages().add(desc);
-            mAdapter.setData(list);
+            maintenanceTableItemBeen.get(mPosition).getmImages().add(desc);
+            mAdapter.setData(maintenanceTableItemBeen);
             mAdapter.notifyDataSetChanged();
 
 //            mEditController.updateImg(desc);
@@ -395,8 +429,8 @@ public class MaintenanceTableActivity extends Activity {
             MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
-            list.get(mPosition).getmVideo().add(desc);
-            mAdapter.setData(list);
+            maintenanceTableItemBeen.get(mPosition).getmVideo().add(desc);
+            mAdapter.setData(maintenanceTableItemBeen);
             mAdapter.notifyDataSetChanged();
 //            mEditController.updateVideo(desc);
         }

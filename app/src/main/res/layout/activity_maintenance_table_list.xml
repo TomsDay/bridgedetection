@@ -8,14 +8,14 @@
     tools:context=".activity.MaintenanceTableListActivity">
 
     <RelativeLayout
-        android:id="@+id/maintenanceLogList_titleLayout"
+        android:id="@+id/maintenance_table_titleLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="5dp"
         android:paddingTop="5dp">
 
         <TextView
-            android:id="@+id/maintenanceLogList_back"
+            android:id="@+id/maintenance_table_back"
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -39,12 +39,12 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/maintenanceLogList_row1"
+            android:id="@+id/maintenance_table_row1"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="管养单位"
+            android:text="巡查单号"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -52,67 +52,67 @@
             android:background="#90808080" />
 
         <TextView
-            android:id="@+id/maintenanceLogList_row2"
+            android:id="@+id/maintenance_table_row2"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="编号"
+            android:text="路线编号"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#90808080" />
         <TextView
-            android:id="@+id/maintenanceLogList_row3"
+            android:id="@+id/maintenance_table_row3"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="天气"
+            android:text="路线名称"
             android:textSize="12dp" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#90808080" />
         <TextView
-            android:id="@+id/maintenanceLogList_row4"
+            android:id="@+id/maintenance_table_row4"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="日期"
+            android:text="时间段"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#90808080" />
         <TextView
-            android:id="@+id/maintenanceLogList_row5"
+            android:id="@+id/maintenance_table_row5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="维修部门"
+            android:text="巡查路段"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:background="#90808080" />
         <TextView
-            android:id="@+id/maintenanceLogList_row6"
+            android:id="@+id/maintenance_table_row6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="状态"
+            android:text="巡查人"
             android:textSize="10dp" />
     </LinearLayout>
     <ListView
-        android:id="@+id/maintenanceLogList_listView"
+        android:id="@+id/maintenance_table_listView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:divider="@null"
-        android:dividerHeight="0dp"></ListView>
+        android:dividerHeight="0dp"/>
 
 </LinearLayout>

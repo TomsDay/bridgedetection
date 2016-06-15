@@ -8,6 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.MaintenanceTableBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/6/12.
@@ -15,14 +19,18 @@ import com.suken.bridgedetection.R;
 public class MaintenanceTableListAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
+    List<MaintenanceTableBean> maintenanceTableBeanList  = new ArrayList<MaintenanceTableBean>();
     public MaintenanceTableListAdapter(Context context) {
         mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
 
+    public void setData(List<MaintenanceTableBean> list){
+        maintenanceTableBeanList = list;
+    }
     @Override
     public int getCount() {
-        return 50;
+        return maintenanceTableBeanList.size();
     }
 
     @Override
@@ -45,6 +53,14 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
         }else{
             holder = (HolderView) view.getTag();
         }
+        MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
+        holder.maintenanceloglist_item_tv1.setText(bean.getId()+"");
+        holder.maintenanceloglist_item_tv2.setText(bean.getCustodyUnit()+"");
+        holder.maintenanceloglist_item_tv3.setText(bean.getPatrolSection()+"");
+        holder.maintenanceloglist_item_tv4.setText(bean.getTimeQuantum()+"");
+        holder.maintenanceloglist_item_tv5.setText(bean.getSearchType()+"");
+        holder.maintenanceloglist_item_tv6.setText(bean.getInspectOne()+"");
+
 
         return view;
     }

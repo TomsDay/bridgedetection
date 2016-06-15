@@ -105,6 +105,18 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.arrow_img.setImageResource(R.drawable.shang);
         }
         setDateTime(holder);
+
+//        private EditText diseaseName_edit,
+//                unit_edit,
+//                count_edit,
+//                address_edit,
+//                item_checkTime_edit;
+        holder.diseaseName_edit.setText(bean.getDiseaseName());
+        holder.unit_edit.setText(bean.getUnit());
+        holder.count_edit.setText(bean.getCount());
+        holder.address_edit.setText(bean.getAddress());
+        holder.item_checkTime_edit.setText(bean.getCheckTime());
+        setDateTime(holder);
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
 //        holder.qslx_title.setText("位置");
@@ -208,7 +220,12 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     }
     public void setDateTime(final HolderView holder){
         dateTime = DateUtil.getDate();
-        holder.item_checkTime_edit.setText(dateTime);
+        String time = holder.item_checkTime_edit.getText().toString();
+        if (time == null || time.indexOf("年")==-1) {
+            Logger.e("aaa","111111111111111111111111111111111111111111111111111111111111");
+            holder.item_checkTime_edit.setText(dateTime);
+        }
+
         holder.item_checkTime_edit.setKeyListener(null);
         holder.item_checkTime_edit.setOnClickListener(new View.OnClickListener() {
             @Override

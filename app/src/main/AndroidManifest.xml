@@ -197,10 +197,14 @@
         <activity
             android:name=".activity.VideoActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceLogActivity" />
-        <activity android:name=".activity.ProjectAcceptanceActivity" />
-        <activity android:name=".activity.MaintenanceOfOrderActivity" />
-        <activity android:name=".activity.MaintenanceTableListActivity"></activity>
+        <activity android:name=".activity.MaintenanceLogActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.ProjectAcceptanceActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.MaintenanceOfOrderActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.MaintenanceTableListActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

@@ -93,6 +93,18 @@ public class MaintenanceAdapter extends BaseAdapter {
                 mContext.startActivity(in);
             }
         });
+        holder.maintenance_item_submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent();
+                if(position == 0){
+                    in.setClass(mContext, MaintenanceTableListActivity.class);
+                }else{
+                    return;
+                }
+                mContext.startActivity(in);
+            }
+        });
         return view;
     }
     class HolderView{
