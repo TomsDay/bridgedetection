@@ -169,7 +169,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/qslx_edit"
+                    android:id="@+id/diseaseName_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -205,7 +205,7 @@
 
 
                 <EditText
-                    android:id="@+id/qsfw_edit"
+                    android:id="@+id/unit_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -239,7 +239,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/byyj_edit"
+                    android:id="@+id/count_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -275,7 +275,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/item4_edit"
+                    android:id="@+id/address_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"

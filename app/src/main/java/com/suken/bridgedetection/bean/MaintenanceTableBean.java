@@ -15,6 +15,8 @@ public class MaintenanceTableBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
     @DatabaseField
+    private String custodyUnit;
+    @DatabaseField
     private String patrolSection;
     @DatabaseField
     private String timeQuantum;
@@ -24,6 +26,8 @@ public class MaintenanceTableBean implements Serializable {
     private String weather;
     @DatabaseField
     private String searchType;
+    @DatabaseField
+    private String inspectOne;
 
     @ForeignCollectionField
     /**
@@ -45,12 +49,43 @@ public class MaintenanceTableBean implements Serializable {
         this.searchType = searchType;
     }
 
+    @Override
+    public String toString() {
+        return "MaintenanceTableBean{" +
+                "id=" + id +
+                ", custodyUnit='" + custodyUnit + '\'' +
+                ", patrolSection='" + patrolSection + '\'' +
+                ", timeQuantum='" + timeQuantum + '\'' +
+                ", datetime='" + datetime + '\'' +
+                ", weather='" + weather + '\'' +
+                ", searchType='" + searchType + '\'' +
+                ", inspectOne='" + inspectOne + '\'' +
+                ", maintenanceTableItemBeen=" + maintenanceTableItemBeen +
+                '}';
+    }
+
     public ForeignCollection<MaintenanceTableItemBean> getMaintenanceTableItemBeen() {
         return maintenanceTableItemBeen;
     }
 
     public void setMaintenanceTableItemBeen(ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
         this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+    }
+
+    public String getInspectOne() {
+        return inspectOne;
+    }
+
+    public void setInspectOne(String inspectOne) {
+        this.inspectOne = inspectOne;
+    }
+
+    public String getCustodyUnit() {
+        return custodyUnit;
+    }
+
+    public void setCustodyUnit(String custodyUnit) {
+        this.custodyUnit = custodyUnit;
     }
 
     public int getId() {

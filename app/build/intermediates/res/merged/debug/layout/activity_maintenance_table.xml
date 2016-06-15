@@ -67,14 +67,14 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:id="@+id/maintenancetable_jcr_tv"
+                    android:id="@+id/maintenancetable_xcr_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="巡查人："
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/maintenancetable_jcr_ev"
+                    android:id="@+id/maintenancetable_xcr_ev"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:background="@drawable/line"

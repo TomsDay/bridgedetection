@@ -4,6 +4,8 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/6/14.
@@ -22,6 +24,18 @@ public class MaintenanceTableItemBean implements Serializable{
     private String address;
     @DatabaseField
     private String checkTime;
+    private boolean isShow;
+    private List<ImageDesc> mImages = new ArrayList<ImageDesc>();
+    private List<VideoDesc> mVideo = new ArrayList<VideoDesc>();
+    public static class ImageDesc {
+        public String name;
+        public String path;
+    }
+
+    public static class VideoDesc {
+        public String name;
+        public String path;
+    }
 
     /**
      * foreign = true:说明这是一个外部引用关系
@@ -54,6 +68,31 @@ public class MaintenanceTableItemBean implements Serializable{
         this.count = count;
         this.address = address;
         this.checkTime = checkTime;
+    }
+
+
+    public boolean isShow() {
+        return isShow;
+    }
+
+    public void setShow(boolean show) {
+        isShow = show;
+    }
+
+    public List<ImageDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<ImageDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public List<VideoDesc> getmVideo() {
+        return mVideo;
+    }
+
+    public void setmVideo(List<VideoDesc> mVideo) {
+        this.mVideo = mVideo;
     }
 
     public MaintenanceTableBean getMaintenanceTableBean() {

@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.adapter;
 
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +12,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
-import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.util.DateUtil;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
@@ -27,7 +31,7 @@ import java.util.List;
  * Created by Administrator on 2016/6/5.
  */
 public class MaintenanceTableAdapter extends BaseAdapter {
-    private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
+    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
     private MaintenanceTableActivity mActivity;
     private LayoutInflater inflater;
     private int ClickImagePositon;
@@ -41,11 +45,11 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
     }
 
-    public void setData(ArrayList<MaintenanceItemBean> list) {
+    public void setData(ArrayList<MaintenanceTableItemBean> list) {
         this.list = list;
     }
 
-    public ArrayList<MaintenanceItemBean> getData() {
+    public ArrayList<MaintenanceTableItemBean> getData() {
         return list;
     }
 
@@ -67,14 +71,31 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
-        final MaintenanceItemBean bean = list.get(position);
+        final MaintenanceTableItemBean bean = list.get(position);
         if (view == null) {
             view = inflater.inflate(R.layout.maintenance_table_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
+            holder.diseaseName_edit.setTag(position);
+            holder.unit_edit.setTag(position);
+            holder.count_edit.setTag(position);
+            holder.address_edit.setTag(position);
+            holder.item_checkTime_edit.setTag(position);
         } else {
             holder = (HolderView) view.getTag();
+            holder.diseaseName_edit.setTag(position);
+            holder.unit_edit.setTag(position);
+            holder.count_edit.setTag(position);
+            holder.address_edit.setTag(position);
+            holder.item_checkTime_edit.setTag(position);
         }
+
+        holder.diseaseName_edit.addTextChangedListener(new Watcher(holder.diseaseName_edit));
+        holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
+        holder.count_edit.addTextChangedListener(new Watcher(holder.count_edit));
+        holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
+        holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
+
         if (bean.isShow()) {
             holder.form_item_edit_layout.setVisibility(View.VISIBLE);
             holder.arrow_img.setImageResource(R.drawable.xia);
@@ -115,7 +136,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 ClickImagePositon = position;
-               mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
+                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
 
             }
         });
@@ -128,7 +149,62 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         });
 
 
+
         return view;
+    }
+
+
+    class  Watcher implements TextWatcher {
+        private EditText editTextID;
+        public Watcher(EditText editText) {
+            editTextID = editText;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            int position = (Integer)editTextID.getTag();
+//            switch (editTextID.getId()) {
+//                case R.id.diseaseName_edit:
+//                    Logger.e("aaa", "=======diseaseName_edit=" + charSequence + "=====position" + position);
+////                    list.get(mPosition).setDiseaseName(charSequence != null && !"".equals(charSequence) ? charSequence : "");
+//                    break;
+//            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            String content = editable.toString();
+            int position = (Integer)editTextID.getTag();
+
+            switch (editTextID.getId()) {
+
+                case R.id.diseaseName_edit:
+                    Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
+                    list.get(position).setDiseaseName(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.unit_edit:
+                    Logger.e("aaa","unit_edit==position"+position);
+                    list.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.count_edit:
+                    Logger.e("aaa","count_edit==position"+position);
+                    list.get(position).setCount(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.address_edit:
+                    Logger.e("aaa","address_edit==position"+position);
+                    list.get(position).setAddress(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.item_checkTime_edit:
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    list.get(position).setCheckTime(content!=null&&!"".equals(content)?content:"");
+                    break;
+            }
+        }
     }
     public void setDateTime(final HolderView holder){
         dateTime = DateUtil.getDate();
@@ -163,9 +239,10 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 qsfw_title,
                 byyj_title;
 
-        private EditText qslx_edit,
-                qsfw_edit,
-                byyj_edit,
+        private EditText diseaseName_edit,
+                unit_edit,
+                count_edit,
+                address_edit,
                 item_checkTime_edit;
 
         private Spinner img_spinner;
@@ -187,10 +264,12 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             xiangji = (ImageView) view.findViewById(R.id.xiangji);
             video = (ImageView) view.findViewById(R.id.video);
 
-            qslx_edit = (EditText) view.findViewById(R.id.qslx_edit);
-            qsfw_edit = (EditText) view.findViewById(R.id.qsfw_edit);
-            byyj_edit = (EditText) view.findViewById(R.id.byyj_edit);
+            diseaseName_edit = (EditText) view.findViewById(R.id.diseaseName_edit);
+            unit_edit = (EditText) view.findViewById(R.id.unit_edit);
+            count_edit = (EditText) view.findViewById(R.id.count_edit);
+            address_edit = (EditText) view.findViewById(R.id.address_edit);
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
+
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
@@ -212,19 +291,19 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     }
 
     private class SpinnerAdapter extends BaseAdapter {
-        private List<MaintenanceItemBean.ImageDesc> mImages = new ArrayList<MaintenanceItemBean.ImageDesc>();
+        private List<MaintenanceTableItemBean.ImageDesc> mImages = new ArrayList<MaintenanceTableItemBean.ImageDesc>();
 
         @Override
         public int getCount() {
             return mImages.size();
         }
 
-        public void setItem(List<MaintenanceItemBean.ImageDesc> list){
+        public void setItem(List<MaintenanceTableItemBean.ImageDesc> list){
             mImages = list;
         }
 
         @Override
-        public MaintenanceItemBean.ImageDesc getItem(int position) {
+        public MaintenanceTableItemBean.ImageDesc getItem(int position) {
             return mImages.get(position);
         }
 
@@ -236,7 +315,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             TextView view = new TextView(mActivity);
-            MaintenanceItemBean.ImageDesc desc = getItem(position);
+            MaintenanceTableItemBean.ImageDesc desc = getItem(position);
             view.setText("照片：  " + (position + 1));
             view.setTag(desc);
             view.setTextColor(Color.RED);
@@ -246,12 +325,13 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
                 @Override
                 public void onClick(View v) {
-                    MaintenanceItemBean.ImageDesc desc = (MaintenanceItemBean.ImageDesc) v.getTag();
+                    MaintenanceTableItemBean.ImageDesc desc = (MaintenanceTableItemBean.ImageDesc) v.getTag();
                     mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });
             return view;
         }
+
 
     }
 }

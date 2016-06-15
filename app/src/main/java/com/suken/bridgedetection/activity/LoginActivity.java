@@ -102,6 +102,8 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.activity_login_page);
 		mNameView = (EditText) findViewById(R.id.username);
 		mPwdView = (EditText) findViewById(R.id.userpwd);
+		mNameView.setText("qysjz-zyf");
+		mPwdView.setText("1");
 		mTextView = (TextView) findViewById(R.id.login_desc);
 		if(mUserInfos != null && mUserInfos.size() > 0){
 			BridgeDetectionApplication.mHasCacheUser = true;

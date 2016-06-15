@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class MaintenanceDao {
     private Dao<MaintenanceBean, String> maintenanceBeen = null;
-    private Dao<MaintenanceItemBean, String> maintenanceItemBeen = null;
+    private Dao<MaintenanceTableItemBean, String> maintenanceItemBeen = null;
 
     public MaintenanceDao() {
         try {
@@ -32,7 +32,7 @@ public class MaintenanceDao {
         }
     }
 
-    public void add(MaintenanceItemBean bean){
+    public void add(MaintenanceTableItemBean bean){
         try {
             maintenanceItemBeen.createOrUpdate(bean);
         } catch (SQLException e) {
@@ -44,8 +44,8 @@ public class MaintenanceDao {
             add(bean);
         }
     }
-    public void addItemList(List<MaintenanceItemBean> files) {
-        for (MaintenanceItemBean bean : files) {
+    public void addItemList(List<MaintenanceTableItemBean> files) {
+        for (MaintenanceTableItemBean bean : files) {
             add(bean);
         }
     }
@@ -58,9 +58,9 @@ public class MaintenanceDao {
         }
         return null;
     }
-    public List<MaintenanceItemBean> queryItemAll(){
+    public List<MaintenanceTableItemBean> queryItemAll(){
         try {
-            List<MaintenanceItemBean> fileDescs = maintenanceItemBeen.queryForAll();
+            List<MaintenanceTableItemBean> fileDescs = maintenanceItemBeen.queryForAll();
             return fileDescs;
         } catch (SQLException e) {
             e.printStackTrace();

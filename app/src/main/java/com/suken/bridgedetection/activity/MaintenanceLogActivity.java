@@ -7,9 +7,7 @@ import android.view.View;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
-import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
-import com.suken.bridgedetection.adapter.ProjectAcceptanceAdapter;
-import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 
 import java.util.ArrayList;
@@ -18,7 +16,7 @@ import java.util.ArrayList;
  */
 public class MaintenanceLogActivity extends Activity {
     ListViewForScrollView mListView;
-    private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
+    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
     private MaintenanceLogAdapter mAdapter;
     private Context mContext;
     @Override
@@ -34,7 +32,7 @@ public class MaintenanceLogActivity extends Activity {
         mAdapter = new MaintenanceLogAdapter(MaintenanceLogActivity.this);
         mListView.setAdapter(mAdapter);
         mAdapter.setData(list);
-        MaintenanceItemBean bean = new MaintenanceItemBean();
+        MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
         bean.setShow(true);
         list.add(bean);
     }
@@ -53,7 +51,7 @@ public class MaintenanceLogActivity extends Activity {
         switch (view.getId()) {
             case R.id.operateAdd:
                 list = mAdapter.getData();
-                MaintenanceItemBean bean = new MaintenanceItemBean();
+                MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
                 list.add(bean);
                 mAdapter.setData(list);
                 mAdapter.notifyDataSetChanged();

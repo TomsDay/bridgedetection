@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
-import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
-import com.suken.bridgedetection.bean.MaintenanceItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 
 import java.util.ArrayList;
 
@@ -21,7 +20,7 @@ import java.util.ArrayList;
  * Created by Administrator on 2016/6/8.
  */
 public class MaintenanceLogAdapter extends BaseAdapter {
-    private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
+    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
     private MaintenanceLogActivity mActivity;
     private LayoutInflater inflater;
 
@@ -29,11 +28,11 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         this.mActivity = mActivity;
         inflater = LayoutInflater.from(mActivity);
     }
-    public void setData(ArrayList<MaintenanceItemBean> list) {
+    public void setData(ArrayList<MaintenanceTableItemBean> list) {
         this.list = list;
     }
 
-    public ArrayList<MaintenanceItemBean> getData() {
+    public ArrayList<MaintenanceTableItemBean> getData() {
         return list;
     }
     @Override
@@ -54,7 +53,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
-        final MaintenanceItemBean bean = list.get(position);
+        final MaintenanceTableItemBean bean = list.get(position);
         if (view == null) {
             view = inflater.inflate(R.layout.maintenance_table_item, null);
             holder = new HolderView(view);

@@ -193,20 +193,23 @@ containing a value of this type.
     public static final class id {
         public static final int activity_list_hd=0x7f0a0066;
         public static final int activity_list_ql=0x7f0a0065;
+        public static final int address_edit=0x7f0a013b;
         public static final int arrow_img=0x7f0a0008;
         public static final int back=0x7f0a0056;
         public static final int byyj_edit=0x7f0a0011;
         public static final int byyj_menu=0x7f0a0012;
         public static final int byyj_title=0x7f0a0010;
         public static final int caption_tools=0x7f0a0073;
-        public static final int checkbox=0x7f0a0142;
+        public static final int checkbox=0x7f0a0146;
         public static final int color_circle=0x7f0a0068;
+        public static final int count_edit=0x7f0a013a;
         public static final int currentVersion=0x7f0a011b;
         public static final int datepicker=0x7f0a00ff;
         public static final int dealwithEv=0x7f0a004e;
         public static final int delPng=0x7f0a0121;
         public static final int delVdo=0x7f0a0122;
         public static final int dialog_view=0x7f0a012d;
+        public static final int diseaseName_edit=0x7f0a0138;
         public static final int doodle_view=0x7f0a0108;
         public static final int extra_layout=0x7f0a003c;
         public static final int form_bcpd_spinner=0x7f0a0048;
@@ -254,7 +257,7 @@ containing a value of this type.
         public static final int home_jingdu=0x7f0a010b;
         public static final int home_time=0x7f0a011c;
         public static final int home_weidu=0x7f0a010c;
-        public static final int hourwheel=0x7f0a013f;
+        public static final int hourwheel=0x7f0a0143;
         public static final int icon_close=0x7f0a0074;
         public static final int icon_doodle=0x7f0a0075;
         public static final int icon_modify=0x7f0a0077;
@@ -285,7 +288,7 @@ containing a value of this type.
         public static final int item5_menu=0x7f0a0022;
         public static final int item5_title=0x7f0a001c;
         public static final int item_Line=0x7f0a0024;
-        public static final int item_checkTime_edit=0x7f0a0138;
+        public static final int item_checkTime_edit=0x7f0a013c;
         public static final int jiancharenEv=0x7f0a004f;
         public static final int kaiguan=0x7f0a0103;
         public static final int lastEditLayout=0x7f0a0049;
@@ -358,12 +361,12 @@ containing a value of this type.
         public static final int maintenancelog_xcr_ev=0x7f0a008f;
         public static final int maintenancelog_xcr_tv=0x7f0a008e;
         public static final int maintenancelog_zxzh=0x7f0a008b;
-        public static final int maintenanceloglist_item_tv1=0x7f0a0139;
-        public static final int maintenanceloglist_item_tv2=0x7f0a013a;
-        public static final int maintenanceloglist_item_tv3=0x7f0a013b;
-        public static final int maintenanceloglist_item_tv4=0x7f0a013c;
-        public static final int maintenanceloglist_item_tv5=0x7f0a013d;
-        public static final int maintenanceloglist_item_tv6=0x7f0a013e;
+        public static final int maintenanceloglist_item_tv1=0x7f0a013d;
+        public static final int maintenanceloglist_item_tv2=0x7f0a013e;
+        public static final int maintenanceloglist_item_tv3=0x7f0a013f;
+        public static final int maintenanceloglist_item_tv4=0x7f0a0140;
+        public static final int maintenanceloglist_item_tv5=0x7f0a0141;
+        public static final int maintenanceloglist_item_tv6=0x7f0a0142;
         public static final int maintenanceoforder_back=0x7f0a009d;
         public static final int maintenanceoforder_bottomLayout=0x7f0a009f;
         public static final int maintenanceoforder_content=0x7f0a00a5;
@@ -402,8 +405,6 @@ containing a value of this type.
         public static final int maintenancetable_date_tv=0x7f0a00ca;
         public static final int maintenancetable_gydw_ev=0x7f0a00c4;
         public static final int maintenancetable_gydw_tv=0x7f0a00c3;
-        public static final int maintenancetable_jcr_ev=0x7f0a00bf;
-        public static final int maintenancetable_jcr_tv=0x7f0a00be;
         public static final int maintenancetable_jcry=0x7f0a00bd;
         public static final int maintenancetable_listview=0x7f0a00d1;
         public static final int maintenancetable_lxbh=0x7f0a00c7;
@@ -417,8 +418,10 @@ containing a value of this type.
         public static final int maintenancetable_titleLayout=0x7f0a00b9;
         public static final int maintenancetable_tq_tv=0x7f0a00cd;
         public static final int maintenancetable_weather_spinner=0x7f0a00ce;
+        public static final int maintenancetable_xcr_ev=0x7f0a00bf;
+        public static final int maintenancetable_xcr_tv=0x7f0a00be;
         public static final int maintenancetable_zxzh=0x7f0a00cc;
-        public static final int minutewheel=0x7f0a0140;
+        public static final int minutewheel=0x7f0a0144;
         public static final int name=0x7f0a0069;
         public static final int operateAdd=0x7f0a0044;
         public static final int operateDelete=0x7f0a0045;
@@ -492,10 +495,10 @@ containing a value of this type.
         public static final int save2=0x7f0a0050;
         public static final int search_btn=0x7f0a0058;
         public static final int search_input=0x7f0a0057;
-        public static final int secondwheel=0x7f0a0141;
+        public static final int secondwheel=0x7f0a0145;
         public static final int syncGps=0x7f0a0105;
         public static final int syncLocationTv=0x7f0a0109;
-        public static final int textview=0x7f0a0143;
+        public static final int textview=0x7f0a0147;
         public static final int timePickerEnd=0x7f0a0102;
         public static final int timePickerStart=0x7f0a0101;
         public static final int timepicker=0x7f0a0100;
@@ -505,6 +508,7 @@ containing a value of this type.
         public static final int title_view_frame=0x7f0a0106;
         public static final int tongbu_btn=0x7f0a005a;
         public static final int top_panel=0x7f0a0072;
+        public static final int unit_edit=0x7f0a0139;
         public static final int update_all=0x7f0a005f;
         public static final int update_all_list=0x7f0a00d4;
         public static final int username=0x7f0a006f;
@@ -514,12 +518,12 @@ containing a value of this type.
         public static final int webView=0x7f0a00fe;
         public static final int webView_back=0x7f0a00fd;
         public static final int xiangji=0x7f0a0003;
-        public static final int yuninfo_btn_video_record=0x7f0a0148;
-        public static final int yuninfo_ibtn_video_cancel=0x7f0a0149;
-        public static final int yuninfo_ibtn_video_ok=0x7f0a0147;
-        public static final int yuninfo_ll_recorder_bar_content=0x7f0a0146;
-        public static final int yuninfo_sv_recorder_preview=0x7f0a0144;
-        public static final int yuninfo_tv_recorder_time_count=0x7f0a0145;
+        public static final int yuninfo_btn_video_record=0x7f0a014c;
+        public static final int yuninfo_ibtn_video_cancel=0x7f0a014d;
+        public static final int yuninfo_ibtn_video_ok=0x7f0a014b;
+        public static final int yuninfo_ll_recorder_bar_content=0x7f0a014a;
+        public static final int yuninfo_sv_recorder_preview=0x7f0a0148;
+        public static final int yuninfo_tv_recorder_time_count=0x7f0a0149;
         public static final int zxzh=0x7f0a0067;
     }
     public static final class layout {

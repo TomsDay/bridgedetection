@@ -1,8 +1,10 @@
 package com.suken.bridgedetection.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,14 +21,18 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
+import com.j256.ormlite.dao.CloseableIterator;
+import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
-import com.suken.bridgedetection.bean.MaintenanceItemBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.bean.MaintenanceTableDao;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
@@ -36,6 +42,7 @@ import com.suken.imageditor.ImageditorActivity;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -50,10 +57,13 @@ import org.apache.http.message.BasicNameValuePair;
  */
 public class MaintenanceTableActivity extends Activity {
     ListViewForScrollView mListView;
-    private ArrayList<MaintenanceItemBean> list = new ArrayList<MaintenanceItemBean>();
+    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
     private MaintenanceTableAdapter mAdapter;
     private EditText maintenancetable_time_ev,
-            maintenancetable_date_ev;
+            maintenancetable_date_ev,
+            maintenancetable_gydw_ev,
+            maintenancetable_cxld_ev,
+            maintenancetable_xcr_ev;
 
 
     private String checkTime;
@@ -66,6 +76,8 @@ public class MaintenanceTableActivity extends Activity {
             maintenancetable_searchType_spinner;
     private ArrayAdapter<String> mArrayWeatherAdapter, mArraySearchTypeAdapter;
     private String [] mStringArrayWeather,mStringArraySearchType;
+    private String strWeather = "晴", strSearchType = "日常巡查";
+    private MaintenanceTableDao maintenanceTableDao;
 
     @Override
 
@@ -77,7 +89,12 @@ public class MaintenanceTableActivity extends Activity {
     }
 
     private void initView() {
+        maintenanceTableDao = new MaintenanceTableDao();
         mListView = (ListViewForScrollView) findViewById(R.id.maintenancetable_listview);
+        maintenancetable_gydw_ev = (EditText) findViewById(R.id.maintenancetable_gydw_ev);
+        maintenancetable_cxld_ev = (EditText) findViewById(R.id.maintenancetable_cxld_ev);
+        maintenancetable_xcr_ev = (EditText) findViewById(R.id.maintenancetable_xcr_ev);
+
         mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
         mListView.setAdapter(mAdapter);
         mAdapter.setData(list);
@@ -86,7 +103,7 @@ public class MaintenanceTableActivity extends Activity {
 
         initSpinner();
 
-        MaintenanceItemBean bean = new MaintenanceItemBean();
+        MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
         bean.setShow(true);
         list.add(bean);
         loadDate();
@@ -119,10 +136,12 @@ public class MaintenanceTableActivity extends Activity {
         public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
             switch (view.getId()) {
                 case R.id.maintenancetable_searchType_spinner:
-                    System.out.println("maintenancetable_searchType_spinner==选中了:"+ mStringArrayWeather[position]);
+                    strSearchType = mStringArraySearchType[position];
+                    System.out.println("maintenancetable_searchType_spinner==选中了:"+ strSearchType);
                     break;
                 case R.id.maintenancetable_weather_spinner:
-                    System.out.println("maintenancetable_weather_spinner==选中了:"+ mStringArrayWeather[position]);
+                    strWeather = mStringArrayWeather[position];
+                    System.out.println("maintenancetable_weather_spinner==选中了:"+ strWeather);
                     break;
             }
         }
@@ -205,7 +224,7 @@ public class MaintenanceTableActivity extends Activity {
         switch (view.getId()) {
             case R.id.operateAdd:
                 list = mAdapter.getData();
-                MaintenanceItemBean bean = new MaintenanceItemBean();
+                MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
                 list.add(bean);
                 mAdapter.setData(list);
                 mAdapter.notifyDataSetChanged();
@@ -227,9 +246,77 @@ public class MaintenanceTableActivity extends Activity {
                 finish();
                 break;
             case R.id.maintenancetable_save:
-
+                saveDialog();
                 break;
         }
+
+    }
+    public void saveDialog(){
+        new AlertDialog.Builder(mContext)
+                .setTitle("保存数据")
+                .setMessage("是否保存当前数据？")
+                .setPositiveButton("保存", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        list = mAdapter.getData();
+                        Logger.e("aaa","list===="+list.toString());
+                        String gydw = maintenancetable_gydw_ev.getText().toString();
+                        String xcld = maintenancetable_cxld_ev.getText().toString();
+                        String time = maintenancetable_time_ev.getText().toString();
+                        String date = maintenancetable_date_ev.getText().toString();
+                        String xcr = maintenancetable_xcr_ev.getText().toString();
+                        MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
+                        maintenanceTableBean.setCustodyUnit(gydw);
+                        maintenanceTableBean.setPatrolSection(xcld);
+                        maintenanceTableBean.setTimeQuantum(time);
+                        maintenanceTableBean.setDatetime(date);
+                        maintenanceTableBean.setWeather(strWeather);
+                        maintenanceTableBean.setSearchType(strSearchType);
+                        maintenanceTableBean.setInspectOne(xcr);
+
+                        Logger.e("aaa","maintenanceTableBean.toString()===="+maintenanceTableBean.toString());
+                        maintenanceTableDao.add(maintenanceTableBean);
+                        list = mAdapter.getData();
+                        for (int j = 0; j < list.size(); j++) {
+                            MaintenanceTableItemBean itemBean = list.get(i);
+                            itemBean.setMaintenanceTableBean(maintenanceTableBean);
+                            maintenanceTableDao.addItem(itemBean);
+                        }
+
+                        List<MaintenanceTableBean> maintenanceTableBeanList= maintenanceTableDao.queryAll();
+                        MaintenanceTableBean bean = maintenanceTableBeanList.get(0);
+                        if(maintenanceTableBeanList.size()>0){
+                            ForeignCollection<MaintenanceTableItemBean> orders = bean.getMaintenanceTableItemBeen();
+                            CloseableIterator<MaintenanceTableItemBean> iterator = orders.closeableIterator();
+                            try {
+                                while(iterator.hasNext()){
+                                    MaintenanceTableItemBean b = iterator.next();
+                                    Logger.e("aaa",b.toString());
+                                }
+                            } finally {
+                                try {
+                                    iterator.close();
+                                } catch (SQLException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                        }else{
+
+                        }
+
+
+
+                    }
+                })
+                .setNegativeButton("取消，再改改", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+                .show();
+
 
     }
 
@@ -244,7 +331,7 @@ public class MaintenanceTableActivity extends Activity {
     private Uri mOutPutFileUri = null;
 
     //    private FormItemController mEditController;
-    public void jumpToMedia(int position, int requestCode, MaintenanceItemBean.ImageDesc desc) {
+    public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
 //        mEditController = con;
         mPosition = position;
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
@@ -291,7 +378,7 @@ public class MaintenanceTableActivity extends Activity {
             e.printStackTrace();
         }
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
-            MaintenanceItemBean.ImageDesc desc = new MaintenanceItemBean.ImageDesc();
+            MaintenanceTableItemBean.ImageDesc desc = new MaintenanceTableItemBean.ImageDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
             Logger.e("aaa", " desc.name===" + desc.name);
@@ -305,7 +392,7 @@ public class MaintenanceTableActivity extends Activity {
             // 保存在原先的图片中所以不处理
 
         } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
-            MaintenanceItemBean.VideoDesc desc = new MaintenanceItemBean.VideoDesc();
+            MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
             list.get(mPosition).getmVideo().add(desc);

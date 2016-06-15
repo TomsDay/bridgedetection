@@ -6,7 +6,6 @@ import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.suken.bridgedetection.bean.MaintenanceBean;
-import com.suken.bridgedetection.bean.MaintenanceItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 
