@@ -1,15 +1,15 @@
 [
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_green.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_green.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_bg.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_ql_img_bg_selector.xml",
@@ -24,36 +24,92 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\form_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_val.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\line.9.png"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_press.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\maintenance_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\maintenance_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line.9.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\line.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_text_view_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_text_view_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_half_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_half_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_update_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_update_img_selector.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_icon_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_icon_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_text_view_bg.xml",
@@ -64,12 +120,44 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_gray.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_ip_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_gps_img_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_gps_img_selector.xml"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_hd_img_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_hd_img_bg_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\line.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\new_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yuninfo_bg_popupwindow.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_hd_img_bg_selector.xml",
@@ -80,12 +168,24 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\layout_bg.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\maintenance_item_bg.xml",
@@ -104,6 +204,10 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_icon_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_icon_bg.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_bg.xml"
     },
@@ -112,24 +216,20 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_gray.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_gray.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\new_item_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_ql_img_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_ql_img_bg_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_press.xml",
@@ -140,11 +240,59 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\form_item_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_yellow.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_yellow.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_yellow.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_yellow.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_gps_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_gps_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_half_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_half_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\layout_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_yellow.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_yellow.xml"
     }
 ]
