@@ -108,7 +108,7 @@
             android:background="#40A59F"
             android:text="保存"
             android:gravity="center"
-            android:textColor="@color/yuninfo_white"
+            android:textColor="@color/white"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
 
@@ -397,7 +397,7 @@
                     android:dividerHeight="0dp"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:background="@color/transparency">
+                    android:background="@color/transparent">
 
                 </com.suken.bridgedetection.widget.ListViewForScrollView>
             </LinearLayout>

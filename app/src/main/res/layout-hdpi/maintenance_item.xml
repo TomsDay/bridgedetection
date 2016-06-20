@@ -23,7 +23,7 @@
         android:layout_toRightOf="@id/maintenance_item_image"
         android:layout_centerVertical="true"
         android:layout_marginLeft="16dp"
-        android:textColor="@color/yuninfo_black_shadow"
+        android:textColor="@color/black"
         />
 
 
@@ -34,7 +34,7 @@
             android:text="新建"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
-            android:textColor="@color/yuninfo_white"
+            android:textColor="@color/white"
             android:layout_alignParentRight="true"
             android:background="@drawable/new_item_bg"
             android:paddingTop="8dp"
@@ -51,7 +51,7 @@
             android:text="待提交：1"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
-            android:textColor="@color/yuninfo_white"
+            android:textColor="@color/white"
             android:background="@drawable/submit_item_bg"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"

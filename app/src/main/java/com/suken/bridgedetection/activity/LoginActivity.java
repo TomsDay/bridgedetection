@@ -21,12 +21,21 @@ import com.suken.bridgedetection.storage.UserInfoDao;
 import com.suken.bridgedetection.util.NetWorkUtil;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
 import com.suken.bridgedetection.util.UiUtil;
+import com.yuntongxun.ecdemo.common.CCPAppManager;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
+import com.yuntongxun.ecdemo.core.ClientUser;
+import com.yuntongxun.ecdemo.ui.SDKCoreHelper;
+import com.yuntongxun.ecsdk.ECDevice;
+import com.yuntongxun.ecsdk.ECError;
+import com.yuntongxun.ecsdk.ECInitParams;
+import com.yuntongxun.ecsdk.SdkErrorCode;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -152,11 +161,30 @@ public class LoginActivity extends BaseActivity {
 
 			@Override
 			public void onRequestSuccess(RequestType type, JSONObject obj) {
-				UserInfo info = obj.getObject("userInfo", UserInfo.class);
+				final UserInfo info = obj.getObject("userInfo", UserInfo.class);
 				info.setPassword(pwd);
 				mUserDao.create(info);
+
+
+				String mobile = "ooo";
+				String appKey = "20150314000000110000000000000010";
+				String token = "17E24E5AFDB6D0C1EF32F3533494502B";
+				ClientUser clientUser = new ClientUser(mobile);
+				clientUser.setAppKey(appKey);
+				clientUser.setAppToken(token);
+				clientUser.setLoginAuthType(ECInitParams.LoginAuthType.NORMAL_AUTH);
+				CCPAppManager.setClientUser(clientUser);
+				SDKCoreHelper.init(BridgeDetectionApplication.getInstance(), ECInitParams.LoginMode.FORCE_LOGIN);
+
+//
+//				06-18 21:27:05.687 31571-31571/com.yuntongxun.ecdemo I/aaa: appKey: 20150314000000110000000000000010
+//				06-18 21:27:05.688 31571-31571/com.yuntongxun.ecdemo I/aaa: token: 17E24E5AFDB6D0C1EF32F3533494502B
+//				06-18 21:27:05.690 31571-31571/com.yuntongxun.ecdemo I/aaa: mLoginAuthType: NORMAL_AUTH
+//				06-18 21:27:05.691 31571-31571/com.yuntongxun.ecdemo I/aaa: mobile: qpqp
+
 				jumpToHome(info, true);
 				finish();
+
 			}
 
 			@Override

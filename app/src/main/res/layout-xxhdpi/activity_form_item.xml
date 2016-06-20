@@ -344,7 +344,7 @@
         android:id="@+id/item_Line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/yuninfo_black_shadow"
+        android:background="@color/black"
         android:layout_marginTop="8dp"
         />
 
