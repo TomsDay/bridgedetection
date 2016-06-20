@@ -1,5 +1,6 @@
 package com.suken.bridgedetection.activity;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,16 +9,23 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.alibaba.fastjson.JSONObject;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
+import com.j256.ormlite.dao.CloseableIterator;
+import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
+import com.suken.bridgedetection.bean.MaintenanceDao;
+import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.bean.MaintenanceTableDao;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.storage.SharePreferenceManager;
 import com.suken.bridgedetection.storage.UserInfo;
 import com.suken.bridgedetection.storage.UserInfoDao;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.NetWorkUtil;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
 import com.suken.bridgedetection.util.UiUtil;
@@ -52,11 +60,59 @@ public class LoginActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+//		MaintenanceTableDao maintenanceTableDao = new MaintenanceTableDao();
+//		MaintenanceTableBean maintenanceTableBean1 = new MaintenanceTableBean(1, "G1232", "10:00-11:00", "2016-07-11", "晴", "日常巡查");
+//		MaintenanceTableBean maintenanceTableBean2 = new MaintenanceTableBean(2, "G12324", "12:00-14:00", "2016-04-11", "阴", "日常巡查");
+//		MaintenanceTableItemBean maintenanceTableItemBean1 = new MaintenanceTableItemBean(1, "数据1", "米", "231", "北京", "2016年02月12日 16:14");
+//		MaintenanceTableItemBean maintenanceTableItemBean2 = new MaintenanceTableItemBean(2, "数据2", "ke", "231", "北京", "2016年02月12日 16:14");
+//		MaintenanceTableItemBean maintenanceTableItemBean3 = new MaintenanceTableItemBean(3, "数据3", "三打", "231", "北京", "2016年02月12日 16:14");
+//		MaintenanceTableItemBean maintenanceTableItemBean4 = new MaintenanceTableItemBean(4, "数据4", "大", "231", "北京", "2016年02月12日 16:14");
+//		MaintenanceTableItemBean maintenanceTableItemBean5 = new MaintenanceTableItemBean(5, "数据5", "二", "231", "北京", "2016年02月12日 16:14");
+//
+//		maintenanceTableItemBean1.setMaintenanceTableBean(maintenanceTableBean1);
+//		maintenanceTableItemBean2.setMaintenanceTableBean(maintenanceTableBean2);
+//		maintenanceTableItemBean3.setMaintenanceTableBean(maintenanceTableBean1);
+//		maintenanceTableItemBean4.setMaintenanceTableBean(maintenanceTableBean2);
+//		maintenanceTableItemBean5.setMaintenanceTableBean(maintenanceTableBean1);
+//
+//		maintenanceTableDao.add(maintenanceTableBean1);
+//		maintenanceTableDao.add(maintenanceTableBean2);
+//
+//		maintenanceTableDao.addItem(maintenanceTableItemBean1);
+//		maintenanceTableDao.addItem(maintenanceTableItemBean2);
+//		maintenanceTableDao.addItem(maintenanceTableItemBean3);
+//		maintenanceTableDao.addItem(maintenanceTableItemBean4);
+//		maintenanceTableDao.addItem(maintenanceTableItemBean5);
+//
+//		List<MaintenanceTableBean> maintenanceTableBeanList= maintenanceTableDao.queryAll();
+//		MaintenanceTableBean bean = maintenanceTableBeanList.get(0);
+//		if(maintenanceTableBeanList.size()>0){
+//			ForeignCollection<MaintenanceTableItemBean> orders = bean.getMaintenanceTableItemBeen();
+//			CloseableIterator<MaintenanceTableItemBean> iterator = orders.closeableIterator();
+//			try {
+//				while(iterator.hasNext()){
+//					MaintenanceTableItemBean b = iterator.next();
+//					Logger.e("aaa",b.toString());
+//				}
+//			} finally {
+//				try {
+//					iterator.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//
+//		}else{
+//
+//		}
+
 		mUserDao = new UserInfoDao();
 		mUserInfos = mUserDao.queryAll();
 		setContentView(R.layout.activity_login_page);
 		mNameView = (EditText) findViewById(R.id.username);
 		mPwdView = (EditText) findViewById(R.id.userpwd);
+		mNameView.setText("qysjz-zyf");
+		mPwdView.setText("1");
 		mTextView = (TextView) findViewById(R.id.login_desc);
 		if(mUserInfos != null && mUserInfos.size() > 0){
 			BridgeDetectionApplication.mHasCacheUser = true;

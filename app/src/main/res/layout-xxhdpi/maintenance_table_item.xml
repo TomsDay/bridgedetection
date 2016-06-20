@@ -32,6 +32,13 @@
                     android:text="检查情况："
                     android:textSize="10dp" />
 
+                <TextView
+                    android:text="方向："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="9dp"
+                    android:gravity="center"/>
+
                 <RadioGroup
                     android:id="@+id/radioGroup"
                     android:layout_width="wrap_content"
@@ -46,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="上行"
+                        android:text="上行内侧"
                         android:textSize="9dp" >
                     </RadioButton>
 
@@ -54,21 +61,21 @@
                         android:id="@+id/radiodown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="下行"
+                        android:text="下行内侧"
                         android:textSize="9dp" >
                     </RadioButton>
                     <RadioButton
                         android:id="@+id/radioleft"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="左幅"
+                        android:text="上行外侧"
                         android:textSize="9dp" >
                     </RadioButton>
                     <RadioButton
                         android:id="@+id/radioright"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="右幅"
+                        android:text="下行外侧"
                         android:textSize="9dp" >
                     </RadioButton>
                 </RadioGroup>
@@ -162,7 +169,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/qslx_edit"
+                    android:id="@+id/diseaseName_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -170,6 +177,7 @@
                     android:gravity="top"
                     android:padding="5dp"
                     android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
                 <ImageView
@@ -197,14 +205,15 @@
 
 
                 <EditText
-                    android:id="@+id/qsfw_edit"
+                    android:id="@+id/unit_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
                     android:id="@+id/qsfw_menu"
@@ -230,14 +239,15 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/byyj_edit"
+                    android:id="@+id/count_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
                     android:id="@+id/byyj_menu"
@@ -265,14 +275,15 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/item4_edit"
+                    android:id="@+id/address_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
 
 
 
@@ -302,7 +313,7 @@
                     android:textSize="9dp" />
 
                 <EditText
-                    android:id="@+id/item5_edit"
+                    android:id="@+id/item_checkTime_edit"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_weight="1"
@@ -310,6 +321,7 @@
                     android:gravity="top"
                     android:padding="5dp"
                     android:textSize="9dp"
+
                     />
 
                 <ImageView

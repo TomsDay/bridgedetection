@@ -150,5 +150,7 @@
     <color name="sign_mood_selected">#ff9B9B9C</color>
     <color name="sign_mood_nomal">#00000000</color>
     <color name="sign_mood_nomal_0">#e0e0e0</color>
+    <color name="yuninfo_white_shadow">#CCFFFFFF</color>
+    <color name="yuninfo_black_shadow">#CC000000</color>
     //======= end =====
 </resources>
