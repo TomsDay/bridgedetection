@@ -1,10 +1,98 @@
 [
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\video_push_down_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\video_push_down_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\slide_right_in.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading_animation.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\loading_animation.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\anim_not_change.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\anim_not_change.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_down_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\push_down_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_left_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\slide_left_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\pop_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\buttomtip_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\buttomtip_out.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading_animation.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\loading_animation.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\common_slide_right_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\common_slide_right_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\property_anim.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\property_anim.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in_property_anim.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\fade_in_property_anim.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\common_slide_left_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\common_slide_left_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\loading.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\common_slide_right_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\common_slide_right_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\video_push_up_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\video_push_up_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\pop_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\buttomtip_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\buttomtip_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\ccp_switch_down_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\ccp_switch_down_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\ccp_push_up_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\ccp_push_up_in.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\slide_right_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\push_empty_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\push_empty_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_left_out.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\slide_left_out.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\common_slide_left_in.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\anim\\common_slide_left_in.xml"
     }
 ]

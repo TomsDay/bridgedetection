@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
@@ -80,7 +81,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 if(position == 0){
                     in.setClass(mContext, MaintenanceTableActivity.class);
                 }else if(position == 1){
-                    in.setClass(mContext, MaintenanceTableListActivity.class);
+                    in.setClass(mContext, MaintenanceLogListActivity.class);
                 }else if(position == 2){
                     in.setClass(mContext,MaintenanceOfOrderActivity .class);
                 } else if(position == 3){

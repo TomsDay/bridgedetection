@@ -54,31 +54,31 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
             holder = (HolderView) view.getTag();
         }
         MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
-        holder.maintenanceloglist_item_tv1.setText(bean.getId()+"");
-        holder.maintenanceloglist_item_tv2.setText(bean.getCustodyUnit()+"");
-        holder.maintenanceloglist_item_tv3.setText(bean.getPatrolSection()+"");
-        holder.maintenanceloglist_item_tv4.setText(bean.getTimeQuantum()+"");
-        holder.maintenanceloglist_item_tv5.setText(bean.getSearchType()+"");
-        holder.maintenanceloglist_item_tv6.setText(bean.getInspectOne()+"");
+        holder.maintenancetablelist_item_tv1.setText(bean.getId()+"");
+        holder.maintenancetablelist_item_tv2.setText(bean.getCustodyUnit()+"");
+        holder.maintenancetablelist_item_tv3.setText(bean.getPatrolSection()+"");
+        holder.maintenancetablelist_item_tv4.setText(bean.getTimeQuantum()+"");
+        holder.maintenancetablelist_item_tv5.setText(bean.getSearchType()+"");
+        holder.maintenancetablelist_item_tv6.setText(bean.getInspectOne()+"");
 
 
         return view;
     }
     class HolderView{
-        private TextView maintenanceloglist_item_tv1,
-                maintenanceloglist_item_tv2,
-                maintenanceloglist_item_tv3,
-                maintenanceloglist_item_tv4,
-                maintenanceloglist_item_tv5,
-                maintenanceloglist_item_tv6;
+        private TextView maintenancetablelist_item_tv1,
+                maintenancetablelist_item_tv2,
+                maintenancetablelist_item_tv3,
+                maintenancetablelist_item_tv4,
+                maintenancetablelist_item_tv5,
+                maintenancetablelist_item_tv6;
 
         public HolderView(View v){
-            maintenanceloglist_item_tv1 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv1);
-            maintenanceloglist_item_tv2 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv2);
-            maintenanceloglist_item_tv3 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv3);
-            maintenanceloglist_item_tv4 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv4);
-            maintenanceloglist_item_tv5 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv5);
-            maintenanceloglist_item_tv6 = (TextView) v.findViewById(R.id.maintenanceloglist_item_tv6);
+            maintenancetablelist_item_tv1 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv1);
+            maintenancetablelist_item_tv2 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv2);
+            maintenancetablelist_item_tv3 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv3);
+            maintenancetablelist_item_tv4 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv4);
+            maintenancetablelist_item_tv5 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv5);
+            maintenancetablelist_item_tv6 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv6);
         }
     }
 }

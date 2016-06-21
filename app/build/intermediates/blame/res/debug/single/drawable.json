@@ -4,56 +4,72 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_green.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_bg.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_ql_img_bg_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_ql_img_bg_selector.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_green.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_green.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_ip_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_normal_dark.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\page_normal_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_item_bg.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\form_item_bg.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_normal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\page_normal.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_val.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_single_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_single_press.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_selector.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_middle_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_middle_03_selector.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_right_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_right_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_from_mask_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chat_from_mask_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatting_setmode_keyboard_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatting_setmode_keyboard_btn.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_ip_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_back_button_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_back_button_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_val.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_active.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\page_active.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_press.xml",
@@ -64,36 +80,240 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\maintenance_item_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_checkbox_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_checkbox_btn.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\line.9.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\line.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cb_bg_checked.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\cb_bg_checked.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_platform_cell_back.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ssdk_oks_classic_platform_cell_back.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cb_bg_unchecked.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\cb_bg_unchecked.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_voip_switch_audio_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_voip_switch_audio_btn.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ytx_voicebtn_animation_list.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ytx_voicebtn_animation_list.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_listitem.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_listitem.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smiley_item_bg2.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\smiley_item_bg2.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ssdk_oks_classic_progressbar.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_active_dark.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\page_active_dark.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_text_view_bg.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_text_view_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\topbar_back_bt.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\topbar_back_bt.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_middle_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_middle_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_middle_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_middle_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\message_box_brackground.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\message_box_brackground.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comm_settting_item_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\comm_settting_item_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_green.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_green.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_ql_img_bg_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_ql_img_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_dialog_special.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_dialog_special.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_button_stop.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_button_stop.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_center_normal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_center_normal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\camera_switch_font_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\camera_switch_font_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_right_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_right_03_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_middle_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_middle_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_dialup_keyboard_left_button_0.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_dialup_keyboard_left_button_0.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_dialog_btnbar.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\bg_dialog_btnbar.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\submit_item_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\submit_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_right_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_right_03_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatting_setmode_biaoqing_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatting_setmode_biaoqing_btn.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_home_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_home_img_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_video_img_selector.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_video_img_selector.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_left_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_left_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_black.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\background_black.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_half_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_half_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_right_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_right_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_chat_listitem.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_chat_listitem.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\camera_switch_back_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\camera_switch_back_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_gray.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_gray.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_medium_holo.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\progress_medium_holo.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_ip_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_gps_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_gps_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_bottom_tip.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\bg_bottom_tip.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mute_enable_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\mute_enable_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_item_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_item_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edittext_group_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\edittext_group_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_switch.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\icon_switch.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_voip_switch_camera.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_voip_switch_camera.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_right_01_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_right_01_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\xh_title_button_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\xh_title_button_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatfrom_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatfrom_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatting_setmode_voice_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatting_setmode_voice_btn.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_bg.xml",
@@ -108,28 +328,28 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_icon_bg.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_text_view_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_text_view_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_gray.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_gray.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_ip_img_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_ip_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_selector_transition.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_selector_transition.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_gps_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_gps_img_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\voice_rec_button_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\voice_rec_button_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_single.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_single.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mute_forbid_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\mute_forbid_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_hd_img_bg_selector.xml",
@@ -144,72 +364,264 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\new_item_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_left_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_left_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comm_list_item_selector_no_divider.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\comm_list_item_selector_no_divider.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_left_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_left_03_selector.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loading_bg.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\loading_bg.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\red_line_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\red_line_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comm_list_item_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\comm_list_item_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatfrom_img_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatfrom_img_bg.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yuninfo_bg_popupwindow.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_dialog_window.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\bg_dialog_window.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_hd_img_bg_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_hd_img_bg_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ytx_chatting_setmode_keyboard_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ytx_chatting_setmode_keyboard_btn.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yuninfo_bg_popupwindow.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_btn_style_grey.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_btn_style_grey.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_selector.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_middle_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_middle_03_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_button_cancle.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_button_cancle.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_to_mask_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chat_to_mask_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_style_red.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_style_red.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_hd_img_bg_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_hd_img_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\add_contact_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\add_contact_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_checkbox_big_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_checkbox_big_btn.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatto_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatto_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yuninfo_bg_popupwindow.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\textview_color.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\textview_color.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_small_holo.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\progress_small_holo.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\layout_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\voice_list_item_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\voice_list_item_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ytx_chatting_setmode_biaoqing_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ytx_chatting_setmode_biaoqing_btn.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\maintenance_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\maintenance_item_bg.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\round_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\round_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_right_04_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_right_04_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cb_check.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\cb_check.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_blue_button_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_blue_button_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_right_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_right_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\app_panel_shade.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\app_panel_shade.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_left_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_left_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\progressbar.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\progressbar.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_call_interface_bg_02.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_call_interface_bg_02.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_right_normal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_right_normal.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_update_img_selector.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_update_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\unread_dot_shape.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\unread_dot_shape.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_val.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\wheel_val.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_bg_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\type_select_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\type_select_btn.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_icon_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_icon_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\yuninfo_bg_popupwindow.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\yuninfo_bg_popupwindow.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chatto_img_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chatto_img_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_trans.9.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_trans.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search_clear.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\search_clear.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\emoji_del_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\emoji_del_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_popup_menu_item.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\common_popup_menu_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\wheel_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\wheel_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_button_style_one.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_button_style_one.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_enable_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_enable_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_left_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_left_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_middle_02_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_middle_02_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_left.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_left.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_button_begin.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_button_begin.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_notify.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_notify.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_voip_switch_speaker_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_voip_switch_speaker_btn.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\transparent.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\transparent.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\chat_send_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\chat_send_btn.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_right.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_right.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ytx_chatting_setmode_voice_btn.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ytx_chatting_setmode_voice_btn.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_bg.xml",
@@ -220,24 +632,168 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\circle_view_bg_gray.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_item_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\new_item_bg.xml"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_single_normal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_single_normal.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_ql_img_bg_selector.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_ql_img_bg_selector.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_press.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_press.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_style_alert_dialog_button.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_style_alert_dialog_button.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\form_item_bg.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\form_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_middle_01_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_middle_01_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_red_button_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_red_button_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_style_green.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_style_green.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_style_grey.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_style_grey.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\layout_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_bg_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_icon_bg.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_icon_bg.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\new_item_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\new_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_right_01_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_right_01_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_bg_press.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_item_bg_press.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\system_button_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\system_button_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\msg_state_failed_resend.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\msg_state_failed_resend.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tips_bar_red_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\tips_bar_red_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\unread_count_shape.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\unread_count_shape.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_dialog_cancel.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_dialog_cancel.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_left_03_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_left_03_selector.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_left_normal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_left_normal.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edittext_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\edittext_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\dialup_keyboard_left_button_0.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\dialup_keyboard_left_button_0.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_call_button_reject.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_call_button_reject.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_bg.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_bg.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_center.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_center.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_item_goto.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_item_goto.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_call_interface_bg_04.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_call_interface_bg_04.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\keyboard_middle_01_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\keyboard_middle_01_selector.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ccp_progress_horizontal.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ccp_progress_horizontal.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_call_interface_bg_01.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_call_interface_bg_01.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_left_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_left_press.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_center_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_center_press.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_action_add.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_action_add.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tabbar_icon_add.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\tabbar_icon_add.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_yellow.xml",
@@ -248,48 +804,28 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_gps_img_selector.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_bg_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_bg_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_dialog_right_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\btn_dialog_right_press.xml"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_text_bg_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_text_bg_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\video_list_item_conference.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\video_list_item_conference.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_light_half_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_light_half_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_call_button_accept.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\ec_call_button_accept.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_item_text_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_item_text_selector.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_dialog_listitem_selector.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\bg_dialog_listitem_selector.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_right_item_half_bg.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_half_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\left_frag_exit_img_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\left_frag_exit_img_selector.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_search_bg.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_search_bg.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_item_text_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\home_item_text_selector.xml"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\list_title_bg_selector.xml",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\list_title_bg_selector.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\layout_bg.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\layout_bg.xml"
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\smiley_item_bg_press.xml",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable\\smiley_item_bg_press.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_view_bg_yellow.xml",
