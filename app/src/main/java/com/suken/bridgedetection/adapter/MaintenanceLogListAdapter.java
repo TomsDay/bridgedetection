@@ -53,7 +53,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
             public void onClick(View view) {
                 Intent in = new Intent(mContext, MaintenanceLogActivity.class);
                 mContext.startActivity(in);
-                
+
             }
         });
         return view;
