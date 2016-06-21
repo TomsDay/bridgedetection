@@ -78,6 +78,20 @@ public class MaintenanceTableDao {
         }
         return null;
     }
+    public void update(MaintenanceTableBean bean){
+        try {
+            maintenanceTableBeen.update(bean);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateItem(MaintenanceTableItemBean bean){
+        try {
+            maintenanceTableItemBeen.update(bean);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

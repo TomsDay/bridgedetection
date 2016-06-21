@@ -3,11 +3,11 @@
     android:shape="rectangle" >
     
     <corners android:radius="1dip" />
-    <padding android:left="@dimen/yuninfo_content_padding"
-        android:top="@dimen/yuninfo_content_padding"
-        android:right="@dimen/yuninfo_content_padding"
-        android:bottom="@dimen/yuninfo_content_padding"/>
-    <solid android:color="@color/yuninfo_white" />
+    <padding android:left="8dip"
+        android:top="8dip"
+        android:right="8dip"
+        android:bottom="8dip"/>
+    <solid android:color="@color/white" />
     
     <stroke android:width="1dip" android:color="#88C1C1C1" />
 

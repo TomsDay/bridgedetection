@@ -327,14 +327,27 @@ public class MaintenanceTableActivity extends Activity {
                         maintenanceTableBean.setWeather(strWeather);
                         maintenanceTableBean.setSearchType(strSearchType);
                         maintenanceTableBean.setInspectOne(xcr);
+                        if (id != 0) {
+                            maintenanceTableBean.setId(id);
+                        }
+
 
                         Logger.e("aaa","maintenanceTableBean.toString()===="+maintenanceTableBean.toString());
-                        maintenanceTableDao.add(maintenanceTableBean);
+                        if (id != 0) {
+                            maintenanceTableDao.update(maintenanceTableBean);
+                        }else{
+                            maintenanceTableDao.add(maintenanceTableBean);
+                        }
+
                         maintenanceTableItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
-                            maintenanceTableDao.addItem(itemBean);
+                            if (itemBean.getId() != 0) {
+                                maintenanceTableDao.updateItem(itemBean);
+                            }else {
+                                maintenanceTableDao.addItem(itemBean);
+                            }
                         }
 
 

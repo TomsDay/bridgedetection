@@ -3,15 +3,27 @@ package com.suken.bridgedetection;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
+
 import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.baidu.mapapi.SDKInitializer;
+import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
+import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.storage.UserInfo;
 import com.suken.bridgedetection.util.UiUtil;
+import com.yuntongxun.ecdemo.common.CCPAppManager;
+import com.yuntongxun.ecdemo.common.utils.FileAccessor;
+
 
 import java.io.*;
 
@@ -45,6 +57,10 @@ public class BridgeDetectionApplication extends Application {
         TelephonyManager manager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         mDeviceId = manager.getDeviceId();
         UiUtil.setAlarm(this);
+        CCPAppManager.setContext(mInstance);
+        FileAccessor.initFileAccess();
+        SDKInitializer.initialize(mInstance);
+        initImageLoader();
         Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
             @Override
             public void uncaughtException(Thread thread, Throwable ex) {
@@ -55,6 +71,23 @@ public class BridgeDetectionApplication extends Application {
         });
     }
 
+    private void initImageLoader() {
+        File cacheDir = StorageUtils.getOwnCacheDirectory(getApplicationContext(), "ECSDK_Demo/image");
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration
+                .Builder(this)
+                .threadPoolSize(1)//线程池内加载的数量
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .memoryCache(new WeakMemoryCache())
+                // .denyCacheImageMultipleSizesInMemory()
+                .diskCacheFileNameGenerator(CCPAppManager.md5FileNameGenerator)
+                // 将保存的时候的URI名称用MD5 加密
+                .tasksProcessingOrder(QueueProcessingType.LIFO)
+                .diskCache(new UnlimitedDiscCache(cacheDir ,null ,CCPAppManager.md5FileNameGenerator))//自定义缓存路径
+                .defaultDisplayImageOptions(DisplayImageOptions.createSimple())
+                // .writeDebugLogs() // Remove for release app
+                .build();//开始构建
+        ImageLoader.getInstance().init(config);
+    }
     public void write(String message) {
         Log.e("BridgeDetection", message);
         Log.e("BridgeDetection", message);

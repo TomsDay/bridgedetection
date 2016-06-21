@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="路线名称"
-            android:textSize="12dp" />
+            android:textSize="10dp" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"

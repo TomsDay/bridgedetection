@@ -2,6 +2,7 @@ package com.suken.bridgedetection;
 
 public enum RequestType {
 
+
     login("登陆", "/m/login.ht"),
     exit("退出", "/m/logout.ht"),
     update("更新", "/app/app_upgrade.txt"),

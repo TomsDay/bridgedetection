@@ -55,7 +55,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         HolderView holder = null;
         final MaintenanceTableItemBean bean = list.get(position);
         if (view == null) {
-            view = inflater.inflate(R.layout.maintenance_table_item, null);
+            view = inflater.inflate(R.layout.maintenance_log_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
         } else {

@@ -105,7 +105,7 @@
             android:background="#40A59F"
             android:text="保存"
             android:gravity="center"
-            android:textColor="@color/yuninfo_white"
+            android:textColor="@color/white"
             android:layout_marginTop="4dp"/>
     </LinearLayout>
     <ScrollView
@@ -197,7 +197,7 @@
 
                             <EditText
                                 android:id="@+id/maintenancelog_gydw_ev"
-                                android:layout_width="200dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -210,15 +210,15 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenancelog_cxld_tv"
+                                android:id="@+id/maintenancelog_bh_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="编号："
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/maintenancelog_cxld_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/maintenancelog_bh_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -244,15 +244,15 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/maintenancelog_tq_tv"
+                                    android:id="@+id/maintenancelog_weather_tv"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="天气："
                                     android:textSize="9dp" />
 
                                 <EditText
-                                    android:id="@+id/maintenancelog_tq_ev"
-                                    android:layout_width="200dp"
+                                    android:id="@+id/maintenancelog_weather_ev"
+                                    android:layout_width="match_parent"
                                     android:layout_height="20dp"
                                     android:background="@drawable/line"
                                     android:textColor="#333333"
@@ -265,15 +265,15 @@
                                 android:layout_weight="1">
 
                                 <TextView
-                                    android:id="@+id/maintenancelog_xcr_tv"
+                                    android:id="@+id/maintenancelog_data_tv"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="日期："
                                     android:textSize="9dp" />
 
                                 <EditText
-                                    android:id="@+id/maintenancelog_xcr_ev"
-                                    android:layout_width="200dp"
+                                    android:id="@+id/maintenancelog_data_ev"
+                                    android:layout_width="match_parent"
                                     android:layout_height="20dp"
                                     android:background="@drawable/line"
                                     android:textColor="#333333"
@@ -288,15 +288,15 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenancelog_xclx_tv"
+                                android:id="@+id/maintenancelog_wxbm_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="维修部门："
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/maintenancelog_xclx_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/maintenancelog_wxbm_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -342,7 +342,7 @@
                     android:dividerHeight="0dp"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
-                    android:background="@color/transparency">
+                    >
 
                 </com.suken.bridgedetection.widget.ListViewForScrollView>
             </LinearLayout>

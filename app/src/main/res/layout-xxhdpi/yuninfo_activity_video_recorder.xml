@@ -25,7 +25,7 @@
                 android:id="@+id/yuninfo_tv_recorder_time_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/yuninfo_white"
+                android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -39,15 +39,15 @@
         android:gravity="center"
         android:minHeight="60dip"
         android:orientation="horizontal"
-        android:padding="@dimen/yuninfo_video_bar_padding" >
+        android:padding="5dip" >
 
         <ImageButton
             android:id="@+id/yuninfo_ibtn_video_ok"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/yuninfo_transparent"
-            android:contentDescription="@string/yuninfo_view_descreption"
-            android:minWidth="@dimen/yuninfo_videw_bar_button_minHeight"
+            android:background="@color/transparent"
+            android:contentDescription="Image View"
+            android:minWidth="40dip"
             android:src="@drawable/yuninfo_ic_video_ok" />
 
         <LinearLayout
@@ -56,8 +56,8 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/yuninfo_video_bar_padding"
-            android:paddingTop="@dimen/yuninfo_video_bar_padding" >
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip" >
 
             <Button
                 android:id="@+id/yuninfo_btn_video_record"
@@ -70,9 +70,9 @@
             android:id="@+id/yuninfo_ibtn_video_cancel"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/yuninfo_transparent"
-            android:contentDescription="@string/yuninfo_view_descreption"
-            android:minWidth="@dimen/yuninfo_videw_bar_button_minHeight"
+            android:background="@color/transparent"
+            android:contentDescription="Image View"
+            android:minWidth="40dip"
             android:src="@drawable/yuninfo_ic_video_cancel" />
     </LinearLayout>
 

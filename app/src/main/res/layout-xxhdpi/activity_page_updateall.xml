@@ -34,7 +34,7 @@
             android:src="@drawable/wifi_red" />
         
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/image1"
             android:layout_width="25dp"
             android:layout_height="21dp"
             android:onClick="close"
