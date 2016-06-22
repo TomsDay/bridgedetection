@@ -156,7 +156,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 mActivity.jumpToMedia(position, Constants.REQUEST_CODE_VIDEO, null);
-                mImageOrVideoClick.clickVideo(position);
+//                mImageOrVideoClick.clickVideo(position);
             }
         });
 
@@ -295,17 +295,17 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         }
     }
 
-    ImageOrVideoClick mImageOrVideoClick;
+//    ImageOrVideoClick mImageOrVideoClick;
 
-    public void setImageOrVideoClick(ImageOrVideoClick imageOrVideoClick) {
-        mImageOrVideoClick = imageOrVideoClick;
-    }
-
-    public interface ImageOrVideoClick {
-        public void clickImage(int position);
-
-        public void clickVideo(int position);
-    }
+//    public void setImageOrVideoClick(ImageOrVideoClick imageOrVideoClick) {
+//        mImageOrVideoClick = imageOrVideoClick;
+//    }
+//
+//    public interface ImageOrVideoClick {
+//        public void clickImage(int position);
+//
+//        public void clickVideo(int position);
+//    }
 
     private class SpinnerAdapter extends BaseAdapter {
         private List<MaintenanceTableItemBean.ImageDesc> mImages = new ArrayList<MaintenanceTableItemBean.ImageDesc>();

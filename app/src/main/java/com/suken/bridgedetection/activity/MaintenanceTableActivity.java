@@ -384,7 +384,7 @@ public class MaintenanceTableActivity extends Activity {
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
         File path1 = new File(path);
         if (!path1.exists()) {
-            path1.mkdirs();
+//            path1.mkdirs();
         }
         String name = "";
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
@@ -415,15 +415,17 @@ public class MaintenanceTableActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Logger.e("aaa", "requestCode===" + requestCode);
         File f = null;
         try {
             f = new File(new URI(mOutPutFileUri.toString()));
             if (!f.exists()) {
-                return;
+//                f.mkdirs();
             }
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+        Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             MaintenanceTableItemBean.ImageDesc desc = new MaintenanceTableItemBean.ImageDesc();
             desc.name = f.getName();
@@ -439,9 +441,12 @@ public class MaintenanceTableActivity extends Activity {
             // 保存在原先的图片中所以不处理
 
         } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
+            Logger.e("aaa", "11111111111111111111111111111111111");
             MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
+            Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
+            Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
             maintenanceTableItemBeen.get(mPosition).getmVideo().add(desc);
             mAdapter.setData(maintenanceTableItemBeen);
             mAdapter.notifyDataSetChanged();
