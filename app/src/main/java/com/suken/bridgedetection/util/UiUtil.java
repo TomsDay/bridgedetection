@@ -11,7 +11,9 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
@@ -20,6 +22,8 @@ import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.*;
@@ -198,7 +202,27 @@ public class UiUtil {
                         new YWDictionaryDao().create(list6);
                         break;
                     }
-
+                    case geteDeseaseByUID:
+//                        Logger.e("aaa","=========================================================");
+//                        Logger.e("aaa",obj.toString());
+//                        Logger.e("aaa","=========================================================");
+                        List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
+//                        List<MaintenanceDiseaseBean> list = new ArrayList<MaintenanceDiseaseBean>();
+//                        JSONArray array = obj.getJSONArray("datas");
+//                        Gson gson = new Gson();
+//                        for(int i =0;i<array.size();i++){
+//                            String datas = array.getString(i);
+//                            Logger.e("aaa", "datas==" + datas);
+//                            MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
+//                            list.add(bean);
+//                        }
+//                        Logger.e("aaa","=========================================================");
+//                        for(int i =0;i<list.size();i++) {
+//                            Logger.e("aaa", list.get(i).toString());
+//                        }
+//                        Logger.e("aaa","=========================================================");
+                        new MaintenanceDiseaseDao().addList(list);
+                        break;
                     default:
                         break;
                 }
@@ -254,6 +278,7 @@ public class UiUtil {
                         new HttpTask(listener, RequestType.lastsdxcinfo).executePost(list);
                     }
                 } else {
+                    new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
                 String msg = builder.toString();

@@ -32,14 +32,14 @@ public class MaintenanceAdapter extends BaseAdapter {
     public void getData(){
         String str = "高速公路";
 
-        list.add(str + "日常巡查");
+        list.add(str + "养护巡查日志");
 //        list.add(str + "养护下单");
 //        list.add(str + "维修保养通知单");
         list.add(str + "维修保养日志");
 
         list.add(str + "施工安全检查表");
 //        list.add(str + "验收申请");
-        list.add(str + "维修保养验收");
+        list.add("日常维修保养工程验收");
 //        list.add(str + "综合查询页面");
     }
 
