@@ -196,11 +196,9 @@ public class MaintenanceTableActivity extends Activity {
             switch (view.getId()) {
                 case R.id.maintenancetable_searchType_spinner:
                     strSearchType = mStringArraySearchType[position];
-                    System.out.println("maintenancetable_searchType_spinner==选中了:"+ strSearchType);
                     break;
                 case R.id.maintenancetable_weather_spinner:
                     strWeather = mStringArrayWeather[position];
-                    System.out.println("maintenancetable_weather_spinner==选中了:"+ strWeather);
                     break;
             }
         }

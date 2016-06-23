@@ -28,7 +28,33 @@
 
 
     </RelativeLayout>
-       <LinearLayout
+    <LinearLayout
+        android:id="@+id/maintenance_logList_selectCondition_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:background="#80ffffff"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查询条件："
+            />
+        <TextView
+            android:id="@+id/maintenance_logList_selectCondition_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知单编号 "
+            android:layout_marginLeft="8dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="32dp"
         android:layout_marginLeft="10dp"
@@ -82,7 +108,7 @@
             android:gravity="center"
             android:text="签发人"
             android:textSize="10dp" />
-       
+
     </LinearLayout>
     <ListView
         android:id="@+id/maintenance_logList_listView"

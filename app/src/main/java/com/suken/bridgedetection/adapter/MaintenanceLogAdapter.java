@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
+import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
  * Created by Administrator on 2016/6/8.
  */
 public class MaintenanceLogAdapter extends BaseAdapter {
-    private ArrayList<MaintenanceTableItemBean> list = new ArrayList<MaintenanceTableItemBean>();
+    private ArrayList<MaintenanceLogItemBean> maintenanceLogItemBeen = new ArrayList<MaintenanceLogItemBean>();
     private MaintenanceLogActivity mActivity;
     private LayoutInflater inflater;
 
@@ -28,16 +29,16 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         this.mActivity = mActivity;
         inflater = LayoutInflater.from(mActivity);
     }
-    public void setData(ArrayList<MaintenanceTableItemBean> list) {
-        this.list = list;
+    public void setData(ArrayList<MaintenanceLogItemBean> list) {
+        this.maintenanceLogItemBeen = list;
     }
 
-    public ArrayList<MaintenanceTableItemBean> getData() {
-        return list;
+    public ArrayList<MaintenanceLogItemBean> getData() {
+        return maintenanceLogItemBeen;
     }
     @Override
     public int getCount() {
-        return list.size();
+        return maintenanceLogItemBeen.size();
     }
 
     @Override
@@ -53,7 +54,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
-        final MaintenanceTableItemBean bean = list.get(position);
+        final MaintenanceLogItemBean bean = maintenanceLogItemBeen.get(position);
         if (view == null) {
             view = inflater.inflate(R.layout.maintenance_log_item, null);
             holder = new HolderView(view);
@@ -73,14 +74,14 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 if (bean.isShow()) {
-                    list.get(position).setShow(false);
+                    maintenanceLogItemBeen.get(position).setShow(false);
                 } else {
-                    list.get(position).setShow(true);
+                    maintenanceLogItemBeen.get(position).setShow(true);
                 }
                 notifyDataSetChanged();
             }
         });
-        if (position == list.size() - 1) {
+        if (position == maintenanceLogItemBeen.size() - 1) {
             holder.item_Line.setVisibility(View.GONE);
         } else {
             holder.item_Line.setVisibility(View.VISIBLE);

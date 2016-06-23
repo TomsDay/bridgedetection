@@ -12,4 +12,11 @@
         <item>徒步巡查</item>
         <item>夜间巡查</item>
     </string-array>
+    <string-array name="maintenance_logList_selectCondition_str">
+        <item>通知单编号</item>
+        <item>维修单位</item>
+        <item>签发日期</item>
+        <item>签发人</item>
+    </string-array>
+
 </resources>

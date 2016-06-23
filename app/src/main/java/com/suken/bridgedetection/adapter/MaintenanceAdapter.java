@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +11,13 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
+import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 
@@ -98,12 +102,37 @@ public class MaintenanceAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent();
-                if(position == 0){
+                if(position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
+                    mContext.startActivity(in);
+
+                }else if(position == 1){
+                    final String[] names = { "aa","aa" ,"aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa"};
+                    new AlertDialog.Builder(mContext)
+                            .setItems(names, new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog,
+                                                    int which) {
+                                    Logger.e("aaa", "which++" + which);
+                                    switch (which) {
+                                        case 0:
+//                                            Intent in = new Intent(mContext, MaintenanceLogActivity.class);
+//                                            in.putExtra("bean", bean);
+//                                            mContext.startActivity(in);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
+
+                                }
+                            })
+                            .show();
                 }else{
                     return;
                 }
-                mContext.startActivity(in);
+
             }
         });
         return view;
