@@ -3,9 +3,15 @@ package com.suken.bridgedetection.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,18 +20,28 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.j256.ormlite.dao.CloseableIterator;
+import com.j256.ormlite.dao.ForeignCollection;
+import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
+import com.suken.imageditor.ImageditorActivity;
 
+import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.UUID;
@@ -69,8 +85,9 @@ public class MaintenanceLogActivity extends Activity {
         setContentView(R.layout.activity_maintenance_log);
         mContext = this;
         maintenanceLogDao = new MaintenanceLogDao();
+
         maintenanceLogListBean = (MaintenanceLogListBean) getIntent().getSerializableExtra("bean");
-        Log.e("aaa", maintenanceLogListBean.toString());
+        id = getIntent().getIntExtra("id", 0);
         initView();
     }
 
@@ -81,21 +98,65 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_wxbm_ev = (EditText) findViewById(R.id.maintenancelog_wxbm_ev);
         maintenancelog_jcr_ev = (EditText) findViewById(R.id.maintenancelog_jcr_ev);
         maintenancelog_jlr_ev = (EditText) findViewById(R.id.maintenancelog_jlr_ev);
+        initSpinner();
+        initTime();
 
 
+        if(id != 0){
 
-        maintenancelog_gydw_ev.setEnabled(false);
-        maintenancelog_gydw_ev.setText(maintenanceLogListBean.getGydwName());
-        maintenancelog_bh_ev.setText(UUID.randomUUID().toString());
+            maintenanceLogBeen = (ArrayList<MaintenanceLogBean>) maintenanceLogDao.queryByID(id);
+            if(maintenanceLogBeen.size()>0) {
+                MaintenanceLogBean bean = maintenanceLogBeen.get(0);
+
+                maintenancelog_gydw_ev.setText(bean.getCustodyUnit()+"");
+                maintenancelog_bh_ev.setText(bean.getSerialNumber()+"");
+                maintenancelog_data_ev.setText(bean.getDate()+"");
+                maintenancelog_wxbm_ev.setText(bean.getMaintenanceDepartment()+"");
+                maintenancelog_jcr_ev.setText(bean.getRummager()+"");
+                maintenancelog_jlr_ev.setText(bean.getPrincipal()+"");
+
+
+                ForeignCollection<MaintenanceLogItemBean> orders = bean.getMaintenanceTableItemBeen();
+                CloseableIterator<MaintenanceLogItemBean> iterator = orders.closeableIterator();
+                try {
+                    while (iterator.hasNext()) {
+                        MaintenanceLogItemBean b = iterator.next();
+                        maintenanceLogItemBeen.add(b);
+                        Logger.e("aaa", b.toString());
+                    }
+                } finally {
+
+                    try {
+                        iterator.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else{
+                MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
+                bean.setShow(true);
+                maintenanceLogItemBeen.add(bean);
+                maintenancelog_gydw_ev.setEnabled(false);
+                maintenancelog_gydw_ev.setText(maintenanceLogListBean.getGydwName());
+                maintenancelog_bh_ev.setText(UUID.randomUUID().toString());
+            }
+
+        }else{
+            MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
+            bean.setShow(true);
+            maintenanceLogItemBeen.add(bean);
+            maintenancelog_gydw_ev.setEnabled(false);
+            maintenancelog_gydw_ev.setText(maintenanceLogListBean.getGydwName());
+            maintenancelog_bh_ev.setText(UUID.randomUUID().toString());
+        }
+
+
 
         mAdapter = new MaintenanceLogAdapter(MaintenanceLogActivity.this);
         mListView.setAdapter(mAdapter);
         mAdapter.setData(maintenanceLogItemBeen);
-        MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
-        bean.setShow(true);
-        maintenanceLogItemBeen.add(bean);
-        initSpinner();
-        initTime();
+
+
     }
 
     private void initTime() {
@@ -128,8 +189,8 @@ public class MaintenanceLogActivity extends Activity {
     private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
-                    strWeather = mStringArrayWeather[position];
-            }
+            strWeather = mStringArrayWeather[position];
+        }
 
         @Override
         public void onNothingSelected(AdapterView<?> adapterView) {
@@ -194,7 +255,8 @@ public class MaintenanceLogActivity extends Activity {
                                 maintenanceLogDao.addItem(itemBean);
                             }
                         }
-
+                        Logger.e("aaa", "=======11111====="+maintenanceLogDao.queryAll().toString());
+                        Logger.e("aaa", "========2222======="+ maintenanceLogDao.queryItemAll().toString());
 
 
 
@@ -248,5 +310,119 @@ public class MaintenanceLogActivity extends Activity {
     }
     public String getTime(int year,int month,int day){
         return  year + "-" + (month <= 9 ? ("0" + month) : month) + "-" + (day <= 9 ? ("0" + day) : day);
+    }
+
+
+    private int mPosition;
+    private Uri mOutPutFileUri = null;
+    File mPlayerFile;
+    //    private FormItemController mEditController;
+    public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
+//        mEditController = con;
+        mPosition = position;
+        String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
+        File path1 = new File(path);
+        if (!path1.exists()) {
+            path1.mkdirs();
+        }
+        String name = "";
+        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+            name = path1 + File.separator + generateMediaName(true);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            name = desc.path;
+        } else {
+            name = path1 + File.separator + generateMediaName(false);
+        }
+        mPlayerFile = new File(name);
+        mOutPutFileUri = Uri.fromFile(mPlayerFile);
+        Intent intent = new Intent();
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            intent.setClass(this, ImageditorActivity.class);
+            startActivityForResult(intent, requestCode);
+        } else {
+            // intent.setClass(this, RecorderActivity.class);
+            intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);// 参数设置可以省略
+            intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        }
+    }
+
+    String videofileName;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Logger.e("aaa", "requestCode===" + requestCode);
+        File f = null;
+        try {
+            f = new File(new URI(mOutPutFileUri.toString()));
+            if (!f.exists()) {
+//                f.mkdirs();
+            }
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        Logger.e("aaa", "requestCode===" + requestCode);
+        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+            IVDesc desc = new IVDesc();
+            desc.name = f.getName();
+            desc.path = f.getPath();
+            Logger.e("aaa", " desc.name===" + desc.name);
+            Logger.e("aaa", " desc.path===" + desc.path);
+            maintenanceLogItemBeen.get(mPosition).getmImages().add(desc);
+            mAdapter.setData(maintenanceLogItemBeen);
+            mAdapter.notifyDataSetChanged();
+
+//            mEditController.updateImg(desc);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            // 保存在原先的图片中所以不处理
+
+        } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
+            String str = null;
+            IVDesc desc = new IVDesc();
+            try {
+                Log.e("aaa", "333333");
+                desc.name = mPlayerFile.getName();
+                desc.path = mPlayerFile.getPath();
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
+                Uri uri = Uri.parse(data.getData().toString());
+
+                ContentResolver cr = this.getContentResolver();
+
+                Cursor cursor = cr.query(uri, null, null, null, null);
+                cursor.moveToFirst();
+                str = cursor.getString(1);
+                videofileName = cursor.getString(2);
+                cursor.close();
+
+                File srcfile = new File(str);
+
+                FileUtils.moveFileTo(srcfile, mPlayerFile);
+
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+            catch(Exception e) {;
+
+            }
+
+
+
+
+            maintenanceLogItemBeen.get(mPosition).getmVideo().add(desc);
+            mAdapter.setData(maintenanceLogItemBeen);
+            mAdapter.notifyDataSetChanged();
+//            mEditController.updateVideo(desc);
+        }
+    }
+    public String generateMediaName(boolean isImg) {
+        if (isImg) {
+            return "pic-" + System.currentTimeMillis() + "-image.png";
+        } else {
+            return "vdo-" + System.currentTimeMillis() + "-video.3gp";
+        }
     }
 }

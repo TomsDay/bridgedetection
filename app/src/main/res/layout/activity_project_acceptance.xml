@@ -48,138 +48,7 @@
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="15dp"
-            android:background="#80ffffff"
-            android:orientation="vertical">
 
-
-            <LinearLayout
-                android:id="@+id/projectacceptance_jcry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/projectacceptance_jcr_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="日期："
-                        android:textSize="9dp" />
-
-                    <EditText
-                        android:id="@+id/projectacceptance_jcr_ev"
-                        android:layout_width="200dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/line"
-                        android:textColor="#333333"
-                        android:textSize="9dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/projectacceptance_jlr_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="施工负责人："
-                        android:textSize="9dp" />
-
-                    <EditText
-                        android:id="@+id/projectacceptance_jlr_ev"
-                        android:layout_width="200dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/line"
-                        android:textColor="#333333"
-                        android:textSize="9dp" />
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/projectacceptance_result"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-
-                <TextView
-                    android:id="@+id/projectacceptance_result_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="验收结果："
-                    android:textSize="9dp" />
-
-                <EditText
-                    android:id="@+id/projectacceptance_result_ev"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:background="@drawable/line"
-                    android:textColor="#333333"
-                    android:textSize="9dp" />
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/projectacceptance_check"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/projectacceptance_checkpeople_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="验收人："
-                        android:textSize="9dp" />
-
-                    <EditText
-                        android:id="@+id/projectacceptance_checkpeople_ev"
-                        android:layout_width="200dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/line"
-                        android:textColor="#333333"
-                        android:textSize="9dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/projectacceptance_checkTime_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="验收日期："
-                        android:textSize="9dp" />
-
-                    <EditText
-                        android:id="@+id/projectacceptance_checkTime_ev"
-                        android:layout_width="200dp"
-                        android:layout_height="20dp"
-                        android:background="@drawable/line"
-                        android:textColor="#333333"
-                        android:textSize="9dp" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
 
 
         <TextView
@@ -280,7 +149,7 @@
 
                             <EditText
                                 android:id="@+id/projectacceptance_gydw_ev"
-                                android:layout_width="200dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -300,8 +169,8 @@
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/projectacceptance_cxld_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/projectacceptance_bh_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -311,50 +180,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1">
-                            <LinearLayout
-                                android:layout_width="match_parent"
+
+                            <TextView
+                                android:id="@+id/projectacceptance_weather_tv"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="2">
+                                android:text="天气："
+                                android:textSize="9dp" />
 
 
-
-                                <EditText
-                                    android:id="@+id/projectacceptance_year_et"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/line"
-                                    android:textColor="#333333"
-                                    android:textSize="9dp" />
-                                <TextView
-                                    android:id="@+id/projectacceptance_year_tv"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="年"
-                                    android:textSize="9dp" />
-                            </LinearLayout>
-                            <LinearLayout
+                            <Spinner
+                                android:id="@+id/projectacceptance_weather_spinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1">
-
-
-
-                                <EditText
-                                    android:id="@+id/projectacceptance_day_ev"
-                                    android:layout_width="200dp"
-                                    android:layout_height="20dp"
-                                    android:layout_weight="1"
-                                    android:background="@drawable/line"
-                                    android:textColor="#333333"
-                                    android:textSize="9dp" />
-                                <TextView
-                                    android:id="@+id/projectacceptance_day_tv"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="号："
-                                    android:textSize="9dp" />
-                            </LinearLayout>
+                                android:layout_height="20dp"
+                                android:background="@drawable/line"
+                                android:textColor="#333333"
+                                android:textSize="9dp"
+                                android:entries="@array/spinnerWeather"
+                                />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -375,7 +218,7 @@
                             android:textSize="9dp" />
 
                         <EditText
-                            android:id="@+id/projectacceptance_sjd_ev"
+                            android:id="@+id/projectacceptance_wxbydw_ev"
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:background="@drawable/line"
@@ -407,8 +250,8 @@
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/projectacceptance_tq_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/projectacceptance_sgrqs_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
@@ -431,22 +274,23 @@
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/projectacceptance_xclx_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/projectacceptance_sgrqe_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/projectacceptance_lxc"
+
+                    <RelativeLayout
+                        android:id="@+id/projectacceptance_content_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
-
-
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        >
 
                         <TextView
                             android:id="@+id/projectacceptance_content_tv"
@@ -458,55 +302,70 @@
                         <EditText
                             android:id="@+id/projectacceptance_content_ev"
                             android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:background="@drawable/line"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
                             android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/projectacceptance_content_tv"
+                            android:imeOptions="flagNoExtractUi" />
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/projectacceptance_return_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/projectacceptance_return_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="验收结果："
                             android:textSize="9dp" />
 
+                        <EditText
+                            android:id="@+id/projectacceptance_return_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
+                            android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/projectacceptance_return_tv"
+                            android:imeOptions="flagNoExtractUi" />
+                    </RelativeLayout>
 
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/operateLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:visibility="visible">
-
-                    <Button
-                        android:id="@+id/operateAdd"
-                        android:layout_width="80dp"
-                        android:layout_height="30dp"
-                        android:layout_marginRight="10dp"
-                        android:onClick="operate"
-                        android:text="添加"
-                        android:textSize="11dp" />
-
-                    <Button
-                        android:id="@+id/operateDelete"
-                        android:layout_width="80dp"
-                        android:layout_height="30dp"
+                    <RelativeLayout
+                        android:id="@+id/projectacceptance_xsfzr_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:onClick="operate"
-                        android:text="删除"
-                        android:textSize="11dp" />
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/projectacceptance_xsfzr_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="验收负责人："
+                            android:textSize="9dp" />
+
+                        <EditText
+                            android:id="@+id/projectacceptance_xsfzr_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
+                            android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/projectacceptance_xsfzr_tv"
+                            android:imeOptions="flagNoExtractUi" />
+                    </RelativeLayout>
+
+
+
                 </LinearLayout>
-
-
-                <com.suken.bridgedetection.widget.ListViewForScrollView
-                    android:id="@+id/projectacceptance_listview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:divider="@null"
-                    android:dividerHeight="0dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp">
-
-                </com.suken.bridgedetection.widget.ListViewForScrollView>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

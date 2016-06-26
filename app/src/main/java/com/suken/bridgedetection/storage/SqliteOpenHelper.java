@@ -9,8 +9,10 @@ import com.suken.bridgedetection.bean.MaintenanceBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -48,6 +50,8 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, MaintenanceDiseaseBean.class);
 			TableUtils.createTable(connectionSource, MaintenanceLogBean.class);
 			TableUtils.createTable(connectionSource, MaintenanceLogItemBean.class);
+			TableUtils.createTable(connectionSource, MaintenanceOfOrderBean.class);
+			TableUtils.createTable(connectionSource, ProjectAcceptanceBean.class);
 //			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
 
 		} catch (SQLException e) {
@@ -80,6 +84,8 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, MaintenanceDiseaseBean.class, true);
 			TableUtils.dropTable(connectionSource, MaintenanceLogBean.class, true);
 			TableUtils.dropTable(connectionSource, MaintenanceLogItemBean.class, true);
+			TableUtils.dropTable(connectionSource, MaintenanceOfOrderBean.class, true);
+			TableUtils.dropTable(connectionSource, ProjectAcceptanceBean.class, true);
 //			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
 
 

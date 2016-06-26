@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -21,6 +22,8 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogListAdapter;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceLogBean;
+import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -37,15 +40,20 @@ public class MaintenanceLogListActivity extends Activity {
     private MaintenanceLogListAdapter maintenanceLogListAdapter;
     private Context mContext;
     ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     public final int SUCCESS_CODE = 0;
     public final int ERROR_CODE = 1;
     private LinearLayout maintenance_logList_selectCondition_layout;
     private TextView maintenance_logList_selectCondition_tv;
+    private int type;
+    MaintenanceLogDao maintenanceLogDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log_list);
+        maintenanceLogDao = new MaintenanceLogDao();
+        type = getIntent().getIntExtra("type", 0);
         mContext = this;
         initView();
         loadDate();
@@ -113,6 +121,13 @@ public class MaintenanceLogListActivity extends Activity {
 
 
     private void loadDate() {
+        if(type == 1){
+            maintenanceLogBeen = (ArrayList<MaintenanceLogBean>) maintenanceLogDao.queryAll();
+            Log.e("aaa", "=======" + maintenanceLogBeen.toString());
+            maintenanceLogListAdapter.setDate1(maintenanceLogBeen);
+            maintenanceLogListAdapter.notifyDataSetChanged();
+            return;
+        }
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {

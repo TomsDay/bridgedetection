@@ -56,7 +56,6 @@
     // 允许请求访问使用照相设备(如果使用视频通话则必选配置)
     <uses-permission android:name="android.permission.CAMERA" />
     // ============ end ==============
-
     <application
         android:name=".BridgeDetectionApplication"
         android:allowBackup="true"
@@ -64,7 +63,6 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:theme="@style/AppTheme">
-
         // ================ 容联云通讯sdk ==========
         // SDK核心服务配置
         <service
@@ -123,8 +121,6 @@
             </intent-filter>
         </receiver>
         // ============ end ==============
-
-
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="2a5aafa9d1650a1d3a08fb854c585c12" />
@@ -208,7 +204,7 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.LauncherActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <!-- 登陆界面 -->
         <activity
@@ -216,13 +212,13 @@
             android:label="@string/login_title_activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.account.ECSetUpServerActivity"
             android:label="@string/login_title_activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
         <!-- 会话消息聊天主界面 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ChattingActivity"
@@ -321,10 +317,10 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.EditConfigureActivity"
             android:label="@string/title_activity_edit_configure"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.GroupMemberCardActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <!-- 申请加入群组 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.ApplyWithGroupPermissionActivity"
@@ -432,19 +428,19 @@
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.ShowBaiDuMapActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.AboutActivity"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden" />
         // SDK核心服务配置
         <service
             android:name="com.yuntongxun.ecsdk.ECClientService"
@@ -514,8 +510,11 @@
         <activity
             android:name=".activity.MaintenanceTableListActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceLogListActivity"
+        <activity
+            android:name=".activity.MaintenanceLogListActivity"
             android:screenOrientation="landscape" />
+        <activity android:name=".activity.MaintenanceOfOrderListActivity" />
+        <activity android:name=".activity.ProjectAcceptanceListActivity"></activity>
     </application>
 
 </manifest>

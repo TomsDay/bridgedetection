@@ -54,6 +54,23 @@ public class MaintenanceLogItemBean implements Serializable {
         this.mVideo = mVideo;
     }
 
+    @Override
+    public String toString() {
+        return "MaintenanceLogItemBean{" +
+                "id=" + id +
+                ", projectName='" + projectName + '\'' +
+                ", materialName='" + materialName + '\'' +
+                ", unit='" + unit + '\'' +
+                ", count='" + count + '\'' +
+                ", address='" + address + '\'' +
+                ", checkTime='" + checkTime + '\'' +
+                ", isShow=" + isShow +
+                ", mImages=" + mImages +
+                ", mVideo=" + mVideo +
+                ", maintenanceLogBean=" + maintenanceLogBean +
+                '}';
+    }
+
     public MaintenanceLogBean getMaintenanceLogBean() {
         return maintenanceLogBean;
     }

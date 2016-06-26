@@ -58,6 +58,21 @@ public class MaintenanceLogBean implements Serializable{
         this.principal = principal;
     }
 
+    @Override
+    public String toString() {
+        return "MaintenanceLogBean{" +
+                "id=" + id +
+                ", custodyUnit='" + custodyUnit + '\'' +
+                ", serialNumber='" + serialNumber + '\'' +
+                ", weather='" + weather + '\'' +
+                ", date='" + date + '\'' +
+                ", maintenanceDepartment='" + maintenanceDepartment + '\'' +
+                ", rummager='" + rummager + '\'' +
+                ", principal='" + principal + '\'' +
+                ", maintenanceTableItemBeen=" + maintenanceTableItemBeen +
+                '}';
+    }
+
     public ForeignCollection<MaintenanceLogItemBean> getMaintenanceTableItemBeen() {
         return maintenanceTableItemBeen;
     }

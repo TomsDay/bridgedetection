@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
+import com.suken.bridgedetection.activity.MaintenanceOfOrderListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
@@ -104,34 +105,15 @@ public class MaintenanceAdapter extends BaseAdapter {
                 Intent in = new Intent();
                 if(position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
-                    mContext.startActivity(in);
-
                 }else if(position == 1){
-                    final String[] names = { "aa","aa" ,"aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa","aa"};
-                    new AlertDialog.Builder(mContext)
-                            .setItems(names, new DialogInterface.OnClickListener() {
-
-                                @Override
-                                public void onClick(DialogInterface dialog,
-                                                    int which) {
-                                    Logger.e("aaa", "which++" + which);
-                                    switch (which) {
-                                        case 0:
-//                                            Intent in = new Intent(mContext, MaintenanceLogActivity.class);
-//                                            in.putExtra("bean", bean);
-//                                            mContext.startActivity(in);
-                                            break;
-                                        default:
-                                            break;
-                                    }
-
-
-                                }
-                            })
-                            .show();
+                    in.setClass(mContext, MaintenanceLogListActivity.class);
+                    in.putExtra("type", 1);
+                }else if(position == 2){
+                    in.setClass(mContext, MaintenanceOfOrderListActivity.class);
                 }else{
                     return;
                 }
+                mContext.startActivity(in);
 
             }
         });
