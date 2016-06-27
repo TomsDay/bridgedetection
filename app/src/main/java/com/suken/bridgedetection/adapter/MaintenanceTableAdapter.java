@@ -96,6 +96,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
 
+
         if (bean.isShow()) {
             holder.form_item_edit_layout.setVisibility(View.VISIBLE);
             holder.arrow_img.setImageResource(R.drawable.xia);
@@ -111,6 +112,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                count_edit,
 //                address_edit,
 //                item_checkTime_edit;
+        holder.video_num.setText(bean.getmVideo().size()+"");
         holder.diseaseName_edit.setText(bean.getDiseaseName());
         holder.unit_edit.setText(bean.getUnit());
         holder.count_edit.setText(bean.getCount());
@@ -254,7 +256,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         private TextView form_column,
                 qslx_title,
                 qsfw_title,
-                byyj_title;
+                byyj_title,
+                video_num;
 
         private EditText diseaseName_edit,
                 unit_edit,
@@ -277,6 +280,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             qslx_title = (TextView) view.findViewById(R.id.qslx_title);
             qsfw_title = (TextView) view.findViewById(R.id.qsfw_title);
             byyj_title = (TextView) view.findViewById(R.id.byyj_title);
+            video_num = (TextView) view.findViewById(R.id.video_num);
 
             xiangji = (ImageView) view.findViewById(R.id.xiangji);
             video = (ImageView) view.findViewById(R.id.video);

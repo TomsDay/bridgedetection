@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +11,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
+import com.suken.bridgedetection.activity.MaintenanceOfOrderListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
+import com.suken.bridgedetection.activity.ProjectAcceptanceListActivity;
+import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 
@@ -32,14 +38,14 @@ public class MaintenanceAdapter extends BaseAdapter {
     public void getData(){
         String str = "高速公路";
 
-        list.add(str + "日常巡查");
+        list.add(str + "养护巡查日志");
 //        list.add(str + "养护下单");
 //        list.add(str + "维修保养通知单");
         list.add(str + "维修保养日志");
 
         list.add(str + "施工安全检查表");
 //        list.add(str + "验收申请");
-        list.add(str + "维修保养验收");
+        list.add("日常维修保养工程验收");
 //        list.add(str + "综合查询页面");
     }
 
@@ -69,7 +75,7 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
-        if(position == 3){
+        if(position == 1){
             holder.maintenance_item_new.setText("查看");
         }else{
             holder.maintenance_item_new.setText("新建");
@@ -98,12 +104,20 @@ public class MaintenanceAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent();
-                if(position == 0){
+                if(position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
+                }else if(position == 1){
+                    in.setClass(mContext, MaintenanceLogListActivity.class);
+                    in.putExtra("type", 1);
+                }else if(position == 2){
+                    in.setClass(mContext, MaintenanceOfOrderListActivity.class);
+                }else if(position == 3){
+                    in.setClass(mContext, ProjectAcceptanceListActivity.class);
                 }else{
                     return;
                 }
                 mContext.startActivity(in);
+
             }
         });
         return view;

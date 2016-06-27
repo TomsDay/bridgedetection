@@ -3,13 +3,16 @@ package com.suken.bridgedetection.activity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -35,6 +38,7 @@ import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
@@ -192,11 +196,9 @@ public class MaintenanceTableActivity extends Activity {
             switch (view.getId()) {
                 case R.id.maintenancetable_searchType_spinner:
                     strSearchType = mStringArraySearchType[position];
-                    System.out.println("maintenancetable_searchType_spinner==选中了:"+ strSearchType);
                     break;
                 case R.id.maintenancetable_weather_spinner:
                     strWeather = mStringArrayWeather[position];
-                    System.out.println("maintenancetable_weather_spinner==选中了:"+ strWeather);
                     break;
             }
         }
@@ -371,12 +373,12 @@ public class MaintenanceTableActivity extends Activity {
         if (isImg) {
             return "pic-" + System.currentTimeMillis() + "-image.png";
         } else {
-            return "vdo-" + System.currentTimeMillis() + "-video.mp4";
+            return "vdo-" + System.currentTimeMillis() + "-video.3gp";
         }
     }
 
     private Uri mOutPutFileUri = null;
-
+    File mPlayerFile;
     //    private FormItemController mEditController;
     public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
 //        mEditController = con;
@@ -384,7 +386,7 @@ public class MaintenanceTableActivity extends Activity {
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
         File path1 = new File(path);
         if (!path1.exists()) {
-//            path1.mkdirs();
+            path1.mkdirs();
         }
         String name = "";
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
@@ -394,8 +396,8 @@ public class MaintenanceTableActivity extends Activity {
         } else {
             name = path1 + File.separator + generateMediaName(false);
         }
-        File file = new File(name);
-        mOutPutFileUri = Uri.fromFile(file);
+        mPlayerFile = new File(name);
+        mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
@@ -412,6 +414,7 @@ public class MaintenanceTableActivity extends Activity {
         }
     }
 
+    String videofileName;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -441,12 +444,37 @@ public class MaintenanceTableActivity extends Activity {
             // 保存在原先的图片中所以不处理
 
         } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
-            Logger.e("aaa", "11111111111111111111111111111111111");
+            String str = null;
             MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
-            desc.name = f.getName();
-            desc.path = f.getPath();
-            Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
-            Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
+            try {
+                Log.e("aaa", "333333");
+                desc.name = mPlayerFile.getName();
+                desc.path = mPlayerFile.getPath();
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
+                Uri uri = Uri.parse(data.getData().toString());
+
+                ContentResolver cr = this.getContentResolver();
+
+                Cursor cursor = cr.query(uri, null, null, null, null);
+                cursor.moveToFirst();
+                str = cursor.getString(1);
+                videofileName = cursor.getString(2);
+                cursor.close();
+
+                File srcfile = new File(str);
+
+                FileUtils.moveFileTo(srcfile, mPlayerFile);
+
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+            catch(Exception e) {;
+
+            }
+
+
+
+
             maintenanceTableItemBeen.get(mPosition).getmVideo().add(desc);
             mAdapter.setData(maintenanceTableItemBeen);
             mAdapter.notifyDataSetChanged();

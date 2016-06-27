@@ -12,11 +12,14 @@ import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.fragment.HomePageFragment;
 import com.suken.bridgedetection.fragment.LeftFragment;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.SharePreferenceManager;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
 import com.yuntongxun.ecdemo.ui.chatting.ChattingActivity;
 import com.yuntongxun.ecdemo.ui.chatting.ChattingFragment;
@@ -64,7 +67,11 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
             UiUtil.syncData(this, false, mHomeFragment);
             SharePreferenceManager.getInstance().updateString(BridgeDetectionApplication.mCurrentUser.getAccount() + "lastSyncTime", "" + System.currentTimeMillis());
         } else {
-            mHomeFragment.onSyncFinished(true);
+            List<MaintenanceDiseaseBean> list = new MaintenanceDiseaseDao().queryAll();
+//            for(int i =0;i<list.size();i++) {
+//                Logger.e("aaa", "======="+list.get(i).toString());
+//            }
+                    mHomeFragment.onSyncFinished(true);
         }
         FragmentTransaction ft = mFragManager.beginTransaction();
         ft.hide(mGpsFragment);

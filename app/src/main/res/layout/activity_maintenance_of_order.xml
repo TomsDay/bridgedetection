@@ -55,6 +55,8 @@
             android:layout_marginRight="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="15dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
             android:background="#80ffffff">
 
             <LinearLayout
@@ -66,12 +68,12 @@
                     android:id="@+id/maintenanceoforder_jcr_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="巡查人："
+                    android:text="检查人："
                     android:textSize="9dp" />
 
                 <EditText
                     android:id="@+id/maintenanceoforder_jcr_ev"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
@@ -87,12 +89,12 @@
                     android:id="@+id/maintenanceoforder_jlr_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="记录人："
+                    android:text="安全管理员："
                     android:textSize="9dp" />
 
                 <EditText
                     android:id="@+id/maintenanceoforder_jlr_ev"
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
@@ -199,11 +201,12 @@
 
                             <EditText
                                 android:id="@+id/maintenanceoforder_gydw_ev"
-                                android:layout_width="200dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
+                                android:textSize="9dp"
+                                android:imeOptions="flagNoExtractUi"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -212,142 +215,675 @@
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenanceoforder_cxld_tv"
+                                android:id="@+id/maintenanceoforder_checkDate_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="编号："
+                                android:text="检查时间："
                                 android:textSize="9dp" />
 
                             <EditText
-                                android:id="@+id/maintenanceoforder_cxld_ev"
-                                android:layout_width="200dp"
+                                android:id="@+id/maintenanceoforder_checkDate_ev"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp" />
                         </LinearLayout>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/maintenanceoforder_lxbh"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1">
 
                             <TextView
-                                android:id="@+id/maintenanceoforder_sjd_tv"
+                                android:id="@+id/maintenanceoforder_weather_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="维修部门："
+                                android:text="天气："
                                 android:textSize="9dp" />
 
-                            <EditText
-                                android:id="@+id/maintenanceoforder_sjd_ev"
-                                android:layout_width="200dp"
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_weather_spinner"
+                                android:layout_width="match_parent"
                                 android:layout_height="20dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="horizontal">
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1">
-                                <TextView
-                                    android:id="@+id/maintenanceoforder_startTime_tv"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="维修期限："
-                                    android:textSize="9dp" />
-
-                                <EditText
-                                    android:id="@+id/maintenanceoforder_startTime_ev"
-                                    android:layout_width="200dp"
-                                    android:layout_height="20dp"
-                                    android:background="@drawable/line"
-                                    android:textColor="#333333"
-                                    android:textSize="9dp" />
-                            </LinearLayout>
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1">
-                                <TextView
-                                    android:id="@+id/maintenanceoforder_endTime_tv"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="至："
-                                    android:textSize="9dp" />
-
-                                <EditText
-                                    android:id="@+id/maintenanceoforder_endTime_ev"
-                                    android:layout_width="200dp"
-                                    android:layout_height="20dp"
-                                    android:background="@drawable/line"
-                                    android:textColor="#333333"
-                                    android:textSize="9dp" />
-                            </LinearLayout>
-
+                                android:textSize="9dp"
+                                android:entries="@array/spinnerWeather"
+                                />
                         </LinearLayout>
                     </LinearLayout>
-                        <LinearLayout
-                            android:id="@+id/maintenanceoforder_contentnum_layout"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="15dp"
-                            >
 
-                            <TextView
-                                android:id="@+id/maintenanceoforder_contentnum_tv"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="维修内容数量："
-                                android:textSize="9dp" />
-
-                            <EditText
-                                android:id="@+id/maintenanceoforder_contentnum_ev"
-                                android:layout_width="200dp"
-                                android:layout_height="20dp"
-                                android:background="@drawable/line"
-                                android:textColor="#333333"
-                                android:textSize="9dp" />
-                        </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/maintenanceoforder_quality_layout"
+                    <RelativeLayout
+                        android:id="@+id/maintenanceoforder_contentnum_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
                         >
 
                         <TextView
-                            android:id="@+id/maintenanceoforder_quality_tv"
+                            android:id="@+id/maintenanceoforder_content_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="质量要求："
+                            android:text="施工项目及内容："
                             android:textSize="9dp" />
 
                         <EditText
-                            android:id="@+id/maintenanceoforder_quality_ev"
-                            android:layout_width="200dp"
-                            android:layout_height="20dp"
-                            android:background="@drawable/line"
+                            android:id="@+id/maintenanceoforder_content_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
                             android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/maintenanceoforder_content_tv"
+                            android:imeOptions="flagNoExtractUi" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/maintenanceoforder_quality_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="施工安全检查情况："
+                        android:textSize="9dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_bzbf_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工标志摆放正确"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_bzbf_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_bzbf_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_bzbf_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_bzbf_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_bzbf_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_bzbf_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_bzbf_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_bzbf_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_bzbf_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_bzbf_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_bzfm_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工人员标志服、标志帽"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_bzfm_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_bzfm_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_bzfm_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_bzfm_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_bzfm_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_bzfm_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_bzfm_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_bzfm_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_bzfm_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_bzfm_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_aqzy_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工程序符合安全作业规程"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_aqzy_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_aqzy_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqzy_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqzy_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_aqzy_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqzy_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqzy_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_aqzy_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqzy_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqzy_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_sgzy_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工车辆有明显施工作业标志"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_sgzy_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_sgzy_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_sgzy_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_sgzy_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_sgzy_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_sgzy_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_sgzy_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_sgzy_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_sgzy_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_sgzy_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_aqxs_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工车辆安全行驶"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_aqxs_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_aqxs_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqxs_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqxs_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_aqxs_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqxs_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqxs_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_aqxs_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqxs_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqxs_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/white"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp">
+                        <TextView
+                            android:id="@+id/maintenanceoforder_aqzgly_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="9dp"
+                            android:text="施工现场有安全管理员"
+                            android:layout_centerVertical="true"/>
+                        <RadioGroup
+                            android:id="@+id/maintenanceoforder_aqzgly_radioGroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="15dp"
+                            android:orientation="horizontal"
+                            android:visibility="visible"
+                            android:layout_toRightOf="@id/maintenanceoforder_aqzgly_title">
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqzgly_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="是"
+                                android:textSize="9dp" >
+                            </RadioButton>
+
+                            <RadioButton
+                                android:id="@+id/maintenanceoforder_aqzgly_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="否"
+                                android:textSize="9dp" >
+                            </RadioButton>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_aqzgly_videoLlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:gravity="center_vertical"
+                            android:layout_alignParentRight="true"
+                            >
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqzgly_xiangji"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/xiangji" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqzgly_imgNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+
+                            <Spinner
+                                android:id="@+id/maintenanceoforder_aqzgly_imgSpinner"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:id="@+id/maintenanceoforder_aqzgly_video"
+                                android:padding="5dp"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/sxj" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_aqzgly_videoNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:text="1"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/maintenanceoforder_qtqk_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/maintenanceoforder_qtqk_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="其它情况："
                             android:textSize="9dp" />
-                    </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/maintenanceoforder_qtqk_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
+                            android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/maintenanceoforder_qtqk_tv"
+                            android:imeOptions="flagNoExtractUi"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/maintenanceoforder_yj_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="4dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/maintenanceoforder_yj_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="对出现安全隐患处理意见："
+                            android:textSize="9dp" />
+
+                        <EditText
+                            android:id="@+id/maintenanceoforder_yj_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
+                            android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/maintenanceoforder_yj_tv"
+                            android:imeOptions="flagNoExtractUi" />
+                    </RelativeLayout>
 
 
                 </LinearLayout>

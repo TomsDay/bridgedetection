@@ -1,12 +1,17 @@
 package com.suken.bridgedetection.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -17,6 +22,8 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogListAdapter;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceLogBean;
+import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -33,19 +40,77 @@ public class MaintenanceLogListActivity extends Activity {
     private MaintenanceLogListAdapter maintenanceLogListAdapter;
     private Context mContext;
     ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     public final int SUCCESS_CODE = 0;
     public final int ERROR_CODE = 1;
+    private LinearLayout maintenance_logList_selectCondition_layout;
+    private TextView maintenance_logList_selectCondition_tv;
+    private int type;
+    MaintenanceLogDao maintenanceLogDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log_list);
+        maintenanceLogDao = new MaintenanceLogDao();
+        type = getIntent().getIntExtra("type", 0);
         mContext = this;
+        initView();
+        loadDate();
+    }
+
+    private void initView() {
         mListView = (ListView) findViewById(R.id.maintenance_logList_listView);
         maintenanceLogListAdapter = new MaintenanceLogListAdapter(mContext);
         mListView.setAdapter(maintenanceLogListAdapter);
-        loadDate();
+        maintenance_logList_selectCondition_layout = (LinearLayout) findViewById(R.id.maintenance_logList_selectCondition_layout);
+        maintenance_logList_selectCondition_tv = (TextView) findViewById(R.id.maintenance_logList_selectCondition_tv);
+        items=getResources().getStringArray(R.array.maintenance_logList_selectCondition_str);
+        maintenance_logList_selectCondition_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onShowCheckDialog();
+            }
+        });
+
     }
+
+    /**
+     * 创建复选框对话框
+     */
+    boolean[] flags=new boolean[]{false,false,false,false};//初始复选情况
+    String[] items=null;
+
+    protected void onShowCheckDialog() {
+        Logger.e("aaa","1111111111111111");
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        //设置对话框的图标
+//                builder.setIcon(R.drawable.header);
+        //设置对话框的标题
+        builder.setTitle("查询条件");
+        builder.setMultiChoiceItems(items, flags, new DialogInterface.OnMultiChoiceClickListener(){
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                        flags[which]=isChecked;
+                        String result = "";
+                        for (int i = 0; i < flags.length; i++) {
+                            if(flags[i]){
+                                result=result+items[i]+"、";
+                            }
+                        }
+                        maintenance_logList_selectCondition_tv.setText(result.substring(0, result.length()-1));
+                    }
+                });
+        //添加一个确定按钮
+        builder.setPositiveButton(" 确 定 ", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        //创建一个复选框对话框
+        builder.show();
+
+    }
+
     public void onClick(View v){
         switch (v.getId()) {
             case R.id.maintenance_logList_back:
@@ -56,6 +121,13 @@ public class MaintenanceLogListActivity extends Activity {
 
 
     private void loadDate() {
+        if(type == 1){
+            maintenanceLogBeen = (ArrayList<MaintenanceLogBean>) maintenanceLogDao.queryAll();
+            Log.e("aaa", "=======" + maintenanceLogBeen.toString());
+            maintenanceLogListAdapter.setDate1(maintenanceLogBeen);
+            maintenanceLogListAdapter.notifyDataSetChanged();
+            return;
+        }
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {

@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.ListBean;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
+import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.util.Logger;
 
@@ -27,6 +28,8 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
     ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
+    private int type;
 
 
     public MaintenanceLogListAdapter(Context context) {
@@ -35,6 +38,11 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
     }
     public void setDate( ArrayList<MaintenanceLogListBean> list){
         listBeen = list;
+        type = 0;
+    }
+    public void setDate1( ArrayList<MaintenanceLogBean> list){
+        maintenanceLogBeen = list;
+        type = 1;
     }
     public ArrayList<MaintenanceLogListBean> getDate(){
         return listBeen;
@@ -42,7 +50,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return listBeen.size();
+        return type==0? listBeen.size():maintenanceLogBeen.size();
     }
 
     @Override
@@ -56,7 +64,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
             view = inflater.inflate(R.layout.maintenanceloglist_item, null);
@@ -65,12 +73,22 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
         }else{
             holder = (HolderView) view.getTag();
         }
-        final MaintenanceLogListBean bean = listBeen.get(position);
+        if (type == 0) {
+            final MaintenanceLogListBean bean = listBeen.get(position);
 
-        holder.maintenanceloglist_item_tv1.setText(bean.getGydwId());
-        holder.maintenanceloglist_item_tv2.setText(bean.getGydwName());
-        holder.maintenanceloglist_item_tv3.setText(bean.getCreatetime());
-        holder.maintenanceloglist_item_tv4.setText(bean.getCreator());
+            holder.maintenanceloglist_item_tv1.setText(bean.getGydwId());
+            holder.maintenanceloglist_item_tv2.setText(bean.getGydwName());
+            holder.maintenanceloglist_item_tv3.setText(bean.getCreatetime());
+            holder.maintenanceloglist_item_tv4.setText(bean.getCreator());
+        }else{
+            MaintenanceLogBean bean = maintenanceLogBeen.get(position);
+            holder.maintenanceloglist_item_tv1.setText(bean.getSerialNumber());
+            holder.maintenanceloglist_item_tv2.setText(bean.getCustodyUnit());
+            holder.maintenanceloglist_item_tv3.setText(bean.getDate());
+            holder.maintenanceloglist_item_tv4.setText(bean.getPrincipal());
+
+        }
+
 
 
 
@@ -89,7 +107,12 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
                                 switch (which) {
                                     case 0:
                                         Intent in = new Intent(mContext, MaintenanceLogActivity.class);
-                                        in.putExtra("bean", bean);
+                                        if (type == 0) {
+                                            in.putExtra("bean", listBeen.get(position));
+                                        }else{
+                                            in.putExtra("id", maintenanceLogBeen.get(position).getId());
+                                        }
+
                                         mContext.startActivity(in);
                                         break;
                                     default:
