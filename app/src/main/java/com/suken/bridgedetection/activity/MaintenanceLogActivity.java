@@ -27,6 +27,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
+import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
@@ -44,6 +45,7 @@ import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -78,6 +80,8 @@ public class MaintenanceLogActivity extends Activity {
     private int id;
 
     MaintenanceLogDao maintenanceLogDao;
+    IVDescDao ivDescDao;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +89,7 @@ public class MaintenanceLogActivity extends Activity {
         setContentView(R.layout.activity_maintenance_log);
         mContext = this;
         maintenanceLogDao = new MaintenanceLogDao();
+        ivDescDao = new IVDescDao();
 
         maintenanceLogListBean = (MaintenanceLogListBean) getIntent().getSerializableExtra("bean");
         id = getIntent().getIntExtra("id", 0);
@@ -92,6 +97,9 @@ public class MaintenanceLogActivity extends Activity {
     }
 
     private void initView() {
+        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
+
+
         mListView = (ListViewForScrollView) findViewById(R.id.maintenancelog_listview);
         maintenancelog_gydw_ev = (EditText) findViewById(R.id.maintenancelog_gydw_ev);
         maintenancelog_bh_ev = (EditText) findViewById(R.id.maintenancelog_bh_ev);
@@ -121,6 +129,19 @@ public class MaintenanceLogActivity extends Activity {
                 try {
                     while (iterator.hasNext()) {
                         MaintenanceLogItemBean b = iterator.next();
+                        ForeignCollection<IVDesc> imageOrders = b.getiDescs();
+                        CloseableIterator<IVDesc> imageIterator = imageOrders.closeableIterator();
+                        while (imageIterator.hasNext()) {
+                            IVDesc imageDesc = imageIterator.next();
+                            b.getmImages().add(imageDesc);
+                        }
+                        ForeignCollection<IVDesc> videoOrders = b.getvDescs();
+                        CloseableIterator<IVDesc> videoIterator = videoOrders.closeableIterator();
+                        while (videoIterator.hasNext()) {
+                            IVDesc videoDesc = videoIterator.next();
+                            b.getmVideo().add(videoDesc);
+                        }
+
                         maintenanceLogItemBeen.add(b);
                         Logger.e("aaa", b.toString());
                     }
@@ -248,12 +269,35 @@ public class MaintenanceLogActivity extends Activity {
                         maintenanceLogItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
+
+                            List<IVDesc> imagesDescList = itemBean.getmImages();
+                            List<IVDesc> videoDescList = itemBean.getmVideo();
+                            for(int q = 0; q < imagesDescList.size(); q++){
+                                IVDesc imageDesc = imagesDescList.get(q);
+                                imageDesc.setImageMaintenanceLogItemBean(itemBean);
+                                if (itemBean.getId() != 0) {
+                                    ivDescDao.update(imageDesc);
+                                }else {
+                                    ivDescDao.add(imageDesc);
+                                }
+                            }
+                            for(int w = 0; w < videoDescList.size(); w++){
+                                IVDesc videoDesc = videoDescList.get(w);
+                                videoDesc.setVideoMaintenanceLogItemBean(itemBean);
+                                if (itemBean.getId() != 0) {
+                                    ivDescDao.update(videoDesc);
+                                }else {
+                                    ivDescDao.add(videoDesc);
+                                }
+                            }
+
                             itemBean.setMaintenanceLogBean(maintenanceLogBean);
                             if (itemBean.getId() != 0) {
                                 maintenanceLogDao.updateItem(itemBean);
                             }else {
                                 maintenanceLogDao.addItem(itemBean);
                             }
+
                         }
                         Logger.e("aaa", "=======11111====="+maintenanceLogDao.queryAll().toString());
                         Logger.e("aaa", "========2222======="+ maintenanceLogDao.queryItemAll().toString());
@@ -317,7 +361,7 @@ public class MaintenanceLogActivity extends Activity {
     private Uri mOutPutFileUri = null;
     File mPlayerFile;
     //    private FormItemController mEditController;
-    public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
+    public void jumpToMedia(int position, int requestCode, IVDesc desc) {
 //        mEditController = con;
         mPosition = position;
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();

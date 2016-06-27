@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.bean;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
@@ -25,17 +27,8 @@ public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField
     private String checkTime;
     private boolean isShow;
-    private List<ImageDesc> mImages = new ArrayList<ImageDesc>();
-    private List<VideoDesc> mVideo = new ArrayList<VideoDesc>();
-    public static class ImageDesc {
-        public String name;
-        public String path;
-    }
-
-    public static class VideoDesc {
-        public String name;
-        public String path;
-    }
+    private List<IVDesc> mImages = new ArrayList<IVDesc>();
+    private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
     /**
      * foreign = true:说明这是一个外部引用关系
@@ -44,6 +37,11 @@ public class MaintenanceTableItemBean implements Serializable{
      */
     @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private MaintenanceTableBean maintenanceTableBean;
+
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> iDescs;
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> vDescs;
 
     public MaintenanceTableItemBean() {
     }
@@ -70,6 +68,37 @@ public class MaintenanceTableItemBean implements Serializable{
         this.checkTime = checkTime;
     }
 
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
+    }
+
+    public ForeignCollection<IVDesc> getvDescs() {
+        return vDescs;
+    }
+
+    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
+        this.vDescs = vDescs;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public List<IVDesc> getmVideo() {
+        return mVideo;
+    }
+
+    public void setmVideo(List<IVDesc> mVideo) {
+        this.mVideo = mVideo;
+    }
 
     public boolean isShow() {
         return isShow;
@@ -77,22 +106,6 @@ public class MaintenanceTableItemBean implements Serializable{
 
     public void setShow(boolean show) {
         isShow = show;
-    }
-
-    public List<ImageDesc> getmImages() {
-        return mImages;
-    }
-
-    public void setmImages(List<ImageDesc> mImages) {
-        this.mImages = mImages;
-    }
-
-    public List<VideoDesc> getmVideo() {
-        return mVideo;
-    }
-
-    public void setmVideo(List<VideoDesc> mVideo) {
-        this.mVideo = mVideo;
     }
 
     public MaintenanceTableBean getMaintenanceTableBean() {

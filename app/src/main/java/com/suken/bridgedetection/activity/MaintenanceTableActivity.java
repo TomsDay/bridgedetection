@@ -32,6 +32,8 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.IVDesc;
+import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
@@ -82,7 +84,10 @@ public class MaintenanceTableActivity extends Activity {
     private ArrayAdapter<String> mArrayWeatherAdapter, mArraySearchTypeAdapter;
     private String [] mStringArrayWeather,mStringArraySearchType;
     private String strWeather = "晴", strSearchType = "日常巡查";
+
     private MaintenanceTableDao maintenanceTableDao;
+    IVDescDao ivDescDao;
+
     private int id;
 
     @Override
@@ -91,6 +96,7 @@ public class MaintenanceTableActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_table);
         maintenanceTableDao = new MaintenanceTableDao();
+        ivDescDao = new IVDescDao();
         id = getIntent().getIntExtra("id", 0);
         mContext = this;
 
@@ -118,6 +124,20 @@ public class MaintenanceTableActivity extends Activity {
                 try {
                     while(iterator.hasNext()){
                         MaintenanceTableItemBean b = iterator.next();
+
+                        ForeignCollection<IVDesc> imageOrders = b.getiDescs();
+                        CloseableIterator<IVDesc> imageIterator = imageOrders.closeableIterator();
+                        while (imageIterator.hasNext()) {
+                            IVDesc imageDesc = imageIterator.next();
+                            b.getmImages().add(imageDesc);
+                        }
+                        ForeignCollection<IVDesc> videoOrders = b.getvDescs();
+                        CloseableIterator<IVDesc> videoIterator = videoOrders.closeableIterator();
+                        while (videoIterator.hasNext()) {
+                            IVDesc videoDesc = videoIterator.next();
+                            b.getmVideo().add(videoDesc);
+                        }
+
                         maintenanceTableItemBeen.add(b);
                         Logger.e("aaa",b.toString());
                     }
@@ -315,7 +335,7 @@ public class MaintenanceTableActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         maintenanceTableItemBeen = mAdapter.getData();
-                        Logger.e("aaa","itemlist===="+ maintenanceTableItemBeen.toString());
+
                         String gydw = maintenancetable_gydw_ev.getText().toString();
                         String xcld = maintenancetable_cxld_ev.getText().toString();
                         String time = maintenancetable_time_ev.getText().toString();
@@ -334,7 +354,7 @@ public class MaintenanceTableActivity extends Activity {
                         }
 
 
-                        Logger.e("aaa","maintenanceTableBean.toString()===="+maintenanceTableBean.toString());
+
                         if (id != 0) {
                             maintenanceTableDao.update(maintenanceTableBean);
                         }else{
@@ -343,16 +363,43 @@ public class MaintenanceTableActivity extends Activity {
 
                         maintenanceTableItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
-                            MaintenanceTableItemBean itemBean = maintenanceTableItemBeen.get(j);
+                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
+                            Logger.e("aaa","222222222");
                             if (itemBean.getId() != 0) {
                                 maintenanceTableDao.updateItem(itemBean);
                             }else {
                                 maintenanceTableDao.addItem(itemBean);
                             }
+
+                            List<IVDesc> imagesDescList = itemBean.getmImages();
+                            List<IVDesc> videoDescList = itemBean.getmVideo();
+                            for(int q = 0; q < imagesDescList.size(); q++){
+                                Logger.e("aaa","11111111111111111111");
+                                IVDesc imageDesc = imagesDescList.get(q);
+                                imageDesc.setImageMaintenanceTableItemBean(itemBean);
+                                if (itemBean.getId() != 0) {
+                                    ivDescDao.update(imageDesc);
+                                }else {
+                                    ivDescDao.add(imageDesc);
+                                }
+                            }
+                            for(int w = 0; w < videoDescList.size(); w++){
+                                Logger.e("aaa","222222222");
+                                IVDesc videoDesc = videoDescList.get(w);
+                                videoDesc.setVideoMaintenanceTableItemBean(itemBean);
+                                if (itemBean.getId() != 0) {
+                                    ivDescDao.update(videoDesc);
+                                }else {
+                                    ivDescDao.add(videoDesc);
+                                }
+                            }
+
+
+
                         }
 
-
+                        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
 
 
 
@@ -380,7 +427,7 @@ public class MaintenanceTableActivity extends Activity {
     private Uri mOutPutFileUri = null;
     File mPlayerFile;
     //    private FormItemController mEditController;
-    public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
+    public void jumpToMedia(int position, int requestCode, IVDesc desc) {
 //        mEditController = con;
         mPosition = position;
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
@@ -430,7 +477,7 @@ public class MaintenanceTableActivity extends Activity {
         }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
-            MaintenanceTableItemBean.ImageDesc desc = new MaintenanceTableItemBean.ImageDesc();
+            IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
             Logger.e("aaa", " desc.name===" + desc.name);
@@ -445,7 +492,7 @@ public class MaintenanceTableActivity extends Activity {
 
         } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
             String str = null;
-            MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
+            IVDesc desc = new IVDesc();
             try {
                 Log.e("aaa", "333333");
                 desc.name = mPlayerFile.getName();

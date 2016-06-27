@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
+import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
@@ -312,19 +313,19 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //    }
 
     private class SpinnerAdapter extends BaseAdapter {
-        private List<MaintenanceTableItemBean.ImageDesc> mImages = new ArrayList<MaintenanceTableItemBean.ImageDesc>();
+        private List<IVDesc> mImages = new ArrayList<IVDesc>();
 
         @Override
         public int getCount() {
             return mImages.size();
         }
 
-        public void setItem(List<MaintenanceTableItemBean.ImageDesc> list){
+        public void setItem(List<IVDesc> list){
             mImages = list;
         }
 
         @Override
-        public MaintenanceTableItemBean.ImageDesc getItem(int position) {
+        public IVDesc getItem(int position) {
             return mImages.get(position);
         }
 
@@ -336,7 +337,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
             TextView view = new TextView(mActivity);
-            MaintenanceTableItemBean.ImageDesc desc = getItem(position);
+            IVDesc desc = getItem(position);
             view.setText("照片：  " + (position + 1));
             view.setTag(desc);
             view.setTextColor(Color.RED);
@@ -346,7 +347,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
                 @Override
                 public void onClick(View v) {
-                    MaintenanceTableItemBean.ImageDesc desc = (MaintenanceTableItemBean.ImageDesc) v.getTag();
+                    IVDesc desc = (IVDesc) v.getTag();
                     mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });

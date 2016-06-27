@@ -34,6 +34,7 @@ import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
@@ -326,7 +327,7 @@ public class MaintenanceOfOrderActivity extends Activity {
     File mPlayerFile;
     private int mPosition;
     //    private FormItemController mEditController;
-    public void jumpToMedia(int position, int requestCode, MaintenanceTableItemBean.ImageDesc desc) {
+    public void jumpToMedia(int position, int requestCode, IVDesc desc) {
 //        mEditController = con;
         mPosition = position;
         String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
@@ -376,7 +377,7 @@ public class MaintenanceOfOrderActivity extends Activity {
         }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
-            MaintenanceTableItemBean.ImageDesc desc = new MaintenanceTableItemBean.ImageDesc();
+            IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
             Logger.e("aaa", " desc.name===" + desc.name);
@@ -392,7 +393,7 @@ public class MaintenanceOfOrderActivity extends Activity {
 
         } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
             String str = null;
-            MaintenanceTableItemBean.VideoDesc desc = new MaintenanceTableItemBean.VideoDesc();
+            IVDesc desc = new IVDesc();
             try {
                 Log.e("aaa", "333333");
                 desc.name = mPlayerFile.getName();

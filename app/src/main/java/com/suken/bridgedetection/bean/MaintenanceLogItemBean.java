@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.bean;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
@@ -38,6 +40,18 @@ public class MaintenanceLogItemBean implements Serializable {
     @DatabaseField(foreign = true,foreignAutoRefresh = true)
     private MaintenanceLogBean maintenanceLogBean;
 
+
+
+    /**
+     * 这里需要注意的是：属性类型只能是ForeignCollection<T>或者Collection<T>
+     * 如果需要懒加载（延迟加载）可以在@ForeignCollectionField加上参数eager=false
+     * 这个属性也就说明一个部门对应着多个用户
+     */
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> iDescs;
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> vDescs;
+
     public MaintenanceLogItemBean() {
     }
 
@@ -69,6 +83,22 @@ public class MaintenanceLogItemBean implements Serializable {
                 ", mVideo=" + mVideo +
                 ", maintenanceLogBean=" + maintenanceLogBean +
                 '}';
+    }
+
+    public ForeignCollection<IVDesc> getvDescs() {
+        return vDescs;
+    }
+
+    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
+        this.vDescs = vDescs;
+    }
+
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
     }
 
     public MaintenanceLogBean getMaintenanceLogBean() {

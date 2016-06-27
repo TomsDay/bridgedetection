@@ -320,7 +320,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
                 @Override
                 public void onClick(View v) {
-                    MaintenanceTableItemBean.ImageDesc desc = (MaintenanceTableItemBean.ImageDesc) v.getTag();
+                    IVDesc desc = (IVDesc) v.getTag();
                     mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });
