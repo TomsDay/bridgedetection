@@ -24,7 +24,7 @@ public class IVDescDao {
 
     public void add(IVDesc bean){
         try {
-            ivDescs.createOrUpdate(bean);
+            ivDescs.create(bean);
         } catch (SQLException e) {
             e.printStackTrace();
         }
