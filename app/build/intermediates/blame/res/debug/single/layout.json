@@ -436,6 +436,10 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\video_c_item.xml"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_of_order_list.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_of_order_list.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_call_control_layout.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\ec_call_control_layout.xml"
     },
@@ -972,6 +976,10 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\activity_project_acceptance.xml"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\maintenanceoforder_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\maintenanceoforder_item.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\share_dialog.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\share_dialog.xml"
     },
@@ -1012,6 +1020,10 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_table.xml"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_project_acceptance_list.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_project_acceptance_list.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\file_explorer.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\file_explorer.xml"
     },
@@ -1050,6 +1062,10 @@
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_panel.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\app_panel.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\projectacceptancelist_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\projectacceptancelist_item.xml"
     },
     {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_activity.xml",

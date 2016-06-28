@@ -199,23 +199,18 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             switch (editTextID.getId()) {
 
                 case R.id.diseaseName_edit:
-                    Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
                     list.get(position).setDiseaseName(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.unit_edit:
-                    Logger.e("aaa","unit_edit==position"+position);
                     list.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.count_edit:
-                    Logger.e("aaa","count_edit==position"+position);
                     list.get(position).setCount(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.address_edit:
-                    Logger.e("aaa","address_edit==position"+position);
                     list.get(position).setAddress(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
-                    Logger.e("aaa","item_checkTime_edit==position"+position);
                     list.get(position).setCheckTime(content!=null&&!"".equals(content)?content:"");
                     break;
             }

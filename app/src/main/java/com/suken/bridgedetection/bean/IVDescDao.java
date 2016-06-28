@@ -24,7 +24,7 @@ public class IVDescDao {
 
     public void add(IVDesc bean){
         try {
-            ivDescs.createOrUpdate(bean);
+            ivDescs.create(bean);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -60,6 +60,51 @@ public class IVDescDao {
             ivDescs.delete(bean);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+    /**
+     * 通过id 获取所有关于ImageMaintenanceTableItemBean 的值
+     * @param userid
+     * @return
+     */
+    public List<IVDesc> getImageMaintenanceTableItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageMaintenanceTableItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<IVDesc> getVideoMaintenanceTableItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageMaintenanceTableItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<IVDesc> getImageMaintenanceLogItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageMaintenanceLogItem_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<IVDesc> getVideoMaintenanceLogItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("videoMaintenanceLogItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 }

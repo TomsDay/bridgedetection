@@ -1124,12 +1124,12 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\list_thicklinecell_bg.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ec_keyboard_digital_00.png",
-        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ec_keyboard_digital_00.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\unread_count_bg.9.png",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\unread_count_bg.9.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ec_keyboard_digital_00.png",
+        "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ec_keyboard_digital_00.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\rcd_cancel_icon.png",

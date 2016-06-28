@@ -129,18 +129,12 @@ public class MaintenanceLogActivity extends Activity {
                 try {
                     while (iterator.hasNext()) {
                         MaintenanceLogItemBean b = iterator.next();
-                        ForeignCollection<IVDesc> imageOrders = b.getiDescs();
-                        CloseableIterator<IVDesc> imageIterator = imageOrders.closeableIterator();
-                        while (imageIterator.hasNext()) {
-                            IVDesc imageDesc = imageIterator.next();
-                            b.getmImages().add(imageDesc);
-                        }
-                        ForeignCollection<IVDesc> videoOrders = b.getvDescs();
-                        CloseableIterator<IVDesc> videoIterator = videoOrders.closeableIterator();
-                        while (videoIterator.hasNext()) {
-                            IVDesc videoDesc = videoIterator.next();
-                            b.getmVideo().add(videoDesc);
-                        }
+
+                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getId());
+                        b.setmImages(imageDesc);
+
+                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceLogItemBeanByUserId(b.getId());
+                        b.setmVideo(videoDesc);
 
                         maintenanceLogItemBeen.add(b);
                         Logger.e("aaa", b.toString());
@@ -269,13 +263,18 @@ public class MaintenanceLogActivity extends Activity {
                         maintenanceLogItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
-
+                            itemBean.setMaintenanceLogBean(maintenanceLogBean);
+                            if (itemBean.getId() != 0) {
+                                maintenanceLogDao.updateItem(itemBean);
+                            }else {
+                                maintenanceLogDao.addItem(itemBean);
+                            }
                             List<IVDesc> imagesDescList = itemBean.getmImages();
                             List<IVDesc> videoDescList = itemBean.getmVideo();
                             for(int q = 0; q < imagesDescList.size(); q++){
                                 IVDesc imageDesc = imagesDescList.get(q);
                                 imageDesc.setImageMaintenanceLogItemBean(itemBean);
-                                if (itemBean.getId() != 0) {
+                                if (imageDesc.getId() != 0) {
                                     ivDescDao.update(imageDesc);
                                 }else {
                                     ivDescDao.add(imageDesc);
@@ -284,19 +283,14 @@ public class MaintenanceLogActivity extends Activity {
                             for(int w = 0; w < videoDescList.size(); w++){
                                 IVDesc videoDesc = videoDescList.get(w);
                                 videoDesc.setVideoMaintenanceLogItemBean(itemBean);
-                                if (itemBean.getId() != 0) {
+                                if (videoDesc.getId() != 0) {
                                     ivDescDao.update(videoDesc);
                                 }else {
                                     ivDescDao.add(videoDesc);
                                 }
                             }
 
-                            itemBean.setMaintenanceLogBean(maintenanceLogBean);
-                            if (itemBean.getId() != 0) {
-                                maintenanceLogDao.updateItem(itemBean);
-                            }else {
-                                maintenanceLogDao.addItem(itemBean);
-                            }
+
 
                         }
                         Logger.e("aaa", "=======11111====="+maintenanceLogDao.queryAll().toString());

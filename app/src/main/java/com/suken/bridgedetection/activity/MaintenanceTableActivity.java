@@ -99,7 +99,6 @@ public class MaintenanceTableActivity extends Activity {
         ivDescDao = new IVDescDao();
         id = getIntent().getIntExtra("id", 0);
         mContext = this;
-
         initView();
     }
 
@@ -125,18 +124,11 @@ public class MaintenanceTableActivity extends Activity {
                     while(iterator.hasNext()){
                         MaintenanceTableItemBean b = iterator.next();
 
-                        ForeignCollection<IVDesc> imageOrders = b.getiDescs();
-                        CloseableIterator<IVDesc> imageIterator = imageOrders.closeableIterator();
-                        while (imageIterator.hasNext()) {
-                            IVDesc imageDesc = imageIterator.next();
-                            b.getmImages().add(imageDesc);
-                        }
-                        ForeignCollection<IVDesc> videoOrders = b.getvDescs();
-                        CloseableIterator<IVDesc> videoIterator = videoOrders.closeableIterator();
-                        while (videoIterator.hasNext()) {
-                            IVDesc videoDesc = videoIterator.next();
-                            b.getmVideo().add(videoDesc);
-                        }
+                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceTableItemBeanByUserId(b.getId());
+                        b.setmImages(imageDesc);
+
+                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceTableItemBeanByUserId(b.getId());
+                        b.setmVideo(videoDesc);
 
                         maintenanceTableItemBeen.add(b);
                         Logger.e("aaa",b.toString());
@@ -353,8 +345,6 @@ public class MaintenanceTableActivity extends Activity {
                             maintenanceTableBean.setId(id);
                         }
 
-
-
                         if (id != 0) {
                             maintenanceTableDao.update(maintenanceTableBean);
                         }else{
@@ -365,35 +355,37 @@ public class MaintenanceTableActivity extends Activity {
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
-                            Logger.e("aaa","222222222");
                             if (itemBean.getId() != 0) {
                                 maintenanceTableDao.updateItem(itemBean);
                             }else {
                                 maintenanceTableDao.addItem(itemBean);
                             }
-
+                            Logger.e("aaa","12332131=="+itemBean.toString());
                             List<IVDesc> imagesDescList = itemBean.getmImages();
                             List<IVDesc> videoDescList = itemBean.getmVideo();
                             for(int q = 0; q < imagesDescList.size(); q++){
-                                Logger.e("aaa","11111111111111111111");
+
                                 IVDesc imageDesc = imagesDescList.get(q);
                                 imageDesc.setImageMaintenanceTableItemBean(itemBean);
-                                if (itemBean.getId() != 0) {
+                                Logger.e("aaa","11111111111111111111"+imageDesc.toString());
+                                if (imageDesc.getId() != 0) {
                                     ivDescDao.update(imageDesc);
                                 }else {
                                     ivDescDao.add(imageDesc);
                                 }
                             }
+
                             for(int w = 0; w < videoDescList.size(); w++){
-                                Logger.e("aaa","222222222");
                                 IVDesc videoDesc = videoDescList.get(w);
+                                Logger.e("aaa","222222222222"+videoDesc.toString());
                                 videoDesc.setVideoMaintenanceTableItemBean(itemBean);
-                                if (itemBean.getId() != 0) {
+                                if (videoDesc.getId() != 0) {
                                     ivDescDao.update(videoDesc);
                                 }else {
                                     ivDescDao.add(videoDesc);
                                 }
                             }
+
 
 
 
