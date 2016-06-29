@@ -283,20 +283,21 @@
                         </LinearLayout>
                     </LinearLayout>
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:id="@+id/projectacceptance_content_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
                         >
 
                         <TextView
                             android:id="@+id/projectacceptance_content_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="工程内容："
+                            android:text="    工程内容："
                             android:textSize="9dp" />
 
                         <EditText
@@ -308,21 +309,22 @@
                             android:textSize="9dp"
                             android:layout_toRightOf="@+id/projectacceptance_content_tv"
                             android:imeOptions="flagNoExtractUi" />
-                    </RelativeLayout>
-                    <RelativeLayout
+                    </LinearLayout>
+                    <LinearLayout
                         android:id="@+id/projectacceptance_return_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
                         >
 
                         <TextView
                             android:id="@+id/projectacceptance_return_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="验收结果："
+                            android:text="    验收结果："
                             android:textSize="9dp" />
 
                         <EditText
@@ -334,15 +336,16 @@
                             android:textSize="9dp"
                             android:layout_toRightOf="@+id/projectacceptance_return_tv"
                             android:imeOptions="flagNoExtractUi" />
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:id="@+id/projectacceptance_xsfzr_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
                         >
 
                         <TextView
@@ -351,17 +354,26 @@
                             android:layout_height="wrap_content"
                             android:text="验收负责人："
                             android:textSize="9dp" />
-
+                        <ImageView
+                            android:id="@+id/projectacceptance_xsfzr_sign"
+                            android:layout_width="72dp"
+                            android:layout_height="48dp"
+                            android:scaleType="fitCenter"
+                            android:background="@color/white"
+                            android:src="@drawable/chat_input_text_notify_normal"
+                            />
                         <EditText
                             android:id="@+id/projectacceptance_xsfzr_ev"
                             android:layout_width="match_parent"
                             android:layout_height="48dp"
+                            android:layout_marginLeft="8dp"
                             android:background="@color/white"
                             android:textColor="#333333"
                             android:textSize="9dp"
                             android:layout_toRightOf="@+id/projectacceptance_xsfzr_tv"
                             android:imeOptions="flagNoExtractUi" />
-                    </RelativeLayout>
+
+                    </LinearLayout>
 
 
 
