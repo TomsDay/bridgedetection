@@ -5,12 +5,17 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.suken.bridgedetection.R;
@@ -19,8 +24,14 @@ import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
+import com.suken.bridgedetection.signname.WriteDialogListener;
+import com.suken.bridgedetection.signname.WritePadDialog;
 import com.suken.bridgedetection.util.Logger;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -40,6 +51,10 @@ public class ProjectAcceptanceActivity extends Activity {
             projectacceptance_content_ev,
             projectacceptance_return_ev,
             projectacceptance_xsfzr_ev;
+
+    ImageView projectacceptance_xsfzr_sign;
+    private Bitmap mSignBitmap;
+
     private Spinner projectacceptance_weather_spinner;
 
     private int mSYear,mSMonth, mSDay,mEYear,mEMonth, mEDay;
@@ -75,6 +90,25 @@ public class ProjectAcceptanceActivity extends Activity {
         projectacceptance_xsfzr_ev = (EditText) findViewById(R.id.projectacceptance_xsfzr_ev);
 
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
+        projectacceptance_xsfzr_sign = (ImageView) findViewById(R.id.projectacceptance_xsfzr_sign);
+        projectacceptance_xsfzr_sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WritePadDialog mWritePadDialog = new WritePadDialog(
+                        ProjectAcceptanceActivity.this, new WriteDialogListener() {
+
+                    @Override
+                    public void onPaintDone(Object object) {
+                        mSignBitmap = (Bitmap) object;
+                        createSignFile();
+                        projectacceptance_xsfzr_sign.setImageBitmap(mSignBitmap);
+//                        mTVSign.setVisibility(View.GONE);
+                    }
+                });
+
+                mWritePadDialog.show();
+            }
+        });
 
         initTime();
         initSpinner();
@@ -106,17 +140,32 @@ public class ProjectAcceptanceActivity extends Activity {
 
 
     }
-    public void onClick(View view){
-        switch (view.getId()) {
-            case R.id.projectacceptance_back:
-                finish();
-                break;
-            case R.id.projectacceptance_save:
-                saveDialog();
-                break;
-        }
-
-    }
+//    public void onClick(View view){
+//        switch (view.getId()) {
+//            case R.id.projectacceptance_back:
+//                finish();
+//                break;
+//            case R.id.projectacceptance_save:
+//                saveDialog();
+//                break;
+//            case R.id.projectacceptance_xsfzr_sign:
+//                WritePadDialog mWritePadDialog = new WritePadDialog(
+//                        ProjectAcceptanceActivity.this, new WriteDialogListener() {
+//
+//                    @Override
+//                    public void onPaintDone(Object object) {
+//                        mSignBitmap = (Bitmap) object;
+//                        createSignFile();
+//                        projectacceptance_xsfzr_sign.setImageBitmap(mSignBitmap);
+////                        mTVSign.setVisibility(View.GONE);
+//                    }
+//                });
+//
+//                mWritePadDialog.show();
+//                break;
+//        }
+//
+//    }
     private void initSpinner() {
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         mStringArrayWeather = getResources().getStringArray(R.array.spinnerWeather);
@@ -246,6 +295,41 @@ public class ProjectAcceptanceActivity extends Activity {
                 .show();
 
 
+    }
+
+    /**保存签名图片数据*/
+    private void createSignFile() {
+        ByteArrayOutputStream baos = null;
+        FileOutputStream fos = null;
+        String path = null;
+        File file = null;
+        try {
+            path = Environment.getExternalStorageDirectory() + File.separator + System.currentTimeMillis() + ".jpg";
+            Log.i("aaa","path ====== "+path);
+            file = new File(path);
+            fos = new FileOutputStream(file);
+            baos = new ByteArrayOutputStream();
+            //如果设置成Bitmap.compress(CompressFormat.JPEG, 100, fos) 图片的背景都是黑色的
+            mSignBitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            Log.i("aaa","mSignBitmap ===== "+mSignBitmap.getWidth()+"mSignBitmap h ==="+mSignBitmap.getHeight());
+            byte[] b = baos.toByteArray();
+            if (b != null) {
+                fos.write(b);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fos != null) {
+                    fos.close();
+                }
+                if (baos != null) {
+                    baos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
