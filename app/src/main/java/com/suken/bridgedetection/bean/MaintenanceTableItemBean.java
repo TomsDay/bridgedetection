@@ -16,8 +16,13 @@ import java.util.List;
 public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
+
+    @DatabaseField
+    private String diseaseID;
     @DatabaseField
     private String diseaseName;
+    @DatabaseField
+    private String diseaseDescribe;
     @DatabaseField
     private String unit;
     @DatabaseField
@@ -27,6 +32,10 @@ public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField
     private String checkTime;
     private boolean isShow;
+    /**  桩号*/
+    private String zh;
+    /**  方向*/
+    private String fx ;
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
     private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
@@ -66,6 +75,38 @@ public class MaintenanceTableItemBean implements Serializable{
         this.count = count;
         this.address = address;
         this.checkTime = checkTime;
+    }
+
+    public String getDiseaseDescribe() {
+        return diseaseDescribe;
+    }
+
+    public void setDiseaseDescribe(String diseaseDescribe) {
+        this.diseaseDescribe = diseaseDescribe;
+    }
+
+    public String getDiseaseID() {
+        return diseaseID;
+    }
+
+    public void setDiseaseID(String diseaseID) {
+        this.diseaseID = diseaseID;
+    }
+
+    public String getFx() {
+        return fx;
+    }
+
+    public void setFx(String fx) {
+        this.fx = fx;
+    }
+
+    public String getZh() {
+        return zh;
+    }
+
+    public void setZh(String zh) {
+        this.zh = zh;
     }
 
     public ForeignCollection<IVDesc> getiDescs() {
