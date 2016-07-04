@@ -9,8 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceAdapter;
+import com.suken.bridgedetection.util.Logger;
 
 public class MaintenanceActivity extends BaseActivity {
     private TextView maintenance_back;
@@ -24,6 +26,9 @@ public class MaintenanceActivity extends BaseActivity {
         setContentView(R.layout.activity_maintenance);
         mContext = this;
         initView();
+        Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
+        Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
+        Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
     }
     private void initView(){
         maintenance_back = (TextView) findViewById(R.id.maintenance_back);

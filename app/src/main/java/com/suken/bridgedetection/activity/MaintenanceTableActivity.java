@@ -521,6 +521,7 @@ public class MaintenanceTableActivity extends Activity {
                             }
                         };
 
+
                         BackgroundExecutor.execute(new Runnable() {
 
                             @Override
