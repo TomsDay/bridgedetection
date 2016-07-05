@@ -1,0 +1,6 @@
+2016/07/04  中间计量表 hw_daily_metering 新增字段；
+alter table hw_daily_metering 
+add sgdwid_ bigint(20) comment '施工单位id';
+
+alter table hw_daily_metering 
+add sgdwmc_ VARCHAR(200) comment '施工单位名称';
