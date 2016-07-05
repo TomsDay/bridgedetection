@@ -46,6 +46,7 @@ import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.GXLuXianInfo;
 import com.suken.bridgedetection.storage.GXLuXianInfoDao;
 import com.suken.bridgedetection.util.FileUtils;
+import com.suken.bridgedetection.util.NetUtil;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
@@ -122,11 +123,11 @@ public class MaintenanceTableActivity extends Activity {
             Logger.e("aaa","maintenanceTableBeanList++"+maintenanceTableBeen.toString());
             if(maintenanceTableBeen.size()>0){
                 MaintenanceTableBean bean = maintenanceTableBeen.get(0);
-                maintenancetable_gydw_ev.setText(bean.getCustodyUnit());
-                maintenancetable_cxld_ev.setText(bean.getPatrolSection());
-                maintenancetable_xcr_ev.setText(bean.getInspectOne());
-                maintenancetable_time_ev.setText(bean.getTimeQuantum());
-                maintenancetable_date_ev.setText(bean.getDatetime());
+                maintenancetable_gydw_ev.setText(bean.getGydwName());
+                maintenancetable_cxld_ev.setText(bean.getXcld());
+                maintenancetable_xcr_ev.setText(bean.getXcry());
+                maintenancetable_time_ev.setText(bean.getJcsj());
+                maintenancetable_date_ev.setText(bean.getTjsj());
                 maintenancetable_weather_spinner.setSelection(2);
                 maintenancetable_searchType_spinner.setSelection(2);
 
@@ -185,7 +186,7 @@ public class MaintenanceTableActivity extends Activity {
         maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
         maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
 
-
+        maintenancetable_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
         setCXLD();
 
         getData();
@@ -227,7 +228,7 @@ public class MaintenanceTableActivity extends Activity {
         final String[] names = new String[gxLuXianInfos.size()];
         for (int i = 0; i < gxLuXianInfos.size(); i++) {
             GXLuXianInfo bean = gxLuXianInfos.get(i);
-            names[i] = bean.getGydwName()+"("+bean.getQdmc() + "-" + bean.getZdmc()+")";
+            names[i] = bean.getQdzh() + "(" + bean.getQdmc() + ") - " + bean.getZdzh() + "(" + bean.getZdmc()  + ")";
         }
 
         new AlertDialog.Builder(mContext)
@@ -238,9 +239,9 @@ public class MaintenanceTableActivity extends Activity {
                                         int which) {
                         Logger.e("aaa", "which++" + which);
                         xcldPosition = which;
-                        GXLuXianInfo bean = gxLuXianInfos.get(which);
-                        maintenancetable_gydw_ev.setText(bean.getGydwName());
-                        maintenancetable_cxld_ev.setText(bean.getQdmc() + "-" + bean.getZdmc());
+//                        GXLuXianInfo bean = gxLuXianInfos.get(which);
+
+                        maintenancetable_cxld_ev.setText(names[which]);
 
                     }
                 })
@@ -395,151 +396,96 @@ public class MaintenanceTableActivity extends Activity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-//                        maintenanceTableItemBeen = mAdapter.getData();
-//
-                        String xcld = maintenancetable_cxld_ev.getText().toString();
+
                         String time = maintenancetable_time_ev.getText().toString();
                         String date = maintenancetable_date_ev.getText().toString();
                         String xcr = maintenancetable_xcr_ev.getText().toString();
-//                        MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
-//                        maintenanceTableBean.setCustodyUnit(gydw);
-//                        maintenanceTableBean.setPatrolSection(xcld);
-//                        maintenanceTableBean.setTimeQuantum(time);
-//                        maintenanceTableBean.setDatetime(date);
-//                        maintenanceTableBean.setWeather(strWeather);
-//                        maintenanceTableBean.setSearchType(strSearchType);
-//                        maintenanceTableBean.setInspectOne(xcr);
-//                        if (id != 0) {
-//                            maintenanceTableBean.setId(id);
-//                        }
+                        MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
+                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
+                        maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+                        maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+                        maintenanceTableBean.setJcsj(time);
+                        maintenanceTableBean.setLxbh(bean.getLxbh());
+                        maintenanceTableBean.setLxmc(bean.getLxmc());
+                        maintenanceTableBean.setLxid(bean.getId());
+                        maintenanceTableBean.setTjsj(date);
+                        maintenanceTableBean.setWeather(strWeather);
+                        maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
+                        maintenanceTableBean.setXcry(xcr);
+                        maintenanceTableBean.setJcry(BridgeDetectionApplication.mCurrentUser.getUserName());
+                        maintenanceTableBean.setXclx(intSearchType);
+
 //
-//                        if (id != 0) {
-//                            maintenanceTableDao.update(maintenanceTableBean);
-//                        }else{
-//                            maintenanceTableDao.add(maintenanceTableBean);
-//                        }
+                        if (id != 0) {
+                            maintenanceTableBean.setId(id);
+                        }
+
+                        if (id != 0) {
+                            maintenanceTableDao.update(maintenanceTableBean);
+                        }else{
+                            maintenanceTableDao.add(maintenanceTableBean);
+                        }
 //
                         maintenanceTableItemBeen = mAdapter.getData();
-//                        for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
-//                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
-//                            itemBean.setMaintenanceTableBean(maintenanceTableBean);
-//                            if (itemBean.getId() != 0) {
-//                                maintenanceTableDao.updateItem(itemBean);
-//                            }else {
-//                                maintenanceTableDao.addItem(itemBean);
-//                            }
-//                            Logger.e("aaa","12332131=="+itemBean.toString());
-//                            List<IVDesc> imagesDescList = itemBean.getmImages();
-//                            List<IVDesc> videoDescList = itemBean.getmVideo();
-//                            for(int q = 0; q < imagesDescList.size(); q++){
 //
-//                                IVDesc imageDesc = imagesDescList.get(q);
-//                                imageDesc.setImageMaintenanceTableItemBean(itemBean);
-//                                Logger.e("aaa","11111111111111111111"+imageDesc.toString());
-//                                if (imageDesc.getId() != 0) {
-//                                    ivDescDao.update(imageDesc);
-//                                }else {
-//                                    ivDescDao.add(imageDesc);
-//                                }
-//                            }
-//
-//                            for(int w = 0; w < videoDescList.size(); w++){
-//                                IVDesc videoDesc = videoDescList.get(w);
-//                                Logger.e("aaa","222222222222"+videoDesc.toString());
-//                                videoDesc.setVideoMaintenanceTableItemBean(itemBean);
-//                                if (videoDesc.getId() != 0) {
-//                                    ivDescDao.update(videoDesc);
-//                                }else {
-//                                    ivDescDao.add(videoDesc);
-//                                }
-//                            }
-//
-//
-//
-//
-//                        }
-//
-//                        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
+
+                        for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
+                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
+                            itemBean.setYhzt("1");
+                            itemBean.setTpjd("123.12");
+                            itemBean.setTpwd("123.12");
+                            String fx = itemBean.getFx();
+                            itemBean.setFx(fx != null ? fx : "上行内侧");
+
+                            itemBean.setMaintenanceTableBean(maintenanceTableBean);
+                            if (itemBean.getId() != 0) {
+                                maintenanceTableDao.updateItem(itemBean);
+                            }else {
+                                maintenanceTableDao.addItem(itemBean);
+                            }
+                        }
+
+                        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
                         final UploadBean uploadBean = new UploadBean();
-                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
-                        uploadBean.setLxid(bean.getId());
-                        uploadBean.setLxbh(bean.getLxbh());
-                        uploadBean.setGydwId(bean.getGydwId());
-                        uploadBean.setGydwName(bean.getGydwName());
-                        uploadBean.setXcry(xcr);
-                        uploadBean.setWeather(strWeather);
-                        uploadBean.setJcsj(time);
-                        uploadBean.setTjsj(date);
-                        uploadBean.setXcld(xcld);
-                        uploadBean.setXcld(xcld);
-                        uploadBean.setXclx(intSearchType);
-                        UploadListBean uploadListBean = new UploadListBean();
-                        MaintenanceTableItemBean maintenanceTableItemBean =maintenanceTableItemBeen.get(0);
-                        String fx = maintenanceTableItemBean.getFx();
-                        uploadListBean.setFx(fx != null ? fx : "上行内侧");
-                        uploadListBean.setYhzh(maintenanceTableItemBean.getZh());
-                        uploadListBean.setBhid(maintenanceTableItemBean.getDiseaseID());
-                        uploadListBean.setBhmc(maintenanceTableItemBean.getDiseaseName());
-                        uploadListBean.setDw(maintenanceTableItemBean.getUnit());
-                        uploadListBean.setYgsl(maintenanceTableItemBean.getCount());
-                        uploadListBean.setRemark(maintenanceTableItemBean.getDiseaseDescribe());
-                        uploadListBean.setBno(UUID.randomUUID().toString());
-                        uploadListBean.setTjsj(System.currentTimeMillis()+"");
-                        uploadListBean.setTpjd("123.12");
-                        uploadListBean.setTpwd("123.12");
-                        uploadListBean.setYhzt("2");
-                        uploadBean.getInspectLogDetailList().add(uploadListBean);
 
-
-
-
-
-//                        uploadBean.setLxid_(gxLuXianInfos.get(xcldPosition).getId());
-//                        uploadBean.setLxid_(gxLuXianInfos.get(xcldPosition).getId());
-//                        uploadBean.setLxid_(gxLuXianInfos.get(xcldPosition).getId());
-//                        uploadBean.setLxid_(gxLuXianInfos.get(xcldPosition).getId());
-
-
-
-                        final Gson gson = new Gson();
-
-                        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-                            @Override
-                            public void onRequestSuccess(RequestType type, JSONObject result) {
-//                                Logger.e("aaa", "result.toString()" + result.toString());
-//                                JSONArray array = result.getJSONArray("datas");
-//                                String datas = array.getString(0);
-//                                Logger.e("aaa", "datas==" + datas);
-//                                Gson gson = new Gson();
-//                                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
-                                Logger.e("aaa","111111111111"+ result.toString());
-                            }
-
-                            @Override
-                            public void onRequestFail(RequestType type, String resultCode, String result) {
-                                Logger.e("aaa", result + "(" + resultCode + ")");
-                            }
-                        };
-
-
-                        BackgroundExecutor.execute(new Runnable() {
-
-                            @Override
-                            public void run() {
-                                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                                list.add(pair);
-                                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                                list.add(pair);
-                                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                                list.add(pair);
-                                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
-                                pair = new BasicNameValuePair("json", gson.toJson(uploadBean));
-                                list.add(pair);
-
-                                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
-                            }
-                        });
+//                        final Gson gson = new Gson();
+//                        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+//                            @Override
+//                            public void onRequestSuccess(RequestType type, JSONObject result) {
+////                                Logger.e("aaa", "result.toString()" + result.toString());
+////                                JSONArray array = result.getJSONArray("datas");
+////                                String datas = array.getString(0);
+////                                Logger.e("aaa", "datas==" + datas);
+////                                Gson gson = new Gson();
+////                                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
+//                                Logger.e("aaa","111111111111"+ result.toString());
+//                            }
+//
+//                            @Override
+//                            public void onRequestFail(RequestType type, String resultCode, String result) {
+//                                Logger.e("aaa", result + "(" + resultCode + ")");
+//                            }
+//                        };
+//
+//
+//                        BackgroundExecutor.execute(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                List<NameValuePair> list = new ArrayList<NameValuePair>();
+//                                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+//                                list.add(pair);
+//                                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+//                                list.add(pair);
+//                                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+//                                list.add(pair);
+//                                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
+//                                pair = new BasicNameValuePair("json", gson.toJson(uploadBean));
+//                                list.add(pair);
+//
+//                                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+//                            }
+//                        });
 
 
                     }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.suken.bridgedetection.R;
@@ -26,6 +27,7 @@ public class MaintenanceTableListActivity extends Activity {
     List<MaintenanceTableBean> maintenanceTableBeanList = new ArrayList<MaintenanceTableBean>();
     private MaintenanceTableDao maintenanceTableDao;
     private Context mContext;
+    private LinearLayout update_all;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class MaintenanceTableListActivity extends Activity {
 
     private void initView() {
         maintenance_table_listView = (ListView) findViewById(R.id.maintenance_table_listView);
+        update_all = (LinearLayout) findViewById(R.id.update_all);
         maintenanceTableBeanList= maintenanceTableDao.queryAll();
         mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this);
         mAdapter.setData(maintenanceTableBeanList);
@@ -47,6 +50,12 @@ public class MaintenanceTableListActivity extends Activity {
                 Intent in = new Intent(mContext, MaintenanceTableActivity.class);
                 in.putExtra("id", maintenanceTableBeanList.get(position).getId());
                 startActivity(in);
+            }
+        });
+        update_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

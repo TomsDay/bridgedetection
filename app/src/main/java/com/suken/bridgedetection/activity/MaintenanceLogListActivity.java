@@ -24,6 +24,7 @@ import com.suken.bridgedetection.adapter.MaintenanceLogListAdapter;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
+import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -39,7 +40,7 @@ public class MaintenanceLogListActivity extends Activity {
     private ListView mListView;
     private MaintenanceLogListAdapter maintenanceLogListAdapter;
     private Context mContext;
-    ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    ArrayList<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     public final int SUCCESS_CODE = 0;
     public final int ERROR_CODE = 1;
@@ -136,7 +137,7 @@ public class MaintenanceLogListActivity extends Activity {
                 Gson gson = new Gson();
                 for (int i = 0; i<array.size();i++) {
                     String datas = array.getString(i);
-                    MaintenanceLogListBean bean = gson.fromJson(datas, MaintenanceLogListBean.class);
+                    MaintenanceLogBean bean = gson.fromJson(datas, MaintenanceLogBean.class);
                     listBeen.add(bean);
                 }
                 Logger.e("aaa", listBeen.toString());
@@ -161,6 +162,7 @@ public class MaintenanceLogListActivity extends Activity {
 
             @Override
             public void run() {
+
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
@@ -168,7 +170,7 @@ public class MaintenanceLogListActivity extends Activity {
                 list.add(pair);
                 pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteCooperationByUID).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getUpkeepnoticeByUID).executePost(list);
             }
         });
     }

@@ -128,11 +128,12 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                address_edit,
 //                item_checkTime_edit;
         holder.video_num.setText(bean.getmVideo().size()+"");
-        holder.diseaseName_edit.setText(bean.getDiseaseName());
-        holder.unit_edit.setText(bean.getUnit());
-        holder.count_edit.setText(bean.getCount());
-        holder.address_edit.setText(bean.getAddress());
-        holder.item_checkTime_edit.setText(bean.getCheckTime());
+        holder.diseaseName_edit.setText(bean.getBhmc());
+        holder.unit_edit.setText(bean.getDw());
+        holder.count_edit.setText(bean.getYgsl());
+        holder.address_edit.setText(bean.getBhwz());
+        holder.item_checkTime_edit.setText(bean.getJcsj());
+        holder.zh_edit.setText(bean.getYhzh());
         setDateTime(holder);
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
@@ -198,16 +199,16 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.radioup:
-                        list.get(position).setDiseaseName("上行内侧");
+                        list.get(position).setFx("上行内侧");
                         break;
                     case R.id.radiodown:
-                        list.get(position).setDiseaseName("下行内侧");
+                        list.get(position).setFx("下行内侧");
                         break;
                     case R.id.radioleft:
-                        list.get(position).setDiseaseName("上行外侧");
+                        list.get(position).setFx("上行外侧");
                         break;
                     case R.id.radioright:
-                        list.get(position).setDiseaseName("下行外侧");
+                        list.get(position).setFx("下行外侧");
                         break;
 
                 }
@@ -234,10 +235,10 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                         MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(which);
                         holder.diseaseName_edit.setText(bean.getBhmc());
                         holder.unit_edit.setText(bean.getDw());
-                        list.get(position).setDiseaseName(bean.getBhmc());
-                        list.get(position).setUnit(bean.getDw());
-                        list.get(position).setDiseaseID(bean.getId()+"");
-                        list.get(position).setDiseaseDescribe(bean.getXcms()+"");
+                        list.get(position).setBhmc(bean.getBhmc());
+                        list.get(position).setDw(bean.getDw());
+                        list.get(position).setBhid(bean.getId()+"");
+                        list.get(position).setRemark(bean.getXcms()+"");
                     }
                 })
                 .show();
@@ -281,16 +282,16 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                    list.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
 //                    break;
                 case R.id.count_edit:
-                    list.get(position).setCount(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setYgsl(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.address_edit:
-                    list.get(position).setAddress(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
-                    list.get(position).setCheckTime(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setJcsj(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.zh_edit:
-                    list.get(position).setZh(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
                     break;
             }
         }

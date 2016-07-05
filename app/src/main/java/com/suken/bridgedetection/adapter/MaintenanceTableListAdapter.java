@@ -55,11 +55,11 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
         }
         MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
         holder.maintenancetablelist_item_tv1.setText(bean.getId()+"");
-        holder.maintenancetablelist_item_tv2.setText(bean.getCustodyUnit()+"");
-        holder.maintenancetablelist_item_tv3.setText(bean.getPatrolSection()+"");
-        holder.maintenancetablelist_item_tv4.setText(bean.getTimeQuantum()+"");
-        holder.maintenancetablelist_item_tv5.setText(bean.getSearchType()+"");
-        holder.maintenancetablelist_item_tv6.setText(bean.getInspectOne()+"");
+        holder.maintenancetablelist_item_tv2.setText(bean.getLxid()+"");
+        holder.maintenancetablelist_item_tv3.setText(bean.getLxmc()+"");
+        holder.maintenancetablelist_item_tv4.setText(bean.getJcsj()+"");
+        holder.maintenancetablelist_item_tv5.setText(bean.getXcld()+"");
+        holder.maintenancetablelist_item_tv6.setText(bean.getXcry()+"");
 
 
         return view;

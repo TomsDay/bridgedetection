@@ -30,6 +30,8 @@ public enum RequestType {
     geteCooperationByUID("获取外协单位基本信息","/m/base/geteCooperationByUID.ht"),
     geteQualityDemandByUID("获取质量要求信息","/m/base/geteQualityDemandByUID.ht"),
     geteMaterialByUID("获取材料基本信息","/m/base/geteMaterialByUID.ht"),
+    getMaintenlogByUID("获取维修保养日志记录信息","/m/daily/maintenlog/getMaintenlogByUID.ht"),
+    getUpkeepnoticeByUID("获取养护通知单记录信息","/m/daily/maintenlog/getUpkeepnoticeByUID.ht"),
 
     uploadInspectlog("上传日常巡查日志记录信息","/m/daily/inspect/uploadInspectlog.ht");
 

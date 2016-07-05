@@ -27,7 +27,7 @@ import java.util.ArrayList;
 public class MaintenanceLogListAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
-    ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    ArrayList<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     private int type;
 
@@ -36,7 +36,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
         mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
-    public void setDate( ArrayList<MaintenanceLogListBean> list){
+    public void setDate( ArrayList<MaintenanceLogBean> list){
         listBeen = list;
         type = 0;
     }
@@ -44,7 +44,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
         maintenanceLogBeen = list;
         type = 1;
     }
-    public ArrayList<MaintenanceLogListBean> getDate(){
+    public ArrayList<MaintenanceLogBean> getDate(){
         return listBeen;
     }
 
@@ -74,18 +74,18 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
             holder = (HolderView) view.getTag();
         }
         if (type == 0) {
-            final MaintenanceLogListBean bean = listBeen.get(position);
+            final MaintenanceLogBean bean = listBeen.get(position);
 
-            holder.maintenanceloglist_item_tv1.setText(bean.getGydwId());
-            holder.maintenanceloglist_item_tv2.setText(bean.getGydwName());
-            holder.maintenanceloglist_item_tv3.setText(bean.getCreatetime());
-            holder.maintenanceloglist_item_tv4.setText(bean.getCreator());
+            holder.maintenanceloglist_item_tv1.setText(bean.getBno());
+            holder.maintenanceloglist_item_tv2.setText(bean.getWxbmmc());
+            holder.maintenanceloglist_item_tv3.setText(bean.getQfrq());
+            holder.maintenanceloglist_item_tv4.setText(bean.getQfry());
         }else{
             MaintenanceLogBean bean = maintenanceLogBeen.get(position);
-            holder.maintenanceloglist_item_tv1.setText(bean.getSerialNumber());
-            holder.maintenanceloglist_item_tv2.setText(bean.getCustodyUnit());
-            holder.maintenanceloglist_item_tv3.setText(bean.getDate());
-            holder.maintenanceloglist_item_tv4.setText(bean.getPrincipal());
+            holder.maintenanceloglist_item_tv1.setText(bean.getBno());
+            holder.maintenanceloglist_item_tv2.setText(bean.getWxbmmc());
+            holder.maintenanceloglist_item_tv3.setText(bean.getQfrq());
+            holder.maintenanceloglist_item_tv4.setText(bean.getQfry());
 
         }
 

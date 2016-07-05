@@ -17,17 +17,49 @@ public class MaintenanceLogItemBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
     @DatabaseField
-    private String projectName;
+    private String createBy;
     @DatabaseField
-    private String materialName;
+    private String createtime;
     @DatabaseField
-    private String unit;
+    private String creator;
     @DatabaseField
-    private String count;
+    private String updateBy;
     @DatabaseField
-    private String address;
+    private String updatetime;
     @DatabaseField
-    private String checkTime;
+    private String updator;
+    @DatabaseField
+    private String versionno;
+    @DatabaseField
+    private String flag;
+    @DatabaseField
+    private String orgid;
+    @DatabaseField
+    private String bytzid;
+    @DatabaseField
+    private String xcbhid;
+    @DatabaseField
+    private String xcrzno;
+    @DatabaseField
+    private String bhid;
+    @DatabaseField
+    private String bhmc;
+    @DatabaseField
+    private String bhwz;
+    @DatabaseField
+    private String fx;
+    @DatabaseField
+    private String yhzh;
+    @DatabaseField
+    private String dw;
+    @DatabaseField
+    private String ygsl;
+    @DatabaseField
+    private String remark;
+
+
+
+
 
     private boolean isShow;
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
@@ -52,61 +84,70 @@ public class MaintenanceLogItemBean implements Serializable {
     @ForeignCollectionField
     private ForeignCollection<IVDesc> vDescs;
 
-    public MaintenanceLogItemBean() {
-    }
-
-    public MaintenanceLogItemBean(int id, String projectName, String materialName, String unit, String count, String address, String checkTime, boolean isShow, List<IVDesc> mImages, List<IVDesc> mVideo) {
-        this.id = id;
-        this.projectName = projectName;
-        this.materialName = materialName;
-        this.unit = unit;
-        this.count = count;
-        this.address = address;
-        this.checkTime = checkTime;
-        this.isShow = isShow;
-        this.mImages = mImages;
-        this.mVideo = mVideo;
-    }
-
     @Override
     public String toString() {
         return "MaintenanceLogItemBean{" +
                 "id=" + id +
-                ", projectName='" + projectName + '\'' +
-                ", materialName='" + materialName + '\'' +
-                ", unit='" + unit + '\'' +
-                ", count='" + count + '\'' +
-                ", address='" + address + '\'' +
-                ", checkTime='" + checkTime + '\'' +
+                ", createBy='" + createBy + '\'' +
+                ", createtime='" + createtime + '\'' +
+                ", creator='" + creator + '\'' +
+                ", updateBy='" + updateBy + '\'' +
+                ", updatetime='" + updatetime + '\'' +
+                ", updator='" + updator + '\'' +
+                ", versionno='" + versionno + '\'' +
+                ", flag='" + flag + '\'' +
+                ", orgid='" + orgid + '\'' +
+                ", bytzid='" + bytzid + '\'' +
+                ", xcbhid='" + xcbhid + '\'' +
+                ", xcrzno='" + xcrzno + '\'' +
+                ", bhid='" + bhid + '\'' +
+                ", bhmc='" + bhmc + '\'' +
+                ", bhwz='" + bhwz + '\'' +
+                ", fx='" + fx + '\'' +
+                ", yhzh='" + yhzh + '\'' +
+                ", dw='" + dw + '\'' +
+                ", ygsl='" + ygsl + '\'' +
+                ", remark='" + remark + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
                 ", maintenanceLogBean=" + maintenanceLogBean +
+                ", iDescs=" + iDescs +
+                ", vDescs=" + vDescs +
                 '}';
     }
 
-    public ForeignCollection<IVDesc> getvDescs() {
-        return vDescs;
+    public MaintenanceLogItemBean() {
     }
 
-    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
-        this.vDescs = vDescs;
-    }
-
-    public ForeignCollection<IVDesc> getiDescs() {
-        return iDescs;
-    }
-
-    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
-        this.iDescs = iDescs;
-    }
-
-    public MaintenanceLogBean getMaintenanceLogBean() {
-        return maintenanceLogBean;
-    }
-
-    public void setMaintenanceLogBean(MaintenanceLogBean maintenanceLogBean) {
+    public MaintenanceLogItemBean(int id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String flag, String orgid, String bytzid, String xcbhid, String xcrzno, String bhid, String bhmc, String bhwz, String fx, String yhzh, String dw, String ygsl, String remark, boolean isShow, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceLogBean maintenanceLogBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
+        this.id = id;
+        this.createBy = createBy;
+        this.createtime = createtime;
+        this.creator = creator;
+        this.updateBy = updateBy;
+        this.updatetime = updatetime;
+        this.updator = updator;
+        this.versionno = versionno;
+        this.flag = flag;
+        this.orgid = orgid;
+        this.bytzid = bytzid;
+        this.xcbhid = xcbhid;
+        this.xcrzno = xcrzno;
+        this.bhid = bhid;
+        this.bhmc = bhmc;
+        this.bhwz = bhwz;
+        this.fx = fx;
+        this.yhzh = yhzh;
+        this.dw = dw;
+        this.ygsl = ygsl;
+        this.remark = remark;
+        this.isShow = isShow;
+        this.mImages = mImages;
+        this.mVideo = mVideo;
         this.maintenanceLogBean = maintenanceLogBean;
+        this.iDescs = iDescs;
+        this.vDescs = vDescs;
     }
 
     public int getId() {
@@ -117,52 +158,164 @@ public class MaintenanceLogItemBean implements Serializable {
         this.id = id;
     }
 
-    public String getProjectName() {
-        return projectName;
+    public String getCreateBy() {
+        return createBy;
     }
 
-    public void setProjectName(String projectName) {
-        this.projectName = projectName;
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
     }
 
-    public String getMaterialName() {
-        return materialName;
+    public String getCreatetime() {
+        return createtime;
     }
 
-    public void setMaterialName(String materialName) {
-        this.materialName = materialName;
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
     }
 
-    public String getUnit() {
-        return unit;
+    public String getCreator() {
+        return creator;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public void setCreator(String creator) {
+        this.creator = creator;
     }
 
-    public String getCount() {
-        return count;
+    public String getUpdateBy() {
+        return updateBy;
     }
 
-    public void setCount(String count) {
-        this.count = count;
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
     }
 
-    public String getAddress() {
-        return address;
+    public String getUpdatetime() {
+        return updatetime;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime;
     }
 
-    public String getCheckTime() {
-        return checkTime;
+    public String getUpdator() {
+        return updator;
     }
 
-    public void setCheckTime(String checkTime) {
-        this.checkTime = checkTime;
+    public void setUpdator(String updator) {
+        this.updator = updator;
+    }
+
+    public String getVersionno() {
+        return versionno;
+    }
+
+    public void setVersionno(String versionno) {
+        this.versionno = versionno;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    public String getOrgid() {
+        return orgid;
+    }
+
+    public void setOrgid(String orgid) {
+        this.orgid = orgid;
+    }
+
+    public String getBytzid() {
+        return bytzid;
+    }
+
+    public void setBytzid(String bytzid) {
+        this.bytzid = bytzid;
+    }
+
+    public String getXcbhid() {
+        return xcbhid;
+    }
+
+    public void setXcbhid(String xcbhid) {
+        this.xcbhid = xcbhid;
+    }
+
+    public String getXcrzno() {
+        return xcrzno;
+    }
+
+    public void setXcrzno(String xcrzno) {
+        this.xcrzno = xcrzno;
+    }
+
+    public String getBhid() {
+        return bhid;
+    }
+
+    public void setBhid(String bhid) {
+        this.bhid = bhid;
+    }
+
+    public String getBhmc() {
+        return bhmc;
+    }
+
+    public void setBhmc(String bhmc) {
+        this.bhmc = bhmc;
+    }
+
+    public String getBhwz() {
+        return bhwz;
+    }
+
+    public void setBhwz(String bhwz) {
+        this.bhwz = bhwz;
+    }
+
+    public String getFx() {
+        return fx;
+    }
+
+    public void setFx(String fx) {
+        this.fx = fx;
+    }
+
+    public String getYhzh() {
+        return yhzh;
+    }
+
+    public void setYhzh(String yhzh) {
+        this.yhzh = yhzh;
+    }
+
+    public String getDw() {
+        return dw;
+    }
+
+    public void setDw(String dw) {
+        this.dw = dw;
+    }
+
+    public String getYgsl() {
+        return ygsl;
+    }
+
+    public void setYgsl(String ygsl) {
+        this.ygsl = ygsl;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public boolean isShow() {
@@ -187,5 +340,29 @@ public class MaintenanceLogItemBean implements Serializable {
 
     public void setmVideo(List<IVDesc> mVideo) {
         this.mVideo = mVideo;
+    }
+
+    public MaintenanceLogBean getMaintenanceLogBean() {
+        return maintenanceLogBean;
+    }
+
+    public void setMaintenanceLogBean(MaintenanceLogBean maintenanceLogBean) {
+        this.maintenanceLogBean = maintenanceLogBean;
+    }
+
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
+    }
+
+    public ForeignCollection<IVDesc> getvDescs() {
+        return vDescs;
+    }
+
+    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
+        this.vDescs = vDescs;
     }
 }

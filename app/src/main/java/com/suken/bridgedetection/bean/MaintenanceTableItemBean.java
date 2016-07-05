@@ -16,26 +16,39 @@ import java.util.List;
 public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
+    @DatabaseField
+    private String fx;
+    @DatabaseField
+    private String yhzh;
+    @DatabaseField
+    private String bhid;
+    @DatabaseField
+    private String bhmc;
+    @DatabaseField
+    private String bhwz;
+    @DatabaseField
+    private String dw;
+    @DatabaseField
+    private String ygsl;
+    @DatabaseField
+    private String jcsj;
+    @DatabaseField
+    private String remark;
+    @DatabaseField
+    private String picattachment;
+    @DatabaseField
+    private String vidattachment;
+    @DatabaseField
+    private String tjsj;
+    @DatabaseField
+    private String tpjd;
+    @DatabaseField
+    private String tpwd;
+    @DatabaseField
+    private String yhzt;
 
-    @DatabaseField
-    private String diseaseID;
-    @DatabaseField
-    private String diseaseName;
-    @DatabaseField
-    private String diseaseDescribe;
-    @DatabaseField
-    private String unit;
-    @DatabaseField
-    private String count;
-    @DatabaseField
-    private String address;
-    @DatabaseField
-    private String checkTime;
     private boolean isShow;
-    /**  桩号*/
-    private String zh;
-    /**  方向*/
-    private String fx ;
+
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
     private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
@@ -52,45 +65,51 @@ public class MaintenanceTableItemBean implements Serializable{
     @ForeignCollectionField
     private ForeignCollection<IVDesc> vDescs;
 
+
+
+
+
     public MaintenanceTableItemBean() {
     }
 
-    @Override
-    public String toString() {
-        return "MaintenanceTableItemBean{" +
-                "id=" + id +
-                ", diseaseName='" + diseaseName + '\'' +
-                ", unit='" + unit + '\'' +
-                ", count='" + count + '\'' +
-                ", address='" + address + '\'' +
-                ", checkTime='" + checkTime + '\'' +
-                ", maintenanceTableBean=" + maintenanceTableBean +
-                '}';
-    }
-
-    public MaintenanceTableItemBean(int id, String diseaseName, String unit, String count, String address, String checkTime) {
+    public MaintenanceTableItemBean(int id, String fx, String yhzh, String bhid, String bhmc, String bhwz, String dw, String ygsl, String jcsj, String remark, String picattachment, String vidattachment, String tjsj, String tpjd, String tpwd, String yhzt, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceTableBean maintenanceTableBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
         this.id = id;
-        this.diseaseName = diseaseName;
-        this.unit = unit;
-        this.count = count;
-        this.address = address;
-        this.checkTime = checkTime;
+        this.fx = fx;
+        this.yhzh = yhzh;
+        this.bhid = bhid;
+        this.bhmc = bhmc;
+        this.bhwz = bhwz;
+        this.dw = dw;
+        this.ygsl = ygsl;
+        this.jcsj = jcsj;
+        this.remark = remark;
+        this.picattachment = picattachment;
+        this.vidattachment = vidattachment;
+        this.tjsj = tjsj;
+        this.tpjd = tpjd;
+        this.tpwd = tpwd;
+        this.yhzt = yhzt;
+        this.mImages = mImages;
+        this.mVideo = mVideo;
+        this.maintenanceTableBean = maintenanceTableBean;
+        this.iDescs = iDescs;
+        this.vDescs = vDescs;
     }
 
-    public String getDiseaseDescribe() {
-        return diseaseDescribe;
+    public boolean isShow() {
+        return isShow;
     }
 
-    public void setDiseaseDescribe(String diseaseDescribe) {
-        this.diseaseDescribe = diseaseDescribe;
+    public void setShow(boolean show) {
+        isShow = show;
     }
 
-    public String getDiseaseID() {
-        return diseaseID;
+    public int getId() {
+        return id;
     }
 
-    public void setDiseaseID(String diseaseID) {
-        this.diseaseID = diseaseID;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFx() {
@@ -101,28 +120,116 @@ public class MaintenanceTableItemBean implements Serializable{
         this.fx = fx;
     }
 
-    public String getZh() {
-        return zh;
+    public String getYhzh() {
+        return yhzh;
     }
 
-    public void setZh(String zh) {
-        this.zh = zh;
+    public void setYhzh(String yhzh) {
+        this.yhzh = yhzh;
     }
 
-    public ForeignCollection<IVDesc> getiDescs() {
-        return iDescs;
+    public String getBhid() {
+        return bhid;
     }
 
-    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
-        this.iDescs = iDescs;
+    public void setBhid(String bhid) {
+        this.bhid = bhid;
     }
 
-    public ForeignCollection<IVDesc> getvDescs() {
-        return vDescs;
+    public String getBhmc() {
+        return bhmc;
     }
 
-    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
-        this.vDescs = vDescs;
+    public void setBhmc(String bhmc) {
+        this.bhmc = bhmc;
+    }
+
+    public String getBhwz() {
+        return bhwz;
+    }
+
+    public void setBhwz(String bhwz) {
+        this.bhwz = bhwz;
+    }
+
+    public String getDw() {
+        return dw;
+    }
+
+    public void setDw(String dw) {
+        this.dw = dw;
+    }
+
+    public String getYgsl() {
+        return ygsl;
+    }
+
+    public void setYgsl(String ygsl) {
+        this.ygsl = ygsl;
+    }
+
+    public String getJcsj() {
+        return jcsj;
+    }
+
+    public void setJcsj(String jcsj) {
+        this.jcsj = jcsj;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public String getVidattachment() {
+        return vidattachment;
+    }
+
+    public void setVidattachment(String vidattachment) {
+        this.vidattachment = vidattachment;
+    }
+
+    public String getTjsj() {
+        return tjsj;
+    }
+
+    public void setTjsj(String tjsj) {
+        this.tjsj = tjsj;
+    }
+
+    public String getTpjd() {
+        return tpjd;
+    }
+
+    public void setTpjd(String tpjd) {
+        this.tpjd = tpjd;
+    }
+
+    public String getTpwd() {
+        return tpwd;
+    }
+
+    public void setTpwd(String tpwd) {
+        this.tpwd = tpwd;
+    }
+
+    public String getYhzt() {
+        return yhzt;
+    }
+
+    public void setYhzt(String yhzt) {
+        this.yhzt = yhzt;
     }
 
     public List<IVDesc> getmImages() {
@@ -141,14 +248,6 @@ public class MaintenanceTableItemBean implements Serializable{
         this.mVideo = mVideo;
     }
 
-    public boolean isShow() {
-        return isShow;
-    }
-
-    public void setShow(boolean show) {
-        isShow = show;
-    }
-
     public MaintenanceTableBean getMaintenanceTableBean() {
         return maintenanceTableBean;
     }
@@ -157,53 +256,19 @@ public class MaintenanceTableItemBean implements Serializable{
         this.maintenanceTableBean = maintenanceTableBean;
     }
 
-    public int getId() {
-        return id;
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
     }
 
-
-
-    public String getDiseaseName() {
-        return diseaseName;
+    public ForeignCollection<IVDesc> getvDescs() {
+        return vDescs;
     }
 
-    public void setDiseaseName(String diseaseName) {
-        this.diseaseName = diseaseName;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
-    }
-
-    public String getCount() {
-        return count;
-    }
-
-    public void setCount(String count) {
-        this.count = count;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCheckTime() {
-        return checkTime;
-    }
-
-    public void setCheckTime(String checkTime) {
-        this.checkTime = checkTime;
+    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
+        this.vDescs = vDescs;
     }
 }

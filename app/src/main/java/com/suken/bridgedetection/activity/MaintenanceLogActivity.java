@@ -22,6 +22,7 @@ import android.widget.Spinner;
 
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
@@ -31,9 +32,6 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
-import com.suken.bridgedetection.bean.MaintenanceLogListBean;
-import com.suken.bridgedetection.bean.MaintenanceTableBean;
-import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
@@ -46,7 +44,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * 高速公路维修保养日志
@@ -58,7 +55,7 @@ public class MaintenanceLogActivity extends Activity {
 
     private MaintenanceLogAdapter mAdapter;
     private Context mContext;
-    private MaintenanceLogListBean maintenanceLogListBean;
+    private MaintenanceLogBean allMaintenanceLogBean;
 
     private EditText maintenancelog_gydw_ev,
             maintenancelog_bh_ev,
@@ -72,7 +69,7 @@ public class MaintenanceLogActivity extends Activity {
     private ArrayAdapter<String> mArrayWeatherAdapter;
 
     private String[] mStringArrayWeather;
-
+    private int selsctWeather;
     private String strWeather = "晴";
 
     private int mYear,mMonth, mDay;
@@ -91,7 +88,7 @@ public class MaintenanceLogActivity extends Activity {
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
 
-        maintenanceLogListBean = (MaintenanceLogListBean) getIntent().getSerializableExtra("bean");
+        allMaintenanceLogBean = (MaintenanceLogBean) getIntent().getSerializableExtra("bean");
         id = getIntent().getIntExtra("id", 0);
         initView();
     }
@@ -106,6 +103,11 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_wxbm_ev = (EditText) findViewById(R.id.maintenancelog_wxbm_ev);
         maintenancelog_jcr_ev = (EditText) findViewById(R.id.maintenancelog_jcr_ev);
         maintenancelog_jlr_ev = (EditText) findViewById(R.id.maintenancelog_jlr_ev);
+        maintenancelog_bh_ev.setOnKeyListener(null);
+        maintenancelog_gydw_ev.setOnKeyListener(null);
+        maintenancelog_wxbm_ev.setOnKeyListener(null);
+
+
         initSpinner();
         initTime();
 
@@ -116,12 +118,19 @@ public class MaintenanceLogActivity extends Activity {
             if(maintenanceLogBeen.size()>0) {
                 MaintenanceLogBean bean = maintenanceLogBeen.get(0);
 
-                maintenancelog_gydw_ev.setText(bean.getCustodyUnit()+"");
-                maintenancelog_bh_ev.setText(bean.getSerialNumber()+"");
-                maintenancelog_data_ev.setText(bean.getDate()+"");
-                maintenancelog_wxbm_ev.setText(bean.getMaintenanceDepartment()+"");
-                maintenancelog_jcr_ev.setText(bean.getRummager()+"");
-                maintenancelog_jlr_ev.setText(bean.getPrincipal()+"");
+                maintenancelog_gydw_ev.setText(bean.getGldwName()+"");
+                maintenancelog_bh_ev.setText(bean.getBno()+"");
+                maintenancelog_data_ev.setText(bean.getWxks()+"");
+                maintenancelog_wxbm_ev.setText(bean.getWxbmmc()+"");
+                strWeather = bean.getWeather();
+                for (int i = 0; i < mStringArrayWeather.length; i++) {
+                    if(mStringArrayWeather[i].equals(strWeather)){
+                        selsctWeather = i;
+                        break;
+                    }
+                }
+                maintenancelog_weather_spinner.setSelection(selsctWeather);
+                maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
 
 
                 ForeignCollection<MaintenanceLogItemBean> orders = bean.getMaintenanceTableItemBeen();
@@ -140,7 +149,10 @@ public class MaintenanceLogActivity extends Activity {
                         Logger.e("aaa", b.toString());
                     }
                 } finally {
-
+                    maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
+                    if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
+                        maintenanceLogItemBeen.get(0).setShow(true);
+                    }
                     try {
                         iterator.close();
                     } catch (SQLException e) {
@@ -148,30 +160,40 @@ public class MaintenanceLogActivity extends Activity {
                     }
                 }
             }else{
-                MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
-                bean.setShow(true);
-                maintenanceLogItemBeen.add(bean);
-                maintenancelog_gydw_ev.setEnabled(false);
-                maintenancelog_gydw_ev.setText(maintenanceLogListBean.getGydwName());
-                maintenancelog_bh_ev.setText(UUID.randomUUID().toString());
+                initDate();
             }
 
         }else{
-            MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
-            bean.setShow(true);
-            maintenanceLogItemBeen.add(bean);
-            maintenancelog_gydw_ev.setEnabled(false);
-            maintenancelog_gydw_ev.setText(maintenanceLogListBean.getGydwName());
-            maintenancelog_bh_ev.setText(UUID.randomUUID().toString());
+            initDate();
         }
 
 
 
         mAdapter = new MaintenanceLogAdapter(MaintenanceLogActivity.this);
-        mListView.setAdapter(mAdapter);
         mAdapter.setData(maintenanceLogItemBeen);
+        mListView.setAdapter(mAdapter);
+        
 
 
+    }
+    public void initDate(){
+        maintenancelog_gydw_ev.setText(allMaintenanceLogBean.getGldwName()+"");
+        maintenancelog_bh_ev.setText(allMaintenanceLogBean.getBno()+"");
+        maintenancelog_data_ev.setText(allMaintenanceLogBean.getWxks()+"");
+        maintenancelog_wxbm_ev.setText(allMaintenanceLogBean.getWxbmmc()+"");
+        strWeather = allMaintenanceLogBean.getWeather();
+        for (int i = 0; i < mStringArrayWeather.length; i++) {
+            if(mStringArrayWeather[i].equals(strWeather)){
+                selsctWeather = i;
+                break;
+            }
+        }
+        maintenancelog_weather_spinner.setSelection(selsctWeather);
+        maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
+        maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
+        if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
+            maintenanceLogItemBeen.get(0).setShow(true);
+        }
     }
 
     private void initTime() {
@@ -242,10 +264,15 @@ public class MaintenanceLogActivity extends Activity {
                         String fzr = maintenancelog_jlr_ev.getText().toString();
 
                         MaintenanceLogBean maintenanceLogBean = new MaintenanceLogBean();
-                        maintenanceLogBean.setCustodyUnit(gydw);
-                        maintenanceLogBean.setSerialNumber(bh);
+                        if(id != 0){
+                            maintenanceLogBean = maintenanceLogBeen.get(0);
+                        }else{
+                            maintenanceLogBean = allMaintenanceLogBean;
+                        }
+
+                        
                         maintenanceLogBean.setWeather(strWeather);
-                        maintenanceLogBean.setDate(date);
+                        maintenanceLogBean.setWxks(date);
                         maintenanceLogBean.setMaintenanceDepartment(wxbm);
                         maintenanceLogBean.setRummager(jcr);
                         maintenanceLogBean.setPrincipal(fzr);
