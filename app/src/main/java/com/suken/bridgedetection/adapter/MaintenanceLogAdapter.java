@@ -94,12 +94,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
 
         holder.video_num.setText(bean.getmVideo().size()+"");
-        holder.projectName_edit.setText(bean.getProjectName());
-        holder.cl_edit.setText(bean.getMaterialName());
-        holder.unit_edit.setText(bean.getUnit());
-        holder.count_edit.setText(bean.getCount());
-        holder.address_edit.setText(bean.getAddress());
-        holder.item_checkTime_edit.setText(bean.getCheckTime());
+        holder.projectName_edit.setText(bean.getBhmc());
+        holder.cl_edit.setText(bean.getYhzh());
+        holder.unit_edit.setText(bean.getDw());
+        holder.count_edit.setText(bean.getYgsl());
+        holder.address_edit.setText(bean.getBhwz());
+        holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
 
         SpinnerAdapter mAdapter = new SpinnerAdapter();
@@ -237,27 +237,27 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
                 case R.id.projectName_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    maintenanceLogItemBeen.get(position).setProjectName(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setBhmc(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.cl_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    maintenanceLogItemBeen.get(position).setMaterialName(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.unit_edit:
                     Logger.e("aaa","unit_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setDw(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.count_edit:
                     Logger.e("aaa","count_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCount(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setYgsl(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.address_edit:
                     Logger.e("aaa","address_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setAddress(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
                     Logger.e("aaa","item_checkTime_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCheckTime(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
                     break;
             }
         }

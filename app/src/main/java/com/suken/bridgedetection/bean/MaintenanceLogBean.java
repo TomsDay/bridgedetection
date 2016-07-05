@@ -79,6 +79,13 @@ public class MaintenanceLogBean implements Serializable{
      * ==============================================================上传增加的字段================================================================================
      */
     private String create_by;
+    private String jcry;
+    private String fzry;
+    private String bytzid;
+    private String gydw_id;
+    private String gydw_name;
+    private String wxrq;
+    private String byrzzt;
 
 
 
@@ -134,6 +141,70 @@ public class MaintenanceLogBean implements Serializable{
         this.tzdzt = tzdzt;
         this.upkeepdiseaseList = upkeepdiseaseList;
         this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+    }
+
+    public String getCreate_by() {
+        return create_by;
+    }
+
+    public void setCreate_by(String create_by) {
+        this.create_by = create_by;
+    }
+
+    public String getJcry() {
+        return jcry;
+    }
+
+    public void setJcry(String jcry) {
+        this.jcry = jcry;
+    }
+
+    public String getFzry() {
+        return fzry;
+    }
+
+    public void setFzry(String fzry) {
+        this.fzry = fzry;
+    }
+
+    public String getBytzid() {
+        return bytzid;
+    }
+
+    public void setBytzid(String bytzid) {
+        this.bytzid = bytzid;
+    }
+
+    public String getGydw_id() {
+        return gydw_id;
+    }
+
+    public void setGydw_id(String gydw_id) {
+        this.gydw_id = gydw_id;
+    }
+
+    public String getGydw_name() {
+        return gydw_name;
+    }
+
+    public void setGydw_name(String gydw_name) {
+        this.gydw_name = gydw_name;
+    }
+
+    public String getWxrq() {
+        return wxrq;
+    }
+
+    public void setWxrq(String wxrq) {
+        this.wxrq = wxrq;
+    }
+
+    public String getByrzzt() {
+        return byrzzt;
+    }
+
+    public void setByrzzt(String byrzzt) {
+        this.byrzzt = byrzzt;
     }
 
     public String getTzld() {

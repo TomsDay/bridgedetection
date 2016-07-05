@@ -428,6 +428,12 @@ public class UiUtil {
             vdos = vidattach.split(",");
         }
         String[] attaches = UiUtil.concat(pics, vdos);
+
+        Logger.e("aaa","===================="+attaches.toString());
+        for (int i = 0; i < attaches.length; i++) {
+
+            Logger.e("aaa", "i====================" + attaches[i]);
+        }
         if (attaches.length > 0) {
             new HttpTask(listener, RequestType.uploadFile).uploadFile(list, attaches);
         }

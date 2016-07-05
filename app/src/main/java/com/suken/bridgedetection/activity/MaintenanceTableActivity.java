@@ -20,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -45,6 +46,9 @@ import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.GXLuXianInfo;
 import com.suken.bridgedetection.storage.GXLuXianInfoDao;
+import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
+import com.suken.bridgedetection.storage.SdxcFormData;
+import com.suken.bridgedetection.storage.SdxcFormDetail;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.NetUtil;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
@@ -68,7 +72,7 @@ import org.apache.http.message.BasicNameValuePair;
 /**
  * 高速公路养护巡查日志
  */
-public class MaintenanceTableActivity extends Activity {
+public class MaintenanceTableActivity extends BaseActivity {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceTableItemBean> maintenanceTableItemBeen = new ArrayList<MaintenanceTableItemBean>();
     private ArrayList<MaintenanceTableBean> maintenanceTableBeen = new ArrayList<MaintenanceTableBean>();
@@ -397,56 +401,63 @@ public class MaintenanceTableActivity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        String time = maintenancetable_time_ev.getText().toString();
-                        String date = maintenancetable_date_ev.getText().toString();
-                        String xcr = maintenancetable_xcr_ev.getText().toString();
-                        MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
-                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
-                        maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
-                        maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
-                        maintenanceTableBean.setJcsj(time);
-                        maintenanceTableBean.setLxbh(bean.getLxbh());
-                        maintenanceTableBean.setLxmc(bean.getLxmc());
-                        maintenanceTableBean.setLxid(bean.getId());
-                        maintenanceTableBean.setTjsj(date);
-                        maintenanceTableBean.setWeather(strWeather);
-                        maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
-                        maintenanceTableBean.setXcry(xcr);
-                        maintenanceTableBean.setJcry(BridgeDetectionApplication.mCurrentUser.getUserName());
-                        maintenanceTableBean.setXclx(intSearchType);
-
-//
-                        if (id != 0) {
-                            maintenanceTableBean.setId(id);
-                        }
-
-                        if (id != 0) {
-                            maintenanceTableDao.update(maintenanceTableBean);
-                        }else{
-                            maintenanceTableDao.add(maintenanceTableBean);
-                        }
-//
                         maintenanceTableItemBeen = mAdapter.getData();
+                        uploadIV();
+
+
+
+
+
+//                        String time = maintenancetable_time_ev.getText().toString();
+//                        String date = maintenancetable_date_ev.getText().toString();
+//                        String xcr = maintenancetable_xcr_ev.getText().toString();
+//                        MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
+//                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
+//                        maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+//                        maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+//                        maintenanceTableBean.setJcsj(time);
+//                        maintenanceTableBean.setLxbh(bean.getLxbh());
+//                        maintenanceTableBean.setLxmc(bean.getLxmc());
+//                        maintenanceTableBean.setLxid(bean.getId());
+//                        maintenanceTableBean.setTjsj(date);
+//                        maintenanceTableBean.setWeather(strWeather);
+//                        maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
+//                        maintenanceTableBean.setXcry(xcr);
+//                        maintenanceTableBean.setJcry(BridgeDetectionApplication.mCurrentUser.getUserName());
+//                        maintenanceTableBean.setXclx(intSearchType);
 //
-
-                        for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
-                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
-                            itemBean.setYhzt("1");
-                            itemBean.setTpjd("123.12");
-                            itemBean.setTpwd("123.12");
-                            String fx = itemBean.getFx();
-                            itemBean.setFx(fx != null ? fx : "上行内侧");
-
-                            itemBean.setMaintenanceTableBean(maintenanceTableBean);
-                            if (itemBean.getId() != 0) {
-                                maintenanceTableDao.updateItem(itemBean);
-                            }else {
-                                maintenanceTableDao.addItem(itemBean);
-                            }
-                        }
-
-                        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
-                        final UploadBean uploadBean = new UploadBean();
+////
+//                        if (id != 0) {
+//                            maintenanceTableBean.setId(id);
+//                        }
+//
+//                        if (id != 0) {
+//                            maintenanceTableDao.update(maintenanceTableBean);
+//                        }else{
+//                            maintenanceTableDao.add(maintenanceTableBean);
+//                        }
+////
+//                        maintenanceTableItemBeen = mAdapter.getData();
+////
+//
+//                        for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
+//                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
+//                            itemBean.setYhzt("1");
+//                            itemBean.setTpjd("123.12");
+//                            itemBean.setTpwd("123.12");
+//                            String fx = itemBean.getFx();
+//                            itemBean.setFx(fx != null ? fx : "上行内侧");
+//
+//                            itemBean.setMaintenanceTableBean(maintenanceTableBean);
+//                            if (itemBean.getId() != 0) {
+//                                maintenanceTableDao.updateItem(itemBean);
+//                            }else {
+//                                maintenanceTableDao.addItem(itemBean);
+//                            }
+//                        }
+//
+//                        Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
+//                        final UploadBean uploadBean = new UploadBean();
 
 //                        final Gson gson = new Gson();
 //                        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
@@ -647,5 +658,55 @@ public class MaintenanceTableActivity extends Activity {
                 new HttpTask(onReceivedHttpResponseListener, RequestType.geteDeseaseByUID).executePost(list);
             }
         });
+    }
+    public void uploadIV(){
+        OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject obj) {
+                Logger.e("aaa","obj====="+obj.toString());
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa","resultCode====="+resultCode);
+                Logger.e("aaa","result====="+result);
+
+            }
+        };
+
+        List<NameValuePair> list = new ArrayList<NameValuePair>();
+        BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+        list.add(pair);
+        pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+        list.add(pair);
+
+
+
+        List<IVDesc> image = maintenanceTableItemBeen.get(0).getmImages();
+        String[] pics = new String[image.size()];
+        for (int i = 0; i < image.size(); i++) {
+            pics[i] = image.get(i).getPath();
+        }
+        List<IVDesc> video = maintenanceTableItemBeen.get(0).getmVideo();
+        String[] vdos = new String[video.size()];
+        for (int i = 0; i < video.size(); i++) {
+            vdos[i] = video.get(i).getPath();
+        }
+
+
+        String[] attaches = concat(pics, vdos);
+        Logger.e("aaa","===================="+attaches[0]);
+        for (int i = 0; i < attaches.length; i++) {
+
+            Logger.e("aaa", "i====================" + attaches[i]);
+        }
+        new HttpTask(listener, RequestType.uploadFile).uploadFile(list, attaches);
+    }
+    public static String[] concat(String[] a, String[] b) {
+        String[] c = new String[a.length + b.length];
+        System.arraycopy(a, 0, c, 0, a.length);
+        System.arraycopy(b, 0, c, a.length, b.length);
+        return c;
     }
 }

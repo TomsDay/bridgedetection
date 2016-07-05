@@ -135,6 +135,17 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.item_checkTime_edit.setText(bean.getJcsj());
         holder.zh_edit.setText(bean.getYhzh());
         setDateTime(holder);
+
+        String fx = bean.getFx();
+        if("上行内侧".equals(fx)){
+            holder.radioGroup.check(R.id.radioup);
+        }else if("下行内侧".equals(fx)){
+            holder.radioGroup.check(R.id.radiodown);
+        }else if("上行外侧".equals(fx)){
+            holder.radioGroup.check(R.id.radioleft);
+        }else{
+            holder.radioGroup.check(R.id.radioright);
+        }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
 //        holder.qslx_title.setText("位置");
@@ -194,6 +205,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 initListDialog(finalHolder,position);
             }
         });
+
+
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {

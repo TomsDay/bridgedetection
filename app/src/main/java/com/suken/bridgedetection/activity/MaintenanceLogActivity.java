@@ -273,9 +273,9 @@ public class MaintenanceLogActivity extends Activity {
                         
                         maintenanceLogBean.setWeather(strWeather);
                         maintenanceLogBean.setWxks(date);
-                        maintenanceLogBean.setMaintenanceDepartment(wxbm);
-                        maintenanceLogBean.setRummager(jcr);
-                        maintenanceLogBean.setPrincipal(fzr);
+                        maintenanceLogBean.setWxbmmc(wxbm);
+                        maintenanceLogBean.setJcry(jcr);
+                        maintenanceLogBean.setFzry(fzr);
                         if (id != 0) {
                             maintenanceLogBean.setId(id);
                         }
