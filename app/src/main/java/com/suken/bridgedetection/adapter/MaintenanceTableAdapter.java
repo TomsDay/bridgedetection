@@ -128,6 +128,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                address_edit,
 //                item_checkTime_edit;
         holder.video_num.setText(bean.getmVideo().size()+"");
+        holder.img_num.setText(bean.getmImages().size()+"");
         holder.diseaseName_edit.setText(bean.getBhmc());
         holder.unit_edit.setText(bean.getDw());
         holder.count_edit.setText(bean.getYgsl());
@@ -143,7 +144,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.radioGroup.check(R.id.radiodown);
         }else if("上行外侧".equals(fx)){
             holder.radioGroup.check(R.id.radioleft);
-        }else{
+        }else if("下行外侧".equals(fx)){
             holder.radioGroup.check(R.id.radioright);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
@@ -347,6 +348,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 qslx_title,
                 qsfw_title,
                 byyj_title,
+                img_num,
                 video_num;
 
         private EditText diseaseName_edit,
@@ -373,6 +375,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             qslx_title = (TextView) view.findViewById(R.id.qslx_title);
             qsfw_title = (TextView) view.findViewById(R.id.qsfw_title);
             byyj_title = (TextView) view.findViewById(R.id.byyj_title);
+            img_num = (TextView) view.findViewById(R.id.img_num);
             video_num = (TextView) view.findViewById(R.id.video_num);
 
             xiangji = (ImageView) view.findViewById(R.id.xiangji);

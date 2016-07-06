@@ -44,7 +44,7 @@ public class MaintenanceTableBean implements Serializable {
     @DatabaseField
     private String xcld;
 
-    private List<UploadListBean> inspectLogDetailList = new ArrayList<UploadListBean>();
+    private List<MaintenanceTableItemBean> inspectLogDetailList = new ArrayList<MaintenanceTableItemBean>();
 
     @ForeignCollectionField
     /**
@@ -79,7 +79,7 @@ public class MaintenanceTableBean implements Serializable {
     public MaintenanceTableBean() {
     }
 
-    public MaintenanceTableBean(int id, String lxid, String lxbh, String lxmc, String xcry, String jcry, String weather, String gydwId, String gydwName, String jcsj, String tjsj, int xclx, String xcld, List<UploadListBean> inspectLogDetailList, ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
+    public MaintenanceTableBean(int id, String lxid, String lxbh, String lxmc, String xcry, String jcry, String weather, String gydwId, String gydwName, String jcsj, String tjsj, int xclx, String xcld, List<MaintenanceTableItemBean> inspectLogDetailList, ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
         this.id = id;
         this.lxid = lxid;
         this.lxbh = lxbh;
@@ -201,11 +201,11 @@ public class MaintenanceTableBean implements Serializable {
         this.xcld = xcld;
     }
 
-    public List<UploadListBean> getInspectLogDetailList() {
+    public List<MaintenanceTableItemBean> getInspectLogDetailList() {
         return inspectLogDetailList;
     }
 
-    public void setInspectLogDetailList(List<UploadListBean> inspectLogDetailList) {
+    public void setInspectLogDetailList(List<MaintenanceTableItemBean> inspectLogDetailList) {
         this.inspectLogDetailList = inspectLogDetailList;
     }
 

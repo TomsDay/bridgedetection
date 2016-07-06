@@ -80,7 +80,7 @@ public class IVDescDao {
     public List<IVDesc> getVideoMaintenanceTableItemBeanByUserId(int userid)
     {
         try {
-            return ivDescs.queryBuilder().where().eq("imageMaintenanceTableItemBean_id", userid)
+            return ivDescs.queryBuilder().where().eq("videoMaintenanceTableItemBean_id", userid)
                     .query();
         } catch (Exception e) {
             e.printStackTrace();
@@ -105,6 +105,13 @@ public class IVDescDao {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+    public void delete(int id){
+        try {
+            ivDescs.deleteById(id + "");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

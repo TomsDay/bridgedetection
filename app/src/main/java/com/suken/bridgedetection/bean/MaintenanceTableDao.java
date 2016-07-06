@@ -93,6 +93,21 @@ public class MaintenanceTableDao {
         }
     }
 
+    public void delete(int id) {
+        try {
+            maintenanceTableBeen.deleteById(id+"");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteItem(int id){
+        try {
+            maintenanceTableItemBeen.deleteById(id + "");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
