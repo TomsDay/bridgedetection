@@ -38,6 +38,7 @@ public enum RequestType {
 
     private String desc;
     private String url;
+    private int typePosition;
 
     private RequestType(String desc, String url) {
         this.desc = desc;
@@ -53,4 +54,11 @@ public enum RequestType {
         return url;
     }
 
+    public int getTypePosition() {
+        return typePosition;
+    }
+
+    public void setTypePosition(int typePosition) {
+        this.typePosition = typePosition;
+    }
 }

@@ -134,8 +134,8 @@ public class MaintenanceTableActivity extends BaseActivity {
                 maintenancetable_gydw_ev.setText(bean.getGydwName());
                 maintenancetable_cxld_ev.setText(bean.getXcld());
                 maintenancetable_xcr_ev.setText(bean.getXcry());
-                maintenancetable_time_ev.setText(bean.getJcsj());
-                maintenancetable_date_ev.setText(bean.getTjsj());
+                maintenancetable_time_ev.setText(bean.getJcks()+"-"+bean.getJcjs());
+                maintenancetable_date_ev.setText(bean.getJcjs());
 
                 strWeather = bean.getWeather();
                 Logger.e("aaa", "strWeather===" + strWeather);
@@ -459,7 +459,12 @@ public class MaintenanceTableActivity extends BaseActivity {
                         GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
                         maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
                         maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
-                        maintenanceTableBean.setJcsj(time);
+
+
+                        maintenanceTableBean.setJcsj(date);
+                        String[] timeStr = time.split("-");
+                        maintenanceTableBean.setJcks(timeStr[0]);
+                        maintenanceTableBean.setJcjs(timeStr[1]);
                         maintenanceTableBean.setLxbh(bean.getLxbh());
                         maintenanceTableBean.setLxmc(bean.getLxmc());
                         maintenanceTableBean.setLxid(bean.getId());

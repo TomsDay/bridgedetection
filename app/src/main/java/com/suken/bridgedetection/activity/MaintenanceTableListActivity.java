@@ -35,6 +35,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,10 +67,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
     }
 
     private void initView() {
-
+        getAllData();
         maintenance_table_listView = (ListView) findViewById(R.id.maintenance_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
-        maintenanceTableBeanList= maintenanceTableDao.queryAll();
         mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this);
         mAdapter.setData(maintenanceTableBeanList);
         maintenance_table_listView.setAdapter(mAdapter);
@@ -93,6 +93,8 @@ public class MaintenanceTableListActivity extends BaseActivity {
                                         startActivity(in);
                                         break;
                                     case 1://上传
+                                        MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
+                                        uploadIV(bean);
                                         break;
                                     default:
                                         break;
@@ -111,9 +113,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
         update_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getAllData();
                 for(int i = 0;i<maintenanceTableBeanList.size();i++){
-
+                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
+                    uploadIV(bean);
                 }
             }
         });
@@ -121,6 +123,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
     }
 
     public void getAllData(){
+        maintenanceTableBeanList = maintenanceTableDao.queryAll();
         if(maintenanceTableBeanList.size()>0){
             for(int i = 0;i<maintenanceTableBeanList.size();i++){
                 MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
@@ -162,11 +165,11 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 break;
         }
     }
-    public void uploadData(List<NameValuePair> list,final MaintenanceTableBean bean, final List<IVDesc> images, final List<IVDesc> videos){
+    public void uploadData(final MaintenanceTableBean bean){
         final UploadBean uploadBean = new UploadBean();
 
         final Gson gson = new Gson();
-         OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
 //
@@ -186,18 +189,27 @@ public class MaintenanceTableListActivity extends BaseActivity {
         };
 
 
+        BackgroundExecutor.execute(new Runnable() {
 
-        Logger.e("aaa","gson======"+gson.toJson(uploadBean));
-        BasicNameValuePair pair = new BasicNameValuePair("json", gson.toJson(bean));
-        list.add(pair);
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
+                pair = new BasicNameValuePair("json", gson.toJson(bean));
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+            }
+        });
 
-        new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+
 
     }
 
-    List<UploadFileBean> mImages ;
-    List<UploadFileBean> mVideos;;
-    public void uploadIV(){
+    public void uploadIV(final MaintenanceTableBean bean){
 
         final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
             //
@@ -205,10 +217,11 @@ public class MaintenanceTableListActivity extends BaseActivity {
             public void onRequestSuccess(RequestType type, JSONObject obj) {
 //                Logger.e("aaa","obj====="+obj.toString());
                 Logger.e("aaa","type====="+type.toString());
+                Logger.e("aaa","obj====="+obj.toString());
                 com.alibaba.fastjson.JSONArray array = obj.getJSONArray("datas");
                 Gson gson = new Gson();
-                mImages = new ArrayList<UploadFileBean>();
-                mVideos= new ArrayList<UploadFileBean>();;
+                List<UploadFileBean>  mImages = new ArrayList<UploadFileBean>();
+                List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();;
                 for(int i = 0;i<array.size();i++){
                     String s = array.getString(i);
                     UploadFileBean uploadFileBean = gson.fromJson(s, UploadFileBean.class);
@@ -218,16 +231,58 @@ public class MaintenanceTableListActivity extends BaseActivity {
                         mVideos.add(uploadFileBean);
                     }
                 }
-
-
-
-
-                for(int i = 0;i<images.size();i++){
-                    maintenanceTableDao.deleteItem(images.get(i).getId());
+                int typePosition = type.getTypePosition();
+//                MaintenanceTableItemBean tableItemBean = bean.getInspectLogDetailList().get(typePosition);
+//                List<IVDesc> images = tableItemBean.getmImages();
+//                List<IVDesc> videos = tableItemBean.getmVideo();
+//                for(int i = 0;i<images.size();i++){
+//                    maintenanceTableDao.deleteItem(images.get(i).getId());
+//                }
+//                for(int i = 0;i<videos.size();i++){
+//                    maintenanceTableDao.deleteItem(videos.get(i).getId());
+//                }
+                StringBuffer imageSB = new StringBuffer();
+                StringBuffer videoSB = new StringBuffer();
+                for(int i = 0;i<mImages.size();i++){
+                    imageSB.append(mImages.get(i).getFileId());
+                    if (i != mImages.size() - 1) {
+                        imageSB.append(",");
+                    }
                 }
-                for(int i = 0;i<videos.size();i++){
-                    maintenanceTableDao.deleteItem(videos.get(i).getId());
+
+                for(int i = 0;i<mVideos.size();i++){
+                    videoSB.append(mVideos.get(i).getFileId());
+                    if (i != mVideos.size() - 1) {
+                        videoSB.append(",");
+                    }
                 }
+                bean.getInspectLogDetailList().get(typePosition).setPicattachment(imageSB.toString());
+                bean.getInspectLogDetailList().get(typePosition).setVidattachment(mVideos.toString());
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                String date = sDateFormat.format(new java.util.Date());
+                bean.getInspectLogDetailList().get(typePosition).setTjsj(date);
+                boolean isUpload = true;
+                List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
+                for(int i = 0;i<itemBeen.size();i++){
+                    MaintenanceTableItemBean thisTableItemBean = itemBeen.get(i);
+                    String tjsj = thisTableItemBean.getTjsj();
+                    if (tjsj == null || tjsj.length() == 0) {
+                        isUpload = false;
+                        break;
+                    }
+                }
+                if(isUpload){
+                    for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
+                        bean.getInspectLogDetailList().get(i).setmImages(null);
+                        bean.getInspectLogDetailList().get(i).setmVideo(null);
+                        bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
+                        bean.getInspectLogDetailList().get(i).setiDescs(null);
+                        bean.getInspectLogDetailList().get(i).setvDescs(null);
+                    }
+                    bean.setTjsj(date);
+                    uploadData(bean);
+                }
+
 
             }
 
@@ -250,23 +305,28 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
+                List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
+                for (int j = 0; j < itemBeen.size(); j++) {
+                    MaintenanceTableItemBean tableItemBean = itemBeen.get(j);
+                    List<IVDesc> images = tableItemBean.getmImages();
+                    List<IVDesc> videos = tableItemBean.getmVideo();
+                    String[] pics = new String[images.size()];
+                    for (int i = 0; i < images.size(); i++) {
+                        pics[i] = images.get(i).getPath();
+                    }
+                    String[] vdos = new String[videos.size()];
+                    for (int i = 0; i < videos.size(); i++) {
+                        vdos[i] = videos.get(i).getPath();
+                    }
 
 
-
-                String[] pics = new String[images.size()];
-                for (int i = 0; i < images.size(); i++) {
-                    pics[i] = images.get(i).getPath();
+                    String[] attaches = concat(pics, vdos);
+                    for (int i = 0; i < attaches.length; i++) {
+                    Logger.e("aaa", "i====================" + attaches[i]);
                 }
-                String[] vdos = new String[videos.size()];
-                for (int i = 0; i < videos.size(); i++) {
-                    vdos[i] = videos.get(i).getPath();
-                }
-
-
-                String[] attaches = concat(pics, vdos);
-
-                if (attaches.length > 0) {
-                    new HttpTask(listener, RequestType.uploadFile).uploadFile(list, attaches);
+                    if (attaches.length > 0) {
+                        new HttpTask(listener, RequestType.uploadFile).uploadFile(list, j,attaches);
+                    }
                 }
             }
         });

@@ -38,6 +38,10 @@ public class MaintenanceTableBean implements Serializable {
     @DatabaseField
     private String jcsj;
     @DatabaseField
+    private String jcks;
+    @DatabaseField
+    private String jcjs;
+    @DatabaseField
     private String tjsj;
     @DatabaseField
     private int xclx;
@@ -95,6 +99,22 @@ public class MaintenanceTableBean implements Serializable {
         this.xcld = xcld;
         this.inspectLogDetailList = inspectLogDetailList;
         this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+    }
+
+    public String getJcks() {
+        return jcks;
+    }
+
+    public void setJcks(String jcks) {
+        this.jcks = jcks;
+    }
+
+    public String getJcjs() {
+        return jcjs;
+    }
+
+    public void setJcjs(String jcjs) {
+        this.jcjs = jcjs;
     }
 
     public int getId() {
