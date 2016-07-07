@@ -513,10 +513,13 @@
         <activity
             android:name=".activity.MaintenanceLogListActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceOfOrderListActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".activity.ProjectAcceptanceListActivity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".activity.MaintenanceOfOrderListActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.ProjectAcceptanceListActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.MaintenanceLogUpLoadActivity"></activity>
     </application>
 
 </manifest>

@@ -103,6 +103,14 @@ public class BaseActivity extends FragmentActivity {
 		});
 
 	}
+	public boolean isLoadingDialogShow(){
+		if (mLoadingDialog != null) {
+			return mLoadingDialog.isShowing();
+		}else{
+			return false;
+		}
+
+	}
 
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {

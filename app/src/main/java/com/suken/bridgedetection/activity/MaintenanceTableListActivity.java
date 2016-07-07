@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -68,13 +71,19 @@ public class MaintenanceTableListActivity extends BaseActivity {
         initView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllData();
+    }
+
     private void initView() {
 
         maintenance_table_listView = (ListView) findViewById(R.id.maintenance_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
         mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this);
         maintenance_table_listView.setAdapter(mAdapter);
-        getAllData();
+
         maintenance_table_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
@@ -137,10 +146,10 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 showLoading("正在上传...");
                 uploadIV(maintenanceTableBeanList.get(0), 0, true);
 
-//                for(int i = 0;i<maintenanceTableBeanList.size();i++){
-//                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
-//                    uploadIV(bean, i, true);
-//                }
+                for(int i = 0;i<maintenanceTableBeanList.size();i++){
+                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
+                    uploadIV(bean, i, true);
+                }
             }
         });
 
@@ -200,23 +209,29 @@ public class MaintenanceTableListActivity extends BaseActivity {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa","111111111111"+ result.toString());
-                if(isAll){
-                    if (position != maintenanceTableBeanList.size() - 1) {
-                        uploadIV(maintenanceTableBeanList.get(position + 1), position + 1, true);
-
-                    }else{
-                        getAllData();
-                        dismissLoading();
-                    }
-//
-                }else{
-                    getAllData();
-                    dismissLoading();
-                }
+                Logger.e("aaa","position===="+ position);
                 maintenanceTableDao.delete(bean.getId());
                 for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
                     maintenanceTableDao.deleteItem(bean.getInspectLogDetailList().get(i).getId());
                 }
+                if(isAll){
+                    if (position != maintenanceTableBeanList.size() - 1) {
+                        Logger.e("aaa","下一条数据的上传===="+ position);
+                        uploadIV(maintenanceTableBeanList.get(position + 1), position + 1, true);
+
+                    }else{
+                        Logger.e("aaa","取消加载===="+ position);
+                        Message message = new Message();
+                        message.what = SUCCESS_CODE;
+                        mHandler.sendMessage(message);
+                    }
+//
+                }else{
+                    Message message = new Message();
+                    message.what = SUCCESS_CODE;
+                    mHandler.sendMessage(message);
+                }
+
 
 
 
@@ -225,6 +240,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
             @Override
             public void onRequestFail(RequestType type, String resultCode, String result) {
                 Logger.e("aaa", result + "(" + resultCode + ")");
+                Message message = new Message();
+                message.what = ERROR_CODE;
+                mHandler.sendMessage(message);
             }
         };
 
@@ -247,6 +265,24 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
 
     }
+
+    public final int SUCCESS_CODE = 0;
+    public final int ERROR_CODE = 1;
+    Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case SUCCESS_CODE:
+                    getAllData();
+                    dismissLoading();
+
+
+                    break;
+                case ERROR_CODE:
+                    break;
+            }
+        }
+    };
 
     public void uploadIV(final MaintenanceTableBean bean,final int position,final boolean isAll){
 
@@ -430,5 +466,16 @@ public class MaintenanceTableListActivity extends BaseActivity {
         System.arraycopy(a, 0, c, 0, a.length);
         System.arraycopy(b, 0, c, a.length, b.length);
         return c;
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if(isLoadingDialogShow()){
+                dismissLoading();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
