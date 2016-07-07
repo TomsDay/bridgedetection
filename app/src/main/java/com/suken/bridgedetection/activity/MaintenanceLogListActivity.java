@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -133,13 +134,9 @@ public class MaintenanceLogListActivity extends Activity {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa", "result.toString()" + result.toString());
-                JSONArray array = result.getJSONArray("datas");
-                Gson gson = new Gson();
-                for (int i = 0; i<array.size();i++) {
-                    String datas = array.getString(i);
-                    MaintenanceLogBean bean = gson.fromJson(datas, MaintenanceLogBean.class);
-                    listBeen.add(bean);
-                }
+
+                listBeen = (ArrayList<MaintenanceLogBean>) JSON.parseArray(result.getString("datas"), MaintenanceLogBean.class);
+
                 Logger.e("aaa", listBeen.toString());
                 Message message = new Message();
                 message.what = SUCCESS_CODE;

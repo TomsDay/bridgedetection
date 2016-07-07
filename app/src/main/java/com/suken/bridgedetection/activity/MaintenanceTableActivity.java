@@ -209,6 +209,12 @@ public class MaintenanceTableActivity extends BaseActivity {
         maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
 
         saveBtn = (TextView) findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDialog();
+            }
+        });
 
         maintenancetable_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
         setCXLD();
@@ -388,7 +394,6 @@ public class MaintenanceTableActivity extends BaseActivity {
             case R.id.operateAdd:
                 maintenanceTableItemBeen = mAdapter.getData();
                 MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
-                bean.setFx("上行内侧");
                 maintenanceTableItemBeen.add(bean);
                 mAdapter.setData(maintenanceTableItemBeen);
                 mAdapter.notifyDataSetChanged();
@@ -410,9 +415,6 @@ public class MaintenanceTableActivity extends BaseActivity {
                 back();
                 break;
             case R.id.maintenancetable_save:
-                saveDialog();
-                break;
-            case R.id.saveBtn:
                 saveDialog();
                 break;
         }

@@ -29,6 +29,7 @@ import java.util.ArrayList;
 public class MaintenanceAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<String> list = new ArrayList<String>();
+    private ArrayList<String> submitList = new ArrayList<String>();
     private LayoutInflater inflater;
     public MaintenanceAdapter(Context context) {
         mContext = context;
@@ -47,6 +48,9 @@ public class MaintenanceAdapter extends BaseAdapter {
 //        list.add(str + "验收申请");
         list.add("日常维修保养工程验收");
 //        list.add(str + "综合查询页面");
+    }
+    public void setData(ArrayList<String> list){
+        this.submitList = list;
     }
 
     @Override
@@ -100,6 +104,14 @@ public class MaintenanceAdapter extends BaseAdapter {
                 mContext.startActivity(in);
             }
         });
+        String submitNum = submitList.get(position);
+        if(submitNum.equals("0")){
+            holder.maintenance_item_submit.setVisibility(View.GONE);
+        }else{
+            holder.maintenance_item_submit.setText("待提交：" + submitNum);
+            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
+        }
+
         holder.maintenance_item_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

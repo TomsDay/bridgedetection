@@ -74,7 +74,7 @@ public class MaintenanceLogActivity extends Activity {
 
     private int mYear,mMonth, mDay;
 
-    private int id;
+    private long id;
 
     MaintenanceLogDao maintenanceLogDao;
     IVDescDao ivDescDao;

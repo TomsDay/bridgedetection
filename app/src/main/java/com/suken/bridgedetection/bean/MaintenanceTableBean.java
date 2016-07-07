@@ -72,6 +72,8 @@ public class MaintenanceTableBean implements Serializable {
                 ", gydwId='" + gydwId + '\'' +
                 ", gydwName='" + gydwName + '\'' +
                 ", jcsj='" + jcsj + '\'' +
+                ", jcks='" + jcks + '\'' +
+                ", jcjs='" + jcjs + '\'' +
                 ", tjsj='" + tjsj + '\'' +
                 ", xclx=" + xclx +
                 ", xcld='" + xcld + '\'' +

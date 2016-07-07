@@ -12,19 +12,33 @@ import android.widget.TextView;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.MaintenanceAdapter;
+import com.suken.bridgedetection.bean.MaintenanceLogDao;
+import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
+import com.suken.bridgedetection.bean.MaintenanceTableDao;
+import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.util.Logger;
+
+import java.util.ArrayList;
 
 public class MaintenanceActivity extends BaseActivity {
     private TextView maintenance_back;
     private ListView maintenance_mListView;
     private MaintenanceAdapter mAdapter;
     private Context mContext;
+    private MaintenanceTableDao maintenanceTableDao;
+    private MaintenanceLogDao maintenanceLogDao;
+    private MaintenanceOfOrderDao maintenanceOfOrderDao;
+    private ProjectAcceptanceDao projectAcceptanceDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance);
         mContext = this;
+        maintenanceTableDao = new MaintenanceTableDao();
+        maintenanceLogDao = new MaintenanceLogDao();
+        maintenanceOfOrderDao = new MaintenanceOfOrderDao();
+        projectAcceptanceDao = new ProjectAcceptanceDao();
         initView();
         Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
         Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
@@ -42,7 +56,7 @@ public class MaintenanceActivity extends BaseActivity {
                 startActivity(in);
             }
         });
-
+        getDate();
     }
     public void onClick(View v){
         switch (v.getId()) {
@@ -50,5 +64,21 @@ public class MaintenanceActivity extends BaseActivity {
                 finish();
                 break;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getDate();
+    }
+
+    public void getDate(){
+        ArrayList<String> list = new ArrayList<>();
+        list.add(maintenanceTableDao.queryAll().size()+"");
+        list.add(maintenanceLogDao.queryAll().size()+"");
+        list.add(maintenanceOfOrderDao.queryAll().size()+"");
+        list.add(projectAcceptanceDao.queryAll().size()+"");
+        mAdapter.setData(list);
+        mAdapter.notifyDataSetChanged();
     }
 }

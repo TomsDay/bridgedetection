@@ -15,7 +15,7 @@ import java.util.List;
 @DatabaseTable(tableName = "tb_maintenancelogitem")
 public class MaintenanceLogItemBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
-    private int id;
+    private long id;
     @DatabaseField
     private String createBy;
     @DatabaseField
@@ -120,7 +120,7 @@ public class MaintenanceLogItemBean implements Serializable {
     public MaintenanceLogItemBean() {
     }
 
-    public MaintenanceLogItemBean(int id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String flag, String orgid, String bytzid, String xcbhid, String xcrzno, String bhid, String bhmc, String bhwz, String fx, String yhzh, String dw, String ygsl, String remark, boolean isShow, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceLogBean maintenanceLogBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
+    public MaintenanceLogItemBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String flag, String orgid, String bytzid, String xcbhid, String xcrzno, String bhid, String bhmc, String bhwz, String fx, String yhzh, String dw, String ygsl, String remark, boolean isShow, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceLogBean maintenanceLogBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
         this.id = id;
         this.createBy = createBy;
         this.createtime = createtime;
@@ -150,11 +150,11 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

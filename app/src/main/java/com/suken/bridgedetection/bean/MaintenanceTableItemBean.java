@@ -66,8 +66,33 @@ public class MaintenanceTableItemBean implements Serializable{
     private ForeignCollection<IVDesc> vDescs;
 
 
-
-
+    @Override
+    public String toString() {
+        return "MaintenanceTableItemBean{" +
+                "id=" + id +
+                ", fx='" + fx + '\'' +
+                ", yhzh='" + yhzh + '\'' +
+                ", bhid='" + bhid + '\'' +
+                ", bhmc='" + bhmc + '\'' +
+                ", bhwz='" + bhwz + '\'' +
+                ", dw='" + dw + '\'' +
+                ", ygsl='" + ygsl + '\'' +
+                ", jcsj='" + jcsj + '\'' +
+                ", remark='" + remark + '\'' +
+                ", picattachment='" + picattachment + '\'' +
+                ", vidattachment='" + vidattachment + '\'' +
+                ", tjsj='" + tjsj + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
+                ", yhzt='" + yhzt + '\'' +
+                ", isShow=" + isShow +
+                ", mImages=" + mImages +
+                ", mVideo=" + mVideo +
+                ", maintenanceTableBean=" + maintenanceTableBean +
+                ", iDescs=" + iDescs +
+                ", vDescs=" + vDescs +
+                '}';
+    }
 
     public MaintenanceTableItemBean() {
     }

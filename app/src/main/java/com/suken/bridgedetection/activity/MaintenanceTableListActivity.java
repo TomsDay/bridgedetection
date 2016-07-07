@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
+import com.googlecode.androidannotations.api.sharedpreferences.SharedPreferencesHelper;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
@@ -29,6 +30,7 @@ import com.suken.bridgedetection.bean.UploadBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.storage.SharePreferenceManager;
 import com.suken.bridgedetection.util.Logger;
 
 import org.apache.http.NameValuePair;
@@ -67,18 +69,18 @@ public class MaintenanceTableListActivity extends BaseActivity {
     }
 
     private void initView() {
-        getAllData();
+
         maintenance_table_listView = (ListView) findViewById(R.id.maintenance_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
         mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this);
-        mAdapter.setData(maintenanceTableBeanList);
         maintenance_table_listView.setAdapter(mAdapter);
+        getAllData();
         maintenance_table_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
 
 
-                final String[] names = {"编辑", "上传", "取消"};
+                final String[] names = {"编辑", "上传","删除", "取消"};
                 new AlertDialog.Builder(mContext)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
@@ -94,7 +96,21 @@ public class MaintenanceTableListActivity extends BaseActivity {
                                         break;
                                     case 1://上传
                                         MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
-                                        uploadIV(bean);
+                                        uploadIV(bean, position, false);
+                                        showLoading("正在上传...");
+                                        break;
+                                    case 2:
+                                        maintenanceTableDao.delete(maintenanceTableBeanList.get(position).getId());
+                                        for(int i = 0;i<maintenanceTableBeanList.get(position).getInspectLogDetailList().size();i++){
+                                            maintenanceTableDao.deleteItem(maintenanceTableBeanList.get(position).getInspectLogDetailList().get(i).getId());
+                                            for(int q = 0;q<maintenanceTableBeanList.get(position).getInspectLogDetailList().get(i).getmImages().size();q++){
+                                                ivDescDao.delete(maintenanceTableBeanList.get(position).getInspectLogDetailList().get(q).getmImages().get(q).getId());
+                                            }
+                                            for(int q = 0;q<maintenanceTableBeanList.get(position).getInspectLogDetailList().get(i).getmVideo().size();q++){
+                                                ivDescDao.delete(maintenanceTableBeanList.get(position).getInspectLogDetailList().get(q).getmVideo().get(q).getId());
+                                            }
+                                        }
+                                        getAllData();
                                         break;
                                     default:
                                         break;
@@ -113,10 +129,18 @@ public class MaintenanceTableListActivity extends BaseActivity {
         update_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(int i = 0;i<maintenanceTableBeanList.size();i++){
-                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
-                    uploadIV(bean);
+                if (maintenanceTableBeanList.size() == 0) {
+                    toast("当前没有数据可以上传！");
+                    return;
                 }
+
+                showLoading("正在上传...");
+                uploadIV(maintenanceTableBeanList.get(0), 0, true);
+
+//                for(int i = 0;i<maintenanceTableBeanList.size();i++){
+//                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
+//                    uploadIV(bean, i, true);
+//                }
             }
         });
 
@@ -156,6 +180,10 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
 
         }
+        maintenanceTableBeanList.size();
+        mAdapter.setData(maintenanceTableBeanList);
+        mAdapter.notifyDataSetChanged();
+
     }
 
     public void onClick(View v){
@@ -165,19 +193,31 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 break;
         }
     }
-    public void uploadData(final MaintenanceTableBean bean){
-        final UploadBean uploadBean = new UploadBean();
+    public void uploadData(final MaintenanceTableBean bean,final int position ,final boolean isAll){
 
         final Gson gson = new Gson();
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
-//
                 Logger.e("aaa","111111111111"+ result.toString());
+                if(isAll){
+                    if (position != maintenanceTableBeanList.size() - 1) {
+                        uploadIV(maintenanceTableBeanList.get(position + 1), position + 1, true);
+
+                    }else{
+                        getAllData();
+                        dismissLoading();
+                    }
+//
+                }else{
+                    getAllData();
+                    dismissLoading();
+                }
                 maintenanceTableDao.delete(bean.getId());
                 for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
                     maintenanceTableDao.deleteItem(bean.getInspectLogDetailList().get(i).getId());
                 }
+
 
 
             }
@@ -198,7 +238,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
-                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
+                Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
                 new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
@@ -206,10 +246,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
         });
 
 
-
     }
 
-    public void uploadIV(final MaintenanceTableBean bean){
+    public void uploadIV(final MaintenanceTableBean bean,final int position,final boolean isAll){
 
         final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
             //
@@ -223,7 +262,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 List<UploadFileBean>  mImages = new ArrayList<UploadFileBean>();
                 List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();;
                 for(int i = 0;i<array.size();i++){
+
                     String s = array.getString(i);
+                    Logger.e("aaa","UploadFileBean====="+s);
                     UploadFileBean uploadFileBean = gson.fromJson(s, UploadFileBean.class);
                     if (uploadFileBean.getFileName().indexOf("pic-") != -1) {
                         mImages.add(uploadFileBean);
@@ -232,18 +273,19 @@ public class MaintenanceTableListActivity extends BaseActivity {
                     }
                 }
                 int typePosition = type.getTypePosition();
-//                MaintenanceTableItemBean tableItemBean = bean.getInspectLogDetailList().get(typePosition);
-//                List<IVDesc> images = tableItemBean.getmImages();
-//                List<IVDesc> videos = tableItemBean.getmVideo();
-//                for(int i = 0;i<images.size();i++){
-//                    maintenanceTableDao.deleteItem(images.get(i).getId());
-//                }
-//                for(int i = 0;i<videos.size();i++){
-//                    maintenanceTableDao.deleteItem(videos.get(i).getId());
-//                }
+                MaintenanceTableItemBean tableItemBean = bean.getInspectLogDetailList().get(typePosition);
+                List<IVDesc> images = tableItemBean.getmImages();
+                List<IVDesc> videos = tableItemBean.getmVideo();
+                for(int i = 0;i<images.size();i++){
+                    ivDescDao.delete(images.get(i).getId());
+                }
+                for(int i = 0;i<videos.size();i++){
+                    ivDescDao.delete(videos.get(i).getId());
+                }
                 StringBuffer imageSB = new StringBuffer();
                 StringBuffer videoSB = new StringBuffer();
                 for(int i = 0;i<mImages.size();i++){
+                    Logger.e("aaa","mImages.get(i).getFileId())====="+mImages.get(i).getFileId());
                     imageSB.append(mImages.get(i).getFileId());
                     if (i != mImages.size() - 1) {
                         imageSB.append(",");
@@ -251,19 +293,27 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 }
 
                 for(int i = 0;i<mVideos.size();i++){
+                    Logger.e("aaa","mVideos.get(i).getFileId())====="+mVideos.get(i).getFileId());
                     videoSB.append(mVideos.get(i).getFileId());
                     if (i != mVideos.size() - 1) {
                         videoSB.append(",");
                     }
                 }
+                Logger.e("aaa","imageSB====="+imageSB.toString());
+                Logger.e("aaa","mVideos====="+videoSB.toString());
+
                 bean.getInspectLogDetailList().get(typePosition).setPicattachment(imageSB.toString());
-                bean.getInspectLogDetailList().get(typePosition).setVidattachment(mVideos.toString());
+                bean.getInspectLogDetailList().get(typePosition).setVidattachment(videoSB.toString());
                 SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String date = sDateFormat.format(new java.util.Date());
                 bean.getInspectLogDetailList().get(typePosition).setTjsj(date);
+
+
+
                 boolean isUpload = true;
                 List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
                 for(int i = 0;i<itemBeen.size();i++){
+                    Logger.e("aaa","itemBeen====="+i);
                     MaintenanceTableItemBean thisTableItemBean = itemBeen.get(i);
                     String tjsj = thisTableItemBean.getTjsj();
                     if (tjsj == null || tjsj.length() == 0) {
@@ -278,9 +328,14 @@ public class MaintenanceTableListActivity extends BaseActivity {
                         bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
                         bean.getInspectLogDetailList().get(i).setiDescs(null);
                         bean.getInspectLogDetailList().get(i).setvDescs(null);
+                        bean.setMaintenanceTableItemBeen(null);
                     }
                     bean.setTjsj(date);
-                    uploadData(bean);
+
+                    uploadData(bean,position,isAll);
+//                    Logger.e("aaa","bean====="+bean.toString());
+//                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
+
                 }
 
 
@@ -310,6 +365,43 @@ public class MaintenanceTableListActivity extends BaseActivity {
                     MaintenanceTableItemBean tableItemBean = itemBeen.get(j);
                     List<IVDesc> images = tableItemBean.getmImages();
                     List<IVDesc> videos = tableItemBean.getmVideo();
+
+                    Logger.e("aaa","images===="+images.toString());
+                    Logger.e("aaa","videos===="+videos.toString());
+
+                    if ((images == null && videos == null)||(images.size() ==0&&videos.size()==0)) {
+                        Logger.e("aaa","无图！！！");
+                        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        String date = sDateFormat.format(new java.util.Date());
+                        bean.getInspectLogDetailList().get(j).setTjsj(date);
+                        boolean isUpload = true;
+                        for (int i = 0; i < itemBeen.size(); i++) {
+                            Logger.e("aaa", "itemBeen=====" + i);
+                            MaintenanceTableItemBean thisTableItemBean = itemBeen.get(i);
+                            String tjsj = thisTableItemBean.getTjsj();
+                            if (tjsj == null || tjsj.length() == 0) {
+                                isUpload = false;
+                                break;
+                            }
+                        }
+                        if (isUpload) {
+                            for (int i = 0; i < bean.getInspectLogDetailList().size(); i++) {
+                                bean.getInspectLogDetailList().get(i).setmImages(null);
+                                bean.getInspectLogDetailList().get(i).setmVideo(null);
+                                bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
+                                bean.getInspectLogDetailList().get(i).setiDescs(null);
+                                bean.getInspectLogDetailList().get(i).setvDescs(null);
+                                bean.setMaintenanceTableItemBeen(null);
+                            }
+                            bean.setTjsj(date);
+                            uploadData(bean,position,isAll);
+//                    Logger.e("aaa","bean====="+bean.toString());
+//                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
+                            return;
+                        }
+                        continue;
+                    }
+
                     String[] pics = new String[images.size()];
                     for (int i = 0; i < images.size(); i++) {
                         pics[i] = images.get(i).getPath();
@@ -322,8 +414,8 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
                     String[] attaches = concat(pics, vdos);
                     for (int i = 0; i < attaches.length; i++) {
-                    Logger.e("aaa", "i====================" + attaches[i]);
-                }
+                        Logger.e("aaa", "i====================" + attaches[i]);
+                    }
                     if (attaches.length > 0) {
                         new HttpTask(listener, RequestType.uploadFile).uploadFile(list, j,attaches);
                     }

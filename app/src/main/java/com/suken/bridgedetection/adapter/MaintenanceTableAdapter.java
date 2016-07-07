@@ -84,7 +84,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         final MaintenanceTableItemBean bean = list.get(position);
-        if (view == null) {
+//        if (view == null) {
             view = inflater.inflate(R.layout.maintenance_table_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
@@ -94,15 +94,15 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.address_edit.setTag(position);
             holder.item_checkTime_edit.setTag(position);
             holder.zh_edit.setTag(position);
-        } else {
-            holder = (HolderView) view.getTag();
-//            holder.diseaseName_edit.setTag(position);
-//            holder.unit_edit.setTag(position);
-            holder.count_edit.setTag(position);
-            holder.address_edit.setTag(position);
-            holder.item_checkTime_edit.setTag(position);
-            holder.zh_edit.setTag(position);
-        }
+//        } else {
+//            holder = (HolderView) view.getTag();
+////            holder.diseaseName_edit.setTag(position);
+////            holder.unit_edit.setTag(position);
+//            holder.count_edit.setTag(position);
+//            holder.address_edit.setTag(position);
+//            holder.item_checkTime_edit.setTag(position);
+//            holder.zh_edit.setTag(position);
+//        }
 
 //        holder.diseaseName_edit.addTextChangedListener(new Watcher(holder.diseaseName_edit));
 //        holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
@@ -138,6 +138,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         setDateTime(holder);
 
         String fx = bean.getFx();
+        Logger.e("aaa","fx==="+fx);
         if("上行内侧".equals(fx)){
             holder.radioGroup.check(R.id.radioup);
         }else if("下行内侧".equals(fx)){
@@ -146,6 +147,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.radioGroup.check(R.id.radioleft);
         }else if("下行外侧".equals(fx)){
             holder.radioGroup.check(R.id.radioright);
+        }else{
+            holder.radioGroup.check(R.id.radioup);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));

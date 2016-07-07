@@ -66,7 +66,7 @@ public class MaintenanceLogDao {
         }
         return null;
     }
-    public List<MaintenanceLogBean> queryByID(int id){
+    public List<MaintenanceLogBean> queryByID(long id){
         try {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("id", id);
