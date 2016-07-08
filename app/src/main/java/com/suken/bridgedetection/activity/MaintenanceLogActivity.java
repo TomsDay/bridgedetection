@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -20,22 +21,32 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.http.HttpTask;
+import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.File;
 import java.net.URI;
@@ -78,6 +89,7 @@ public class MaintenanceLogActivity extends Activity {
 
     MaintenanceLogDao maintenanceLogDao;
     IVDescDao ivDescDao;
+    CatalogueByUIDDao catalogueByUIDDao;
 
 
     @Override
@@ -87,8 +99,8 @@ public class MaintenanceLogActivity extends Activity {
         mContext = this;
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
+        catalogueByUIDDao = new CatalogueByUIDDao();
 
-        allMaintenanceLogBean = (MaintenanceLogBean) getIntent().getSerializableExtra("bean");
         id = getIntent().getIntExtra("id", 0);
         initView();
     }
@@ -103,9 +115,9 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_wxbm_ev = (EditText) findViewById(R.id.maintenancelog_wxbm_ev);
         maintenancelog_jcr_ev = (EditText) findViewById(R.id.maintenancelog_jcr_ev);
         maintenancelog_jlr_ev = (EditText) findViewById(R.id.maintenancelog_jlr_ev);
-        maintenancelog_bh_ev.setOnKeyListener(null);
-        maintenancelog_gydw_ev.setOnKeyListener(null);
-        maintenancelog_wxbm_ev.setOnKeyListener(null);
+        maintenancelog_bh_ev.setKeyListener(null);
+        maintenancelog_gydw_ev.setKeyListener(null);
+        maintenancelog_wxbm_ev.setKeyListener(null);
 
 
         initSpinner();
@@ -120,7 +132,7 @@ public class MaintenanceLogActivity extends Activity {
 
                 maintenancelog_gydw_ev.setText(bean.getGldwName()+"");
                 maintenancelog_bh_ev.setText(bean.getBno()+"");
-                maintenancelog_data_ev.setText(bean.getWxks()+"");
+                maintenancelog_data_ev.setText(bean.getWxrq()+"");
                 maintenancelog_wxbm_ev.setText(bean.getWxbmmc()+"");
                 strWeather = bean.getWeather();
                 for (int i = 0; i < mStringArrayWeather.length; i++) {
@@ -133,7 +145,7 @@ public class MaintenanceLogActivity extends Activity {
                 maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
 
 
-                ForeignCollection<MaintenanceLogItemBean> orders = bean.getMaintenanceTableItemBeen();
+                ForeignCollection<MaintenanceLogItemBean> orders = bean.getMaintenanceLogItemBeen();
                 CloseableIterator<MaintenanceLogItemBean> iterator = orders.closeableIterator();
                 try {
                     while (iterator.hasNext()) {
@@ -171,17 +183,21 @@ public class MaintenanceLogActivity extends Activity {
 
         mAdapter = new MaintenanceLogAdapter(MaintenanceLogActivity.this);
         mAdapter.setData(maintenanceLogItemBeen);
+        mAdapter.setCatalogueByUID(catalogueByUIDDao.queryAll());
         mListView.setAdapter(mAdapter);
-        
+
 
 
     }
     public void initDate(){
-        maintenancelog_gydw_ev.setText(allMaintenanceLogBean.getGldwName()+"");
+        allMaintenanceLogBean = (MaintenanceLogBean) getIntent().getSerializableExtra("bean");
+        Logger.e("aaa","allMaintenanceLogBean==="+allMaintenanceLogBean.toString());
+
+        maintenancelog_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
         maintenancelog_bh_ev.setText(allMaintenanceLogBean.getBno()+"");
-        maintenancelog_data_ev.setText(allMaintenanceLogBean.getWxks()+"");
         maintenancelog_wxbm_ev.setText(allMaintenanceLogBean.getWxbmmc()+"");
-        strWeather = allMaintenanceLogBean.getWeather();
+
+        strWeather = allMaintenanceLogBean.getWeather().trim();
         for (int i = 0; i < mStringArrayWeather.length; i++) {
             if(mStringArrayWeather[i].equals(strWeather)){
                 selsctWeather = i;
@@ -189,6 +205,7 @@ public class MaintenanceLogActivity extends Activity {
             }
         }
         maintenancelog_weather_spinner.setSelection(selsctWeather);
+
         maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
         maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
         if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
@@ -256,9 +273,6 @@ public class MaintenanceLogActivity extends Activity {
 
                         Logger.e("aaa","itemlist===="+ maintenanceLogItemBeen.toString());
 
-                        String gydw = maintenancelog_gydw_ev.getText().toString();
-                        String bh = maintenancelog_bh_ev.getText().toString();
-                        String wxbm = maintenancelog_wxbm_ev.getText().toString();
                         String date = maintenancelog_data_ev.getText().toString();
                         String jcr = maintenancelog_jcr_ev.getText().toString();
                         String fzr = maintenancelog_jlr_ev.getText().toString();
@@ -268,17 +282,23 @@ public class MaintenanceLogActivity extends Activity {
                             maintenanceLogBean = maintenanceLogBeen.get(0);
                         }else{
                             maintenanceLogBean = allMaintenanceLogBean;
+                            maintenanceLogBean.setGldwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+                            maintenanceLogBean.setGldwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
                         }
 
-                        
+
                         maintenanceLogBean.setWeather(strWeather);
-                        maintenanceLogBean.setWxks(date);
-                        maintenanceLogBean.setWxbmmc(wxbm);
+                        maintenanceLogBean.setWxrq(date);
+                        maintenanceLogBean.setByrzzt("3");
+
+
                         maintenanceLogBean.setJcry(jcr);
                         maintenanceLogBean.setFzry(fzr);
                         if (id != 0) {
                             maintenanceLogBean.setId(id);
                         }
+                        Logger.e("aaa", "=======11111====="+maintenanceLogBean.toString());
+
 
 
                         Logger.e("aaa","maintenanceTableBean.toString()===="+maintenanceLogBean.toString());
@@ -290,6 +310,11 @@ public class MaintenanceLogActivity extends Activity {
                         maintenanceLogItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
+                            itemBean.setTpjd("123.12");
+                            itemBean.setTpwd("123.12");
+                            String fx = itemBean.getFx();
+                            itemBean.setFx(fx != null ? fx : "上行内侧");
+
                             itemBean.setMaintenanceLogBean(maintenanceLogBean);
                             if (itemBean.getId() != 0) {
                                 maintenanceLogDao.updateItem(itemBean);
@@ -316,9 +341,6 @@ public class MaintenanceLogActivity extends Activity {
                                     ivDescDao.add(videoDesc);
                                 }
                             }
-
-
-
                         }
                         Logger.e("aaa", "=======11111====="+maintenanceLogDao.queryAll().toString());
                         Logger.e("aaa", "========2222======="+ maintenanceLogDao.queryItemAll().toString());
@@ -337,6 +359,41 @@ public class MaintenanceLogActivity extends Activity {
                 .show();
 
 
+    }
+    public void upLoadData(final MaintenanceLogBean bean){
+        final Gson gson = new Gson();
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa","111111111111"+ result.toString());
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "(" + resultCode + ")");
+//                                Message message = new Message();
+//                                message.what = ERROR_CODE;
+//                                mHandler.sendMessage(message);
+            }
+        };
+
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                Logger.e("aaa", "gson======" + gson.toJson(bean));
+                pair = new BasicNameValuePair("json", gson.toJson(bean));
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+            }
+        });
     }
 
 

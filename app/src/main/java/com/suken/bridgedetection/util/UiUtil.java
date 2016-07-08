@@ -22,6 +22,8 @@ import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
+import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.http.HttpTask;
@@ -203,25 +205,13 @@ public class UiUtil {
                         break;
                     }
                     case geteDeseaseByUID:
-//                        Logger.e("aaa","=========================================================");
-//                        Logger.e("aaa",obj.toString());
-//                        Logger.e("aaa","=========================================================");
                         List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
-//                        List<MaintenanceDiseaseBean> list = new ArrayList<MaintenanceDiseaseBean>();
-//                        JSONArray array = obj.getJSONArray("datas");
-//                        Gson gson = new Gson();
-//                        for(int i =0;i<array.size();i++){
-//                            String datas = array.getString(i);
-//                            Logger.e("aaa", "datas==" + datas);
-//                            MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
-//                            list.add(bean);
-//                        }
-//                        Logger.e("aaa","=========================================================");
-//                        for(int i =0;i<list.size();i++) {
-//                            Logger.e("aaa", list.get(i).toString());
-//                        }
-//                        Logger.e("aaa","=========================================================");
                         new MaintenanceDiseaseDao().addList(list);
+                        break;
+                    case getCatalogueByUID:
+                        Logger.e("aaa", "细目数据：" + obj.toString());
+                        List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
+                        new CatalogueByUIDDao().addList(catalogueByUIDBeen);
                         break;
                     default:
                         break;
@@ -279,6 +269,7 @@ public class UiUtil {
                     }
                 } else {
                     new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
+                    new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
                 String msg = builder.toString();

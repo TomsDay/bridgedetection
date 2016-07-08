@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
+import com.suken.bridgedetection.activity.MaintenanceLogUpLoadActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
@@ -20,6 +21,7 @@ import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceListActivity;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.widget.CkeckXMDialog;
 
 import java.util.ArrayList;
 
@@ -119,8 +121,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 if(position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
                 }else if(position == 1){
-                    in.setClass(mContext, MaintenanceLogListActivity.class);
-                    in.putExtra("type", 1);
+                    in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
                 }else if(position == 2){
                     in.setClass(mContext, MaintenanceOfOrderListActivity.class);
                 }else if(position == 3){

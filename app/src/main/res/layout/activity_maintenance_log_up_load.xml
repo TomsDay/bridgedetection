@@ -26,7 +26,30 @@
             android:text="返回"
             android:textColor="#ffffff"
             android:textSize="10dp" />
+        <LinearLayout
+            android:id="@+id/update_all"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:background="#3ea49d"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp">
 
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/qbsc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 全部上传"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+        </LinearLayout>
 
     </RelativeLayout>
 

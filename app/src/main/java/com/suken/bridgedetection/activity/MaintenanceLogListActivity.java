@@ -47,7 +47,6 @@ public class MaintenanceLogListActivity extends Activity {
     public final int ERROR_CODE = 1;
     private LinearLayout maintenance_logList_selectCondition_layout;
     private TextView maintenance_logList_selectCondition_tv;
-    private int type;
     MaintenanceLogDao maintenanceLogDao;
 
     @Override
@@ -55,7 +54,6 @@ public class MaintenanceLogListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log_list);
         maintenanceLogDao = new MaintenanceLogDao();
-        type = getIntent().getIntExtra("type", 0);
         mContext = this;
         initView();
         loadDate();
@@ -123,13 +121,7 @@ public class MaintenanceLogListActivity extends Activity {
 
 
     private void loadDate() {
-        if(type == 1){
-            maintenanceLogBeen = (ArrayList<MaintenanceLogBean>) maintenanceLogDao.queryAll();
-            Log.e("aaa", "=======" + maintenanceLogBeen.toString());
-            maintenanceLogListAdapter.setDate1(maintenanceLogBeen);
-            maintenanceLogListAdapter.notifyDataSetChanged();
-            return;
-        }
+
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {

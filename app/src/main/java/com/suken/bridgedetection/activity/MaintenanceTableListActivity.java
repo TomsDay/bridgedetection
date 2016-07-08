@@ -146,10 +146,10 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 showLoading("正在上传...");
                 uploadIV(maintenanceTableBeanList.get(0), 0, true);
 
-                for(int i = 0;i<maintenanceTableBeanList.size();i++){
-                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
-                    uploadIV(bean, i, true);
-                }
+//                for(int i = 0;i<maintenanceTableBeanList.size();i++){
+//                    MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
+//                    uploadIV(bean, i, true);
+//                }
             }
         });
 
@@ -189,7 +189,6 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
 
         }
-        maintenanceTableBeanList.size();
         mAdapter.setData(maintenanceTableBeanList);
         mAdapter.notifyDataSetChanged();
 

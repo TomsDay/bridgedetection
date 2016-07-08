@@ -17,6 +17,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.widget.CkeckXMDialog;
 
 import java.util.ArrayList;
 
@@ -57,6 +58,8 @@ public class MaintenanceActivity extends BaseActivity {
             }
         });
         getDate();
+        CkeckXMDialog ckeckXMDialog = new CkeckXMDialog(MaintenanceActivity.this);
+        ckeckXMDialog.show();
     }
     public void onClick(View v){
         switch (v.getId()) {

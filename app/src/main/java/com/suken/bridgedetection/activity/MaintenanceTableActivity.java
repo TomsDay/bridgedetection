@@ -702,40 +702,7 @@ public class MaintenanceTableActivity extends BaseActivity {
         }
     }
 
-    private void loadDate() {
-        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-            @Override
-            public void onRequestSuccess(RequestType type, JSONObject result) {
-                Logger.e("aaa", "result.toString()" + result.toString());
-                JSONArray array = result.getJSONArray("datas");
-                String datas = array.getString(0);
-                Logger.e("aaa", "datas==" + datas);
-                Gson gson = new Gson();
-                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
-                Logger.e("aaa", bean.toString());
-            }
 
-            @Override
-            public void onRequestFail(RequestType type, String resultCode, String result) {
-                Logger.e("aaa", result + "(" + resultCode + ")");
-            }
-        };
-
-        BackgroundExecutor.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                list.add(pair);
-                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
-                list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteDeseaseByUID).executePost(list);
-            }
-        });
-    }
 //    public void uploadIV(){
 //        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
 //

@@ -78,14 +78,19 @@ public class MaintenanceLogBean implements Serializable{
     /**
      * ==============================================================上传增加的字段================================================================================
      */
-    private String create_by;
+    @DatabaseField
     private String jcry;
+    @DatabaseField
     private String fzry;
+    @DatabaseField
     private String bytzid;
-    private String gydw_id;
-    private String gydw_name;
+    @DatabaseField
     private String wxrq;
+    @DatabaseField
+    /** '保养日志状态  1 填写保养日志  2 检查 验收 3为待上传*/
     private String byrzzt;
+    @DatabaseField
+    private String bytzidbytzid;
 
 
 
@@ -103,7 +108,7 @@ public class MaintenanceLogBean implements Serializable{
      * 如果需要懒加载（延迟加载）可以在@ForeignCollectionField加上参数eager=false
      * 这个属性也就说明一个部门对应着多个用户
      */
-    private ForeignCollection<MaintenanceLogItemBean> maintenanceTableItemBeen;
+    private ForeignCollection<MaintenanceLogItemBean> maintenanceLogItemBeen;
 
 
 
@@ -111,7 +116,7 @@ public class MaintenanceLogBean implements Serializable{
     public MaintenanceLogBean() {
     }
 
-    public MaintenanceLogBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String tzld, String bno, String wxlx, String wxbmid, String wxbmmc, String wxks, String wxjs, String weather, String qfry, String qfrq, String tjsj, String status, String zlyq, String bcsm, String tzdzt, List<MaintenanceLogItemBean> upkeepdiseaseList, ForeignCollection<MaintenanceLogItemBean> maintenanceTableItemBeen) {
+    public MaintenanceLogBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String tzld, String bno, String wxlx, String wxbmid, String wxbmmc, String wxks, String wxjs, String weather, String qfry, String qfrq, String tjsj, String status, String zlyq, String bcsm, String tzdzt, List<MaintenanceLogItemBean> upkeepdiseaseList, ForeignCollection<MaintenanceLogItemBean> maintenanceLogItemBeen) {
         this.id = id;
         this.createBy = createBy;
         this.createtime = createtime;
@@ -140,16 +145,58 @@ public class MaintenanceLogBean implements Serializable{
         this.bcsm = bcsm;
         this.tzdzt = tzdzt;
         this.upkeepdiseaseList = upkeepdiseaseList;
-        this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+        this.maintenanceLogItemBeen = maintenanceLogItemBeen;
     }
 
-    public String getCreate_by() {
-        return create_by;
+    @Override
+    public String toString() {
+        return "MaintenanceLogBean{" +
+                "id=" + id +
+                ", createBy='" + createBy + '\'' +
+                ", createtime='" + createtime + '\'' +
+                ", creator='" + creator + '\'' +
+                ", updateBy='" + updateBy + '\'' +
+                ", updatetime='" + updatetime + '\'' +
+                ", updator='" + updator + '\'' +
+                ", versionno='" + versionno + '\'' +
+                ", orgid='" + orgid + '\'' +
+                ", flag='" + flag + '\'' +
+                ", gldwId='" + gldwId + '\'' +
+                ", gldwName='" + gldwName + '\'' +
+                ", tzld='" + tzld + '\'' +
+                ", bno='" + bno + '\'' +
+                ", wxlx='" + wxlx + '\'' +
+                ", wxbmid='" + wxbmid + '\'' +
+                ", wxbmmc='" + wxbmmc + '\'' +
+                ", wxks='" + wxks + '\'' +
+                ", wxjs='" + wxjs + '\'' +
+                ", weather='" + weather + '\'' +
+                ", qfry='" + qfry + '\'' +
+                ", qfrq='" + qfrq + '\'' +
+                ", tjsj='" + tjsj + '\'' +
+                ", status='" + status + '\'' +
+                ", zlyq='" + zlyq + '\'' +
+                ", bcsm='" + bcsm + '\'' +
+                ", tzdzt='" + tzdzt + '\'' +
+                ", jcry='" + jcry + '\'' +
+                ", fzry='" + fzry + '\'' +
+                ", bytzid='" + bytzid + '\'' +
+                ", wxrq='" + wxrq + '\'' +
+                ", byrzzt='" + byrzzt + '\'' +
+                ", bytzidbytzid='" + bytzidbytzid + '\'' +
+                ", upkeepdiseaseList=" + upkeepdiseaseList +
+                ", maintenanceLogItemBeen=" + maintenanceLogItemBeen +
+                '}';
     }
 
-    public void setCreate_by(String create_by) {
-        this.create_by = create_by;
+    public String getBytzidbytzid() {
+        return bytzidbytzid;
     }
+
+    public void setBytzidbytzid(String bytzidbytzid) {
+        this.bytzidbytzid = bytzidbytzid;
+    }
+
 
     public String getJcry() {
         return jcry;
@@ -175,21 +222,6 @@ public class MaintenanceLogBean implements Serializable{
         this.bytzid = bytzid;
     }
 
-    public String getGydw_id() {
-        return gydw_id;
-    }
-
-    public void setGydw_id(String gydw_id) {
-        this.gydw_id = gydw_id;
-    }
-
-    public String getGydw_name() {
-        return gydw_name;
-    }
-
-    public void setGydw_name(String gydw_name) {
-        this.gydw_name = gydw_name;
-    }
 
     public String getWxrq() {
         return wxrq;
@@ -435,11 +467,11 @@ public class MaintenanceLogBean implements Serializable{
         this.weather = weather;
     }
 
-    public ForeignCollection<MaintenanceLogItemBean> getMaintenanceTableItemBeen() {
-        return maintenanceTableItemBeen;
+    public ForeignCollection<MaintenanceLogItemBean> getMaintenanceLogItemBeen() {
+        return maintenanceLogItemBeen;
     }
 
-    public void setMaintenanceTableItemBeen(ForeignCollection<MaintenanceLogItemBean> maintenanceTableItemBeen) {
-        this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+    public void setMaintenanceLogItemBeen(ForeignCollection<MaintenanceLogItemBean> maintenanceLogItemBeen) {
+        this.maintenanceLogItemBeen = maintenanceLogItemBeen;
     }
 }

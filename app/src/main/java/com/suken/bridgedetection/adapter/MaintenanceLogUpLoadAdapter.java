@@ -12,18 +12,25 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/7/7.
  */
 public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
-    ArrayList<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
+    List<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private Context mContext;
     private LayoutInflater inflater;
 
     public MaintenanceLogUpLoadAdapter(Context context) {
         mContext = context;
         inflater = LayoutInflater.from(mContext);
+    }
+    public void setData(List<MaintenanceLogBean> listBeen){
+        this.listBeen = listBeen;
+    }
+    public List<MaintenanceLogBean> getData(){
+        return listBeen;
     }
 
     @Override
@@ -54,11 +61,11 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
 
         final MaintenanceLogBean bean = listBeen.get(position);
 
-        holder.maintenanceloglistupload_item_tv1.setText(bean.getBno());
-        holder.maintenanceloglistupload_item_tv2.setText(bean.getWxbmmc());
-        holder.maintenanceloglistupload_item_tv3.setText(bean.getQfrq());
-        holder.maintenanceloglistupload_item_tv4.setText(bean.getQfry());
-        holder.maintenanceloglistupload_item_tv5.setText(bean.getQfry());
+        holder.maintenanceloglistupload_item_tv1.setText(bean.getBytzid());
+        holder.maintenanceloglistupload_item_tv2.setText(bean.getBytzidbytzid());
+        holder.maintenanceloglistupload_item_tv3.setText(bean.getWxrq());
+        holder.maintenanceloglistupload_item_tv4.setText(bean.getJcry());
+        holder.maintenanceloglistupload_item_tv5.setText(bean.getFzry());
 
         return view;
     }

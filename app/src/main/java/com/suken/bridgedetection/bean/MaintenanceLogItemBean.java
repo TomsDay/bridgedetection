@@ -56,6 +56,31 @@ public class MaintenanceLogItemBean implements Serializable {
     private String ygsl;
     @DatabaseField
     private String remark;
+    @DatabaseField
+    private String tjsj;
+
+
+    /**
+     * ==============================================================上传增加的字段================================================================================
+     */
+    @DatabaseField
+    private String bytzidbytzid;
+    @DatabaseField
+    private String byrzid;
+    @DatabaseField
+    private String bytzno;
+    @DatabaseField
+    private String wcbl;
+    @DatabaseField
+    private String clmc;
+    @DatabaseField
+    private String picattachment;
+    @DatabaseField
+    private String vidattachment;
+    @DatabaseField
+    private String tpjd;
+    @DatabaseField
+    private String tpwd;
 
 
 
@@ -108,6 +133,16 @@ public class MaintenanceLogItemBean implements Serializable {
                 ", dw='" + dw + '\'' +
                 ", ygsl='" + ygsl + '\'' +
                 ", remark='" + remark + '\'' +
+                ", tjsj='" + tjsj + '\'' +
+                ", bytzidbytzid='" + bytzidbytzid + '\'' +
+                ", byrzid='" + byrzid + '\'' +
+                ", bytzno='" + bytzno + '\'' +
+                ", wcbl='" + wcbl + '\'' +
+                ", clmc='" + clmc + '\'' +
+                ", picattachment='" + picattachment + '\'' +
+                ", vidattachment='" + vidattachment + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -148,6 +183,91 @@ public class MaintenanceLogItemBean implements Serializable {
         this.maintenanceLogBean = maintenanceLogBean;
         this.iDescs = iDescs;
         this.vDescs = vDescs;
+    }
+
+
+    public String getBytzidbytzid() {
+        return bytzidbytzid;
+    }
+
+    public void setBytzidbytzid(String bytzidbytzid) {
+        this.bytzidbytzid = bytzidbytzid;
+    }
+
+    public String getByrzid() {
+        return byrzid;
+    }
+
+    public void setByrzid(String byrzid) {
+        this.byrzid = byrzid;
+    }
+
+    public String getBytzno() {
+        return bytzno;
+    }
+
+    public void setBytzno(String bytzno) {
+        this.bytzno = bytzno;
+    }
+
+    public String getWcbl() {
+        return wcbl;
+    }
+
+    public void setWcbl(String wcbl) {
+        this.wcbl = wcbl;
+    }
+
+    public String getClmc() {
+        return clmc;
+    }
+
+    public void setClmc(String clmc) {
+        this.clmc = clmc;
+    }
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public String getVidattachment() {
+        return vidattachment;
+    }
+
+    public void setVidattachment(String vidattachment) {
+        this.vidattachment = vidattachment;
+    }
+
+    public String getTpjd() {
+        return tpjd;
+    }
+
+    public void setTpjd(String tpjd) {
+        this.tpjd = tpjd;
+    }
+
+    public String getTpwd() {
+        return tpwd;
+    }
+
+    public void setTpwd(String tpwd) {
+        this.tpwd = tpwd;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTjsj() {
+        return tjsj;
+    }
+
+    public void setTjsj(String tjsj) {
+        this.tjsj = tjsj;
     }
 
     public Long getId() {

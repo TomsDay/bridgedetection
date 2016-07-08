@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/list_main_bg"
-    tools:context="com.suken.bridgedetection.activity.MaintenanceLogActivity">
+    tools:context="com.suken.bridgedetection.activity.MaintenanceLogActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
     <RelativeLayout
         android:id="@+id/maintenancelog_titleLayout"
         android:layout_width="match_parent"

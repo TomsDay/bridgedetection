@@ -94,6 +94,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.address_edit.setTag(position);
             holder.item_checkTime_edit.setTag(position);
             holder.zh_edit.setTag(position);
+
 //        } else {
 //            holder = (HolderView) view.getTag();
 ////            holder.diseaseName_edit.setTag(position);
@@ -252,9 +253,11 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                         MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(which);
                         holder.diseaseName_edit.setText(bean.getBhmc());
                         holder.unit_edit.setText(bean.getDw());
+
+                        list.get(position).setBhid(bean.getId()+"");
                         list.get(position).setBhmc(bean.getBhmc());
                         list.get(position).setDw(bean.getDw());
-                        list.get(position).setBhid(bean.getId()+"");
+
                         list.get(position).setRemark(bean.getXcms()+"");
                     }
                 })
