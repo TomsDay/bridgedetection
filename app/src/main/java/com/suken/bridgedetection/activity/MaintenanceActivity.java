@@ -58,8 +58,6 @@ public class MaintenanceActivity extends BaseActivity {
             }
         });
         getDate();
-        CkeckXMDialog ckeckXMDialog = new CkeckXMDialog(MaintenanceActivity.this);
-        ckeckXMDialog.show();
     }
     public void onClick(View v){
         switch (v.getId()) {

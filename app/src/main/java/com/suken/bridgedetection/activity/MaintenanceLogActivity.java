@@ -20,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -75,6 +76,8 @@ public class MaintenanceLogActivity extends Activity {
             maintenancelog_jcr_ev,
             maintenancelog_jlr_ev;
 
+    private TextView saveBtn;
+
     private Spinner maintenancelog_weather_spinner;
 
     private ArrayAdapter<String> mArrayWeatherAdapter;
@@ -115,10 +118,18 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_wxbm_ev = (EditText) findViewById(R.id.maintenancelog_wxbm_ev);
         maintenancelog_jcr_ev = (EditText) findViewById(R.id.maintenancelog_jcr_ev);
         maintenancelog_jlr_ev = (EditText) findViewById(R.id.maintenancelog_jlr_ev);
+        saveBtn = (TextView) findViewById(R.id.saveBtn);
+
         maintenancelog_bh_ev.setKeyListener(null);
         maintenancelog_gydw_ev.setKeyListener(null);
         maintenancelog_wxbm_ev.setKeyListener(null);
 
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDialog();
+            }
+        });
 
         initSpinner();
         initTime();
