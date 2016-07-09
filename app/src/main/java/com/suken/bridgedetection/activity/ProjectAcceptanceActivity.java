@@ -305,6 +305,7 @@ public class ProjectAcceptanceActivity extends Activity {
         File file = null;
         try {
             path = Environment.getExternalStorageDirectory() + File.separator + System.currentTimeMillis() + ".jpg";
+            Log.i("aaa","path ====== "+path);
             file = new File(path);
             fos = new FileOutputStream(file);
             baos = new ByteArrayOutputStream();

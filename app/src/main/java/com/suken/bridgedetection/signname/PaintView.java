@@ -42,13 +42,20 @@ public class PaintView extends View {
 
         mPath = new Path();
 
-        mBitmap = Bitmap.createBitmap(screenWidth, screenHeight, Config.ARGB_8888);
+        if (screenWidth < screenHeight){
+            mBitmap = Bitmap.createBitmap(screenHeight, screenWidth, Config.RGB_565);
+        } else {
+            mBitmap = Bitmap.createBitmap(screenWidth, screenHeight, Config.RGB_565);
+        }
+
         mCanvas = new Canvas(mBitmap);
-//		mCanvas.drawColor(Color.WHITE);
+		mCanvas.drawColor(Color.WHITE);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+
+        mPaint.setColor(Color.BLACK);
         canvas.drawBitmap(mBitmap, 0, 0, null);
         canvas.drawPath(mPath, mPaint);
     }
