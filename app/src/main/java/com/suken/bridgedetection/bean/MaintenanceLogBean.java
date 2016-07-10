@@ -91,9 +91,13 @@ public class MaintenanceLogBean implements Serializable{
     private String byrzzt;
     @DatabaseField
     private String bytzidbytzid;
+    @DatabaseField
+    private String bytzno;
 
 
 
+
+    List<MaintenanceLogItemBean> maintenlogdetailList = new ArrayList<MaintenanceLogItemBean>();
 
     List<MaintenanceLogItemBean> upkeepdiseaseList = new ArrayList<MaintenanceLogItemBean>();
 
@@ -144,7 +148,7 @@ public class MaintenanceLogBean implements Serializable{
         this.zlyq = zlyq;
         this.bcsm = bcsm;
         this.tzdzt = tzdzt;
-        this.upkeepdiseaseList = upkeepdiseaseList;
+        this.maintenlogdetailList = upkeepdiseaseList;
         this.maintenanceLogItemBeen = maintenanceLogItemBeen;
     }
 
@@ -184,9 +188,32 @@ public class MaintenanceLogBean implements Serializable{
                 ", wxrq='" + wxrq + '\'' +
                 ", byrzzt='" + byrzzt + '\'' +
                 ", bytzidbytzid='" + bytzidbytzid + '\'' +
-                ", upkeepdiseaseList=" + upkeepdiseaseList +
                 ", maintenanceLogItemBeen=" + maintenanceLogItemBeen +
                 '}';
+    }
+
+    public List<MaintenanceLogItemBean> getUpkeepdiseaseList() {
+        return upkeepdiseaseList;
+    }
+
+    public void setUpkeepdiseaseList(List<MaintenanceLogItemBean> upkeepdiseaseList) {
+        this.upkeepdiseaseList = upkeepdiseaseList;
+    }
+
+    public String getBytzno() {
+        return bytzno;
+    }
+
+    public void setBytzno(String bytzno) {
+        this.bytzno = bytzno;
+    }
+
+    public List<MaintenanceLogItemBean> getMaintenlogdetailList() {
+        return maintenlogdetailList;
+    }
+
+    public void setMaintenlogdetailList(List<MaintenanceLogItemBean> maintenlogdetailList) {
+        this.maintenlogdetailList = maintenlogdetailList;
     }
 
     public String getBytzidbytzid() {
@@ -301,14 +328,6 @@ public class MaintenanceLogBean implements Serializable{
 
     public void setTzdzt(String tzdzt) {
         this.tzdzt = tzdzt;
-    }
-
-    public List<MaintenanceLogItemBean> getUpkeepdiseaseList() {
-        return upkeepdiseaseList;
-    }
-
-    public void setUpkeepdiseaseList(List<MaintenanceLogItemBean> upkeepdiseaseList) {
-        this.upkeepdiseaseList = upkeepdiseaseList;
     }
 
     public String getWxbmmc() {

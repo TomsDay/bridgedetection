@@ -97,13 +97,13 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                                         break;
                                     case 2:
                                         maintenanceLogDao.delete(listBeen.get(position).getId());
-                                        for(int i = 0;i<listBeen.get(position).getUpkeepdiseaseList().size();i++){
-                                            maintenanceLogDao.deleteItem(listBeen.get(position).getUpkeepdiseaseList().get(i).getId());
-                                            for(int q = 0;q<listBeen.get(position).getUpkeepdiseaseList().get(i).getmImages().size();q++){
-                                                ivDescDao.delete(listBeen.get(position).getUpkeepdiseaseList().get(q).getmImages().get(q).getId());
+                                        for(int i = 0;i<listBeen.get(position).getMaintenlogdetailList().size();i++){
+                                            maintenanceLogDao.deleteItem(listBeen.get(position).getMaintenlogdetailList().get(i).getId());
+                                            for(int q = 0;q<listBeen.get(position).getMaintenlogdetailList().get(i).getmImages().size();q++){
+                                                ivDescDao.delete(listBeen.get(position).getMaintenlogdetailList().get(q).getmImages().get(q).getId());
                                             }
-                                            for(int q = 0;q<listBeen.get(position).getUpkeepdiseaseList().get(i).getmVideo().size();q++){
-                                                ivDescDao.delete(listBeen.get(position).getUpkeepdiseaseList().get(q).getmVideo().get(q).getId());
+                                            for(int q = 0;q<listBeen.get(position).getMaintenlogdetailList().get(i).getmVideo().size();q++){
+                                                ivDescDao.delete(listBeen.get(position).getMaintenlogdetailList().get(q).getmVideo().get(q).getId());
                                             }
                                         }
                                         getAllData();
@@ -161,7 +161,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                         Logger.e("aaa",b.toString());
                     }
                 } finally {
-                    bean.setUpkeepdiseaseList(itemBeanList);
+                    bean.setMaintenlogdetailList(itemBeanList);
                     listBeen.set(i, bean);
                     try {
                         iterator.close();
@@ -185,8 +185,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 Logger.e("aaa","111111111111"+ result.toString());
                 Logger.e("aaa","position===="+ position);
                 maintenanceLogDao.delete(bean.getId());
-                for(int i = 0;i<bean.getUpkeepdiseaseList().size();i++){
-                    maintenanceLogDao.deleteItem(bean.getUpkeepdiseaseList().get(i).getId());
+                for(int i = 0;i<bean.getMaintenlogdetailList().size();i++){
+                    maintenanceLogDao.deleteItem(bean.getMaintenlogdetailList().get(i).getId());
                 }
                 if(isAll){
                     if (position != listBeen.size() - 1) {
@@ -284,7 +284,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     }
                 }
                 int typePosition = type.getTypePosition();
-                MaintenanceLogItemBean tableItemBean = bean.getUpkeepdiseaseList().get(typePosition);
+                MaintenanceLogItemBean tableItemBean = bean.getMaintenlogdetailList().get(typePosition);
                 List<IVDesc> images = tableItemBean.getmImages();
                 List<IVDesc> videos = tableItemBean.getmVideo();
                 for(int i = 0;i<images.size();i++){
@@ -313,16 +313,16 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 Logger.e("aaa","imageSB====="+imageSB.toString());
                 Logger.e("aaa","mVideos====="+videoSB.toString());
 
-                bean.getUpkeepdiseaseList().get(typePosition).setPicattachment(imageSB.toString());
-                bean.getUpkeepdiseaseList().get(typePosition).setVidattachment(videoSB.toString());
+                bean.getMaintenlogdetailList().get(typePosition).setPicattachment(imageSB.toString());
+                bean.getMaintenlogdetailList().get(typePosition).setVidattachment(videoSB.toString());
                 SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String date = sDateFormat.format(new java.util.Date());
-                bean.getUpkeepdiseaseList().get(typePosition).setTjsj(date);
+                bean.getMaintenlogdetailList().get(typePosition).setTjsj(date);
 
 
 
                 boolean isUpload = true;
-                List<MaintenanceLogItemBean> itemBeen = bean.getUpkeepdiseaseList();
+                List<MaintenanceLogItemBean> itemBeen = bean.getMaintenlogdetailList();
                 for(int i = 0;i<itemBeen.size();i++){
                     Logger.e("aaa","itemBeen====="+i);
                     MaintenanceLogItemBean thisLogItemBean = itemBeen.get(i);
@@ -333,12 +333,12 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     }
                 }
                 if(isUpload){
-                    for(int i = 0;i<bean.getUpkeepdiseaseList().size();i++){
-                        bean.getUpkeepdiseaseList().get(i).setmImages(null);
-                        bean.getUpkeepdiseaseList().get(i).setmVideo(null);
-                        bean.getUpkeepdiseaseList().get(i).setMaintenanceLogBean(null);
-                        bean.getUpkeepdiseaseList().get(i).setiDescs(null);
-                        bean.getUpkeepdiseaseList().get(i).setvDescs(null);
+                    for(int i = 0;i<bean.getMaintenlogdetailList().size();i++){
+                        bean.getMaintenlogdetailList().get(i).setmImages(null);
+                        bean.getMaintenlogdetailList().get(i).setmVideo(null);
+                        bean.getMaintenlogdetailList().get(i).setMaintenanceLogBean(null);
+                        bean.getMaintenlogdetailList().get(i).setiDescs(null);
+                        bean.getMaintenlogdetailList().get(i).setvDescs(null);
                         bean.setMaintenanceLogItemBeen(null);
 
                     }
@@ -371,7 +371,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
-                List<MaintenanceLogItemBean> itemBeen = bean.getUpkeepdiseaseList();
+                List<MaintenanceLogItemBean> itemBeen = bean.getMaintenlogdetailList();
                 for (int j = 0; j < itemBeen.size(); j++) {
                     MaintenanceLogItemBean logItemBean = itemBeen.get(j);
                     List<IVDesc> images = logItemBean.getmImages();
@@ -384,7 +384,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                         Logger.e("aaa","无图！！！");
                         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                         String date = sDateFormat.format(new java.util.Date());
-                        bean.getUpkeepdiseaseList().get(j).setTjsj(date);
+                        bean.getMaintenlogdetailList().get(j).setTjsj(date);
                         boolean isUpload = true;
                         for (int i = 0; i < itemBeen.size(); i++) {
                             Logger.e("aaa", "itemBeen=====" + i);
@@ -396,12 +396,12 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                             }
                         }
                         if (isUpload) {
-                            for (int i = 0; i < bean.getUpkeepdiseaseList().size(); i++) {
-                                bean.getUpkeepdiseaseList().get(i).setmImages(null);
-                                bean.getUpkeepdiseaseList().get(i).setmVideo(null);
-                                bean.getUpkeepdiseaseList().get(i).setMaintenanceLogBean(null);
-                                bean.getUpkeepdiseaseList().get(i).setiDescs(null);
-                                bean.getUpkeepdiseaseList().get(i).setvDescs(null);
+                            for (int i = 0; i < bean.getMaintenlogdetailList().size(); i++) {
+                                bean.getMaintenlogdetailList().get(i).setmImages(null);
+                                bean.getMaintenlogdetailList().get(i).setmVideo(null);
+                                bean.getMaintenlogdetailList().get(i).setMaintenanceLogBean(null);
+                                bean.getMaintenlogdetailList().get(i).setiDescs(null);
+                                bean.getMaintenlogdetailList().get(i).setvDescs(null);
                                 bean.setMaintenanceLogItemBeen(null);
 
                             }

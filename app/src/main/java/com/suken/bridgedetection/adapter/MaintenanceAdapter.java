@@ -20,8 +20,7 @@ import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceListActivity;
-import com.suken.bridgedetection.util.Logger;
-import com.suken.bridgedetection.widget.CkeckXMDialog;
+import com.suken.bridgedetection.activity.ProjectAcceptanceListUpLoadActivity;
 
 import java.util.ArrayList;
 
@@ -125,7 +124,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 }else if(position == 2){
                     in.setClass(mContext, MaintenanceOfOrderListActivity.class);
                 }else if(position == 3){
-                    in.setClass(mContext, ProjectAcceptanceListActivity.class);
+                    in.setClass(mContext, ProjectAcceptanceListUpLoadActivity.class);
                 }else{
                     return;
                 }

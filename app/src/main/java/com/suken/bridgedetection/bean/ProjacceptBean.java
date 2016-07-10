@@ -37,7 +37,7 @@ public class ProjacceptBean implements Serializable {
     private String yhtzdno;
     private String signattachment ;
 
-    private List<ProjacceptItemBean> projacceptItemBeen = new ArrayList<ProjacceptItemBean>();
+    private List<ProjacceptItemBean> projacceptDetailList = new ArrayList<ProjacceptItemBean>();
 
     public ProjacceptBean() {
     }
@@ -69,7 +69,7 @@ public class ProjacceptBean implements Serializable {
         this.yhtzid = yhtzid;
         this.yhtzdno = yhtzdno;
         this.signattachment = signattachment;
-        this.projacceptItemBeen = projacceptItemBeen;
+        this.projacceptDetailList = projacceptItemBeen;
     }
 
 
@@ -102,7 +102,7 @@ public class ProjacceptBean implements Serializable {
                 ", yhtzid='" + yhtzid + '\'' +
                 ", yhtzdno='" + yhtzdno + '\'' +
                 ", signattachment='" + signattachment + '\'' +
-                ", projacceptItemBeen=" + projacceptItemBeen +
+                ", projacceptItemBeen=" + projacceptDetailList +
                 '}';
     }
 
@@ -332,11 +332,11 @@ public class ProjacceptBean implements Serializable {
         this.signattachment = signattachment;
     }
 
-    public List<ProjacceptItemBean> getProjacceptItemBeen() {
-        return projacceptItemBeen;
+    public List<ProjacceptItemBean> getProjacceptDetailList() {
+        return projacceptDetailList;
     }
 
-    public void setProjacceptItemBeen(List<ProjacceptItemBean> projacceptItemBeen) {
-        this.projacceptItemBeen = projacceptItemBeen;
+    public void setProjacceptDetailList(List<ProjacceptItemBean> projacceptDetailList) {
+        this.projacceptDetailList = projacceptDetailList;
     }
 }

@@ -44,7 +44,6 @@ public class ProjectAcceptanceListActivity extends Activity {
 
     private List<ProjacceptBean> projacceptBeen = new ArrayList<ProjacceptBean>();
 
-    private LinearLayout update_all;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +56,6 @@ public class ProjectAcceptanceListActivity extends Activity {
     private void initView() {
         projectAcceptanceBeen = projectAcceptanceDao.queryAll();
         project_acceptance_listView = (ListView) findViewById(R.id.project_acceptance_listView);
-        update_all = (LinearLayout) findViewById(R.id.update_all);
         mAdapter = new ProjectAcceptanceListAdapter(mContext);
 //        mAdapter.setData(projectAcceptanceBeen);
         project_acceptance_listView.setAdapter(mAdapter);
@@ -87,12 +85,6 @@ public class ProjectAcceptanceListActivity extends Activity {
                             }
                         })
                         .show();
-            }
-        });
-        update_all.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
         getYanShouData();

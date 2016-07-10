@@ -62,6 +62,7 @@ public class MaintenanceLogItemBean implements Serializable {
     private String tjsj;
 
 
+
     /**
      * ==============================================================上传增加的字段================================================================================
      */
@@ -83,6 +84,11 @@ public class MaintenanceLogItemBean implements Serializable {
     private String tpjd;
     @DatabaseField
     private String tpwd;
+    @DatabaseField
+    private String dj;
+    @DatabaseField
+    private String wxsl;
+
 
 
 
@@ -185,6 +191,22 @@ public class MaintenanceLogItemBean implements Serializable {
         this.maintenanceLogBean = maintenanceLogBean;
         this.iDescs = iDescs;
         this.vDescs = vDescs;
+    }
+
+    public String getDj() {
+        return dj;
+    }
+
+    public void setDj(String dj) {
+        this.dj = dj;
+    }
+
+    public String getWxsl() {
+        return wxsl;
+    }
+
+    public void setWxsl(String wxsl) {
+        this.wxsl = wxsl;
     }
 
     public int getIds() {

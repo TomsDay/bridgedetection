@@ -63,7 +63,6 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
     }
 
     private void initView() {
-        maintenanceOfOrderBeen = maintenanceOfOrderDao.queryAll();
         maintenanceoforderlist_table_listView = (ListView) findViewById(R.id.maintenanceoforderlist_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
         mAdapter = new MaintenanceOfOrderListAdapter(mContext);
@@ -132,6 +131,8 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 uploadIV(maintenanceOfOrderBeen.get(0), 0, true);
             }
         });
+
+        getAllData();
     }
     public void onClick(View v){
         switch (v.getId()) {
@@ -239,7 +240,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadProjaccept).executePost(list);
             }
         });
 
@@ -374,7 +375,9 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
+
                 List<MaintenanceOfOrderItemBean> itemBeen = bean.getInspectLogDetailList();
+               Logger.e("aaa","itemBeen.size()====="+itemBeen.size());
                 for (int j = 0; j < itemBeen.size(); j++) {
                     MaintenanceOfOrderItemBean ofOrderItemBean = itemBeen.get(j);
                     List<IVDesc> images = ofOrderItemBean.getmImages();

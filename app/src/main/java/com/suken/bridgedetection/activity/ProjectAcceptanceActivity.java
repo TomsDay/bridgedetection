@@ -100,6 +100,10 @@ public class ProjectAcceptanceActivity extends Activity {
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         projectacceptance_xsfzr_sign = (ImageView) findViewById(R.id.projectacceptance_xsfzr_sign);
 
+        projectacceptance_gydw_ev.setKeyListener(null);
+        projectacceptance_bh_ev.setKeyListener(null);
+        projectacceptance_wxbydw_ev.setKeyListener(null);
+
         saveBtn = (TextView) findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,7 +176,7 @@ public class ProjectAcceptanceActivity extends Activity {
         projectacceptance_wxbydw_ev.setText(projacceptBean.getSgdwmc());
         projectacceptance_sgrqs_ev.setText(projacceptBean.getSgks());
         projectacceptance_sgrqe_ev.setText(projacceptBean.getSgjs());
-        projectacceptance_content_ev.setText(projacceptBean.getProjacceptItemBeen().toString());
+        projectacceptance_content_ev.setText(projacceptBean.getProjacceptDetailList().toString());
         projectacceptance_xsfzr_ev.setText(projacceptBean.getYsrq());
 
 
@@ -303,7 +307,7 @@ public class ProjectAcceptanceActivity extends Activity {
                         }
 
                         Logger.e("aaa", "=======11111====="+projectAcceptanceDao.queryAll().toString());
-
+                        finish();
 
 
 

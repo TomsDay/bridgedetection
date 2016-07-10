@@ -1,10 +1,13 @@
 package com.suken.bridgedetection.activity;
 
 import android.annotation.TargetApi;
+import android.app.Service;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.KeyEvent;
 import com.suken.bridgedetection.BridgeDetectionApplication;
@@ -57,7 +60,6 @@ public class BaseActivity extends FragmentActivity {
 			}
 		});
 	}
-
 
 	/**
 	 * 得到自定义的progressDialog

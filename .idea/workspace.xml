@@ -31,8 +31,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bfba024-4c25-462c-a9c4-6826057156bb" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/ProjectAcceptanceListUpLoadActivity.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/signname/PaintView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/signname/WriteDialogListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/signname/WritePadDialog.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/write_pad.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+=======
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.8/taskArtifacts/fileSnapshots.bin" />
@@ -55,6 +79,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/RequestType.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/RequestType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogActivity.java" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogListActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogUpLoadActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogUpLoadActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceOfOrderActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceOfOrderActivity.java" />
@@ -79,6 +104,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order_list.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
     </list>
     <ignored path="bridgedetection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -119,12 +149,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="ProjectAcceptanceListUpLoadActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/ProjectAcceptanceListUpLoadActivity.java">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <file leaf-file-name="activity_project_acceptance.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40945947">
+              <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="write_pad.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/write_pad.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+              <folding />
+=======
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BaseActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#4139#4140#0" expanded="false" />
+                <element signature="e#4165#4166#0" expanded="false" />
+              </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+      <file leaf-file-name="MaintenanceLogListActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogListActivity.java">
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.039832287">
               <caret line="149" column="34" selection-start-line="149" selection-start-column="34" selection-end-line="149" selection-end-column="34" />
               <folding />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
             </state>
           </provider>
         </entry>
@@ -132,9 +205,29 @@
       <file leaf-file-name="MaintenanceOfOrderDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceOfOrderDao.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="99" column="5" selection-start-line="89" selection-start-column="3" selection-end-line="99" selection-end-column="5" />
               <folding />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0">
+              <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+              <folding />
+=======
+            <state vertical-scroll-proportion="-6.6296296">
+              <caret line="274" column="74" selection-start-line="274" selection-start-column="71" selection-end-line="274" selection-end-column="74" />
+=======
+            <state vertical-scroll-proportion="-7.9333334">
+              <caret line="323" column="55" selection-start-line="323" selection-start-column="55" selection-end-line="323" selection-end-column="55" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+              <folding>
+                <element signature="e#4569#4718#0" expanded="true" />
+                <element signature="e#4717#4718#0" expanded="true" />
+              </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
             </state>
           </provider>
         </entry>
@@ -142,9 +235,28 @@
       <file leaf-file-name="ProjectAcceptanceDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/ProjectAcceptanceDao.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="61" column="94" selection-start-line="61" selection-start-column="94" selection-end-line="61" selection-end-column="94" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0">
+              <caret line="82" column="22" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="22" />
               <folding />
+=======
+            <state vertical-scroll-proportion="0.785461">
+              <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+            <state vertical-scroll-proportion="-3.2931035">
+              <caret line="106" column="36" selection-start-line="106" selection-start-column="29" selection-end-line="106" selection-end-column="36" />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
+              <folding />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
             </state>
           </provider>
         </entry>
@@ -163,7 +275,18 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceOfOrderListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="131" column="47" selection-start-line="131" selection-start-column="47" selection-end-line="131" selection-end-column="47" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+=======
+              <caret line="54" column="48" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="48" />
+=======
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
               <folding />
             </state>
           </provider>
@@ -172,8 +295,19 @@
       <file leaf-file-name="activity_project_acceptance_list_up_load.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="39" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="39" />
+=======
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+            <state vertical-scroll-proportion="-1.2556522">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
               <folding />
             </state>
           </provider>
@@ -1703,7 +1837,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="ProjectPane">
+=======
+      <pane id="Scope" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+      <pane id="AndroidView">
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         <subPane>
           <PATH>
             <PATH_ELEMENT>
@@ -1711,6 +1854,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+=======
+        </subPane>
+      </pane>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+      <pane id="Scratches" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+      <pane id="ProjectPane">
+        <subPane>
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="bridgedetection" />
@@ -1821,6 +1977,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+=======
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="bridgedetection" />
@@ -1899,6 +2060,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1909,28 +2074,49 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+=======
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+      <pane id="PackagesPane" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Documents/android-sdk-macosx" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <property name="device.picker.selection" value="G2W0215901005322" />
+=======
+    <property name="device.picker.selection" value="2198c04a" />
+=======
     <property name="device.picker.selection" value="NJFYVGWGFMORJVNV" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
+<<<<<<< HEAD
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
     <property name="DEBUGGABLE_DEVICE" value="xiaomi-2013022-NJFYVGWGFMORJVNV" />
     <property name="DEBUGGABLE_PROCESS" value="com.suken.bridgedetection" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="E:/" />
     <property name="ExportApk.ApkPath" value="E:\" />
     <property name="ExportApk.Flavors" value="" />
     <property name="ExportApk.BuildType" value="release" />
+=======
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
   </component>
   <component name="RecentsManager">
     <key name="android.template.packageName">
@@ -2226,12 +2412,45 @@
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32979593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979593" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25178713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.4978701" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879817" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.4978701" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891247" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24935065" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.028938906" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.010660981" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2550586" sideWeight="0.5093834" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879817" sideWeight="0.503125" order="8" side_tool="true" content_ui="tabs" />
@@ -2242,16 +2461,44 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891247" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.4978701" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22451612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28903225" sideWeight="0.49061662" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8102894" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.49061662" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329849" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22534142" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2989378" sideWeight="0.49061662" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.81130064" sideWeight="0.4978701" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26774195" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.018567638" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32962668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979593" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868758" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13432837" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -2314,13 +2561,46 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/maintenancelogupload_item.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.35523114">
           <caret line="21" column="62" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="62" />
+=======
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.33291298">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+=======
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#4139#4140#0" expanded="false" />
+            <element signature="e#4165#4166#0" expanded="false" />
+          </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
           <folding />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
         </state>
       </provider>
+<<<<<<< HEAD
       <provider editor-type-id="android-designer">
         <state />
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.33291298">
+          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -2332,15 +2612,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceLogUpLoadAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-16.866667">
           <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="37" />
+          <folding />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceLogBean.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-1.5699831">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+=======
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml">
+<<<<<<< HEAD
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40945947">
+          <caret line="329" column="33" selection-start-line="329" selection-start-column="33" selection-end-line="329" selection-end-column="33" />
+          <folding />
+=======
+=======
+          <caret line="62" column="2" selection-start-line="62" selection-start-column="2" selection-end-line="62" selection-end-column="2" />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
@@ -2366,7 +2674,12 @@
         <state />
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceLogListBean.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceLogListAdapter.java">
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3524452">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
@@ -2383,7 +2696,35 @@
     <entry file="file://$PROJECT_DIR$/数据库设计/数据字典脚本.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+          <caret line="231" column="77" selection-start-line="231" selection-start-column="77" selection-end-line="231" selection-end-column="77" />
+          <folding>
+            <element signature="e#8933#9579#0" expanded="true" />
+            <element signature="e#9578#9579#0" expanded="true" />
+          </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/write_pad.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+=======
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+          <caret line="105" column="31" selection-start-line="105" selection-start-column="31" selection-end-line="105" selection-end-column="31" />
+          <folding />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
@@ -2403,6 +2744,7 @@
         <state vertical-scroll-proportion="0.92897195">
           <caret line="123" column="20" selection-start-line="123" selection-start-column="20" selection-end-line="123" selection-end-column="20" />
           <folding />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
         </state>
       </provider>
       <provider editor-type-id="android-designer">
@@ -2439,8 +2781,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceTableAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-6.3">
           <caret line="159" column="8" selection-start-line="159" selection-start-column="8" selection-end-line="162" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+=======
+        <state vertical-scroll-proportion="-4.1311474">
+          <caret line="60" column="20" selection-start-line="179" selection-start-column="37" selection-end-line="179" selection-end-column="44" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+          <folding />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
@@ -2454,14 +2808,39 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/IVDesc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="75" column="77" selection-start-line="75" selection-start-column="77" selection-end-line="75" selection-end-column="77" />
+=======
+<<<<<<< HEAD
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+<<<<<<< HEAD
+          <folding />
+=======
+          <folding>
+            <element signature="e#8933#9579#0" expanded="true" />
+            <element signature="e#9578#9579#0" expanded="true" />
+          </folding>
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="32" selection-end-column="5" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceTableDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="118" column="5" selection-start-line="97" selection-start-column="3" selection-end-line="118" selection-end-column="5" />
+=======
+<<<<<<< HEAD
+          <caret line="82" column="22" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="22" />
+<<<<<<< HEAD
+=======
+=======
+          <caret line="440" column="4" selection-start-line="440" selection-start-column="4" selection-end-line="440" selection-end-column="4" />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
@@ -2482,19 +2861,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceOfOrderListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.18344827">
           <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+=======
+        <state vertical-scroll-proportion="0.0">
+          <caret line="454" column="63" selection-start-line="454" selection-start-column="63" selection-end-line="454" selection-end-column="63" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceOfOrderBean.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.3324138">
           <caret line="114" column="15" selection-start-line="114" selection-start-column="15" selection-end-line="114" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogUpLoadActivity.java">
+=======
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/signname/WritePadDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/ProjectAcceptanceBean.java">
+=======
+          <caret line="704" column="0" selection-start-line="704" selection-start-column="0" selection-end-line="704" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceLogAdapter.java">
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37103447">
           <caret line="385" column="79" selection-start-line="384" selection-start-column="22" selection-end-line="385" selection-end-column="79" />
@@ -2631,6 +3044,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/ProjectAcceptanceActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="-2.1834483">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
         </state>
@@ -2640,6 +3054,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324138">
           <caret line="143" column="30" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="30" />
+=======
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.031914894">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+>>>>>>> e87cfe04213978a5c84425f1a858fad48bf150e3
+=======
+        <state vertical-scroll-proportion="2.8086956">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+>>>>>>> c75e1c9d8bf5b8518bc80691765d52209e4128f6
+          <folding />
+>>>>>>> 9791423c50cbf00728bcb2c91ccfd0c4f06b5f88
         </state>
       </provider>
     </entry>

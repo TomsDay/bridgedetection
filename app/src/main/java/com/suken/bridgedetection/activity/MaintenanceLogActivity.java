@@ -218,6 +218,7 @@ public class MaintenanceLogActivity extends Activity {
 
         maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
         maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
+        Logger.e("aaa", "maintenanceLogItemBeen===" + maintenanceLogItemBeen.size());
         if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
             maintenanceLogItemBeen.get(0).setShow(true);
         }

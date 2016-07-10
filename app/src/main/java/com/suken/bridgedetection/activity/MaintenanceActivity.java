@@ -17,7 +17,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.util.Logger;
-import com.suken.bridgedetection.widget.CkeckXMDialog;
+import com.suken.bridgedetection.widget.CheckXMDialog;
 
 import java.util.ArrayList;
 

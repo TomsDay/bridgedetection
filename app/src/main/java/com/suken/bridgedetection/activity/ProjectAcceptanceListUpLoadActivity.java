@@ -81,7 +81,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                                 Logger.e("aaa", "which++" + which);
                                 switch (which) {
                                     case 0://编辑
-                                        Intent in = new Intent(mContext, MaintenanceTableActivity.class);
+                                        Intent in = new Intent(mContext, ProjectAcceptanceActivity.class);
                                         in.putExtra("id", projectAcceptanceBeen.get(position).getId());
                                         startActivity(in);
                                         break;
@@ -119,6 +119,13 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             }
         });
 
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllData();
     }
 
     public void getAllData(){
@@ -189,7 +196,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadSafetycheck).executePost(list);
             }
         });
 

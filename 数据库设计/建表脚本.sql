@@ -177,7 +177,7 @@ CREATE TABLE `hw_daily_maintenlog` (
   `updatetime_` datetime DEFAULT NULL COMMENT '最后修改时间',
   `flag_` int(11) DEFAULT NULL COMMENT '是否有效',
   `bytzid_` bigint(20) DEFAULT NULL COMMENT '维修保养通知单id',
-  `bytzidbytzid_` varchar(32) DEFAULT NULL COMMENT '通知单编号',
+  `bytzno_` varchar(32) DEFAULT NULL COMMENT '通知单编号',
   `gydw_id_` bigint(20) DEFAULT NULL COMMENT '管养单位ID',
   `gydw_name_` varchar(256) DEFAULT NULL COMMENT '管养单位',
   `bno_` varchar(32) NOT NULL COMMENT '表单编号',
