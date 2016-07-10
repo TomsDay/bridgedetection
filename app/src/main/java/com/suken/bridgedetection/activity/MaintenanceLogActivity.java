@@ -104,7 +104,7 @@ public class MaintenanceLogActivity extends Activity {
         ivDescDao = new IVDescDao();
         catalogueByUIDDao = new CatalogueByUIDDao();
 
-        id = getIntent().getIntExtra("id", 0);
+        id = getIntent().getLongExtra("id", 0);
         initView();
     }
 
@@ -154,7 +154,7 @@ public class MaintenanceLogActivity extends Activity {
                 }
                 maintenancelog_weather_spinner.setSelection(selsctWeather);
                 maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
-
+                maintenancelog_jlr_ev.setText(bean.getFzry());
 
                 ForeignCollection<MaintenanceLogItemBean> orders = bean.getMaintenanceLogItemBeen();
                 CloseableIterator<MaintenanceLogItemBean> iterator = orders.closeableIterator();
@@ -162,17 +162,16 @@ public class MaintenanceLogActivity extends Activity {
                     while (iterator.hasNext()) {
                         MaintenanceLogItemBean b = iterator.next();
 
-                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getId());
+                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getIds());
                         b.setmImages(imageDesc);
 
-                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceLogItemBeanByUserId(b.getId());
+                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceLogItemBeanByUserId(b.getIds());
                         b.setmVideo(videoDesc);
 
                         maintenanceLogItemBeen.add(b);
                         Logger.e("aaa", b.toString());
                     }
                 } finally {
-                    maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
                     if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
                         maintenanceLogItemBeen.get(0).setShow(true);
                     }
@@ -327,7 +326,7 @@ public class MaintenanceLogActivity extends Activity {
                             itemBean.setFx(fx != null ? fx : "上行内侧");
 
                             itemBean.setMaintenanceLogBean(maintenanceLogBean);
-                            if (itemBean.getId() != 0) {
+                            if (itemBean.getIds() != 0) {
                                 maintenanceLogDao.updateItem(itemBean);
                             }else {
                                 maintenanceLogDao.addItem(itemBean);
@@ -353,9 +352,9 @@ public class MaintenanceLogActivity extends Activity {
                                 }
                             }
                         }
-                        Logger.e("aaa", "=======11111====="+maintenanceLogDao.queryAll().toString());
-                        Logger.e("aaa", "========2222======="+ maintenanceLogDao.queryItemAll().toString());
-
+                        Logger.e("aaa", "=======11111====="+ivDescDao.queryAll().toString());
+//                        Logger.e("aaa", "========2222======="+ maintenanceLogDao.queryItemAll().toString());
+                        finish();
 
 
 
@@ -459,7 +458,7 @@ public class MaintenanceLogActivity extends Activity {
             path1.mkdirs();
         }
         String name = "";
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAMERA ) {
             name = path1 + File.separator + generateMediaName(true);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             name = desc.path;
@@ -499,7 +498,7 @@ public class MaintenanceLogActivity extends Activity {
             e.printStackTrace();
         }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
             IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
@@ -513,7 +512,7 @@ public class MaintenanceLogActivity extends Activity {
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             // 保存在原先的图片中所以不处理
 
-        } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
+        } else if (requestCode == Constants.REQUEST_CODE_VIDEO && resultCode == RESULT_OK) {
             String str = null;
             IVDesc desc = new IVDesc();
             try {

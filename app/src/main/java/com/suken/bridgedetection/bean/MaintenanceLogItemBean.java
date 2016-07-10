@@ -15,6 +15,8 @@ import java.util.List;
 @DatabaseTable(tableName = "tb_maintenancelogitem")
 public class MaintenanceLogItemBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
+    private int ids;
+    @DatabaseField
     private long id;
     @DatabaseField
     private String createBy;
@@ -185,6 +187,13 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
+    public int getIds() {
+        return ids;
+    }
+
+    public void setIds(int ids) {
+        this.ids = ids;
+    }
 
     public String getBytzidbytzid() {
         return bytzidbytzid;

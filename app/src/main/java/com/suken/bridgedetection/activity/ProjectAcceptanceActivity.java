@@ -17,11 +17,14 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.ProjectAcceptanceListAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.signname.WriteDialogListener;
@@ -53,6 +56,8 @@ public class ProjectAcceptanceActivity extends Activity {
             projectacceptance_xsfzr_ev;
 
     ImageView projectacceptance_xsfzr_sign;
+
+    private TextView saveBtn;
     private Bitmap mSignBitmap;
 
     private Spinner projectacceptance_weather_spinner;
@@ -62,10 +67,12 @@ public class ProjectAcceptanceActivity extends Activity {
     private String[] mStringArrayWeather;
     private ArrayAdapter<String> mArrayWeatherAdapter;
     private String strWeather = "晴";
+    private int selsctWeather;
     private int id;
 
     private ProjectAcceptanceDao projectAcceptanceDao;
     private List<ProjectAcceptanceBean> projectAcceptanceBeen = new ArrayList<ProjectAcceptanceBean>();
+    private ProjacceptBean projacceptBean;
 
 
 
@@ -76,6 +83,7 @@ public class ProjectAcceptanceActivity extends Activity {
         mContext = this;
         projectAcceptanceDao = new ProjectAcceptanceDao();
         id = getIntent().getIntExtra("id", 0);
+        projacceptBean = (ProjacceptBean) getIntent().getSerializableExtra("bean");
         initView();
     }
 
@@ -91,6 +99,15 @@ public class ProjectAcceptanceActivity extends Activity {
 
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         projectacceptance_xsfzr_sign = (ImageView) findViewById(R.id.projectacceptance_xsfzr_sign);
+
+        saveBtn = (TextView) findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDialog();
+            }
+        });
+
         projectacceptance_xsfzr_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,53 +136,59 @@ public class ProjectAcceptanceActivity extends Activity {
             if(projectAcceptanceBeen.size()>0){
                 ProjectAcceptanceBean bean = projectAcceptanceBeen.get(0);
 
-                projectacceptance_gydw_ev.setText(bean.getCustodyUnit());
-                projectacceptance_bh_ev.setText(bean.getSerialNumber());
-                projectacceptance_wxbydw_ev.setText(bean.getMaintenanceUnit());
-                projectacceptance_sgrqs_ev.setText(bean.getConstructionStartTime());
-                projectacceptance_sgrqe_ev.setText(bean.getConstructionEndTime());
-                projectacceptance_content_ev.setText(bean.getContent());
-                projectacceptance_return_ev.setText(bean.getAcceptanceReturn());
-                projectacceptance_xsfzr_ev.setText(bean.getAcceptancePeople());
+                projectacceptance_gydw_ev.setText(bean.getGydwName());
+                projectacceptance_bh_ev.setText(bean.getBno());
+                projectacceptance_wxbydw_ev.setText(bean.getSgdwmc());
+                projectacceptance_sgrqs_ev.setText(bean.getSgks());
+                projectacceptance_sgrqe_ev.setText(bean.getSgjs());
+                projectacceptance_content_ev.setText(bean.getQrzs());
+                projectacceptance_return_ev.setText(bean.getYsjg());
+                projectacceptance_xsfzr_ev.setText(bean.getYsrq());
+
+                strWeather = bean.getWeather();
+                for (int i = 0; i < mStringArrayWeather.length; i++) {
+                    if(mStringArrayWeather[i].equals(strWeather)){
+                        selsctWeather = i;
+                        break;
+                    }
+                }
+                projectacceptance_weather_spinner.setSelection(selsctWeather);
 
             }else{
-                projectacceptance_bh_ev.setText(UUID.randomUUID().toString());
+                setData();
             }
 
         }else{
-            projectacceptance_bh_ev.setText(UUID.randomUUID().toString());
+            setData();
         }
 
 
 
 
     }
-//    public void onClick(View view){
-//        switch (view.getId()) {
-//            case R.id.projectacceptance_back:
-//                finish();
-//                break;
-//            case R.id.projectacceptance_save:
-//                saveDialog();
-//                break;
-//            case R.id.projectacceptance_xsfzr_sign:
-//                WritePadDialog mWritePadDialog = new WritePadDialog(
-//                        ProjectAcceptanceActivity.this, new WriteDialogListener() {
-//
-//                    @Override
-//                    public void onPaintDone(Object object) {
-//                        mSignBitmap = (Bitmap) object;
-//                        createSignFile();
-//                        projectacceptance_xsfzr_sign.setImageBitmap(mSignBitmap);
-////                        mTVSign.setVisibility(View.GONE);
-//                    }
-//                });
-//
-//                mWritePadDialog.show();
-//                break;
-//        }
-//
-//    }
+    public void setData(){
+        projectacceptance_gydw_ev.setText(projacceptBean.getGydwName());
+        projectacceptance_bh_ev.setText(projacceptBean.getBno());
+        projectacceptance_wxbydw_ev.setText(projacceptBean.getSgdwmc());
+        projectacceptance_sgrqs_ev.setText(projacceptBean.getSgks());
+        projectacceptance_sgrqe_ev.setText(projacceptBean.getSgjs());
+        projectacceptance_content_ev.setText(projacceptBean.getProjacceptItemBeen().toString());
+        projectacceptance_xsfzr_ev.setText(projacceptBean.getYsrq());
+
+
+    }
+    public void onClick(View view){
+        switch (view.getId()) {
+            case R.id.projectacceptance_back:
+                finish();
+                break;
+            case R.id.projectacceptance_save:
+                saveDialog();
+                break;
+
+        }
+
+    }
     private void initSpinner() {
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         mStringArrayWeather = getResources().getStringArray(R.array.spinnerWeather);
@@ -258,15 +281,15 @@ public class ProjectAcceptanceActivity extends Activity {
                         String xsfzr = projectacceptance_xsfzr_ev.getText().toString();
 
                         ProjectAcceptanceBean bean = new ProjectAcceptanceBean();
-                        bean.setCustodyUnit(gydw);
-                        bean.setSerialNumber(bh);
+                        bean.setGydwName(gydw);
+                        bean.setBno(bh);
                         bean.setWeather(strWeather);
-                        bean.setMaintenanceUnit(wxbydw);
-                        bean.setConstructionStartTime(sgrqs);
-                        bean.setConstructionEndTime(sgrqe);
-                        bean.setContent(content);
-                        bean.setAcceptanceReturn(returnContent);
-                        bean.setAcceptancePeople(xsfzr);
+                        bean.setSgdwmc(wxbydw);
+                        bean.setSgks(sgrqs);
+                        bean.setSgjs(sgrqe);
+                        bean.setQrzs(content);
+                        bean.setYsjg(returnContent);
+                        bean.setYsrq(xsfzr);
                         if (id != 0) {
                             bean.setId(id);
                         }

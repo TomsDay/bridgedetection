@@ -123,7 +123,7 @@
         // ============ end ==============
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="3ecea51f560650b1ed8a4b99808f52e8" />
+            android:value="2a5aafa9d1650a1d3a08fb854c585c12" />
 
         <activity
             android:name=".activity.HomePageActivity"
@@ -519,7 +519,10 @@
         <activity
             android:name=".activity.ProjectAcceptanceListActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceLogUpLoadActivity"></activity>
+        <activity
+            android:name=".activity.MaintenanceLogUpLoadActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"></activity>
     </application>
 
 </manifest>

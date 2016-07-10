@@ -171,7 +171,9 @@ public class MaintenanceTableActivity extends BaseActivity {
                         Logger.e("aaa",b.toString());
                     }
                 } finally {
-
+                    if(maintenanceTableItemBeen != null && maintenanceTableItemBeen.size() != 0){
+                        maintenanceTableItemBeen.get(0).setShow(true);
+                    }
                     try {
                         iterator.close();
                     } catch (SQLException e) {

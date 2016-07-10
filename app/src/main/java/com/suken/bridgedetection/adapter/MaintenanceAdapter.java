@@ -97,7 +97,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 }else if(position == 2){
                     in.setClass(mContext,MaintenanceOfOrderActivity .class);
                 } else if(position == 3){
-                    in.setClass(mContext, ProjectAcceptanceActivity.class);
+                    in.setClass(mContext, ProjectAcceptanceListActivity.class);
 
                 }else{
                     return;

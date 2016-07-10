@@ -86,7 +86,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                                 Logger.e("aaa", "which++" + which);
                                 switch (which) {
                                     case 0://编辑
-                                        Intent in = new Intent(mContext, MaintenanceTableActivity.class);
+                                        Intent in = new Intent(mContext, MaintenanceLogActivity.class);
                                         in.putExtra("id", listBeen.get(position).getId());
                                         startActivity(in);
                                         break;
@@ -133,7 +133,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
     }
     public void onClick(View v){
         switch (v.getId()) {
-            case R.id.maintenance_table_back:
+            case R.id.maintenance_logListUpLoad_back:
                 finish();
                 break;
         }
@@ -151,10 +151,10 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     while(iterator.hasNext()){
                         MaintenanceLogItemBean b = iterator.next();
 
-                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getId());
+                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getIds());
                         b.setmImages(imageDesc);
 
-                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceLogItemBeanByUserId(b.getId());
+                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceLogItemBeanByUserId(b.getIds());
                         b.setmVideo(videoDesc);
 
                         itemBeanList.add(b);
@@ -233,7 +233,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadMaintenlog).executePost(list);
             }
         });
 
@@ -270,7 +270,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 com.alibaba.fastjson.JSONArray array = obj.getJSONArray("datas");
                 Gson gson = new Gson();
                 List<UploadFileBean>  mImages = new ArrayList<UploadFileBean>();
-                List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();;
+                List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();
+
                 for(int i = 0;i<array.size();i++){
 
                     String s = array.getString(i);
@@ -339,7 +340,9 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                         bean.getUpkeepdiseaseList().get(i).setiDescs(null);
                         bean.getUpkeepdiseaseList().get(i).setvDescs(null);
                         bean.setMaintenanceLogItemBeen(null);
+
                     }
+                    bean.setByrzzt("1");
                     bean.setTjsj(date);
 
                     uploadData(bean,position,isAll);
@@ -367,8 +370,6 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
                 List<MaintenanceLogItemBean> itemBeen = bean.getUpkeepdiseaseList();
                 for (int j = 0; j < itemBeen.size(); j++) {
@@ -402,7 +403,9 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                                 bean.getUpkeepdiseaseList().get(i).setiDescs(null);
                                 bean.getUpkeepdiseaseList().get(i).setvDescs(null);
                                 bean.setMaintenanceLogItemBeen(null);
+
                             }
+                            bean.setByrzzt("1");
                             bean.setTjsj(date);
                             uploadData(bean,position,isAll);
 //                    Logger.e("aaa","bean====="+bean.toString());

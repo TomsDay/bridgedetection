@@ -63,11 +63,11 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
             holder = (HolderView) view.getTag();
         }
         MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(position);
-        holder.maintenanceoforder_item_tv1.setText(bean.getId()+"");
-        holder.maintenanceoforder_item_tv2.setText(bean.getCustodyUnit()+"");
-        holder.maintenanceoforder_item_tv3.setText(bean.getCheckDate()+"");
-        holder.maintenanceoforder_item_tv4.setText(bean.getCheckPeople()+"");
-        holder.maintenanceoforder_item_tv5.setText(bean.getSecurityAdministrator()  +"");
+        holder.maintenanceoforder_item_tv1.setText(bean.getBno()+"");
+        holder.maintenanceoforder_item_tv2.setText(bean.getYhrzbno()+"");
+        holder.maintenanceoforder_item_tv3.setText(bean.getJcsj()+"");
+        holder.maintenanceoforder_item_tv4.setText(bean.getJcry()+"");
+        holder.maintenanceoforder_item_tv5.setText(bean.getAqgly()  +"");
 
         
         return view;
