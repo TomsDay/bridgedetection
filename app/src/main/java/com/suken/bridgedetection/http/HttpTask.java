@@ -99,6 +99,48 @@ public class HttpTask {
 
     }
 
+    public void uploadFile(List<NameValuePair> parameters, int typePositon, String... files) {
+
+        // 和GET方式一样，先将参数放入List
+        HttpClient httpClient = new DefaultHttpClient();
+        try {
+            HttpPost postMethod = new HttpPost(getUrl(mRequestType.getUrl()));
+            MultipartEntity entity = new MultipartEntity();
+            for (String s : files) {
+                if (!TextUtils.isEmpty(s)) {
+                    File f = new File(s);
+                    ContentBody cbFile = new FileBody(new File(s));
+                    entity.addPart(f.getName(), cbFile);
+                }
+            }
+            for (NameValuePair pair : parameters) {
+                entity.addPart(pair.getName(), new StringBody(pair.getValue()));
+            }
+            postMethod.setEntity(entity);
+            HttpResponse response = httpClient.execute(postMethod); // 执行POST方法
+            int resultCode = response.getStatusLine().getStatusCode();
+            String result = EntityUtils.toString(response.getEntity(), "utf-8");
+            if (resultCode == 200) {
+                JSONObject obj = JSON.parseObject(result);
+                String errorCode = obj.getString(Constants.ERRORCODE);
+                String errorMsg = obj.getString(Constants.ERRORMSG);
+                if (TextUtils.equals(errorCode, "200")) {
+                    mRequestType.setTypePosition(typePositon);
+                    mResponseListener.onRequestSuccess(mRequestType, obj);
+                } else {
+                    mResponseListener.onRequestFail(mRequestType, errorCode, errorMsg);
+                }
+            } else {
+                mResponseListener.onRequestFail(mRequestType, resultCode + "", result);
+            }
+        } catch (Exception e) {
+            mResponseListener.onRequestFail(mRequestType, "-100", e.getMessage());
+        } finally {
+            httpClient.getConnectionManager().shutdown();
+        }
+
+    }
+
     public void executePostBackground(final List<NameValuePair> parameters) {
 
         new Thread(new Runnable() {

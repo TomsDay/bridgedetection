@@ -13,13 +13,13 @@ import android.widget.TextView;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
+import com.suken.bridgedetection.activity.MaintenanceLogUpLoadActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceListActivity;
-import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 
@@ -29,6 +29,7 @@ import java.util.ArrayList;
 public class MaintenanceAdapter extends BaseAdapter {
     private Context mContext;
     private ArrayList<String> list = new ArrayList<String>();
+    private ArrayList<String> submitList = new ArrayList<String>();
     private LayoutInflater inflater;
     public MaintenanceAdapter(Context context) {
         mContext = context;
@@ -47,6 +48,9 @@ public class MaintenanceAdapter extends BaseAdapter {
 //        list.add(str + "验收申请");
         list.add("日常维修保养工程验收");
 //        list.add(str + "综合查询页面");
+    }
+    public void setData(ArrayList<String> list){
+        this.submitList = list;
     }
 
     @Override
@@ -100,6 +104,14 @@ public class MaintenanceAdapter extends BaseAdapter {
                 mContext.startActivity(in);
             }
         });
+        String submitNum = submitList.get(position);
+        if(submitNum.equals("0")){
+            holder.maintenance_item_submit.setVisibility(View.GONE);
+        }else{
+            holder.maintenance_item_submit.setText("待提交：" + submitNum);
+            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
+        }
+
         holder.maintenance_item_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,8 +119,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                 if(position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
                 }else if(position == 1){
-                    in.setClass(mContext, MaintenanceLogListActivity.class);
-                    in.putExtra("type", 1);
+                    in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
                 }else if(position == 2){
                     in.setClass(mContext, MaintenanceOfOrderListActivity.class);
                 }else if(position == 3){

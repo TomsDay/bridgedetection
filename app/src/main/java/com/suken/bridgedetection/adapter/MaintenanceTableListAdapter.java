@@ -1,14 +1,20 @@
 package com.suken.bridgedetection.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,15 +61,17 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
         }
         MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
         holder.maintenancetablelist_item_tv1.setText(bean.getId()+"");
-        holder.maintenancetablelist_item_tv2.setText(bean.getCustodyUnit()+"");
-        holder.maintenancetablelist_item_tv3.setText(bean.getPatrolSection()+"");
-        holder.maintenancetablelist_item_tv4.setText(bean.getTimeQuantum()+"");
-        holder.maintenancetablelist_item_tv5.setText(bean.getSearchType()+"");
-        holder.maintenancetablelist_item_tv6.setText(bean.getInspectOne()+"");
-
+        holder.maintenancetablelist_item_tv2.setText(bean.getLxid()+"");
+        holder.maintenancetablelist_item_tv3.setText(bean.getLxmc()+"");
+        holder.maintenancetablelist_item_tv4.setText(bean.getJcsj()+"");
+        holder.maintenancetablelist_item_tv5.setText(bean.getXcld()+"");
+        holder.maintenancetablelist_item_tv6.setText(bean.getXcry()+"");
 
         return view;
     }
+
+
+
     class HolderView{
         private TextView maintenancetablelist_item_tv1,
                 maintenancetablelist_item_tv2,
@@ -72,6 +80,8 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
                 maintenancetablelist_item_tv5,
                 maintenancetablelist_item_tv6;
 
+        private LinearLayout maintenancetablelist_item_Layout;
+
         public HolderView(View v){
             maintenancetablelist_item_tv1 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv1);
             maintenancetablelist_item_tv2 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv2);
@@ -79,6 +89,8 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
             maintenancetablelist_item_tv4 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv4);
             maintenancetablelist_item_tv5 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv5);
             maintenancetablelist_item_tv6 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv6);
+
+            maintenancetablelist_item_Layout = (LinearLayout) v.findViewById(R.id.maintenancetablelist_item_Layout);
         }
     }
 }

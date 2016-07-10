@@ -6,6 +6,8 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/6/14.
@@ -14,20 +16,39 @@ import java.io.Serializable;
 public class MaintenanceTableBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
+    /**  路线*/
     @DatabaseField
-    private String custodyUnit;
+    private String lxid;
+    /**  路线编号*/
     @DatabaseField
-    private String patrolSection;
+    private String lxbh;
+    /**  路线名称*/
     @DatabaseField
-    private String timeQuantum;
+    private String lxmc;
     @DatabaseField
-    private String datetime;
+    private String xcry;
+    @DatabaseField
+    private String jcry;
     @DatabaseField
     private String weather;
     @DatabaseField
-    private String searchType;
+    private String gydwId;
     @DatabaseField
-    private String inspectOne;
+    private String gydwName;
+    @DatabaseField
+    private String jcsj;
+    @DatabaseField
+    private String jcks;
+    @DatabaseField
+    private String jcjs;
+    @DatabaseField
+    private String tjsj;
+    @DatabaseField
+    private int xclx;
+    @DatabaseField
+    private String xcld;
+
+    private List<MaintenanceTableItemBean> inspectLogDetailList = new ArrayList<MaintenanceTableItemBean>();
 
     @ForeignCollectionField
     /**
@@ -37,55 +58,65 @@ public class MaintenanceTableBean implements Serializable {
      */
     private ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen;
 
-    public MaintenanceTableBean() {
-    }
-
-    public MaintenanceTableBean(int id, String patrolSection, String timeQuantum, String datetime, String weather, String searchType) {
-        this.id = id;
-        this.patrolSection = patrolSection;
-        this.timeQuantum = timeQuantum;
-        this.datetime = datetime;
-        this.weather = weather;
-        this.searchType = searchType;
-    }
 
     @Override
     public String toString() {
         return "MaintenanceTableBean{" +
                 "id=" + id +
-                ", custodyUnit='" + custodyUnit + '\'' +
-                ", patrolSection='" + patrolSection + '\'' +
-                ", timeQuantum='" + timeQuantum + '\'' +
-                ", datetime='" + datetime + '\'' +
+                ", lxid='" + lxid + '\'' +
+                ", lxbh='" + lxbh + '\'' +
+                ", lxmc='" + lxmc + '\'' +
+                ", xcry='" + xcry + '\'' +
+                ", jcry='" + jcry + '\'' +
                 ", weather='" + weather + '\'' +
-                ", searchType='" + searchType + '\'' +
-                ", inspectOne='" + inspectOne + '\'' +
+                ", gydwId='" + gydwId + '\'' +
+                ", gydwName='" + gydwName + '\'' +
+                ", jcsj='" + jcsj + '\'' +
+                ", jcks='" + jcks + '\'' +
+                ", jcjs='" + jcjs + '\'' +
+                ", tjsj='" + tjsj + '\'' +
+                ", xclx=" + xclx +
+                ", xcld='" + xcld + '\'' +
+                ", inspectLogDetailList=" + inspectLogDetailList +
                 ", maintenanceTableItemBeen=" + maintenanceTableItemBeen +
                 '}';
     }
 
-    public ForeignCollection<MaintenanceTableItemBean> getMaintenanceTableItemBeen() {
-        return maintenanceTableItemBeen;
+    public MaintenanceTableBean() {
     }
 
-    public void setMaintenanceTableItemBeen(ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
+    public MaintenanceTableBean(int id, String lxid, String lxbh, String lxmc, String xcry, String jcry, String weather, String gydwId, String gydwName, String jcsj, String tjsj, int xclx, String xcld, List<MaintenanceTableItemBean> inspectLogDetailList, ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
+        this.id = id;
+        this.lxid = lxid;
+        this.lxbh = lxbh;
+        this.lxmc = lxmc;
+        this.xcry = xcry;
+        this.jcry = jcry;
+        this.weather = weather;
+        this.gydwId = gydwId;
+        this.gydwName = gydwName;
+        this.jcsj = jcsj;
+        this.tjsj = tjsj;
+        this.xclx = xclx;
+        this.xcld = xcld;
+        this.inspectLogDetailList = inspectLogDetailList;
         this.maintenanceTableItemBeen = maintenanceTableItemBeen;
     }
 
-    public String getInspectOne() {
-        return inspectOne;
+    public String getJcks() {
+        return jcks;
     }
 
-    public void setInspectOne(String inspectOne) {
-        this.inspectOne = inspectOne;
+    public void setJcks(String jcks) {
+        this.jcks = jcks;
     }
 
-    public String getCustodyUnit() {
-        return custodyUnit;
+    public String getJcjs() {
+        return jcjs;
     }
 
-    public void setCustodyUnit(String custodyUnit) {
-        this.custodyUnit = custodyUnit;
+    public void setJcjs(String jcjs) {
+        this.jcjs = jcjs;
     }
 
     public int getId() {
@@ -96,28 +127,44 @@ public class MaintenanceTableBean implements Serializable {
         this.id = id;
     }
 
-    public String getPatrolSection() {
-        return patrolSection;
+    public String getLxid() {
+        return lxid;
     }
 
-    public void setPatrolSection(String patrolSection) {
-        this.patrolSection = patrolSection;
+    public void setLxid(String lxid) {
+        this.lxid = lxid;
     }
 
-    public String getTimeQuantum() {
-        return timeQuantum;
+    public String getLxbh() {
+        return lxbh;
     }
 
-    public void setTimeQuantum(String timeQuantum) {
-        this.timeQuantum = timeQuantum;
+    public void setLxbh(String lxbh) {
+        this.lxbh = lxbh;
     }
 
-    public String getDatetime() {
-        return datetime;
+    public String getLxmc() {
+        return lxmc;
     }
 
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
+    public void setLxmc(String lxmc) {
+        this.lxmc = lxmc;
+    }
+
+    public String getXcry() {
+        return xcry;
+    }
+
+    public void setXcry(String xcry) {
+        this.xcry = xcry;
+    }
+
+    public String getJcry() {
+        return jcry;
+    }
+
+    public void setJcry(String jcry) {
+        this.jcry = jcry;
     }
 
     public String getWeather() {
@@ -128,11 +175,67 @@ public class MaintenanceTableBean implements Serializable {
         this.weather = weather;
     }
 
-    public String getSearchType() {
-        return searchType;
+    public String getGydwId() {
+        return gydwId;
     }
 
-    public void setSearchType(String searchType) {
-        this.searchType = searchType;
+    public void setGydwId(String gydwId) {
+        this.gydwId = gydwId;
+    }
+
+    public String getGydwName() {
+        return gydwName;
+    }
+
+    public void setGydwName(String gydwName) {
+        this.gydwName = gydwName;
+    }
+
+    public String getJcsj() {
+        return jcsj;
+    }
+
+    public void setJcsj(String jcsj) {
+        this.jcsj = jcsj;
+    }
+
+    public String getTjsj() {
+        return tjsj;
+    }
+
+    public void setTjsj(String tjsj) {
+        this.tjsj = tjsj;
+    }
+
+    public int getXclx() {
+        return xclx;
+    }
+
+    public void setXclx(int xclx) {
+        this.xclx = xclx;
+    }
+
+    public String getXcld() {
+        return xcld;
+    }
+
+    public void setXcld(String xcld) {
+        this.xcld = xcld;
+    }
+
+    public List<MaintenanceTableItemBean> getInspectLogDetailList() {
+        return inspectLogDetailList;
+    }
+
+    public void setInspectLogDetailList(List<MaintenanceTableItemBean> inspectLogDetailList) {
+        this.inspectLogDetailList = inspectLogDetailList;
+    }
+
+    public ForeignCollection<MaintenanceTableItemBean> getMaintenanceTableItemBeen() {
+        return maintenanceTableItemBeen;
+    }
+
+    public void setMaintenanceTableItemBeen(ForeignCollection<MaintenanceTableItemBean> maintenanceTableItemBeen) {
+        this.maintenanceTableItemBeen = maintenanceTableItemBeen;
     }
 }

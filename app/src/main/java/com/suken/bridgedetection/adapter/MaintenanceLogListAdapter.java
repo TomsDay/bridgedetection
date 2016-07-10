@@ -27,30 +27,25 @@ import java.util.ArrayList;
 public class MaintenanceLogListAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
-    ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    ArrayList<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
-    private int type;
 
 
     public MaintenanceLogListAdapter(Context context) {
         mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
-    public void setDate( ArrayList<MaintenanceLogListBean> list){
+    public void setDate( ArrayList<MaintenanceLogBean> list){
         listBeen = list;
-        type = 0;
     }
-    public void setDate1( ArrayList<MaintenanceLogBean> list){
-        maintenanceLogBeen = list;
-        type = 1;
-    }
-    public ArrayList<MaintenanceLogListBean> getDate(){
+
+    public ArrayList<MaintenanceLogBean> getDate(){
         return listBeen;
     }
 
     @Override
     public int getCount() {
-        return type==0? listBeen.size():maintenanceLogBeen.size();
+        return listBeen.size();
     }
 
     @Override
@@ -73,21 +68,13 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
         }else{
             holder = (HolderView) view.getTag();
         }
-        if (type == 0) {
-            final MaintenanceLogListBean bean = listBeen.get(position);
+        final MaintenanceLogBean bean = listBeen.get(position);
 
-            holder.maintenanceloglist_item_tv1.setText(bean.getGydwId());
-            holder.maintenanceloglist_item_tv2.setText(bean.getGydwName());
-            holder.maintenanceloglist_item_tv3.setText(bean.getCreatetime());
-            holder.maintenanceloglist_item_tv4.setText(bean.getCreator());
-        }else{
-            MaintenanceLogBean bean = maintenanceLogBeen.get(position);
-            holder.maintenanceloglist_item_tv1.setText(bean.getSerialNumber());
-            holder.maintenanceloglist_item_tv2.setText(bean.getCustodyUnit());
-            holder.maintenanceloglist_item_tv3.setText(bean.getDate());
-            holder.maintenanceloglist_item_tv4.setText(bean.getPrincipal());
+        holder.maintenanceloglist_item_tv1.setText(bean.getBno());
+        holder.maintenanceloglist_item_tv2.setText(bean.getWxbmmc());
+        holder.maintenanceloglist_item_tv3.setText(bean.getQfrq());
+        holder.maintenanceloglist_item_tv4.setText(bean.getQfry());
 
-        }
 
 
 
@@ -107,12 +94,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
                                 switch (which) {
                                     case 0:
                                         Intent in = new Intent(mContext, MaintenanceLogActivity.class);
-                                        if (type == 0) {
-                                            in.putExtra("bean", listBeen.get(position));
-                                        }else{
-                                            in.putExtra("id", maintenanceLogBeen.get(position).getId());
-                                        }
-
+                                        in.putExtra("bean", listBeen.get(position));
                                         mContext.startActivity(in);
                                         break;
                                     default:

@@ -1,5 +1,7 @@
 package com.suken.bridgedetection.adapter;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,19 +13,25 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
+import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.IVDesc;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
+import com.suken.bridgedetection.widget.CheckXMDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
+import com.suken.bridgedetection.widget.TimePickerUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +41,7 @@ import java.util.List;
  */
 public class MaintenanceLogAdapter extends BaseAdapter {
     private ArrayList<MaintenanceLogItemBean> maintenanceLogItemBeen = new ArrayList<MaintenanceLogItemBean>();
+    private List<CatalogueByUIDBean> catalogueByUIDBeen = new ArrayList<CatalogueByUIDBean>();
     private MaintenanceLogActivity mActivity;
     private LayoutInflater inflater;
     private String dateTime;
@@ -48,6 +57,11 @@ public class MaintenanceLogAdapter extends BaseAdapter {
     public ArrayList<MaintenanceLogItemBean> getData() {
         return maintenanceLogItemBeen;
     }
+
+    public void setCatalogueByUID(List<CatalogueByUIDBean> list) {
+        this.catalogueByUIDBeen = list;
+    }
+
     @Override
     public int getCount() {
         return maintenanceLogItemBeen.size();
@@ -67,26 +81,31 @@ public class MaintenanceLogAdapter extends BaseAdapter {
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         final MaintenanceLogItemBean bean = maintenanceLogItemBeen.get(position);
-        if (view == null) {
+//        if (view == null) {
             view = inflater.inflate(R.layout.maintenance_log_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
             holder.projectName_edit.setTag(position);
+            holder.zh_edit.setTag(position);
             holder.cl_edit.setTag(position);
             holder.unit_edit.setTag(position);
             holder.count_edit.setTag(position);
             holder.address_edit.setTag(position);
             holder.item_checkTime_edit.setTag(position);
-        } else {
-            holder = (HolderView) view.getTag();
-            holder.projectName_edit.setTag(position);
-            holder.cl_edit.setTag(position);
-            holder.unit_edit.setTag(position);
-            holder.count_edit.setTag(position);
-            holder.address_edit.setTag(position);
-            holder.item_checkTime_edit.setTag(position);
-        }
-        holder.projectName_edit.addTextChangedListener(new Watcher(holder.projectName_edit));
+//        } else {
+//            holder = (HolderView) view.getTag();
+//            holder.projectName_edit.setTag(position);
+//            holder.zh_edit.setTag(position);
+//            holder.cl_edit.setTag(position);
+//            holder.unit_edit.setTag(position);
+//            holder.count_edit.setTag(position);
+//            holder.address_edit.setTag(position);
+//            holder.item_checkTime_edit.setTag(position);
+//        }
+//        holder.projectName_edit.addTextChangedListener(new Watcher(holder.projectName_edit));
+        holder.projectName_edit.setKeyListener(null);
+        holder.projectName_edit.setOnClickListener(new CheckXMDialog(mActivity,  holder.projectName_edit));
+        holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
         holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
         holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
         holder.count_edit.addTextChangedListener(new Watcher(holder.count_edit));
@@ -94,13 +113,31 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
 
         holder.video_num.setText(bean.getmVideo().size()+"");
-        holder.projectName_edit.setText(bean.getProjectName());
-        holder.cl_edit.setText(bean.getMaterialName());
-        holder.unit_edit.setText(bean.getUnit());
-        holder.count_edit.setText(bean.getCount());
-        holder.address_edit.setText(bean.getAddress());
-        holder.item_checkTime_edit.setText(bean.getCheckTime());
+        holder.img_num.setText(bean.getmImages().size()+"");
+
+        holder.projectName_edit.setText(bean.getBhmc());
+        holder.zh_edit.setText(bean.getYhzh());
+        holder.cl_edit.setText(bean.getYhzh());
+        holder.unit_edit.setText(bean.getDw());
+        holder.count_edit.setText(bean.getYgsl());
+        holder.address_edit.setText(bean.getBhwz());
+        holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
+
+        String fx = bean.getFx();
+        Logger.e("aaa","fx==="+fx);
+        if("上行内侧".equals(fx)){
+            holder.radioGroup.check(R.id.radioup);
+        }else if("下行内侧".equals(fx)){
+            holder.radioGroup.check(R.id.radiodown);
+        }else if("上行外侧".equals(fx)){
+            holder.radioGroup.check(R.id.radioleft);
+        }else if("下行外侧".equals(fx)){
+            holder.radioGroup.check(R.id.radioright);
+        }else{
+            holder.radioGroup.check(R.id.radioup);
+        }
+
 
         SpinnerAdapter mAdapter = new SpinnerAdapter();
         mAdapter.setItem(bean.getmImages());
@@ -147,9 +184,71 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //                mImageOrVideoClick.clickVideo(position);
             }
         });
+        holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.radioup:
+                        maintenanceLogItemBeen.get(position).setFx("上行内侧");
+                        break;
+                    case R.id.radiodown:
+                        maintenanceLogItemBeen.get(position).setFx("下行内侧");
+                        break;
+                    case R.id.radioleft:
+                        maintenanceLogItemBeen.get(position).setFx("上行外侧");
+                        break;
+                    case R.id.radioright:
+                        maintenanceLogItemBeen.get(position).setFx("下行外侧");
+                        break;
+
+                }
+            }
+        });
 
         return view;
     }
+
+    private void initListDialog(final HolderView holder,final int position) {
+        final String[] names = new String[catalogueByUIDBeen.size()];
+        for (int i = 0; i < catalogueByUIDBeen.size(); i++) {
+            CatalogueByUIDBean bean = catalogueByUIDBeen.get(i);
+
+            names[i] = bean.getXimmc() + "(" + bean.getDw() + ")";
+        }
+
+        new AlertDialog.Builder(mActivity)
+                .setItems(names, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Logger.e("aaa", "which++" + which);
+                        CatalogueByUIDBean bean = catalogueByUIDBeen.get(which);
+                        holder.projectName_edit.setText(bean.getXimmc());
+                        holder.unit_edit.setText(bean.getDw());
+
+                        maintenanceLogItemBeen.get(position).setOrgid(bean.getOrgid()+"");
+                        maintenanceLogItemBeen.get(position).setVersionno(bean.getVersionno()+"");
+                        maintenanceLogItemBeen.get(position).setCreateBy(bean.getCreateBy()+"");
+                        maintenanceLogItemBeen.get(position).setCreatetime(bean.getCreatetime()+"");
+                        maintenanceLogItemBeen.get(position).setCreator(bean.getCreator()+"");
+                        maintenanceLogItemBeen.get(position).setUpdateBy(bean.getUpdateBy()+"");
+                        maintenanceLogItemBeen.get(position).setUpdatetime(bean.getUpdatetime()+"");
+                        maintenanceLogItemBeen.get(position).setUpdator(bean.getUpdator()+"");
+                        maintenanceLogItemBeen.get(position).setFlag(bean.getFlag()+"");
+                        maintenanceLogItemBeen.get(position).setXcbhid(bean.getId()+"");
+
+
+                        maintenanceLogItemBeen.get(position).setBhid(bean.getId()+"");
+                        maintenanceLogItemBeen.get(position).setBhmc(bean.getXimmc());
+                        maintenanceLogItemBeen.get(position).setDw(bean.getDw());
+                        maintenanceLogItemBeen.get(position).setRemark(bean.getXcms()+"");
+                    }
+                })
+                .show();
+    }
+
+
     class HolderView {
         public LinearLayout form_item_edit_layout,
                 from_topLayout,
@@ -162,10 +261,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         private TextView form_column,
                 qslx_title,
                 qsfw_title,
-                video_num,
-                byyj_title;
+                byyj_title,
+                img_num,
+                video_num;
 
         private EditText projectName_edit,
+                zh_edit,
                 cl_edit,
                 unit_edit,
                 count_edit,
@@ -175,6 +276,8 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         private Spinner img_spinner;
 
         private View item_Line;
+
+        private RadioGroup radioGroup;
 
         public HolderView(View view) {
             form_item_edit_layout = (LinearLayout) view.findViewById(R.id.form_item_edit_layout);
@@ -188,6 +291,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             qsfw_title = (TextView) view.findViewById(R.id.qsfw_title);
             byyj_title = (TextView) view.findViewById(R.id.byyj_title);
             video_num = (TextView) view.findViewById(R.id.video_num);
+            img_num = (TextView) view.findViewById(R.id.img_num);
 
             xiangji = (ImageView) view.findViewById(R.id.xiangji);
             video = (ImageView) view.findViewById(R.id.video);
@@ -198,11 +302,14 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             count_edit = (EditText) view.findViewById(R.id.count_edit);
             address_edit = (EditText) view.findViewById(R.id.address_edit);
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
+            zh_edit = (EditText) view.findViewById(R.id.zh_edit);
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
 
             item_Line = view.findViewById(R.id.item_Line);
+
+            radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         }
     }
     private int ClickImagePositon;
@@ -237,27 +344,31 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
                 case R.id.projectName_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    maintenanceLogItemBeen.get(position).setProjectName(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setBhmc(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.zh_edit:
+                    Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
+                    maintenanceLogItemBeen.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.cl_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    maintenanceLogItemBeen.get(position).setMaterialName(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.unit_edit:
                     Logger.e("aaa","unit_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setDw(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.count_edit:
                     Logger.e("aaa","count_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCount(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setYgsl(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.address_edit:
                     Logger.e("aaa","address_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setAddress(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
                     Logger.e("aaa","item_checkTime_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCheckTime(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
                     break;
             }
         }

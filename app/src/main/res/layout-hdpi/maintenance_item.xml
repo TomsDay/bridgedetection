@@ -48,7 +48,6 @@
             android:id="@+id/maintenance_item_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="待提交：1"
             android:layout_centerVertical="true"
             android:layout_marginLeft="16dp"
             android:textColor="@color/white"

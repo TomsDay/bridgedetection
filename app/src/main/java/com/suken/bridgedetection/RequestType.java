@@ -29,10 +29,19 @@ public enum RequestType {
     getCatalogueByUID("获取细目基本信息","/m/base/getCatalogueByUID.ht"),
     geteCooperationByUID("获取外协单位基本信息","/m/base/geteCooperationByUID.ht"),
     geteQualityDemandByUID("获取质量要求信息","/m/base/geteQualityDemandByUID.ht"),
-    geteMaterialByUID("获取材料基本信息","/m/base/geteMaterialByUID.ht");
+    geteMaterialByUID("获取材料基本信息","/m/base/geteMaterialByUID.ht"),
+    getMaintenlogByUID("获取维修保养日志记录信息","/m/daily/maintenlog/getMaintenlogByUID.ht"),
+    getUpkeepnoticeByUID("获取养护通知单记录信息","/m/daily/maintenlog/getUpkeepnoticeByUID.ht"),
+    uploadMaintenlog("上传维修保养日志记录信息","/m/daily/maintenlog/uploadMaintenlog.ht"),
+    uploadProjaccept("上传施工安全检查记录信息","/m/daily/maintenlog/uploadProjaccept.ht"),
+    uploadSafetycheck("上传保养工程验收记录信息","/m/daily/maintenlog/uploadSafetycheck.ht"),
+
+    uploadInspectlog("上传日常巡查日志记录信息","/m/daily/inspect/uploadInspectlog.ht");
+
 
     private String desc;
     private String url;
+    private int typePosition;
 
     private RequestType(String desc, String url) {
         this.desc = desc;
@@ -48,4 +57,11 @@ public enum RequestType {
         return url;
     }
 
+    public int getTypePosition() {
+        return typePosition;
+    }
+
+    public void setTypePosition(int typePosition) {
+        this.typePosition = typePosition;
+    }
 }

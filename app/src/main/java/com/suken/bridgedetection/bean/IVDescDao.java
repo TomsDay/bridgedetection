@@ -1,6 +1,7 @@
 package com.suken.bridgedetection.bean;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.DeleteBuilder;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.storage.SqliteOpenHelper;
 
@@ -80,14 +81,14 @@ public class IVDescDao {
     public List<IVDesc> getVideoMaintenanceTableItemBeanByUserId(int userid)
     {
         try {
-            return ivDescs.queryBuilder().where().eq("imageMaintenanceTableItemBean_id", userid)
+            return ivDescs.queryBuilder().where().eq("videoMaintenanceTableItemBean_id", userid)
                     .query();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
-    public List<IVDesc> getImageMaintenanceLogItemBeanByUserId(int userid)
+    public List<IVDesc> getImageMaintenanceLogItemBeanByUserId(long userid)
     {
         try {
             return ivDescs.queryBuilder().where().eq("imageMaintenanceLogItem_id", userid)
@@ -97,7 +98,7 @@ public class IVDescDao {
             return null;
         }
     }
-    public List<IVDesc> getVideoMaintenanceLogItemBeanByUserId(int userid)
+    public List<IVDesc> getVideoMaintenanceLogItemBeanByUserId(long userid)
     {
         try {
             return ivDescs.queryBuilder().where().eq("videoMaintenanceLogItemBean_id", userid)
@@ -105,6 +106,15 @@ public class IVDescDao {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+    public void delete(int id){
+        try {
+            DeleteBuilder<IVDesc, String> deleteBuilder = ivDescs.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

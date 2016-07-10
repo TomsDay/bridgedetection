@@ -19,7 +19,9 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -35,12 +37,21 @@ import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.UploadBean;
+import com.suken.bridgedetection.bean.UploadListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.storage.GXLuXianInfo;
+import com.suken.bridgedetection.storage.GXLuXianInfoDao;
+import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
+import com.suken.bridgedetection.storage.SdxcFormData;
+import com.suken.bridgedetection.storage.SdxcFormDetail;
 import com.suken.bridgedetection.util.FileUtils;
+import com.suken.bridgedetection.util.NetUtil;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
@@ -52,6 +63,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.UUID;
 
 import com.suken.bridgedetection.util.Logger;
 
@@ -61,10 +73,11 @@ import org.apache.http.message.BasicNameValuePair;
 /**
  * 高速公路养护巡查日志
  */
-public class MaintenanceTableActivity extends Activity {
+public class MaintenanceTableActivity extends BaseActivity {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceTableItemBean> maintenanceTableItemBeen = new ArrayList<MaintenanceTableItemBean>();
     private ArrayList<MaintenanceTableBean> maintenanceTableBeen = new ArrayList<MaintenanceTableBean>();
+    private List<GXLuXianInfo> gxLuXianInfos = new ArrayList<GXLuXianInfo>();
     private MaintenanceTableAdapter mAdapter;
     private EditText maintenancetable_time_ev,
             maintenancetable_date_ev,
@@ -85,36 +98,60 @@ public class MaintenanceTableActivity extends Activity {
     private String [] mStringArrayWeather,mStringArraySearchType;
     private String strWeather = "晴", strSearchType = "日常巡查";
 
+    private int intSearchType;
+
     private MaintenanceTableDao maintenanceTableDao;
+    private MaintenanceDiseaseDao maintenanceDiseaseDao;
+    private GXLuXianInfoDao gxLuXianInfoDao;
+
+    private TextView saveBtn;
+
     IVDescDao ivDescDao;
 
     private int id;
 
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_table);
         maintenanceTableDao = new MaintenanceTableDao();
+        maintenanceDiseaseDao = new MaintenanceDiseaseDao();
+        gxLuXianInfoDao = new GXLuXianInfoDao();
         ivDescDao = new IVDescDao();
         id = getIntent().getIntExtra("id", 0);
         mContext = this;
         initView();
     }
 
+    int selsctWeather;
     public void getData() {
+        gxLuXianInfos = gxLuXianInfoDao.queryAll();
         if (id != 0) {
             maintenanceTableBeen = (ArrayList<MaintenanceTableBean>) maintenanceTableDao.queryByID(id);
             Logger.e("aaa","maintenanceTableBeanList++"+maintenanceTableBeen.toString());
             if(maintenanceTableBeen.size()>0){
                 MaintenanceTableBean bean = maintenanceTableBeen.get(0);
-                maintenancetable_gydw_ev.setText(bean.getCustodyUnit());
-                maintenancetable_cxld_ev.setText(bean.getPatrolSection());
-                maintenancetable_xcr_ev.setText(bean.getInspectOne());
-                maintenancetable_time_ev.setText(bean.getTimeQuantum());
-                maintenancetable_date_ev.setText(bean.getDatetime());
-                maintenancetable_weather_spinner.setSelection(2);
-                maintenancetable_searchType_spinner.setSelection(2);
+                maintenancetable_gydw_ev.setText(bean.getGydwName());
+                maintenancetable_cxld_ev.setText(bean.getXcld());
+                maintenancetable_xcr_ev.setText(bean.getXcry());
+                maintenancetable_time_ev.setText(bean.getJcks()+"-"+bean.getJcjs());
+                maintenancetable_date_ev.setText(bean.getJcjs());
+
+                strWeather = bean.getWeather();
+                Logger.e("aaa", "strWeather===" + strWeather);
+                for (int i = 0; i < mStringArrayWeather.length; i++) {
+                    if(mStringArrayWeather[i].equals(strWeather)){
+                        selsctWeather = i;
+                        break;
+                    }
+                }
+                Logger.e("aaa", "selsctWeather===" + selsctWeather);
+                intSearchType = bean.getXclx();
+                Logger.e("aaa", "intSearchType===" + intSearchType);
+
+
+                maintenancetable_weather_spinner.setSelection(selsctWeather);
+                maintenancetable_searchType_spinner.setSelection(intSearchType);
 
 
 
@@ -153,7 +190,10 @@ public class MaintenanceTableActivity extends Activity {
             bean.setShow(true);
             maintenanceTableItemBeen.add(bean);
         }
+
         mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
+
+        mAdapter.setDiseaseData(maintenanceDiseaseDao.queryAll());
         mAdapter.setData(maintenanceTableItemBeen);
         mListView.setAdapter(mAdapter);
 
@@ -168,17 +208,71 @@ public class MaintenanceTableActivity extends Activity {
         maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
         maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
 
-        getData();
+        saveBtn = (TextView) findViewById(R.id.saveBtn);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDialog();
+            }
+        });
+
+        maintenancetable_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+        setCXLD();
 
         setTime();
 
         initSpinner();
 
+        getData();
 
 //        loadDate();
 
 
     }
+
+    private void setCXLD() {
+        maintenancetable_cxld_ev.setKeyListener(null);
+        maintenancetable_gydw_ev.setKeyListener(null);
+        maintenancetable_cxld_ev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                initListDialog();
+            }
+        });
+//        maintenancetable_gydw_ev.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                initListDialog();
+//            }
+//        });
+
+    }
+
+    int xcldPosition;
+    private void initListDialog() {
+        final String[] names = new String[gxLuXianInfos.size()];
+        for (int i = 0; i < gxLuXianInfos.size(); i++) {
+            GXLuXianInfo bean = gxLuXianInfos.get(i);
+            names[i] = bean.getQdzh() + "(" + bean.getQdmc() + ") - " + bean.getZdzh() + "(" + bean.getZdmc()  + ")";
+        }
+
+        new AlertDialog.Builder(mContext)
+                .setItems(names, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog,
+                                        int which) {
+                        Logger.e("aaa", "which++" + which);
+                        xcldPosition = which;
+                        GXLuXianInfo bean = gxLuXianInfos.get(which);
+
+                        maintenancetable_cxld_ev.setText(bean.getQdzh()+"-"+bean.getQdzh());
+
+                    }
+                })
+                .show();
+    }
+
 
     private void initSpinner() {
 
@@ -188,7 +282,18 @@ public class MaintenanceTableActivity extends Activity {
         //mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         maintenancetable_weather_spinner.setAdapter(mArrayWeatherAdapter);
         //监听Item选中事件
-        maintenancetable_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
+        maintenancetable_weather_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                strWeather = mStringArrayWeather[i];
+                Logger.e("aaa", "strWeather=ItemSelectedListenerImpl=="+strWeather);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
 
         mStringArraySearchType = getResources().getStringArray(R.array.spinnerSearchType);
@@ -197,28 +302,24 @@ public class MaintenanceTableActivity extends Activity {
         //mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         maintenancetable_searchType_spinner.setAdapter(mArraySearchTypeAdapter);
         //监听Item选中事件
-        maintenancetable_searchType_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
-    }
-
-
-
-    private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
-            switch (view.getId()) {
-                case R.id.maintenancetable_searchType_spinner:
-                    strSearchType = mStringArraySearchType[position];
-                    break;
-                case R.id.maintenancetable_weather_spinner:
-                    strWeather = mStringArrayWeather[position];
-                    break;
+        maintenancetable_searchType_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                strSearchType = mStringArraySearchType[i];
+                intSearchType = i;
+                Logger.e("aaa", "intSearchType=  ItemSelectedListenerImpl=="+intSearchType);
             }
-        }
 
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {}
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
     }
+
+
+
+
 
     public void setTime() {
 
@@ -311,13 +412,34 @@ public class MaintenanceTableActivity extends Activity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.maintenancetable_back:
-                finish();
+                back();
                 break;
             case R.id.maintenancetable_save:
                 saveDialog();
                 break;
         }
 
+    }
+
+    public void back() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提醒");
+        builder.setMessage("返回将丢失当前未保存信息");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
     public void saveDialog(){
         new AlertDialog.Builder(mContext)
@@ -326,21 +448,36 @@ public class MaintenanceTableActivity extends Activity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        maintenanceTableItemBeen = mAdapter.getData();
 
-                        String gydw = maintenancetable_gydw_ev.getText().toString();
-                        String xcld = maintenancetable_cxld_ev.getText().toString();
+
+
+
+
+
                         String time = maintenancetable_time_ev.getText().toString();
                         String date = maintenancetable_date_ev.getText().toString();
                         String xcr = maintenancetable_xcr_ev.getText().toString();
                         MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
-                        maintenanceTableBean.setCustodyUnit(gydw);
-                        maintenanceTableBean.setPatrolSection(xcld);
-                        maintenanceTableBean.setTimeQuantum(time);
-                        maintenanceTableBean.setDatetime(date);
+                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
+                        maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+                        maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+
+
+                        maintenanceTableBean.setJcsj(date);
+                        String[] timeStr = time.split("-");
+                        maintenanceTableBean.setJcks(timeStr[0]);
+                        maintenanceTableBean.setJcjs(timeStr[1]);
+                        maintenanceTableBean.setLxbh(bean.getLxbh());
+                        maintenanceTableBean.setLxmc(bean.getLxmc());
+                        maintenanceTableBean.setLxid(bean.getId());
+                        maintenanceTableBean.setTjsj(date);
                         maintenanceTableBean.setWeather(strWeather);
-                        maintenanceTableBean.setSearchType(strSearchType);
-                        maintenanceTableBean.setInspectOne(xcr);
+                        maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
+                        maintenanceTableBean.setXcry(xcr);
+                        maintenanceTableBean.setJcry(BridgeDetectionApplication.mCurrentUser.getUserName());
+                        maintenanceTableBean.setXclx(intSearchType);
+
+//
                         if (id != 0) {
                             maintenanceTableBean.setId(id);
                         }
@@ -350,34 +487,38 @@ public class MaintenanceTableActivity extends Activity {
                         }else{
                             maintenanceTableDao.add(maintenanceTableBean);
                         }
-
+//
                         maintenanceTableItemBeen = mAdapter.getData();
+//
+
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
+                            itemBean.setYhzt("1");
+                            itemBean.setTpjd("123.12");
+                            itemBean.setTpwd("123.12");
+                            String fx = itemBean.getFx();
+                            itemBean.setFx(fx != null ? fx : "上行内侧");
+
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
                             if (itemBean.getId() != 0) {
                                 maintenanceTableDao.updateItem(itemBean);
                             }else {
                                 maintenanceTableDao.addItem(itemBean);
                             }
-                            Logger.e("aaa","12332131=="+itemBean.toString());
+
                             List<IVDesc> imagesDescList = itemBean.getmImages();
                             List<IVDesc> videoDescList = itemBean.getmVideo();
                             for(int q = 0; q < imagesDescList.size(); q++){
-
                                 IVDesc imageDesc = imagesDescList.get(q);
                                 imageDesc.setImageMaintenanceTableItemBean(itemBean);
-                                Logger.e("aaa","11111111111111111111"+imageDesc.toString());
                                 if (imageDesc.getId() != 0) {
                                     ivDescDao.update(imageDesc);
                                 }else {
                                     ivDescDao.add(imageDesc);
                                 }
                             }
-
                             for(int w = 0; w < videoDescList.size(); w++){
                                 IVDesc videoDesc = videoDescList.get(w);
-                                Logger.e("aaa","222222222222"+videoDesc.toString());
                                 videoDesc.setVideoMaintenanceTableItemBean(itemBean);
                                 if (videoDesc.getId() != 0) {
                                     ivDescDao.update(videoDesc);
@@ -386,13 +527,50 @@ public class MaintenanceTableActivity extends Activity {
                                 }
                             }
 
-
-
-
                         }
 
                         Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
+                        finish();
+//                        final UploadBean uploadBean = new UploadBean();
 
+//                        final Gson gson = new Gson();
+//                        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+//                            @Override
+//                            public void onRequestSuccess(RequestType type, JSONObject result) {
+////                                Logger.e("aaa", "result.toString()" + result.toString());
+////                                JSONArray array = result.getJSONArray("datas");
+////                                String datas = array.getString(0);
+////                                Logger.e("aaa", "datas==" + datas);
+////                                Gson gson = new Gson();
+////                                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
+//                                Logger.e("aaa","111111111111"+ result.toString());
+//                            }
+//
+//                            @Override
+//                            public void onRequestFail(RequestType type, String resultCode, String result) {
+//                                Logger.e("aaa", result + "(" + resultCode + ")");
+//                            }
+//                        };
+//
+//
+//                        BackgroundExecutor.execute(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                                List<NameValuePair> list = new ArrayList<NameValuePair>();
+//                                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+//                                list.add(pair);
+//                                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+//                                list.add(pair);
+//                                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+//                                list.add(pair);
+//                                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
+//                                pair = new BasicNameValuePair("json", gson.toJson(uploadBean));
+//                                list.add(pair);
+//
+//                                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
+//                            }
+//                        });
 
 
                     }
@@ -468,7 +646,9 @@ public class MaintenanceTableActivity extends Activity {
             e.printStackTrace();
         }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+
+            Logger.e("aaa", "resultCode=REQUEST_CODE_CAMERA=" + resultCode);
             IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();
@@ -482,9 +662,12 @@ public class MaintenanceTableActivity extends Activity {
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             // 保存在原先的图片中所以不处理
 
-        } else if (requestCode == Constants.REQUEST_CODE_VIDEO) {
+        } else if (requestCode == Constants.REQUEST_CODE_VIDEO && resultCode == RESULT_OK) {
+
             String str = null;
             IVDesc desc = new IVDesc();
+
+            Logger.e("aaa", "resultCode=REQUEST_CODE_VIDEO=" + resultCode);
             try {
                 Log.e("aaa", "333333");
                 desc.name = mPlayerFile.getName();
@@ -506,12 +689,10 @@ public class MaintenanceTableActivity extends Activity {
                 FileUtils.moveFileTo(srcfile, mPlayerFile);
 
                 super.onActivityResult(requestCode, resultCode, data);
-            }
-            catch(Exception e) {;
+            } catch (Exception e) {
+                ;
 
             }
-
-
 
 
             maintenanceTableItemBeen.get(mPosition).getmVideo().add(desc);
@@ -521,38 +702,67 @@ public class MaintenanceTableActivity extends Activity {
         }
     }
 
-    private void loadDate() {
-        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-            @Override
-            public void onRequestSuccess(RequestType type, JSONObject result) {
-                Logger.e("aaa", "result.toString()" + result.toString());
-                JSONArray array = result.getJSONArray("datas");
-                String datas = array.getString(0);
-                Logger.e("aaa", "datas==" + datas);
-                Gson gson = new Gson();
-                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
-                Logger.e("aaa", bean.toString());
-            }
 
-            @Override
-            public void onRequestFail(RequestType type, String resultCode, String result) {
-                Logger.e("aaa", result + "(" + resultCode + ")");
-            }
-        };
-
-        BackgroundExecutor.execute(new Runnable() {
-
-            @Override
-            public void run() {
-                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                list.add(pair);
-                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
-                list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteDeseaseByUID).executePost(list);
-            }
-        });
+//    public void uploadIV(){
+//        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+//
+//            @Override
+//            public void onRequestSuccess(RequestType type, JSONObject obj) {
+////                Logger.e("aaa","obj====="+obj.toString());
+//                Logger.e("aaa","type====="+type.toString());
+//            }
+//
+//            @Override
+//            public void onRequestFail(RequestType type, String resultCode, String result) {
+//                Logger.e("aaa","type====="+type.toString());
+//                Logger.e("aaa","resultCode====="+resultCode);
+//                Logger.e("aaa","result====="+result);
+//
+//            }
+//        };
+//
+//        BackgroundExecutor.execute(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//
+//                List<NameValuePair> list = new ArrayList<NameValuePair>();
+//                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+//                list.add(pair);
+//                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+//                list.add(pair);
+//
+//
+//
+//                List<IVDesc> image = maintenanceTableItemBeen.get(0).getmImages();
+//                String[] pics = new String[image.size()];
+//                for (int i = 0; i < image.size(); i++) {
+//                    pics[i] = image.get(i).getPath();
+//                }
+//                List<IVDesc> video = maintenanceTableItemBeen.get(0).getmVideo();
+//                String[] vdos = new String[video.size()];
+//                for (int i = 0; i < video.size(); i++) {
+//                    vdos[i] = video.get(i).getPath();
+//                }
+//
+//
+//                String[] attaches = concat(pics, vdos);
+//                Logger.e("aaa","===================="+attaches[0]);
+//                for (int i = 0; i < attaches.length; i++) {
+//
+//                    Logger.e("aaa", "i====================" + attaches[i]);
+//                }
+//                if (attaches.length > 0) {
+//                    new HttpTask(listener, RequestType.uploadFile).uploadFile(list, attaches);
+//                }
+//
+//            }
+//        });
+//    }
+    public static String[] concat(String[] a, String[] b) {
+        String[] c = new String[a.length + b.length];
+        System.arraycopy(a, 0, c, 0, a.length);
+        System.arraycopy(b, 0, c, a.length, b.length);
+        return c;
     }
 }

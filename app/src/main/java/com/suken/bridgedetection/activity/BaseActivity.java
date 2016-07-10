@@ -61,8 +61,6 @@ public class BaseActivity extends FragmentActivity {
 		});
 	}
 
-	Service
-
 	/**
 	 * 得到自定义的progressDialog
 	 * 
@@ -105,6 +103,14 @@ public class BaseActivity extends FragmentActivity {
 				}
 			}
 		});
+
+	}
+	public boolean isLoadingDialogShow(){
+		if (mLoadingDialog != null) {
+			return mLoadingDialog.isShowing();
+		}else{
+			return false;
+		}
 
 	}
 

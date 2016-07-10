@@ -3,6 +3,7 @@ package com.suken.bridgedetection.widget;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnticipateOvershootInterpolator;
@@ -59,6 +60,7 @@ public class TimePickerUtil implements View.OnClickListener {
 
     public void onClick(View v) {
         int id = v.getId();
+        Log.i("aaa ", "onClick: "+id);
         View view = ((LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.time_picker, null);
         Calendar calendar = Calendar.getInstance();
         int curHour = calendar.get(Calendar.HOUR_OF_DAY);

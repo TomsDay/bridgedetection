@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.bean;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.DeleteBuilder;
+import com.j256.ormlite.stmt.Where;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.storage.CheckDetail;
 import com.suken.bridgedetection.storage.SqliteOpenHelper;
@@ -93,6 +95,28 @@ public class MaintenanceTableDao {
         }
     }
 
+    public void delete(int id) {
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<MaintenanceTableBean, String> deleteBuilder = maintenanceTableBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteItem(int id){
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<MaintenanceTableItemBean, String> deleteBuilder = maintenanceTableItemBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ import com.suken.bridgedetection.adapter.MaintenanceLogListAdapter;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
+import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -39,13 +41,12 @@ public class MaintenanceLogListActivity extends Activity {
     private ListView mListView;
     private MaintenanceLogListAdapter maintenanceLogListAdapter;
     private Context mContext;
-    ArrayList<MaintenanceLogListBean> listBeen = new ArrayList<MaintenanceLogListBean>();
+    ArrayList<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     public final int SUCCESS_CODE = 0;
     public final int ERROR_CODE = 1;
     private LinearLayout maintenance_logList_selectCondition_layout;
     private TextView maintenance_logList_selectCondition_tv;
-    private int type;
     MaintenanceLogDao maintenanceLogDao;
 
     @Override
@@ -53,7 +54,6 @@ public class MaintenanceLogListActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log_list);
         maintenanceLogDao = new MaintenanceLogDao();
-        type = getIntent().getIntExtra("type", 0);
         mContext = this;
         initView();
         loadDate();
@@ -121,24 +121,14 @@ public class MaintenanceLogListActivity extends Activity {
 
 
     private void loadDate() {
-        if(type == 1){
-            maintenanceLogBeen = (ArrayList<MaintenanceLogBean>) maintenanceLogDao.queryAll();
-            Log.e("aaa", "=======" + maintenanceLogBeen.toString());
-            maintenanceLogListAdapter.setDate1(maintenanceLogBeen);
-            maintenanceLogListAdapter.notifyDataSetChanged();
-            return;
-        }
+
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa", "result.toString()" + result.toString());
-                JSONArray array = result.getJSONArray("datas");
-                Gson gson = new Gson();
-                for (int i = 0; i<array.size();i++) {
-                    String datas = array.getString(i);
-                    MaintenanceLogListBean bean = gson.fromJson(datas, MaintenanceLogListBean.class);
-                    listBeen.add(bean);
-                }
+
+                listBeen = (ArrayList<MaintenanceLogBean>) JSON.parseArray(result.getString("datas"), MaintenanceLogBean.class);
+
                 Logger.e("aaa", listBeen.toString());
                 Message message = new Message();
                 message.what = SUCCESS_CODE;
@@ -161,6 +151,7 @@ public class MaintenanceLogListActivity extends Activity {
 
             @Override
             public void run() {
+
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
@@ -168,7 +159,7 @@ public class MaintenanceLogListActivity extends Activity {
                 list.add(pair);
                 pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteCooperationByUID).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getUpkeepnoticeByUID).executePost(list);
             }
         });
     }
