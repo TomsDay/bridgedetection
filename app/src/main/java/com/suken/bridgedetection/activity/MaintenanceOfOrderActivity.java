@@ -34,27 +34,16 @@ import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
-import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
-import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
-import com.suken.bridgedetection.bean.MaintenanceLogBean;
-import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
-import com.suken.bridgedetection.bean.MaintenanceTableBean;
-import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
-import com.suken.bridgedetection.http.HttpTask;
-import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.imageditor.ImageditorActivity;
-
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 
 import java.io.File;
 import java.net.URI;
@@ -229,7 +218,7 @@ public class MaintenanceOfOrderActivity extends Activity {
             if(maintenanceOfOrderBeen.size()>0){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(0);
 
-                maintenanceoforder_gydw_ev.setText(bean.getGydwName());
+                maintenanceoforder_gydw_ev.setText(bean.getGldwName());
                 maintenanceoforder_checkDate_ev.setText(bean.getJcsj());
                 maintenanceoforder_content_ev.setText(bean.getXcnr());
                 maintenanceoforder_qtqk_ev.setText(bean.getQtqk());
@@ -265,27 +254,27 @@ public class MaintenanceOfOrderActivity extends Activity {
                         int videoSize = videoDesc.size();
 
                         if(position == 0){
-                            maintenanceoforder_bzbf_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_bzbf_no: R.id.maintenanceoforder_bzbf_yes);
+                            maintenanceoforder_bzbf_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzbf_no: R.id.maintenanceoforder_bzbf_yes);
                             maintenanceoforder_bzbf_videoNum.setText(videoSize + "");
                             maintenanceoforder_bzbf_imgNum.setText(imageSize + "");
                         }else if(position == 1){
-                            maintenanceoforder_bzfm_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_bzfm_no: R.id.maintenanceoforder_bzfm_yes);
+                            maintenanceoforder_bzfm_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzfm_no: R.id.maintenanceoforder_bzfm_yes);
                             maintenanceoforder_bzfm_videoNum.setText(videoSize + "");
                             maintenanceoforder_bzfm_imgNum.setText(imageSize + "");
                         }else if(position == 2){
-                            maintenanceoforder_aqzy_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_aqzy_no: R.id.maintenanceoforder_aqzy_yes);
+                            maintenanceoforder_aqzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzy_no: R.id.maintenanceoforder_aqzy_yes);
                             maintenanceoforder_aqzy_videoNum.setText(videoSize + "");
                             maintenanceoforder_aqzy_imgNum.setText(imageSize + "");
                         }else if(position == 3){
-                            maintenanceoforder_sgzy_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_sgzy_no: R.id.maintenanceoforder_sgzy_yes);
+                            maintenanceoforder_sgzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_sgzy_no: R.id.maintenanceoforder_sgzy_yes);
                             maintenanceoforder_sgzy_videoNum.setText(videoSize + "");
                             maintenanceoforder_sgzy_imgNum.setText(imageSize + "");
                         }else if(position == 4){
-                            maintenanceoforder_aqxs_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_aqxs_no: R.id.maintenanceoforder_aqxs_yes);
+                            maintenanceoforder_aqxs_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqxs_no: R.id.maintenanceoforder_aqxs_yes);
                             maintenanceoforder_aqxs_videoNum.setText(videoSize + "");
                             maintenanceoforder_aqxs_imgNum.setText(imageSize + "");
                         }else if(position == 5){
-                            maintenanceoforder_aqzgly_radioGroup.check(b.getJczt().equals("1")? R.id.maintenanceoforder_aqzgly_no: R.id.maintenanceoforder_aqzgly_yes);
+                            maintenanceoforder_aqzgly_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzgly_no: R.id.maintenanceoforder_aqzgly_yes);
                             maintenanceoforder_aqzgly_videoNum.setText(videoSize + "");
                             maintenanceoforder_aqzgly_imgNum.setText(imageSize + "");
                         }
@@ -395,26 +384,25 @@ public class MaintenanceOfOrderActivity extends Activity {
             bean.setUpdatetime(date);
             bean.setCreatetime(date);
             bean.setFlag("0");
-            bean.setJczt("0");
             bean.setTpjd("123.12");
             bean.setTpwd("123.12");
             if(i == 0){
-                bean.setJcx("施工标志摆放正确");
+                bean.setJcx("施工标志摆放正确(是,否)");
 
             }else if(i == 1){
-                bean.setJcx("施工人员标志服、标志帽");
+                bean.setJcx("施工人员标志服、标志帽(是,否)");
 
             }else if(i == 2){
-                bean.setJcx("施工程序符合安全作业规程");
+                bean.setJcx("施工程序符合安全作业规程(是,否)");
 
             }else if(i == 3){
-                bean.setJcx("施工车辆有明显施工作业标志");
+                bean.setJcx("施工车辆有明显施工作业标志(是,否)");
 
             }else if(i == 4){
-                bean.setJcx("施工车辆安全行驶");
+                bean.setJcx("施工车辆安全行驶(是,否)");
 
             }else if(i == 5){
-                bean.setJcx("施工现场有安全管理员");
+                bean.setJcx("施工现场有安全管理员(是,否)");
 
             }
 
@@ -432,10 +420,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_bzbf_yes:
-                        maintenanceOfOrderItemBeens.get(0).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(0).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_bzbf_no:
-                        maintenanceOfOrderItemBeens.get(0).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(0).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -446,10 +434,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_bzfm_yes:
-                        maintenanceOfOrderItemBeens.get(1).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(1).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_bzfm_no:
-                        maintenanceOfOrderItemBeens.get(1).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(1).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -459,10 +447,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_aqzy_yes:
-                        maintenanceOfOrderItemBeens.get(2).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(2).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_aqzy_no:
-                        maintenanceOfOrderItemBeens.get(2).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(2).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -472,10 +460,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_sgzy_yes:
-                        maintenanceOfOrderItemBeens.get(3).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(3).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_sgzy_no:
-                        maintenanceOfOrderItemBeens.get(3).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(3).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -486,10 +474,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_aqxs_yes:
-                        maintenanceOfOrderItemBeens.get(4).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(4).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_aqxs_no:
-                        maintenanceOfOrderItemBeens.get(4).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(4).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -500,10 +488,10 @@ public class MaintenanceOfOrderActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.maintenanceoforder_aqzgly_yes:
-                        maintenanceOfOrderItemBeens.get(5).setJczt("0");
+                        maintenanceOfOrderItemBeens.get(5).setJczt("符合检查标准");
                         break;
                     case R.id.maintenanceoforder_aqzgly_no:
-                        maintenanceOfOrderItemBeens.get(5).setJczt("1");
+                        maintenanceOfOrderItemBeens.get(5).setJczt("不符合检查标准");
                         break;
                 }
             }
@@ -620,7 +608,7 @@ public class MaintenanceOfOrderActivity extends Activity {
                         String jlr = maintenanceoforder_jlr_ev.getText().toString();
 
                         MaintenanceOfOrderBean bean = new MaintenanceOfOrderBean();
-                        bean.setGydwName(gydw);
+                        bean.setGldwName(gydw);
                         bean.setJcsj(checkDate);
                         bean.setWeather(strWeather);
                         bean.setXcnr(content);

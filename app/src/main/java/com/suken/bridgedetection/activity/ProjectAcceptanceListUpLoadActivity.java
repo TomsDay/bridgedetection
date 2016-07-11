@@ -246,7 +246,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                    }
 //                }
 //                int typePosition = type.getTypePosition();
-//                MaintenanceTableItemBean tableItemBean = bean.getInspectLogDetailList().get(typePosition);
 //                List<IVDesc> images = tableItemBean.getmImages();
 //                List<IVDesc> videos = tableItemBean.getmVideo();
 //                for(int i = 0;i<images.size();i++){
@@ -275,16 +274,11 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                Logger.e("aaa","imageSB====="+imageSB.toString());
 //                Logger.e("aaa","mVideos====="+videoSB.toString());
 //
-//                bean.getInspectLogDetailList().get(typePosition).setPicattachment(imageSB.toString());
-//                bean.getInspectLogDetailList().get(typePosition).setVidattachment(videoSB.toString());
-//                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 //                String date = sDateFormat.format(new java.util.Date());
-//                bean.getInspectLogDetailList().get(typePosition).setTjsj(date);
 //
 //
 //
 //                boolean isUpload = true;
-//                List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
 //                for(int i = 0;i<itemBeen.size();i++){
 //                    Logger.e("aaa","itemBeen====="+i);
 //                    MaintenanceTableItemBean thisTableItemBean = itemBeen.get(i);
@@ -295,12 +289,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                    }
 //                }
 //                if(isUpload){
-//                    for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
-//                        bean.getInspectLogDetailList().get(i).setmImages(null);
-//                        bean.getInspectLogDetailList().get(i).setmVideo(null);
-//                        bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
-//                        bean.getInspectLogDetailList().get(i).setiDescs(null);
-//                        bean.getInspectLogDetailList().get(i).setvDescs(null);
 //                        bean.setMaintenanceTableItemBeen(null);
 //                    }
 //                    bean.setTjsj(date);
@@ -331,7 +319,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                list.add(pair);
 //                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
 //                list.add(pair);
-//                List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
 //                for (int j = 0; j < itemBeen.size(); j++) {
 //                    MaintenanceTableItemBean tableItemBean = itemBeen.get(j);
 //                    List<IVDesc> images = tableItemBean.getmImages();
@@ -344,7 +331,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                        Logger.e("aaa","无图！！！");
 //                        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 //                        String date = sDateFormat.format(new java.util.Date());
-//                        bean.getInspectLogDetailList().get(j).setTjsj(date);
 //                        boolean isUpload = true;
 //                        for (int i = 0; i < itemBeen.size(); i++) {
 //                            Logger.e("aaa", "itemBeen=====" + i);
@@ -356,13 +342,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 //                            }
 //                        }
 //                        if (isUpload) {
-//                            for (int i = 0; i < bean.getInspectLogDetailList().size(); i++) {
-//                                bean.getInspectLogDetailList().get(i).setmImages(null);
-//                                bean.getInspectLogDetailList().get(i).setmVideo(null);
-//                                bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
-//                                bean.getInspectLogDetailList().get(i).setiDescs(null);
-//                                bean.getInspectLogDetailList().get(i).setvDescs(null);
-//                                bean.setMaintenanceTableItemBeen(null);
 //                            }
 //                            bean.setTjsj(date);
 //                            uploadData(bean,position,isAll);

@@ -36,9 +36,9 @@ public class MaintenanceOfOrderBean implements Serializable {
     @DatabaseField
     private String flag;
     @DatabaseField
-    private String gydwId;
+    private String gldwId;
     @DatabaseField
-    private String gydwName;
+    private String gldwName;
     @DatabaseField
     private String bno;
     @DatabaseField
@@ -73,7 +73,7 @@ public class MaintenanceOfOrderBean implements Serializable {
     private String weather;
 
 
-    List<MaintenanceOfOrderItemBean> inspectLogDetailList = new ArrayList<MaintenanceOfOrderItemBean>();
+    List<MaintenanceOfOrderItemBean> safetycheckdetailList = new ArrayList<MaintenanceOfOrderItemBean>();
 
     @ForeignCollectionField
     /**
@@ -96,12 +96,12 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.weather = weather;
     }
 
-    public List<MaintenanceOfOrderItemBean> getInspectLogDetailList() {
-        return inspectLogDetailList;
+    public List<MaintenanceOfOrderItemBean> getSafetycheckdetailList() {
+        return safetycheckdetailList;
     }
 
-    public void setInspectLogDetailList(List<MaintenanceOfOrderItemBean> inspectLogDetailList) {
-        this.inspectLogDetailList = inspectLogDetailList;
+    public void setSafetycheckdetailList(List<MaintenanceOfOrderItemBean> safetycheckdetailList) {
+        this.safetycheckdetailList = safetycheckdetailList;
     }
 
     public ForeignCollection<MaintenanceOfOrderItemBean> getMaintenanceOfOrderItemBeen() {
@@ -192,20 +192,20 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.flag = flag;
     }
 
-    public String getGydwId() {
-        return gydwId;
+    public String getGldwId() {
+        return gldwId;
     }
 
-    public void setGydwId(String gydwId) {
-        this.gydwId = gydwId;
+    public void setGldwId(String gldwId) {
+        this.gldwId = gldwId;
     }
 
-    public String getGydwName() {
-        return gydwName;
+    public String getGldwName() {
+        return gldwName;
     }
 
-    public void setGydwName(String gydwName) {
-        this.gydwName = gydwName;
+    public void setGldwName(String gldwName) {
+        this.gldwName = gldwName;
     }
 
     public String getBno() {

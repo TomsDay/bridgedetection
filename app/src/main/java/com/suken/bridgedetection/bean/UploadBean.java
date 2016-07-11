@@ -44,7 +44,7 @@ public class UploadBean implements Serializable{
                 ", tjsj='" + tjsj + '\'' +
                 ", xclx=" + xclx +
                 ", xcld='" + xcld + '\'' +
-                ", inspectLogDetailList=" + inspectLogDetailList +
+                ", inspectLogDetailLists=" + inspectLogDetailList +
                 '}';
     }
 

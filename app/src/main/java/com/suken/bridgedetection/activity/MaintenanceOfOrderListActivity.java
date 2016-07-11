@@ -1,6 +1,5 @@
 package com.suken.bridgedetection.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -28,8 +27,6 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
-import com.suken.bridgedetection.bean.MaintenanceTableBean;
-import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -95,13 +92,13 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                                         break;
                                     case 2:
                                         maintenanceOfOrderDao.delete(maintenanceOfOrderBeen.get(position).getId());
-                                        for(int i = 0;i<maintenanceOfOrderBeen.get(position).getInspectLogDetailList().size();i++){
-                                            maintenanceOfOrderDao.deleteItem(maintenanceOfOrderBeen.get(position).getInspectLogDetailList().get(i).getId());
-                                            for(int q = 0;q<maintenanceOfOrderBeen.get(position).getInspectLogDetailList().get(i).getmImages().size();q++){
-                                                ivDescDao.delete(maintenanceOfOrderBeen.get(position).getInspectLogDetailList().get(q).getmImages().get(q).getId());
+                                        for(int i = 0; i<maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().size(); i++){
+                                            maintenanceOfOrderDao.deleteItem(maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(i).getId());
+                                            for(int q = 0; q<maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(i).getmImages().size(); q++){
+                                                ivDescDao.delete(maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(q).getmImages().get(q).getId());
                                             }
-                                            for(int q = 0;q<maintenanceOfOrderBeen.get(position).getInspectLogDetailList().get(i).getmVideo().size();q++){
-                                                ivDescDao.delete(maintenanceOfOrderBeen.get(position).getInspectLogDetailList().get(q).getmVideo().get(q).getId());
+                                            for(int q = 0; q<maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(i).getmVideo().size(); q++){
+                                                ivDescDao.delete(maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(q).getmVideo().get(q).getId());
                                             }
                                         }
                                         getAllData();
@@ -165,7 +162,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                         Logger.e("aaa",b.toString());
                     }
                 } finally {
-                    bean.setInspectLogDetailList(itemBeanList);
+                    bean.setSafetycheckdetailList(itemBeanList);
                     maintenanceOfOrderBeen.set(i, bean);
                     try {
                         iterator.close();
@@ -192,8 +189,8 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 Logger.e("aaa","111111111111"+ result.toString());
                 Logger.e("aaa","position===="+ position);
                 maintenanceOfOrderDao.delete(bean.getId());
-                for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
-                    maintenanceOfOrderDao.deleteItem(bean.getInspectLogDetailList().get(i).getId());
+                for(int i = 0; i<bean.getSafetycheckdetailList().size(); i++){
+                    maintenanceOfOrderDao.deleteItem(bean.getSafetycheckdetailList().get(i).getId());
                 }
                 if(isAll){
                     if (position != maintenanceOfOrderBeen.size() - 1) {
@@ -290,7 +287,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                     }
                 }
                 int typePosition = type.getTypePosition();
-                MaintenanceOfOrderItemBean ofOrderItemBean = bean.getInspectLogDetailList().get(typePosition);
+                MaintenanceOfOrderItemBean ofOrderItemBean = bean.getSafetycheckdetailList().get(typePosition);
                 List<IVDesc> images = ofOrderItemBean.getmImages();
                 List<IVDesc> videos = ofOrderItemBean.getmVideo();
                 for(int i = 0;i<images.size();i++){
@@ -319,16 +316,16 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 Logger.e("aaa","imageSB====="+imageSB.toString());
                 Logger.e("aaa","mVideos====="+videoSB.toString());
 
-                bean.getInspectLogDetailList().get(typePosition).setPicattachment(imageSB.toString());
-                bean.getInspectLogDetailList().get(typePosition).setVidattachment(videoSB.toString());
+                bean.getSafetycheckdetailList().get(typePosition).setPicattachment(imageSB.toString());
+                bean.getSafetycheckdetailList().get(typePosition).setVidattachment(videoSB.toString());
                 SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                 String date = sDateFormat.format(new java.util.Date());
-                bean.getInspectLogDetailList().get(typePosition).setTjsj(date);
+                bean.getSafetycheckdetailList().get(typePosition).setTjsj(date);
 
 
 
                 boolean isUpload = true;
-                List<MaintenanceOfOrderItemBean> itemBeen = bean.getInspectLogDetailList();
+                List<MaintenanceOfOrderItemBean> itemBeen = bean.getSafetycheckdetailList();
                 for(int i = 0;i<itemBeen.size();i++){
                     Logger.e("aaa","itemBeen====="+i);
                     MaintenanceOfOrderItemBean thisTableItemBean = itemBeen.get(i);
@@ -339,12 +336,12 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                     }
                 }
                 if(isUpload){
-                    for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
-                        bean.getInspectLogDetailList().get(i).setmImages(null);
-                        bean.getInspectLogDetailList().get(i).setmVideo(null);
-                        bean.getInspectLogDetailList().get(i).setMaintenanceOfOrderBean(null);
-                        bean.getInspectLogDetailList().get(i).setiDescs(null);
-                        bean.getInspectLogDetailList().get(i).setvDescs(null);
+                    for(int i = 0; i<bean.getSafetycheckdetailList().size(); i++){
+                        bean.getSafetycheckdetailList().get(i).setmImages(null);
+                        bean.getSafetycheckdetailList().get(i).setmVideo(null);
+                        bean.getSafetycheckdetailList().get(i).setMaintenanceOfOrderBean(null);
+                        bean.getSafetycheckdetailList().get(i).setiDescs(null);
+                        bean.getSafetycheckdetailList().get(i).setvDescs(null);
                         bean.setMaintenanceOfOrderItemBeen(null);
                     }
                     bean.setTjsj(date);
@@ -376,7 +373,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
 
-                List<MaintenanceOfOrderItemBean> itemBeen = bean.getInspectLogDetailList();
+                List<MaintenanceOfOrderItemBean> itemBeen = bean.getSafetycheckdetailList();
                Logger.e("aaa","itemBeen.size()====="+itemBeen.size());
                 for (int j = 0; j < itemBeen.size(); j++) {
                     MaintenanceOfOrderItemBean ofOrderItemBean = itemBeen.get(j);
@@ -390,7 +387,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                         Logger.e("aaa","无图！！！");
                         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
                         String date = sDateFormat.format(new java.util.Date());
-                        bean.getInspectLogDetailList().get(j).setTjsj(date);
+                        bean.getSafetycheckdetailList().get(j).setTjsj(date);
                         boolean isUpload = true;
                         for (int i = 0; i < itemBeen.size(); i++) {
                             Logger.e("aaa", "itemBeen=====" + i);
@@ -402,12 +399,12 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                             }
                         }
                         if (isUpload) {
-                            for (int i = 0; i < bean.getInspectLogDetailList().size(); i++) {
-                                bean.getInspectLogDetailList().get(i).setmImages(null);
-                                bean.getInspectLogDetailList().get(i).setmVideo(null);
-                                bean.getInspectLogDetailList().get(i).setMaintenanceOfOrderBean(null);
-                                bean.getInspectLogDetailList().get(i).setiDescs(null);
-                                bean.getInspectLogDetailList().get(i).setvDescs(null);
+                            for (int i = 0; i < bean.getSafetycheckdetailList().size(); i++) {
+                                bean.getSafetycheckdetailList().get(i).setmImages(null);
+                                bean.getSafetycheckdetailList().get(i).setmVideo(null);
+                                bean.getSafetycheckdetailList().get(i).setMaintenanceOfOrderBean(null);
+                                bean.getSafetycheckdetailList().get(i).setiDescs(null);
+                                bean.getSafetycheckdetailList().get(i).setvDescs(null);
                                 bean.setMaintenanceOfOrderItemBeen(null);
                             }
                             bean.setTjsj(date);

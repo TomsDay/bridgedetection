@@ -458,7 +458,8 @@
         <activity
             android:name=".activity.MaintenanceLogUpLoadActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"></activity>
+        <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
