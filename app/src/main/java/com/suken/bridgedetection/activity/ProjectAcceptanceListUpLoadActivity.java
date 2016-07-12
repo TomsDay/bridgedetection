@@ -212,10 +212,13 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 case SUCCESS_CODE:
                     getAllData();
                     dismissLoading();
-
+                    toast("上传保养工程验收记录信息成功！");
 
                     break;
                 case ERROR_CODE:
+                    getAllData();
+                    dismissLoading();
+                    toast("上传失败！");
                     break;
             }
         }

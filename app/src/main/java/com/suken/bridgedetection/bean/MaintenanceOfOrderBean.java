@@ -17,30 +17,30 @@ public class MaintenanceOfOrderBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
 
-    @DatabaseField
-    private String orgid;
-    @DatabaseField
-    private String versionno;
-    @DatabaseField
-    private String createBy;
-    @DatabaseField
-    private String creator;
-    @DatabaseField
-    private String createtime;
-    @DatabaseField
-    private String updateBy;
-    @DatabaseField
-    private String updator;
-    @DatabaseField
-    private String updatetime;
-    @DatabaseField
-    private String flag;
+//    @DatabaseField
+//    private String orgid;
+//    @DatabaseField
+//    private String versionno;
+//    @DatabaseField
+//    private String createBy;
+//    @DatabaseField
+//    private String creator;
+//    @DatabaseField
+//    private String createtime;
+//    @DatabaseField
+//    private String updateBy;
+//    @DatabaseField
+//    private String updator;
+//    @DatabaseField
+//    private String updatetime;
+//    @DatabaseField
+//    private String flag;
     @DatabaseField
     private String gldwId;
     @DatabaseField
     private String gldwName;
-    @DatabaseField
-    private String bno;
+//    @DatabaseField
+//    private String bno;
     @DatabaseField
     private String yhrzid;
     @DatabaseField
@@ -59,14 +59,14 @@ public class MaintenanceOfOrderBean implements Serializable {
     private String jcdate;
     @DatabaseField
     private String aqgly;
-    @DatabaseField
-    private String tjsj;
+//    @DatabaseField
+//    private String tjsj;
     @DatabaseField
     private String status;
     @DatabaseField
     private String qtqk;
-    @DatabaseField
-    private String clyj;
+//    @DatabaseField
+//    private String clyj;
     @DatabaseField
     private String aqgldate;
     @DatabaseField
@@ -120,78 +120,6 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.id = id;
     }
 
-    public String getOrgid() {
-        return orgid;
-    }
-
-    public void setOrgid(String orgid) {
-        this.orgid = orgid;
-    }
-
-    public String getVersionno() {
-        return versionno;
-    }
-
-    public void setVersionno(String versionno) {
-        this.versionno = versionno;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
-    }
-
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
-    }
-
     public String getGldwId() {
         return gldwId;
     }
@@ -206,14 +134,6 @@ public class MaintenanceOfOrderBean implements Serializable {
 
     public void setGldwName(String gldwName) {
         this.gldwName = gldwName;
-    }
-
-    public String getBno() {
-        return bno;
-    }
-
-    public void setBno(String bno) {
-        this.bno = bno;
     }
 
     public String getYhrzid() {
@@ -288,14 +208,6 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.aqgly = aqgly;
     }
 
-    public String getTjsj() {
-        return tjsj;
-    }
-
-    public void setTjsj(String tjsj) {
-        this.tjsj = tjsj;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -312,14 +224,6 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.qtqk = qtqk;
     }
 
-    public String getClyj() {
-        return clyj;
-    }
-
-    public void setClyj(String clyj) {
-        this.clyj = clyj;
-    }
-
     public String getAqgldate() {
         return aqgldate;
     }
@@ -327,6 +231,4 @@ public class MaintenanceOfOrderBean implements Serializable {
     public void setAqgldate(String aqgldate) {
         this.aqgldate = aqgldate;
     }
-
-
 }

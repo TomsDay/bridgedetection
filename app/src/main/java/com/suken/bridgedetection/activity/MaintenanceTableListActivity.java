@@ -273,10 +273,13 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 case SUCCESS_CODE:
                     getAllData();
                     dismissLoading();
-
+                    toast("上传日常巡查日志记录信息成功！");
 
                     break;
                 case ERROR_CODE:
+                    getAllData();
+                    dismissLoading();
+                    toast("上传失败！");
                     break;
             }
         }
