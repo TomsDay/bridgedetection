@@ -237,7 +237,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadProjaccept).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadSafetycheck).executePost(list);
             }
         });
 
