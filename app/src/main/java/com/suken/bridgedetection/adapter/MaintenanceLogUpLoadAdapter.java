@@ -21,9 +21,11 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
     List<MaintenanceLogBean> listBeen = new ArrayList<MaintenanceLogBean>();
     private Context mContext;
     private LayoutInflater inflater;
+    private UpLoadOnceLogData upLoadOnceLogData;
 
-    public MaintenanceLogUpLoadAdapter(Context context) {
+    public MaintenanceLogUpLoadAdapter(Context context,UpLoadOnceLogData upLoadOnceLogData) {
         mContext = context;
+       this.upLoadOnceLogData = upLoadOnceLogData;
         inflater = LayoutInflater.from(mContext);
     }
     public void setData(List<MaintenanceLogBean> listBeen){
@@ -49,7 +51,7 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
             view = inflater.inflate(R.layout.maintenancelogupload_item, null);
@@ -66,6 +68,12 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
         holder.maintenanceloglistupload_item_tv3.setText(bean.getWxrq()+"");
         holder.maintenanceloglistupload_item_tv4.setText(bean.getJcry()+"");
         holder.maintenanceloglistupload_item_tv5.setText(bean.getFzry()+"");
+        holder.maintenanceloglistupload_item_tv6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upLoadOnceLogData.loadData(position);
+            }
+        });
 
         return view;
     }
@@ -74,7 +82,8 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
                 maintenanceloglistupload_item_tv2,
                 maintenanceloglistupload_item_tv3,
                 maintenanceloglistupload_item_tv4,
-                maintenanceloglistupload_item_tv5;
+                maintenanceloglistupload_item_tv5,
+                maintenanceloglistupload_item_tv6;
         private LinearLayout maintenanceloglistupload_layout;
 
 
@@ -84,10 +93,14 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
             maintenanceloglistupload_item_tv3 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv3);
             maintenanceloglistupload_item_tv4 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv4);
             maintenanceloglistupload_item_tv5 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv5);
+            maintenanceloglistupload_item_tv6 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv6);
 
             maintenanceloglistupload_layout = (LinearLayout) v.findViewById(R.id.maintenanceloglistupload_layout);
 
 
         }
+    }
+    public interface UpLoadOnceLogData{
+        public void loadData(int position);
     }
 }

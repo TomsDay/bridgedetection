@@ -295,8 +295,7 @@
                                 <Spinner
                                     android:id="@+id/maintenancetable_weather_spinner"
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:background="@drawable/line"
+                                    android:layout_height="30dp"
                                     android:textColor="#333333"
                                     android:textSize="9dp"
                                     android:entries="@array/spinnerWeather"
@@ -320,8 +319,7 @@
                             <Spinner
                                 android:id="@+id/maintenancetable_searchType_spinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
-                                android:background="@drawable/line"
+                                android:layout_height="30dp"
                                 android:textColor="#333333"
                                 android:textSize="9dp"
                                 android:entries="@array/spinnerWeather"

@@ -26,7 +26,7 @@ public class TestArrayAdapter extends ArrayAdapter<String> {
         //修改Spinner展开后的字体颜色
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(mContext);
-            convertView = inflater.inflate(android.R.layout.simple_spinner_dropdown_item, parent,false);
+            convertView = inflater.inflate(android.R.layout.simple_spinner_item, parent,false);
         }
 
         //此处text1是Spinner默认的用来显示文字的TextView

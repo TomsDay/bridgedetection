@@ -259,11 +259,11 @@
                                 <Spinner
                                     android:id="@+id/maintenancelog_weather_spinner"
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:background="@drawable/line"
+                                    android:layout_height="30dp"
                                     android:textColor="#333333"
                                     android:textSize="9dp"
                                     android:entries="@array/spinnerWeather"
+                                    android:spinnerMode="dropdown"
                                     />
                             </LinearLayout>
 
@@ -306,10 +306,8 @@
                                 android:id="@+id/maintenancelog_wxbm_ev"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
-                                android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:textSize="9dp"/>
                         </LinearLayout>
                     </LinearLayout>
 

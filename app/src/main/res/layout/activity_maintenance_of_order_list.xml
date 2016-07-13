@@ -118,6 +118,18 @@
             android:gravity="center"
             android:text="安全管理员"
             android:textSize="10dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_logListUpLoad_row6"
+            android:layout_width="match_parent"
+            android:layout_weight="1.15"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="10dp" />
        
     </LinearLayout>
     <ListView

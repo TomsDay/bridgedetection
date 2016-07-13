@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -62,7 +63,14 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
     private void initView() {
         maintenanceoforderlist_table_listView = (ListView) findViewById(R.id.maintenanceoforderlist_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
-        mAdapter = new MaintenanceOfOrderListAdapter(mContext);
+        mAdapter = new MaintenanceOfOrderListAdapter(mContext, new MaintenanceOfOrderListAdapter.UpLoadOnceOforderData() {
+            @Override
+            public void loadData(int position) {
+                MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(position);
+                uploadData(bean, position, false);
+                showLoading("正在上传...");
+            }
+        });
         mAdapter.setDate(maintenanceOfOrderBeen);
         maintenanceoforderlist_table_listView.setAdapter(mAdapter);
 
@@ -72,7 +80,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
 
 
                 final String[] names = {"编辑", "上传","删除", "取消"};
-                new AlertDialog.Builder(mContext)
+                AlertDialog dialog=new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override
@@ -85,12 +93,12 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                                         in.putExtra("id", maintenanceOfOrderBeen.get(position).getId());
                                         startActivity(in);
                                         break;
-                                    case 1://上传
-                                        MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(position);
-                                        uploadData(bean, position, false);
-                                        showLoading("正在上传...");
-                                        break;
-                                    case 2:
+//                                    case 1://上传
+//                                        MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(position);
+//                                        uploadData(bean, position, false);
+//                                        showLoading("正在上传...");
+//                                        break;
+                                    case 1:
                                         maintenanceOfOrderDao.delete(maintenanceOfOrderBeen.get(position).getId());
                                         for(int i = 0; i<maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().size(); i++){
                                             maintenanceOfOrderDao.deleteItem(maintenanceOfOrderBeen.get(position).getSafetycheckdetailList().get(i).getId());
@@ -111,7 +119,11 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                             }
                         })
                         .show();
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = 500;
+//                params.height = 200 ;
 
+                dialog.getWindow().setAttributes(params);
 
 
             }
@@ -234,6 +246,13 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
+                for(int i = 0; i<bean.getSafetycheckdetailList().size(); i++){
+                        bean.getSafetycheckdetailList().get(i).setMaintenanceOfOrderBean(null);
+                        bean.getSafetycheckdetailList().get(i).setiDescs(null);
+                        bean.getSafetycheckdetailList().get(i).setvDescs(null);
+                        bean.setMaintenanceOfOrderItemBeen(null);
+                    }
+
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);

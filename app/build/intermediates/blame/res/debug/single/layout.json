@@ -320,6 +320,10 @@
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\mobile_contacts_list.xml"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\loglist_dialog.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\loglist_dialog.xml"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mobile_contact_list_item.xml",
         "source": "D:\\AndroidStudioProject\\bridgedetection\\app\\src\\main\\res\\layout\\mobile_contact_list_item.xml"
     },
@@ -1146,6 +1150,10 @@
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\new_group.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\new_group.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkupload_dialog.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\checkupload_dialog.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_layout.xml",

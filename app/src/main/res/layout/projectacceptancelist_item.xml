@@ -63,6 +63,22 @@
             android:gravity="center"
             android:text="8:30-11:00"
             android:textColor="@color/yuninfo_black_shadow"/>
+        <View
+            android:id="@+id/projectacceptancelist_item_line5"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+
+        <TextView
+            android:id="@+id/projectacceptancelist_item_tv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:gravity="center"
+            android:text="上传"
+            android:textColor="@color/yuninfo_black_shadow"
+            android:background="#ff9900"
+            android:padding="4dp"/>
       
 
     </LinearLayout>

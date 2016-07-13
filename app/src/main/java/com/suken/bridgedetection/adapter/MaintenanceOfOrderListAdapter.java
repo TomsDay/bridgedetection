@@ -23,9 +23,10 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
     private Context mContext;
     private List<MaintenanceOfOrderBean> maintenanceOfOrderBeen = new ArrayList<MaintenanceOfOrderBean>();
     private LayoutInflater inflater;
-
-    public MaintenanceOfOrderListAdapter(Context context) {
+    private UpLoadOnceOforderData upLoadOnceOforderData;
+    public MaintenanceOfOrderListAdapter(Context context,UpLoadOnceOforderData upLoadOnceOforderData) {
         mContext = context;
+        this.upLoadOnceOforderData = upLoadOnceOforderData;
         inflater = LayoutInflater.from(mContext);
     }
 
@@ -53,7 +54,7 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
             view = inflater.inflate(R.layout.maintenanceoforder_item, null);
@@ -68,7 +69,13 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
         holder.maintenanceoforder_item_tv3.setText(bean.getJcsj()+"");
         holder.maintenanceoforder_item_tv4.setText(bean.getJcry()+"");
         holder.maintenanceoforder_item_tv5.setText(bean.getAqgly()  +"");
+        holder.maintenanceoforder_item_tv6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upLoadOnceOforderData.loadData(position);
 
+            }
+        });
         
         return view;
     }
@@ -78,7 +85,8 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
                 maintenanceoforder_item_tv2,
                 maintenanceoforder_item_tv3,
                 maintenanceoforder_item_tv4,
-                maintenanceoforder_item_tv5;
+                maintenanceoforder_item_tv5,
+                maintenanceoforder_item_tv6;
 
         public HolderView(View v){
             maintenanceoforder_item_tv1 = (TextView) v.findViewById(R.id.maintenanceoforder_item_tv1);
@@ -86,6 +94,10 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
             maintenanceoforder_item_tv3 = (TextView) v.findViewById(R.id.maintenanceoforder_item_tv3);
             maintenanceoforder_item_tv4 = (TextView) v.findViewById(R.id.maintenanceoforder_item_tv4);
             maintenanceoforder_item_tv5 = (TextView) v.findViewById(R.id.maintenanceoforder_item_tv5);
+            maintenanceoforder_item_tv6 = (TextView) v.findViewById(R.id.maintenanceoforder_item_tv6);
         }
+    }
+    public interface UpLoadOnceOforderData{
+        public void loadData(int position);
     }
 }

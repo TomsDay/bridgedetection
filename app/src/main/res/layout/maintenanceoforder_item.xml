@@ -76,6 +76,22 @@
             android:text="K559+210—K620+300"
             android:textColor="@color/yuninfo_black_shadow"/>
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+
+        <TextView
+            android:id="@+id/maintenanceoforder_item_tv6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.15"
+            android:gravity="center"
+            android:text="上传"
+            android:textColor="@color/yuninfo_black_shadow"
+            android:background="#ff9900"
+            android:padding="4dp"/>
+
 
     </LinearLayout>
 
