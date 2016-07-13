@@ -32,12 +32,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-hdpi/left_fragment_view.xml"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-hdpi-v4/activity_web_view.xml",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-hdpi/activity_web_view.xml"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-hdpi-v4/home_fragment_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-hdpi/home_fragment_view.xml"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-hdpi-v4/activity_web_view.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-hdpi/activity_web_view.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-hdpi-v4/activity_login_page.xml",

@@ -64,16 +64,16 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/left_item_view.xml"
     },
     {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/left_fragment_view.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/left_fragment_view.xml"
+    },
+    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/ip_act_layout.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/ip_act_layout.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/home_item_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/home_item_view.xml"
-    },
-    {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/left_fragment_view.xml",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/left_fragment_view.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/header_fragment_view.xml",
