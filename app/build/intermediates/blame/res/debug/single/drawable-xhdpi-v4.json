@@ -160,12 +160,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xhdpi/ssdk_oks_classic_wechat.png"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ssdk_oks_classic_whatsapp.png",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xhdpi/ssdk_oks_classic_whatsapp.png"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_top_bar_arrow_down.png",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xhdpi/common_top_bar_arrow_down.png"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ssdk_oks_classic_whatsapp.png",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xhdpi/ssdk_oks_classic_whatsapp.png"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/type_select_btn_nor.png",

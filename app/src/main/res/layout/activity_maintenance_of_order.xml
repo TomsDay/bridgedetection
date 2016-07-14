@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/list_main_bg"
-    tools:context="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity">
+    tools:context="com.suken.bridgedetection.activity.MaintenanceOfOrderActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
     <RelativeLayout
         android:id="@+id/maintenanceoforder_titleLayout"
         android:layout_width="match_parent"
@@ -77,7 +79,8 @@
                     android:layout_height="20dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
             </LinearLayout>
 
             <LinearLayout
@@ -98,11 +101,13 @@
                     android:layout_height="20dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="9dp" />
+                    android:textSize="9dp"
+                    android:imeOptions="flagNoExtractUi"/>
             </LinearLayout>
         </LinearLayout>
 
         <TextView
+            android:id="@+id/saveBtn"
             android:layout_width="match_parent"
             android:layout_height="36dp"
             android:background="#40A59F"
@@ -357,7 +362,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -378,7 +382,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -447,7 +450,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -468,7 +470,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -537,7 +538,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -558,7 +558,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -627,7 +626,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -648,7 +646,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -717,7 +714,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -738,7 +734,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>
@@ -807,7 +802,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
 
                             <Spinner
@@ -828,7 +822,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:text="1"
                                 android:textSize="9dp" />
                         </LinearLayout>
                     </RelativeLayout>

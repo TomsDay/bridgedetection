@@ -15,6 +15,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 
 import java.util.ArrayList;
@@ -25,14 +26,17 @@ import java.util.List;
  */
 public class ProjectAcceptanceListAdapter extends BaseAdapter{
     private List<ProjectAcceptanceBean> list = new ArrayList<ProjectAcceptanceBean>();
+
+    private List<ProjacceptBean> projacceptBeen = new ArrayList<ProjacceptBean>();
+
     private Context mContext;
     private LayoutInflater inflater;
     public ProjectAcceptanceListAdapter(Context context){
         this.mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
-    public void setData(List<ProjectAcceptanceBean> list) {
-        this.list = list;
+    public void setData(List<ProjacceptBean> list) {
+        this.projacceptBeen = list;
     }
 
     public List<ProjectAcceptanceBean> getData() {
@@ -41,7 +45,7 @@ public class ProjectAcceptanceListAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
-        return list.size();
+        return projacceptBeen.size();
     }
 
     @Override
@@ -64,11 +68,11 @@ public class ProjectAcceptanceListAdapter extends BaseAdapter{
         }else{
             holder = (HolderView) view.getTag();
         }
-        ProjectAcceptanceBean bean = list.get(position);
-        holder.projectacceptancelist_item_tv1.setText(bean.getCustodyUnit()+"");
-        holder.projectacceptancelist_item_tv2.setText(bean.getSerialNumber()+"");
-        holder.projectacceptancelist_item_tv3.setText(bean.getMaintenanceUnit()+"");
-        holder.projectacceptancelist_item_tv4.setText(bean.getConstructionStartTime()+"-"+bean.getConstructionEndTime());
+        ProjacceptBean bean = projacceptBeen.get(position);
+        holder.projectacceptancelist_item_tv1.setText(bean.getGydwName()+"");
+        holder.projectacceptancelist_item_tv2.setText(bean.getBno()+"");
+        holder.projectacceptancelist_item_tv3.setText(bean.getSgdwmc()+"");
+        holder.projectacceptancelist_item_tv4.setText(bean.getSgks()+"-"+bean.getSgjs());
         return view;
     }
     class HolderView {

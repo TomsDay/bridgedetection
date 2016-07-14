@@ -12,6 +12,7 @@ import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
+import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
@@ -53,6 +54,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, MaintenanceLogBean.class);
 			TableUtils.createTable(connectionSource, MaintenanceLogItemBean.class);
 			TableUtils.createTable(connectionSource, MaintenanceOfOrderBean.class);
+			TableUtils.createTable(connectionSource, MaintenanceOfOrderItemBean.class);
 			TableUtils.createTable(connectionSource, ProjectAcceptanceBean.class);
 			TableUtils.createTable(connectionSource, IVDesc.class);
 			TableUtils.createTable(connectionSource, CatalogueByUIDBean.class);
@@ -89,6 +91,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, MaintenanceLogBean.class, true);
 			TableUtils.dropTable(connectionSource, MaintenanceLogItemBean.class, true);
 			TableUtils.dropTable(connectionSource, MaintenanceOfOrderBean.class, true);
+			TableUtils.dropTable(connectionSource, MaintenanceOfOrderItemBean.class, true);
 			TableUtils.dropTable(connectionSource, ProjectAcceptanceBean.class, true);
 			TableUtils.dropTable(connectionSource, IVDesc.class, true);
 			TableUtils.dropTable(connectionSource, CatalogueByUIDBean.class, true);

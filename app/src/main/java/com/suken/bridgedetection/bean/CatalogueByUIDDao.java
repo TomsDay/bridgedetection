@@ -75,6 +75,17 @@ public class CatalogueByUIDDao {
         }
         return null;
     }
+    public List<CatalogueByUIDBean> queryByXMMC(String ximmc){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("ximmc", ximmc);
+            return catalogueByUIDBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     public void update(CatalogueByUIDBean bean){
         try {

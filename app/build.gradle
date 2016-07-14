@@ -1,8 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+//    signingConfigs {
+//        key {
+//            keyAlias 'chnits_app'
+//            keyPassword 'com.chnits'
+//            storeFile file('/Users/wudi/AndroidStudioProjects/bridgedetection/chnits_app.jks')
+//            storePassword 'com.chnits'
+//        }
+//    }
     signingConfigs {
-        key {
+        config {
             keyAlias 'chnits_app'
             keyPassword 'com.chnits'
             storeFile file('/Users/wudi/AndroidStudioProjects/bridgedetection/chnits_app.jks')
@@ -23,13 +31,12 @@ android {
         exclude 'META-INF/dependencies.txt'//
         exclude 'META-INF/LGPL2.1'//
     }
-
     defaultConfig {
         applicationId "com.suken.bridgedetection"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 30
+        versionName "1.5.0"
     }
     sourceSets {
         main {
@@ -42,7 +49,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
         debug{
-            signingConfig signingConfigs.key
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -65,5 +72,4 @@ dependencies {
     compile files('libs/baidumapapi_search_v3_6_1.jar')
     compile files('libs/android-support-v4.jar')
     compile files('libs/locSDK_6.13.jar')
-
 }

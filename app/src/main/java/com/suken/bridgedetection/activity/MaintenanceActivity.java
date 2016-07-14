@@ -50,13 +50,13 @@ public class MaintenanceActivity extends BaseActivity {
         maintenance_mListView = (ListView) findViewById(R.id.maintenance_mListView);
         mAdapter = new MaintenanceAdapter(mContext);
         maintenance_mListView.setAdapter(mAdapter);
-        maintenance_mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Intent in = new Intent(mContext, WebViewActivity.class);
-                startActivity(in);
-            }
-        });
+//        maintenance_mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+//                Intent in = new Intent(mContext, WebViewActivity.class);
+//                startActivity(in);
+//            }
+//        });
         getDate();
     }
     public void onClick(View v){

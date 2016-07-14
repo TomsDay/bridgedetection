@@ -116,6 +116,10 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_maintenance_table_list.xml"
     },
     {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_project_acceptance_list_up_load.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml"
+    },
+    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_chatting_footer2.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_chatting_footer2.xml"
     },

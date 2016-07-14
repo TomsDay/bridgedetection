@@ -104,7 +104,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //        }
 //        holder.projectName_edit.addTextChangedListener(new Watcher(holder.projectName_edit));
         holder.projectName_edit.setKeyListener(null);
-        holder.projectName_edit.setOnClickListener(new CheckXMDialog(mActivity,  holder.projectName_edit));
+
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
         holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
         holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
@@ -115,11 +115,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.video_num.setText(bean.getmVideo().size()+"");
         holder.img_num.setText(bean.getmImages().size()+"");
 
+        setXimmc(holder, position);
         holder.projectName_edit.setText(bean.getBhmc());
         holder.zh_edit.setText(bean.getYhzh());
-        holder.cl_edit.setText(bean.getYhzh());
+        holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-        holder.count_edit.setText(bean.getYgsl());
+        holder.count_edit.setText(bean.getWxsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
@@ -207,6 +208,37 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
         return view;
     }
+    public void setXimmc(final HolderView holder,final int position){
+        holder.projectName_edit.setOnClickListener(new CheckXMDialog(mActivity, new CheckXMDialog.CheckXMDDialogReturn() {
+            @Override
+            public void returnBean(List<CatalogueByUIDBean> catalogueByUIDBeen) {
+                if (catalogueByUIDBeen.size() != 0) {
+                    Logger.e("aaa","catalogueByUIDBeen==="+catalogueByUIDBeen.toString());
+                    CatalogueByUIDBean bean = catalogueByUIDBeen.get(0);
+                    holder.projectName_edit.setText(bean.getXimmc());
+                    holder.unit_edit.setText(bean.getDw());
+
+                    maintenanceLogItemBeen.get(position).setOrgid(bean.getOrgid()+"");
+                    maintenanceLogItemBeen.get(position).setVersionno(bean.getVersionno()+"");
+                    maintenanceLogItemBeen.get(position).setCreateBy(bean.getCreateBy()+"");
+                    maintenanceLogItemBeen.get(position).setCreatetime(bean.getCreatetime()+"");
+                    maintenanceLogItemBeen.get(position).setCreator(bean.getCreator()+"");
+                    maintenanceLogItemBeen.get(position).setUpdateBy(bean.getUpdateBy()+"");
+                    maintenanceLogItemBeen.get(position).setUpdatetime(bean.getUpdatetime()+"");
+                    maintenanceLogItemBeen.get(position).setUpdator(bean.getUpdator()+"");
+                    maintenanceLogItemBeen.get(position).setFlag(bean.getFlag()+"");
+                    maintenanceLogItemBeen.get(position).setXcbhid(bean.getId()+"");
+
+
+                    maintenanceLogItemBeen.get(position).setBhid(bean.getId()+"");
+                    maintenanceLogItemBeen.get(position).setBhmc(bean.getXimmc());
+                    maintenanceLogItemBeen.get(position).setDw(bean.getDw());
+                    maintenanceLogItemBeen.get(position).setRemark(bean.getXcms()+"");
+                }
+            }
+        }));
+    }
+
 
     private void initListDialog(final HolderView holder,final int position) {
         final String[] names = new String[catalogueByUIDBeen.size()];
@@ -352,7 +384,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     break;
                 case R.id.cl_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    maintenanceLogItemBeen.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setClmc(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.unit_edit:
                     Logger.e("aaa","unit_edit==position"+position);
@@ -360,7 +392,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     break;
                 case R.id.count_edit:
                     Logger.e("aaa","count_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setYgsl(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setWxsl(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.address_edit:
                     Logger.e("aaa","address_edit==position"+position);
@@ -396,6 +428,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             }
         });
     }
+
+
+
     private class SpinnerAdapter extends BaseAdapter {
         private List<IVDesc> mImages = new ArrayList<IVDesc>();
 

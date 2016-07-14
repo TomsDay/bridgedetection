@@ -1,6 +1,7 @@
 package com.suken.bridgedetection.bean;
 
 import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.stmt.DeleteBuilder;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.storage.SqliteOpenHelper;
 
@@ -51,6 +52,17 @@ public class ProjectAcceptanceDao {
     public void update(ProjectAcceptanceBean bean){
         try {
             projectAcceptanceBeen.update(bean);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void delete(int id) {
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<ProjectAcceptanceBean, String> deleteBuilder = projectAcceptanceBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

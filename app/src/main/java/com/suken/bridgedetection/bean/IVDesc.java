@@ -32,6 +32,12 @@ public class IVDesc implements Serializable{
     @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "videoMaintenanceTableItemBean_id")
     private MaintenanceTableItemBean videoMaintenanceTableItemBean;
 
+    @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "imageMaintenanceOfOrderItemBean_id")
+    private MaintenanceOfOrderItemBean imageMaintenanceOfOrderItemBean;
+    @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "videoMaintenanceOfOrderItemBean_id")
+    private MaintenanceOfOrderItemBean videoMaintenanceOfOrderItemBean;
+
+
 
     public IVDesc() {
     }
@@ -52,6 +58,23 @@ public class IVDesc implements Serializable{
                 ", imageMaintenanceTableItemBean=" + imageMaintenanceTableItemBean +
                 ", videoMaintenanceTableItemBean=" + videoMaintenanceTableItemBean +
                 '}';
+    }
+
+
+    public MaintenanceOfOrderItemBean getImageMaintenanceOfOrderItemBean() {
+        return imageMaintenanceOfOrderItemBean;
+    }
+
+    public void setImageMaintenanceOfOrderItemBean(MaintenanceOfOrderItemBean imageMaintenanceOfOrderItemBean) {
+        this.imageMaintenanceOfOrderItemBean = imageMaintenanceOfOrderItemBean;
+    }
+
+    public MaintenanceOfOrderItemBean getVideoMaintenanceOfOrderItemBean() {
+        return videoMaintenanceOfOrderItemBean;
+    }
+
+    public void setVideoMaintenanceOfOrderItemBean(MaintenanceOfOrderItemBean videoMaintenanceOfOrderItemBean) {
+        this.videoMaintenanceOfOrderItemBean = videoMaintenanceOfOrderItemBean;
     }
 
     public MaintenanceTableItemBean getImageMaintenanceTableItemBean() {

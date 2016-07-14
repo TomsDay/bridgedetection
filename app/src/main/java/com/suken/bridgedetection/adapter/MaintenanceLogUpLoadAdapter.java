@@ -52,7 +52,7 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
-            view = inflater.inflate(R.layout.maintenanceloglist_item, null);
+            view = inflater.inflate(R.layout.maintenancelogupload_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
         }else{
@@ -61,11 +61,11 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
 
         final MaintenanceLogBean bean = listBeen.get(position);
 
-        holder.maintenanceloglistupload_item_tv1.setText(bean.getBytzid());
-        holder.maintenanceloglistupload_item_tv2.setText(bean.getBytzidbytzid());
-        holder.maintenanceloglistupload_item_tv3.setText(bean.getWxrq());
-        holder.maintenanceloglistupload_item_tv4.setText(bean.getJcry());
-        holder.maintenanceloglistupload_item_tv5.setText(bean.getFzry());
+        holder.maintenanceloglistupload_item_tv1.setText(bean.getBytzid()+"");
+        holder.maintenanceloglistupload_item_tv2.setText(bean.getBytzidbytzid()+"");
+        holder.maintenanceloglistupload_item_tv3.setText(bean.getWxrq()+"");
+        holder.maintenanceloglistupload_item_tv4.setText(bean.getJcry()+"");
+        holder.maintenanceloglistupload_item_tv5.setText(bean.getFzry()+"");
 
         return view;
     }
@@ -83,7 +83,7 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
             maintenanceloglistupload_item_tv2 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv2);
             maintenanceloglistupload_item_tv3 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv3);
             maintenanceloglistupload_item_tv4 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv4);
-            maintenanceloglistupload_item_tv4 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv5);
+            maintenanceloglistupload_item_tv5 = (TextView) v.findViewById(R.id.maintenanceloglistupload_item_tv5);
 
             maintenanceloglistupload_layout = (LinearLayout) v.findViewById(R.id.maintenanceloglistupload_layout);
 

@@ -35,14 +35,15 @@ public class CheckXMDialog implements View.OnClickListener {
     public static ArrayList<String> minuteContent = new ArrayList<String>();
     public static ArrayList<String> secondContent = new ArrayList<String>();
     private Context mContext;
-    private EditText mEditText;
+//    private EditText mEditText;
     CatalogueByUIDDao catalogueByUIDDao;
+    private CheckXMDDialogReturn checkXMDDialogReturn;
 
     ArrayList<String> proKinds = new ArrayList<String>();
 
-    public CheckXMDialog(Context context, EditText editText) {
+    public CheckXMDialog(Context context, CheckXMDDialogReturn checkXMDDialogReturn) {
         this.mContext = context;
-        this.mEditText = editText;
+        this.checkXMDDialogReturn = checkXMDDialogReturn;
         catalogueByUIDDao = new CatalogueByUIDDao();
         initContent();
     }
@@ -62,6 +63,7 @@ public class CheckXMDialog implements View.OnClickListener {
             }
 
         }
+        xmlb = hourContent.get(0);
 
 
         List<CatalogueByUIDBean> listMC = catalogueByUIDDao.queryByLB(hourContent.get(0));
@@ -75,7 +77,7 @@ public class CheckXMDialog implements View.OnClickListener {
             }
 
         }
-
+        xmmc = minuteContent.get(0);
 
         List<CatalogueByUIDBean> listXM = catalogueByUIDDao.queryByLBandxmmc(hourContent.get(0), minuteContent.get(0));
 
@@ -89,7 +91,7 @@ public class CheckXMDialog implements View.OnClickListener {
             }
 
         }
-
+        ximmc = secondContent.get(0);
 
 
 //        String [] array = (String[]) list.toArray();
@@ -152,7 +154,7 @@ public class CheckXMDialog implements View.OnClickListener {
                 minuteWheel.setData(minuteContent);
                 minuteWheel.setDefault(0);
 
-                xmmc = text;
+                xmmc = minuteContent.get(0);
                 secondContent.clear();
                 List<CatalogueByUIDBean> list2 = catalogueByUIDDao.queryByLBandxmmc(xmlb,xmmc);
                 Log.i("aaa","list2 ====== "+list2.size());
@@ -170,6 +172,7 @@ public class CheckXMDialog implements View.OnClickListener {
 
                 secondWheel.setData(secondContent);
                 secondWheel.setDefault(0);
+                ximmc = secondContent.get(0);
             }
 
             @Override
@@ -200,6 +203,7 @@ public class CheckXMDialog implements View.OnClickListener {
 
                 secondWheel.setData(secondContent);
                 secondWheel.setDefault(0);
+                ximmc = secondContent.get(0);
 //                minuteWheel.setData(hourContent);
             }
 
@@ -262,7 +266,9 @@ public class CheckXMDialog implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                mEditText.setText(ximmc);
+                if (ximmc != null) {
+                    checkXMDDialogReturn.returnBean(catalogueByUIDDao.queryByXMMC(ximmc));
+                }
                 dialog.cancel();
             }
         });
@@ -281,5 +287,8 @@ public class CheckXMDialog implements View.OnClickListener {
         arrayList.clear();
         arrayList.addAll(newList);
         return arrayList;
+    }
+    public interface CheckXMDDialogReturn{
+        public void returnBean(List<CatalogueByUIDBean> bean);
     }
 }

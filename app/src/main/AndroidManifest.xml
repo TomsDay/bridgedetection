@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.suken.bridgedetection"
-    android:versionCode="22"
-    android:versionName="1.2.1">
+    android:versionCode="30"
+    android:versionName="1.5.0">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -181,79 +181,80 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.account.LoginActivity"
             android:label="@string/login_title_activity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.account.ECSetUpServerActivity"
             android:label="@string/login_title_activity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <!-- 会话消息聊天主界面 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ChattingActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize" />
 
         <!-- 手机系统联系人 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.MobileContactActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <!-- 发送预览图片 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ImagePreviewActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:process=":tools"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/CCPTheme.Holo.Transparent" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.VideoRecordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/CCPTheme.Holo.Transparent" />
         <!-- 查看聊天图片 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ImageGalleryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/CCPTheme.Holo.Transparent"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ImageGralleryPagerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <!-- 文件浏览器 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.plugin.FileExplorerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
 
         <!-- 联系人选择 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.ContactSelectListActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <!-- 手机联系人选择 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.MobileContactSelectActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <!-- 设置页面 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.SettingsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.GroupCardSelectUI"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.EditConfigureActivity"
@@ -261,33 +262,33 @@
             android:screenOrientation="landscape" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.GroupMemberCardActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.GroupNoticeActivity"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.LoginSettingActivity"
             android:label="@string/title_activity_login_setting"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.SettingPersionInfoActivity"
             android:label="@string/title_activity_setting_persion_info"
             android:launchMode="singleInstance"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.AtSomeoneUI"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
 
         <!-- VoIP 呼叫界面 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.voip.VoIPCallActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="con.yuntongxun.ecdemo.intent.ACTION_VOICE_CALL" />
@@ -299,7 +300,7 @@
             android:name="com.yuntongxun.ecdemo.ui.voip.VideoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="con.yuntongxun.ecdemo.intent.ACTION_VIDEO_CALL" />
@@ -311,70 +312,70 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.interphone.InterPhoneListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 实时对讲房间 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.interphone.InterPhoneChatActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 会议列表 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.meeting.MeetingListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 语音会议 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.meeting.VoiceMeetingActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 创建语音群聊 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.meeting.CreateVoiceMeetingActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 会议成员的管理 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.meeting.VoiceMeetingMemberManager"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <!-- 外呼邀请会议成员 -->
 
         <activity
             android:name="com.yuntongxun.ecdemo.ui.meeting.InviteByPhoneCall"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.videomeeting.VideoconferenceConversation"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.videomeeting.CreateVideoConference"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.videomeeting.MultiVideoconference"
             android:configChanges="keyboardHidden|orientation"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.LocationActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.ShowBaiDuMapActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.AboutActivity"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="landscape"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateHidden" />
         // SDK核心服务配置
@@ -455,7 +456,11 @@
         <activity
             android:name=".activity.ProjectAcceptanceListActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceLogUpLoadActivity"></activity>
+        <activity
+            android:name=".activity.MaintenanceLogUpLoadActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

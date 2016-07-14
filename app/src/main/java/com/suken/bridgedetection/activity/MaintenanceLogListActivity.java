@@ -157,8 +157,6 @@ public class MaintenanceLogListActivity extends Activity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
-                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                list.add(pair);
                 new HttpTask(onReceivedHttpResponseListener, RequestType.getUpkeepnoticeByUID).executePost(list);
             }
         });

@@ -15,6 +15,8 @@ import java.util.List;
 @DatabaseTable(tableName = "tb_maintenancelogitem")
 public class MaintenanceLogItemBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
+    private int ids;
+    @DatabaseField
     private long id;
     @DatabaseField
     private String createBy;
@@ -60,6 +62,7 @@ public class MaintenanceLogItemBean implements Serializable {
     private String tjsj;
 
 
+
     /**
      * ==============================================================上传增加的字段================================================================================
      */
@@ -81,6 +84,11 @@ public class MaintenanceLogItemBean implements Serializable {
     private String tpjd;
     @DatabaseField
     private String tpwd;
+    @DatabaseField
+    private String dj;
+    @DatabaseField
+    private String wxsl;
+
 
 
 
@@ -185,6 +193,29 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
+    public String getDj() {
+        return dj;
+    }
+
+    public void setDj(String dj) {
+        this.dj = dj;
+    }
+
+    public String getWxsl() {
+        return wxsl;
+    }
+
+    public void setWxsl(String wxsl) {
+        this.wxsl = wxsl;
+    }
+
+    public int getIds() {
+        return ids;
+    }
+
+    public void setIds(int ids) {
+        this.ids = ids;
+    }
 
     public String getBytzidbytzid() {
         return bytzidbytzid;

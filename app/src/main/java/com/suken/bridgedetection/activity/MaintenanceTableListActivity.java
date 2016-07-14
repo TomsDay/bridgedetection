@@ -59,7 +59,6 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
 
 
-    private TextView upload_all;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -274,10 +273,13 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 case SUCCESS_CODE:
                     getAllData();
                     dismissLoading();
-
+                    toast("上传日常巡查日志记录信息成功！");
 
                     break;
                 case ERROR_CODE:
+                    getAllData();
+                    dismissLoading();
+                    toast("上传失败！");
                     break;
             }
         }
@@ -392,8 +394,6 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
                 List<MaintenanceTableItemBean> itemBeen = bean.getInspectLogDetailList();
                 for (int j = 0; j < itemBeen.size(); j++) {

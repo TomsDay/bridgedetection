@@ -88,7 +88,7 @@ public class IVDescDao {
             return null;
         }
     }
-    public List<IVDesc> getImageMaintenanceLogItemBeanByUserId(long userid)
+    public List<IVDesc> getImageMaintenanceLogItemBeanByUserId(int userid)
     {
         try {
             return ivDescs.queryBuilder().where().eq("imageMaintenanceLogItem_id", userid)
@@ -98,7 +98,7 @@ public class IVDescDao {
             return null;
         }
     }
-    public List<IVDesc> getVideoMaintenanceLogItemBeanByUserId(long userid)
+    public List<IVDesc> getVideoMaintenanceLogItemBeanByUserId(int userid)
     {
         try {
             return ivDescs.queryBuilder().where().eq("videoMaintenanceLogItemBean_id", userid)
@@ -108,6 +108,28 @@ public class IVDescDao {
             return null;
         }
     }
+
+    public List<IVDesc> getImageMaintenanceOfOrderItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageMaintenanceOfOrderItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<IVDesc> getVideoMaintenanceOfOrderItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("videoMaintenanceOfOrderItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void delete(int id){
         try {
             DeleteBuilder<IVDesc, String> deleteBuilder = ivDescs.deleteBuilder();
