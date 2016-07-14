@@ -12,32 +12,32 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/page_active.xml"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/btn_dialog_left_normal.xml",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/btn_dialog_left_normal.xml"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/cb_check.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/cb_check.xml"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/btn_dialog_left_normal.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/btn_dialog_left_normal.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/ec_call_interface_bg_01.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/ec_call_interface_bg_01.xml"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/voice_rec_button_selector.xml",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/voice_rec_button_selector.xml"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/video_notify.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/video_notify.xml"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/left_frag_item_text_selector.xml",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/left_frag_item_text_selector.xml"
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/voice_rec_button_selector.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/voice_rec_button_selector.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/list_search_bg.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/list_search_bg.xml"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/left_frag_item_text_selector.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable/left_frag_item_text_selector.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable/chatto_bg.xml",

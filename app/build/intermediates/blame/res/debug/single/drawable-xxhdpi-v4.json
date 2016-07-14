@@ -44,12 +44,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/richangyanghu.png"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/shang.png",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/shang.png"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/list_gps.png",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/list_gps.png"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/shang.png",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/shang.png"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/pic_thumb_bg.9.png",
@@ -64,12 +64,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/ec_voip_speaker_off.png"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/hd_black.png",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/hd_black.png"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/qiaoliangxuncha.png",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/qiaoliangxuncha.png"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/hd_black.png",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-xxhdpi/hd_black.png"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/msg_state_fail_resend.png",
