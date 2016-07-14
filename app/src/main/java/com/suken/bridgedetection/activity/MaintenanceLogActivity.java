@@ -21,6 +21,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
@@ -41,6 +42,9 @@ import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.location.LocationManager;
+import com.suken.bridgedetection.location.LocationResult;
+import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
@@ -60,7 +64,7 @@ import java.util.List;
 /**
  * 高速公路维修保养日志
  */
-public class MaintenanceLogActivity extends Activity {
+public class MaintenanceLogActivity extends BaseActivity implements OnLocationFinishedListener {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogItemBean> maintenanceLogItemBeen = new ArrayList<MaintenanceLogItemBean>();
@@ -103,7 +107,7 @@ public class MaintenanceLogActivity extends Activity {
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
         catalogueByUIDDao = new CatalogueByUIDDao();
-
+        LocationManager.getInstance().syncLocation(this);
         id = getIntent().getLongExtra("id", 0);
         initView();
     }
@@ -130,6 +134,8 @@ public class MaintenanceLogActivity extends Activity {
                 saveDialog();
             }
         });
+
+
 
         initSpinner();
         initTime();
@@ -251,6 +257,37 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
 
     }
+
+    boolean mIsGpsSuccess;
+    double latitude, longitude;
+    @Override
+    public void onLocationFinished(LocationResult result) {
+
+        if(this == null || ((BaseActivity)this).isDestroyed() || this.isFinishing()){
+            return;
+        }
+
+        if (result.isSuccess) {
+            mIsGpsSuccess = true;
+            Logger.e("aaa","经度:" + result.latitude);
+            Logger.e("aaa","纬度:" + result.longitude);
+            latitude =  result.latitude;
+            longitude =  result.longitude;
+
+            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+//            mjingdu.setText("经度:" + result.latitude);
+//            mWeidu.setText("纬度:" + result.longitude);
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位成功");
+//            tv.setTextColor(Color.WHITE);
+        } else if(!mIsGpsSuccess){
+            Toast.makeText(this, "定位失败！请您到空旷的地点从新定位，绝就不要在室内！", Toast.LENGTH_LONG).show();
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位失败");
+//            tv.setTextColor(Color.RED);
+        }
+    }
+
     private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
@@ -281,6 +318,12 @@ public class MaintenanceLogActivity extends Activity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+
+                        if(mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         Logger.e("aaa","itemlist===="+ maintenanceLogItemBeen.toString());
 
@@ -321,8 +364,10 @@ public class MaintenanceLogActivity extends Activity {
                         maintenanceLogItemBeen = mAdapter.getData();
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
-                            itemBean.setTpjd("123.12");
-                            itemBean.setTpwd("123.12");
+                            if (itemBean.getTpjd() != null) {
+                                itemBean.setTpjd(latitude+"");
+                                itemBean.setTpwd(longitude+"");
+                            }
                             String fx = itemBean.getFx();
                             itemBean.setFx(fx != null ? fx : "上行内侧");
 

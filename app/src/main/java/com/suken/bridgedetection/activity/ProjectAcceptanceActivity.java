@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
@@ -29,6 +30,9 @@ import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
+import com.suken.bridgedetection.location.LocationManager;
+import com.suken.bridgedetection.location.LocationResult;
+import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.signname.WriteDialogListener;
 import com.suken.bridgedetection.signname.WritePadDialog;
 import com.suken.bridgedetection.util.Logger;
@@ -45,7 +49,7 @@ import java.util.UUID;
 /**
  * 速公路维修保养工程验收单
  */
-public class ProjectAcceptanceActivity extends Activity {
+public class ProjectAcceptanceActivity extends BaseActivity implements OnLocationFinishedListener {
     private ProjectAcceptanceListAdapter mAdapter;
     private Context mContext;
     private EditText projectacceptance_gydw_ev,
@@ -89,6 +93,7 @@ public class ProjectAcceptanceActivity extends Activity {
         bean = new ProjectAcceptanceBean();
         id = getIntent().getIntExtra("id", 0);
         projacceptBean = (ProjacceptBean) getIntent().getSerializableExtra("bean");
+        LocationManager.getInstance().syncLocation(this);
         initView();
     }
 
@@ -209,6 +214,37 @@ public class ProjectAcceptanceActivity extends Activity {
         projectacceptance_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());
 
     }
+
+    boolean mIsGpsSuccess;
+    double latitude, longitude;
+    @Override
+    public void onLocationFinished(LocationResult result) {
+
+        if(this == null || ((BaseActivity)this).isDestroyed() || this.isFinishing()){
+            return;
+        }
+
+        if (result.isSuccess) {
+            mIsGpsSuccess = true;
+            Logger.e("aaa","经度:" + result.latitude);
+            Logger.e("aaa","纬度:" + result.longitude);
+            latitude =  result.latitude;
+            longitude =  result.longitude;
+
+            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+//            mjingdu.setText("经度:" + result.latitude);
+//            mWeidu.setText("纬度:" + result.longitude);
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位成功");
+//            tv.setTextColor(Color.WHITE);
+        } else if(!mIsGpsSuccess){
+            Toast.makeText(this, "定位失败！请您到空旷的地点从新定位，绝就不要在室内！", Toast.LENGTH_LONG).show();
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位失败");
+//            tv.setTextColor(Color.RED);
+        }
+    }
+
     private class ItemSelectedListenerImpl implements AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long arg3) {
@@ -277,7 +313,11 @@ public class ProjectAcceptanceActivity extends Activity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        if(mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
 
                         String gydw = projectacceptance_gydw_ev.getText().toString();
@@ -299,6 +339,8 @@ public class ProjectAcceptanceActivity extends Activity {
                         bean.setQrzs(content);
                         bean.setYsjg(returnContent);
                         bean.setYsrq(xsfzr);
+                        bean.setTpjd(latitude+"");
+                        bean.setTpwd(longitude+"");
                         if (id != 0) {
                             bean.setId(id);
                         }

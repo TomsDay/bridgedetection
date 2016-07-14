@@ -21,6 +21,8 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     private String picattachment;
     private String vidattachment;
     private String state;
+    private String tpjd;
+    private String tpwd;
 
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
     private List<IVDesc> mVideo = new ArrayList<IVDesc>();
@@ -39,6 +41,22 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     }
 
     public MaintenanceLogUpLoadListBean() {
+    }
+
+    public String getTpjd() {
+        return tpjd;
+    }
+
+    public void setTpjd(String tpjd) {
+        this.tpjd = tpjd;
+    }
+
+    public String getTpwd() {
+        return tpwd;
+    }
+
+    public void setTpwd(String tpwd) {
+        this.tpwd = tpwd;
     }
 
     public String getState() {

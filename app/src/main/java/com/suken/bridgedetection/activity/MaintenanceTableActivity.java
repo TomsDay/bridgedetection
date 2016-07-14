@@ -20,6 +20,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
@@ -45,6 +46,9 @@ import com.suken.bridgedetection.bean.UploadBean;
 import com.suken.bridgedetection.bean.UploadListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
+import com.suken.bridgedetection.location.LocationManager;
+import com.suken.bridgedetection.location.LocationResult;
+import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.storage.GXLuXianInfo;
 import com.suken.bridgedetection.storage.GXLuXianInfoDao;
 import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
@@ -73,7 +77,7 @@ import org.apache.http.message.BasicNameValuePair;
 /**
  * 高速公路养护巡查日志
  */
-public class MaintenanceTableActivity extends BaseActivity {
+public class MaintenanceTableActivity extends BaseActivity implements OnLocationFinishedListener{
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceTableItemBean> maintenanceTableItemBeen = new ArrayList<MaintenanceTableItemBean>();
     private ArrayList<MaintenanceTableBean> maintenanceTableBeen = new ArrayList<MaintenanceTableBean>();
@@ -104,7 +108,7 @@ public class MaintenanceTableActivity extends BaseActivity {
     private MaintenanceDiseaseDao maintenanceDiseaseDao;
     private GXLuXianInfoDao gxLuXianInfoDao;
 
-    private TextView saveBtn;
+    private TextView saveBtn,gps_text;
 
     IVDescDao ivDescDao;
 
@@ -209,6 +213,12 @@ public class MaintenanceTableActivity extends BaseActivity {
         maintenancetable_date_ev = (EditText) findViewById(R.id.maintenancetable_date_ev);
         maintenancetable_weather_spinner = (Spinner) findViewById(R.id.maintenancetable_weather_spinner);
         maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
+
+        gps_text = (TextView) findViewById(R.id.gps_text);
+
+        LocationManager.getInstance().syncLocation(this);
+
+
 
         saveBtn = (TextView) findViewById(R.id.saveBtn);
         saveBtn.setOnClickListener(new View.OnClickListener() {
@@ -450,11 +460,11 @@ public class MaintenanceTableActivity extends BaseActivity {
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
-
-
-
-
+                        if(mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         String time = maintenancetable_time_ev.getText().toString();
                         String date = maintenancetable_date_ev.getText().toString();
@@ -496,8 +506,11 @@ public class MaintenanceTableActivity extends BaseActivity {
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setYhzt("1");
-                            itemBean.setTpjd("123.12");
-                            itemBean.setTpwd("123.12");
+                            if (itemBean.getTpjd() != null) {
+                                itemBean.setTpjd(latitude+"");
+                                itemBean.setTpwd(longitude+"");
+                            }
+
                             String fx = itemBean.getFx();
                             itemBean.setFx(fx != null ? fx : "上行内侧");
 
@@ -533,46 +546,7 @@ public class MaintenanceTableActivity extends BaseActivity {
 
                         Logger.e("aaa", "queryAll===" + ivDescDao.queryAll().toString());
                         finish();
-//                        final UploadBean uploadBean = new UploadBean();
-
-//                        final Gson gson = new Gson();
-//                        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-//                            @Override
-//                            public void onRequestSuccess(RequestType type, JSONObject result) {
-////                                Logger.e("aaa", "result.toString()" + result.toString());
-////                                JSONArray array = result.getJSONArray("datas");
-////                                String datas = array.getString(0);
-////                                Logger.e("aaa", "datas==" + datas);
-////                                Gson gson = new Gson();
-////                                MaintenanceDiseaseBean bean = gson.fromJson(datas, MaintenanceDiseaseBean.class);
-//                                Logger.e("aaa","111111111111"+ result.toString());
-//                            }
 //
-//                            @Override
-//                            public void onRequestFail(RequestType type, String resultCode, String result) {
-//                                Logger.e("aaa", result + "(" + resultCode + ")");
-//                            }
-//                        };
-//
-//
-//                        BackgroundExecutor.execute(new Runnable() {
-//
-//                            @Override
-//                            public void run() {
-//                                List<NameValuePair> list = new ArrayList<NameValuePair>();
-//                                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-//                                list.add(pair);
-//                                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-//                                list.add(pair);
-//                                pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-//                                list.add(pair);
-//                                Logger.e("aaa","gson======"+gson.toJson(uploadBean));
-//                                pair = new BasicNameValuePair("json", gson.toJson(uploadBean));
-//                                list.add(pair);
-//
-//                                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
-//                            }
-//                        });
 
 
                     }
@@ -767,4 +741,35 @@ public class MaintenanceTableActivity extends BaseActivity {
         System.arraycopy(b, 0, c, a.length, b.length);
         return c;
     }
+
+    boolean mIsGpsSuccess;
+    double latitude, longitude;
+    @Override
+    public void onLocationFinished(LocationResult result) {
+
+        if(this == null || ((BaseActivity)this).isDestroyed() || this.isFinishing()){
+            return;
+        }
+
+        if (result.isSuccess) {
+            mIsGpsSuccess = true;
+            Logger.e("aaa","经度:" + result.latitude);
+            Logger.e("aaa","纬度:" + result.longitude);
+            latitude =  result.latitude;
+            longitude =  result.longitude;
+
+            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+//            mjingdu.setText("经度:" + result.latitude);
+//            mWeidu.setText("纬度:" + result.longitude);
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位成功");
+//            tv.setTextColor(Color.WHITE);
+        } else if(!mIsGpsSuccess){
+            Toast.makeText(this, "定位失败！请您到空旷的地点从新定位，绝就不要在室内！", Toast.LENGTH_LONG).show();
+//            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//            tv.setText("定位失败");
+//            tv.setTextColor(Color.RED);
+        }
+    }
+
 }

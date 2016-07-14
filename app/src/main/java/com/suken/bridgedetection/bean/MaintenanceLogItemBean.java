@@ -193,6 +193,7 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
+
     public String getDj() {
         return dj;
     }

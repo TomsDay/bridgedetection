@@ -216,6 +216,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     beanList.setDj(maintenanceLogItemBean.getDj());
                     beanList.setWxsl(maintenanceLogItemBean.getWxsl());
                     beanList.setClmc(maintenanceLogItemBean.getClmc());
+                    beanList.setTpjd(maintenanceLogItemBean.getTpjd());
+                    beanList.setTpwd(maintenanceLogItemBean.getTpwd());
 
                     beanList.setmImages(maintenanceLogItemBean.getmImages());
                     beanList.setmVideo(maintenanceLogItemBean.getmVideo());

@@ -72,6 +72,11 @@ public class ProjectAcceptanceBean implements Serializable{
     private String weather;
     @DatabaseField
     private String picattachment;
+    @DatabaseField
+    private String tpjd;
+    @DatabaseField
+    private String tpwd;
+
 
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
 
@@ -148,6 +153,21 @@ public class ProjectAcceptanceBean implements Serializable{
         this.status = status;
     }
 
+    public String getTpjd() {
+        return tpjd;
+    }
+
+    public void setTpjd(String tpjd) {
+        this.tpjd = tpjd;
+    }
+
+    public String getTpwd() {
+        return tpwd;
+    }
+
+    public void setTpwd(String tpwd) {
+        this.tpwd = tpwd;
+    }
 
     public String getPicattachment() {
         return picattachment;
