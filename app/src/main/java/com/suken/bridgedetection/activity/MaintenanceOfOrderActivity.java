@@ -242,42 +242,42 @@ public class MaintenanceOfOrderActivity extends Activity {
                     while(iterator.hasNext()){
                         MaintenanceOfOrderItemBean b = iterator.next();
 
-//                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceOfOrderItemBeanByUserId(b.getId());
-//                        b.setmImages(imageDesc);
-//
-//                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceOfOrderItemBeanByUserId(b.getId());
-//                        b.setmVideo(videoDesc);
+                        List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceOfOrderItemBeanByUserId(b.getId());
+                        b.setmImages(imageDesc);
+
+                        List<IVDesc> videoDesc = ivDescDao.getVideoMaintenanceOfOrderItemBeanByUserId(b.getId());
+                        b.setmVideo(videoDesc);
 
                         maintenanceOfOrderItemBeens.add(b);
                         Logger.e("aaa",b.toString());
-//                        int imageSize = imageDesc.size();
-//                        int videoSize = videoDesc.size();
+                        int imageSize = imageDesc.size();
+                        int videoSize = videoDesc.size();
 
-//                        if(position == 0){
-//                            maintenanceoforder_bzbf_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzbf_no: R.id.maintenanceoforder_bzbf_yes);
-//                            maintenanceoforder_bzbf_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_bzbf_imgNum.setText(imageSize + "");
-//                        }else if(position == 1){
-//                            maintenanceoforder_bzfm_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzfm_no: R.id.maintenanceoforder_bzfm_yes);
-//                            maintenanceoforder_bzfm_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_bzfm_imgNum.setText(imageSize + "");
-//                        }else if(position == 2){
-//                            maintenanceoforder_aqzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzy_no: R.id.maintenanceoforder_aqzy_yes);
-//                            maintenanceoforder_aqzy_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_aqzy_imgNum.setText(imageSize + "");
-//                        }else if(position == 3){
-//                            maintenanceoforder_sgzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_sgzy_no: R.id.maintenanceoforder_sgzy_yes);
-//                            maintenanceoforder_sgzy_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_sgzy_imgNum.setText(imageSize + "");
-//                        }else if(position == 4){
-//                            maintenanceoforder_aqxs_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqxs_no: R.id.maintenanceoforder_aqxs_yes);
-//                            maintenanceoforder_aqxs_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_aqxs_imgNum.setText(imageSize + "");
-//                        }else if(position == 5){
-//                            maintenanceoforder_aqzgly_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzgly_no: R.id.maintenanceoforder_aqzgly_yes);
-//                            maintenanceoforder_aqzgly_videoNum.setText(videoSize + "");
-//                            maintenanceoforder_aqzgly_imgNum.setText(imageSize + "");
-//                        }
+                        if(position == 0){
+                            maintenanceoforder_bzbf_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzbf_no: R.id.maintenanceoforder_bzbf_yes);
+                            maintenanceoforder_bzbf_videoNum.setText(videoSize + "");
+                            maintenanceoforder_bzbf_imgNum.setText(imageSize + "");
+                        }else if(position == 1){
+                            maintenanceoforder_bzfm_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_bzfm_no: R.id.maintenanceoforder_bzfm_yes);
+                            maintenanceoforder_bzfm_videoNum.setText(videoSize + "");
+                            maintenanceoforder_bzfm_imgNum.setText(imageSize + "");
+                        }else if(position == 2){
+                            maintenanceoforder_aqzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzy_no: R.id.maintenanceoforder_aqzy_yes);
+                            maintenanceoforder_aqzy_videoNum.setText(videoSize + "");
+                            maintenanceoforder_aqzy_imgNum.setText(imageSize + "");
+                        }else if(position == 3){
+                            maintenanceoforder_sgzy_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_sgzy_no: R.id.maintenanceoforder_sgzy_yes);
+                            maintenanceoforder_sgzy_videoNum.setText(videoSize + "");
+                            maintenanceoforder_sgzy_imgNum.setText(imageSize + "");
+                        }else if(position == 4){
+                            maintenanceoforder_aqxs_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqxs_no: R.id.maintenanceoforder_aqxs_yes);
+                            maintenanceoforder_aqxs_videoNum.setText(videoSize + "");
+                            maintenanceoforder_aqxs_imgNum.setText(imageSize + "");
+                        }else if(position == 5){
+                            maintenanceoforder_aqzgly_radioGroup.check(b.getJczt().equals("不符合检查标准")? R.id.maintenanceoforder_aqzgly_no: R.id.maintenanceoforder_aqzgly_yes);
+                            maintenanceoforder_aqzgly_videoNum.setText(videoSize + "");
+                            maintenanceoforder_aqzgly_imgNum.setText(imageSize + "");
+                        }
 
                         position++;
                     }
@@ -301,7 +301,7 @@ public class MaintenanceOfOrderActivity extends Activity {
         }
         initRadioGroup();
         setClick();
-//        setSpinnerAdapter();
+        setSpinnerAdapter();
 
 
     }
@@ -386,6 +386,7 @@ public class MaintenanceOfOrderActivity extends Activity {
 //            bean.setFlag("0");
             bean.setTpjd("123.12");
             bean.setTpwd("123.12");
+            bean.setJczt("符合检查标准");
             if(i == 0){
                 bean.setJcx("施工标志摆放正确(是,否)");
 
@@ -532,31 +533,31 @@ public class MaintenanceOfOrderActivity extends Activity {
     }
 
 
-//    public void setSpinnerAdapter(){
-//        bzbfAdapter = new SpinnerAdapter();
-//        bzbfAdapter.setItem(maintenanceOfOrderItemBeens.get(0).getmImages());
-//        maintenanceoforder_bzbf_imgSpinner.setAdapter(bzbfAdapter);
-//
-//        bzfmAdapter = new SpinnerAdapter();
-//        bzfmAdapter.setItem(maintenanceOfOrderItemBeens.get(1).getmImages());
-//        maintenanceoforder_bzfm_imgSpinner.setAdapter(bzfmAdapter);
-//
-//        aqzyAdapter = new SpinnerAdapter();
-//        aqzyAdapter.setItem(maintenanceOfOrderItemBeens.get(2).getmImages());
-//        maintenanceoforder_aqzy_imgSpinner.setAdapter(aqzyAdapter);
-//
-//        sgzyAdapter = new SpinnerAdapter();
-//        sgzyAdapter.setItem(maintenanceOfOrderItemBeens.get(3).getmImages());
-//        maintenanceoforder_sgzy_imgSpinner.setAdapter(sgzyAdapter);
-//
-//        aqxsAdapter = new SpinnerAdapter();
-//        aqxsAdapter.setItem(maintenanceOfOrderItemBeens.get(4).getmImages());
-//        maintenanceoforder_aqxs_imgSpinner.setAdapter(aqxsAdapter);
-//
-//        aqzglyAdapter = new SpinnerAdapter();
-//        aqzglyAdapter.setItem(maintenanceOfOrderItemBeens.get(5).getmImages());
-//        maintenanceoforder_aqzgly_imgSpinner.setAdapter(aqzglyAdapter);
-//    }
+    public void setSpinnerAdapter(){
+        bzbfAdapter = new SpinnerAdapter();
+        bzbfAdapter.setItem(maintenanceOfOrderItemBeens.get(0).getmImages());
+        maintenanceoforder_bzbf_imgSpinner.setAdapter(bzbfAdapter);
+
+        bzfmAdapter = new SpinnerAdapter();
+        bzfmAdapter.setItem(maintenanceOfOrderItemBeens.get(1).getmImages());
+        maintenanceoforder_bzfm_imgSpinner.setAdapter(bzfmAdapter);
+
+        aqzyAdapter = new SpinnerAdapter();
+        aqzyAdapter.setItem(maintenanceOfOrderItemBeens.get(2).getmImages());
+        maintenanceoforder_aqzy_imgSpinner.setAdapter(aqzyAdapter);
+
+        sgzyAdapter = new SpinnerAdapter();
+        sgzyAdapter.setItem(maintenanceOfOrderItemBeens.get(3).getmImages());
+        maintenanceoforder_sgzy_imgSpinner.setAdapter(sgzyAdapter);
+
+        aqxsAdapter = new SpinnerAdapter();
+        aqxsAdapter.setItem(maintenanceOfOrderItemBeens.get(4).getmImages());
+        maintenanceoforder_aqxs_imgSpinner.setAdapter(aqxsAdapter);
+
+        aqzglyAdapter = new SpinnerAdapter();
+        aqzglyAdapter.setItem(maintenanceOfOrderItemBeens.get(5).getmImages());
+        maintenanceoforder_aqzgly_imgSpinner.setAdapter(aqzglyAdapter);
+    }
     private void initSpinner() {
         maintenanceoforder_weather_spinner = (Spinner) findViewById(R.id.maintenanceoforder_weather_spinner);
         mStringArrayWeather = getResources().getStringArray(R.array.spinnerWeather);
@@ -639,26 +640,26 @@ public class MaintenanceOfOrderActivity extends Activity {
                                 maintenanceOfOrderDao.addItem(itemBean);
                             }
 
-//                            List<IVDesc> imagesDescList = itemBean.getmImages();
-//                            List<IVDesc> videoDescList = itemBean.getmVideo();
-//                            for(int q = 0; q < imagesDescList.size(); q++){
-//                                IVDesc imageDesc = imagesDescList.get(q);
-//                                imageDesc.setImageMaintenanceOfOrderItemBean(itemBean);
-//                                if (imageDesc.getId() != 0) {
-//                                    ivDescDao.update(imageDesc);
-//                                }else {
-//                                    ivDescDao.add(imageDesc);
-//                                }
-//                            }
-//                            for(int w = 0; w < videoDescList.size(); w++){
-//                                IVDesc videoDesc = videoDescList.get(w);
-//                                videoDesc.setVideoMaintenanceOfOrderItemBean(itemBean);
-//                                if (videoDesc.getId() != 0) {
-//                                    ivDescDao.update(videoDesc);
-//                                }else {
-//                                    ivDescDao.add(videoDesc);
-//                                }
-//                            }
+                            List<IVDesc> imagesDescList = itemBean.getmImages();
+                            List<IVDesc> videoDescList = itemBean.getmVideo();
+                            for(int q = 0; q < imagesDescList.size(); q++){
+                                IVDesc imageDesc = imagesDescList.get(q);
+                                imageDesc.setImageMaintenanceOfOrderItemBean(itemBean);
+                                if (imageDesc.getId() != 0) {
+                                    ivDescDao.update(imageDesc);
+                                }else {
+                                    ivDescDao.add(imageDesc);
+                                }
+                            }
+                            for(int w = 0; w < videoDescList.size(); w++){
+                                IVDesc videoDesc = videoDescList.get(w);
+                                videoDesc.setVideoMaintenanceOfOrderItemBean(itemBean);
+                                if (videoDesc.getId() != 0) {
+                                    ivDescDao.update(videoDesc);
+                                }else {
+                                    ivDescDao.add(videoDesc);
+                                }
+                            }
                         }
 
 
@@ -743,37 +744,37 @@ public class MaintenanceOfOrderActivity extends Activity {
             Logger.e("aaa", " desc.name===" + desc.name);
             Logger.e("aaa", " desc.path===" + desc.path);
 
-//            maintenanceOfOrderItemBeens.get(mPosition).getmImages().add(desc);
+            maintenanceOfOrderItemBeens.get(mPosition).getmImages().add(desc);
 
-//            List<IVDesc> images = maintenanceOfOrderItemBeens.get(mPosition).getmImages();
-//            int size = images.size();
-//            Logger.e("aaa", "position==" + mPosition);
-//            Logger.e("aaa", "size==" + size);
-//            if(mPosition == 0){
-//                bzbfAdapter.setItem(images);
-//                bzbfAdapter.notifyDataSetChanged();
-//                maintenanceoforder_bzbf_imgNum.setText(size + "");
-//            }else if(mPosition == 1){
-//                bzfmAdapter.setItem(images);
-//                bzfmAdapter.notifyDataSetChanged();
-//                maintenanceoforder_bzfm_imgNum.setText(size + "");
-//            }else if(mPosition == 2){
-//                aqzyAdapter.setItem(images);
-//                aqzyAdapter.notifyDataSetChanged();
-//                maintenanceoforder_aqzy_imgNum.setText(size + "");
-//            }else if(mPosition == 3){
-//                sgzyAdapter.setItem(images);
-//                sgzyAdapter.notifyDataSetChanged();
-//                maintenanceoforder_sgzy_imgNum.setText(size + "");
-//            }else if(mPosition == 4){
-//                aqxsAdapter.setItem(images);
-//                aqxsAdapter.notifyDataSetChanged();
-//                maintenanceoforder_aqxs_imgNum.setText(size + "");
-//            }else if(mPosition == 5){
-//                aqzglyAdapter.setItem(images);
-//                aqzglyAdapter.notifyDataSetChanged();
-//                maintenanceoforder_aqzgly_imgNum.setText(size + "");
-//            }
+            List<IVDesc> images = maintenanceOfOrderItemBeens.get(mPosition).getmImages();
+            int size = images.size();
+            Logger.e("aaa", "position==" + mPosition);
+            Logger.e("aaa", "size==" + size);
+            if(mPosition == 0){
+                bzbfAdapter.setItem(images);
+                bzbfAdapter.notifyDataSetChanged();
+                maintenanceoforder_bzbf_imgNum.setText(size + "");
+            }else if(mPosition == 1){
+                bzfmAdapter.setItem(images);
+                bzfmAdapter.notifyDataSetChanged();
+                maintenanceoforder_bzfm_imgNum.setText(size + "");
+            }else if(mPosition == 2){
+                aqzyAdapter.setItem(images);
+                aqzyAdapter.notifyDataSetChanged();
+                maintenanceoforder_aqzy_imgNum.setText(size + "");
+            }else if(mPosition == 3){
+                sgzyAdapter.setItem(images);
+                sgzyAdapter.notifyDataSetChanged();
+                maintenanceoforder_sgzy_imgNum.setText(size + "");
+            }else if(mPosition == 4){
+                aqxsAdapter.setItem(images);
+                aqxsAdapter.notifyDataSetChanged();
+                maintenanceoforder_aqxs_imgNum.setText(size + "");
+            }else if(mPosition == 5){
+                aqzglyAdapter.setItem(images);
+                aqzglyAdapter.notifyDataSetChanged();
+                maintenanceoforder_aqzgly_imgNum.setText(size + "");
+            }
 //            mAdapter.setData(maintenanceTableItemBeen);
 //            mAdapter.notifyDataSetChanged();
 
@@ -815,23 +816,23 @@ public class MaintenanceOfOrderActivity extends Activity {
 
 
 
-//            maintenanceOfOrderItemBeens.get(mPosition).getmVideo().add(desc);
-//            List<IVDesc> videos = maintenanceOfOrderItemBeens.get(mPosition).getmVideo();
-//            int size = videos.size();
-//
-//            if(mPosition == 0){
-//                maintenanceoforder_bzbf_videoNum.setText(size + "");
-//            }else if(mPosition == 1){
-//                maintenanceoforder_bzfm_videoNum.setText(size + "");
-//            }else if(mPosition == 2){
-//                maintenanceoforder_aqzy_videoNum.setText(size + "");
-//            }else if(mPosition == 3){
-//                maintenanceoforder_sgzy_videoNum.setText(size + "");
-//            }else if(mPosition == 4){
-//                maintenanceoforder_aqxs_videoNum.setText(size + "");
-//            }else if(mPosition == 5){
-//                maintenanceoforder_aqzgly_videoNum.setText(size + "");
-//            }
+            maintenanceOfOrderItemBeens.get(mPosition).getmVideo().add(desc);
+            List<IVDesc> videos = maintenanceOfOrderItemBeens.get(mPosition).getmVideo();
+            int size = videos.size();
+
+            if(mPosition == 0){
+                maintenanceoforder_bzbf_videoNum.setText(size + "");
+            }else if(mPosition == 1){
+                maintenanceoforder_bzfm_videoNum.setText(size + "");
+            }else if(mPosition == 2){
+                maintenanceoforder_aqzy_videoNum.setText(size + "");
+            }else if(mPosition == 3){
+                maintenanceoforder_sgzy_videoNum.setText(size + "");
+            }else if(mPosition == 4){
+                maintenanceoforder_aqxs_videoNum.setText(size + "");
+            }else if(mPosition == 5){
+                maintenanceoforder_aqzgly_videoNum.setText(size + "");
+            }
 
 
 //            mAdapter.setData(maintenanceTableItemBeen);

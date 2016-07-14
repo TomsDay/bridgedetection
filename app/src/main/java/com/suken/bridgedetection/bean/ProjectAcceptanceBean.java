@@ -1,9 +1,13 @@
 package com.suken.bridgedetection.bean;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/6/27.
@@ -66,6 +70,50 @@ public class ProjectAcceptanceBean implements Serializable{
     private String status;
     @DatabaseField
     private String weather;
+    @DatabaseField
+    private String picattachment;
+
+    private List<IVDesc> mImages = new ArrayList<IVDesc>();
+
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> iDescs;
+
+    @Override
+    public String toString() {
+        return "ProjectAcceptanceBean{" +
+                "id=" + id +
+                ", orgid='" + orgid + '\'' +
+                ", versionno='" + versionno + '\'' +
+                ", createBy='" + createBy + '\'' +
+                ", creator='" + creator + '\'' +
+                ", createtime='" + createtime + '\'' +
+                ", updateBy='" + updateBy + '\'' +
+                ", updator='" + updator + '\'' +
+                ", updatetime='" + updatetime + '\'' +
+                ", flag='" + flag + '\'' +
+                ", gydwId='" + gydwId + '\'' +
+                ", bno='" + bno + '\'' +
+                ", yhtzid='" + yhtzid + '\'' +
+                ", yhtzdno='" + yhtzdno + '\'' +
+                ", gydwName='" + gydwName + '\'' +
+                ", sgdwid='" + sgdwid + '\'' +
+                ", sgdwmc='" + sgdwmc + '\'' +
+                ", sgks='" + sgks + '\'' +
+                ", sgjs='" + sgjs + '\'' +
+                ", ysjg='" + ysjg + '\'' +
+                ", qrzs='" + qrzs + '\'' +
+                ", ysry='" + ysry + '\'' +
+                ", ysrq='" + ysrq + '\'' +
+                ", sgfzry='" + sgfzry + '\'' +
+                ", sgfzdate='" + sgfzdate + '\'' +
+                ", tjsj='" + tjsj + '\'' +
+                ", status='" + status + '\'' +
+                ", weather='" + weather + '\'' +
+                ", picattachment='" + picattachment + '\'' +
+                ", mImages=" + mImages +
+                ", iDescs=" + iDescs +
+                '}';
+    }
 
     public ProjectAcceptanceBean() {
     }
@@ -100,6 +148,30 @@ public class ProjectAcceptanceBean implements Serializable{
         this.status = status;
     }
 
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
+    }
 
     public String getWeather() {
         return weather;

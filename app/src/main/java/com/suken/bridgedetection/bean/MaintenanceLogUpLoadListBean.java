@@ -1,6 +1,10 @@
 package com.suken.bridgedetection.bean;
 
+import com.j256.ormlite.field.DatabaseField;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/7/12.
@@ -14,6 +18,12 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     private String dj;
     private String wxsl;
     private String clmc;
+    private String picattachment;
+    private String vidattachment;
+    private String state;
+
+    private List<IVDesc> mImages = new ArrayList<IVDesc>();
+    private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
 
 
@@ -29,6 +39,46 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     }
 
     public MaintenanceLogUpLoadListBean() {
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public String getVidattachment() {
+        return vidattachment;
+    }
+
+    public void setVidattachment(String vidattachment) {
+        this.vidattachment = vidattachment;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public List<IVDesc> getmVideo() {
+        return mVideo;
+    }
+
+    public void setmVideo(List<IVDesc> mVideo) {
+        this.mVideo = mVideo;
     }
 
     public String getBhid() {

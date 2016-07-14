@@ -41,19 +41,21 @@ public class MaintenanceOfOrderItemBean implements Serializable {
     private String jcx;
     @DatabaseField
     private String jczt;
-//    @DatabaseField
-//    private String picattachment;
-//    @DatabaseField
-//    private String vidattachment;
+    @DatabaseField
+    private String picattachment;
+    @DatabaseField
+    private String vidattachment;
     @DatabaseField
     private String tpjd;
     @DatabaseField
     private String tpwd;
 
+    private int type;
+
 //    private String tjsj;
 //
-//    private List<IVDesc> mImages = new ArrayList<IVDesc>();
-//    private List<IVDesc> mVideo = new ArrayList<IVDesc>();
+    private List<IVDesc> mImages = new ArrayList<IVDesc>();
+    private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
 
     @DatabaseField(foreign = true,foreignAutoRefresh = true)
@@ -65,6 +67,65 @@ public class MaintenanceOfOrderItemBean implements Serializable {
     private ForeignCollection<IVDesc> vDescs;
 
     public MaintenanceOfOrderItemBean() {
+    }
+
+    @Override
+    public String toString() {
+        return "MaintenanceOfOrderItemBean{" +
+                "id=" + id +
+                ", jcx='" + jcx + '\'' +
+                ", jczt='" + jczt + '\'' +
+                ", picattachment='" + picattachment + '\'' +
+                ", vidattachment='" + vidattachment + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
+                ", type=" + type +
+                ", mImages=" + mImages +
+                ", mVideo=" + mVideo +
+                ", maintenanceOfOrderBean=" + maintenanceOfOrderBean +
+                ", iDescs=" + iDescs +
+                ", vDescs=" + vDescs +
+                '}';
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public String getVidattachment() {
+        return vidattachment;
+    }
+
+    public void setVidattachment(String vidattachment) {
+        this.vidattachment = vidattachment;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public List<IVDesc> getmVideo() {
+        return mVideo;
+    }
+
+    public void setmVideo(List<IVDesc> mVideo) {
+        this.mVideo = mVideo;
     }
 
     public int getId() {

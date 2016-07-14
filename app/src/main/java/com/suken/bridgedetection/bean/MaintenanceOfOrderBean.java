@@ -88,6 +88,30 @@ public class MaintenanceOfOrderBean implements Serializable {
     public MaintenanceOfOrderBean() {
     }
 
+    @Override
+    public String toString() {
+        return "MaintenanceOfOrderBean{" +
+                "id=" + id +
+                ", gldwId='" + gldwId + '\'' +
+                ", gldwName='" + gldwName + '\'' +
+                ", yhrzid='" + yhrzid + '\'' +
+                ", yhrzbno='" + yhrzbno + '\'' +
+                ", sgdwid='" + sgdwid + '\'' +
+                ", sgdwmc='" + sgdwmc + '\'' +
+                ", jcsj='" + jcsj + '\'' +
+                ", xcnr='" + xcnr + '\'' +
+                ", jcry='" + jcry + '\'' +
+                ", jcdate='" + jcdate + '\'' +
+                ", aqgly='" + aqgly + '\'' +
+                ", status='" + status + '\'' +
+                ", qtqk='" + qtqk + '\'' +
+                ", aqgldate='" + aqgldate + '\'' +
+                ", weather='" + weather + '\'' +
+                ", safetycheckdetailList=" + safetycheckdetailList +
+                ", maintenanceOfOrderItemBeen=" + maintenanceOfOrderItemBeen +
+                '}';
+    }
+
     public String getWeather() {
         return weather;
     }

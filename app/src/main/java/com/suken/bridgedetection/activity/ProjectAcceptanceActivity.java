@@ -23,6 +23,8 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.ProjectAcceptanceListAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.IVDesc;
+import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
@@ -73,7 +75,8 @@ public class ProjectAcceptanceActivity extends Activity {
     private ProjectAcceptanceDao projectAcceptanceDao;
     private List<ProjectAcceptanceBean> projectAcceptanceBeen = new ArrayList<ProjectAcceptanceBean>();
     private ProjacceptBean projacceptBean;
-
+    private IVDescDao ivDescDao;
+    ProjectAcceptanceBean bean;
 
 
     @Override
@@ -82,6 +85,8 @@ public class ProjectAcceptanceActivity extends Activity {
         setContentView(R.layout.activity_project_acceptance);
         mContext = this;
         projectAcceptanceDao = new ProjectAcceptanceDao();
+        ivDescDao = new IVDescDao();
+        bean = new ProjectAcceptanceBean();
         id = getIntent().getIntExtra("id", 0);
         projacceptBean = (ProjacceptBean) getIntent().getSerializableExtra("bean");
         initView();
@@ -284,7 +289,7 @@ public class ProjectAcceptanceActivity extends Activity {
                         String returnContent = projectacceptance_return_ev.getText().toString();
                         String xsfzr = projectacceptance_xsfzr_ev.getText().toString();
 
-                        ProjectAcceptanceBean bean = new ProjectAcceptanceBean();
+
                         bean.setGydwName(gydw);
                         bean.setBno(bh);
                         bean.setWeather(strWeather);
@@ -305,6 +310,18 @@ public class ProjectAcceptanceActivity extends Activity {
                         }else{
                             projectAcceptanceDao.add(bean);
                         }
+
+                        List<IVDesc> imagesDescList = bean.getmImages();
+                        for(int q = 0; q < imagesDescList.size(); q++){
+                            IVDesc imageDesc = imagesDescList.get(q);
+                            imageDesc.setImageProjectAcceptanceBean(bean);
+                            if (imageDesc.getId() != 0) {
+                                ivDescDao.update(imageDesc);
+                            }else {
+                                ivDescDao.add(imageDesc);
+                            }
+                        }
+
 
                         Logger.e("aaa", "=======11111====="+projectAcceptanceDao.queryAll().toString());
                         finish();
@@ -330,8 +347,12 @@ public class ProjectAcceptanceActivity extends Activity {
         FileOutputStream fos = null;
         String path = null;
         File file = null;
+        String name = null;
         try {
-            path = Environment.getExternalStorageDirectory() + File.separator + System.currentTimeMillis() + ".jpg";
+            name = "signature-" + System.currentTimeMillis() + "-image.jpg";
+            path = Environment.getExternalStorageDirectory() + File.separator + getPackageName() + File.separator +
+                    name;
+
             Log.i("aaa","path ====== "+path);
             file = new File(path);
             fos = new FileOutputStream(file);
@@ -343,9 +364,16 @@ public class ProjectAcceptanceActivity extends Activity {
             if (b != null) {
                 fos.write(b);
             }
+            IVDesc ivDesc = new IVDesc();
+            ivDesc.setName(name);
+            ivDesc.setPath(path);
+            bean.getmImages().add(ivDesc);
+
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+
+
             try {
                 if (fos != null) {
                     fos.close();

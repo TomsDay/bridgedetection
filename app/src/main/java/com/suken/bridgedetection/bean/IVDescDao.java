@@ -130,6 +130,17 @@ public class IVDescDao {
         }
     }
 
+    public List<IVDesc> getImageProjectAcceptanceBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageProjectAcceptanceBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public void delete(int id){
         try {
             DeleteBuilder<IVDesc, String> deleteBuilder = ivDescs.deleteBuilder();

@@ -37,6 +37,9 @@ public class IVDesc implements Serializable{
     @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "videoMaintenanceOfOrderItemBean_id")
     private MaintenanceOfOrderItemBean videoMaintenanceOfOrderItemBean;
 
+    @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "imageProjectAcceptanceBean_id")
+    private ProjectAcceptanceBean imageProjectAcceptanceBean;
+
 
 
     public IVDesc() {
@@ -50,16 +53,21 @@ public class IVDesc implements Serializable{
     @Override
     public String toString() {
         return "IVDesc{" +
-                "id=" + id +
+                "path='" + path + '\'' +
                 ", name='" + name + '\'' +
-                ", path='" + path + '\'' +
-                ", imageMaintenanceLogItemBean=" + imageMaintenanceLogItemBean +
-                ", videoMaintenanceLogItemBean=" + videoMaintenanceLogItemBean +
-                ", imageMaintenanceTableItemBean=" + imageMaintenanceTableItemBean +
-                ", videoMaintenanceTableItemBean=" + videoMaintenanceTableItemBean +
+                ", id=" + id +
                 '}';
     }
 
+
+
+    public ProjectAcceptanceBean getImageProjectAcceptanceBean() {
+        return imageProjectAcceptanceBean;
+    }
+
+    public void setImageProjectAcceptanceBean(ProjectAcceptanceBean imageProjectAcceptanceBean) {
+        this.imageProjectAcceptanceBean = imageProjectAcceptanceBean;
+    }
 
     public MaintenanceOfOrderItemBean getImageMaintenanceOfOrderItemBean() {
         return imageMaintenanceOfOrderItemBean;

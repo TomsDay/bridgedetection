@@ -4,12 +4,16 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
@@ -32,12 +36,14 @@ public class MaintenanceAdapter extends BaseAdapter {
     private ArrayList<String> list = new ArrayList<String>();
     private ArrayList<String> submitList = new ArrayList<String>();
     private LayoutInflater inflater;
+
     public MaintenanceAdapter(Context context) {
         mContext = context;
         inflater = LayoutInflater.from(mContext);
         getData();
     }
-    public void getData(){
+
+    public void getData() {
         String str = "高速公路";
 
         list.add(str + "养护巡查日志");
@@ -50,7 +56,8 @@ public class MaintenanceAdapter extends BaseAdapter {
         list.add("日常维修保养工程验收");
 //        list.add(str + "综合查询页面");
     }
-    public void setData(ArrayList<String> list){
+
+    public void setData(ArrayList<String> list) {
         this.submitList = list;
     }
 
@@ -72,33 +79,69 @@ public class MaintenanceAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
-        if(view == null){
+        if (view == null) {
             view = inflater.inflate(R.layout.maintenance_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
-        }else{
+        } else {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
-        if(position == 1){
+        if (position == 1) {
             holder.maintenance_item_new.setText("查看");
-        }else{
+        } else {
             holder.maintenance_item_new.setText("新建");
         }
         holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+                Log.i("aaa", "onClick: "+roles);
                 Intent in = new Intent();
-                if(position == 0){
-                    in.setClass(mContext, MaintenanceTableActivity.class);
-                }else if(position == 1){
-                    in.setClass(mContext, MaintenanceLogListActivity.class);
-                }else if(position == 2){
-                    in.setClass(mContext,MaintenanceOfOrderActivity .class);
-                } else if(position == 3){
-                    in.setClass(mContext, ProjectAcceptanceListActivity.class);
+                if (position == 0) {
 
-                }else{
+                    //日常养护权限
+
+//                    if (roles.contains("highway_yhxcy")
+//                            || roles.contains("highway_yhgcs")) {
+                        in.setClass(mContext, MaintenanceTableActivity.class);
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+                } else if (position == 1) {
+//                    if (roles.contains("highway_rcyhwxgcs")) {
+                        in.setClass(mContext, MaintenanceLogListActivity.class);
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+                } else if (position == 2) {
+//                    if (roles.contains("highway_rcyhaqjcy")
+//                            || roles.contains("highway_yhgcs")) {
+                        in.setClass(mContext, MaintenanceOfOrderActivity.class);
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+                } else if (position == 3) {
+//                    if (roles.contains("highway_rcyhysy")
+//                            || roles.contains("highway_yhgcs")) {
+                        in.setClass(mContext, ProjectAcceptanceListActivity.class);
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+
+                } else {
                     return;
                 }
 
@@ -106,9 +149,9 @@ public class MaintenanceAdapter extends BaseAdapter {
             }
         });
         String submitNum = submitList.get(position);
-        if(submitNum.equals("0")){
+        if (submitNum.equals("0")) {
             holder.maintenance_item_submit.setVisibility(View.GONE);
-        }else{
+        } else {
             holder.maintenance_item_submit.setText("待提交：" + submitNum);
             holder.maintenance_item_submit.setVisibility(View.VISIBLE);
         }
@@ -117,15 +160,15 @@ public class MaintenanceAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent();
-                if(position == 0) {
+                if (position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
-                }else if(position == 1){
+                } else if (position == 1) {
                     in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
-                }else if(position == 2){
+                } else if (position == 2) {
                     in.setClass(mContext, MaintenanceOfOrderListActivity.class);
-                }else if(position == 3){
+                } else if (position == 3) {
                     in.setClass(mContext, ProjectAcceptanceListUpLoadActivity.class);
-                }else{
+                } else {
                     return;
                 }
                 mContext.startActivity(in);
@@ -134,12 +177,13 @@ public class MaintenanceAdapter extends BaseAdapter {
         });
         return view;
     }
-    class HolderView{
+
+    class HolderView {
         private TextView maintenance_item_name,
                 maintenance_item_new,
                 maintenance_item_submit;
 
-        public HolderView(View v){
+        public HolderView(View v) {
             maintenance_item_name = (TextView) v.findViewById(R.id.maintenance_item_name);
             maintenance_item_new = (TextView) v.findViewById(R.id.maintenance_item_new);
             maintenance_item_submit = (TextView) v.findViewById(R.id.maintenance_item_submit);

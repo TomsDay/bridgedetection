@@ -18,14 +18,19 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.location.LocationManager;
+import com.suken.bridgedetection.location.LocationResult;
+import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
@@ -183,7 +188,32 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             public void onClick(View view) {
                 ClickImagePositon = position;
                 mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
+                LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
+                    @Override
+                    public void onLocationFinished(LocationResult result) {
+                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                            return;
+                        }
+                        boolean mIsGpsSuccess = false;
+                        if (result.isSuccess) {
+//                            mIsGpsSuccess = true;
+                            list.get(position).setTpjd(result.latitude + "");
+                            list.get(position).setTpwd(result.longitude + "");
+//                            mjingdu.setText("经度:" + result.latitude);
 
+//                            mWeidu.setText("纬度:" + result.longitude);
+//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
+//                            tv.setTextColor(Color.WHITE);
+                        } else if(!mIsGpsSuccess){
+                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
+//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//                            tv.setText("定位失败");
+//                            tv.setTextColor(Color.RED);
+                        }
+
+                    }
+                });
             }
         });
         holder.video.setOnClickListener(new View.OnClickListener() {

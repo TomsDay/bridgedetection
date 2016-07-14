@@ -95,7 +95,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
 
-                final String[] names = {"编辑", "上传","删除", "取消"};
+                final String[] names = {"编辑","删除", "取消"};
                 AlertDialog dialog = new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 

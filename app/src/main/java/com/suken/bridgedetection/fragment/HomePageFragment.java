@@ -171,8 +171,22 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
             }
         }
         if(vid ==  R.drawable.richangyanghu){
-            Intent in = new Intent(getActivity(), MaintenanceActivity.class);
-            startActivity(in);
+            String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+            //日常养护权限
+
+//            if (roles.contains("highway_rcyhysy")
+//                    || roles.contains("highway_rcyhaqjcy")
+//                    || roles.contains("highway_rcyhwxgcs")
+//                    || roles.contains("highway_rcyhxdy")
+//                    || roles.contains("highway_yhxcy")
+//                    || roles.contains("highway_yhgcs")){  //进入日常养护
+
+                Intent in = new Intent(getActivity(), MaintenanceActivity.class);
+                startActivity(in);
+//            } else {
+//                toast("无权限");
+//            }
+
             return;
         }
 
@@ -387,7 +401,7 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
             AlertDialog.Builder dialog = new AlertDialog.Builder(this.getActivity());
             dialog.setTitle("提醒");
             dialog.setMessage("请打开GPS");
-            dialog.setPositiveButton("确定", new android.content.DialogInterface.OnClickListener() {
+            dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface arg0, int arg1) {
@@ -396,7 +410,7 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
                     startActivityForResult(intent, 0); // 设置完成后返回到原来的界面
                 }
             });
-            dialog.setNeutralButton("取消", new android.content.DialogInterface.OnClickListener() {
+            dialog.setNeutralButton("取消", new DialogInterface.OnClickListener() {
 
                 @Override
                 public void onClick(DialogInterface arg0, int arg1) {
