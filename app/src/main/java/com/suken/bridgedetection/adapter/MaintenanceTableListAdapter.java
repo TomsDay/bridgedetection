@@ -26,8 +26,11 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
     private Context mContext;
     private LayoutInflater inflater;
     List<MaintenanceTableBean> maintenanceTableBeanList  = new ArrayList<MaintenanceTableBean>();
-    public MaintenanceTableListAdapter(Context context) {
+
+    private UpLoadOnceTableData upLoadOnceTableData;
+    public MaintenanceTableListAdapter(Context context,UpLoadOnceTableData upLoadOnceTableData) {
         mContext = context;
+        this.upLoadOnceTableData = upLoadOnceTableData;
         inflater = LayoutInflater.from(mContext);
     }
 
@@ -50,7 +53,7 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View view, ViewGroup viewGroup) {
+    public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
         if(view == null){
             view = inflater.inflate(R.layout.maintenancetablelist_item, null);
@@ -66,6 +69,12 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
         holder.maintenancetablelist_item_tv4.setText(bean.getJcsj()+"");
         holder.maintenancetablelist_item_tv5.setText(bean.getXcld()+"");
         holder.maintenancetablelist_item_tv6.setText(bean.getXcry()+"");
+        holder.maintenancetablelist_item_tv7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                upLoadOnceTableData.loadData(position);
+            }
+        });
 
         return view;
     }
@@ -78,7 +87,8 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
                 maintenancetablelist_item_tv3,
                 maintenancetablelist_item_tv4,
                 maintenancetablelist_item_tv5,
-                maintenancetablelist_item_tv6;
+                maintenancetablelist_item_tv6,
+                maintenancetablelist_item_tv7;
 
         private LinearLayout maintenancetablelist_item_Layout;
 
@@ -89,8 +99,12 @@ public class MaintenanceTableListAdapter extends BaseAdapter{
             maintenancetablelist_item_tv4 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv4);
             maintenancetablelist_item_tv5 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv5);
             maintenancetablelist_item_tv6 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv6);
+            maintenancetablelist_item_tv7 = (TextView) v.findViewById(R.id.maintenancetablelist_item_tv7);
 
             maintenancetablelist_item_Layout = (LinearLayout) v.findViewById(R.id.maintenancetablelist_item_Layout);
         }
+    }
+    public interface UpLoadOnceTableData{
+        public void loadData(int position);
     }
 }

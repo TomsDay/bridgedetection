@@ -244,8 +244,8 @@ public class MaintenanceLogActivity extends Activity {
         maintenancelog_weather_spinner = (Spinner) findViewById(R.id.maintenancelog_weather_spinner);
         mStringArrayWeather = getResources().getStringArray(R.array.spinnerWeather);
         mArrayWeatherAdapter = new TestArrayAdapter(mContext, mStringArrayWeather);
-        //设置下拉列表风格(这句不些也行)
-        //mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        设置下拉列表风格(这句不些也行)
+//        mAdapter.setDropDownViewResource(android.R.layout.simple);
         maintenancelog_weather_spinner.setAdapter(mArrayWeatherAdapter);
         //监听Item选中事件
         maintenancelog_weather_spinner.setOnItemSelectedListener(new ItemSelectedListenerImpl());

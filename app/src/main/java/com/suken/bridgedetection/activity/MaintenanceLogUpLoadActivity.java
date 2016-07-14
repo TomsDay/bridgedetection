@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -71,16 +72,24 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
         getAllData();
     }
 
+
     private void initView() {
         mListView = (ListView) findViewById(R.id.maintenance_logListUpLoad_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
-        mAdapter = new MaintenanceLogUpLoadAdapter(mContext);
+        mAdapter = new MaintenanceLogUpLoadAdapter(mContext, new MaintenanceLogUpLoadAdapter.UpLoadOnceLogData() {
+            @Override
+            public void loadData( int position) {
+                MaintenanceLogUpLoadBean bean = maintenanceLogUpLoadBeen.get(position);
+                uploadData(bean, position, false);
+                showLoading("正在上传...");
+            }
+        });
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
-                final String[] names = {"编辑", "上传","删除", "取消"};
-                new AlertDialog.Builder(mContext)
+                final String[] names = {"编辑","删除", "取消"};
+                AlertDialog dialog=new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override
@@ -93,12 +102,12 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                                         in.putExtra("id", listBeen.get(position).getId());
                                         startActivity(in);
                                         break;
-                                    case 1://上传
-                                        MaintenanceLogUpLoadBean bean = maintenanceLogUpLoadBeen.get(position);
-                                        uploadData(bean, position, false);
-                                        showLoading("正在上传...");
-                                        break;
-                                    case 2:
+//                                    case 1://上传
+//                                        MaintenanceLogUpLoadBean bean = maintenanceLogUpLoadBeen.get(position);
+//                                        uploadData(bean, position, false);
+//                                        showLoading("正在上传...");
+//                                        break;
+                                    case 1:
                                         maintenanceLogDao.delete(listBeen.get(position).getId());
                                         for(int i = 0;i<listBeen.get(position).getMaintenlogdetailList().size();i++){
                                             maintenanceLogDao.deleteItem(listBeen.get(position).getMaintenlogdetailList().get(i).getId());
@@ -119,6 +128,12 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                             }
                         })
                         .show();
+
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = 500;
+//                params.height = 200 ;
+
+                dialog.getWindow().setAttributes(params);
             }
         });
         update_all.setOnClickListener(new View.OnClickListener() {

@@ -4,12 +4,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/publicloading.png"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/wifi.png",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/wifi.png"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/spinner_16_inner_holo.png",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/spinner_16_inner_holo.png"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/wifi.png",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/wifi.png"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/demo.png",
@@ -548,12 +548,12 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/zhuanxianggongcheng.png"
     },
     {
-        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_play_big.png",
-        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/btn_play_big.png"
-    },
-    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/ec_keyboard_middle_01_on.9.png",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/ec_keyboard_middle_01_on.9.png"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/btn_play_big.png",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/drawable-hdpi/btn_play_big.png"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/voice_say_small.png",

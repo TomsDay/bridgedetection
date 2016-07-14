@@ -17030,11 +17030,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 63,
+                        "startLine": 87,
                         "startColumn": 4,
-                        "startOffset": 2815,
+                        "startOffset": 3403,
                         "endColumn": 80,
-                        "endOffset": 2891
+                        "endOffset": 3479
                     }
                 }
             },
@@ -17049,11 +17049,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 61,
+                        "startLine": 85,
                         "startColumn": 4,
-                        "startOffset": 2711,
+                        "startOffset": 3299,
                         "endColumn": 102,
-                        "endOffset": 2809
+                        "endOffset": 3397
                     }
                 }
             },
@@ -17068,11 +17068,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 51,
+                        "startLine": 75,
                         "startColumn": 4,
-                        "startOffset": 2270,
+                        "startOffset": 2858,
                         "endColumn": 74,
-                        "endOffset": 2340
+                        "endOffset": 2928
                     }
                 }
             },
@@ -17087,11 +17087,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 55,
+                        "startLine": 79,
                         "startColumn": 4,
-                        "startOffset": 2426,
+                        "startOffset": 3014,
                         "endColumn": 93,
-                        "endOffset": 2515
+                        "endOffset": 3103
                     }
                 }
             },
@@ -17106,11 +17106,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 658,
+                        "startLine": 682,
                         "startColumn": 4,
-                        "startOffset": 31033,
+                        "startOffset": 31621,
                         "endColumn": 68,
-                        "endOffset": 31097
+                        "endOffset": 31685
                     }
                 }
             },
@@ -17125,11 +17125,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 53,
+                        "startLine": 77,
                         "startColumn": 4,
-                        "startOffset": 2346,
+                        "startOffset": 2934,
                         "endColumn": 78,
-                        "endOffset": 2420
+                        "endOffset": 3008
                     }
                 }
             },
@@ -17145,12 +17145,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 121,
+                        "startLine": 145,
                         "startColumn": 4,
-                        "startOffset": 5844,
-                        "endLine": 124,
+                        "startOffset": 6432,
+                        "endLine": 148,
                         "endColumn": 12,
-                        "endOffset": 6070
+                        "endOffset": 6658
                     }
                 }
             },
@@ -17165,11 +17165,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 57,
+                        "startLine": 81,
                         "startColumn": 4,
-                        "startOffset": 2521,
+                        "startOffset": 3109,
                         "endColumn": 99,
-                        "endOffset": 2616
+                        "endOffset": 3204
                     }
                 }
             },
@@ -17184,11 +17184,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 49,
+                        "startLine": 73,
                         "startColumn": 4,
-                        "startOffset": 2190,
+                        "startOffset": 2778,
                         "endColumn": 78,
-                        "endOffset": 2264
+                        "endOffset": 2852
                     }
                 }
             },
@@ -17203,11 +17203,11 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 59,
+                        "startLine": 83,
                         "startColumn": 4,
-                        "startOffset": 2622,
+                        "startOffset": 3210,
                         "endColumn": 87,
-                        "endOffset": 2705
+                        "endOffset": 3293
                     }
                 }
             },
@@ -17223,12 +17223,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 278,
+                        "startLine": 302,
                         "startColumn": 4,
-                        "startOffset": 13450,
-                        "endLine": 281,
+                        "startOffset": 14038,
+                        "endLine": 305,
                         "endColumn": 12,
-                        "endOffset": 13702
+                        "endOffset": 14290
                     }
                 }
             },
@@ -17244,12 +17244,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 267,
+                        "startLine": 291,
                         "startColumn": 4,
-                        "startOffset": 12847,
-                        "endLine": 276,
+                        "startOffset": 13435,
+                        "endLine": 300,
                         "endColumn": 12,
-                        "endOffset": 13444
+                        "endOffset": 14032
                     }
                 }
             },
@@ -17265,12 +17265,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 197,
+                        "startLine": 221,
                         "startColumn": 4,
-                        "startOffset": 9356,
-                        "endLine": 202,
+                        "startOffset": 9944,
+                        "endLine": 226,
                         "endColumn": 12,
-                        "endOffset": 9767
+                        "endOffset": 10355
                     }
                 }
             },
@@ -17286,12 +17286,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 607,
+                        "startLine": 631,
                         "startColumn": 4,
-                        "startOffset": 28735,
-                        "endLine": 616,
+                        "startOffset": 29323,
+                        "endLine": 640,
                         "endColumn": 12,
-                        "endOffset": 29303
+                        "endOffset": 29891
                     }
                 }
             },
@@ -17307,12 +17307,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 627,
+                        "startLine": 651,
                         "startColumn": 4,
-                        "startOffset": 29688,
-                        "endLine": 629,
+                        "startOffset": 30276,
+                        "endLine": 653,
                         "endColumn": 12,
-                        "endOffset": 29835
+                        "endOffset": 30423
                     }
                 }
             },
@@ -17328,12 +17328,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 622,
+                        "startLine": 646,
                         "startColumn": 4,
-                        "startOffset": 29458,
-                        "endLine": 625,
+                        "startOffset": 30046,
+                        "endLine": 649,
                         "endColumn": 12,
-                        "endOffset": 29682
+                        "endOffset": 30270
                     }
                 }
             },
@@ -17349,12 +17349,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 618,
+                        "startLine": 642,
                         "startColumn": 4,
-                        "startOffset": 29309,
-                        "endLine": 620,
+                        "startOffset": 29897,
+                        "endLine": 644,
                         "endColumn": 12,
-                        "endOffset": 29452
+                        "endOffset": 30040
                     }
                 }
             },
@@ -17370,12 +17370,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 576,
+                        "startLine": 600,
                         "startColumn": 4,
-                        "startOffset": 27281,
-                        "endLine": 586,
+                        "startOffset": 27869,
+                        "endLine": 610,
                         "endColumn": 12,
-                        "endOffset": 27877
+                        "endOffset": 28465
                     }
                 }
             },
@@ -17391,12 +17391,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 333,
+                        "startLine": 357,
                         "startColumn": 4,
-                        "startOffset": 16073,
-                        "endLine": 338,
+                        "startOffset": 16661,
+                        "endLine": 362,
                         "endColumn": 12,
-                        "endOffset": 16371
+                        "endOffset": 16959
                     }
                 }
             },
@@ -17412,12 +17412,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 293,
+                        "startLine": 317,
                         "startColumn": 4,
-                        "startOffset": 14179,
-                        "endLine": 301,
+                        "startOffset": 14767,
+                        "endLine": 325,
                         "endColumn": 12,
-                        "endOffset": 14623
+                        "endOffset": 15211
                     }
                 }
             },
@@ -17433,12 +17433,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 594,
+                        "startLine": 618,
                         "startColumn": 4,
-                        "startOffset": 28137,
-                        "endLine": 597,
+                        "startOffset": 28725,
+                        "endLine": 621,
                         "endColumn": 12,
-                        "endOffset": 28354
+                        "endOffset": 28942
                     }
                 }
             },
@@ -17454,12 +17454,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 479,
+                        "startLine": 503,
                         "startColumn": 4,
-                        "startOffset": 22730,
-                        "endLine": 491,
+                        "startOffset": 23318,
+                        "endLine": 515,
                         "endColumn": 12,
-                        "endOffset": 23520
+                        "endOffset": 24108
                     }
                 }
             },
@@ -17475,12 +17475,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 224,
+                        "startLine": 248,
                         "startColumn": 4,
-                        "startOffset": 10797,
-                        "endLine": 230,
+                        "startOffset": 11385,
+                        "endLine": 254,
                         "endColumn": 12,
-                        "endOffset": 11195
+                        "endOffset": 11783
                     }
                 }
             },
@@ -17496,12 +17496,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 131,
+                        "startLine": 155,
                         "startColumn": 4,
-                        "startOffset": 6259,
-                        "endLine": 138,
+                        "startOffset": 6847,
+                        "endLine": 162,
                         "endColumn": 12,
-                        "endOffset": 6677
+                        "endOffset": 7265
                     }
                 }
             },
@@ -17517,12 +17517,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 154,
+                        "startLine": 178,
                         "startColumn": 4,
-                        "startOffset": 7270,
-                        "endLine": 165,
+                        "startOffset": 7858,
+                        "endLine": 189,
                         "endColumn": 12,
-                        "endOffset": 7897
+                        "endOffset": 8485
                     }
                 }
             },
@@ -17538,12 +17538,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 167,
+                        "startLine": 191,
                         "startColumn": 4,
-                        "startOffset": 7903,
-                        "endLine": 170,
+                        "startOffset": 8491,
+                        "endLine": 194,
                         "endColumn": 12,
-                        "endOffset": 8141
+                        "endOffset": 8729
                     }
                 }
             },
@@ -17559,12 +17559,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 319,
+                        "startLine": 343,
                         "startColumn": 4,
-                        "startOffset": 15401,
-                        "endLine": 322,
+                        "startOffset": 15989,
+                        "endLine": 346,
                         "endColumn": 12,
-                        "endOffset": 15625
+                        "endOffset": 16213
                     }
                 }
             },
@@ -17580,12 +17580,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 283,
+                        "startLine": 307,
                         "startColumn": 4,
-                        "startOffset": 13708,
-                        "endLine": 291,
+                        "startOffset": 14296,
+                        "endLine": 315,
                         "endColumn": 12,
-                        "endOffset": 14173
+                        "endOffset": 14761
                     }
                 }
             },
@@ -17601,12 +17601,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 258,
+                        "startLine": 282,
                         "startColumn": 4,
-                        "startOffset": 12371,
-                        "endLine": 266,
+                        "startOffset": 12959,
+                        "endLine": 290,
                         "endColumn": 12,
-                        "endOffset": 12842
+                        "endOffset": 13430
                     }
                 }
             },
@@ -17622,12 +17622,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 449,
+                        "startLine": 473,
                         "startColumn": 4,
-                        "startOffset": 21475,
-                        "endLine": 454,
+                        "startOffset": 22063,
+                        "endLine": 478,
                         "endColumn": 12,
-                        "endOffset": 21750
+                        "endOffset": 22338
                     }
                 }
             },
@@ -17643,12 +17643,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 518,
+                        "startLine": 542,
                         "startColumn": 4,
-                        "startOffset": 24669,
-                        "endLine": 522,
+                        "startOffset": 25257,
+                        "endLine": 546,
                         "endColumn": 12,
-                        "endOffset": 24941
+                        "endOffset": 25529
                     }
                 }
             },
@@ -17664,12 +17664,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 493,
+                        "startLine": 517,
                         "startColumn": 4,
-                        "startOffset": 23526,
-                        "endLine": 497,
+                        "startOffset": 24114,
+                        "endLine": 521,
                         "endColumn": 12,
-                        "endOffset": 23812
+                        "endOffset": 24400
                     }
                 }
             },
@@ -17685,12 +17685,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 509,
+                        "startLine": 533,
                         "startColumn": 4,
-                        "startOffset": 24193,
-                        "endLine": 516,
+                        "startOffset": 24781,
+                        "endLine": 540,
                         "endColumn": 12,
-                        "endOffset": 24663
+                        "endOffset": 25251
                     }
                 }
             },
@@ -17706,12 +17706,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 471,
+                        "startLine": 495,
                         "startColumn": 4,
-                        "startOffset": 22342,
-                        "endLine": 477,
+                        "startOffset": 22930,
+                        "endLine": 501,
                         "endColumn": 12,
-                        "endOffset": 22724
+                        "endOffset": 23312
                     }
                 }
             },
@@ -17727,12 +17727,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 558,
+                        "startLine": 582,
                         "startColumn": 4,
-                        "startOffset": 26571,
-                        "endLine": 561,
+                        "startOffset": 27159,
+                        "endLine": 585,
                         "endColumn": 12,
-                        "endOffset": 26780
+                        "endOffset": 27368
                     }
                 }
             },
@@ -17748,12 +17748,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 172,
+                        "startLine": 196,
                         "startColumn": 4,
-                        "startOffset": 8147,
-                        "endLine": 179,
+                        "startOffset": 8735,
+                        "endLine": 203,
                         "endColumn": 12,
-                        "endOffset": 8606
+                        "endOffset": 9194
                     }
                 }
             },
@@ -17769,12 +17769,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 339,
+                        "startLine": 363,
                         "startColumn": 4,
-                        "startOffset": 16376,
-                        "endLine": 341,
+                        "startOffset": 16964,
+                        "endLine": 365,
                         "endColumn": 12,
-                        "endOffset": 16501
+                        "endOffset": 17089
                     }
                 }
             },
@@ -17790,12 +17790,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 310,
+                        "startLine": 334,
                         "startColumn": 4,
-                        "startOffset": 14955,
-                        "endLine": 317,
+                        "startOffset": 15543,
+                        "endLine": 341,
                         "endColumn": 12,
-                        "endOffset": 15395
+                        "endOffset": 15983
                     }
                 }
             },
@@ -17811,12 +17811,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 303,
+                        "startLine": 327,
                         "startColumn": 4,
-                        "startOffset": 14629,
-                        "endLine": 308,
+                        "startOffset": 15217,
+                        "endLine": 332,
                         "endColumn": 12,
-                        "endOffset": 14949
+                        "endOffset": 15537
                     }
                 }
             },
@@ -17832,12 +17832,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 524,
+                        "startLine": 548,
                         "startColumn": 4,
-                        "startOffset": 24947,
-                        "endLine": 527,
+                        "startOffset": 25535,
+                        "endLine": 551,
                         "endColumn": 12,
-                        "endOffset": 25131
+                        "endOffset": 25719
                     }
                 }
             },
@@ -17853,12 +17853,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 505,
+                        "startLine": 529,
                         "startColumn": 4,
-                        "startOffset": 24055,
-                        "endLine": 507,
+                        "startOffset": 24643,
+                        "endLine": 531,
                         "endColumn": 12,
-                        "endOffset": 24187
+                        "endOffset": 24775
                     }
                 }
             },
@@ -17874,12 +17874,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 343,
+                        "startLine": 367,
                         "startColumn": 4,
-                        "startOffset": 16507,
-                        "endLine": 347,
+                        "startOffset": 17095,
+                        "endLine": 371,
                         "endColumn": 12,
-                        "endOffset": 16732
+                        "endOffset": 17320
                     }
                 }
             },
@@ -17895,12 +17895,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 539,
+                        "startLine": 563,
                         "startColumn": 4,
-                        "startOffset": 25659,
-                        "endLine": 547,
+                        "startOffset": 26247,
+                        "endLine": 571,
                         "endColumn": 12,
-                        "endOffset": 26115
+                        "endOffset": 26703
                     }
                 }
             },
@@ -17916,12 +17916,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 549,
+                        "startLine": 573,
                         "startColumn": 4,
-                        "startOffset": 26121,
-                        "endLine": 556,
+                        "startOffset": 26709,
+                        "endLine": 580,
                         "endColumn": 12,
-                        "endOffset": 26565
+                        "endOffset": 27153
                     }
                 }
             },
@@ -17937,12 +17937,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 181,
+                        "startLine": 205,
                         "startColumn": 4,
-                        "startOffset": 8612,
-                        "endLine": 186,
+                        "startOffset": 9200,
+                        "endLine": 210,
                         "endColumn": 12,
-                        "endOffset": 8896
+                        "endOffset": 9484
                     }
                 }
             },
@@ -17958,12 +17958,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 140,
+                        "startLine": 164,
                         "startColumn": 4,
-                        "startOffset": 6683,
-                        "endLine": 145,
+                        "startOffset": 7271,
+                        "endLine": 169,
                         "endColumn": 12,
-                        "endOffset": 6970
+                        "endOffset": 7558
                     }
                 }
             },
@@ -17979,12 +17979,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 147,
+                        "startLine": 171,
                         "startColumn": 4,
-                        "startOffset": 6976,
-                        "endLine": 152,
+                        "startOffset": 7564,
+                        "endLine": 176,
                         "endColumn": 12,
-                        "endOffset": 7264
+                        "endOffset": 7852
                     }
                 }
             },
@@ -18000,12 +18000,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 188,
+                        "startLine": 212,
                         "startColumn": 4,
-                        "startOffset": 8902,
-                        "endLine": 191,
+                        "startOffset": 9490,
+                        "endLine": 215,
                         "endColumn": 12,
-                        "endOffset": 9176
+                        "endOffset": 9764
                     }
                 }
             },
@@ -18021,12 +18021,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 193,
+                        "startLine": 217,
                         "startColumn": 4,
-                        "startOffset": 9182,
-                        "endLine": 195,
+                        "startOffset": 9770,
+                        "endLine": 219,
                         "endColumn": 12,
-                        "endOffset": 9350
+                        "endOffset": 9938
                     }
                 }
             },
@@ -18042,12 +18042,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 569,
+                        "startLine": 593,
                         "startColumn": 4,
-                        "startOffset": 27009,
-                        "endLine": 574,
+                        "startOffset": 27597,
+                        "endLine": 598,
                         "endColumn": 12,
-                        "endOffset": 27275
+                        "endOffset": 27863
                     }
                 }
             },
@@ -18063,12 +18063,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 204,
+                        "startLine": 228,
                         "startColumn": 4,
-                        "startOffset": 9773,
-                        "endLine": 214,
+                        "startOffset": 10361,
+                        "endLine": 238,
                         "endColumn": 12,
-                        "endOffset": 10407
+                        "endOffset": 10995
                     }
                 }
             },
@@ -18084,12 +18084,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 216,
+                        "startLine": 240,
                         "startColumn": 4,
-                        "startOffset": 10413,
-                        "endLine": 218,
+                        "startOffset": 11001,
+                        "endLine": 242,
                         "endColumn": 12,
-                        "endOffset": 10564
+                        "endOffset": 11152
                     }
                 }
             },
@@ -18105,12 +18105,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 219,
+                        "startLine": 243,
                         "startColumn": 4,
-                        "startOffset": 10569,
-                        "endLine": 222,
+                        "startOffset": 11157,
+                        "endLine": 246,
                         "endColumn": 12,
-                        "endOffset": 10791
+                        "endOffset": 11379
                     }
                 }
             },
@@ -18126,12 +18126,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 696,
+                        "startLine": 720,
                         "startColumn": 4,
-                        "startOffset": 32699,
-                        "endLine": 699,
+                        "startOffset": 33287,
+                        "endLine": 723,
                         "endColumn": 12,
-                        "endOffset": 32919
+                        "endOffset": 33507
                     }
                 }
             },
@@ -18147,12 +18147,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 94,
+                        "startLine": 118,
                         "startColumn": 4,
-                        "startOffset": 4580,
-                        "endLine": 102,
+                        "startOffset": 5168,
+                        "endLine": 126,
                         "endColumn": 12,
-                        "endOffset": 5003
+                        "endOffset": 5591
                     }
                 }
             },
@@ -18168,12 +18168,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 104,
+                        "startLine": 128,
                         "startColumn": 4,
-                        "startOffset": 5009,
-                        "endLine": 111,
+                        "startOffset": 5597,
+                        "endLine": 135,
                         "endColumn": 12,
-                        "endOffset": 5385
+                        "endOffset": 5973
                     }
                 }
             },
@@ -18189,12 +18189,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 423,
+                        "startLine": 447,
                         "startColumn": 4,
-                        "startOffset": 20144,
-                        "endLine": 432,
+                        "startOffset": 20732,
+                        "endLine": 456,
                         "endColumn": 12,
-                        "endOffset": 20692
+                        "endOffset": 21280
                     }
                 }
             },
@@ -18210,12 +18210,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 380,
+                        "startLine": 404,
                         "startColumn": 4,
-                        "startOffset": 18205,
-                        "endLine": 385,
+                        "startOffset": 18793,
+                        "endLine": 409,
                         "endColumn": 12,
-                        "endOffset": 18507
+                        "endOffset": 19095
                     }
                 }
             },
@@ -18231,12 +18231,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 374,
+                        "startLine": 398,
                         "startColumn": 4,
-                        "startOffset": 17970,
-                        "endLine": 378,
+                        "startOffset": 18558,
+                        "endLine": 402,
                         "endColumn": 12,
-                        "endOffset": 18199
+                        "endOffset": 18787
                     }
                 }
             },
@@ -18252,12 +18252,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 387,
+                        "startLine": 411,
                         "startColumn": 4,
-                        "startOffset": 18513,
-                        "endLine": 391,
+                        "startOffset": 19101,
+                        "endLine": 415,
                         "endColumn": 12,
-                        "endOffset": 18739
+                        "endOffset": 19327
                     }
                 }
             },
@@ -18273,12 +18273,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 393,
+                        "startLine": 417,
                         "startColumn": 4,
-                        "startOffset": 18745,
-                        "endLine": 398,
+                        "startOffset": 19333,
+                        "endLine": 422,
                         "endColumn": 12,
-                        "endOffset": 19044
+                        "endOffset": 19632
                     }
                 }
             },
@@ -18294,12 +18294,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 324,
+                        "startLine": 348,
                         "startColumn": 4,
-                        "startOffset": 15631,
-                        "endLine": 331,
+                        "startOffset": 16219,
+                        "endLine": 355,
                         "endColumn": 12,
-                        "endOffset": 16067
+                        "endOffset": 16655
                     }
                 }
             },
@@ -18315,12 +18315,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 349,
+                        "startLine": 373,
                         "startColumn": 4,
-                        "startOffset": 16738,
-                        "endLine": 361,
+                        "startOffset": 17326,
+                        "endLine": 385,
                         "endColumn": 12,
-                        "endOffset": 17429
+                        "endOffset": 18017
                     }
                 }
             },
@@ -18336,12 +18336,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 434,
+                        "startLine": 458,
                         "startColumn": 4,
-                        "startOffset": 20698,
-                        "endLine": 447,
+                        "startOffset": 21286,
+                        "endLine": 471,
                         "endColumn": 12,
-                        "endOffset": 21469
+                        "endOffset": 22057
                     }
                 }
             },
@@ -18357,12 +18357,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 400,
+                        "startLine": 424,
                         "startColumn": 4,
-                        "startOffset": 19050,
-                        "endLine": 405,
+                        "startOffset": 19638,
+                        "endLine": 429,
                         "endColumn": 12,
-                        "endOffset": 19360
+                        "endOffset": 19948
                     }
                 }
             },
@@ -18378,12 +18378,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 363,
+                        "startLine": 387,
                         "startColumn": 4,
-                        "startOffset": 17435,
-                        "endLine": 372,
+                        "startOffset": 18023,
+                        "endLine": 396,
                         "endColumn": 12,
-                        "endOffset": 17964
+                        "endOffset": 18552
                     }
                 }
             },
@@ -18399,12 +18399,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 413,
+                        "startLine": 437,
                         "startColumn": 4,
-                        "startOffset": 19670,
-                        "endLine": 421,
+                        "startOffset": 20258,
+                        "endLine": 445,
                         "endColumn": 12,
-                        "endOffset": 20138
+                        "endOffset": 20726
                     }
                 }
             },
@@ -18420,12 +18420,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 456,
+                        "startLine": 480,
                         "startColumn": 4,
-                        "startOffset": 21756,
-                        "endLine": 461,
+                        "startOffset": 22344,
+                        "endLine": 485,
                         "endColumn": 12,
-                        "endOffset": 22037
+                        "endOffset": 22625
                     }
                 }
             },
@@ -18441,12 +18441,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 723,
+                        "startLine": 747,
                         "startColumn": 4,
-                        "startOffset": 34056,
-                        "endLine": 737,
+                        "startOffset": 34644,
+                        "endLine": 761,
                         "endColumn": 12,
-                        "endOffset": 34950
+                        "endOffset": 35538
                     }
                 }
             },
@@ -18462,12 +18462,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 667,
+                        "startLine": 691,
                         "startColumn": 4,
-                        "startOffset": 31380,
-                        "endLine": 671,
+                        "startOffset": 31968,
+                        "endLine": 695,
                         "endColumn": 12,
-                        "endOffset": 31591
+                        "endOffset": 32179
                     }
                 }
             },
@@ -18483,12 +18483,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 681,
+                        "startLine": 705,
                         "startColumn": 4,
-                        "startOffset": 31905,
-                        "endLine": 683,
+                        "startOffset": 32493,
+                        "endLine": 707,
                         "endColumn": 12,
-                        "endOffset": 32056
+                        "endOffset": 32644
                     }
                 }
             },
@@ -18504,12 +18504,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 673,
+                        "startLine": 697,
                         "startColumn": 4,
-                        "startOffset": 31597,
-                        "endLine": 675,
+                        "startOffset": 32185,
+                        "endLine": 699,
                         "endColumn": 12,
-                        "endOffset": 31744
+                        "endOffset": 32332
                     }
                 }
             },
@@ -18525,12 +18525,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 677,
+                        "startLine": 701,
                         "startColumn": 4,
-                        "startOffset": 31750,
-                        "endLine": 679,
+                        "startOffset": 32338,
+                        "endLine": 703,
                         "endColumn": 12,
-                        "endOffset": 31899
+                        "endOffset": 32487
                     }
                 }
             },
@@ -18546,12 +18546,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 642,
+                        "startLine": 666,
                         "startColumn": 4,
-                        "startOffset": 30234,
-                        "endLine": 644,
+                        "startOffset": 30822,
+                        "endLine": 668,
                         "endColumn": 12,
-                        "endOffset": 30360
+                        "endOffset": 30948
                     }
                 }
             },
@@ -18567,12 +18567,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 114,
+                        "startLine": 138,
                         "startColumn": 4,
-                        "startOffset": 5392,
-                        "endLine": 119,
+                        "startOffset": 5980,
+                        "endLine": 143,
                         "endColumn": 12,
-                        "endOffset": 5838
+                        "endOffset": 6426
                     }
                 }
             },
@@ -18588,12 +18588,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 715,
+                        "startLine": 739,
                         "startColumn": 4,
-                        "startOffset": 33653,
-                        "endLine": 721,
+                        "startOffset": 34241,
+                        "endLine": 745,
                         "endColumn": 12,
-                        "endOffset": 34050
+                        "endOffset": 34638
                     }
                 }
             },
@@ -18609,12 +18609,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 701,
+                        "startLine": 725,
                         "startColumn": 4,
-                        "startOffset": 32925,
-                        "endLine": 713,
+                        "startOffset": 33513,
+                        "endLine": 737,
                         "endColumn": 12,
-                        "endOffset": 33647
+                        "endOffset": 34235
                     }
                 }
             },
@@ -18630,12 +18630,12 @@
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 80,
+                        "startLine": 104,
                         "startColumn": 4,
-                        "startOffset": 3961,
-                        "endLine": 85,
+                        "startOffset": 4549,
+                        "endLine": 109,
                         "endColumn": 12,
-                        "endOffset": 4299
+                        "endOffset": 4887
                     }
                 }
             },
@@ -18644,114 +18644,135 @@
                     "startLine": 1893,
                     "startColumn": 4,
                     "startOffset": 94121,
-                    "endLine": 1899,
-                    "endColumn": 12,
-                    "endOffset": 94460
+                    "endLine": 1912,
+                    "endColumn": 8,
+                    "endOffset": 94700
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 232,
+                        "startLine": 46,
                         "startColumn": 4,
-                        "startOffset": 11201,
-                        "endLine": 238,
-                        "endColumn": 12,
-                        "endOffset": 11540
+                        "startOffset": 2159,
+                        "endLine": 65,
+                        "endColumn": 8,
+                        "endOffset": 2738
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1900,
+                    "startLine": 1913,
                     "startColumn": 4,
-                    "startOffset": 94465,
-                    "endLine": 1904,
+                    "startOffset": 94705,
+                    "endLine": 1919,
                     "endColumn": 12,
-                    "endOffset": 94657
+                    "endOffset": 95044
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 631,
+                        "startLine": 256,
                         "startColumn": 4,
-                        "startOffset": 29841,
-                        "endLine": 635,
+                        "startOffset": 11789,
+                        "endLine": 262,
                         "endColumn": 12,
-                        "endOffset": 30033
+                        "endOffset": 12128
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1905,
+                    "startLine": 1920,
                     "startColumn": 4,
-                    "startOffset": 94662,
-                    "endLine": 1908,
+                    "startOffset": 95049,
+                    "endLine": 1924,
                     "endColumn": 12,
-                    "endOffset": 94851
+                    "endOffset": 95241
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 637,
+                        "startLine": 655,
                         "startColumn": 4,
-                        "startOffset": 30039,
-                        "endLine": 640,
+                        "startOffset": 30429,
+                        "endLine": 659,
                         "endColumn": 12,
-                        "endOffset": 30228
+                        "endOffset": 30621
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1909,
+                    "startLine": 1925,
                     "startColumn": 4,
-                    "startOffset": 94856,
-                    "endLine": 1914,
+                    "startOffset": 95246,
+                    "endLine": 1928,
                     "endColumn": 12,
-                    "endOffset": 95127
+                    "endOffset": 95435
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 660,
+                        "startLine": 661,
                         "startColumn": 4,
-                        "startOffset": 31103,
-                        "endLine": 665,
+                        "startOffset": 30627,
+                        "endLine": 664,
                         "endColumn": 12,
-                        "endOffset": 31374
+                        "endOffset": 30816
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1915,
+                    "startLine": 1929,
                     "startColumn": 4,
-                    "startOffset": 95132,
-                    "endLine": 1925,
+                    "startOffset": 95440,
+                    "endLine": 1934,
                     "endColumn": 12,
-                    "endOffset": 95793
+                    "endOffset": 95711
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 646,
+                        "startLine": 684,
                         "startColumn": 4,
-                        "startOffset": 30366,
-                        "endLine": 656,
+                        "startOffset": 31691,
+                        "endLine": 689,
                         "endColumn": 12,
-                        "endOffset": 31027
+                        "endOffset": 31962
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1926,
+                    "startLine": 1935,
                     "startColumn": 4,
-                    "startOffset": 95798,
-                    "endLine": 1933,
+                    "startOffset": 95716,
+                    "endLine": 1945,
                     "endColumn": 12,
-                    "endOffset": 96287
+                    "endOffset": 96377
+                },
+                "from": {
+                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 670,
+                        "startColumn": 4,
+                        "startOffset": 30954,
+                        "endLine": 680,
+                        "endColumn": 12,
+                        "endOffset": 31615
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 1946,
+                    "startColumn": 4,
+                    "startOffset": 96382,
+                    "endLine": 1953,
+                    "endColumn": 12,
+                    "endOffset": 96871
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
@@ -18767,138 +18788,138 @@
             },
             {
                 "to": {
-                    "startLine": 1934,
+                    "startLine": 1954,
                     "startColumn": 4,
-                    "startOffset": 96292,
-                    "endLine": 1943,
+                    "startOffset": 96876,
+                    "endLine": 1963,
                     "endColumn": 12,
-                    "endOffset": 96923
+                    "endOffset": 97507
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 685,
+                        "startLine": 709,
                         "startColumn": 4,
-                        "startOffset": 32062,
-                        "endLine": 694,
+                        "startOffset": 32650,
+                        "endLine": 718,
                         "endColumn": 12,
-                        "endOffset": 32693
+                        "endOffset": 33281
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1944,
+                    "startLine": 1964,
                     "startColumn": 4,
-                    "startOffset": 96928,
-                    "endLine": 1950,
+                    "startOffset": 97512,
+                    "endLine": 1970,
                     "endColumn": 12,
-                    "endOffset": 97297
+                    "endOffset": 97881
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 599,
+                        "startLine": 623,
                         "startColumn": 4,
-                        "startOffset": 28360,
-                        "endLine": 605,
+                        "startOffset": 28948,
+                        "endLine": 629,
                         "endColumn": 12,
-                        "endOffset": 28729
+                        "endOffset": 29317
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1951,
+                    "startLine": 1971,
                     "startColumn": 4,
-                    "startOffset": 97302,
-                    "endLine": 1959,
+                    "startOffset": 97886,
+                    "endLine": 1979,
                     "endColumn": 12,
-                    "endOffset": 97765
+                    "endOffset": 98349
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 240,
+                        "startLine": 264,
                         "startColumn": 4,
-                        "startOffset": 11546,
-                        "endLine": 248,
+                        "startOffset": 12134,
+                        "endLine": 272,
                         "endColumn": 12,
-                        "endOffset": 12009
+                        "endOffset": 12597
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1960,
+                    "startLine": 1980,
                     "startColumn": 4,
-                    "startOffset": 97770,
-                    "endLine": 1966,
+                    "startOffset": 98354,
+                    "endLine": 1986,
                     "endColumn": 12,
-                    "endOffset": 98120
+                    "endOffset": 98704
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 250,
+                        "startLine": 274,
                         "startColumn": 4,
-                        "startOffset": 12015,
-                        "endLine": 256,
+                        "startOffset": 12603,
+                        "endLine": 280,
                         "endColumn": 12,
-                        "endOffset": 12365
+                        "endOffset": 12953
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1967,
+                    "startLine": 1987,
                     "startColumn": 4,
-                    "startOffset": 98125,
-                    "endLine": 1972,
+                    "startOffset": 98709,
+                    "endLine": 1992,
                     "endColumn": 12,
-                    "endOffset": 98394
+                    "endOffset": 98978
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 87,
+                        "startLine": 111,
                         "startColumn": 4,
-                        "startOffset": 4305,
-                        "endLine": 92,
+                        "startOffset": 4893,
+                        "endLine": 116,
                         "endColumn": 12,
-                        "endOffset": 4574
+                        "endOffset": 5162
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1973,
+                    "startLine": 1993,
                     "startColumn": 4,
-                    "startOffset": 98399,
-                    "endLine": 1975,
+                    "startOffset": 98983,
+                    "endLine": 1995,
                     "endColumn": 12,
-                    "endOffset": 98503
+                    "endOffset": 99087
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 467,
+                        "startLine": 491,
                         "startColumn": 4,
-                        "startOffset": 22232,
-                        "endLine": 469,
+                        "startOffset": 22820,
+                        "endLine": 493,
                         "endColumn": 12,
-                        "endOffset": 22336
+                        "endOffset": 22924
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 1976,
+                    "startLine": 1996,
                     "startColumn": 4,
-                    "startOffset": 98508,
-                    "endLine": 1983,
+                    "startOffset": 99092,
+                    "endLine": 2003,
                     "endColumn": 12,
-                    "endOffset": 99044
+                    "endOffset": 99628
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
@@ -18914,12 +18935,12 @@
             },
             {
                 "to": {
-                    "startLine": 1984,
+                    "startLine": 2004,
                     "startColumn": 4,
-                    "startOffset": 99049,
-                    "endLine": 1990,
+                    "startOffset": 99633,
+                    "endLine": 2010,
                     "endColumn": 9,
-                    "endOffset": 99423
+                    "endOffset": 100007
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
@@ -18935,148 +18956,148 @@
             },
             {
                 "to": {
-                    "startLine": 1991,
-                    "startColumn": 4,
-                    "startOffset": 99428,
-                    "endLine": 1993,
-                    "endColumn": 12,
-                    "endOffset": 99611
-                },
-                "from": {
-                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 463,
-                        "startColumn": 4,
-                        "startOffset": 22043,
-                        "endLine": 465,
-                        "endColumn": 12,
-                        "endOffset": 22226
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 1994,
-                    "startColumn": 4,
-                    "startOffset": 99616,
-                    "endLine": 2002,
-                    "endColumn": 12,
-                    "endOffset": 100132
-                },
-                "from": {
-                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 529,
-                        "startColumn": 4,
-                        "startOffset": 25137,
-                        "endLine": 537,
-                        "endColumn": 12,
-                        "endOffset": 25653
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 2003,
-                    "startColumn": 4,
-                    "startOffset": 100137,
-                    "endLine": 2007,
-                    "endColumn": 12,
-                    "endOffset": 100368
-                },
-                "from": {
-                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 499,
-                        "startColumn": 4,
-                        "startOffset": 23818,
-                        "endLine": 503,
-                        "endColumn": 12,
-                        "endOffset": 24049
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 2008,
-                    "startColumn": 4,
-                    "startOffset": 100373,
-                    "endLine": 2010,
-                    "endColumn": 12,
-                    "endOffset": 100549
-                },
-                "from": {
-                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 126,
-                        "startColumn": 4,
-                        "startOffset": 6076,
-                        "endLine": 128,
-                        "endColumn": 12,
-                        "endOffset": 6252
-                    }
-                }
-            },
-            {
-                "to": {
                     "startLine": 2011,
                     "startColumn": 4,
-                    "startOffset": 100554,
-                    "endLine": 2015,
+                    "startOffset": 100012,
+                    "endLine": 2013,
                     "endColumn": 12,
-                    "endOffset": 100802
+                    "endOffset": 100195
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 588,
+                        "startLine": 487,
                         "startColumn": 4,
-                        "startOffset": 27883,
-                        "endLine": 592,
+                        "startOffset": 22631,
+                        "endLine": 489,
                         "endColumn": 12,
-                        "endOffset": 28131
+                        "endOffset": 22814
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 2016,
+                    "startLine": 2014,
                     "startColumn": 4,
-                    "startOffset": 100807,
-                    "endLine": 2020,
+                    "startOffset": 100200,
+                    "endLine": 2022,
                     "endColumn": 12,
-                    "endOffset": 101105
+                    "endOffset": 100716
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 407,
+                        "startLine": 553,
                         "startColumn": 4,
-                        "startOffset": 19366,
-                        "endLine": 411,
+                        "startOffset": 25725,
+                        "endLine": 561,
                         "endColumn": 12,
-                        "endOffset": 19664
+                        "endOffset": 26241
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 2021,
+                    "startLine": 2023,
                     "startColumn": 4,
-                    "startOffset": 101110,
-                    "endLine": 2025,
+                    "startOffset": 100721,
+                    "endLine": 2027,
                     "endColumn": 12,
-                    "endOffset": 101327
+                    "endOffset": 100952
                 },
                 "from": {
                     "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
                     "position": {
-                        "startLine": 563,
+                        "startLine": 523,
                         "startColumn": 4,
-                        "startOffset": 26786,
-                        "endLine": 567,
+                        "startOffset": 24406,
+                        "endLine": 527,
                         "endColumn": 12,
-                        "endOffset": 27003
+                        "endOffset": 24637
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 2028,
+                    "startColumn": 4,
+                    "startOffset": 100957,
+                    "endLine": 2030,
+                    "endColumn": 12,
+                    "endOffset": 101133
+                },
+                "from": {
+                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 150,
+                        "startColumn": 4,
+                        "startOffset": 6664,
+                        "endLine": 152,
+                        "endColumn": 12,
+                        "endOffset": 6840
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 2031,
+                    "startColumn": 4,
+                    "startOffset": 101138,
+                    "endLine": 2035,
+                    "endColumn": 12,
+                    "endOffset": 101386
+                },
+                "from": {
+                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 612,
+                        "startColumn": 4,
+                        "startOffset": 28471,
+                        "endLine": 616,
+                        "endColumn": 12,
+                        "endOffset": 28719
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 2036,
+                    "startColumn": 4,
+                    "startOffset": 101391,
+                    "endLine": 2040,
+                    "endColumn": 12,
+                    "endOffset": 101689
+                },
+                "from": {
+                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 431,
+                        "startColumn": 4,
+                        "startOffset": 19954,
+                        "endLine": 435,
+                        "endColumn": 12,
+                        "endOffset": 20252
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 2041,
+                    "startColumn": 4,
+                    "startOffset": 101694,
+                    "endLine": 2045,
+                    "endColumn": 12,
+                    "endOffset": 101911
+                },
+                "from": {
+                    "file": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/values/styles.xml",
+                    "position": {
+                        "startLine": 587,
+                        "startColumn": 4,
+                        "startOffset": 27374,
+                        "endLine": 591,
+                        "endColumn": 12,
+                        "endOffset": 27591
                     }
                 }
             }

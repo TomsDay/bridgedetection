@@ -73,19 +73,28 @@ public class ProjectAcceptanceListAdapter extends BaseAdapter{
         holder.projectacceptancelist_item_tv2.setText(bean.getBno()+"");
         holder.projectacceptancelist_item_tv3.setText(bean.getSgdwmc()+"");
         holder.projectacceptancelist_item_tv4.setText(bean.getSgks()+"-"+bean.getSgjs());
+
+        holder.projectacceptancelist_item_line5.setVisibility(View.GONE);
+        holder.projectacceptancelist_item_tv5.setVisibility(View.GONE);
         return view;
     }
     class HolderView {
         private TextView projectacceptancelist_item_tv1,
                 projectacceptancelist_item_tv2,
                 projectacceptancelist_item_tv3,
-                projectacceptancelist_item_tv4;
+                projectacceptancelist_item_tv4,
+                projectacceptancelist_item_tv5;
+
+        private View projectacceptancelist_item_line5;
 
         public HolderView(View v){
             projectacceptancelist_item_tv1 = (TextView) v.findViewById(R.id.projectacceptancelist_item_tv1);
             projectacceptancelist_item_tv2 = (TextView) v.findViewById(R.id.projectacceptancelist_item_tv2);
             projectacceptancelist_item_tv3 = (TextView) v.findViewById(R.id.projectacceptancelist_item_tv3);
             projectacceptancelist_item_tv4 = (TextView) v.findViewById(R.id.projectacceptancelist_item_tv4);
+            projectacceptancelist_item_tv5 = (TextView) v.findViewById(R.id.projectacceptancelist_item_tv5);
+
+            projectacceptancelist_item_line5 = v.findViewById(R.id.projectacceptancelist_item_line5);
         }
     }
 }

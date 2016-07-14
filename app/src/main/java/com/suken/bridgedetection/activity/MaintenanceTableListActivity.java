@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -80,16 +81,22 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
         maintenance_table_listView = (ListView) findViewById(R.id.maintenance_table_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
-        mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this);
+        mAdapter = new MaintenanceTableListAdapter(MaintenanceTableListActivity.this, new MaintenanceTableListAdapter.UpLoadOnceTableData() {
+            @Override
+            public void loadData(int position) {
+                MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
+                uploadIV(bean, position, false);
+                showLoading("正在上传...");
+            }
+        });
         maintenance_table_listView.setAdapter(mAdapter);
 
         maintenance_table_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
 
-
                 final String[] names = {"编辑", "上传","删除", "取消"};
-                new AlertDialog.Builder(mContext)
+                AlertDialog dialog = new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override
@@ -102,12 +109,12 @@ public class MaintenanceTableListActivity extends BaseActivity {
                                         in.putExtra("id", maintenanceTableBeanList.get(position).getId());
                                         startActivity(in);
                                         break;
-                                    case 1://上传
-                                        MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
-                                        uploadIV(bean, position, false);
-                                        showLoading("正在上传...");
-                                        break;
-                                    case 2:
+//                                    case 1://上传
+//                                        MaintenanceTableBean bean = maintenanceTableBeanList.get(position);
+//                                        uploadIV(bean, position, false);
+//                                        showLoading("正在上传...");
+//                                        break;
+                                    case 1:
                                         maintenanceTableDao.delete(maintenanceTableBeanList.get(position).getId());
                                         for(int i = 0;i<maintenanceTableBeanList.get(position).getInspectLogDetailList().size();i++){
                                             maintenanceTableDao.deleteItem(maintenanceTableBeanList.get(position).getInspectLogDetailList().get(i).getId());
@@ -127,7 +134,13 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
                             }
                         })
-                        .show();
+                .show();
+
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = 500;
+//                params.height = 200 ;
+
+                dialog.getWindow().setAttributes(params);
 
 
 

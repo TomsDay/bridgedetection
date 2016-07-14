@@ -264,6 +264,10 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chatting_item_from_voice.xml"
     },
     {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/loglist_dialog.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/loglist_dialog.xml"
+    },
+    {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/voice_meeting_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/voice_meeting_item.xml"
     },
@@ -470,6 +474,10 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/exit_dialog_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/exit_dialog_view.xml"
+    },
+    {
+        "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/checkupload_dialog.xml",
+        "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/checkupload_dialog.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_to_voice.xml",

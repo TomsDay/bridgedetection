@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -65,14 +66,21 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
     private void initView() {
         project_acceptanceUpload_listView = (ListView) findViewById(R.id.project_acceptanceUpload_listView);
         update_all = (LinearLayout) findViewById(R.id.update_all);
-        mAdapter = new ProjectAcceptanceListUpLoadAdapter(mContext);
+        mAdapter = new ProjectAcceptanceListUpLoadAdapter(mContext, new ProjectAcceptanceListUpLoadAdapter.UpLoadOnceProjectData() {
+            @Override
+            public void loadData(int position) {
+                ProjectAcceptanceBean bean = projectAcceptanceBeen.get(position);
+                uploadData(bean, position, false);
+                showLoading("正在上传...");
+            }
+        });
         project_acceptanceUpload_listView.setAdapter(mAdapter);
 
         project_acceptanceUpload_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view,final int position, long l) {
                 final String[] names = {"编辑", "上传","删除", "取消"};
-                new AlertDialog.Builder(mContext)
+                AlertDialog dialog=new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override
@@ -85,12 +93,12 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                                         in.putExtra("id", projectAcceptanceBeen.get(position).getId());
                                         startActivity(in);
                                         break;
-                                    case 1://上传
-                                        ProjectAcceptanceBean bean = projectAcceptanceBeen.get(position);
-                                        uploadData(bean, position, false);
-                                        showLoading("正在上传...");
-                                        break;
-                                    case 2:
+//                                    case 1://上传
+//                                        ProjectAcceptanceBean bean = projectAcceptanceBeen.get(position);
+//                                        uploadData(bean, position, false);
+//                                        showLoading("正在上传...");
+//                                        break;
+                                    case 1:
                                         projectAcceptanceDao.delete(projectAcceptanceBeen.get(position).getId());
 
                                         getAllData();
@@ -103,6 +111,12 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                             }
                         })
                         .show();
+
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = 500;
+//                params.height = 200 ;
+
+                dialog.getWindow().setAttributes(params);
             }
         });
 
