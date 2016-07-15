@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,6 +22,7 @@ import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
@@ -36,6 +39,7 @@ import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.PictureUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -72,7 +76,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             @Override
             public void loadData(int position) {
                 ProjectAcceptanceBean bean = projectAcceptanceBeen.get(position);
-                uploadIV(bean, position, false);
+                uploadData(bean, position, false);
                 showLoading("正在上传...");
             }
         });
@@ -131,7 +135,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 }
 
                 showLoading("正在上传...");
-                uploadIV(projectAcceptanceBeen.get(0), 0, true);
+                uploadData(projectAcceptanceBeen.get(0), 0, true);
             }
         });
 
@@ -220,6 +224,25 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
+
+                for(int i = 0;i<bean.getmImages().size();i++){
+                    if (i == 0) {
+                        Logger.e("aaa","path:"+bean.getmImages().get(i).getPath());
+                        Logger.e("aaa", "图片的base64：" + PictureUtil.save(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+                        bean.setQmtp1(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+
+                    }else if(i == 1){
+                        bean.setQmtp2(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+                    }else if(i == 2){
+                        bean.setQmtp3(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+                    }else if(i == 3){
+                        bean.setQmtp4(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+                    }else if(i == 4){
+                        bean.setQmtp5(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
+                    }
+                }
+                bean.setmImages(null);
+                bean.setiDescs(null);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);

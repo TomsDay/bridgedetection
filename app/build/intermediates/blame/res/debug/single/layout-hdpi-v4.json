@@ -8,6 +8,10 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_web_view.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_form_item.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_form_item.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_list_page_item.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_list_page_item.xml"
     },
@@ -20,28 +24,60 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_login_page.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\left_item_view.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\left_item_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_form_page.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_form_page.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\left_fragment_view.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\left_fragment_view.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_form_item.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_form_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\maintenance_item.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\maintenance_item.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\left_fragment_view.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\left_fragment_view.xml"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\spinner_item.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\spinner_item.xml"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\spinner_item.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\spinner_item.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\home_item_view.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\home_item_view.xml"
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_list_page.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_list_page.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_form_page.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_form_page.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\maintenance_item.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\maintenance_item.xml"
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_list_page_item.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_list_page_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_web_view.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_web_view.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\home_item_view.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\home_item_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_login_page.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_login_page.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_maintenance.xml",
@@ -50,5 +86,21 @@
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\home_fragment_view.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\home_fragment_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\activity_maintenance.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\activity_maintenance.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\maintenance_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\maintenance_item.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\home_item_view.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\home_item_view.xml"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-hdpi-v4\\home_fragment_view.xml",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-hdpi\\home_fragment_view.xml"
     }
 ]

@@ -77,6 +77,11 @@ public class ProjectAcceptanceBean implements Serializable{
     @DatabaseField
     private String tpwd;
 
+    private byte[] qmtp1;
+    private byte[] qmtp2;
+    private byte[] qmtp3;
+    private byte[] qmtp4;
+    private byte[] qmtp5;
 
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
 
@@ -151,6 +156,46 @@ public class ProjectAcceptanceBean implements Serializable{
         this.sgfzdate = sgfzdate;
         this.tjsj = tjsj;
         this.status = status;
+    }
+
+    public byte[] getQmtp1() {
+        return qmtp1;
+    }
+
+    public void setQmtp1(byte[] qmtp1) {
+        this.qmtp1 = qmtp1;
+    }
+
+    public byte[] getQmtp2() {
+        return qmtp2;
+    }
+
+    public void setQmtp2(byte[] qmtp2) {
+        this.qmtp2 = qmtp2;
+    }
+
+    public byte[] getQmtp3() {
+        return qmtp3;
+    }
+
+    public void setQmtp3(byte[] qmtp3) {
+        this.qmtp3 = qmtp3;
+    }
+
+    public byte[] getQmtp4() {
+        return qmtp4;
+    }
+
+    public void setQmtp4(byte[] qmtp4) {
+        this.qmtp4 = qmtp4;
+    }
+
+    public byte[] getQmtp5() {
+        return qmtp5;
+    }
+
+    public void setQmtp5(byte[] qmtp5) {
+        this.qmtp5 = qmtp5;
     }
 
     public String getTpjd() {

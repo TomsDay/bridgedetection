@@ -358,21 +358,12 @@
                         <ImageView
                             android:id="@+id/projectacceptance_xsfzr_sign"
                             android:layout_width="72dp"
-                            android:layout_height="48dp"
+                            android:layout_height="72dp"
                             android:scaleType="fitCenter"
                             android:background="@color/white"
                             android:src="@drawable/chat_input_text_notify_normal"
                             />
-                        <EditText
-                            android:id="@+id/projectacceptance_xsfzr_ev"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:layout_marginLeft="8dp"
-                            android:background="@color/white"
-                            android:textColor="#333333"
-                            android:textSize="9dp"
-                            android:layout_toRightOf="@+id/projectacceptance_xsfzr_tv"
-                            android:imeOptions="flagNoExtractUi" />
+
 
                     </LinearLayout>
 

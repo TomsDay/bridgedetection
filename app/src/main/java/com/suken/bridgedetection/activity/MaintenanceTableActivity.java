@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -215,6 +216,14 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         maintenancetable_searchType_spinner = (Spinner) findViewById(R.id.maintenancetable_searchType_spinner);
 
         gps_text = (TextView) findViewById(R.id.gps_text);
+        gps_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(gps_text.getText().toString().equals("定位失败，点击从新定位")){
+                    LocationManager.getInstance().syncLocation(MaintenanceTableActivity.this);
+                }
+            }
+        });
 
         LocationManager.getInstance().syncLocation(this);
 
@@ -762,13 +771,13 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 //            mjingdu.setText("经度:" + result.latitude);
 //            mWeidu.setText("纬度:" + result.longitude);
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-//            tv.setText("定位成功");
-//            tv.setTextColor(Color.WHITE);
+            gps_text.setText("定位成功");
+            gps_text.setTextColor(Color.WHITE);
         } else if(!mIsGpsSuccess){
             Toast.makeText(this, "定位失败！请您到空旷的地点从新定位，绝就不要在室内！", Toast.LENGTH_LONG).show();
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-//            tv.setText("定位失败");
-//            tv.setTextColor(Color.RED);
+            gps_text.setText("定位失败，点击从新定位");
+            gps_text.setTextColor(Color.RED);
         }
     }
 
