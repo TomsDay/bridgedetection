@@ -363,7 +363,10 @@
                             android:background="@color/white"
                             android:src="@drawable/chat_input_text_notify_normal"
                             />
-
+                        <com.suken.bridgedetection.widget.HorizontalListView
+                            android:id="@+id/HorizontalListView"
+                            android:layout_width="match_parent"
+                            android:layout_height="72dp" />
 
                     </LinearLayout>
 

@@ -629,7 +629,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     public void onClick(View view){
         switch (view.getId()) {
             case R.id.maintenanceoforder_back:
-                finish();
+                back();
                 break;
             case R.id.maintenanceoforder_save:
                 saveDialog();
@@ -637,6 +637,28 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         }
 
     }
+
+    public void back() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提醒");
+        builder.setMessage("返回将丢失当前未保存信息");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
     public void saveDialog(){
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
@@ -645,7 +667,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(mIsGpsSuccess){
+                        if(!mIsGpsSuccess){
                             Toast.makeText(mContext, "正在定位...\n" +
                                     "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
                             return;

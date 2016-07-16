@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.ProjectAcceptanceListAdapter;
+import com.suken.bridgedetection.adapter.ProjectHorizontalListViewAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
@@ -33,6 +35,7 @@ import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.signname.WriteDialogListener;
 import com.suken.bridgedetection.signname.WritePadDialog;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.widget.HorizontalListView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -74,10 +77,13 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
     private ProjectAcceptanceDao projectAcceptanceDao;
     private List<ProjectAcceptanceBean> projectAcceptanceBeen = new ArrayList<ProjectAcceptanceBean>();
+    public static List<IVDesc> ivDescs = new ArrayList<IVDesc>();
     private ProjacceptBean projacceptBean;
     private IVDescDao ivDescDao;
     ProjectAcceptanceBean bean;
 
+    private HorizontalListView mHorizontalListView;
+    private ProjectHorizontalListViewAdapter projectHorizontalListViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +112,10 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         projectacceptance_xsfzr_sign = (ImageView) findViewById(R.id.projectacceptance_xsfzr_sign);
 
+        mHorizontalListView = (HorizontalListView) findViewById(R.id.HorizontalListView);
+        projectHorizontalListViewAdapter = new ProjectHorizontalListViewAdapter(ProjectAcceptanceActivity.this);
 
+        mHorizontalListView.setAdapter(projectHorizontalListViewAdapter);
         gps_text = (TextView) findViewById(R.id.gps_text);
         gps_text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +141,10 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         projectacceptance_xsfzr_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(ivDescs.size() >= 5){
+                    toast("您当前最多可以有5张签名，请您删除其中一张，再进行签名！");
+                    return;
+                }
                 WritePadDialog mWritePadDialog = new WritePadDialog(
                         ProjectAcceptanceActivity.this, new WriteDialogListener() {
 
@@ -139,7 +152,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                     public void onPaintDone(Object object) {
                         mSignBitmap = (Bitmap) object;
                         createSignFile();
-                        projectacceptance_xsfzr_sign.setImageBitmap(mSignBitmap);
+//                        projectacceptance_xsfzr_sign.setImageBitmap(mSignBitmap);
 
 //                        mTVSign.setVisibility(View.GONE);
                     }
@@ -157,6 +170,10 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             Logger.e("aaa","maintenanceTableBeanList++"+projectAcceptanceBeen.toString());
             if(projectAcceptanceBeen.size()>0){
                 ProjectAcceptanceBean bean = projectAcceptanceBeen.get(0);
+                ivDescs = ivDescDao.getImageProjectAcceptanceBeanByUserId(bean.getId());
+
+                projectHorizontalListViewAdapter.setList(ivDescs);
+                projectHorizontalListViewAdapter.notifyDataSetChanged();
 
                 projectacceptance_gydw_ev.setText(bean.getGydwName());
                 projectacceptance_bh_ev.setText(bean.getBno());
@@ -202,7 +219,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
     public void onClick(View view){
         switch (view.getId()) {
             case R.id.projectacceptance_back:
-                finish();
+                back();
                 break;
             case R.id.projectacceptance_save:
                 saveDialog();
@@ -211,6 +228,27 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         }
 
     }
+    public void back() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提醒");
+        builder.setMessage("返回将丢失当前未保存信息");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
     private void initSpinner() {
         projectacceptance_weather_spinner = (Spinner) findViewById(R.id.projectacceptance_weather_spinner);
         mStringArrayWeather = getResources().getStringArray(R.array.spinnerWeather);
@@ -223,7 +261,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
     }
 
-    boolean mIsGpsSuccess;
+    boolean mIsGpsSuccess = false;
     double latitude, longitude;
     @Override
     public void onLocationFinished(LocationResult result) {
@@ -321,7 +359,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(mIsGpsSuccess){
+                        if(!mIsGpsSuccess){
                             Toast.makeText(mContext, "正在定位...\n" +
                                     "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
                             return;
@@ -361,9 +399,9 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                             projectAcceptanceDao.add(bean);
                         }
 
-                        List<IVDesc> imagesDescList = bean.getmImages();
-                        for(int q = 0; q < imagesDescList.size(); q++){
-                            IVDesc imageDesc = imagesDescList.get(q);
+//                        List<IVDesc> imagesDescList = bean.getmImages();
+                        for(int q = 0; q < ivDescs.size(); q++){
+                            IVDesc imageDesc = ivDescs.get(q);
                             imageDesc.setImageProjectAcceptanceBean(bean);
                             if (imageDesc.getId() != 0) {
                                 ivDescDao.update(imageDesc);
@@ -417,7 +455,9 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             IVDesc ivDesc = new IVDesc();
             ivDesc.setName(name);
             ivDesc.setPath(path);
-            bean.getmImages().add(ivDesc);
+            ivDescs.add(ivDesc);
+            projectHorizontalListViewAdapter.setList(ivDescs);
+            projectHorizontalListViewAdapter.notifyDataSetChanged();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -437,5 +477,13 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 222){
+            projectHorizontalListViewAdapter.setList(ivDescs);
+            projectHorizontalListViewAdapter.notifyDataSetChanged();
+        }
+    }
 
 }
