@@ -140,6 +140,26 @@ public class IVDescDao {
             return null;
         }
     }
+    public List<IVDesc> getImageProjacceptItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("imageProjacceptItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public List<IVDesc> getVideoProjacceptItemBeanByUserId(int userid)
+    {
+        try {
+            return ivDescs.queryBuilder().where().eq("videoProjacceptItemBean_id", userid)
+                    .query();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     public void delete(int id){
         try {

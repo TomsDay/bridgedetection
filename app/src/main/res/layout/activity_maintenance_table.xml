@@ -42,6 +42,22 @@
             android:text="保存"
             android:textColor="#ffffff"
             android:textSize="10dp" />
+        <TextView
+            android:id="@+id/maintenancetable_synchronizationData"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="同步病害数据"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:layout_toLeftOf="@id/maintenancetable_save"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
     </RelativeLayout>
 
     <LinearLayout

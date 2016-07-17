@@ -40,4 +40,15 @@ public class MaintenanceDiseaseDao {
         }
         return null;
     }
+    /**
+     * 删除全部
+     */
+    public void deleteAll()
+    {
+        try {
+            maintenanceDiseaseBeen.delete(queryAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

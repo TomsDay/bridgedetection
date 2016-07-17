@@ -27,6 +27,7 @@
             android:textColor="#ffffff"
             android:textSize="10dp" />
 
+
         <TextView
             android:id="@+id/maintenancelog_save"
             android:layout_width="50dp"
@@ -40,6 +41,22 @@
             android:text="保存"
             android:textColor="#ffffff"
             android:textSize="10dp" />
+        <TextView
+            android:id="@+id/maintenancelog_synchronizationData"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="同步细目数据"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:layout_toLeftOf="@id/maintenancelog_save"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/maintenancelog_bottomLayout"

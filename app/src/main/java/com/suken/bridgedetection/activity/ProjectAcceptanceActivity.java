@@ -2,13 +2,17 @@ package com.suken.bridgedetection.activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,13 +24,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.j256.ormlite.dao.CloseableIterator;
+import com.j256.ormlite.dao.ForeignCollection;
+import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
-import com.suken.bridgedetection.adapter.ProjectAcceptanceListAdapter;
+import com.suken.bridgedetection.adapter.ProjectAcceptanceAdapter;
 import com.suken.bridgedetection.adapter.ProjectHorizontalListViewAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
+import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.ProjacceptBean;
+import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.location.LocationManager;
@@ -34,13 +43,19 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.signname.WriteDialogListener;
 import com.suken.bridgedetection.signname.WritePadDialog;
+import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.widget.HorizontalListView;
+import com.suken.bridgedetection.widget.ListViewForScrollView;
+import com.suken.imageditor.ImageditorActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -49,14 +64,12 @@ import java.util.List;
  * 速公路维修保养工程验收单
  */
 public class ProjectAcceptanceActivity extends BaseActivity implements OnLocationFinishedListener {
-    private ProjectAcceptanceListAdapter mAdapter;
     private Context mContext;
     private EditText projectacceptance_gydw_ev,
             projectacceptance_bh_ev,
             projectacceptance_wxbydw_ev,
             projectacceptance_sgrqs_ev,
             projectacceptance_sgrqe_ev,
-            projectacceptance_content_ev,
             projectacceptance_return_ev;
 
     ImageView projectacceptance_xsfzr_sign;
@@ -76,7 +89,11 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
     private int id;
 
     private ProjectAcceptanceDao projectAcceptanceDao;
+
     private List<ProjectAcceptanceBean> projectAcceptanceBeen = new ArrayList<ProjectAcceptanceBean>();
+    private List<ProjacceptItemBean> projacceptItemBeen = new ArrayList<ProjacceptItemBean>();
+
+
     public static List<IVDesc> ivDescs = new ArrayList<IVDesc>();
     private ProjacceptBean projacceptBean;
     private IVDescDao ivDescDao;
@@ -84,6 +101,8 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
     private HorizontalListView mHorizontalListView;
     private ProjectHorizontalListViewAdapter projectHorizontalListViewAdapter;
+    private ListViewForScrollView projectacceptance_return_listview;
+    private ProjectAcceptanceAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +124,6 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         projectacceptance_wxbydw_ev = (EditText) findViewById(R.id.projectacceptance_wxbydw_ev);
         projectacceptance_sgrqs_ev = (EditText) findViewById(R.id.projectacceptance_sgrqs_ev);
         projectacceptance_sgrqe_ev = (EditText) findViewById(R.id.projectacceptance_sgrqe_ev);
-        projectacceptance_content_ev = (EditText) findViewById(R.id.projectacceptance_content_ev);
         projectacceptance_return_ev = (EditText) findViewById(R.id.projectacceptance_return_ev);
 //        projectacceptance_xsfzr_ev = (EditText) findViewById(R.id.projectacceptance_xsfzr_ev);
 
@@ -114,6 +132,8 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
         mHorizontalListView = (HorizontalListView) findViewById(R.id.HorizontalListView);
         projectHorizontalListViewAdapter = new ProjectHorizontalListViewAdapter(ProjectAcceptanceActivity.this);
+
+        projectacceptance_return_listview = (ListViewForScrollView) findViewById(R.id.projectacceptance_return_listview);
 
         mHorizontalListView.setAdapter(projectHorizontalListViewAdapter);
         gps_text = (TextView) findViewById(R.id.gps_text);
@@ -176,14 +196,12 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 projectHorizontalListViewAdapter.notifyDataSetChanged();
 
                 projectacceptance_gydw_ev.setText(bean.getGydwName());
-                projectacceptance_bh_ev.setText(bean.getBno());
+                projectacceptance_bh_ev.setText(bean.getYhtzdno());
                 projectacceptance_wxbydw_ev.setText(bean.getSgdwmc());
                 projectacceptance_sgrqs_ev.setText(bean.getSgks());
                 projectacceptance_sgrqe_ev.setText(bean.getSgjs());
-                projectacceptance_content_ev.setText(bean.getQrzs());
                 projectacceptance_return_ev.setText(bean.getYsjg());
 //                projectacceptance_xsfzr_ev.setText(bean.getYsrq());
-
                 strWeather = bean.getWeather();
                 for (int i = 0; i < mStringArrayWeather.length; i++) {
                     if(mStringArrayWeather[i].equals(strWeather)){
@@ -192,6 +210,30 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                     }
                 }
                 projectacceptance_weather_spinner.setSelection(selsctWeather);
+                ForeignCollection<ProjacceptItemBean> orders = bean.getProjacceptItemBeen();
+                CloseableIterator<ProjacceptItemBean> iterator = orders.closeableIterator();
+                try {
+                    while (iterator.hasNext()) {
+                        ProjacceptItemBean b = iterator.next();
+
+                        List<IVDesc> imageDesc = ivDescDao.getImageProjacceptItemBeanByUserId(b.getIds());
+                        b.setmImages(imageDesc);
+
+                        List<IVDesc> videoDesc = ivDescDao.getVideoProjacceptItemBeanByUserId(b.getIds());
+                        b.setmVideo(videoDesc);
+
+                        projacceptItemBeen.add(b);
+                        Logger.e("aaa", b.toString());
+                    }
+                } finally {
+                    try {
+                        iterator.close();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
 
             }else{
                 setData();
@@ -201,8 +243,9 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             setData();
         }
 
-
-
+        mAdapter = new ProjectAcceptanceAdapter(ProjectAcceptanceActivity.this);
+        mAdapter.setData(projacceptItemBeen);
+        projectacceptance_return_listview.setAdapter(mAdapter);
 
     }
     public void setData(){
@@ -211,9 +254,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         projectacceptance_wxbydw_ev.setText(projacceptBean.getSgdwmc());
         projectacceptance_sgrqs_ev.setText(projacceptBean.getSgks());
         projectacceptance_sgrqe_ev.setText(projacceptBean.getSgjs());
-        projectacceptance_content_ev.setText(projacceptBean.getProjacceptDetailList().toString());
-//        projectacceptance_xsfzr_ev.setText(projacceptBean.getYsrq());
-
+        projacceptItemBeen = projacceptBean.getProjacceptDetailList();
 
     }
     public void onClick(View view){
@@ -359,11 +400,11 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
 
                         String gydw = projectacceptance_gydw_ev.getText().toString();
@@ -371,18 +412,17 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                         String wxbydw = projectacceptance_wxbydw_ev.getText().toString();
                         String sgrqs = projectacceptance_sgrqs_ev.getText().toString();
                         String sgrqe = projectacceptance_sgrqe_ev.getText().toString();
-                        String content = projectacceptance_content_ev.getText().toString();
                         String returnContent = projectacceptance_return_ev.getText().toString();
 //                        String xsfzr = projectacceptance_xsfzr_ev.getText().toString();
 
 
                         bean.setGydwName(gydw);
-                        bean.setBno(bh);
+                        bean.setYhtzdno(bh);
                         bean.setWeather(strWeather);
                         bean.setSgdwmc(wxbydw);
                         bean.setSgks(sgrqs);
                         bean.setSgjs(sgrqe);
-                        bean.setQrzs(content);
+//                        bean.setQrzs(content);
                         bean.setYsjg(returnContent);
 //                        bean.setYsrq(xsfzr);
                         bean.setTpjd(latitude+"");
@@ -410,8 +450,46 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                             }
                         }
 
+                        projacceptItemBeen = mAdapter.getData();
+                        for (int j = 0; j < projacceptItemBeen.size(); j++) {
+                            ProjacceptItemBean itemBean = projacceptItemBeen.get(j);
+                            if (itemBean.getTpjd() != null) {
+                                itemBean.setTpjd(latitude+"");
+                                itemBean.setTpwd(longitude+"");
+                            }
+                            String fx = itemBean.getFx();
+                            itemBean.setFx(fx != null ? fx : "上行内侧");
+
+                            itemBean.setProjectAcceptanceBean(bean);
+                            if (itemBean.getIds() != 0) {
+                                projectAcceptanceDao.updateItem(itemBean);
+                            }else {
+                                projectAcceptanceDao.addItem(itemBean);
+                            }
+                            List<IVDesc> imagesDescList = itemBean.getmImages();
+                            List<IVDesc> videoDescList = itemBean.getmVideo();
+                            for(int q = 0; q < imagesDescList.size(); q++){
+                                IVDesc imageDesc = imagesDescList.get(q);
+                                imageDesc.setImageProjacceptItemBean(itemBean);
+                                if (imageDesc.getId() != 0) {
+                                    ivDescDao.update(imageDesc);
+                                }else {
+                                    ivDescDao.add(imageDesc);
+                                }
+                            }
+                            for(int w = 0; w < videoDescList.size(); w++){
+                                IVDesc videoDesc = videoDescList.get(w);
+                                videoDesc.setVideoProjacceptItemBean(itemBean);
+                                if (videoDesc.getId() != 0) {
+                                    ivDescDao.update(videoDesc);
+                                }else {
+                                    ivDescDao.add(videoDesc);
+                                }
+                            }
+                        }
 
                         Logger.e("aaa", "=======11111====="+projectAcceptanceDao.queryAll().toString());
+                        Logger.e("aaa", "=======11111====="+projectAcceptanceDao.queryItemAll().toString());
                         finish();
 
 
@@ -477,12 +555,121 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         }
     }
 
+    private int mPosition;
+    private Uri mOutPutFileUri = null;
+    File mPlayerFile;
+    //    private FormItemController mEditController;
+    public void jumpToMedia(int position, int requestCode, IVDesc desc) {
+//        mEditController = con;
+        mPosition = position;
+        String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
+        File path1 = new File(path);
+        if (!path1.exists()) {
+            path1.mkdirs();
+        }
+        String name = "";
+        if (requestCode == Constants.REQUEST_CODE_CAMERA ) {
+            name = path1 + File.separator + generateMediaName(true);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            name = desc.path;
+        } else {
+            name = path1 + File.separator + generateMediaName(false);
+        }
+        mPlayerFile = new File(name);
+        mOutPutFileUri = Uri.fromFile(mPlayerFile);
+        Intent intent = new Intent();
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            intent.setClass(this, ImageditorActivity.class);
+            startActivityForResult(intent, requestCode);
+        } else {
+            // intent.setClass(this, RecorderActivity.class);
+            intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);// 参数设置可以省略
+            intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        }
+    }
+
+    String videofileName;
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 222){
             projectHorizontalListViewAdapter.setList(ivDescs);
             projectHorizontalListViewAdapter.notifyDataSetChanged();
+            return;
+        }
+        Logger.e("aaa", "requestCode===" + requestCode);
+        File f = null;
+        try {
+            f = new File(new URI(mOutPutFileUri.toString()));
+            if (!f.exists()) {
+//                f.mkdirs();
+            }
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        Logger.e("aaa", "requestCode===" + requestCode);
+        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+            IVDesc desc = new IVDesc();
+            desc.name = f.getName();
+            desc.path = f.getPath();
+            Logger.e("aaa", " desc.name===" + desc.name);
+            Logger.e("aaa", " desc.path===" + desc.path);
+            projacceptItemBeen.get(mPosition).getmImages().add(desc);
+            mAdapter.setData(projacceptItemBeen);
+            mAdapter.notifyDataSetChanged();
+
+//            mEditController.updateImg(desc);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            // 保存在原先的图片中所以不处理
+
+        } else if (requestCode == Constants.REQUEST_CODE_VIDEO && resultCode == RESULT_OK) {
+            String str = null;
+            IVDesc desc = new IVDesc();
+            try {
+                Log.e("aaa", "333333");
+                desc.name = mPlayerFile.getName();
+                desc.path = mPlayerFile.getPath();
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
+                Uri uri = Uri.parse(data.getData().toString());
+
+                ContentResolver cr = this.getContentResolver();
+
+                Cursor cursor = cr.query(uri, null, null, null, null);
+                cursor.moveToFirst();
+                str = cursor.getString(1);
+                videofileName = cursor.getString(2);
+                cursor.close();
+
+                File srcfile = new File(str);
+
+                FileUtils.moveFileTo(srcfile, mPlayerFile);
+
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+            catch(Exception e) {;
+
+            }
+
+
+
+
+            projacceptItemBeen.get(mPosition).getmVideo().add(desc);
+            mAdapter.setData(projacceptItemBeen);
+            mAdapter.notifyDataSetChanged();
+//            mEditController.updateVideo(desc);
+        }
+    }
+    public String generateMediaName(boolean isImg) {
+        if (isImg) {
+            return "pic-" + System.currentTimeMillis() + "-image.png";
+        } else {
+            return "vdo-" + System.currentTimeMillis() + "-video.3gp";
         }
     }
 

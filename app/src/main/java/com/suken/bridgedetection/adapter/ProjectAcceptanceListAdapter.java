@@ -69,10 +69,18 @@ public class ProjectAcceptanceListAdapter extends BaseAdapter{
             holder = (HolderView) view.getTag();
         }
         ProjacceptBean bean = projacceptBeen.get(position);
-        holder.projectacceptancelist_item_tv1.setText(bean.getGydwName()+"");
-        holder.projectacceptancelist_item_tv2.setText(bean.getBno()+"");
+        holder.projectacceptancelist_item_tv1.setText(bean.getYhtzdno()+"");
+        holder.projectacceptancelist_item_tv2.setText(bean.getGydwName()+"");
         holder.projectacceptancelist_item_tv3.setText(bean.getSgdwmc()+"");
-        holder.projectacceptancelist_item_tv4.setText(bean.getSgks()+"-"+bean.getSgjs());
+        String sgka = bean.getSgks();
+        String sgjs = bean.getSgjs();
+        if (sgka != null) {
+            sgka = sgka.split(" ")[0];
+        }
+        if (sgjs != null) {
+            sgjs = sgjs.split(" ")[0];
+        }
+        holder.projectacceptancelist_item_tv4.setText(sgka+" - "+sgjs);
 
         holder.projectacceptancelist_item_line5.setVisibility(View.GONE);
         holder.projectacceptancelist_item_tv5.setVisibility(View.GONE);

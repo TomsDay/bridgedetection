@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="管养单位"
+            android:text="工程验收单编号"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -57,7 +57,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="编号"
+            android:text="维修保养单位"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="维修保养单位"
+            android:text="施工日期"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -81,7 +81,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="施工日期"
+            android:text="施工负责人"
             android:textSize="10dp" />
       
 

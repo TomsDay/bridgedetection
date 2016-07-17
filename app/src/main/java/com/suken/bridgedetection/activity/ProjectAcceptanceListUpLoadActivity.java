@@ -33,6 +33,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.bean.UploadFileBean;
@@ -76,7 +77,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             @Override
             public void loadData(int position) {
                 ProjectAcceptanceBean bean = projectAcceptanceBeen.get(position);
-                uploadData(bean, position, false);
+                uploadIV(bean, position, false);
                 showLoading("正在上传...");
             }
         });
@@ -135,7 +136,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 }
 
                 showLoading("正在上传...");
-                uploadData(projectAcceptanceBeen.get(0), 0, true);
+                uploadIV(projectAcceptanceBeen.get(0), 0, true);
             }
         });
 
@@ -145,7 +146,9 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Logger.e("aaa","========================================");
         getAllData();
+
     }
 
     public void getAllData(){
@@ -154,8 +157,36 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             ProjectAcceptanceBean bean = projectAcceptanceBeen.get(i);
             List<IVDesc> images = ivDescDao.getImageProjectAcceptanceBeanByUserId(bean.getId());
             projectAcceptanceBeen.get(i).setmImages(images);
+
+            ForeignCollection<ProjacceptItemBean> orders = bean.getProjacceptItemBeen();
+            CloseableIterator<ProjacceptItemBean> iterator = orders.closeableIterator();
+            List<ProjacceptItemBean> itemBeanList = new ArrayList<ProjacceptItemBean>();
+            try {
+                while(iterator.hasNext()){
+                    ProjacceptItemBean b = iterator.next();
+                    List<IVDesc> imageDesc = ivDescDao.getImageProjacceptItemBeanByUserId(b.getIds());
+                    b.setmImages(imageDesc);
+
+                    List<IVDesc> videoDesc = ivDescDao.getVideoProjacceptItemBeanByUserId(b.getIds());
+                    b.setmVideo(videoDesc);
+
+                    itemBeanList.add(b);
+                    Logger.e("aaa",b.toString());
+                }
+            } finally {
+                bean.setProjacceptDetailList(itemBeanList);
+                projectAcceptanceBeen.set(i, bean);
+                try {
+                    iterator.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
-        Logger.e("aaa", "保养工程验收记录信息:===" + projectAcceptanceBeen.toString());
+
+
+//        Logger.e("aaa", "保养工程验收记录信息:===" + projectAcceptanceBeen.toString());
 
 
 
@@ -274,175 +305,181 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
         }
     };
 
-//    public void uploadIV(final ProjectAcceptanceBean bean, final int position, final boolean isAll){
-//
-//        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
-//            //
-//            @Override
-//            public void onRequestSuccess(RequestType type, JSONObject obj) {
-////                Logger.e("aaa","obj====="+obj.toString());
-//                Logger.e("aaa","type====="+type.toString());
+    public void uploadIV(final ProjectAcceptanceBean bean,final int position,final boolean isAll){
+
+        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+            //
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject obj) {
 //                Logger.e("aaa","obj====="+obj.toString());
-//                com.alibaba.fastjson.JSONArray array = obj.getJSONArray("datas");
-//                Gson gson = new Gson();
-//                List<UploadFileBean>  mImages = new ArrayList<UploadFileBean>();
-//                List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();;
-//                for(int i = 0;i<array.size();i++){
-//
-//                    String s = array.getString(i);
-//                    Logger.e("aaa","UploadFileBean====="+s);
-//                    UploadFileBean uploadFileBean = gson.fromJson(s, UploadFileBean.class);
-//                    if (uploadFileBean.getFileName().indexOf("pic-") != -1) {
-//                        mImages.add(uploadFileBean);
-//                    }else{
-//                        mVideos.add(uploadFileBean);
-//                    }
-//                }
-////                int typePosition = type.getTypePosition();
-////                MaintenanceOfOrderItemBean ofOrderItemBean = bean.getSafetycheckdetailList().get(typePosition);
-//                List<IVDesc> images = bean.getmImages();
-////                List<IVDesc> videos = ofOrderItemBean.getmVideo();
-//                for(int i = 0;i<images.size();i++){
-//                    ivDescDao.delete(images.get(i).getId());
-//                }
-////                for(int i = 0;i<videos.size();i++){
-////                    ivDescDao.delete(videos.get(i).getId());
-////                }
-//                StringBuffer imageSB = new StringBuffer();
-////                StringBuffer videoSB = new StringBuffer();
-//                for(int i = 0;i<mImages.size();i++){
-//                    Logger.e("aaa","mImages.get(i).getFileId())====="+mImages.get(i).getFileId());
-//                    imageSB.append(mImages.get(i).getFileId());
-//                    if (i != mImages.size() - 1) {
-//                        imageSB.append(",");
-//                    }
-//                }
-//
-////                for(int i = 0;i<mVideos.size();i++){
-////                    Logger.e("aaa","mVideos.get(i).getFileId())====="+mVideos.get(i).getFileId());
-////                    videoSB.append(mVideos.get(i).getFileId());
-////                    if (i != mVideos.size() - 1) {
-////                        videoSB.append(",");
-////                    }
-////                }
-//                Logger.e("aaa","imageSB====="+imageSB.toString());
-////                Logger.e("aaa","mVideos====="+videoSB.toString());
-//
-//                bean.setPicattachment(imageSB.toString());
-////                bean.getSafetycheckdetailList().get(typePosition).setVidattachment(videoSB.toString());
-////                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-////                String date = sDateFormat.format(new java.util.Date());
-//                bean.setStatus("2");
-//
-//
-//
-//                boolean isUpload = true;
-////                List<MaintenanceOfOrderItemBean> itemBeen = bean.getSafetycheckdetailList();
-////                for(int i = 0;i<itemBeen.size();i++){
-////                    Logger.e("aaa","itemBeen====="+i);
-////                    MaintenanceOfOrderItemBean thisTableItemBean = itemBeen.get(i);
-////                    int getType = thisTableItemBean.getType();
-////                    if (getType == 0) {
-////
-////                        isUpload = false;
-////                        break;
-////                    }
-////                }
-////                if(isUpload){
-////                    for(int i = 0; i<bean.getSafetycheckdetailList().size(); i++){
-//                bean.setmImages(null);
-//                bean.setiDescs(null);
-////                    }
-////                    bean.setTjsj(date);
-//
-//                uploadData(bean,position,isAll);
-////                    Logger.e("aaa","bean====="+bean.toString());
-////                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
-//
-////                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onRequestFail(RequestType type, String resultCode, String result) {
-//                Logger.e("aaa","type====="+type.toString());
-//                Logger.e("aaa","resultCode====="+resultCode);
-//                Logger.e("aaa","result====="+result);
-//
-//            }
-//        };
-//        BackgroundExecutor.execute(new Runnable() {
-//
-//            @Override
-//            public void run() {
-//                List<NameValuePair> list = new ArrayList<NameValuePair>();
-//                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-//                list.add(pair);
-//                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-//                list.add(pair);
-//
-////                List<MaintenanceOfOrderItemBean> itemBeen = bean.getSafetycheckdetailList();
-////                Logger.e("aaa","itemBeen.size()====="+itemBeen.size());
-////                for (int j = 0; j < itemBeen.size(); j++) {
-////                    MaintenanceOfOrderItemBean ofOrderItemBean = itemBeen.get(j);
-//                    List<IVDesc> images = bean.getmImages();
-////                    List<IVDesc> videos = ofOrderItemBean.getmVideo();
-//
-//                    Logger.e("aaa","images===="+images.toString());
-////                    Logger.e("aaa","videos===="+videos.toString());
-//
-//                    if (images == null ||images.size() ==0) {
-//                        Logger.e("aaa","无图！！！");
-////                        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-////                        String date = sDateFormat.format(new java.util.Date());
-//                        bean.setStatus("2");
-////                        boolean isUpload = true;
-////                        for (int i = 0; i < itemBeen.size(); i++) {
-////                            Logger.e("aaa", "itemBeen=====" + i);
-////                            MaintenanceOfOrderItemBean thisOfOrderItemBean = itemBeen.get(i);
-////                            int getType = thisOfOrderItemBean.getType();
-////                            if (getType == 0) {
-////
-////                                isUpload = false;
-////                                break;
-////                            }
-////                        }
-////                        if (isUpload) {
-////                            for (int i = 0; i < bean.getSafetycheckdetailList().size(); i++) {
-//                        bean.setmImages(null);
-//                        bean.setiDescs(null);
-////                            }
-////                            bean.setTjsj(date);
-//                            uploadData(bean,position,isAll);
-////                    Logger.e("aaa","bean====="+bean.toString());
-////                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
-//                            return;
-////                        }
-////                        continue;
-//                    }
-//
-//                    String[] pics = new String[images.size()];
-//                    for (int i = 0; i < images.size(); i++) {
-//                        pics[i] = images.get(i).getPath();
-//                    }
-////                    String[] vdos = new String[videos.size()];
-////                    for (int i = 0; i < videos.size(); i++) {
-////                        vdos[i] = videos.get(i).getPath();
-////                    }
-//
-//
-////                    String[] attaches = concat(pics, vdos);
-//                    for (int i = 0; i < pics.length; i++) {
-//                        Logger.e("aaa", "i====================" + pics[i]);
-//                    }
-//                    if (pics.length > 0) {
-//                        new HttpTask(listener, RequestType.uploadFile).uploadFile(list,0,pics);
-//                    }
-//                }
-////            }
-//        });
-//    }
+                Logger.e("aaa","type====="+type.toString());
+                Logger.e("aaa","obj====="+obj.toString());
+                com.alibaba.fastjson.JSONArray array = obj.getJSONArray("datas");
+                Gson gson = new Gson();
+                List<UploadFileBean>  mImages = new ArrayList<UploadFileBean>();
+                List<UploadFileBean> mVideos= new ArrayList<UploadFileBean>();;
+                for(int i = 0;i<array.size();i++){
+
+                    String s = array.getString(i);
+                    Logger.e("aaa","UploadFileBean====="+s);
+                    UploadFileBean uploadFileBean = gson.fromJson(s, UploadFileBean.class);
+                    if (uploadFileBean.getFileName().indexOf("pic-") != -1) {
+                        mImages.add(uploadFileBean);
+                    }else{
+                        mVideos.add(uploadFileBean);
+                    }
+                }
+                int typePosition = type.getTypePosition();
+                ProjacceptItemBean projacceptItemBean = bean.getProjacceptDetailList().get(typePosition);
+                List<IVDesc> images = projacceptItemBean.getmImages();
+                List<IVDesc> videos = projacceptItemBean.getmVideo();
+                for(int i = 0;i<images.size();i++){
+                    ivDescDao.delete(images.get(i).getId());
+                }
+                for(int i = 0;i<videos.size();i++){
+                    ivDescDao.delete(videos.get(i).getId());
+                }
+                StringBuffer imageSB = new StringBuffer();
+                StringBuffer videoSB = new StringBuffer();
+                for(int i = 0;i<mImages.size();i++){
+                    Logger.e("aaa","mImages.get(i).getFileId())====="+mImages.get(i).getFileId());
+                    imageSB.append(mImages.get(i).getFileId());
+                    if (i != mImages.size() - 1) {
+                        imageSB.append(",");
+                    }
+                }
+
+                for(int i = 0;i<mVideos.size();i++){
+                    Logger.e("aaa","mVideos.get(i).getFileId())====="+mVideos.get(i).getFileId());
+                    videoSB.append(mVideos.get(i).getFileId());
+                    if (i != mVideos.size() - 1) {
+                        videoSB.append(",");
+                    }
+                }
+                Logger.e("aaa","imageSB====="+imageSB.toString());
+                Logger.e("aaa","mVideos====="+videoSB.toString());
+
+                bean.getProjacceptDetailList().get(typePosition).setPicattachment(imageSB.toString());
+                bean.getProjacceptDetailList().get(typePosition).setVidattachment(videoSB.toString());
+                SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                String date = sDateFormat.format(new java.util.Date());
+                bean.getProjacceptDetailList().get(typePosition).setState(2);
+
+
+
+                boolean isUpload = true;
+                List<ProjacceptItemBean> itemBeen = bean.getProjacceptDetailList();
+                for(int i = 0;i<itemBeen.size();i++){
+                    Logger.e("aaa","itemBeen====="+i);
+                    ProjacceptItemBean thisProjectItemBean = itemBeen.get(i);
+                    int state = thisProjectItemBean.getState();
+                    if (state == 0) {
+                        isUpload = false;
+                        break;
+                    }
+                }
+                if(isUpload){
+                    for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
+                        bean.getProjacceptDetailList().get(i).setmImages(null);
+                        bean.getProjacceptDetailList().get(i).setmVideo(null);
+                        bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
+                        bean.getProjacceptDetailList().get(i).setiDescs(null);
+                        bean.getProjacceptDetailList().get(i).setvDescs(null);
+                        bean.setProjacceptItemBeen(null);
+                        bean.setiDescs(null);
+                    }
+                    bean.setTjsj(date);
+
+                    uploadData(bean,position,isAll);
+//                    Logger.e("aaa","bean====="+bean.toString());
+//                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
+
+                }
+
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa","type====="+type.toString());
+                Logger.e("aaa","resultCode====="+resultCode);
+                Logger.e("aaa","result====="+result);
+
+            }
+        };
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                List<ProjacceptItemBean> itemBeen = bean.getProjacceptDetailList();
+                for (int j = 0; j < itemBeen.size(); j++) {
+                    ProjacceptItemBean tableItemBean = itemBeen.get(j);
+                    List<IVDesc> images = tableItemBean.getmImages();
+                    List<IVDesc> videos = tableItemBean.getmVideo();
+
+                    Logger.e("aaa","images===="+images.toString());
+                    Logger.e("aaa","videos===="+videos.toString());
+
+                    if ((images == null && videos == null)||(images.size() ==0&&videos.size()==0)) {
+                        Logger.e("aaa","无图！！！");
+                        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+                        String date = sDateFormat.format(new java.util.Date());
+                        bean.getProjacceptDetailList().get(j).setState(2);
+                        boolean isUpload = true;
+                        for (int i = 0; i < itemBeen.size(); i++) {
+                            Logger.e("aaa", "itemBeen=====" + i);
+                            ProjacceptItemBean thisProjectItemBean = itemBeen.get(i);
+                            int state = thisProjectItemBean.getState();
+                            if (state == 0 ) {
+                                isUpload = false;
+                                break;
+                            }
+                        }
+                        if (isUpload) {
+                            for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
+                                bean.getProjacceptDetailList().get(i).setmImages(null);
+                                bean.getProjacceptDetailList().get(i).setmVideo(null);
+                                bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
+                                bean.getProjacceptDetailList().get(i).setiDescs(null);
+                                bean.getProjacceptDetailList().get(i).setvDescs(null);
+                                bean.setProjacceptItemBeen(null);
+                                bean.setiDescs(null);
+                            }
+                            bean.setTjsj(date);
+                            uploadData(bean,position,isAll);
+//                    Logger.e("aaa","bean====="+bean.toString());
+//                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));
+                            return;
+                        }
+                        continue;
+                    }
+
+                    String[] pics = new String[images.size()];
+                    for (int i = 0; i < images.size(); i++) {
+                        pics[i] = images.get(i).getPath();
+                    }
+                    String[] vdos = new String[videos.size()];
+                    for (int i = 0; i < videos.size(); i++) {
+                        vdos[i] = videos.get(i).getPath();
+                    }
+
+
+                    String[] attaches = concat(pics, vdos);
+                    for (int i = 0; i < attaches.length; i++) {
+                        Logger.e("aaa", "i====================" + attaches[i]);
+                    }
+                    if (attaches.length > 0) {
+                        new HttpTask(listener, RequestType.uploadFile).uploadFile(list, j,attaches);
+                    }
+                }
+            }
+        });
+    }
 
 
     public static String[] concat(String[] a, String[] b) {

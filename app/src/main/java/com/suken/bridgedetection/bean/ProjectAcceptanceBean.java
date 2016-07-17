@@ -7,6 +7,7 @@ import com.j256.ormlite.table.DatabaseTable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,27 +18,7 @@ public class ProjectAcceptanceBean implements Serializable{
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
     @DatabaseField
-    private String orgid;
-    @DatabaseField
-    private String versionno;
-    @DatabaseField
-    private String createBy;
-    @DatabaseField
-    private String creator;
-    @DatabaseField
-    private String createtime;
-    @DatabaseField
-    private String updateBy;
-    @DatabaseField
-    private String updator;
-    @DatabaseField
-    private String updatetime;
-    @DatabaseField
-    private String flag;
-    @DatabaseField
     private String gydwId;
-    @DatabaseField
-    private String bno;
     @DatabaseField
     private String yhtzid;
     @DatabaseField
@@ -83,26 +64,28 @@ public class ProjectAcceptanceBean implements Serializable{
     private byte[] qmtp4;
     private byte[] qmtp5;
 
+
+    private List<ProjacceptItemBean> projacceptDetailList = new ArrayList<ProjacceptItemBean>();
+    @ForeignCollectionField
+    /**
+     * 这里需要注意的是：属性类型只能是ForeignCollection<T>或者Collection<T>
+     * 如果需要懒加载（延迟加载）可以在@ForeignCollectionField加上参数eager=false
+     * 这个属性也就说明一个部门对应着多个用户
+     */
+    private ForeignCollection<ProjacceptItemBean> projacceptItemBeen;
+
+
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
 
     @ForeignCollectionField
     private ForeignCollection<IVDesc> iDescs;
 
+
     @Override
     public String toString() {
         return "ProjectAcceptanceBean{" +
                 "id=" + id +
-                ", orgid='" + orgid + '\'' +
-                ", versionno='" + versionno + '\'' +
-                ", createBy='" + createBy + '\'' +
-                ", creator='" + creator + '\'' +
-                ", createtime='" + createtime + '\'' +
-                ", updateBy='" + updateBy + '\'' +
-                ", updator='" + updator + '\'' +
-                ", updatetime='" + updatetime + '\'' +
-                ", flag='" + flag + '\'' +
                 ", gydwId='" + gydwId + '\'' +
-                ", bno='" + bno + '\'' +
                 ", yhtzid='" + yhtzid + '\'' +
                 ", yhtzdno='" + yhtzdno + '\'' +
                 ", gydwName='" + gydwName + '\'' +
@@ -120,6 +103,10 @@ public class ProjectAcceptanceBean implements Serializable{
                 ", status='" + status + '\'' +
                 ", weather='" + weather + '\'' +
                 ", picattachment='" + picattachment + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
+                ", projacceptDetailList=" + projacceptDetailList +
+                ", projacceptItemBeen=" + projacceptItemBeen +
                 ", mImages=" + mImages +
                 ", iDescs=" + iDescs +
                 '}';
@@ -128,19 +115,9 @@ public class ProjectAcceptanceBean implements Serializable{
     public ProjectAcceptanceBean() {
     }
 
-    public ProjectAcceptanceBean(int id, String orgid, String versionno, String createBy, String creator, String createtime, String updateBy, String updator, String updatetime, String flag, String gydwId, String bno, String yhtzid, String yhtzdno, String gydwName, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status) {
+    public ProjectAcceptanceBean(int id, String gydwId, String yhtzid, String yhtzdno, String gydwName, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status, String weather, String picattachment, String tpjd, String tpwd, byte[] qmtp1, byte[] qmtp2, byte[] qmtp3, byte[] qmtp4, byte[] qmtp5, List<ProjacceptItemBean> projacceptDetailList, ForeignCollection<ProjacceptItemBean> projacceptItemBeen, List<IVDesc> mImages, ForeignCollection<IVDesc> iDescs) {
         this.id = id;
-        this.orgid = orgid;
-        this.versionno = versionno;
-        this.createBy = createBy;
-        this.creator = creator;
-        this.createtime = createtime;
-        this.updateBy = updateBy;
-        this.updator = updator;
-        this.updatetime = updatetime;
-        this.flag = flag;
         this.gydwId = gydwId;
-        this.bno = bno;
         this.yhtzid = yhtzid;
         this.yhtzdno = yhtzdno;
         this.gydwName = gydwName;
@@ -156,94 +133,19 @@ public class ProjectAcceptanceBean implements Serializable{
         this.sgfzdate = sgfzdate;
         this.tjsj = tjsj;
         this.status = status;
-    }
-
-    public byte[] getQmtp1() {
-        return qmtp1;
-    }
-
-    public void setQmtp1(byte[] qmtp1) {
-        this.qmtp1 = qmtp1;
-    }
-
-    public byte[] getQmtp2() {
-        return qmtp2;
-    }
-
-    public void setQmtp2(byte[] qmtp2) {
-        this.qmtp2 = qmtp2;
-    }
-
-    public byte[] getQmtp3() {
-        return qmtp3;
-    }
-
-    public void setQmtp3(byte[] qmtp3) {
-        this.qmtp3 = qmtp3;
-    }
-
-    public byte[] getQmtp4() {
-        return qmtp4;
-    }
-
-    public void setQmtp4(byte[] qmtp4) {
-        this.qmtp4 = qmtp4;
-    }
-
-    public byte[] getQmtp5() {
-        return qmtp5;
-    }
-
-    public void setQmtp5(byte[] qmtp5) {
-        this.qmtp5 = qmtp5;
-    }
-
-    public String getTpjd() {
-        return tpjd;
-    }
-
-    public void setTpjd(String tpjd) {
-        this.tpjd = tpjd;
-    }
-
-    public String getTpwd() {
-        return tpwd;
-    }
-
-    public void setTpwd(String tpwd) {
-        this.tpwd = tpwd;
-    }
-
-    public String getPicattachment() {
-        return picattachment;
-    }
-
-    public void setPicattachment(String picattachment) {
-        this.picattachment = picattachment;
-    }
-
-    public List<IVDesc> getmImages() {
-        return mImages;
-    }
-
-    public void setmImages(List<IVDesc> mImages) {
-        this.mImages = mImages;
-    }
-
-    public ForeignCollection<IVDesc> getiDescs() {
-        return iDescs;
-    }
-
-    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
-        this.iDescs = iDescs;
-    }
-
-    public String getWeather() {
-        return weather;
-    }
-
-    public void setWeather(String weather) {
         this.weather = weather;
+        this.picattachment = picattachment;
+        this.tpjd = tpjd;
+        this.tpwd = tpwd;
+        this.qmtp1 = qmtp1;
+        this.qmtp2 = qmtp2;
+        this.qmtp3 = qmtp3;
+        this.qmtp4 = qmtp4;
+        this.qmtp5 = qmtp5;
+        this.projacceptDetailList = projacceptDetailList;
+        this.projacceptItemBeen = projacceptItemBeen;
+        this.mImages = mImages;
+        this.iDescs = iDescs;
     }
 
     public int getId() {
@@ -254,92 +156,12 @@ public class ProjectAcceptanceBean implements Serializable{
         this.id = id;
     }
 
-    public String getOrgid() {
-        return orgid;
-    }
-
-    public void setOrgid(String orgid) {
-        this.orgid = orgid;
-    }
-
-    public String getVersionno() {
-        return versionno;
-    }
-
-    public void setVersionno(String versionno) {
-        this.versionno = versionno;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
-    }
-
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
-    }
-
     public String getGydwId() {
         return gydwId;
     }
 
     public void setGydwId(String gydwId) {
         this.gydwId = gydwId;
-    }
-
-    public String getBno() {
-        return bno;
-    }
-
-    public void setBno(String bno) {
-        this.bno = bno;
     }
 
     public String getYhtzid() {
@@ -460,5 +282,109 @@ public class ProjectAcceptanceBean implements Serializable{
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getWeather() {
+        return weather;
+    }
+
+    public void setWeather(String weather) {
+        this.weather = weather;
+    }
+
+    public String getPicattachment() {
+        return picattachment;
+    }
+
+    public void setPicattachment(String picattachment) {
+        this.picattachment = picattachment;
+    }
+
+    public String getTpjd() {
+        return tpjd;
+    }
+
+    public void setTpjd(String tpjd) {
+        this.tpjd = tpjd;
+    }
+
+    public String getTpwd() {
+        return tpwd;
+    }
+
+    public void setTpwd(String tpwd) {
+        this.tpwd = tpwd;
+    }
+
+    public byte[] getQmtp1() {
+        return qmtp1;
+    }
+
+    public void setQmtp1(byte[] qmtp1) {
+        this.qmtp1 = qmtp1;
+    }
+
+    public byte[] getQmtp2() {
+        return qmtp2;
+    }
+
+    public void setQmtp2(byte[] qmtp2) {
+        this.qmtp2 = qmtp2;
+    }
+
+    public byte[] getQmtp3() {
+        return qmtp3;
+    }
+
+    public void setQmtp3(byte[] qmtp3) {
+        this.qmtp3 = qmtp3;
+    }
+
+    public byte[] getQmtp4() {
+        return qmtp4;
+    }
+
+    public void setQmtp4(byte[] qmtp4) {
+        this.qmtp4 = qmtp4;
+    }
+
+    public byte[] getQmtp5() {
+        return qmtp5;
+    }
+
+    public void setQmtp5(byte[] qmtp5) {
+        this.qmtp5 = qmtp5;
+    }
+
+    public List<ProjacceptItemBean> getProjacceptDetailList() {
+        return projacceptDetailList;
+    }
+
+    public void setProjacceptDetailList(List<ProjacceptItemBean> projacceptDetailList) {
+        this.projacceptDetailList = projacceptDetailList;
+    }
+
+    public ForeignCollection<ProjacceptItemBean> getProjacceptItemBeen() {
+        return projacceptItemBeen;
+    }
+
+    public void setProjacceptItemBeen(ForeignCollection<ProjacceptItemBean> projacceptItemBeen) {
+        this.projacceptItemBeen = projacceptItemBeen;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
     }
 }

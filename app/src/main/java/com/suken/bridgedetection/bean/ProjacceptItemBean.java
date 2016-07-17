@@ -1,47 +1,67 @@
 package com.suken.bridgedetection.bean;
 
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 2016/7/9.
  */
+@DatabaseTable(tableName = "tb_projacceptitembean")
 public class ProjacceptItemBean implements Serializable{
-    private String createBy;
-    private String createtime;
-    private String creator;
-    private String updateBy;
-    private String updatetime;
-    private String updator;
-    private String versionno;
-    private String flag;
-    private String id;
-    private String orgid;
+    @DatabaseField(generatedId = true) //主键自增加
+    private int ids;
+    @DatabaseField
     private String bhid;
+    @DatabaseField
     private String bhmc;
+    @DatabaseField
     private String fx;
+    @DatabaseField
     private String yhzh;
+    @DatabaseField
     private String dw;
+    @DatabaseField
     private String dj;
+    @DatabaseField
     private String wxsl;
+    @DatabaseField
     private String ysjg ;
+    @DatabaseField
     private String picattachment;
+    @DatabaseField
     private String vidattachment;
+    @DatabaseField
     private String tpjd;
+    @DatabaseField
     private String tpwd;
 
-    @Override
+    private int state;
+
+    private List<IVDesc> mImages = new ArrayList<IVDesc>();
+    private List<IVDesc> mVideo = new ArrayList<IVDesc>();
+
+    /**
+     * foreign = true:说明这是一个外部引用关系
+     * foreignAutoRefresh = true：当对象被查询时，外部属性自动刷新（暂时我也没看懂其作用）
+     *
+     */
+    @DatabaseField(foreign = true,foreignAutoRefresh = true)
+    private ProjectAcceptanceBean projectAcceptanceBean;
+
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> iDescs;
+    @ForeignCollectionField
+    private ForeignCollection<IVDesc> vDescs;
+
     public String toString() {
         return "ProjacceptItemBean{" +
-                "createBy='" + createBy + '\'' +
-                ", createtime='" + createtime + '\'' +
-                ", creator='" + creator + '\'' +
-                ", updateBy='" + updateBy + '\'' +
-                ", updatetime='" + updatetime + '\'' +
-                ", updator='" + updator + '\'' +
-                ", versionno='" + versionno + '\'' +
-                ", flag='" + flag + '\'' +
-                ", id='" + id + '\'' +
-                ", orgid='" + orgid + '\'' +
+                "ids=" + ids +
                 ", bhid='" + bhid + '\'' +
                 ", bhmc='" + bhmc + '\'' +
                 ", fx='" + fx + '\'' +
@@ -54,23 +74,20 @@ public class ProjacceptItemBean implements Serializable{
                 ", vidattachment='" + vidattachment + '\'' +
                 ", tpjd='" + tpjd + '\'' +
                 ", tpwd='" + tpwd + '\'' +
+                ", state=" + state +
+                ", mImages=" + mImages +
+                ", mVideo=" + mVideo +
+                ", projectAcceptanceBean=" + projectAcceptanceBean +
+                ", iDescs=" + iDescs +
+                ", vDescs=" + vDescs +
                 '}';
     }
 
     public ProjacceptItemBean() {
     }
 
-    public ProjacceptItemBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String flag, String id, String orgid, String bhid, String bhmc, String fx, String yhzh, String dw, String dj, String wxsl, String ysjg, String picattachment, String vidattachment, String tpjd, String tpwd) {
-        this.createBy = createBy;
-        this.createtime = createtime;
-        this.creator = creator;
-        this.updateBy = updateBy;
-        this.updatetime = updatetime;
-        this.updator = updator;
-        this.versionno = versionno;
-        this.flag = flag;
-        this.id = id;
-        this.orgid = orgid;
+    public ProjacceptItemBean(int ids, String bhid, String bhmc, String fx, String yhzh, String dw, String dj, String wxsl, String ysjg, String picattachment, String vidattachment, String tpjd, String tpwd, int state, List<IVDesc> mImages, List<IVDesc> mVideo, ProjectAcceptanceBean projectAcceptanceBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
+        this.ids = ids;
         this.bhid = bhid;
         this.bhmc = bhmc;
         this.fx = fx;
@@ -83,86 +100,20 @@ public class ProjacceptItemBean implements Serializable{
         this.vidattachment = vidattachment;
         this.tpjd = tpjd;
         this.tpwd = tpwd;
+        this.state = state;
+        this.mImages = mImages;
+        this.mVideo = mVideo;
+        this.projectAcceptanceBean = projectAcceptanceBean;
+        this.iDescs = iDescs;
+        this.vDescs = vDescs;
     }
 
-    public String getCreateBy() {
-        return createBy;
+    public int getIds() {
+        return ids;
     }
 
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public String getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getVersionno() {
-        return versionno;
-    }
-
-    public void setVersionno(String versionno) {
-        this.versionno = versionno;
-    }
-
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getOrgid() {
-        return orgid;
-    }
-
-    public void setOrgid(String orgid) {
-        this.orgid = orgid;
+    public void setIds(int ids) {
+        this.ids = ids;
     }
 
     public String getBhid() {
@@ -259,5 +210,53 @@ public class ProjacceptItemBean implements Serializable{
 
     public void setTpwd(String tpwd) {
         this.tpwd = tpwd;
+    }
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(int state) {
+        this.state = state;
+    }
+
+    public List<IVDesc> getmImages() {
+        return mImages;
+    }
+
+    public void setmImages(List<IVDesc> mImages) {
+        this.mImages = mImages;
+    }
+
+    public List<IVDesc> getmVideo() {
+        return mVideo;
+    }
+
+    public void setmVideo(List<IVDesc> mVideo) {
+        this.mVideo = mVideo;
+    }
+
+    public ProjectAcceptanceBean getProjectAcceptanceBean() {
+        return projectAcceptanceBean;
+    }
+
+    public void setProjectAcceptanceBean(ProjectAcceptanceBean projectAcceptanceBean) {
+        this.projectAcceptanceBean = projectAcceptanceBean;
+    }
+
+    public ForeignCollection<IVDesc> getiDescs() {
+        return iDescs;
+    }
+
+    public void setiDescs(ForeignCollection<IVDesc> iDescs) {
+        this.iDescs = iDescs;
+    }
+
+    public ForeignCollection<IVDesc> getvDescs() {
+        return vDescs;
+    }
+
+    public void setvDescs(ForeignCollection<IVDesc> vDescs) {
+        this.vDescs = vDescs;
     }
 }

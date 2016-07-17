@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
@@ -35,12 +36,14 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -317,6 +320,10 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 break;
             case R.id.maintenancelog_save:
                 saveDialog();
+                break;
+            case R.id.maintenancelog_synchronizationData:
+                showLoading("正在同步细目库");
+                synchronizationCatalogueByUIDData();
                 break;
         }
 
@@ -634,5 +641,49 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         } else {
             return "vdo-" + System.currentTimeMillis() + "-video.3gp";
         }
+    }
+
+    public void synchronizationCatalogueByUIDData(){
+
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+               List<CatalogueByUIDBean> catalogueByUIDBeens = JSON.parseArray(result.getString("datas"), CatalogueByUIDBean.class);
+
+                Logger.e("aaa", catalogueByUIDBeens.toString());
+
+                catalogueByUIDDao.addList(catalogueByUIDBeens);
+                dismissLoading();
+                toast("同步细目库成功！");
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+                dismissLoading();
+                toast("同步细目库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                catalogueByUIDDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getCatalogueByUID).executePost(list);
+
+
+            }
+        });
+
     }
 }
