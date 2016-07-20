@@ -272,8 +272,20 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                         bean.setQmtp5(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
                     }
                 }
-                bean.setmImages(null);
+
+                for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
+                    bean.getProjacceptDetailList().get(i).setmImages(null);
+                    bean.getProjacceptDetailList().get(i).setmVideo(null);
+                    bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
+                    bean.getProjacceptDetailList().get(i).setiDescs(null);
+                    bean.getProjacceptDetailList().get(i).setvDescs(null);
+
+                }
+                bean.setProjacceptItemBeen(null);
                 bean.setiDescs(null);
+                bean.setmImages(null);
+
+//                Logger.e("aaa", "bean123===" + bean.toString());
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
@@ -379,15 +391,16 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                     }
                 }
                 if(isUpload){
-                    for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
-                        bean.getProjacceptDetailList().get(i).setmImages(null);
-                        bean.getProjacceptDetailList().get(i).setmVideo(null);
-                        bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
-                        bean.getProjacceptDetailList().get(i).setiDescs(null);
-                        bean.getProjacceptDetailList().get(i).setvDescs(null);
-                        bean.setProjacceptItemBeen(null);
-                        bean.setiDescs(null);
-                    }
+//                    for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
+//                        bean.getProjacceptDetailList().get(i).setmImages(null);
+//                        bean.getProjacceptDetailList().get(i).setmVideo(null);
+//                        bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
+//                        bean.getProjacceptDetailList().get(i).setiDescs(null);
+//                        bean.getProjacceptDetailList().get(i).setvDescs(null);
+//
+//                    }
+//                    bean.setProjacceptItemBeen(null);
+//                    bean.setiDescs(null);
                     bean.setTjsj(date);
 
                     uploadData(bean,position,isAll);
@@ -441,15 +454,15 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                             }
                         }
                         if (isUpload) {
-                            for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
-                                bean.getProjacceptDetailList().get(i).setmImages(null);
-                                bean.getProjacceptDetailList().get(i).setmVideo(null);
-                                bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
-                                bean.getProjacceptDetailList().get(i).setiDescs(null);
-                                bean.getProjacceptDetailList().get(i).setvDescs(null);
-                                bean.setProjacceptItemBeen(null);
-                                bean.setiDescs(null);
-                            }
+//                            for(int i = 0;i<bean.getProjacceptDetailList().size();i++){
+//                                bean.getProjacceptDetailList().get(i).setmImages(null);
+//                                bean.getProjacceptDetailList().get(i).setmVideo(null);
+//                                bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
+//                                bean.getProjacceptDetailList().get(i).setiDescs(null);
+//                                bean.getProjacceptDetailList().get(i).setvDescs(null);
+//                                bean.setProjacceptItemBeen(null);
+//                                bean.setiDescs(null);
+//                            }
                             bean.setTjsj(date);
                             uploadData(bean,position,isAll);
 //                    Logger.e("aaa","bean====="+bean.toString());

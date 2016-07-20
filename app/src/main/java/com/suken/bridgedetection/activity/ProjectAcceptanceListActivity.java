@@ -87,7 +87,7 @@ public class ProjectAcceptanceListActivity extends BaseActivity {
                         .show();
             }
         });
-        showLoading("获取保养工程验收记录中...");
+
         getYanShouData();
 
     }
@@ -95,6 +95,9 @@ public class ProjectAcceptanceListActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.project_acceptance_back:
                 finish();
+                break;
+            case R.id.project_acceptance_getProjacceptByUID:
+                getYanShouData();
                 break;
         }
     }
@@ -133,7 +136,7 @@ public class ProjectAcceptanceListActivity extends BaseActivity {
 
             @Override
             public void run() {
-
+                showLoading("正在同步验收单...");
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);

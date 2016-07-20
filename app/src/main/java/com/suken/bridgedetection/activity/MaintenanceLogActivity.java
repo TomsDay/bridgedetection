@@ -574,13 +574,15 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         super.onActivityResult(requestCode, resultCode, data);
         Logger.e("aaa", "requestCode===" + requestCode);
         File f = null;
-        try {
-            f = new File(new URI(mOutPutFileUri.toString()));
-            if (!f.exists()) {
+        if(resultCode == RESULT_OK) {
+            try {
+                f = new File(new URI(mOutPutFileUri.toString()));
+                if (!f.exists()) {
 //                f.mkdirs();
+                }
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
             }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
         }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {

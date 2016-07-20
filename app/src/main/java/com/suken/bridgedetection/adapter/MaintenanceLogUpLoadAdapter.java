@@ -64,7 +64,7 @@ public class MaintenanceLogUpLoadAdapter extends BaseAdapter {
         final MaintenanceLogBean bean = listBeen.get(position);
 
         holder.maintenanceloglistupload_item_tv1.setText(bean.getBytzid()+"");
-        holder.maintenanceloglistupload_item_tv2.setText(bean.getBytzidbytzid()+"");
+        holder.maintenanceloglistupload_item_tv2.setText(bean.getBno()+"");
         holder.maintenanceloglistupload_item_tv3.setText(bean.getWxrq()+"");
         holder.maintenanceloglistupload_item_tv4.setText(bean.getJcry()+"");
         holder.maintenanceloglistupload_item_tv5.setText(bean.getFzry()+"");

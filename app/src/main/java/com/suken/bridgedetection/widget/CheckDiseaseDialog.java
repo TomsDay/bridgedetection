@@ -226,8 +226,7 @@ public class CheckDiseaseDialog implements View.OnClickListener {
 
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setView(view);
+
 
 
 
@@ -256,8 +255,10 @@ public class CheckDiseaseDialog implements View.OnClickListener {
 //        secondWheel.setCurrentItem(0);
 //        secondWheel.setCyclic(true);
 //        secondWheel.setInterpolator(new AnticipateOvershootInterpolator());
-//
-        builder.setPositiveButton("确  定", new DialogInterface.OnClickListener() {
+
+    AlertDialog dialog = new AlertDialog.Builder(mContext)
+        .setView(view)
+        .setPositiveButton("确  定", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -267,9 +268,10 @@ public class CheckDiseaseDialog implements View.OnClickListener {
                 }
                 dialog.cancel();
             }
-        });
+        })
 
-        builder.show();
+        .show();
+        dialog.setCanceledOnTouchOutside(true);
     }
 
     private ArrayList<String> removeDuplicate(ArrayList<String> arrayList){

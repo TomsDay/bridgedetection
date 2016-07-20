@@ -139,7 +139,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                item_checkTime_edit;
         holder.video_num.setText(bean.getmVideo().size() + "");
         holder.img_num.setText(bean.getmImages().size() + "");
-//        holder.diseaseName_edit.setText(bean.getBhmc());
+        holder.diseaseName_edit.setText(bean.getBhmc());
         holder.unit_edit.setText(bean.getDw());
         holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());

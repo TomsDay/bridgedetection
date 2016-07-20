@@ -255,12 +255,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="15dp"
+                        android:gravity="center">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:gravity="center">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -294,7 +296,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="日期："
-                                    android:textSize="9dp" />
+                                    android:textSize="9dp"
+                                    android:layout_marginTop="2dp"/>
 
                                 <EditText
                                     android:id="@+id/maintenancelog_data_ev"
@@ -323,6 +326,7 @@
                                 android:id="@+id/maintenancelog_wxbm_ev"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
+                                android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp"/>
                         </LinearLayout>
