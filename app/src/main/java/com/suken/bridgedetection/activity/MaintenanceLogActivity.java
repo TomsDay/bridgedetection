@@ -43,6 +43,7 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -51,8 +52,10 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -227,13 +230,16 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         maintenancelog_wxbm_ev.setText(allMaintenanceLogBean.getWxbmmc()+"");
 
         strWeather = allMaintenanceLogBean.getWeather().trim();
-        for (int i = 0; i < mStringArrayWeather.length; i++) {
-            if(mStringArrayWeather[i].equals(strWeather)){
-                selsctWeather = i;
-                break;
+        if(!TextUtil.isEmptyString(strWeather)){
+            for (int i = 0; i < mStringArrayWeather.length; i++) {
+                if(mStringArrayWeather[i].equals(strWeather)){
+                    selsctWeather = i;
+                    break;
+                }
             }
+            maintenancelog_weather_spinner.setSelection(selsctWeather);
         }
-        maintenancelog_weather_spinner.setSelection(selsctWeather);
+
 
         maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
         maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
@@ -358,11 +364,11 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         Logger.e("aaa","itemlist===="+ maintenanceLogItemBeen.toString());
 
@@ -387,6 +393,36 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
                         maintenanceLogBean.setJcry(jcr);
                         maintenanceLogBean.setFzry(fzr);
+
+                        if(TextUtil.isEmptyString(jcr)){
+                            toast("“检查人”不可为空！");
+                            return;
+                        }
+                        if(TextUtil.isEmptyString(fzr)){
+                            toast("“负责人”不可为空！");
+                            return;
+                        }
+
+                        maintenanceLogItemBeen = mAdapter.getData();
+                        for(int q = 0; q < maintenanceLogItemBeen.size(); q++){
+                            MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(q);
+                            int num = q + 1;
+                            //必填项限制
+                            if(TextUtil.isEmptyString(itemBean.getBhmc())){
+                                toast("第" + num + "条维修内容的“细目名称”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getClmc())){
+                                toast("第" + num + "条维修内容的“材料名称”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getWxsl())){
+                                toast("第" + num + "条维修内容的“数量”不可为空！");
+                                return;
+                            }
+
+                        }
+
                         if (id != 0) {
                             maintenanceLogBean.setId(id);
                         }
@@ -400,7 +436,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                         }else{
                             maintenanceLogDao.add(maintenanceLogBean);
                         }
-                        maintenanceLogItemBeen = mAdapter.getData();
+
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
                             if (itemBean.getTpjd() != null) {
@@ -659,6 +695,9 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 catalogueByUIDDao.addList(catalogueByUIDBeens);
                 dismissLoading();
                 toast("同步细目库成功！");
+                if(TextUtil.isListEmpty(catalogueByUIDBeens)){
+                    ToastUtil.showMessage("暂无细目库数据");
+                }
 
             }
 

@@ -87,11 +87,11 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
-        if (position == 1) {
-            holder.maintenance_item_new.setText("查看");
-        } else {
-            holder.maintenance_item_new.setText("新建");
-        }
+//        if (position == 1) {
+//            holder.maintenance_item_new.setText("查看");
+//        } else {
+//            holder.maintenance_item_new.setText("新建");
+//        }
         holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

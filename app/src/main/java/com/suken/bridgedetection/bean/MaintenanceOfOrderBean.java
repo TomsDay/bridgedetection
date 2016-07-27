@@ -62,7 +62,7 @@ public class MaintenanceOfOrderBean implements Serializable {
 //    @DatabaseField
 //    private String tjsj;
     @DatabaseField
-    private String status;
+    private String status = "2";
     @DatabaseField
     private String qtqk;
 //    @DatabaseField

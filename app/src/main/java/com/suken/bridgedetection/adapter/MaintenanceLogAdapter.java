@@ -129,7 +129,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-        holder.count_edit.setText(bean.getWxsl());
+        holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
@@ -182,12 +182,11 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.xiangji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClickImagePositon = position;
                 mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                        if (mActivity == null || ((BaseActivity) mActivity).isDestroyed() || mActivity.isFinishing()) {
                             return;
                         }
                         boolean mIsGpsSuccess = false;
@@ -198,12 +197,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.latitude);
+                            Logger.e("aaa", "纬度:" + result.longitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
+                        } else if (!mIsGpsSuccess) {
                             Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
 //                            tv.setText("定位失败");
@@ -409,7 +408,6 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         }
     }
-    private int ClickImagePositon;
     class  Watcher implements TextWatcher {
         private EditText editTextID;
         public Watcher(EditText editText) {
@@ -554,7 +552,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     IVDesc desc = (IVDesc) v.getTag();
-                    mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
+                    mActivity.jumpToMedia(0, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });
             return view;

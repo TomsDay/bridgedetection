@@ -369,6 +369,16 @@ public class DateUtil {
         }
         return c;
     }
+    public static Calendar strToCalendarLong2(String strDate) {
+        Calendar c = Calendar.getInstance();
+        try {
+            c.setTime(new SimpleDateFormat("yyyy-MM-dd").parse(strDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return c;
+    }
+
     @SuppressLint("SimpleDateFormat")
     public static String getTimes(long unixLong) {
         long currentDate = System.currentTimeMillis();

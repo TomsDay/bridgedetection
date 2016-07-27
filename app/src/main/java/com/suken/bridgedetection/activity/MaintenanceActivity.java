@@ -55,9 +55,9 @@ public class MaintenanceActivity extends BaseActivity {
         maintenanceOfOrderDao = new MaintenanceOfOrderDao();
         projectAcceptanceDao = new ProjectAcceptanceDao();
         initView();
-        Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
-        Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
-        Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
+//        Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
+//        Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
+//        Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
 //        syncYangHuData();
     }
     private void initView(){

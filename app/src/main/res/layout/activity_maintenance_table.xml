@@ -225,6 +225,9 @@
                                 android:text="巡查路段："
                                 android:textSize="9dp" />
 
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp">
                             <EditText
                                 android:id="@+id/maintenancetable_cxld_ev"
                                 android:layout_width="match_parent"
@@ -232,7 +235,15 @@
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:imeOptions="flagNoExtractUi"
+                                />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@android:drawable/arrow_down_float"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentRight="true"/>
+                            </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>
 

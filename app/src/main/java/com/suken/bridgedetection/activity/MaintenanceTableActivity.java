@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -56,8 +57,10 @@ import com.suken.bridgedetection.storage.GXLuXianInfoDao;
 import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
 import com.suken.bridgedetection.storage.SdxcFormData;
 import com.suken.bridgedetection.storage.SdxcFormDetail;
+import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.NetUtil;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
@@ -72,6 +75,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.suken.bridgedetection.util.Logger;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -244,11 +248,13 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
         setCXLD();
 
-        setTime();
+
 
         initSpinner();
 
         getData();
+
+        setTime();
 
 //        loadDate();
 
@@ -273,7 +279,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
     }
 
-    int xcldPosition;
+    int xcldPosition = -1;
     private void initListDialog() {
         final String[] names = new String[gxLuXianInfos.size()];
         for (int i = 0; i < gxLuXianInfos.size(); i++) {
@@ -291,7 +297,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                         xcldPosition = which;
                         GXLuXianInfo bean = gxLuXianInfos.get(which);
 
-                        maintenancetable_cxld_ev.setText(bean.getQdzh()+"-"+bean.getQdzh());
+                        maintenancetable_cxld_ev.setText(bean.getQdzh()+"-"+bean.getZdzh());
 
                     }
                 })
@@ -354,13 +360,23 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         days = c.get(Calendar.DATE);
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
-        checkTime = (hour < 10 ? "0" + hour : hour)
-                + ":" +
-                (minute < 10 ? "0" + minute : minute) +
-                ("-") +
-                (hour + 1 < 10 ? "0" + (hour + 1) : (hour + 1)) +
-                (":") +
-                (minute < 10 ? "0" + minute : minute);
+        if(id != 0){
+            MaintenanceTableBean bean = maintenanceTableBeen.get(0);
+            checkTime = bean.getJcks() + "-" + bean.getJcjs();
+            Calendar getCalendar = DateUtil.strToCalendarLong2(bean.getJcsj());
+            years = getCalendar.get(Calendar.YEAR);
+            months = getCalendar.get(Calendar.MONTH)+1;
+            days = getCalendar.get(Calendar.DATE);
+        }else{
+            checkTime = (hour < 10 ? "0" + hour : hour)
+                    + ":" +
+                    (minute < 10 ? "0" + minute : minute) +
+                    ("-") +
+                    (hour + 1 < 10 ? "0" + (hour + 1) : (hour + 1)) +
+                    (":") +
+                    (minute < 10 ? "0" + minute : minute);
+        }
+
 
         initCheckDate(years,months,days);
 
@@ -477,17 +493,25 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         String time = maintenancetable_time_ev.getText().toString();
+                        String cxld = maintenancetable_cxld_ev.getText().toString();
                         String date = maintenancetable_date_ev.getText().toString();
                         String xcr = maintenancetable_xcr_ev.getText().toString();
                         MaintenanceTableBean maintenanceTableBean = new MaintenanceTableBean();
-                        GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
+                        //必填项限制
+                        Logger.e("aaa","getXcld=="+maintenanceTableBean.getXcld());
+                        if(TextUtil.isEmptyString(cxld)){
+                            toast("“巡查路段”不可为空！");
+                            return;
+                        }
+
+
                         maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
                         maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
 
@@ -496,16 +520,57 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                         String[] timeStr = time.split("-");
                         maintenanceTableBean.setJcks(timeStr[0]);
                         maintenanceTableBean.setJcjs(timeStr[1]);
-                        maintenanceTableBean.setLxbh(bean.getLxbh());
-                        maintenanceTableBean.setLxmc(bean.getLxmc());
-                        maintenanceTableBean.setLxid(bean.getId());
+                        if (xcldPosition != -1) {
+                            GXLuXianInfo bean = gxLuXianInfos.get(xcldPosition);
+                            maintenanceTableBean.setLxbh(bean.getLxbh());
+                            maintenanceTableBean.setLxmc(bean.getLxmc());
+                            maintenanceTableBean.setLxid(bean.getId());
+                            maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
+                        }else{
+                            if(id != 0){
+                                MaintenanceTableBean bean = maintenanceTableBeen.get(0);
+                                maintenanceTableBean.setLxbh(bean.getLxbh());
+                                maintenanceTableBean.setLxmc(bean.getLxmc());
+                                maintenanceTableBean.setLxid(bean.getLxid());
+                                maintenanceTableBean.setXcld(bean.getXcld());
+                            }
+                        }
+
+
                         maintenanceTableBean.setTjsj(date);
                         maintenanceTableBean.setWeather(strWeather);
-                        maintenanceTableBean.setXcld(bean.getQdzh()+"-"+bean.getZdzh());
+
                         maintenanceTableBean.setXcry(xcr);
                         maintenanceTableBean.setJcry(BridgeDetectionApplication.mCurrentUser.getUserName());
                         maintenanceTableBean.setXclx(intSearchType);
 
+
+                        maintenanceTableItemBeen = mAdapter.getData();
+                        for(int q = 0; q < maintenanceTableItemBeen.size(); q++){
+                            MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(q);
+                            int num = q + 1;
+                            //必填项限制
+                            if(TextUtil.isEmptyString(itemBean.getYhzh())){
+                                toast("第" + num + "条检查情况的“桩号”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getBhmc())){
+                                toast("第" + num + "条检查情况的“病害名称”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getDw())){
+                                toast("第" + num + "条检查情况的“单位”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getYgsl())){
+                                toast("第" + num + "条检查情况的“数量”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getJcsj())){
+                                toast("第" + num + "条检查情况的“检查时间”不可为空！");
+                                return;
+                            }
+                        }
 //
                         if (id != 0) {
                             maintenanceTableBean.setId(id);
@@ -517,9 +582,6 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                             maintenanceTableDao.add(maintenanceTableBean);
                         }
 //
-                        maintenanceTableItemBeen = mAdapter.getData();
-//
-
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setYhzt("1");
@@ -530,6 +592,9 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
                             String fx = itemBean.getFx();
                             itemBean.setFx(fx != null ? fx : "上行内侧");
+
+
+
 
                             itemBean.setMaintenanceTableBean(maintenanceTableBean);
                             if (itemBean.getId() != 0) {
@@ -713,6 +778,9 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
                 dismissLoading();
                 toast("同步病害库成功！");
+                if(TextUtil.isListEmpty(maintenanceDiseaseBeens)){
+                    ToastUtil.showMessage("暂无病害库数据");
+                }
             }
 
             @Override

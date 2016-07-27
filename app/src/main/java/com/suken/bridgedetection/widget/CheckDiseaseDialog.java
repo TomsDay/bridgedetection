@@ -18,6 +18,8 @@ import java.util.Set;
 import com.jp.wheelview.WheelView;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
+import com.suken.bridgedetection.util.TextUtil;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 /**
  * Created by gaofeng on 16/5/8.
@@ -36,6 +38,7 @@ public class CheckDiseaseDialog implements View.OnClickListener {
     private CheckDiseaseDialogReturn checkDiseaseDialogReturn;
 
     ArrayList<String> proKinds = new ArrayList<String>();
+    List<MaintenanceDiseaseBean> maintenanceDiseaseBeen;
 
     public CheckDiseaseDialog(Context context, CheckDiseaseDialogReturn checkXMDDialogReturn) {
         this.mContext = context;
@@ -46,15 +49,19 @@ public class CheckDiseaseDialog implements View.OnClickListener {
 
     public void initContent() {
 
-        List<MaintenanceDiseaseBean> list = maintenanceDiseaseDao.queryAll();
-        Log.i("aaa", "initContent: "+list.size());
-        for (int i = 0; i < list.size(); i++){
-            if (i > 0 && (list.get(i-1).getYjml()).equals(list.get(i).getYjml())){
+        maintenanceDiseaseBeen = maintenanceDiseaseDao.queryAll();
+        if(TextUtil.isListEmpty(maintenanceDiseaseBeen)){
+            ToastUtil.showMessage("暂无病害库数据");
+            return;
+        }
+        Log.i("aaa", "initContent: "+maintenanceDiseaseBeen.size());
+        for (int i = 0; i < maintenanceDiseaseBeen.size(); i++){
+            if (i > 0 && (maintenanceDiseaseBeen.get(i-1).getYjml()).equals(maintenanceDiseaseBeen.get(i).getYjml())){
                 continue;
             } else {
 
-                hourContent.add(list.get(i).getYjml());
-                Log.i("aaa", "list.get(i).getYjml(): "+list.get(i).getYjml());
+                hourContent.add(maintenanceDiseaseBeen.get(i).getYjml());
+                Log.i("aaa", "list.get(i).getYjml(): "+maintenanceDiseaseBeen.get(i).getYjml());
 
             }
 
@@ -116,6 +123,11 @@ public class CheckDiseaseDialog implements View.OnClickListener {
     String xmlb, xmmc;
     String ximmc;
     public void onClick(View v) {
+        if(TextUtil.isListEmpty(maintenanceDiseaseBeen)){
+            ToastUtil.showMessage("暂无病害库数据");
+            return;
+        }
+
         int id = v.getId();
         Log.i("aaa ", "onClick: "+id);
         View view = ((LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.checkcm_dialog, null);

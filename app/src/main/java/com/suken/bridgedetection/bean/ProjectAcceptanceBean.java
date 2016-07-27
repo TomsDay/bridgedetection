@@ -48,7 +48,7 @@ public class ProjectAcceptanceBean implements Serializable{
     @DatabaseField
     private String tjsj;
     @DatabaseField
-    private String status;
+    private String status ="2";
     @DatabaseField
     private String weather;
     @DatabaseField

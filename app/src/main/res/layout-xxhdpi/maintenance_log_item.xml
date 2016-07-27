@@ -29,7 +29,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right"
-                    android:text="检查情况："
+                    android:text="维修内容："
                     android:textSize="10dp" />
 
 
@@ -207,7 +207,7 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right"
-                    android:text="细目名称："
+                    android:text="工程名称："
                     android:textSize="9dp" />
 
                 <EditText

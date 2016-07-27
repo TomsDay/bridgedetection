@@ -80,7 +80,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="安全检查表单号"
+            android:text="施工单位名称"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
