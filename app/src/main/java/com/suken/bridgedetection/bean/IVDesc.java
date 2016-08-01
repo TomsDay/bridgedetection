@@ -40,6 +40,11 @@ public class IVDesc implements Serializable{
     @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "imageProjectAcceptanceBean_id")
     private ProjectAcceptanceBean imageProjectAcceptanceBean;
 
+    @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "imageProjacceptItemBean_id")
+    private ProjacceptItemBean imageProjacceptItemBean;
+    @DatabaseField(foreign = true,foreignAutoRefresh = true, columnName = "videoProjacceptItemBean_id")
+    private ProjacceptItemBean videoProjacceptItemBean;
+
 
 
     public IVDesc() {
@@ -59,7 +64,21 @@ public class IVDesc implements Serializable{
                 '}';
     }
 
+    public ProjacceptItemBean getImageProjacceptItemBean() {
+        return imageProjacceptItemBean;
+    }
 
+    public void setImageProjacceptItemBean(ProjacceptItemBean imageProjacceptItemBean) {
+        this.imageProjacceptItemBean = imageProjacceptItemBean;
+    }
+
+    public ProjacceptItemBean getVideoProjacceptItemBean() {
+        return videoProjacceptItemBean;
+    }
+
+    public void setVideoProjacceptItemBean(ProjacceptItemBean videoProjacceptItemBean) {
+        this.videoProjacceptItemBean = videoProjacceptItemBean;
+    }
 
     public ProjectAcceptanceBean getImageProjectAcceptanceBean() {
         return imageProjectAcceptanceBean;

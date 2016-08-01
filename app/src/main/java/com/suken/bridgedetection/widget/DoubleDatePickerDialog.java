@@ -27,6 +27,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.util.Logger;
 
 
 public class DoubleDatePickerDialog extends AlertDialog implements OnClickListener, TimePicker.OnTimeChangedListener {
@@ -65,6 +66,7 @@ public class DoubleDatePickerDialog extends AlertDialog implements OnClickListen
     public DoubleDatePickerDialog(Context context, OnDateSetListener callBack, String time) {
         super(context, 0);
         checkTime = time;
+
         mContext = context;
         String[] timeStr = time.split("-");
         String[] startTime = timeStr[0].split(":");
@@ -94,12 +96,17 @@ public class DoubleDatePickerDialog extends AlertDialog implements OnClickListen
 
         startHour = Integer.parseInt(startTime[0]);
         startMinute = Integer.parseInt(startTime[1]);
+        Logger.e("aaa", "startMinute==" + startMinute);
         endHour = Integer.parseInt(endTime[0]);
         endMinute = Integer.parseInt(endTime[1]);
-        mTimePicker_start.setCurrentHour(startHour);
+        Logger.e("aaa", "endMinute==" + endMinute);
+
         mTimePicker_start.setCurrentMinute(startMinute);
-        mTimePicker_end.setCurrentHour(endHour);
+        mTimePicker_start.setCurrentHour(startHour);
+
         mTimePicker_end.setCurrentMinute(endMinute);
+        mTimePicker_end.setCurrentHour(endHour);
+
 
 
     }

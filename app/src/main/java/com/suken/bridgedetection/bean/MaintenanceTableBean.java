@@ -47,6 +47,7 @@ public class MaintenanceTableBean implements Serializable {
     private int xclx;
     @DatabaseField
     private String xcld;
+    private String status ="2";
 
     private List<MaintenanceTableItemBean> inspectLogDetailList = new ArrayList<MaintenanceTableItemBean>();
 
@@ -77,8 +78,8 @@ public class MaintenanceTableBean implements Serializable {
                 ", tjsj='" + tjsj + '\'' +
                 ", xclx=" + xclx +
                 ", xcld='" + xcld + '\'' +
-                ", inspectLogDetailList=" + inspectLogDetailList +
-                ", maintenanceTableItemBeen=" + maintenanceTableItemBeen +
+                ", status='" + status + '\'' +
+
                 '}';
     }
 

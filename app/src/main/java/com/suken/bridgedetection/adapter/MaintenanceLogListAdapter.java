@@ -84,7 +84,7 @@ public class MaintenanceLogListAdapter extends BaseAdapter{
             public void onClick(View view) {
 //
                 final String[] names = { "生成维修保养日志", "取消" };
-                new AlertDialog.Builder(mContext)
+                new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override

@@ -1,6 +1,7 @@
 package com.suken.bridgedetection.adapter;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.text.Editable;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -38,7 +40,9 @@ import com.suken.bridgedetection.widget.CheckXMDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 import com.suken.bridgedetection.widget.TimePickerUtil;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -125,7 +129,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-        holder.count_edit.setText(bean.getWxsl());
+        holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
@@ -178,12 +182,11 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.xiangji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClickImagePositon = position;
                 mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                        if (mActivity == null || ((BaseActivity) mActivity).isDestroyed() || mActivity.isFinishing()) {
                             return;
                         }
                         boolean mIsGpsSuccess = false;
@@ -194,12 +197,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.latitude);
+                            Logger.e("aaa", "纬度:" + result.longitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
+                        } else if (!mIsGpsSuccess) {
                             Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
 //                            tv.setText("定位失败");
@@ -405,7 +408,6 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         }
     }
-    private int ClickImagePositon;
     class  Watcher implements TextWatcher {
         private EditText editTextID;
         public Watcher(EditText editText) {
@@ -467,7 +469,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         }
     }
     public void setDateTime(final HolderView holder){
-        dateTime = DateUtil.getDate();
+        dateTime = DateUtil.getDateEndDay();
         String time = holder.item_checkTime_edit.getText().toString();
         if (time == null || time.indexOf("年")==-1) {
             Logger.e("aaa","111111111111111111111111111111111111111111111111111111111111");
@@ -478,16 +480,38 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.item_checkTime_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
-                        mActivity, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+//                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+//                        mActivity, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+//                    @Override
+//                    public void getTime(String time) {
+//                        dateTime = time;
+//                        holder.item_checkTime_edit.setText(dateTime);
+//                    }
+//                });
+                String str = holder.item_checkTime_edit.getText().toString();
+                int y = 0, m = 0, d = 0;
+                Calendar c = DateUtil.strToCalendarLong(str);
+                y =  c.get(Calendar.YEAR);
+                m = c.get(Calendar.MONTH);
+                d = c.get(Calendar.DATE);
+                DatePickerDialog dlg = new DatePickerDialog(mActivity, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void getTime(String time) {
-                        dateTime = time;
-                        holder.item_checkTime_edit.setText(dateTime);
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        int mYear = year;
+                        int mMonth = month + 1;
+                        int mDay = day;
+                        holder.item_checkTime_edit.setText(getTime(mYear, mMonth, mDay));
                     }
-                });
+                }, y, m , d);
+                dlg.setTitle("日期：");
+                dlg.show();
+
+
             }
         });
+    }
+    public String getTime(int year,int month,int day){
+        return  year + "年" + (month <= 9 ? ("0" + month) : month) + "月" + (day <= 9 ? ("0" + day) : day)+"日";
     }
 
 
@@ -528,7 +552,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     IVDesc desc = (IVDesc) v.getTag();
-                    mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
+                    mActivity.jumpToMedia(0, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });
             return view;

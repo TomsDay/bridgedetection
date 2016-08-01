@@ -10,13 +10,12 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.fragment.ImageDetailFragment;
-import com.suken.bridgedetection.widget.HackyViewPager;
+import com.yuntongxun.ecdemo.ui.chatting.HackyViewPager;
 
 /**
  * 看大图1

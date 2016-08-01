@@ -27,6 +27,7 @@
             android:textColor="#ffffff"
             android:textSize="10dp" />
 
+
         <TextView
             android:id="@+id/maintenancelog_save"
             android:layout_width="50dp"
@@ -40,6 +41,22 @@
             android:text="保存"
             android:textColor="#ffffff"
             android:textSize="10dp" />
+        <TextView
+            android:id="@+id/maintenancelog_synchronizationData"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="同步细目数据"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:layout_toLeftOf="@id/maintenancelog_save"
+            android:layout_marginRight="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
     </RelativeLayout>
     <LinearLayout
         android:id="@+id/maintenancelog_bottomLayout"
@@ -238,12 +255,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="15dp"
+                        android:gravity="center">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:gravity="center">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -277,7 +296,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="日期："
-                                    android:textSize="9dp" />
+                                    android:textSize="9dp"
+                                    android:layout_marginTop="2dp"/>
 
                                 <EditText
                                     android:id="@+id/maintenancelog_data_ev"
@@ -306,6 +326,7 @@
                                 android:id="@+id/maintenancelog_wxbm_ev"
                                 android:layout_width="match_parent"
                                 android:layout_height="20dp"
+                                android:background="@drawable/line"
                                 android:textColor="#333333"
                                 android:textSize="9dp"/>
                         </LinearLayout>

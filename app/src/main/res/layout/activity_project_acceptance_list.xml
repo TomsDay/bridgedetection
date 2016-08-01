@@ -26,7 +26,21 @@
             android:textColor="#ffffff"
             android:textSize="10dp" />
 
-
+        <TextView
+            android:id="@+id/project_acceptance_getProjacceptByUID"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="同步验收单"
+            android:textColor="#ffffff"
+            android:textSize="10dp"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
 
     </RelativeLayout>
     <LinearLayout
@@ -44,7 +58,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="管养单位"
+            android:text="工程验收单编号"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -57,7 +71,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="编号"
+            android:text="维修保养单位"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -69,7 +83,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="维修保养单位"
+            android:text="施工日期"
             android:textSize="10dp" />
         <View
             android:layout_width="1dp"
@@ -81,7 +95,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="施工日期"
+            android:text="施工负责人"
             android:textSize="10dp" />
       
 

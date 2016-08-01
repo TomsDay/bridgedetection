@@ -101,10 +101,10 @@ public class UiUtil {
             activity.toast("当前无网络，无法同步数据");
             return;
         }
-        if (type != ConnectType.CONNECT_TYPE_WIFI) {
-            activity.toast("当前网络不是WiFi，不同步数据");
-            return;
-        }
+//        if (type != ConnectType.CONNECT_TYPE_WIFI) {
+//            activity.toast("当前网络不是WiFi，不同步数据");
+//            return;
+//        }
         final AtomicInteger flagInt = new AtomicInteger();
         final StringBuilder builder = new StringBuilder();
         final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {

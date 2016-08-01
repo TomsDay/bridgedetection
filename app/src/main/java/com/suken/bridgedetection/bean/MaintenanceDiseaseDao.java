@@ -42,6 +42,17 @@ public class MaintenanceDiseaseDao {
         }
         return null;
     }
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            maintenanceDiseaseBeen.delete(queryAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
     public List<MaintenanceDiseaseBean> queryByYJML(String yjml){
         try {
             Map<String, Object> map = new HashMap<String, Object>();

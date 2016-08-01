@@ -22,6 +22,8 @@ import java.util.List;
 import java.util.Set;
 
 import com.jp.wheelview.WheelView;
+import com.suken.bridgedetection.util.TextUtil;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 /**
  * Created by gaofeng on 16/5/8.
@@ -35,11 +37,13 @@ public class CheckXMDialog implements View.OnClickListener {
     public static ArrayList<String> minuteContent = new ArrayList<String>();
     public static ArrayList<String> secondContent = new ArrayList<String>();
     private Context mContext;
-//    private EditText mEditText;
+    //    private EditText mEditText;
     CatalogueByUIDDao catalogueByUIDDao;
     private CheckXMDDialogReturn checkXMDDialogReturn;
 
     ArrayList<String> proKinds = new ArrayList<String>();
+
+    List<CatalogueByUIDBean> catalogueByUIDBeen;
 
     public CheckXMDialog(Context context, CheckXMDDialogReturn checkXMDDialogReturn) {
         this.mContext = context;
@@ -50,15 +54,19 @@ public class CheckXMDialog implements View.OnClickListener {
 
     public void initContent() {
 
-        List<CatalogueByUIDBean> list = catalogueByUIDDao.queryAll();
-        Log.i("aaa", "initContent: "+list.size());
-        for (int i = 0; i < list.size(); i++){
-            if (i > 0 && (list.get(i-1).getXmlb()).equals(list.get(i).getXmlb())){
-             continue;
+        catalogueByUIDBeen = catalogueByUIDDao.queryAll();
+        if(TextUtil.isListEmpty(catalogueByUIDBeen)){
+            ToastUtil.showMessage("暂无细目库数据");
+            return;
+        }
+        Log.i("aaa", "initContent: "+catalogueByUIDBeen.size());
+        for (int i = 0; i < catalogueByUIDBeen.size(); i++){
+            if (i > 0 && (catalogueByUIDBeen.get(i-1).getXmlb()).equals(catalogueByUIDBeen.get(i).getXmlb())){
+                continue;
             } else {
 
-                hourContent.add(list.get(i).getXmlb());
-                Log.i("aaa", "list.get(i).getXmlb(): "+list.get(i).getXmlb());
+                hourContent.add(catalogueByUIDBeen.get(i).getXmlb());
+                Log.i("aaa", "list.get(i).getXmlb(): "+catalogueByUIDBeen.get(i).getXmlb());
 
             }
 
@@ -120,6 +128,10 @@ public class CheckXMDialog implements View.OnClickListener {
     String xmlb, xmmc;
     String ximmc;
     public void onClick(View v) {
+        if(TextUtil.isListEmpty(catalogueByUIDBeen)){
+            ToastUtil.showMessage("暂无细目库数据");
+            return;
+        }
         int id = v.getId();
         Log.i("aaa ", "onClick: "+id);
         View view = ((LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.checkcm_dialog, null);
@@ -230,8 +242,7 @@ public class CheckXMDialog implements View.OnClickListener {
 
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setView(view);
+
 
 
 
@@ -260,20 +271,22 @@ public class CheckXMDialog implements View.OnClickListener {
 //        secondWheel.setCurrentItem(0);
 //        secondWheel.setCyclic(true);
 //        secondWheel.setInterpolator(new AnticipateOvershootInterpolator());
-//
-        builder.setPositiveButton("确  定", new DialogInterface.OnClickListener() {
+        AlertDialog dialog = new AlertDialog.Builder(mContext)
+                .setView(view)
+                .setPositiveButton("确  定", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                if (ximmc != null) {
-                    checkXMDDialogReturn.returnBean(catalogueByUIDDao.queryByXMMC(ximmc));
-                }
-                dialog.cancel();
-            }
-        });
+                        if (ximmc != null) {
+                            checkXMDDialogReturn.returnBean(catalogueByUIDDao.queryByXMMC(ximmc));
+                        }
+                        dialog.cancel();
+                    }
+                })
 
-        builder.show();
+        .show();
+        dialog.setCanceledOnTouchOutside(true);
     }
 
     private ArrayList<String> removeDuplicate(ArrayList<String> arrayList){

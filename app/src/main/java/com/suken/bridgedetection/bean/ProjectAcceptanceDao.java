@@ -15,10 +15,13 @@ import java.util.Map;
  */
 public class ProjectAcceptanceDao {
     private Dao<ProjectAcceptanceBean, String> projectAcceptanceBeen = null;
+    private Dao<ProjacceptItemBean, String> projacceptItemBeen = null;
+
 
     public ProjectAcceptanceDao() {
         try {
             projectAcceptanceBeen = SqliteOpenHelper.getHelper(BridgeDetectionApplication.getInstance()).getDao(ProjectAcceptanceBean.class);
+            projacceptItemBeen = SqliteOpenHelper.getHelper(BridgeDetectionApplication.getInstance()).getDao(ProjacceptItemBean.class);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -30,9 +33,38 @@ public class ProjectAcceptanceDao {
             e.printStackTrace();
         }
     }
+
+    public void addItem(ProjacceptItemBean bean){
+        try {
+            projacceptItemBeen.createOrUpdate(bean);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void addList(List<ProjectAcceptanceBean> files) {
+        for (ProjectAcceptanceBean bean : files) {
+            add(bean);
+        }
+    }
+    public void addItemList(List<ProjacceptItemBean> files) {
+        for (ProjacceptItemBean bean : files) {
+            addItem(bean);
+        }
+    }
+
+
     public List<ProjectAcceptanceBean> queryAll(){
         try {
             List<ProjectAcceptanceBean> fileDescs = projectAcceptanceBeen.queryForAll();
+            return fileDescs;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public List<ProjacceptItemBean> queryItemAll(){
+        try {
+            List<ProjacceptItemBean> fileDescs = projacceptItemBeen.queryForAll();
             return fileDescs;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,6 +81,7 @@ public class ProjectAcceptanceDao {
         }
         return null;
     }
+
     public void update(ProjectAcceptanceBean bean){
         try {
             projectAcceptanceBeen.update(bean);
@@ -56,6 +89,15 @@ public class ProjectAcceptanceDao {
             e.printStackTrace();
         }
     }
+
+    public void updateItem(ProjacceptItemBean bean){
+        try {
+            projacceptItemBeen.update(bean);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void delete(int id) {
         try {
             // 删除指定的信息，类似delete User where 'id' = id ;
@@ -63,6 +105,16 @@ public class ProjectAcceptanceDao {
             deleteBuilder.where().eq("id", id);
             deleteBuilder.delete();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void deleteItem(long id){
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<ProjacceptItemBean, String> deleteBuilder = projacceptItemBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
         } catch (SQLException e) {
             e.printStackTrace();
         }

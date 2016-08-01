@@ -297,18 +297,135 @@
                             android:id="@+id/projectacceptance_content_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="    工程内容："
-                            android:textSize="9dp" />
-
-                        <EditText
-                            android:id="@+id/projectacceptance_content_ev"
-                            android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:background="@color/white"
-                            android:textColor="#333333"
+                            android:text="工程内容："
                             android:textSize="9dp"
-                            android:layout_toRightOf="@+id/projectacceptance_content_tv"
-                            android:imeOptions="flagNoExtractUi" />
+                            android:layout_marginTop="10dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="32dp"
+                                android:background="#80ffffff"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/project_acceptance_row1"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="桩号"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+
+                                <TextView
+                                    android:id="@+id/project_acceptance_row2"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="方向"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:id="@+id/project_acceptance_row3"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="养护工程名称"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:id="@+id/project_acceptance_row4"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="单位"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:id="@+id/project_acceptance_row5"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="维修数量"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:id="@+id/project_acceptance_row6"
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="验收结果"
+                                    android:textSize="10dp" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.1"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/img_camera"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/xiangji" />
+                                </LinearLayout>
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.1"
+                                    android:gravity="center">
+
+                                    <ImageView
+                                        android:id="@+id/img_video"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/sxj" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                            <com.suken.bridgedetection.widget.ListViewForScrollView
+                                android:id="@+id/projectacceptance_return_listview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:divider="@null"
+                                android:dividerHeight="0dp"
+                                android:background="@color/transparent">
+
+                            </com.suken.bridgedetection.widget.ListViewForScrollView>
+
+                        </LinearLayout>
+
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/projectacceptance_return_layout"
@@ -324,7 +441,7 @@
                             android:id="@+id/projectacceptance_return_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="    验收结果："
+                            android:text="验收结果："
                             android:textSize="9dp" />
 
                         <EditText

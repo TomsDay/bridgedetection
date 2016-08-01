@@ -46,6 +46,7 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.imageditor.ImageditorActivity;
 
@@ -306,11 +307,13 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
             }else{
                 maintenanceoforder_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+                maintenanceoforder_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
                 seThisNewMaintenanceOfOrderItemBeen();
             }
 
         }else{
             maintenanceoforder_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+            maintenanceoforder_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
             seThisNewMaintenanceOfOrderItemBeen();
         }
         initRadioGroup();
@@ -667,11 +670,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();
@@ -680,7 +683,18 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         String yj = maintenanceoforder_yj_ev.getText().toString();
                         String jcr = maintenanceoforder_jcr_ev.getText().toString();
                         String jlr = maintenanceoforder_jlr_ev.getText().toString();
-
+                        if(TextUtil.isEmptyString(content)){
+                            toast("“施工项目及内容”不可为空！");
+                            return;
+                        }
+                        if(TextUtil.isEmptyString(jcr)){
+                            toast("“检查人”不可为空！");
+                            return;
+                        }
+                        if(TextUtil.isEmptyString(jlr)){
+                            toast("“安全管理员”不可为空！");
+                            return;
+                        }
                         MaintenanceOfOrderBean bean = new MaintenanceOfOrderBean();
                         bean.setGldwName(gydw);
                         bean.setJcsj(checkDate);
@@ -802,13 +816,15 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         super.onActivityResult(requestCode, resultCode, data);
         Logger.e("aaa", "requestCode===" + requestCode);
         File f = null;
-        try {
-            f = new File(new URI(mOutPutFileUri.toString()));
-            if (!f.exists()) {
+        if(resultCode == RESULT_OK) {
+            try {
+                f = new File(new URI(mOutPutFileUri.toString()));
+                if (!f.exists()) {
 //                f.mkdirs();
+                }
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
             }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
         }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {

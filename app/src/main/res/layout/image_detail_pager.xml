@@ -40,7 +40,7 @@
             android:textSize="10dp" />
         </RelativeLayout>
 
-    <com.suken.bridgedetection.widget.HackyViewPager
+    <com.yuntongxun.ecdemo.ui.chatting.HackyViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
