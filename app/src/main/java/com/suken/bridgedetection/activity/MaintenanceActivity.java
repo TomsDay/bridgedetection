@@ -55,9 +55,9 @@ public class MaintenanceActivity extends BaseActivity {
         maintenanceOfOrderDao = new MaintenanceOfOrderDao();
         projectAcceptanceDao = new ProjectAcceptanceDao();
         initView();
-//        Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
-//        Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
-//        Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
+        Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
+        Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
+        Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
 //        syncYangHuData();
     }
     private void initView(){
@@ -102,18 +102,19 @@ public class MaintenanceActivity extends BaseActivity {
 //
 //            @Override
 //            public void onRequestSuccess(RequestType type, JSONObject obj) {
-//                switch (type) {
-//                    case geteDeseaseByUID:
-//                        List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
-//                        new MaintenanceDiseaseDao().addList(list);
-//                        break;
-//                    case getCatalogueByUID:
-//                        Logger.e("aaa", "细目数据：" + obj.toString());
-//                        List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
-//                        new CatalogueByUIDDao().addList(catalogueByUIDBeen);
-//                        dismissLoading();
-//                        break;
-//                }
+//                Logger.e("aaa","obj == "+obj.toString());
+////                switch (type) {
+////                    case geteDeseaseByUID:
+////                        List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
+////                        new MaintenanceDiseaseDao().addList(list);
+////                        break;
+////                    case getCatalogueByUID:
+////                        Logger.e("aaa", "细目数据：" + obj.toString());
+////                        List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
+////                        new CatalogueByUIDDao().addList(catalogueByUIDBeen);
+////                        dismissLoading();
+////                        break;
+////                }
 //            }
 //            @Override
 //            public void onRequestFail(RequestType type, String resultCode, String result) {
@@ -126,7 +127,7 @@ public class MaintenanceActivity extends BaseActivity {
 //
 //            @Override
 //            public void run() {
-//                showLoading("同步数据中...");
+////                showLoading("同步数据中...");
 //                List<NameValuePair> list = new ArrayList<NameValuePair>();
 //                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
 //                list.add(pair);
@@ -135,8 +136,8 @@ public class MaintenanceActivity extends BaseActivity {
 ////                pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
 ////                list.add(pair);
 //
-//                new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
-//                new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
+//                new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
+////                new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
 //            }
 //        });
 //
