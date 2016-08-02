@@ -48,6 +48,7 @@ import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
+import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
 
 import java.io.File;
@@ -137,6 +138,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     private String strWeather = "晴";
     private int selsctWeather;
     private int id;
+    private ListViewForScrollView maintenanceoforder_content_listview;
 
 
     private Context mContext;
@@ -155,6 +157,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     }
 
     private void initView() {
+        maintenanceoforder_content_listview = (ListViewForScrollView) findViewById(R.id.maintenanceoforder_content_listview);
 
         maintenanceoforder_gydw_ev = (EditText) findViewById(R.id.maintenanceoforder_gydw_ev);
         maintenanceoforder_checkDate_ev = (EditText) findViewById(R.id.maintenanceoforder_checkDate_ev);

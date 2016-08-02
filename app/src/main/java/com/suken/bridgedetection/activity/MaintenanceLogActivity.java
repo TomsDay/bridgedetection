@@ -38,6 +38,8 @@ import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
@@ -104,7 +106,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     MaintenanceLogDao maintenanceLogDao;
     IVDescDao ivDescDao;
     CatalogueByUIDDao catalogueByUIDDao;
-
+    GeteMaterialDao geteMaterialDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +116,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
         catalogueByUIDDao = new CatalogueByUIDDao();
+        geteMaterialDao = new GeteMaterialDao();
         LocationManager.getInstance().syncLocation(this);
         id = getIntent().getLongExtra("id", 0);
         initView();
@@ -330,6 +333,10 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             case R.id.maintenancelog_synchronizationData:
                 showLoading("正在同步细目库");
                 synchronizationCatalogueByUIDData();
+                break;
+            case R.id.maintenancelog_synchronizationMaterial:
+                showLoading("正在同步材料库");
+                synchronizationMaterialByUIDDate();
                 break;
         }
 
@@ -727,4 +734,52 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         });
 
     }
+
+    public void synchronizationMaterialByUIDDate(){
+
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+                List<GeteMaterialBean> geteMaterialBeen = JSON.parseArray(result.getString("datas"), GeteMaterialBean.class);
+
+                Logger.e("aaa", geteMaterialBeen.toString());
+
+                geteMaterialDao.addList(geteMaterialBeen);
+                dismissLoading();
+                toast("同步材料库成功！");
+                if(TextUtil.isListEmpty(geteMaterialBeen)){
+                    ToastUtil.showMessage("暂无材料库数据");
+                }
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+                dismissLoading();
+                toast("同步材料库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                catalogueByUIDDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.geteMaterialByUID).executePost(list);
+
+
+            }
+        });
+
+    }
+
 }

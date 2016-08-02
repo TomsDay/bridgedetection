@@ -274,15 +274,77 @@
                             android:text="施工项目及内容："
                             android:textSize="9dp" />
 
-                        <EditText
-                            android:id="@+id/maintenanceoforder_content_ev"
+                        <!--<EditText-->
+                            <!--android:id="@+id/maintenanceoforder_content_ev"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="48dp"-->
+                            <!--android:background="@color/white"-->
+                            <!--android:textColor="#333333"-->
+                            <!--android:textSize="9dp"-->
+                            <!--android:layout_toRightOf="@+id/maintenanceoforder_content_tv"-->
+                            <!--android:imeOptions="flagNoExtractUi" />-->
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_content_rowLayout"
                             android:layout_width="match_parent"
-                            android:layout_height="48dp"
-                            android:background="@color/white"
-                            android:textColor="#333333"
-                            android:textSize="9dp"
-                            android:layout_toRightOf="@+id/maintenanceoforder_content_tv"
-                            android:imeOptions="flagNoExtractUi" />
+                            android:layout_height="32dp"
+                            android:background="#80ffffff"
+                            android:gravity="center"
+                            android:layout_toRightOf="@id/maintenanceoforder_content_tv">
+                            <TextView
+                                android:id="@+id/maintenanceoforder_content_row1"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="表单编号"
+                                android:textSize="10dp" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#90808080" />
+
+                            <TextView
+                                android:id="@+id/maintenanceoforder_content_row2"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="维修部门"
+                                android:textSize="10dp" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#90808080" />
+                            <TextView
+                                android:id="@+id/maintenanceoforder_content_row3"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="维修日期"
+                                android:textSize="10dp" />
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#90808080" />
+                            <TextView
+                                android:id="@+id/maintenanceoforder_content_row4"
+                                android:layout_width="match_parent"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="负责人"
+                                android:textSize="10dp" />
+                            </LinearLayout>
+                        <com.suken.bridgedetection.widget.ListViewForScrollView
+                            android:id="@+id/maintenanceoforder_content_listview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:divider="@null"
+                            android:dividerHeight="0dp"
+                            android:background="@color/transparent"
+                            android:layout_toRightOf="@id/maintenanceoforder_content_tv"
+                            android:layout_below="@id/maintenanceoforder_content_rowLayout"/>
                     </RelativeLayout>
 
 
