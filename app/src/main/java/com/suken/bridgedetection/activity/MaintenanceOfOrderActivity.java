@@ -19,37 +19,54 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.RequestType;
+import com.suken.bridgedetection.adapter.OfOrderListAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogBean;
+import com.suken.bridgedetection.http.HttpTask;
+import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
+import com.suken.bridgedetection.util.DeviceInfoUtil;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.File;
 import java.net.URI;
@@ -67,7 +84,6 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
     private EditText maintenanceoforder_gydw_ev,
             maintenanceoforder_checkDate_ev,
-            maintenanceoforder_content_ev,
             maintenanceoforder_qtqk_ev,
             maintenanceoforder_yj_ev,
             maintenanceoforder_jcr_ev,
@@ -139,6 +155,10 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     private int selsctWeather;
     private int id;
     private ListViewForScrollView maintenanceoforder_content_listview;
+    private LinearLayout maintenanceoforder_select_logLayout;
+    private OfOrderListAdapter mAdapter;
+    List<SynchMaintenlogBean> thisSynchMaintenlogBeens = new ArrayList<>();
+    List<SynchMaintenlogBean> dialogSynchMaintenlogBeens = new ArrayList<>();
 
 
     private Context mContext;
@@ -157,11 +177,15 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     }
 
     private void initView() {
+        synchData();
         maintenanceoforder_content_listview = (ListViewForScrollView) findViewById(R.id.maintenanceoforder_content_listview);
+        mAdapter = new OfOrderListAdapter(mContext);
+        maintenanceoforder_content_listview.setAdapter(mAdapter);
+
+        maintenanceoforder_select_logLayout = (LinearLayout) findViewById(R.id.maintenanceoforder_select_logLayout);
 
         maintenanceoforder_gydw_ev = (EditText) findViewById(R.id.maintenanceoforder_gydw_ev);
         maintenanceoforder_checkDate_ev = (EditText) findViewById(R.id.maintenanceoforder_checkDate_ev);
-        maintenanceoforder_content_ev = (EditText) findViewById(R.id.maintenanceoforder_content_ev);
         maintenanceoforder_qtqk_ev = (EditText) findViewById(R.id.maintenanceoforder_qtqk_ev);
         maintenanceoforder_yj_ev = (EditText) findViewById(R.id.maintenanceoforder_yj_ev);
         maintenanceoforder_jcr_ev = (EditText) findViewById(R.id.maintenanceoforder_jcr_ev);
@@ -238,7 +262,6 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                 maintenanceoforder_gydw_ev.setText(bean.getGldwName());
                 maintenanceoforder_checkDate_ev.setText(bean.getJcsj());
-                maintenanceoforder_content_ev.setText(bean.getXcnr());
                 maintenanceoforder_qtqk_ev.setText(bean.getQtqk());
 //                maintenanceoforder_yj_ev.setText(bean.getClyj());
                 maintenanceoforder_jcr_ev.setText(bean.getJcry());
@@ -640,7 +663,121 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             case R.id.maintenanceoforder_save:
                 saveDialog();
                 break;
+            case R.id.maintenanceoforder_select_logLayout:
+                showListDialog();
+                synchronizationMaintenlogByUIDData();
+                break;
         }
+
+    }
+    public void synchData(){
+        dialogSynchMaintenlogBeens = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            SynchMaintenlogBean synchMaintenlogBean = new SynchMaintenlogBean();
+            synchMaintenlogBean.setBno(i + "");
+            synchMaintenlogBean.setWxbmmc("渐渐维修");
+            synchMaintenlogBean.setWxrq("2016-08-07");
+            synchMaintenlogBean.setFzry("卡上大师");
+            dialogSynchMaintenlogBeens.add(synchMaintenlogBean);
+        }
+
+    }
+
+    AlertDialog listDialog;
+    public void showListDialog(){
+        View dialogView = getLayoutInflater().inflate(R.layout.oforderlist_dialog, null);
+        ListView dialogListView = (ListView) dialogView.findViewById(R.id.oforderlist_listview);
+        OfOrderListAdapter ofOrderListAdapter = new OfOrderListAdapter(mContext);
+        ofOrderListAdapter.setData(dialogSynchMaintenlogBeens);
+        dialogListView.setAdapter(ofOrderListAdapter);
+
+        listDialog = new AlertDialog.Builder(mContext)
+                .setView(dialogView)
+                .show();
+
+        WindowManager.LayoutParams params = listDialog.getWindow().getAttributes();
+        params.width = DeviceInfoUtil.getScreenHeight(mContext) - 200;
+//                params.height = 200 ;
+
+        listDialog.getWindow().setAttributes(params);
+        listDialog.setCanceledOnTouchOutside(true);
+
+        dialogListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {//响应listview中的item的点击事件
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
+                                    long arg3) {
+                // TODO Auto-generated method stub
+
+                for(SynchMaintenlogBean b1:thisSynchMaintenlogBeens){
+                    if(dialogSynchMaintenlogBeens.get(position).getBno().equals(b1.getBno())){
+                        toast("不能添加已添加的数据");
+                        return;
+                    }
+                }
+                new AlertDialog.Builder(mContext)
+                        .setTitle("提示")
+                        .setMessage("是否选择id为" + position + "的数据？")
+                        .setPositiveButton("确定", new DatePickerDialog.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                thisSynchMaintenlogBeens.add(dialogSynchMaintenlogBeens.get(position));
+                                mAdapter.setData(thisSynchMaintenlogBeens);
+                                mAdapter.notifyDataSetChanged();
+
+                                listDialog.dismiss();
+
+                            }
+                        })
+                        .setNegativeButton("取消", new DatePickerDialog.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).show();
+            }
+        });
+
+    }
+    public void synchronizationMaintenlogByUIDData(){
+
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(result.getString("datas"), SynchMaintenlogBean.class);
+
+                Logger.e("aaa", synchMaintenlogBeans.toString());
+
+                dismissLoading();
+                toast("同步细目库成功！");
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+                dismissLoading();
+                toast("同步细目库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getMaintenlogByUID).executePost(list);
+
+
+            }
+        });
 
     }
 
@@ -681,15 +818,14 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();
-                        String content = maintenanceoforder_content_ev.getText().toString();
                         String qtqk = maintenanceoforder_qtqk_ev.getText().toString();
                         String yj = maintenanceoforder_yj_ev.getText().toString();
                         String jcr = maintenanceoforder_jcr_ev.getText().toString();
                         String jlr = maintenanceoforder_jlr_ev.getText().toString();
-                        if(TextUtil.isEmptyString(content)){
-                            toast("“施工项目及内容”不可为空！");
-                            return;
-                        }
+//                        if(TextUtil.isEmptyString(content)){
+//                            toast("“施工项目及内容”不可为空！");
+//                            return;
+//                        }
                         if(TextUtil.isEmptyString(jcr)){
                             toast("“检查人”不可为空！");
                             return;
@@ -702,7 +838,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         bean.setGldwName(gydw);
                         bean.setJcsj(checkDate);
                         bean.setWeather(strWeather);
-                        bean.setXcnr(content);
+//                        bean.setXcnr(content);
                         bean.setQtqk(qtqk);
 //                        bean.setClyj(yj);
                         bean.setJcry(jcr);

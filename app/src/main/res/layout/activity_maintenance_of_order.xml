@@ -273,6 +273,28 @@
                             android:layout_height="wrap_content"
                             android:text="施工项目及内容："
                             android:textSize="9dp" />
+                        <LinearLayout
+                            android:id="@+id/maintenanceoforder_select_logLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_below="@id/maintenanceoforder_content_tv"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:onClick="onClick">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/list_search"/>
+                            <TextView
+                                android:layout_marginTop="4dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="维修保养日志："
+                                android:textSize="9dp"
+                               />
+                        </LinearLayout>
+
 
                         <!--<EditText-->
                             <!--android:id="@+id/maintenanceoforder_content_ev"-->
