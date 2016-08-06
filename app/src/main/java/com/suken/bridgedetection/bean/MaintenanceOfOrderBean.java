@@ -74,6 +74,7 @@ public class MaintenanceOfOrderBean implements Serializable {
 
 
     List<MaintenanceOfOrderItemBean> safetycheckdetailList = new ArrayList<MaintenanceOfOrderItemBean>();
+    List<SynchMaintenlogBean> projacceptDetailList = new ArrayList<SynchMaintenlogBean>();
 
     @ForeignCollectionField
     /**
@@ -134,6 +135,14 @@ public class MaintenanceOfOrderBean implements Serializable {
 
     public void setMaintenanceOfOrderItemBeen(ForeignCollection<MaintenanceOfOrderItemBean> maintenanceOfOrderItemBeen) {
         this.maintenanceOfOrderItemBeen = maintenanceOfOrderItemBeen;
+    }
+
+    public List<SynchMaintenlogBean> getProjacceptDetailList() {
+        return projacceptDetailList;
+    }
+
+    public void setProjacceptDetailList(List<SynchMaintenlogBean> projacceptDetailList) {
+        this.projacceptDetailList = projacceptDetailList;
     }
 
     public int getId() {

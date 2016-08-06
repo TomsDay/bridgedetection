@@ -155,6 +155,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
         projectAcceptanceBeen = projectAcceptanceDao.queryAll();
         for(int i = 0; i<projectAcceptanceBeen.size(); i++){
             ProjectAcceptanceBean bean = projectAcceptanceBeen.get(i);
+            Logger.e("aaa","id===="+bean.getIds());
             List<IVDesc> images = ivDescDao.getImageProjectAcceptanceBeanByUserId(bean.getId());
             projectAcceptanceBeen.get(i).setmImages(images);
 
@@ -184,13 +185,6 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             }
 
         }
-
-
-//        Logger.e("aaa", "保养工程验收记录信息:===" + projectAcceptanceBeen.toString());
-
-
-
-
 
         mAdapter.setData(projectAcceptanceBeen);
         mAdapter.notifyDataSetChanged();
@@ -284,7 +278,8 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 bean.setProjacceptItemBeen(null);
                 bean.setiDescs(null);
                 bean.setmImages(null);
-
+                bean.setId(Long.parseLong(bean.getIds()));
+                bean.setIds(null);
 //                Logger.e("aaa", "bean123===" + bean.toString());
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));

@@ -12,6 +12,8 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.util.TypedValue;
@@ -35,6 +37,8 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
@@ -177,7 +181,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     }
 
     private void initView() {
-        synchData();
+//        synchData();
         maintenanceoforder_content_listview = (ListViewForScrollView) findViewById(R.id.maintenanceoforder_content_listview);
         mAdapter = new OfOrderListAdapter(mContext);
         maintenanceoforder_content_listview.setAdapter(mAdapter);
@@ -664,24 +668,24 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                 saveDialog();
                 break;
             case R.id.maintenanceoforder_select_logLayout:
-                showListDialog();
+
                 synchronizationMaintenlogByUIDData();
                 break;
         }
 
     }
-    public void synchData(){
-        dialogSynchMaintenlogBeens = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
-            SynchMaintenlogBean synchMaintenlogBean = new SynchMaintenlogBean();
-            synchMaintenlogBean.setBno(i + "");
-            synchMaintenlogBean.setWxbmmc("渐渐维修");
-            synchMaintenlogBean.setWxrq("2016-08-07");
-            synchMaintenlogBean.setFzry("卡上大师");
-            dialogSynchMaintenlogBeens.add(synchMaintenlogBean);
-        }
-
-    }
+//    public void synchData(){
+//        dialogSynchMaintenlogBeens = new ArrayList<>();
+//        for (int i = 0; i < 50; i++) {
+//            SynchMaintenlogBean synchMaintenlogBean = new SynchMaintenlogBean();
+//            synchMaintenlogBean.setBno(i + "");
+//            synchMaintenlogBean.setWxbmmc("渐渐维修");
+//            synchMaintenlogBean.setWxrq("2016-08-07");
+//            synchMaintenlogBean.setFzry("卡上大师");
+//            dialogSynchMaintenlogBeens.add(synchMaintenlogBean);
+//        }
+//
+//    }
 
     AlertDialog listDialog;
     public void showListDialog(){
@@ -717,7 +721,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                 }
                 new AlertDialog.Builder(mContext)
                         .setTitle("提示")
-                        .setMessage("是否选择id为" + position + "的数据？")
+                        .setMessage("是否选择表单编号为" + dialogSynchMaintenlogBeens.get(position).getBno() + "的数据？")
                         .setPositiveButton("确定", new DatePickerDialog.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -746,12 +750,18 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa", "result.toString()" + result.toString());
 
-                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(result.getString("datas"), SynchMaintenlogBean.class);
+                Gson gson = new Gson();
+                //获得不到内部的list
+//                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(result.getString("datas"), SynchMaintenlogBean.class);
 
-                Logger.e("aaa", synchMaintenlogBeans.toString());
+                List<SynchMaintenlogBean> retList = gson.fromJson(result.getString("datas"),
+                        new TypeToken<List<SynchMaintenlogBean>>() {  }.getType());
+                Logger.e("aaa", "==================" + retList.toString());
 
-                dismissLoading();
-                toast("同步细目库成功！");
+                dialogSynchMaintenlogBeens = retList;
+                Message message = new Message();
+                message.what = SUCCESS_CODE;
+                mHandler.sendMessage(message);
 
             }
 
@@ -759,8 +769,10 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             public void onRequestFail(RequestType type, String resultCode, String result) {
                 Logger.e("aaa", result + "===(" + resultCode + ")");
                 Logger.e("aaa", "type===" + type);
-                dismissLoading();
-                toast("同步细目库失败！");
+                Message message = new Message();
+                message.what = ERROR_CODE;
+                mHandler.sendMessage(message);
+
             }
         };
 
@@ -768,6 +780,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
             @Override
             public void run() {
+                showLoading("获取维修保养日志...");
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
@@ -780,6 +793,25 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         });
 
     }
+    public final int SUCCESS_CODE = 0;
+    public final int ERROR_CODE = 1;
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case SUCCESS_CODE:
+                    dismissLoading();
+                    toast("获取维修保养日志成功！");
+                    showListDialog();
+                    break;
+                case ERROR_CODE:
+                    dismissLoading();
+                    toast("获取维修保养日志失败！");
+                    break;
+            }
+            dismissLoading();
+        }
+    };
 
     public void back() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -822,10 +854,12 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         String yj = maintenanceoforder_yj_ev.getText().toString();
                         String jcr = maintenanceoforder_jcr_ev.getText().toString();
                         String jlr = maintenanceoforder_jlr_ev.getText().toString();
-//                        if(TextUtil.isEmptyString(content)){
-//                            toast("“施工项目及内容”不可为空！");
-//                            return;
-//                        }
+                        Gson gson = new Gson();
+                        String content = gson.toJson(thisSynchMaintenlogBeens);
+                        if(TextUtil.isEmptyString(content)){
+                            toast("“施工项目及内容”不可为空！");
+                            return;
+                        }
                         if(TextUtil.isEmptyString(jcr)){
                             toast("“检查人”不可为空！");
                             return;
@@ -838,7 +872,8 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         bean.setGldwName(gydw);
                         bean.setJcsj(checkDate);
                         bean.setWeather(strWeather);
-//                        bean.setXcnr(content);
+
+                        bean.setXcnr(content);
                         bean.setQtqk(qtqk);
 //                        bean.setClyj(yj);
                         bean.setJcry(jcr);

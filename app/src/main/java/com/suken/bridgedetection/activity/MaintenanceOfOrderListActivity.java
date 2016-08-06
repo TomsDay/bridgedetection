@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
@@ -28,6 +29,7 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -157,6 +159,11 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
         if(maintenanceOfOrderBeen.size()>0){
             for(int i = 0;i<maintenanceOfOrderBeen.size();i++){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(i);
+                String xcrz = bean.getXcnr();
+                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
+                bean.setProjacceptDetailList(synchMaintenlogBeans);
+                bean.setXcnr("");
+                Logger.e("aaa","++++++++++======="+ synchMaintenlogBeans.toString());
                 ForeignCollection<MaintenanceOfOrderItemBean> orders = bean.getMaintenanceOfOrderItemBeen();
                 CloseableIterator<MaintenanceOfOrderItemBean> iterator = orders.closeableIterator();
                 List<MaintenanceOfOrderItemBean> itemBeanList = new ArrayList<MaintenanceOfOrderItemBean>();

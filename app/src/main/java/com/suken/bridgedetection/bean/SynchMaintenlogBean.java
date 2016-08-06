@@ -32,12 +32,12 @@ public class SynchMaintenlogBean implements Serializable{
     private String status;
     private String bytzid;
     private String bytzno;
-    private List<SynchMaintenlogListBean> maintenlogdetailList = new ArrayList<>();
+    private List<SynchMaintenlogListBean> maintenlogDetailList = new ArrayList<>();
 
     public SynchMaintenlogBean() {
     }
 
-    public SynchMaintenlogBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String id, String bno, String wxlx, String wxbmid, String wxbmmc, String wxrq, String weather, String jcry, String fzry, String tjsj, String status, String bytzid, String bytzno, List<SynchMaintenlogListBean> maintenlogdetailList) {
+    public SynchMaintenlogBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String id, String bno, String wxlx, String wxbmid, String wxbmmc, String wxrq, String weather, String jcry, String fzry, String tjsj, String status, String bytzid, String bytzno, List<SynchMaintenlogListBean> maintenlogDetailList) {
         this.createBy = createBy;
         this.createtime = createtime;
         this.creator = creator;
@@ -62,7 +62,7 @@ public class SynchMaintenlogBean implements Serializable{
         this.status = status;
         this.bytzid = bytzid;
         this.bytzno = bytzno;
-        this.maintenlogdetailList = maintenlogdetailList;
+        this.maintenlogDetailList = maintenlogDetailList;
     }
 
     @Override
@@ -92,7 +92,7 @@ public class SynchMaintenlogBean implements Serializable{
                 ", status='" + status + '\'' +
                 ", bytzid='" + bytzid + '\'' +
                 ", bytzno='" + bytzno + '\'' +
-                ", maintenlogdetailList=" + maintenlogdetailList +
+                ", maintenlogDetailList=" + maintenlogDetailList +
                 '}';
     }
 
@@ -288,11 +288,11 @@ public class SynchMaintenlogBean implements Serializable{
         this.bytzno = bytzno;
     }
 
-    public List<SynchMaintenlogListBean> getMaintenlogdetailList() {
-        return maintenlogdetailList;
+    public List<SynchMaintenlogListBean> getMaintenlogDetailList() {
+        return maintenlogDetailList;
     }
 
-    public void setMaintenlogdetailList(List<SynchMaintenlogListBean> maintenlogdetailList) {
-        this.maintenlogdetailList = maintenlogdetailList;
+    public void setMaintenlogDetailList(List<SynchMaintenlogListBean> maintenlogDetailList) {
+        this.maintenlogDetailList = maintenlogDetailList;
     }
 }
