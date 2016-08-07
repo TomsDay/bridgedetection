@@ -12,98 +12,59 @@ import java.io.Serializable;
 public class GeteMaterialBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int ids;
+
+    /**材料名称 */
     @DatabaseField
     private String clmc;
+    /**材料编号 */
     @DatabaseField
     private String clno;
+    /**记录创建人ID */
     @DatabaseField
     private String createBy;
+    /**记录创建时间 */
     @DatabaseField
     private String createtime;
+    /**记录创建人 */
     @DatabaseField
     private String creator;
+    /**单位 */
     @DatabaseField
     private String dw;
+    /*记录是否有效 0 有效  1无效 */
     @DatabaseField
     private String flag;
+    /**规格 */
     @DatabaseField
     private String gg;
+    /**管养单位ID */
     @DatabaseField
     private String gydwId;
+    /**管养单位名称 */
     @DatabaseField
     private String gydwName;
+    /**记录ID */
     @DatabaseField
     private String id;
+    /**归属组织机构，暂不用 */
     @DatabaseField
-    private String orgid    ;
+    private String orgid;
+    /**记录最后更新人ID */
     @DatabaseField
     private String updateBy;
+    /**记录最后更新时间 */
     @DatabaseField
     private String updatetime;
+    /**记录最后更新人 */
     @DatabaseField
     private String updator;
+    /**记录更新版本号 */
     @DatabaseField
     private String versionno;
+    /**型号 */
     @DatabaseField
     private String xh;
 
-
-
-
-//    /**记录创建人ID */
-//    @DatabaseField
-//    private String createBy;
-//    /**记录创建时间 */
-//    @DatabaseField
-//    private String createtime;
-//    /**记录创建人 */
-//    @DatabaseField
-//    private String creator;
-//    /**记录是否有效 0 有效  1无效 */
-//    @DatabaseField
-//    private String flag;
-//    /**归属组织机构，暂不用 */
-//    @DatabaseField
-//    private String orgid;
-//    /**记录最后更新人ID */
-//    @DatabaseField
-//    private String updateBy;
-//    /**记录最后更新时间 */
-//    @DatabaseField
-//    private String updatetime;
-//    /**记录最后更新人 */
-//    @DatabaseField
-//    private String updator;
-//    /**记录更新版本号 */
-//    @DatabaseField
-//    private String versionno;
-//    /**管养单位ID */
-//    @DatabaseField
-//    private String gydwId;
-//    /**管养单位名称 */
-//    @DatabaseField
-//    private String gydwName;
-//    /**记录ID */
-//    @DatabaseField
-//    private String id;
-//    /**一级分类 */
-//    @DatabaseField
-//    private String yjml;
-//    /**二级分类 */
-//    @DatabaseField
-//    private String ejml;
-//    /**材料名称 */
-//    @DatabaseField
-//    private String clmc;
-//    /**损坏类型 */
-//    @DatabaseField
-//    private String shlx;
-//    /**单位 */
-//    @DatabaseField
-//    private String dw;
-//    /**现场描述 */
-//    @DatabaseField
-//    private String xcms;
 
     public GeteMaterialBean() {
     }
