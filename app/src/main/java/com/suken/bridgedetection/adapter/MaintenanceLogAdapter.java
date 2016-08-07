@@ -37,6 +37,7 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.bridgedetection.widget.CheckClDialog;
 import com.suken.bridgedetection.widget.CheckDiseaseDialog;
@@ -142,9 +143,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-        holder.clsl_edit.setText("");
-        holder.ggxh_edit.setText("");
-        holder.cldw_edit.setText("");
+//        holder.clsl_edit.setText(bean.getClmc());
         holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
@@ -297,11 +296,42 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     Logger.e("aaa","catalogueByUIDBeen==="+geteMaterialBeen.toString());
                     GeteMaterialBean bean = geteMaterialBeen.get(0);
                     Log.i("aaa", "returnBean: "+bean.getClmc());
-                    holder.cl_edit.setText(bean.getClmc());
-                    holder.cldw_edit.setText(bean.getDw());
+                    String clmc = holder.cl_edit.getText().toString();
+                    String ggxh = holder.cl_edit.getText().toString();
+                    String cldw = holder.cl_edit.getText().toString();
+                    String clsl = holder.clsl_edit.getText().toString();
+                    if(TextUtil.isEmptyString(clmc)){
+                        holder.cl_edit.setText(bean.getClmc());
+                    }else{
+                        holder.cl_edit.setText(clmc + "," + bean.getClmc());
+                    }
+                    if(TextUtil.isEmptyString(ggxh)){
+                        holder.ggxh_edit.setText(bean.getGg()+"-"+bean.getXh());
+                    }else{
+                        holder.ggxh_edit.setText(ggxh + "," + bean.getGg() + "-" + bean.getXh());
+                    }
+                    if(TextUtil.isEmptyString(cldw)){
+                        holder.cldw_edit.setText(bean.getDw());
+                    }else{
+                        holder.cldw_edit.setText(cldw + "," + bean.getDw());
+                    }
+                    if(TextUtil.isEmptyString(clsl)){
+                        holder.clsl_edit.setText("0");
+                    }else{
+                        holder.clsl_edit.setText(clsl + ",0"  );
+                    }
+
+
+
+
+
+//                    holder.cl_edit.setText(bean.getClmc());
+//                    holder.ggxh_edit.setText(bean.getGg()+"-"+bean.getXh());
+//                    holder.cldw_edit.setText(bean.getDw());
+
 //                    holder.unit_edit.setText(bean.getDw());
 
-//                    maintenanceLogItemBeen.get(position).setOrgid(bean.getOrgid()+"");
+                    maintenanceLogItemBeen.get(position).setClmc(holder.cl_edit.getText().toString());
 //                    maintenanceLogItemBeen.get(position).setVersionno(bean.getVersionno()+"");
 //                    maintenanceLogItemBeen.get(position).setCreateBy(bean.getCreateBy()+"");
 //                    maintenanceLogItemBeen.get(position).setCreatetime(bean.getCreatetime()+"");
