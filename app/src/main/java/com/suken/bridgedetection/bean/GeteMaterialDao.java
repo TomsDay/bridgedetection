@@ -75,10 +75,10 @@ public class GeteMaterialDao {
         }
         return null;
     }
-    public List<GeteMaterialBean> queryByXMMC(String ximmc){
+    public List<GeteMaterialBean> queryByCLMC(String clmc){
         try {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("ximmc", ximmc);
+            map.put("clmc", clmc);
             return geteMaterialBeen.queryForFieldValues(map);
         } catch (SQLException e) {
             e.printStackTrace();
