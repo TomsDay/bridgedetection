@@ -261,7 +261,24 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                     bean.getSafetycheckdetailList().get(i).setvDescs(null);
                     bean.setMaintenanceOfOrderItemBeen(null);
                     }
+                StringBuffer StringID = new StringBuffer();
+                StringBuffer StringBNO = new StringBuffer();
+                int proSice = bean.getProjacceptDetailList().size();
+                for (int i = 0; i < proSice; i++) {
+                    SynchMaintenlogBean synchMaintenlogBean = bean.getProjacceptDetailList().get(i);
+                    StringID.append(synchMaintenlogBean.getId());
+                    StringBNO.append(synchMaintenlogBean.getBno());
+                    if (i != proSice - 1) {
+                        StringID.append(",");
+                        StringBNO.append(",");
+                    }
 
+                }
+                Logger.e("aaa","StringID.toString()====="+StringID.toString());
+                Logger.e("aaa","StringBNO.toString()====="+StringBNO.toString());
+                bean.setYhrzid(StringID.toString());
+                bean.setYhrzbno(StringBNO.toString());
+                bean.setProjacceptDetailList(null);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
