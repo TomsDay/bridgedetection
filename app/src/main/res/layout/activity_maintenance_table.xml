@@ -263,7 +263,7 @@
                                 android:id="@+id/maintenancetable_time_tv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="时间段："
+                                android:text="检查时间："
                                 android:textSize="9dp" />
 
                             <EditText

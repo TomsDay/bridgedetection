@@ -24,6 +24,8 @@ import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.http.HttpTask;
@@ -213,6 +215,11 @@ public class UiUtil {
                         List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
                         new CatalogueByUIDDao().addList(catalogueByUIDBeen);
                         break;
+                    case geteMaterialByUID:
+                        Logger.e("aaa", "材料基本信息：" + obj.toString());
+                        List<GeteMaterialBean> geteMaterialBeen = JSON.parseArray(obj.getString("datas"), GeteMaterialBean.class);
+                        new GeteMaterialDao().addList(geteMaterialBeen);
+                        break;
                     default:
                         break;
                 }
@@ -270,6 +277,7 @@ public class UiUtil {
                 } else {
                     new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
                     new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
+                    new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
                 String msg = builder.toString();

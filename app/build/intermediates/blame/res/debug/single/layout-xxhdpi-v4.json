@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\ip_act_layout.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\ip_act_layout.xml"
     },
@@ -10,6 +11,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/activity_main.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/activity_main.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\activity_main.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\left_item_view.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\left_item_view.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\header_fragment_view.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\header_fragment_view.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/ip_fragment_view.xml",
@@ -28,6 +41,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/maintenance_table_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/activity_page_updateall.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout-xxhdpi/activity_page_updateall.xml"
     },
@@ -38,6 +52,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\left_fragment_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\left_fragment_view.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\graffiti_layout.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\graffiti_layout.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\activity_list_page_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\activity_list_page_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout-xxhdpi-v4\\activity_form_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout-xxhdpi\\activity_form_item.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout-xxhdpi-v4/gps_fragment_view.xml",

@@ -91,16 +91,19 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         HolderView holder = null;
         final MaintenanceLogItemBean bean = maintenanceLogItemBeen.get(position);
 //        if (view == null) {
-            view = inflater.inflate(R.layout.maintenance_log_item, null);
-            holder = new HolderView(view);
-            view.setTag(holder);
-            holder.projectName_edit.setTag(position);
-            holder.zh_edit.setTag(position);
-            holder.cl_edit.setTag(position);
-            holder.unit_edit.setTag(position);
-            holder.count_edit.setTag(position);
-            holder.address_edit.setTag(position);
-            holder.item_checkTime_edit.setTag(position);
+        view = inflater.inflate(R.layout.maintenance_log_item, null);
+        holder = new HolderView(view);
+        view.setTag(holder);
+        holder.projectName_edit.setTag(position);
+        holder.zh_edit.setTag(position);
+        holder.cl_edit.setTag(position);
+        holder.unit_edit.setTag(position);
+        holder.ggxh_edit.setTag(position);
+        holder.clsl_edit.setTag(position);
+        holder.cldw_edit.setTag(position);
+        holder.count_edit.setTag(position);
+        holder.address_edit.setTag(position);
+        holder.item_checkTime_edit.setTag(position);
 //        } else {
 //            holder = (HolderView) view.getTag();
 //            holder.projectName_edit.setTag(position);
@@ -117,6 +120,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
         holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
         holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
+        holder.ggxh_edit.addTextChangedListener(new Watcher(holder.ggxh_edit));
+        holder.clsl_edit.addTextChangedListener(new Watcher(holder.clsl_edit));
+        holder.cldw_edit.addTextChangedListener(new Watcher(holder.cldw_edit));
         holder.count_edit.addTextChangedListener(new Watcher(holder.count_edit));
         holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
@@ -129,6 +135,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
+        holder.clsl_edit.setText("");
+        holder.ggxh_edit.setText("");
+        holder.cldw_edit.setText("");
         holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
@@ -367,7 +376,10 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 unit_edit,
                 count_edit,
                 address_edit,
-                item_checkTime_edit;
+                item_checkTime_edit,
+                ggxh_edit,
+                clsl_edit,
+                cldw_edit;
 
         private Spinner img_spinner;
 
@@ -399,6 +411,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             address_edit = (EditText) view.findViewById(R.id.address_edit);
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
             zh_edit = (EditText) view.findViewById(R.id.zh_edit);
+            ggxh_edit = (EditText) view.findViewById(R.id.ggxh_edit);
+            clsl_edit = (EditText) view.findViewById(R.id.clsl_edit);
+            cldw_edit = (EditText) view.findViewById(R.id.cldw_edit);
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
@@ -462,6 +477,18 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     maintenanceLogItemBeen.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.ggxh_edit://规格型号
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.clsl_edit://材料数量
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.cldw_edit://材料单位
                     Logger.e("aaa","item_checkTime_edit==position"+position);
                     maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
                     break;

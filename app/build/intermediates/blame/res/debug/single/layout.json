@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/group_card_select.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/group_card_select.xml"
     },
@@ -14,26 +15,56 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/mulit_video_surfaceview.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/mulit_video_surfaceview.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\group_notice_activity.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\group_notice_activity.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\image_grallery_container.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\image_grallery_container.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_of_order.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_of_order.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\dialog_edittext.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\dialog_edittext.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mulit_video_conference.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\mulit_video_conference.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_activity.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chatting_activity.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\group_card_info.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\group_card_info.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_activity.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_activity.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_tab.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\main_tab.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/projecthorizontallistview_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/projecthorizontallistview_item.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mobile_contact_list_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\mobile_contact_list_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chattingui_activity_container.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chattingui_activity_container.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_web_about_url.xml",
@@ -44,6 +75,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\share_dialog.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/group_card_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/group_card_item.xml"
     },
@@ -54,18 +86,43 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/layout_video_conference.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/layout_video_conference.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\group_card_select_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\group_card_select_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccppage_control_image.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccppage_control_image.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/group_member_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/group_member_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/listitem_dialog.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/listitem_dialog.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\baidu_map.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\baidu_map.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\common_dialog_generic.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\common_dialog_generic.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_contact_select.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\layout_contact_select.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\oforderlist_dialog.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\oforderlist_dialog.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_dialog_menu_list_layout_title.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_dialog_menu_list_layout_title.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/meeting_member_item.xml",
@@ -96,6 +153,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccppage_control_image.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_login.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_login.xml"
     },
@@ -110,26 +168,56 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_maintenance_table_list.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_maintenance_table_list.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\baidu_map.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\baidu_map.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\meeting_mic_anim.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\meeting_mic_anim.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ads_tops_view.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ads_tops_view.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_project_acceptance_list_up_load.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_dialog_menu_list_layout_cancel.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_dialog_menu_list_layout_cancel.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_chatting_footer2.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_chatting_footer2.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\voice_rcd_hint_window2.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\voice_rcd_hint_window2.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\image_grallery_fragment.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\image_grallery_fragment.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_item_avatar_from.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_item_avatar_from.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\loading_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\loading_view.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_callin_inteface.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_callin_inteface.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mobile_contacts_list.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\mobile_contacts_list.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_fragment.xml",
@@ -140,6 +228,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/maintenancelogupload_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/voice_meeting_bottom_tips.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/voice_meeting_bottom_tips.xml"
     },
@@ -154,40 +243,76 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_call_control_layout.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_call_control_layout.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_activity_videomeeting.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_activity_videomeeting.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_about.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\video_c_local_surceview.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\video_c_local_surceview.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_inter_phone_banner.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_inter_phone_banner.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/app_panel.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/app_panel.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting_persion_info.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_setting_persion_info.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/loading_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/loading_view.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/discussion_member_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/discussion_member_item.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/at_someone_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/at_someone_item.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_chatting_footer2.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_chatting_footer2.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_chat_videorecord.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\layout_chat_videorecord.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/main_tab.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/main_tab.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\splash_activity.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\splash_activity.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\group_card_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\group_card_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\file_explorer_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\file_explorer_item.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_dialog_menu_layout.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_dialog_menu_layout.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_grid_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\app_grid_item.xml"
     },
@@ -198,6 +323,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_project_acceptance.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_project_acceptance.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\inter_phone_mic_control.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\inter_phone_mic_control.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_smile_panel.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_smile_panel.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\invite_by_phone_call.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\invite_by_phone_call.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/app_grid.xml",
@@ -236,6 +373,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\image_grallery_container.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ec_voip_call_show_small_talker.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ec_voip_call_show_small_talker.xml"
     },
@@ -246,12 +384,25 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_video_call.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_video_call.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mulit_video_conference.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\mulit_video_conference.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setup_server_layout.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\setup_server_layout.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_voip_video.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_voip_video.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\date_picker_dialog.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\date_picker_dialog.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/group_profile.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/group_profile.xml"
     },
@@ -262,6 +413,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/write_pad.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/write_pad.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\at_someone_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\at_someone_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_inter_phone_banner.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_inter_phone_banner.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_of_order_list.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_of_order_list.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\maintenancetablelist_item.xml",
@@ -284,6 +447,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/image_detail_fragment.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/voice_meeting_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/voice_meeting_item.xml"
     },
@@ -294,6 +458,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_edit_configure.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_edit_configure.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\include_message_newmask.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\include_message_newmask.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\create_voice_meeting.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\create_voice_meeting.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_item_location_from.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_item_location_from.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/layout_chat_videorecord.xml",
@@ -304,56 +480,94 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_search_group.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chat_voice_normal.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chat_voice_normal.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_project_acceptance.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_project_acceptance.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_activity_videomeeting.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_activity_videomeeting.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/inter_phone_mic_control.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/inter_phone_mic_control.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/inter_phone_activity.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/inter_phone_activity.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_voip_dialerpad.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_voip_dialerpad.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_file_from.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chatting_item_file_from.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chat_voice_biansheng.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chat_voice_biansheng.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_fixed_header_container.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chatting_fixed_header_container.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_preference.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_preference.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_edittext.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_edittext.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_form_input_pwd_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_form_input_pwd_view.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/search_group_result_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/search_group_result_item.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_launcher.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_launcher.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_alert_input.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_alert_input.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/meeting_mic_anim.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/meeting_mic_anim.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/inter_phone_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/inter_phone_item.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_item_to_picture.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_item_to_picture.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_about.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_about.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ec_voip_toolbar.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_voip_toolbar.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\voice_meeting_bottom_tips.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\voice_meeting_bottom_tips.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_avatar_to.xml",
@@ -448,6 +662,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\setup_server_layout.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/video_conference_conversation.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/video_conference_conversation.xml"
     },
@@ -458,6 +673,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_launcher.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\fragment_launcher.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\detaillist_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\detaillist_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_dialog_menu_list_layout_cancel.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_dialog_menu_list_layout_cancel.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\slide_image.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\slide_image.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/common_loading_diloag.xml",
@@ -552,6 +779,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/include_dialog_simplelist.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/list_item_chatroom.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/list_item_chatroom.xml"
     },
@@ -562,6 +790,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/image_grallery_fragment.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/image_grallery_fragment.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\video_conference_create.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\video_conference_create.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\net_warn_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\net_warn_item.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chat_voice_biansheng.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chat_voice_biansheng.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\at_someone_item.xml",
@@ -572,6 +812,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_maintenance_log_list.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_item_to_picture.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_item_to_picture.xml"
     },
@@ -582,6 +823,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ads_tops_view.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ads_tops_view.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_web_about_url.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_web_about_url.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_dialog_menu_list_layout_special.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_dialog_menu_list_layout_special.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\write_pad.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\write_pad.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/video_c_local_surceview.xml",
@@ -592,12 +845,25 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\common_loading_diloag.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_maintenance_log.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/activity_maintenance_log.xml"
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_fixed_header_container.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_fixed_header_container.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\voice_meeting_center.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\voice_meeting_center.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\chatting_item_to.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\chatting_item_to.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\oforderlist_item.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\oforderlist_item.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/pop_layout.xml",
@@ -608,6 +874,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/common_bottom_tip.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/logout_btn.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/logout_btn.xml"
     },
@@ -618,6 +885,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/date_picker_dialog.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/date_picker_dialog.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pop_layout.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\pop_layout.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\checkupload_dialog.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\checkupload_dialog.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\date_picker_dialog.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\date_picker_dialog.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/video_c_item.xml",
@@ -628,6 +907,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ec_voip_video.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ccp_chatting_footer2.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\ccp_chatting_footer2.xml"
     },
@@ -638,6 +918,18 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_location_to.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chatting_item_location_to.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_meeting_member.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\list_item_meeting_member.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\meeting_voice.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\meeting_voice.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tab_loading_area.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\tab_loading_area.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_system.xml",
@@ -688,16 +980,26 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\groups_activity_discussion.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/group_card_info.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/group_card_info.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mobile_contacts_activity.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\mobile_contacts_activity.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\group_notice_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\group_notice_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ccp_head.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/ccp_head.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\common_datetime.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\common_datetime.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/ec_call_interface.xml",
@@ -708,6 +1010,7 @@
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/conversation_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/include_message_newmask.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/include_message_newmask.xml"
     },
@@ -722,12 +1025,25 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\meeting_mic_anim.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\meeting_mic_anim.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_video_conference.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\layout_video_conference.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_chatroom.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\list_item_chatroom.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\groups_activity_discussion.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\groups_activity_discussion.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     },
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\file_explorer_item.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\file_explorer_item.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/build/intermediates/res/merged/debug/layout/chattingui_activity_container.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/app/src/main/res/layout/chattingui_activity_container.xml"
     },
@@ -1470,5 +1786,17 @@
     {
         "merged": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\common_bottom_tip.xml",
         "source": "/Users/wudi/AndroidStudioProjects/bridgedetection/E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\common_bottom_tip.xml"
+=======
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_maintenance_log_list.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\activity_maintenance_log_list.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_grid.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\app_grid.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\layout\\apply_group_activity.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\layout\\apply_group_activity.xml"
+>>>>>>> 6e15f09414d2a909d3f88ba5adf29d7632bf6730
     }
 ]

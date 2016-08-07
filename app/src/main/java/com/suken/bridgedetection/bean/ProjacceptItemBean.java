@@ -41,6 +41,26 @@ public class ProjacceptItemBean implements Serializable{
     @DatabaseField
     private String tpwd;
 
+    @DatabaseField
+    private String versionno;
+    @DatabaseField
+    private String createBy;
+    @DatabaseField
+    private String createtime;
+    @DatabaseField
+    private String creator;
+    @DatabaseField
+    private String flag;
+    @DatabaseField
+    private String gcysid   ;
+    @DatabaseField
+    private String bytzid;
+    @DatabaseField
+    private String xcbhid;
+    @DatabaseField
+    private String byrzid;
+
+
     private int state;
 
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
@@ -106,6 +126,79 @@ public class ProjacceptItemBean implements Serializable{
         this.projectAcceptanceBean = projectAcceptanceBean;
         this.iDescs = iDescs;
         this.vDescs = vDescs;
+    }
+
+
+    public String getVersionno() {
+        return versionno;
+    }
+
+    public void setVersionno(String versionno) {
+        this.versionno = versionno;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
+
+    public String getGcysid() {
+        return gcysid;
+    }
+
+    public void setGcysid(String gcysid) {
+        this.gcysid = gcysid;
+    }
+
+    public String getBytzid() {
+        return bytzid;
+    }
+
+    public void setBytzid(String bytzid) {
+        this.bytzid = bytzid;
+    }
+
+    public String getXcbhid() {
+        return xcbhid;
+    }
+
+    public void setXcbhid(String xcbhid) {
+        this.xcbhid = xcbhid;
+    }
+
+    public String getByrzid() {
+        return byrzid;
+    }
+
+    public void setByrzid(String byrzid) {
+        this.byrzid = byrzid;
     }
 
     public int getIds() {

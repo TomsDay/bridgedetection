@@ -130,7 +130,7 @@ public class IVDescDao {
         }
     }
 
-    public List<IVDesc> getImageProjectAcceptanceBeanByUserId(int userid)
+    public List<IVDesc> getImageProjectAcceptanceBeanByUserId(Long userid)
     {
         try {
             return ivDescs.queryBuilder().where().eq("imageProjectAcceptanceBean_id", userid)

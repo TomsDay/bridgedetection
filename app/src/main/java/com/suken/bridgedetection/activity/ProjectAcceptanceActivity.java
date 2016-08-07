@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.adapter.ProjectAcceptanceAdapter;
@@ -43,8 +44,10 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.signname.WriteDialogListener;
 import com.suken.bridgedetection.signname.WritePadDialog;
+import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.HorizontalListView;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
@@ -86,7 +89,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
     private ArrayAdapter<String> mArrayWeatherAdapter;
     private String strWeather = "晴";
     private int selsctWeather;
-    private int id;
+    private Long id;
 
     private ProjectAcceptanceDao projectAcceptanceDao;
 
@@ -112,7 +115,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         projectAcceptanceDao = new ProjectAcceptanceDao();
         ivDescDao = new IVDescDao();
         bean = new ProjectAcceptanceBean();
-        id = getIntent().getIntExtra("id", 0);
+        id = getIntent().getLongExtra("id", 0);
         projacceptBean = (ProjacceptBean) getIntent().getSerializableExtra("bean");
         LocationManager.getInstance().syncLocation(this);
         initView();
@@ -249,6 +252,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
     }
     public void setData(){
+
         projectacceptance_gydw_ev.setText(projacceptBean.getGydwName());
         projectacceptance_bh_ev.setText(projacceptBean.getBno());
         projectacceptance_wxbydw_ev.setText(projacceptBean.getSgdwmc());
@@ -416,19 +420,35 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 //                        String xsfzr = projectacceptance_xsfzr_ev.getText().toString();
 
 
+
+
+
                         bean.setGydwName(gydw);
-                        bean.setYhtzdno(bh);
+                        bean.setBno(bh);
                         bean.setWeather(strWeather);
                         bean.setSgdwmc(wxbydw);
                         bean.setSgks(sgrqs);
                         bean.setSgjs(sgrqe);
 //                        bean.setQrzs(content);
                         bean.setYsjg(returnContent);
-//                        bean.setYsrq(xsfzr);
+                        bean.setYsrq(DateUtil.getDateEndDay2());
                         bean.setTpjd(latitude+"");
                         bean.setTpwd(longitude+"");
                         if (id != 0) {
                             bean.setId(id);
+                        }else{
+                            //确认添加的数据
+                            bean.setIds(projacceptBean.getId());
+                            bean.setCreator(projacceptBean.getCreator());
+                            bean.setCreateBy(projacceptBean.getCreateBy());
+                            bean.setCreatetime(projacceptBean.getCreatetime());
+                            bean.setGydwId(projacceptBean.getGydwId());
+                            bean.setYhtzid(projacceptBean.getYhtzid());
+                            bean.setYhtzdno(projacceptBean.getYhtzdno());
+                            bean.setSgdwid(projacceptBean.getSgdwid());
+                            bean.setSgfzry(projacceptBean.getSgfzry());
+                            bean.setSgfzdate(projacceptBean.getSgfzdate());
+                            bean.setYsry(BridgeDetectionApplication.mCurrentUser.getUserName());
                         }
 
 
