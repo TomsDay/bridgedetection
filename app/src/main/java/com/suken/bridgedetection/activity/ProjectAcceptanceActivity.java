@@ -404,11 +404,11 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
 
                         String gydw = projectacceptance_gydw_ev.getText().toString();
@@ -439,6 +439,10 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                         }else{
                             //确认添加的数据
                             bean.setIds(projacceptBean.getId());
+                            bean.setUpdateBy(projacceptBean.getUpdateBy());
+                            bean.setUpdatetime(projacceptBean.getUpdatetime());
+                            bean.setUpdator(projacceptBean.getUpdator());
+                            bean.setVersionno(projacceptBean.getVersionno());
                             bean.setCreator(projacceptBean.getCreator());
                             bean.setCreateBy(projacceptBean.getCreateBy());
                             bean.setCreatetime(projacceptBean.getCreatetime());

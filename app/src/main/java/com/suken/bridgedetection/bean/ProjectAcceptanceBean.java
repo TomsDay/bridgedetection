@@ -68,6 +68,15 @@ public class ProjectAcceptanceBean implements Serializable{
     private String createtime;
     @DatabaseField
     private String bno;
+    @DatabaseField
+    private String updateBy;
+    @DatabaseField
+    private String updator;
+    @DatabaseField
+    private String updatetime;
+    @DatabaseField
+    private String versionno;
+
 
 
 
@@ -166,6 +175,37 @@ public class ProjectAcceptanceBean implements Serializable{
         this.iDescs = iDescs;
     }
 
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public String getUpdator() {
+        return updator;
+    }
+
+    public void setUpdator(String updator) {
+        this.updator = updator;
+    }
+
+    public String getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public String getVersionno() {
+        return versionno;
+    }
+
+    public void setVersionno(String versionno) {
+        this.versionno = versionno;
+    }
 
     public String getIds() {
         return ids;

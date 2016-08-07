@@ -98,6 +98,17 @@ public class ProjectAcceptanceDao {
         }
     }
 
+    public void delete(String id) {
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<ProjectAcceptanceBean, String> deleteBuilder = projectAcceptanceBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     public void delete(long id) {
         try {
             // 删除指定的信息，类似delete User where 'id' = id ;

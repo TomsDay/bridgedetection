@@ -155,6 +155,9 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
         projectAcceptanceBeen = projectAcceptanceDao.queryAll();
         for(int i = 0; i<projectAcceptanceBeen.size(); i++){
             ProjectAcceptanceBean bean = projectAcceptanceBeen.get(i);
+            bean.setUpdator(null);
+            bean.setUpdatetime(null);
+            bean.setUpdateBy(null);
             Logger.e("aaa","id===="+bean.getIds());
             List<IVDesc> images = ivDescDao.getImageProjectAcceptanceBeanByUserId(bean.getId());
             projectAcceptanceBeen.get(i).setmImages(images);
@@ -206,7 +209,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa","111111111111"+ result.toString());
                 Logger.e("aaa","position===="+ position);
-                projectAcceptanceDao.delete(bean.getId());
+                projectAcceptanceDao.delete(bean.getIds());
                 if(isAll){
                     if (position != projectAcceptanceBeen.size() - 1) {
                         Logger.e("aaa","下一条数据的上传===="+ position);
@@ -278,8 +281,10 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 bean.setProjacceptItemBeen(null);
                 bean.setiDescs(null);
                 bean.setmImages(null);
-                bean.setId(Long.parseLong(bean.getIds()));
-                bean.setIds(null);
+                long ids = Long.parseLong(bean.getIds());
+                long id = bean.getId();
+                bean.setId(ids);
+                bean.setIds(id+"");
 //                Logger.e("aaa", "bean123===" + bean.toString());
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
