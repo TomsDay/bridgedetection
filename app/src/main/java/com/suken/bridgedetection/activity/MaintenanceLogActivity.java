@@ -432,6 +432,9 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
                         if (id != 0) {
                             maintenanceLogBean.setId(id);
+                        }else{
+                            maintenanceLogBean.setBytzno(allMaintenanceLogBean.getBno());
+                            maintenanceLogBean.setBytzid(allMaintenanceLogBean.getId()+"");
                         }
                         Logger.e("aaa", "=======11111====="+maintenanceLogBean.toString());
 

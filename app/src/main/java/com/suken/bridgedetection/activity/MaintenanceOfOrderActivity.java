@@ -31,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -91,7 +92,8 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             maintenanceoforder_qtqk_ev,
             maintenanceoforder_yj_ev,
             maintenanceoforder_jcr_ev,
-            maintenanceoforder_jlr_ev;
+            maintenanceoforder_jlr_ev,
+            maintenanceoforder_content_ev;
 
     private RadioGroup maintenanceoforder_bzbf_radioGroup,
             maintenanceoforder_bzfm_radioGroup,
@@ -141,6 +143,8 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             sgzyAdapter,
             aqxsAdapter,
             aqzglyAdapter;
+
+    private RelativeLayout maintenanceoforder_content_Listlayout;
 
     private int mYear,mMonth, mDay;
 
@@ -194,6 +198,9 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         maintenanceoforder_yj_ev = (EditText) findViewById(R.id.maintenanceoforder_yj_ev);
         maintenanceoforder_jcr_ev = (EditText) findViewById(R.id.maintenanceoforder_jcr_ev);
         maintenanceoforder_jlr_ev = (EditText) findViewById(R.id.maintenanceoforder_jlr_ev);
+        maintenanceoforder_content_ev = (EditText) findViewById(R.id.maintenanceoforder_content_ev);
+
+        maintenanceoforder_content_Listlayout = (RelativeLayout) findViewById(R.id.maintenanceoforder_content_Listlayout);
 
         maintenanceoforder_bzbf_radioGroup = (RadioGroup) findViewById(R.id.maintenanceoforder_bzbf_radioGroup);
         maintenanceoforder_bzfm_radioGroup = (RadioGroup) findViewById(R.id.maintenanceoforder_bzfm_radioGroup);
@@ -270,6 +277,9 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 //                maintenanceoforder_yj_ev.setText(bean.getClyj());
                 maintenanceoforder_jcr_ev.setText(bean.getJcry());
                 maintenanceoforder_jlr_ev.setText(bean.getAqgly());
+                String xcrz = bean.getXcnr();
+                thisSynchMaintenlogBeens = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
+                bean.setXcnr("");
 
                 strWeather = bean.getWeather();
                 for (int i = 0; i < mStringArrayWeather.length; i++) {
@@ -282,8 +292,10 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                 ForeignCollection<MaintenanceOfOrderItemBean> orders = bean.getMaintenanceOfOrderItemBeen();
                 CloseableIterator<MaintenanceOfOrderItemBean> iterator = orders.closeableIterator();
+
                 try {
                     int position = 0;
+
                     while(iterator.hasNext()){
                         MaintenanceOfOrderItemBean b = iterator.next();
 
@@ -330,6 +342,14 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                     try {
                         iterator.close();
+                        if(!TextUtil.isListEmpty(thisSynchMaintenlogBeens)){
+                            mAdapter.setData(thisSynchMaintenlogBeens);
+                            mAdapter.notifyDataSetChanged();
+                            maintenanceoforder_content_ev.setVisibility(View.GONE);
+                            maintenanceoforder_content_Listlayout.setVisibility(View.VISIBLE);
+                        }
+
+
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
@@ -668,8 +688,38 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                 saveDialog();
                 break;
             case R.id.maintenanceoforder_select_logLayout:
+                final String[] names = {"选择维修保养日志","取消选择维修保养日志", "取消"};
+                AlertDialog dialog=new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
+                        .setItems(names, new DialogInterface.OnClickListener() {
 
-                synchronizationMaintenlogByUIDData();
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                Logger.e("aaa", "which++" + which);
+                                switch (which){
+                                    case 0:
+                                        synchronizationMaintenlogByUIDData();
+                                        break;
+                                    case 1:
+                                        if(maintenanceoforder_content_ev.getVisibility() != View.VISIBLE){
+                                            maintenanceoforder_content_ev.setVisibility(View.VISIBLE);
+                                            maintenanceoforder_content_Listlayout.setVisibility(View.GONE);
+                                        }else{
+                                            toast("请填写施工项目及内容！");
+                                        }
+                                        break;
+                                    case 2:
+                                        break;
+                                }
+                            }
+                        })
+                        .show();
+                WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+                params.width = 500;
+//                params.height = 200 ;
+
+                dialog.getWindow().setAttributes(params);
+
                 break;
         }
 
@@ -725,10 +775,14 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         .setPositiveButton("确定", new DatePickerDialog.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
+                                thisSynchMaintenlogBeens = new ArrayList<>();
                                 thisSynchMaintenlogBeens.add(dialogSynchMaintenlogBeens.get(position));
                                 mAdapter.setData(thisSynchMaintenlogBeens);
                                 mAdapter.notifyDataSetChanged();
-
+                                if(maintenanceoforder_content_ev.getVisibility() == View.VISIBLE){
+                                    maintenanceoforder_content_ev.setVisibility(View.GONE);
+                                    maintenanceoforder_content_Listlayout.setVisibility(View.VISIBLE);
+                                }
                                 listDialog.dismiss();
 
                             }

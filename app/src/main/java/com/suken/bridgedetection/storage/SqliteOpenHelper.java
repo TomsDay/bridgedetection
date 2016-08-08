@@ -18,6 +18,7 @@ import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogBean;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

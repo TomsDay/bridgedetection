@@ -296,22 +296,19 @@
                         </LinearLayout>
 
 
-                        <!--<EditText-->
-                            <!--android:id="@+id/maintenanceoforder_content_ev"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="48dp"-->
-                            <!--android:background="@color/white"-->
-                            <!--android:textColor="#333333"-->
-                            <!--android:textSize="9dp"-->
-                            <!--android:layout_toRightOf="@+id/maintenanceoforder_content_tv"-->
-                            <!--android:imeOptions="flagNoExtractUi" />-->
+
+                        <RelativeLayout
+                            android:id="@+id/maintenanceoforder_content_Listlayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@id/maintenanceoforder_content_tv">
                         <LinearLayout
                             android:id="@+id/maintenanceoforder_content_rowLayout"
                             android:layout_width="match_parent"
                             android:layout_height="32dp"
                             android:background="#80ffffff"
-                            android:gravity="center"
-                            android:layout_toRightOf="@id/maintenanceoforder_content_tv">
+                            android:gravity="center">
                             <TextView
                                 android:id="@+id/maintenanceoforder_content_row1"
                                 android:layout_width="match_parent"
@@ -365,8 +362,18 @@
                             android:divider="@null"
                             android:dividerHeight="0dp"
                             android:background="@color/transparent"
-                            android:layout_toRightOf="@id/maintenanceoforder_content_tv"
+
                             android:layout_below="@id/maintenanceoforder_content_rowLayout"/>
+                        </RelativeLayout>
+                        <EditText
+                            android:id="@+id/maintenanceoforder_content_ev"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:background="@color/white"
+                            android:textColor="#333333"
+                            android:textSize="9dp"
+                            android:layout_toRightOf="@+id/maintenanceoforder_content_tv"
+                            android:imeOptions="flagNoExtractUi" />
                     </RelativeLayout>
 
 
