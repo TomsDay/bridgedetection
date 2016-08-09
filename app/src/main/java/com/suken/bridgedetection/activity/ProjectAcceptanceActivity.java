@@ -436,6 +436,22 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                         bean.setTpwd(longitude+"");
                         if (id != 0) {
                             bean.setId(id);
+                            ProjectAcceptanceBean projectAcceptanceBean = projectAcceptanceBeen.get(0);
+                            bean.setIds(projectAcceptanceBean.getIds());
+                            bean.setUpdateBy(projectAcceptanceBean.getUpdateBy());
+                            bean.setUpdatetime(projectAcceptanceBean.getUpdatetime());
+                            bean.setUpdator(projectAcceptanceBean.getUpdator());
+                            bean.setVersionno(projectAcceptanceBean.getVersionno());
+                            bean.setCreator(projectAcceptanceBean.getCreator());
+                            bean.setCreateBy(projectAcceptanceBean.getCreateBy());
+                            bean.setCreatetime(projectAcceptanceBean.getCreatetime());
+                            bean.setGydwId(projectAcceptanceBean.getGydwId());
+                            bean.setYhtzid(projectAcceptanceBean.getYhtzid());
+                            bean.setYhtzdno(projectAcceptanceBean.getYhtzdno());
+                            bean.setSgdwid(projectAcceptanceBean.getSgdwid());
+                            bean.setSgfzry(projectAcceptanceBean.getSgfzry());
+                            bean.setSgfzdate(projectAcceptanceBean.getSgfzdate());
+                            bean.setYsry(bean.getYsry());
                         }else{
                             //确认添加的数据
                             bean.setIds(projacceptBean.getId());

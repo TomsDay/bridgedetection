@@ -124,7 +124,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.cl_edit.setKeyListener(null);
 
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
-//        holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
+        holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
         holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
         holder.ggxh_edit.addTextChangedListener(new Watcher(holder.ggxh_edit));
         holder.clsl_edit.addTextChangedListener(new Watcher(holder.clsl_edit));
@@ -289,6 +289,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
     }
 
     public void setcCl(final HolderView holder,final int position){
+
         holder.cl_edit.setOnClickListener(new CheckClDialog(mActivity, new CheckClDialog.CheckClDialogReturn(){
             @Override
             public void returnBean(List<GeteMaterialBean> geteMaterialBeen) {

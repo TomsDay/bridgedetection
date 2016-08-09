@@ -32,6 +32,8 @@ import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.*;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
@@ -295,6 +297,54 @@ public class UiUtil {
                     }
                 }
                 activity.dismissLoading();
+            }
+        });
+
+    }
+
+    /**
+     * 每次登录获取路线数据
+     * @param baseActivity
+     */
+    public static void synchronizationGxlxInfoData(final BaseActivity baseActivity){
+        final GXLuXianInfoDao gxLuXianInfoDao = new GXLuXianInfoDao();
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+                List<GXLuXianInfo> list = JSON.parseArray(result.getString("datas"), GXLuXianInfo.class);
+
+                Logger.e("aaa", "size=="+list.size());
+
+                gxLuXianInfoDao.create(list);
+
+                baseActivity.dismissLoading();
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+
+                baseActivity.dismissLoading();
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                baseActivity.showLoading("同步数据中...");
+                gxLuXianInfoDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.gxlxInfo).executePost(list);
+
+
             }
         });
 

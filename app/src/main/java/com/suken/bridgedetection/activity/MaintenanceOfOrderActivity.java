@@ -895,11 +895,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();

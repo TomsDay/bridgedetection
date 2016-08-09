@@ -72,7 +72,9 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
 //                Logger.e("aaa", "======="+list.get(i).toString());
 //            }
                     mHomeFragment.onSyncFinished(true);
+            UiUtil.synchronizationGxlxInfoData(this);
         }
+
         FragmentTransaction ft = mFragManager.beginTransaction();
         ft.hide(mGpsFragment);
         ft.hide(mIpFragment);
