@@ -34,6 +34,7 @@ import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -60,6 +61,11 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
         maintenanceOfOrderDao = new MaintenanceOfOrderDao();
         ivDescDao = new IVDescDao();
         initView();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllData();
     }
 
     private void initView() {
@@ -143,7 +149,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
             }
         });
 
-        getAllData();
+//        getAllData();
     }
     public void onClick(View v){
         switch (v.getId()) {
@@ -163,6 +169,9 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
                 bean.setProjacceptDetailList(synchMaintenlogBeans);
                 bean.setXcnr("");
+                if(!TextUtil.isListEmpty(synchMaintenlogBeans)){
+                    bean.setSgdwmc(synchMaintenlogBeans.get(0).getWxbmmc());
+                }
                 Logger.e("aaa","++++++++++======="+ synchMaintenlogBeans.toString());
                 ForeignCollection<MaintenanceOfOrderItemBean> orders = bean.getMaintenanceOfOrderItemBeen();
                 CloseableIterator<MaintenanceOfOrderItemBean> iterator = orders.closeableIterator();

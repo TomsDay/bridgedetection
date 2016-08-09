@@ -702,6 +702,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                                         break;
                                     case 1:
                                         if(maintenanceoforder_content_ev.getVisibility() != View.VISIBLE){
+                                            thisSynchMaintenlogBeens = new ArrayList<>();
                                             maintenanceoforder_content_ev.setVisibility(View.VISIBLE);
                                             maintenanceoforder_content_Listlayout.setVisibility(View.GONE);
                                         }else{
