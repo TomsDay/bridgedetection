@@ -35,7 +35,7 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectAcceptanceListActivity extends Activity {
+public class ProjectAcceptanceListActivity extends BaseActivity {
     private ListView project_acceptance_listView;
     private Context mContext;
     private ProjectAcceptanceListAdapter mAdapter;
@@ -63,8 +63,8 @@ public class ProjectAcceptanceListActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long l) {
 
-                final String[] names = { "生成维修保养工程验收单", "取消" };
-                new AlertDialog.Builder(mContext)
+                final String[] names = { "验收确认", "取消" };
+                new AlertDialog.Builder(mContext,R.style.NOmengceng_dialog)
                         .setItems(names, new DialogInterface.OnClickListener() {
 
                             @Override
@@ -87,6 +87,7 @@ public class ProjectAcceptanceListActivity extends Activity {
                         .show();
             }
         });
+
         getYanShouData();
 
     }
@@ -94,6 +95,9 @@ public class ProjectAcceptanceListActivity extends Activity {
         switch (v.getId()) {
             case R.id.project_acceptance_back:
                 finish();
+                break;
+            case R.id.project_acceptance_getProjacceptByUID:
+                getYanShouData();
                 break;
         }
     }
@@ -132,7 +136,7 @@ public class ProjectAcceptanceListActivity extends Activity {
 
             @Override
             public void run() {
-
+                showLoading("正在同步验收单...");
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);
@@ -151,10 +155,14 @@ public class ProjectAcceptanceListActivity extends Activity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SUCCESS_CODE:
+                    dismissLoading();
+                    toast("获取保养工程验收记录成功！");
                     mAdapter.setData(projacceptBeen);
                     mAdapter.notifyDataSetChanged();
                     break;
                 case ERROR_CODE:
+                    toast("获取保养工程验收记录失败！");
+                    dismissLoading();
                     break;
             }
         }

@@ -25,6 +25,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
@@ -34,6 +35,8 @@ import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.UiUtil;
+import com.suken.bridgedetection.widget.CheckDiseaseDialog;
+import com.suken.bridgedetection.widget.CheckXMDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
 import java.util.ArrayList;
@@ -62,6 +65,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
     public void setData(ArrayList<MaintenanceTableItemBean> list) {
         this.list = list;
     }
+
     public void setDiseaseData(List<MaintenanceDiseaseBean> list) {
         this.maintenanceDiseaseBeanList = list;
     }
@@ -90,15 +94,15 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         HolderView holder = null;
         final MaintenanceTableItemBean bean = list.get(position);
 //        if (view == null) {
-            view = inflater.inflate(R.layout.maintenance_table_item, null);
-            holder = new HolderView(view);
-            view.setTag(holder);
+        view = inflater.inflate(R.layout.maintenance_table_item, null);
+        holder = new HolderView(view);
+        view.setTag(holder);
 //            holder.diseaseName_edit.setTag(position);
 //            holder.unit_edit.setTag(position);
-            holder.count_edit.setTag(position);
-            holder.address_edit.setTag(position);
-            holder.item_checkTime_edit.setTag(position);
-            holder.zh_edit.setTag(position);
+        holder.count_edit.setTag(position);
+        holder.address_edit.setTag(position);
+        holder.item_checkTime_edit.setTag(position);
+        holder.zh_edit.setTag(position);
 
 //        } else {
 //            holder = (HolderView) view.getTag();
@@ -133,8 +137,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                count_edit,
 //                address_edit,
 //                item_checkTime_edit;
-        holder.video_num.setText(bean.getmVideo().size()+"");
-        holder.img_num.setText(bean.getmImages().size()+"");
+        holder.video_num.setText(bean.getmVideo().size() + "");
+        holder.img_num.setText(bean.getmImages().size() + "");
         holder.diseaseName_edit.setText(bean.getBhmc());
         holder.unit_edit.setText(bean.getDw());
         holder.count_edit.setText(bean.getYgsl());
@@ -144,16 +148,16 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         setDateTime(holder);
 
         String fx = bean.getFx();
-        Logger.e("aaa","fx==="+fx);
-        if("上行内侧".equals(fx)){
+        Logger.e("aaa", "fx===" + fx);
+        if ("上行内侧".equals(fx)) {
             holder.radioGroup.check(R.id.radioup);
-        }else if("下行内侧".equals(fx)){
+        } else if ("下行内侧".equals(fx)) {
             holder.radioGroup.check(R.id.radiodown);
-        }else if("上行外侧".equals(fx)){
+        } else if ("上行外侧".equals(fx)) {
             holder.radioGroup.check(R.id.radioleft);
-        }else if("下行外侧".equals(fx)){
+        } else if ("下行外侧".equals(fx)) {
             holder.radioGroup.check(R.id.radioright);
-        }else{
+        } else {
             holder.radioGroup.check(R.id.radioup);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
@@ -191,7 +195,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                        if (mActivity == null || ((BaseActivity) mActivity).isDestroyed() || mActivity.isFinishing()) {
                             return;
                         }
                         boolean mIsGpsSuccess = false;
@@ -202,12 +206,12 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.latitude);
+                            Logger.e("aaa", "纬度:" + result.longitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
+                        } else if (!mIsGpsSuccess) {
                             Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
 //                            tv.setText("定位失败");
@@ -226,7 +230,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                        if (mActivity == null || ((BaseActivity) mActivity).isDestroyed() || mActivity.isFinishing()) {
                             return;
                         }
                         boolean mIsGpsSuccess = false;
@@ -237,12 +241,12 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.latitude);
+                            Logger.e("aaa", "纬度:" + result.longitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
+                        } else if (!mIsGpsSuccess) {
                             Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
 //                            tv.setText("定位失败");
@@ -253,23 +257,23 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 });
             }
         });
-        final HolderView finalHolder = holder;
+
 
         holder.diseaseName_edit.setKeyListener(null);
         holder.unit_edit.setKeyListener(null);
-
-        holder.diseaseName_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initListDialog(finalHolder,position);
-            }
-        });
-        holder.unit_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                initListDialog(finalHolder,position);
-            }
-        });
+        setBhmc(holder, position);
+//        holder.diseaseName_edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                initListDialog(finalHolder,position);
+//            }
+//        });
+//        holder.unit_edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                initListDialog(finalHolder,position);
+//            }
+//        });
 
 
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -295,38 +299,57 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
         return view;
     }
-    private void initListDialog(final HolderView holder,final int position) {
-        final String[] names = new String[maintenanceDiseaseBeanList.size()];
-        for (int i = 0; i < maintenanceDiseaseBeanList.size(); i++) {
-            MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(i);
 
-            names[i] = bean.getBhmc() + "(" + bean.getDw() + ")";
-        }
+    //    private void initListDialog(final HolderView holder,final int position) {
+//        final String[] names = new String[maintenanceDiseaseBeanList.size()];
+//        for (int i = 0; i < maintenanceDiseaseBeanList.size(); i++) {
+//            MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(i);
+//
+//            names[i] = bean.getBhmc() + "(" + bean.getDw() + ")";
+//        }
+//
+//        new AlertDialog.Builder(mActivity)
+//                .setItems(names, new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog,
+//                                        int which) {
+//                        Logger.e("aaa", "which++" + which);
+//                        MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(which);
+//                        holder.diseaseName_edit.setText(bean.getBhmc());
+//                        holder.unit_edit.setText(bean.getDw());
+//
+//                        list.get(position).setBhid(bean.getId()+"");
+//                        list.get(position).setBhmc(bean.getBhmc());
+//                        list.get(position).setDw(bean.getDw());
+//
+//                        list.get(position).setRemark(bean.getXcms()+"");
+//                    }
+//                })
+//                .show();
+//    }
+    public void setBhmc(final HolderView holder, final int position) {
+        holder.diseaseName_edit.setOnClickListener(new CheckDiseaseDialog(mActivity, new CheckDiseaseDialog.CheckDiseaseDialogReturn() {
+            @Override
+            public void returnBean(List<MaintenanceDiseaseBean> maintenanceDiseaseList) {
+                if (maintenanceDiseaseList.size() != 0) {
+                    Logger.e("aaa", "maintenanceDiseaseList===" + maintenanceDiseaseList.toString());
+                    MaintenanceDiseaseBean bean = maintenanceDiseaseList.get(0);
+                    holder.diseaseName_edit.setText(bean.getBhmc());
+                    holder.unit_edit.setText(bean.getDw());
 
-        new AlertDialog.Builder(mActivity)
-                .setItems(names, new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog,
-                                        int which) {
-                        Logger.e("aaa", "which++" + which);
-                        MaintenanceDiseaseBean bean = maintenanceDiseaseBeanList.get(which);
-                        holder.diseaseName_edit.setText(bean.getBhmc());
-                        holder.unit_edit.setText(bean.getDw());
-
-                        list.get(position).setBhid(bean.getId()+"");
-                        list.get(position).setBhmc(bean.getBhmc());
-                        list.get(position).setDw(bean.getDw());
-
-                        list.get(position).setRemark(bean.getXcms()+"");
-                    }
-                })
-                .show();
+                    list.get(position).setBhid(bean.getId() + "");
+                    list.get(position).setBhmc(bean.getBhmc());
+                    list.get(position).setDw(bean.getDw());
+                    list.get(position).setRemark(bean.getXcms() + "");
+                }
+            }
+        }));
     }
 
-
-    class  Watcher implements TextWatcher {
+    class Watcher implements TextWatcher {
         private EditText editTextID;
+
         public Watcher(EditText editText) {
             editTextID = editText;
         }
@@ -350,7 +373,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         @Override
         public void afterTextChanged(Editable editable) {
             String content = editable.toString();
-            int position = (Integer)editTextID.getTag();
+            int position = (Integer) editTextID.getTag();
 
             switch (editTextID.getId()) {
 
@@ -362,25 +385,26 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                    list.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
 //                    break;
                 case R.id.count_edit:
-                    list.get(position).setYgsl(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setYgsl(content != null && !"".equals(content) ? content : "");
                     break;
                 case R.id.address_edit:
-                    list.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setBhwz(content != null && !"".equals(content) ? content : "");
                     break;
                 case R.id.item_checkTime_edit:
-                    list.get(position).setJcsj(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setJcsj(content != null && !"".equals(content) ? content : "");
                     break;
                 case R.id.zh_edit:
-                    list.get(position).setYhzh(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setYhzh(content != null && !"".equals(content) ? content : "");
                     break;
             }
         }
     }
-    public void setDateTime(final HolderView holder){
+
+    public void setDateTime(final HolderView holder) {
         dateTime = DateUtil.getDate();
         String time = holder.item_checkTime_edit.getText().toString();
-        if (time == null || time.indexOf("年")==-1) {
-            Logger.e("aaa","111111111111111111111111111111111111111111111111111111111111");
+        if (time == null || time.indexOf("年") == -1) {
+            Logger.e("aaa", "111111111111111111111111111111111111111111111111111111111111");
             holder.item_checkTime_edit.setText(dateTime);
         }
 
@@ -484,7 +508,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             return mImages.size();
         }
 
-        public void setItem(List<IVDesc> list){
+        public void setItem(List<IVDesc> list) {
             mImages = list;
         }
 

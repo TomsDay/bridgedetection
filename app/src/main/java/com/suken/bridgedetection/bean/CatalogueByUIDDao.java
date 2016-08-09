@@ -111,4 +111,15 @@ public class CatalogueByUIDDao {
             e.printStackTrace();
         }
     }
+    /**
+     * 删除全部
+     */
+    public void deleteAll()
+    {
+        try {
+            catalogueByUIDBeen.delete(queryAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

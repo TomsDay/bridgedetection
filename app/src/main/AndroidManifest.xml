@@ -461,6 +461,12 @@
             android:screenOrientation="landscape" />
         <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"
             android:screenOrientation="landscape"/>
+        <activity
+            android:name=".activity.ImagePagerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
+
     </application>
 
 </manifest>

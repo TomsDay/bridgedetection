@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
@@ -35,12 +36,14 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -313,14 +316,40 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     public void onClick(View view){
         switch (view.getId()) {
             case R.id.maintenancelog_back:
-                finish();
+                back();
                 break;
             case R.id.maintenancelog_save:
                 saveDialog();
                 break;
+            case R.id.maintenancelog_synchronizationData:
+                showLoading("正在同步细目库");
+                synchronizationCatalogueByUIDData();
+                break;
         }
 
     }
+
+    public void back() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("提醒");
+        builder.setMessage("返回将丢失当前未保存信息");
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
+
     public void saveDialog(){
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
@@ -329,7 +358,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(mIsGpsSuccess){
+                        if(!mIsGpsSuccess){
                             Toast.makeText(mContext, "正在定位...\n" +
                                     "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
                             return;
@@ -545,13 +574,15 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         super.onActivityResult(requestCode, resultCode, data);
         Logger.e("aaa", "requestCode===" + requestCode);
         File f = null;
-        try {
-            f = new File(new URI(mOutPutFileUri.toString()));
-            if (!f.exists()) {
+        if(resultCode == RESULT_OK) {
+            try {
+                f = new File(new URI(mOutPutFileUri.toString()));
+                if (!f.exists()) {
 //                f.mkdirs();
+                }
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
             }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
         }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
@@ -612,5 +643,49 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         } else {
             return "vdo-" + System.currentTimeMillis() + "-video.3gp";
         }
+    }
+
+    public void synchronizationCatalogueByUIDData(){
+
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+               List<CatalogueByUIDBean> catalogueByUIDBeens = JSON.parseArray(result.getString("datas"), CatalogueByUIDBean.class);
+
+                Logger.e("aaa", catalogueByUIDBeens.toString());
+
+                catalogueByUIDDao.addList(catalogueByUIDBeens);
+                dismissLoading();
+                toast("同步细目库成功！");
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+                dismissLoading();
+                toast("同步细目库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                catalogueByUIDDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getCatalogueByUID).executePost(list);
+
+
+            }
+        });
+
     }
 }

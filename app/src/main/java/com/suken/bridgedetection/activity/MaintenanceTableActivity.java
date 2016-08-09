@@ -36,6 +36,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
@@ -190,12 +191,14 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
                 bean.setShow(true);
                 maintenanceTableItemBeen.add(bean);
+                maintenancetable_xcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
             }
 
         }else{
             MaintenanceTableItemBean bean = new MaintenanceTableItemBean();
             bean.setShow(true);
             maintenanceTableItemBeen.add(bean);
+            maintenancetable_xcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
         }
 
         mAdapter = new MaintenanceTableAdapter(MaintenanceTableActivity.this);
@@ -238,6 +241,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         });
 
         maintenancetable_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+
         setCXLD();
 
         setTime();
@@ -438,6 +442,10 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
             case R.id.maintenancetable_save:
                 saveDialog();
                 break;
+            case R.id.maintenancetable_synchronizationData:
+                showLoading("正在同步病害库");
+                synchronizationDiseaseData();
+                break;
         }
 
     }
@@ -469,7 +477,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(mIsGpsSuccess){
+                        if(!mIsGpsSuccess){
                             Toast.makeText(mContext, "正在定位...\n" +
                                     "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
                             return;
@@ -622,6 +630,9 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         super.onActivityResult(requestCode, resultCode, data);
         Logger.e("aaa", "requestCode===" + requestCode);
         File f = null;
+        if(resultCode == RESULT_OK){
+
+
         try {
             f = new File(new URI(mOutPutFileUri.toString()));
             if (!f.exists()) {
@@ -630,6 +641,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
+    }
         Logger.e("aaa", "requestCode===" + requestCode);
         if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
 
@@ -685,6 +697,50 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
             mAdapter.notifyDataSetChanged();
 //            mEditController.updateVideo(desc);
         }
+    }
+
+    public void synchronizationDiseaseData(){
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+                List<MaintenanceDiseaseBean> maintenanceDiseaseBeens = JSON.parseArray(result.getString("datas"), MaintenanceDiseaseBean.class);
+
+                Logger.e("aaa", maintenanceDiseaseBeens.toString());
+
+                maintenanceDiseaseDao.addList(maintenanceDiseaseBeens);
+
+                dismissLoading();
+                toast("同步病害库成功！");
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+
+                dismissLoading();
+                toast("同步病害库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                maintenanceDiseaseDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.geteDeseaseByUID).executePost(list);
+
+
+            }
+        });
+
     }
 
 

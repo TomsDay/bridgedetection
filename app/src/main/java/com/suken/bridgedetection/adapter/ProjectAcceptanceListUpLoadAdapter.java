@@ -64,7 +64,7 @@ public class ProjectAcceptanceListUpLoadAdapter extends BaseAdapter {
         }
         ProjectAcceptanceBean bean = list.get(position);
         holder.projectacceptancelist_item_tv1.setText(bean.getGydwName()+"");
-        holder.projectacceptancelist_item_tv2.setText(bean.getBno()+"");
+        holder.projectacceptancelist_item_tv2.setText(bean.getYhtzdno()+"");
         holder.projectacceptancelist_item_tv3.setText(bean.getSgdwmc()+"");
         holder.projectacceptancelist_item_tv4.setText(bean.getSgks()+"-"+bean.getSgjs());
         holder.projectacceptancelist_item_tv5.setOnClickListener(new View.OnClickListener() {

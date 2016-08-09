@@ -920,12 +920,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ccp_btn_grey_normal.9.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_speaker_on.png",
-        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_speaker_on.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\spinner_48_inner_holo.png",
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\spinner_48_inner_holo.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_speaker_on.png",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_speaker_on.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\video_color.png",

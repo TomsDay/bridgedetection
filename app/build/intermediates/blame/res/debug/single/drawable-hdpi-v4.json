@@ -4,12 +4,12 @@
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\ec_keyboard_right_02.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_top_bar_arrow_up.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\common_top_bar_arrow_up.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\msg_fire_unread.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\msg_fire_unread.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_top_bar_arrow_up.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\common_top_bar_arrow_up.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\voice_say_small.png",
@@ -568,16 +568,16 @@
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\animation_box02.png"
     },
     {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\amp6.png",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\amp6.png"
+    },
+    {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\common_top_bar_arrow_down.png",
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\common_top_bar_arrow_down.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\video_red_pressed.9.png",
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\video_red_pressed.9.png"
-    },
-    {
-        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\amp6.png",
-        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\amp6.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ec_keyboard_right_03_on.9.png",
@@ -1384,12 +1384,12 @@
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\start_intercom_pressed.png"
     },
     {
-        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\camera_switch_back_pressed.9.png",
-        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\camera_switch_back_pressed.9.png"
-    },
-    {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\animation_box01.png",
         "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\animation_box01.png"
+    },
+    {
+        "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\camera_switch_back_pressed.9.png",
+        "source": "D:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-hdpi\\camera_switch_back_pressed.9.png"
     },
     {
         "merged": "D:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ec_call_interface_answer.png",

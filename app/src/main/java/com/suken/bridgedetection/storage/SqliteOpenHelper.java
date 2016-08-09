@@ -15,6 +15,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
 
 import android.content.Context;
@@ -58,6 +59,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, ProjectAcceptanceBean.class);
 			TableUtils.createTable(connectionSource, IVDesc.class);
 			TableUtils.createTable(connectionSource, CatalogueByUIDBean.class);
+			TableUtils.createTable(connectionSource, ProjacceptItemBean.class);
 //			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
 
 		} catch (SQLException e) {
@@ -95,6 +97,7 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.dropTable(connectionSource, ProjectAcceptanceBean.class, true);
 			TableUtils.dropTable(connectionSource, IVDesc.class, true);
 			TableUtils.dropTable(connectionSource, CatalogueByUIDBean.class, true);
+			TableUtils.dropTable(connectionSource, ProjacceptItemBean.class, true);
 //			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
 
 

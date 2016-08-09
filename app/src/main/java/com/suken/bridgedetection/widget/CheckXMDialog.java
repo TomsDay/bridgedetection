@@ -35,7 +35,7 @@ public class CheckXMDialog implements View.OnClickListener {
     public static ArrayList<String> minuteContent = new ArrayList<String>();
     public static ArrayList<String> secondContent = new ArrayList<String>();
     private Context mContext;
-//    private EditText mEditText;
+    //    private EditText mEditText;
     CatalogueByUIDDao catalogueByUIDDao;
     private CheckXMDDialogReturn checkXMDDialogReturn;
 
@@ -54,7 +54,7 @@ public class CheckXMDialog implements View.OnClickListener {
         Log.i("aaa", "initContent: "+list.size());
         for (int i = 0; i < list.size(); i++){
             if (i > 0 && (list.get(i-1).getXmlb()).equals(list.get(i).getXmlb())){
-             continue;
+                continue;
             } else {
 
                 hourContent.add(list.get(i).getXmlb());
@@ -230,8 +230,7 @@ public class CheckXMDialog implements View.OnClickListener {
 
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setView(view);
+
 
 
 
@@ -260,20 +259,22 @@ public class CheckXMDialog implements View.OnClickListener {
 //        secondWheel.setCurrentItem(0);
 //        secondWheel.setCyclic(true);
 //        secondWheel.setInterpolator(new AnticipateOvershootInterpolator());
-//
-        builder.setPositiveButton("确  定", new DialogInterface.OnClickListener() {
+        AlertDialog dialog = new AlertDialog.Builder(mContext)
+                .setView(view)
+                .setPositiveButton("确  定", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
-                if (ximmc != null) {
-                    checkXMDDialogReturn.returnBean(catalogueByUIDDao.queryByXMMC(ximmc));
-                }
-                dialog.cancel();
-            }
-        });
+                        if (ximmc != null) {
+                            checkXMDDialogReturn.returnBean(catalogueByUIDDao.queryByXMMC(ximmc));
+                        }
+                        dialog.cancel();
+                    }
+                })
 
-        builder.show();
+        .show();
+        dialog.setCanceledOnTouchOutside(true);
     }
 
     private ArrayList<String> removeDuplicate(ArrayList<String> arrayList){

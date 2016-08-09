@@ -295,6 +295,16 @@ public class DateUtil {
         return format.format(date);
     }
     /**
+     * 获取当前系统的时间  格式:2014年8月23日 17:44
+     * @return
+     */
+    public static String getDateEndDay() {
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日");
+        return format.format(date);
+    }
+
+    /**
      * 获取当前系统的时间 带有毫秒值  格式:2015-06-04 12:12:34.578
      * @return
      */
@@ -353,7 +363,7 @@ public class DateUtil {
     public static Calendar strToCalendarLong(String strDate) {
         Calendar c = Calendar.getInstance();
         try {
-            c.setTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(strDate));
+            c.setTime(new SimpleDateFormat("yyyy年MM月dd日").parse(strDate));
         } catch (ParseException e) {
             e.printStackTrace();
         }
