@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
@@ -28,10 +29,12 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -58,6 +61,11 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
         maintenanceOfOrderDao = new MaintenanceOfOrderDao();
         ivDescDao = new IVDescDao();
         initView();
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAllData();
     }
 
     private void initView() {
@@ -141,7 +149,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
             }
         });
 
-        getAllData();
+//        getAllData();
     }
     public void onClick(View v){
         switch (v.getId()) {
@@ -157,6 +165,14 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
         if(maintenanceOfOrderBeen.size()>0){
             for(int i = 0;i<maintenanceOfOrderBeen.size();i++){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(i);
+                String xcrz = bean.getXcnr();
+                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
+                bean.setProjacceptDetailList(synchMaintenlogBeans);
+                bean.setXcnr("");
+                if(!TextUtil.isListEmpty(synchMaintenlogBeans)){
+                    bean.setSgdwmc(synchMaintenlogBeans.get(0).getWxbmmc());
+                }
+                Logger.e("aaa","++++++++++======="+ synchMaintenlogBeans.toString());
                 ForeignCollection<MaintenanceOfOrderItemBean> orders = bean.getMaintenanceOfOrderItemBeen();
                 CloseableIterator<MaintenanceOfOrderItemBean> iterator = orders.closeableIterator();
                 List<MaintenanceOfOrderItemBean> itemBeanList = new ArrayList<MaintenanceOfOrderItemBean>();
@@ -254,7 +270,24 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                     bean.getSafetycheckdetailList().get(i).setvDescs(null);
                     bean.setMaintenanceOfOrderItemBeen(null);
                     }
+                StringBuffer StringID = new StringBuffer();
+                StringBuffer StringBNO = new StringBuffer();
+                int proSice = bean.getProjacceptDetailList().size();
+                for (int i = 0; i < proSice; i++) {
+                    SynchMaintenlogBean synchMaintenlogBean = bean.getProjacceptDetailList().get(i);
+                    StringID.append(synchMaintenlogBean.getId());
+                    StringBNO.append(synchMaintenlogBean.getBno());
+                    if (i != proSice - 1) {
+                        StringID.append(",");
+                        StringBNO.append(",");
+                    }
 
+                }
+                Logger.e("aaa","StringID.toString()====="+StringID.toString());
+                Logger.e("aaa","StringBNO.toString()====="+StringBNO.toString());
+                bean.setYhrzid(StringID.toString());
+                bean.setYhrzbno(StringBNO.toString());
+                bean.setProjacceptDetailList(null);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);

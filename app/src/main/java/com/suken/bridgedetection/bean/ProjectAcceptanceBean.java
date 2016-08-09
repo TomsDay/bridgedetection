@@ -16,7 +16,9 @@ import java.util.List;
 @DatabaseTable(tableName = "tb_projectacceptancebean")
 public class ProjectAcceptanceBean implements Serializable{
     @DatabaseField(generatedId = true) //主键自增加
-    private int id;
+    private Long id;
+    @DatabaseField
+    private String ids;
     @DatabaseField
     private String gydwId;
     @DatabaseField
@@ -48,7 +50,7 @@ public class ProjectAcceptanceBean implements Serializable{
     @DatabaseField
     private String tjsj;
     @DatabaseField
-    private String status;
+    private String status ="2";
     @DatabaseField
     private String weather;
     @DatabaseField
@@ -57,6 +59,28 @@ public class ProjectAcceptanceBean implements Serializable{
     private String tpjd;
     @DatabaseField
     private String tpwd;
+
+    @DatabaseField
+    private String createBy;
+    @DatabaseField
+    private String creator;
+    @DatabaseField
+    private String createtime;
+    @DatabaseField
+    private String bno;
+    @DatabaseField
+    private String updateBy;
+    @DatabaseField
+    private String updator;
+    @DatabaseField
+    private String updatetime;
+    @DatabaseField
+    private String versionno;
+
+
+
+
+
 
     private byte[] qmtp1;
     private byte[] qmtp2;
@@ -115,7 +139,10 @@ public class ProjectAcceptanceBean implements Serializable{
     public ProjectAcceptanceBean() {
     }
 
-    public ProjectAcceptanceBean(int id, String gydwId, String yhtzid, String yhtzdno, String gydwName, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status, String weather, String picattachment, String tpjd, String tpwd, byte[] qmtp1, byte[] qmtp2, byte[] qmtp3, byte[] qmtp4, byte[] qmtp5, List<ProjacceptItemBean> projacceptDetailList, ForeignCollection<ProjacceptItemBean> projacceptItemBeen, List<IVDesc> mImages, ForeignCollection<IVDesc> iDescs) {
+
+
+
+    public ProjectAcceptanceBean(Long id, String gydwId, String yhtzid, String yhtzdno, String gydwName, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status, String weather, String picattachment, String tpjd, String tpwd, byte[] qmtp1, byte[] qmtp2, byte[] qmtp3, byte[] qmtp4, byte[] qmtp5, List<ProjacceptItemBean> projacceptDetailList, ForeignCollection<ProjacceptItemBean> projacceptItemBeen, List<IVDesc> mImages, ForeignCollection<IVDesc> iDescs) {
         this.id = id;
         this.gydwId = gydwId;
         this.yhtzid = yhtzid;
@@ -148,11 +175,83 @@ public class ProjectAcceptanceBean implements Serializable{
         this.iDescs = iDescs;
     }
 
-    public int getId() {
+    public String getUpdateBy() {
+        return updateBy;
+    }
+
+    public void setUpdateBy(String updateBy) {
+        this.updateBy = updateBy;
+    }
+
+    public String getUpdator() {
+        return updator;
+    }
+
+    public void setUpdator(String updator) {
+        this.updator = updator;
+    }
+
+    public String getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public String getVersionno() {
+        return versionno;
+    }
+
+    public void setVersionno(String versionno) {
+        this.versionno = versionno;
+    }
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
+    }
+
+    public String getBno() {
+        return bno;
+    }
+
+    public void setBno(String bno) {
+        this.bno = bno;
+    }
+
+    public String getCreateBy() {
+        return createBy;
+    }
+
+    public void setCreateBy(String createBy) {
+        this.createBy = createBy;
+    }
+
+    public String getCreator() {
+        return creator;
+    }
+
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    public String getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -70,7 +70,7 @@ public class ProjectAcceptanceListAdapter extends BaseAdapter{
         }
         ProjacceptBean bean = projacceptBeen.get(position);
         holder.projectacceptancelist_item_tv1.setText(bean.getYhtzdno()+"");
-        holder.projectacceptancelist_item_tv2.setText(bean.getGydwName()+"");
+        holder.projectacceptancelist_item_tv2.setText(bean.getSgdwmc()+"");
 
         String sgka = bean.getSgks();
         String sgjs = bean.getSgjs();

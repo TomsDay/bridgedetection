@@ -71,7 +71,7 @@ public class ProjectAcceptanceDao {
         }
         return null;
     }
-    public List<ProjectAcceptanceBean> queryByID(int id){
+    public List<ProjectAcceptanceBean> queryByID(long id){
         try {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("id", id);
@@ -98,7 +98,18 @@ public class ProjectAcceptanceDao {
         }
     }
 
-    public void delete(int id) {
+    public void delete(String id) {
+        try {
+            // 删除指定的信息，类似delete User where 'id' = id ;
+            DeleteBuilder<ProjectAcceptanceBean, String> deleteBuilder = projectAcceptanceBeen.deleteBuilder();
+            deleteBuilder.where().eq("id", id);
+            deleteBuilder.delete();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public void delete(long id) {
         try {
             // 删除指定的信息，类似delete User where 'id' = id ;
             DeleteBuilder<ProjectAcceptanceBean, String> deleteBuilder = projectAcceptanceBeen.deleteBuilder();

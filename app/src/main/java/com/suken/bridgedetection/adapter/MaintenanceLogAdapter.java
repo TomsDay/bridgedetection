@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
@@ -35,7 +37,10 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
+import com.suken.bridgedetection.widget.CheckClDialog;
+import com.suken.bridgedetection.widget.CheckDiseaseDialog;
 import com.suken.bridgedetection.widget.CheckXMDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 import com.suken.bridgedetection.widget.TimePickerUtil;
@@ -91,16 +96,19 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         HolderView holder = null;
         final MaintenanceLogItemBean bean = maintenanceLogItemBeen.get(position);
 //        if (view == null) {
-            view = inflater.inflate(R.layout.maintenance_log_item, null);
-            holder = new HolderView(view);
-            view.setTag(holder);
-            holder.projectName_edit.setTag(position);
-            holder.zh_edit.setTag(position);
-            holder.cl_edit.setTag(position);
-            holder.unit_edit.setTag(position);
-            holder.count_edit.setTag(position);
-            holder.address_edit.setTag(position);
-            holder.item_checkTime_edit.setTag(position);
+        view = inflater.inflate(R.layout.maintenance_log_item, null);
+        holder = new HolderView(view);
+        view.setTag(holder);
+        holder.projectName_edit.setTag(position);
+        holder.zh_edit.setTag(position);
+        holder.cl_edit.setTag(position);
+        holder.unit_edit.setTag(position);
+        holder.ggxh_edit.setTag(position);
+        holder.clsl_edit.setTag(position);
+        holder.cldw_edit.setTag(position);
+        holder.count_edit.setTag(position);
+        holder.address_edit.setTag(position);
+        holder.item_checkTime_edit.setTag(position);
 //        } else {
 //            holder = (HolderView) view.getTag();
 //            holder.projectName_edit.setTag(position);
@@ -113,10 +121,14 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //        }
 //        holder.projectName_edit.addTextChangedListener(new Watcher(holder.projectName_edit));
         holder.projectName_edit.setKeyListener(null);
+        holder.cl_edit.setKeyListener(null);
 
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
-        holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
+//        holder.cl_edit.addTextChangedListener(new Watcher(holder.cl_edit));
         holder.unit_edit.addTextChangedListener(new Watcher(holder.unit_edit));
+        holder.ggxh_edit.addTextChangedListener(new Watcher(holder.ggxh_edit));
+        holder.clsl_edit.addTextChangedListener(new Watcher(holder.clsl_edit));
+        holder.cldw_edit.addTextChangedListener(new Watcher(holder.cldw_edit));
         holder.count_edit.addTextChangedListener(new Watcher(holder.count_edit));
         holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
@@ -125,11 +137,14 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.img_num.setText(bean.getmImages().size()+"");
 
         setXimmc(holder, position);
+        setcCl(holder, position);
+
         holder.projectName_edit.setText(bean.getBhmc());
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-        holder.count_edit.setText(bean.getWxsl());
+//        holder.clsl_edit.setText(bean.getClmc());
+        holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
         setDateTime(holder);
@@ -182,12 +197,11 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.xiangji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClickImagePositon = position;
                 mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+                        if (mActivity == null || ((BaseActivity) mActivity).isDestroyed() || mActivity.isFinishing()) {
                             return;
                         }
                         boolean mIsGpsSuccess = false;
@@ -198,12 +212,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.latitude);
+                            Logger.e("aaa", "纬度:" + result.longitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
+                        } else if (!mIsGpsSuccess) {
                             Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
 //                            tv.setText("定位失败");
@@ -273,6 +287,71 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
         return view;
     }
+
+    public void setcCl(final HolderView holder,final int position){
+        holder.cl_edit.setOnClickListener(new CheckClDialog(mActivity, new CheckClDialog.CheckClDialogReturn(){
+            @Override
+            public void returnBean(List<GeteMaterialBean> geteMaterialBeen) {
+                if (geteMaterialBeen.size() != 0) {
+                    Logger.e("aaa","catalogueByUIDBeen==="+geteMaterialBeen.toString());
+                    GeteMaterialBean bean = geteMaterialBeen.get(0);
+                    Log.i("aaa", "returnBean: "+bean.getClmc());
+                    String clmc = holder.cl_edit.getText().toString();
+                    String ggxh = holder.cl_edit.getText().toString();
+                    String cldw = holder.cl_edit.getText().toString();
+                    String clsl = holder.clsl_edit.getText().toString();
+                    if(TextUtil.isEmptyString(clmc)){
+                        holder.cl_edit.setText(bean.getClmc());
+                    }else{
+                        holder.cl_edit.setText(clmc + "," + bean.getClmc());
+                    }
+                    if(TextUtil.isEmptyString(ggxh)){
+                        holder.ggxh_edit.setText(bean.getGg()+"-"+bean.getXh());
+                    }else{
+                        holder.ggxh_edit.setText(ggxh + "," + bean.getGg() + "-" + bean.getXh());
+                    }
+                    if(TextUtil.isEmptyString(cldw)){
+                        holder.cldw_edit.setText(bean.getDw());
+                    }else{
+                        holder.cldw_edit.setText(cldw + "," + bean.getDw());
+                    }
+                    if(TextUtil.isEmptyString(clsl)){
+                        holder.clsl_edit.setText("0");
+                    }else{
+                        holder.clsl_edit.setText(clsl + ",0"  );
+                    }
+
+
+
+
+
+//                    holder.cl_edit.setText(bean.getClmc());
+//                    holder.ggxh_edit.setText(bean.getGg()+"-"+bean.getXh());
+//                    holder.cldw_edit.setText(bean.getDw());
+
+//                    holder.unit_edit.setText(bean.getDw());
+
+                    maintenanceLogItemBeen.get(position).setClmc(holder.cl_edit.getText().toString());
+//                    maintenanceLogItemBeen.get(position).setVersionno(bean.getVersionno()+"");
+//                    maintenanceLogItemBeen.get(position).setCreateBy(bean.getCreateBy()+"");
+//                    maintenanceLogItemBeen.get(position).setCreatetime(bean.getCreatetime()+"");
+//                    maintenanceLogItemBeen.get(position).setCreator(bean.getCreator()+"");
+//                    maintenanceLogItemBeen.get(position).setUpdateBy(bean.getUpdateBy()+"");
+//                    maintenanceLogItemBeen.get(position).setUpdatetime(bean.getUpdatetime()+"");
+//                    maintenanceLogItemBeen.get(position).setUpdator(bean.getUpdator()+"");
+//                    maintenanceLogItemBeen.get(position).setFlag(bean.getFlag()+"");
+//                    maintenanceLogItemBeen.get(position).setXcbhid(bean.getId()+"");
+//
+//
+//                    maintenanceLogItemBeen.get(position).setBhid(bean.getId()+"");
+//                    maintenanceLogItemBeen.get(position).setBhmc(bean.getXimmc());
+//                    maintenanceLogItemBeen.get(position).setDw(bean.getDw());
+//                    maintenanceLogItemBeen.get(position).setRemark(bean.getXcms()+"");
+                }
+            }
+        }));
+    }
+
     public void setXimmc(final HolderView holder,final int position){
         holder.projectName_edit.setOnClickListener(new CheckXMDialog(mActivity, new CheckXMDialog.CheckXMDDialogReturn() {
             @Override
@@ -368,7 +447,10 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 unit_edit,
                 count_edit,
                 address_edit,
-                item_checkTime_edit;
+                item_checkTime_edit,
+                ggxh_edit,
+                clsl_edit,
+                cldw_edit;
 
         private Spinner img_spinner;
 
@@ -400,6 +482,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             address_edit = (EditText) view.findViewById(R.id.address_edit);
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
             zh_edit = (EditText) view.findViewById(R.id.zh_edit);
+            ggxh_edit = (EditText) view.findViewById(R.id.ggxh_edit);
+            clsl_edit = (EditText) view.findViewById(R.id.clsl_edit);
+            cldw_edit = (EditText) view.findViewById(R.id.cldw_edit);
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
@@ -409,7 +494,6 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
         }
     }
-    private int ClickImagePositon;
     class  Watcher implements TextWatcher {
         private EditText editTextID;
         public Watcher(EditText editText) {
@@ -464,6 +548,18 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     maintenanceLogItemBeen.get(position).setBhwz(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.item_checkTime_edit:
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.ggxh_edit://规格型号
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.clsl_edit://材料数量
+                    Logger.e("aaa","item_checkTime_edit==position"+position);
+                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    break;
+                case R.id.cldw_edit://材料单位
                     Logger.e("aaa","item_checkTime_edit==position"+position);
                     maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
                     break;
@@ -554,7 +650,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     IVDesc desc = (IVDesc) v.getTag();
-                    mActivity.jumpToMedia(ClickImagePositon, Constants.REQUEST_CODE_EDIT_IMG, desc);
+                    mActivity.jumpToMedia(0, Constants.REQUEST_CODE_EDIT_IMG, desc);
                 }
             });
             return view;

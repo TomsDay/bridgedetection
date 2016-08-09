@@ -180,6 +180,7 @@ public class MaintenanceLogListActivity extends BaseActivity {
 //                params.height = 200 ;
 
         dialog.getWindow().setAttributes(params);
+        dialog.setCanceledOnTouchOutside(true);
 
     }
 

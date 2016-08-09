@@ -38,11 +38,14 @@ import com.suken.bridgedetection.adapter.MaintenanceLogAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
+import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -51,8 +54,10 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
+import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -101,7 +106,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     MaintenanceLogDao maintenanceLogDao;
     IVDescDao ivDescDao;
     CatalogueByUIDDao catalogueByUIDDao;
-
+    GeteMaterialDao geteMaterialDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +116,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
         catalogueByUIDDao = new CatalogueByUIDDao();
+        geteMaterialDao = new GeteMaterialDao();
         LocationManager.getInstance().syncLocation(this);
         id = getIntent().getLongExtra("id", 0);
         initView();
@@ -227,13 +233,16 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         maintenancelog_wxbm_ev.setText(allMaintenanceLogBean.getWxbmmc()+"");
 
         strWeather = allMaintenanceLogBean.getWeather().trim();
-        for (int i = 0; i < mStringArrayWeather.length; i++) {
-            if(mStringArrayWeather[i].equals(strWeather)){
-                selsctWeather = i;
-                break;
+        if(!TextUtil.isEmptyString(strWeather)){
+            for (int i = 0; i < mStringArrayWeather.length; i++) {
+                if(mStringArrayWeather[i].equals(strWeather)){
+                    selsctWeather = i;
+                    break;
+                }
             }
+            maintenancelog_weather_spinner.setSelection(selsctWeather);
         }
-        maintenancelog_weather_spinner.setSelection(selsctWeather);
+
 
         maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
         maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
@@ -325,6 +334,10 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 showLoading("正在同步细目库");
                 synchronizationCatalogueByUIDData();
                 break;
+            case R.id.maintenancelog_synchronizationMaterial:
+                showLoading("正在同步材料库");
+                synchronizationMaterialByUIDDate();
+                break;
         }
 
     }
@@ -358,11 +371,11 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         Logger.e("aaa","itemlist===="+ maintenanceLogItemBeen.toString());
 
@@ -387,8 +400,41 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
                         maintenanceLogBean.setJcry(jcr);
                         maintenanceLogBean.setFzry(fzr);
+
+                        if(TextUtil.isEmptyString(jcr)){
+                            toast("“检查人”不可为空！");
+                            return;
+                        }
+                        if(TextUtil.isEmptyString(fzr)){
+                            toast("“负责人”不可为空！");
+                            return;
+                        }
+
+                        maintenanceLogItemBeen = mAdapter.getData();
+                        for(int q = 0; q < maintenanceLogItemBeen.size(); q++){
+                            MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(q);
+                            int num = q + 1;
+                            //必填项限制
+                            if(TextUtil.isEmptyString(itemBean.getBhmc())){
+                                toast("第" + num + "条维修内容的“细目名称”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getClmc())){
+                                toast("第" + num + "条维修内容的“材料名称”不可为空！");
+                                return;
+                            }
+                            if(TextUtil.isEmptyString(itemBean.getWxsl())){
+                                toast("第" + num + "条维修内容的“数量”不可为空！");
+                                return;
+                            }
+
+                        }
+
                         if (id != 0) {
                             maintenanceLogBean.setId(id);
+                        }else{
+                            maintenanceLogBean.setBytzno(allMaintenanceLogBean.getBno());
+                            maintenanceLogBean.setBytzid(allMaintenanceLogBean.getId()+"");
                         }
                         Logger.e("aaa", "=======11111====="+maintenanceLogBean.toString());
 
@@ -400,7 +446,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                         }else{
                             maintenanceLogDao.add(maintenanceLogBean);
                         }
-                        maintenanceLogItemBeen = mAdapter.getData();
+
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
                             if (itemBean.getTpjd() != null) {
@@ -659,6 +705,9 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 catalogueByUIDDao.addList(catalogueByUIDBeens);
                 dismissLoading();
                 toast("同步细目库成功！");
+                if(TextUtil.isListEmpty(catalogueByUIDBeens)){
+                    ToastUtil.showMessage("暂无细目库数据");
+                }
 
             }
 
@@ -688,4 +737,52 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         });
 
     }
+
+    public void synchronizationMaterialByUIDDate(){
+
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa", "result.toString()" + result.toString());
+
+                List<GeteMaterialBean> geteMaterialBeen = JSON.parseArray(result.getString("datas"), GeteMaterialBean.class);
+
+                Logger.e("aaa", geteMaterialBeen.toString());
+
+                geteMaterialDao.addList(geteMaterialBeen);
+                dismissLoading();
+                toast("同步材料库成功！");
+                if(TextUtil.isListEmpty(geteMaterialBeen)){
+                    ToastUtil.showMessage("暂无材料库数据");
+                }
+
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "===(" + resultCode + ")");
+                Logger.e("aaa", "type===" + type);
+                dismissLoading();
+                toast("同步材料库失败！");
+            }
+        };
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                catalogueByUIDDao.deleteAll();
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.geteMaterialByUID).executePost(list);
+
+
+            }
+        });
+
+    }
+
 }

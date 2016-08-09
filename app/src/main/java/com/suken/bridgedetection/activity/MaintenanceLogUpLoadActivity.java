@@ -225,6 +225,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     bean.getMaintenlogdetailList().add(beanList);
                 }
                 maintenanceLogUpLoadBeen.add(bean);
+                Logger.e("aaa","getGldwId=="+maintenanceLogBean.getGldwId()+"===getGldwName=="+maintenanceLogBean.getGldwName());
             }
 
         }

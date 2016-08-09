@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+    <LinearLayout
+        android:id="@+id/maintenanceoforder_content_rowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:layout_toRightOf="@id/maintenanceoforder_content_tv">
+        <TextView
+            android:id="@+id/maintenanceoforder_content_row1"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="表单编号"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+
+        <TextView
+            android:id="@+id/maintenanceoforder_content_row2"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="维修部门"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenanceoforder_content_row3"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="维修日期"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenanceoforder_content_row4"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="负责人"
+            android:textSize="10dp" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/oforderlist_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:background="@color/transparent"
+      />
+
+</LinearLayout>

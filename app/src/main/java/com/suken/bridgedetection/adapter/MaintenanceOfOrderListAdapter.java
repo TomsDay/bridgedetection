@@ -12,6 +12,7 @@ import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogListBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.util.TextUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,7 @@ public class MaintenanceOfOrderListAdapter extends BaseAdapter{
         }
         MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(position);
         holder.maintenanceoforder_item_tv1.setText(bean.getId()+"");
-        holder.maintenanceoforder_item_tv2.setText(bean.getYhrzbno()+"");
+        holder.maintenanceoforder_item_tv2.setText(!TextUtil.isEmptyString(bean.getSgdwmc())?bean.getSgdwmc():"");
         holder.maintenanceoforder_item_tv3.setText(bean.getJcsj()+"");
         holder.maintenanceoforder_item_tv4.setText(bean.getJcry()+"");
         holder.maintenanceoforder_item_tv5.setText(bean.getAqgly()  +"");

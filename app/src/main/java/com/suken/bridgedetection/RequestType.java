@@ -29,7 +29,7 @@ public enum RequestType {
     getCatalogueByUID("获取细目基本信息","/m/base/getCatalogueByUID.ht"),
     geteCooperationByUID("获取外协单位基本信息","/m/base/geteCooperationByUID.ht"),
     geteQualityDemandByUID("获取质量要求信息","/m/base/geteQualityDemandByUID.ht"),
-    geteMaterialByUID("获取材料基本信息","/m/base/geteMaterialByUID.ht"),
+    geteMaterialByUID("获取材料基本信息","/m/base/getMaterialByUID.ht"),
     getMaintenlogByUID("获取维修保养日志记录信息","/m/daily/maintenlog/getMaintenlogByUID.ht"),
     getUpkeepnoticeByUID("获取养护通知单记录信息","/m/daily/maintenlog/getUpkeepnoticeByUID.ht"),
     getProjacceptByUID("获取保养工程验收记录信息","/m/daily/projaccept/getProjacceptByUID.ht"),
