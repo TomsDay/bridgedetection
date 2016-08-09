@@ -36,9 +36,9 @@ public class MaintenanceOfOrderBean implements Serializable {
 //    @DatabaseField
 //    private String flag;
     @DatabaseField
-    private String gldwId;
+    private String gydwId;
     @DatabaseField
-    private String gldwName;
+    private String gydwName;
 //    @DatabaseField
 //    private String bno;
     @DatabaseField
@@ -93,8 +93,6 @@ public class MaintenanceOfOrderBean implements Serializable {
     public String toString() {
         return "MaintenanceOfOrderBean{" +
                 "id=" + id +
-                ", gldwId='" + gldwId + '\'' +
-                ", gldwName='" + gldwName + '\'' +
                 ", yhrzid='" + yhrzid + '\'' +
                 ", yhrzbno='" + yhrzbno + '\'' +
                 ", sgdwid='" + sgdwid + '\'' +
@@ -153,20 +151,20 @@ public class MaintenanceOfOrderBean implements Serializable {
         this.id = id;
     }
 
-    public String getGldwId() {
-        return gldwId;
+    public String getGydwId() {
+        return gydwId;
     }
 
-    public void setGldwId(String gldwId) {
-        this.gldwId = gldwId;
+    public void setGydwId(String gydwId) {
+        this.gydwId = gydwId;
     }
 
-    public String getGldwName() {
-        return gldwName;
+    public String getGydwName() {
+        return gydwName;
     }
 
-    public void setGldwName(String gldwName) {
-        this.gldwName = gldwName;
+    public void setGydwName(String gydwName) {
+        this.gydwName = gydwName;
     }
 
     public String getYhrzid() {

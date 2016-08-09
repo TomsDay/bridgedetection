@@ -37,10 +37,10 @@ public class MaintenanceLogBean implements Serializable{
     private String flag;
     @DatabaseField
     /** 管养单位id*/
-    private String gldwId;
+    private String gydwId;
     @DatabaseField
     /** 管养单位*/
-    private String gldwName;
+    private String gydwName;
     /** 路段 */
     @DatabaseField
     private String tzld;
@@ -120,7 +120,7 @@ public class MaintenanceLogBean implements Serializable{
     public MaintenanceLogBean() {
     }
 
-    public MaintenanceLogBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String tzld, String bno, String wxlx, String wxbmid, String wxbmmc, String wxks, String wxjs, String weather, String qfry, String qfrq, String tjsj, String status, String zlyq, String bcsm, String tzdzt, List<MaintenanceLogItemBean> upkeepdiseaseList, ForeignCollection<MaintenanceLogItemBean> maintenanceLogItemBeen) {
+    public MaintenanceLogBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gydwId, String gydwName, String tzld, String bno, String wxlx, String wxbmid, String wxbmmc, String wxks, String wxjs, String weather, String qfry, String qfrq, String tjsj, String status, String zlyq, String bcsm, String tzdzt, List<MaintenanceLogItemBean> upkeepdiseaseList, ForeignCollection<MaintenanceLogItemBean> maintenanceLogItemBeen) {
         this.id = id;
         this.createBy = createBy;
         this.createtime = createtime;
@@ -131,8 +131,8 @@ public class MaintenanceLogBean implements Serializable{
         this.versionno = versionno;
         this.orgid = orgid;
         this.flag = flag;
-        this.gldwId = gldwId;
-        this.gldwName = gldwName;
+        this.gydwId = gydwId;
+        this.gydwName = gydwName;
         this.tzld = tzld;
         this.bno = bno;
         this.wxlx = wxlx;
@@ -165,8 +165,6 @@ public class MaintenanceLogBean implements Serializable{
                 ", versionno='" + versionno + '\'' +
                 ", orgid='" + orgid + '\'' +
                 ", flag='" + flag + '\'' +
-                ", gldwId='" + gldwId + '\'' +
-                ", gldwName='" + gldwName + '\'' +
                 ", tzld='" + tzld + '\'' +
                 ", bno='" + bno + '\'' +
                 ", wxlx='" + wxlx + '\'' +
@@ -418,20 +416,20 @@ public class MaintenanceLogBean implements Serializable{
         this.flag = flag;
     }
 
-    public String getGldwId() {
-        return gldwId;
+    public String getGydwId() {
+        return gydwId;
     }
 
-    public void setGldwId(String gldwId) {
-        this.gldwId = gldwId;
+    public void setGydwId(String gydwId) {
+        this.gydwId = gydwId;
     }
 
-    public String getGldwName() {
-        return gldwName;
+    public String getGydwName() {
+        return gydwName;
     }
 
-    public void setGldwName(String gldwName) {
-        this.gldwName = gldwName;
+    public void setGydwName(String gydwName) {
+        this.gydwName = gydwName;
     }
 
     public String getBno() {

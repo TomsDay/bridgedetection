@@ -42,7 +42,7 @@ public class ProjacceptBean implements Serializable {
     public ProjacceptBean() {
     }
 
-    public ProjacceptBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String id, String bno, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status, String yhtzid, String yhtzdno, String signattachment, List<ProjacceptItemBean> projacceptItemBeen) {
+    public ProjacceptBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gydwId, String gydwName, String id, String bno, String sgdwid, String sgdwmc, String sgks, String sgjs, String ysjg, String qrzs, String ysry, String ysrq, String sgfzry, String sgfzdate, String tjsj, String status, String yhtzid, String yhtzdno, String signattachment, List<ProjacceptItemBean> projacceptItemBeen) {
         this.createBy = createBy;
         this.createtime = createtime;
         this.creator = creator;

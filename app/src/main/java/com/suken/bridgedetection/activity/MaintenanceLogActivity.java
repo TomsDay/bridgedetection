@@ -1,6 +1,5 @@
 package com.suken.bridgedetection.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentResolver;
@@ -12,7 +11,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -45,8 +43,6 @@ import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
-import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
-import com.suken.bridgedetection.bean.ProjacceptBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -166,7 +162,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             if(maintenanceLogBeen.size()>0) {
                 MaintenanceLogBean bean = maintenanceLogBeen.get(0);
 
-                maintenancelog_gydw_ev.setText(bean.getGldwName()+"");
+                maintenancelog_gydw_ev.setText(bean.getGydwName()+"");
                 maintenancelog_bh_ev.setText(bean.getBno()+"");
                 maintenancelog_data_ev.setText(bean.getWxrq()+"");
                 maintenancelog_wxbm_ev.setText(bean.getWxbmmc()+"");
@@ -388,8 +384,8 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                             maintenanceLogBean = maintenanceLogBeen.get(0);
                         }else{
                             maintenanceLogBean = allMaintenanceLogBean;
-                            maintenanceLogBean.setGldwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
-                            maintenanceLogBean.setGldwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+                            maintenanceLogBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+                            maintenanceLogBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
                         }
 
 

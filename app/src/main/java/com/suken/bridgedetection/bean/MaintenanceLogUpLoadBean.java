@@ -10,8 +10,6 @@ import java.util.List;
 public class MaintenanceLogUpLoadBean implements Serializable{
 
     /**
-     * gldwId : 10000000220011
-     * gldwName : 青银高速石家庄养护工区
      * wxlx : 2
      * wxbmid : 10000005572385
      * wxbmmc : 石家庄公路养护管理公司
@@ -27,8 +25,8 @@ public class MaintenanceLogUpLoadBean implements Serializable{
      * maintenlogdetailList : [{"bhid":10000006740001,"bhmc":"路面损坏","fx":"上行内侧","yhzh":111.11,"dw":"米","dj":0,"wxsl":11,"clmc":"贵重材料"}]
      */
 
-    private String gldwId;
-    private String gldwName;
+    private String gydwId;
+    private String gydwName;
     private String wxlx;
     private String wxbmid;
     private String wxbmmc;
@@ -53,20 +51,20 @@ public class MaintenanceLogUpLoadBean implements Serializable{
 
     private List<MaintenanceLogUpLoadListBean> maintenlogdetailList = new ArrayList<MaintenanceLogUpLoadListBean>();
 
-    public String getGldwId() {
-        return gldwId;
+    public String getGydwId() {
+        return gydwId;
     }
 
-    public void setGldwId(String gldwId) {
-        this.gldwId = gldwId;
+    public void setGydwId(String gydwId) {
+        this.gydwId = gydwId;
     }
 
-    public String getGldwName() {
-        return gldwName;
+    public String getGydwName() {
+        return gydwName;
     }
 
-    public void setGldwName(String gldwName) {
-        this.gldwName = gldwName;
+    public void setGydwName(String gydwName) {
+        this.gydwName = gydwName;
     }
 
     public String getWxlx() {

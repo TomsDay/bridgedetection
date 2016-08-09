@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.view.KeyEvent;
@@ -45,6 +46,12 @@ import com.suken.bridgedetection.util.PictureUtil;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.BufferedOutputStream;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -69,6 +76,48 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
 
         initView();
     }
+//    /**
+//     * 将字节数组写入文件
+//     *
+//     * @param from
+//     * @param to
+//     * @return
+//     */
+//    public static void write(byte[] from, File to) {
+//        if (from == null) {
+//            throw new NullPointerException("bytes is null");
+//        }
+//        if (to == null) {
+//            throw new NullPointerException("file is null");
+//        }
+//
+//        BufferedOutputStream bos = null;
+//
+//        try {
+//            bos = new BufferedOutputStream(new FileOutputStream(to));
+//            bos.write(from);
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            closeQuietly(bos);
+//        }
+//    }
+//    /**
+//     * 关闭流
+//     *
+//     * @param stream
+//     */
+//    public static void closeQuietly(Closeable stream) {
+//        if (stream != null) {
+//            try {
+//                stream.close();
+//            } catch (IOException e) {
+//                // ignore
+//            }
+//        }
+//    }
 
     private void initView() {
         project_acceptanceUpload_listView = (ListView) findViewById(R.id.project_acceptanceUpload_listView);
@@ -254,11 +303,14 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                 list.add(pair);
 
                 for(int i = 0;i<bean.getmImages().size();i++){
+                    Logger.e("aaa","path:"+bean.getmImages().get(i).getPath());
+                    Logger.e("aaa", "图片的base64：" + PictureUtil.save(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
                     if (i == 0) {
-                        Logger.e("aaa","path:"+bean.getmImages().get(i).getPath());
-                        Logger.e("aaa", "图片的base64：" + PictureUtil.save(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
                         bean.setQmtp1(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
 
+//                        String url = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName()+File.separator+"imageByte.txt";
+//                        File mFile = new File(url);
+//                        write(bean.getQmtp1(),mFile);
                     }else if(i == 1){
                         bean.setQmtp2(PictureUtil.BitmaptoByteArray(BitmapFactory.decodeFile(bean.getmImages().get(i).getPath())));
                     }else if(i == 2){

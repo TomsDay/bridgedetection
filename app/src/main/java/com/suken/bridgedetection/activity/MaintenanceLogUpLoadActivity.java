@@ -30,8 +30,6 @@ import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceLogUpLoadBean;
 import com.suken.bridgedetection.bean.MaintenanceLogUpLoadListBean;
-import com.suken.bridgedetection.bean.MaintenanceTableBean;
-import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -192,8 +190,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
             for (int i = 0; i < listBeen.size(); i++) {
                 MaintenanceLogBean maintenanceLogBean = listBeen.get(i);
                 MaintenanceLogUpLoadBean bean = new MaintenanceLogUpLoadBean();
-                bean.setGldwId(maintenanceLogBean.getGldwId());
-                bean.setGldwName(maintenanceLogBean.getGldwName());
+                bean.setGydwId(maintenanceLogBean.getGydwId());
+                bean.setGydwName(maintenanceLogBean.getGydwName());
                 bean.setWxlx(maintenanceLogBean.getWxlx());
                 bean.setWxbmmc(maintenanceLogBean.getWxbmmc());
                 bean.setWxbmid(maintenanceLogBean.getWxbmid());
@@ -225,7 +223,6 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     bean.getMaintenlogdetailList().add(beanList);
                 }
                 maintenanceLogUpLoadBeen.add(bean);
-                Logger.e("aaa","getGldwId=="+maintenanceLogBean.getGldwId()+"===getGldwName=="+maintenanceLogBean.getGldwName());
             }
 
         }

@@ -49,7 +49,6 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.OfOrderListAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
-import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
@@ -68,7 +67,6 @@ import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
 import com.suken.imageditor.ImageditorActivity;
-import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -77,7 +75,6 @@ import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -271,7 +268,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             if(maintenanceOfOrderBeen.size()>0){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(0);
 
-                maintenanceoforder_gydw_ev.setText(bean.getGldwName());
+                maintenanceoforder_gydw_ev.setText(bean.getGydwName());
                 maintenanceoforder_checkDate_ev.setText(bean.getJcsj());
                 maintenanceoforder_qtqk_ev.setText(bean.getQtqk());
 //                maintenanceoforder_yj_ev.setText(bean.getClyj());
@@ -357,6 +354,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
             }else{
                 maintenanceoforder_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+
                 maintenanceoforder_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
                 seThisNewMaintenanceOfOrderItemBeen();
             }
@@ -924,7 +922,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                             return;
                         }
                         MaintenanceOfOrderBean bean = new MaintenanceOfOrderBean();
-                        bean.setGldwName(gydw);
+                        bean.setGydwName(gydw);
                         bean.setJcsj(checkDate);
                         bean.setWeather(strWeather);
 
@@ -935,6 +933,10 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         bean.setAqgly(jlr);
                         if (id != 0) {
                             bean.setId(id);
+                            bean.setGydwId(maintenanceOfOrderBeen.get(0).getGydwId());
+                        }else{
+                            bean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+
                         }
 
 

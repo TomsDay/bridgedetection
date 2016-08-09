@@ -17,8 +17,8 @@ public class SynchMaintenlogBean implements Serializable{
     private String versionno;
     private String orgid;
     private String flag;
-    private String gldwId;
-    private String gldwName;
+    private String gydwId;
+    private String gydwName;
     private String id;
     private String bno;
     private String wxlx;
@@ -37,7 +37,7 @@ public class SynchMaintenlogBean implements Serializable{
     public SynchMaintenlogBean() {
     }
 
-    public SynchMaintenlogBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gldwId, String gldwName, String id, String bno, String wxlx, String wxbmid, String wxbmmc, String wxrq, String weather, String jcry, String fzry, String tjsj, String status, String bytzid, String bytzno, List<SynchMaintenlogListBean> maintenlogDetailList) {
+    public SynchMaintenlogBean(String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String orgid, String flag, String gydwId, String gydwName, String id, String bno, String wxlx, String wxbmid, String wxbmmc, String wxrq, String weather, String jcry, String fzry, String tjsj, String status, String bytzid, String bytzno, List<SynchMaintenlogListBean> maintenlogDetailList) {
         this.createBy = createBy;
         this.createtime = createtime;
         this.creator = creator;
@@ -47,8 +47,8 @@ public class SynchMaintenlogBean implements Serializable{
         this.versionno = versionno;
         this.orgid = orgid;
         this.flag = flag;
-        this.gldwId = gldwId;
-        this.gldwName = gldwName;
+        this.gydwId = gydwId;
+        this.gydwName = gydwName;
         this.id = id;
         this.bno = bno;
         this.wxlx = wxlx;
@@ -77,8 +77,6 @@ public class SynchMaintenlogBean implements Serializable{
                 ", versionno='" + versionno + '\'' +
                 ", orgid='" + orgid + '\'' +
                 ", flag='" + flag + '\'' +
-                ", gldwId='" + gldwId + '\'' +
-                ", gldwName='" + gldwName + '\'' +
                 ", id='" + id + '\'' +
                 ", bno='" + bno + '\'' +
                 ", wxlx='" + wxlx + '\'' +
@@ -168,20 +166,20 @@ public class SynchMaintenlogBean implements Serializable{
         this.flag = flag;
     }
 
-    public String getGldwId() {
-        return gldwId;
+    public String getGydwId() {
+        return gydwId;
     }
 
-    public void setGldwId(String gldwId) {
-        this.gldwId = gldwId;
+    public void setGydwId(String gydwId) {
+        this.gydwId = gydwId;
     }
 
-    public String getGldwName() {
-        return gldwName;
+    public String getGydwName() {
+        return gydwName;
     }
 
-    public void setGldwName(String gldwName) {
-        this.gldwName = gldwName;
+    public void setGydwName(String gydwName) {
+        this.gydwName = gydwName;
     }
 
     public String getId() {
