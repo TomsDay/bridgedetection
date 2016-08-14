@@ -88,6 +88,12 @@ public class MaintenanceLogItemBean implements Serializable {
     private String dj;
     @DatabaseField
     private String wxsl;
+    @DatabaseField
+    private String ggxh;
+    @DatabaseField
+    private String clsl;
+    @DatabaseField
+    private String cldw;
 
 
 
@@ -120,7 +126,8 @@ public class MaintenanceLogItemBean implements Serializable {
     @Override
     public String toString() {
         return "MaintenanceLogItemBean{" +
-                "id=" + id +
+                "ids=" + ids +
+                ", id=" + id +
                 ", createBy='" + createBy + '\'' +
                 ", createtime='" + createtime + '\'' +
                 ", creator='" + creator + '\'' +
@@ -151,6 +158,11 @@ public class MaintenanceLogItemBean implements Serializable {
                 ", vidattachment='" + vidattachment + '\'' +
                 ", tpjd='" + tpjd + '\'' +
                 ", tpwd='" + tpwd + '\'' +
+                ", dj='" + dj + '\'' +
+                ", wxsl='" + wxsl + '\'' +
+                ", ggxh='" + ggxh + '\'' +
+                ", clsl='" + clsl + '\'' +
+                ", cldw='" + cldw + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -162,6 +174,8 @@ public class MaintenanceLogItemBean implements Serializable {
 
     public MaintenanceLogItemBean() {
     }
+
+
 
     public MaintenanceLogItemBean(Long id, String createBy, String createtime, String creator, String updateBy, String updatetime, String updator, String versionno, String flag, String orgid, String bytzid, String xcbhid, String xcrzno, String bhid, String bhmc, String bhwz, String fx, String yhzh, String dw, String ygsl, String remark, boolean isShow, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceLogBean maintenanceLogBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
         this.id = id;
@@ -193,6 +207,29 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
+    public String getGgxh() {
+        return ggxh;
+    }
+
+    public void setGgxh(String ggxh) {
+        this.ggxh = ggxh;
+    }
+
+    public String getClsl() {
+        return clsl;
+    }
+
+    public void setClsl(String clsl) {
+        this.clsl = clsl;
+    }
+
+    public String getCldw() {
+        return cldw;
+    }
+
+    public void setCldw(String cldw) {
+        this.cldw = cldw;
+    }
 
     public String getDj() {
         return dj;

@@ -43,6 +43,27 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     public MaintenanceLogUpLoadListBean() {
     }
 
+    @Override
+    public String toString() {
+        return "MaintenanceLogUpLoadListBean{" +
+                "bhid='" + bhid + '\'' +
+                ", bhmc='" + bhmc + '\'' +
+                ", fx='" + fx + '\'' +
+                ", yhzh='" + yhzh + '\'' +
+                ", dw='" + dw + '\'' +
+                ", dj='" + dj + '\'' +
+                ", wxsl='" + wxsl + '\'' +
+                ", clmc='" + clmc + '\'' +
+                ", picattachment='" + picattachment + '\'' +
+                ", vidattachment='" + vidattachment + '\'' +
+                ", state='" + state + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
+                ", mImages=" + mImages +
+                ", mVideo=" + mVideo +
+                '}';
+    }
+
     public String getTpjd() {
         return tpjd;
     }

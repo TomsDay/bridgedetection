@@ -174,18 +174,18 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
             String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
             //日常养护权限
 
-//            if (roles.contains("highway_rcyhysy")
-//                    || roles.contains("highway_rcyhaqjcy")
-//                    || roles.contains("highway_rcyhwxgcs")
-//                    || roles.contains("highway_rcyhxdy")
-//                    || roles.contains("highway_yhxcy")
-//                    || roles.contains("highway_yhgcs")){  //进入日常养护
+            if (roles.contains("highway_rcyhysy")
+                    || roles.contains("highway_rcyhaqjcy")
+                    || roles.contains("highway_rcyhwxgcs")
+                    || roles.contains("highway_rcyhxdy")
+                    || roles.contains("highway_yhxcy")
+                    || roles.contains("highway_yhgcs")){  //进入日常养护
 
                 Intent in = new Intent(getActivity(), MaintenanceActivity.class);
                 startActivity(in);
-//            } else {
-//                toast("无权限");
-//            }
+            } else {
+                toast("无权限");
+            }
 
             return;
         }
@@ -208,8 +208,9 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
 
         if (result.isSuccess) {
             mIsGpsSuccess = true;
-            mjingdu.setText("经度:" + result.latitude);
-            mWeidu.setText("纬度:" + result.longitude);
+            //原来的代码（经度纬度反了）
+            mjingdu.setText("经度:" + result.longitude);
+            mWeidu.setText("纬度:" + result.latitude);
             TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
             tv.setText("定位成功");
             tv.setTextColor(Color.WHITE);

@@ -271,7 +271,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                 maintenanceoforder_gydw_ev.setText(bean.getGydwName());
                 maintenanceoforder_checkDate_ev.setText(bean.getJcsj());
                 maintenanceoforder_qtqk_ev.setText(bean.getQtqk());
-//                maintenanceoforder_yj_ev.setText(bean.getClyj());
+                maintenanceoforder_yj_ev.setText(bean.getClyj());
                 maintenanceoforder_jcr_ev.setText(bean.getJcry());
                 maintenanceoforder_jlr_ev.setText(bean.getAqgly());
                 String xcrz = bean.getXcnr();
@@ -928,7 +928,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                         bean.setXcnr(content);
                         bean.setQtqk(qtqk);
-//                        bean.setClyj(yj);
+                        bean.setClyj(yj);
                         bean.setJcry(jcr);
                         bean.setAqgly(jlr);
                         if (id != 0) {

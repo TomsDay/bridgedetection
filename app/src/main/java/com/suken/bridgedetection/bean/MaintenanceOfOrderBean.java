@@ -65,8 +65,8 @@ public class MaintenanceOfOrderBean implements Serializable {
     private String status = "2";
     @DatabaseField
     private String qtqk;
-//    @DatabaseField
-//    private String clyj;
+    @DatabaseField
+    private String clyj;
     @DatabaseField
     private String aqgldate;
     @DatabaseField
@@ -109,6 +109,14 @@ public class MaintenanceOfOrderBean implements Serializable {
                 ", safetycheckdetailList=" + safetycheckdetailList +
                 ", maintenanceOfOrderItemBeen=" + maintenanceOfOrderItemBeen +
                 '}';
+    }
+
+    public String getClyj() {
+        return clyj;
+    }
+
+    public void setClyj(String clyj) {
+        this.clyj = clyj;
     }
 
     public String getWeather() {

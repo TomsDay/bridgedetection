@@ -4,10 +4,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -64,13 +67,17 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
     @Override
     public View getView(final int position, View view, ViewGroup viewGroup) {
         HolderView holder = null;
-        if(view == null){
+//        if(view == null){
             view = inflater.inflate(R.layout.projaccept_item, null);
             holder = new HolderView(view);
             view.setTag(holder);
-        }else{
-            holder = (HolderView) view.getTag();
-        }
+//        }else{
+//            holder = (HolderView) view.getTag();
+//        }
+
+        holder.projaccept_item_tv5.setTag(position);
+        holder.projaccept_item_tv5.addTextChangedListener(new Watcher(holder.projaccept_item_tv5));
+
         ProjacceptItemBean bean = projacceptItemBeens.get(position);
         holder.projaccept_item_tv1.setText(bean.getYhzh()+"");
         holder.projaccept_item_tv2.setText(bean.getFx()+"");
@@ -169,6 +176,46 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
 
         return view;
     }
+
+    class  Watcher implements TextWatcher {
+        private EditText editTextID;
+        public Watcher(EditText editText) {
+            editTextID = editText;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            int position = (Integer)editTextID.getTag();
+//            switch (editTextID.getId()) {
+//                case R.id.diseaseName_edit:
+//                    Logger.e("aaa", "=======diseaseName_edit=" + charSequence + "=====position" + position);
+////                    list.get(mPosition).setDiseaseName(charSequence != null && !"".equals(charSequence) ? charSequence : "");
+//                    break;
+//            }
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            String content = editable.toString();
+            int position = (Integer)editTextID.getTag();
+
+            switch (editTextID.getId()) {
+
+                case R.id.projaccept_item_tv5:
+                    Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
+                    projacceptItemBeens.get(position).setWxsl(content!=null&&!"".equals(content)?content:"");
+                    break;
+            }
+        }
+    }
+
+
+
     public void setYsjgClick(final HolderView holder,final int position){
         holder.projaccept_item_tv6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,10 +244,11 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
                 projaccept_item_tv2,
                 projaccept_item_tv3,
                 projaccept_item_tv4,
-                projaccept_item_tv5,
                 projaccept_item_tv6,
                 img_num,
                 video_num;
+
+        private EditText projaccept_item_tv5;
 
 //        private ImageView xiangji, video;
 
@@ -211,11 +259,12 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
             projaccept_item_tv2 = (TextView) v.findViewById(R.id.projaccept_item_tv2);
             projaccept_item_tv3 = (TextView) v.findViewById(R.id.projaccept_item_tv3);
             projaccept_item_tv4 = (TextView) v.findViewById(R.id.projaccept_item_tv4);
-            projaccept_item_tv5 = (TextView) v.findViewById(R.id.projaccept_item_tv5);
             projaccept_item_tv6 = (TextView) v.findViewById(R.id.projaccept_item_tv6);
 
             img_num = (TextView) v.findViewById(R.id.img_num);
             video_num = (TextView) v.findViewById(R.id.video_num);
+
+            projaccept_item_tv5 = (EditText) v.findViewById(R.id.projaccept_item_tv5);
 
 //            xiangji = (ImageView) v.findViewById(R.id.xiangji);
 //            video = (ImageView) v.findViewById(R.id.video);

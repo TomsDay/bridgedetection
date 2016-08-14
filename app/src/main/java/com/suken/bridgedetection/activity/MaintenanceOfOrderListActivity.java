@@ -30,6 +30,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.SynchMaintenlogBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogListBean;
 import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -169,6 +170,38 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
                 bean.setProjacceptDetailList(synchMaintenlogBeans);
                 bean.setXcnr("");
+                if(!TextUtil.isListEmpty(synchMaintenlogBeans)&&!TextUtil.isListEmpty(synchMaintenlogBeans.get(0).getMaintenlogDetailList())){
+                    SynchMaintenlogListBean listBean = synchMaintenlogBeans.get(0).getMaintenlogDetailList().get(0);
+                    StringBuffer sb = new StringBuffer();
+
+                    String zh = listBean.getYhzh();
+                    String fx = listBean.getFx();
+                    String gcmc = listBean.getBhmc();
+                    String wxsl = listBean.getWxsl();
+                    String dw = listBean.getDw();
+
+                    if(!TextUtil.isEmptyString(zh)){
+                        sb.append(zh);
+                        sb.append(" ");
+                    }
+                    if(!TextUtil.isEmptyString(fx)){
+                        sb.append(fx);
+                        sb.append(" ");
+                    }
+                    if(!TextUtil.isEmptyString(gcmc)){
+                        sb.append(gcmc);
+                        sb.append(" ");
+                    }
+                    if(!TextUtil.isEmptyString(wxsl)){
+                        sb.append(wxsl);
+                        sb.append(" ");
+                    }
+                    if(!TextUtil.isEmptyString(dw)){
+                        sb.append(dw);
+                    }
+                    bean.setXcnr(sb.toString());
+                }
+
                 if(!TextUtil.isListEmpty(synchMaintenlogBeans)){
                     bean.setSgdwmc(synchMaintenlogBeans.get(0).getWxbmmc());
                 }

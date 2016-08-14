@@ -51,6 +51,26 @@ public class MaintenanceLogUpLoadBean implements Serializable{
 
     private List<MaintenanceLogUpLoadListBean> maintenlogdetailList = new ArrayList<MaintenanceLogUpLoadListBean>();
 
+    @Override
+    public String toString() {
+        return "MaintenanceLogUpLoadBean{" +
+                "gydwId='" + gydwId + '\'' +
+                ", gydwName='" + gydwName + '\'' +
+                ", wxlx='" + wxlx + '\'' +
+                ", wxbmid='" + wxbmid + '\'' +
+                ", wxbmmc='" + wxbmmc + '\'' +
+                ", wxrq='" + wxrq + '\'' +
+                ", weather='" + weather + '\'' +
+                ", jcry='" + jcry + '\'' +
+                ", fzry='" + fzry + '\'' +
+                ", status='" + status + '\'' +
+                ", bytzid='" + bytzid + '\'' +
+                ", bytzno='" + bytzno + '\'' +
+                ", byrzzt='" + byrzzt + '\'' +
+                ", maintenlogdetailList=" + maintenlogdetailList +
+                '}';
+    }
+
     public String getGydwId() {
         return gydwId;
     }

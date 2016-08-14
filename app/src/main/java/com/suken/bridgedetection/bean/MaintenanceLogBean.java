@@ -165,6 +165,8 @@ public class MaintenanceLogBean implements Serializable{
                 ", versionno='" + versionno + '\'' +
                 ", orgid='" + orgid + '\'' +
                 ", flag='" + flag + '\'' +
+                ", gydwId='" + gydwId + '\'' +
+                ", gydwName='" + gydwName + '\'' +
                 ", tzld='" + tzld + '\'' +
                 ", bno='" + bno + '\'' +
                 ", wxlx='" + wxlx + '\'' +
@@ -186,6 +188,9 @@ public class MaintenanceLogBean implements Serializable{
                 ", wxrq='" + wxrq + '\'' +
                 ", byrzzt='" + byrzzt + '\'' +
                 ", bytzidbytzid='" + bytzidbytzid + '\'' +
+                ", bytzno='" + bytzno + '\'' +
+                ", maintenlogdetailList=" + maintenlogdetailList +
+                ", upkeepdiseaseList=" + upkeepdiseaseList +
                 ", maintenanceLogItemBeen=" + maintenanceLogItemBeen +
                 '}';
     }

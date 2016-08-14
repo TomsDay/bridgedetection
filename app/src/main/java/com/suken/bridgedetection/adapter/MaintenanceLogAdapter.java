@@ -143,10 +143,14 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.zh_edit.setText(bean.getYhzh());
         holder.cl_edit.setText(bean.getClmc());
         holder.unit_edit.setText(bean.getDw());
-//        holder.clsl_edit.setText(bean.getClmc());
         holder.count_edit.setText(bean.getYgsl());
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getCreatetime());
+        holder.ggxh_edit.setText(bean.getGgxh());
+        holder.clsl_edit.setText(bean.getClsl());
+        holder.cldw_edit.setText(bean.getCldw());
+
+
         setDateTime(holder);
 
         String fx = bean.getFx();
@@ -298,8 +302,8 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     GeteMaterialBean bean = geteMaterialBeen.get(0);
                     Log.i("aaa", "returnBean: "+bean.getClmc());
                     String clmc = holder.cl_edit.getText().toString();
-                    String ggxh = holder.cl_edit.getText().toString();
-                    String cldw = holder.cl_edit.getText().toString();
+                    String ggxh = holder.ggxh_edit.getText().toString();
+                    String cldw = holder.cldw_edit.getText().toString();
                     String clsl = holder.clsl_edit.getText().toString();
                     if(TextUtil.isEmptyString(clmc)){
                         holder.cl_edit.setText(bean.getClmc());
@@ -332,7 +336,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
 //                    holder.unit_edit.setText(bean.getDw());
 
-                    maintenanceLogItemBeen.get(position).setClmc(holder.cl_edit.getText().toString());
+//                    maintenanceLogItemBeen.get(position).setClmc(holder.cl_edit.getText().toString());
 //                    maintenanceLogItemBeen.get(position).setVersionno(bean.getVersionno()+"");
 //                    maintenanceLogItemBeen.get(position).setCreateBy(bean.getCreateBy()+"");
 //                    maintenanceLogItemBeen.get(position).setCreatetime(bean.getCreatetime()+"");
@@ -554,15 +558,15 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     break;
                 case R.id.ggxh_edit://规格型号
                     Logger.e("aaa","item_checkTime_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setGgxh(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.clsl_edit://材料数量
                     Logger.e("aaa","item_checkTime_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setClsl(content!=null&&!"".equals(content)?content:"");
                     break;
                 case R.id.cldw_edit://材料单位
                     Logger.e("aaa","item_checkTime_edit==position"+position);
-                    maintenanceLogItemBeen.get(position).setCreatetime(content!=null&&!"".equals(content)?content:"");
+                    maintenanceLogItemBeen.get(position).setCldw(content!=null&&!"".equals(content)?content:"");
                     break;
             }
         }

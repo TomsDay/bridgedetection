@@ -192,12 +192,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\home_right_item_half_bg.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_left_04_selector.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_left_04_selector.xml"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\cb_bg_unchecked.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\cb_bg_unchecked.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ec_keyboard_left_04_selector.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable\\ec_keyboard_left_04_selector.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\camera_switch_back_selector.xml",

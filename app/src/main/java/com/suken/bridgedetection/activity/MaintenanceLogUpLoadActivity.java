@@ -34,6 +34,7 @@ import com.suken.bridgedetection.bean.UploadFileBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -67,6 +68,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        maintenanceLogDao = new MaintenanceLogDao();
+        ivDescDao = new IVDescDao();
         getAllData();
     }
 
@@ -156,6 +159,8 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
     }
 
     public void getAllData() {
+        listBeen = new ArrayList<MaintenanceLogBean>();
+        maintenanceLogUpLoadBeen = new ArrayList<MaintenanceLogUpLoadBean>();
         listBeen = maintenanceLogDao.queryAll();
         if(listBeen.size()>0){
             for(int i = 0;i<listBeen.size();i++){
@@ -186,7 +191,6 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     }
                 }
             }
-
             for (int i = 0; i < listBeen.size(); i++) {
                 MaintenanceLogBean maintenanceLogBean = listBeen.get(i);
                 MaintenanceLogUpLoadBean bean = new MaintenanceLogUpLoadBean();
@@ -213,17 +217,45 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     beanList.setDw(maintenanceLogItemBean.getDw());
                     beanList.setDj(maintenanceLogItemBean.getDj());
                     beanList.setWxsl(maintenanceLogItemBean.getWxsl());
-                    beanList.setClmc(maintenanceLogItemBean.getClmc());
+
                     beanList.setTpjd(maintenanceLogItemBean.getTpjd());
                     beanList.setTpwd(maintenanceLogItemBean.getTpwd());
 
                     beanList.setmImages(maintenanceLogItemBean.getmImages());
                     beanList.setmVideo(maintenanceLogItemBean.getmVideo());
+                    String clmc = maintenanceLogItemBean.getClmc();
+                    String ggxh = maintenanceLogItemBean.getGgxh();
+                    String clsl = maintenanceLogItemBean.getClsl();
+                    String cldw = maintenanceLogItemBean.getCldw();
+                    if(!TextUtil.isEmptyString(clmc)){
+                        if (clmc.indexOf(",") == -1) {
+                            beanList.setClmc(clmc + " " + ggxh.replace("-", " ") + " " + clsl + " " + cldw);
+                        }else{
+                            StringBuffer str = new StringBuffer();
+                            String[] clmcA = clmc.split(",");
+                            String[] ggxhA = ggxh.split(",");
+                            String[] clslA = clsl.split(",");
+                            String[] cldwA = cldw.split(",");
+                            for (int w = 0; w < clmcA.length; w++) {
+                                str.append(clmcA[w] + " " + ggxhA[w].replace("-", " ") + " " + clslA[w] + " " + cldwA[w]);
+                                if (clmcA.length - 1 != w) {
+                                    str.append(",");
+                                }
+                            }
+                            beanList.setClmc(str.toString());
+                        }
+                        maintenanceLogItemBean.setGgxh("");
+                        maintenanceLogItemBean.setClsl("");
+                        maintenanceLogItemBean.setCldw("");
+                    }
+
+
 
                     bean.getMaintenlogdetailList().add(beanList);
                 }
                 maintenanceLogUpLoadBeen.add(bean);
             }
+            Logger.e("aaa", "===" + maintenanceLogUpLoadBeen.get(0).getMaintenlogdetailList().get(0).getClmc());
 
         }
         mAdapter.setData(listBeen);

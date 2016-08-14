@@ -102,44 +102,44 @@ public class MaintenanceAdapter extends BaseAdapter {
 
                     //日常养护权限
 
-//                    if (roles.contains("highway_yhxcy")
-//                            || roles.contains("highway_yhgcs")) {
+                    if (roles.contains("highway_yhxcy")
+                            || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, MaintenanceTableActivity.class);
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+                    } else {
+                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        return;
+                    }
                 } else if (position == 1) {
-//                    if (roles.contains("highway_rcyhwxgcs")) {
+                    if (roles.contains("highway_rcyhwxgcs")) {
                         in.setClass(mContext, MaintenanceLogListActivity.class);
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+                    } else {
+                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        return;
+                    }
                 } else if (position == 2) {
-//                    if (roles.contains("highway_rcyhaqjcy")
-//                            || roles.contains("highway_yhgcs")) {
+                    if (roles.contains("highway_rcyhaqjcy")
+                            || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, MaintenanceOfOrderActivity.class);
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+                    } else {
+                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        return;
+                    }
                 } else if (position == 3) {
-//                    if (roles.contains("highway_rcyhysy")
-//                            || roles.contains("highway_yhgcs")) {
+                    if (roles.contains("highway_rcyhysy")
+                            || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, ProjectAcceptanceListActivity.class);
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+                    } else {
+                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                        return;
+                    }
 
                 } else {
                     return;
