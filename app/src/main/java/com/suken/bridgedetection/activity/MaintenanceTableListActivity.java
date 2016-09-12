@@ -169,7 +169,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
     }
 
     public void getAllData(){
-        maintenanceTableBeanList = maintenanceTableDao.queryAll();
+        maintenanceTableBeanList = maintenanceTableDao.queryByuserID(BridgeDetectionApplication.mCurrentUser.getUserId());
         if(maintenanceTableBeanList.size()>0){
             for(int i = 0;i<maintenanceTableBeanList.size();i++){
                 MaintenanceTableBean bean = maintenanceTableBeanList.get(i);
@@ -269,6 +269,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
+                bean.setXclx(bean.getXclx() + 1);
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
                 new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
@@ -379,9 +380,15 @@ public class MaintenanceTableListActivity extends BaseActivity {
                         bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
                         bean.getInspectLogDetailList().get(i).setiDescs(null);
                         bean.getInspectLogDetailList().get(i).setvDescs(null);
+                        bean.getInspectLogDetailList().get(i).setTjsj(null);
                         bean.setMaintenanceTableItemBeen(null);
+                        String jcsj = bean.getInspectLogDetailList().get(i).getJcsj();
+                        jcsj = jcsj.replace("年","-");
+                        jcsj = jcsj.replace("月","-");
+                        jcsj = jcsj.replace("日","");
+                        bean.getInspectLogDetailList().get(i).setJcsj(jcsj);
                     }
-                    bean.setTjsj(date);
+                    bean.setTjsj(null);
 
                     uploadData(bean,position,isAll);
 //                    Logger.e("aaa","bean====="+bean.toString());
@@ -440,9 +447,15 @@ public class MaintenanceTableListActivity extends BaseActivity {
                                 bean.getInspectLogDetailList().get(i).setMaintenanceTableBean(null);
                                 bean.getInspectLogDetailList().get(i).setiDescs(null);
                                 bean.getInspectLogDetailList().get(i).setvDescs(null);
+                                bean.getInspectLogDetailList().get(i).setTjsj(null);
                                 bean.setMaintenanceTableItemBeen(null);
+                                String jcsj = bean.getInspectLogDetailList().get(i).getJcsj();
+                                jcsj = jcsj.replace("年","-");
+                                jcsj = jcsj.replace("月","-");
+                                jcsj = jcsj.replace("日","");
+                                bean.getInspectLogDetailList().get(i).setJcsj(jcsj);
                             }
-                            bean.setTjsj(date);
+                            bean.setTjsj(null);
                             uploadData(bean,position,isAll);
 //                    Logger.e("aaa","bean====="+bean.toString());
 //                    Logger.e("aaa","gson.toJson(data)====="+gson.toJson(bean));

@@ -47,6 +47,7 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
+import com.suken.bridgedetection.adapter.OfOrderListActAdapter;
 import com.suken.bridgedetection.adapter.OfOrderListAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
@@ -161,7 +162,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     private int id;
     private ListViewForScrollView maintenanceoforder_content_listview;
     private LinearLayout maintenanceoforder_select_logLayout;
-    private OfOrderListAdapter mAdapter;
+    private OfOrderListActAdapter mAdapter;
     List<SynchMaintenlogBean> thisSynchMaintenlogBeens = new ArrayList<>();
     List<SynchMaintenlogBean> dialogSynchMaintenlogBeens = new ArrayList<>();
 
@@ -184,7 +185,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
     private void initView() {
 //        synchData();
         maintenanceoforder_content_listview = (ListViewForScrollView) findViewById(R.id.maintenanceoforder_content_listview);
-        mAdapter = new OfOrderListAdapter(mContext);
+        mAdapter = new OfOrderListActAdapter(mContext);
         maintenanceoforder_content_listview.setAdapter(mAdapter);
 
         maintenanceoforder_select_logLayout = (LinearLayout) findViewById(R.id.maintenanceoforder_select_logLayout);
@@ -340,7 +341,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     try {
                         iterator.close();
                         if(!TextUtil.isListEmpty(thisSynchMaintenlogBeens)){
-                            mAdapter.setData(thisSynchMaintenlogBeens);
+                            mAdapter.setData(thisSynchMaintenlogBeens.get(0).getMaintenlogDetailList());
                             mAdapter.notifyDataSetChanged();
                             maintenanceoforder_content_ev.setVisibility(View.GONE);
                             maintenanceoforder_content_Listlayout.setVisibility(View.VISIBLE);
@@ -646,12 +647,12 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
         if (result.isSuccess) {
             mIsGpsSuccess = true;
-            Logger.e("aaa","经度:" + result.latitude);
-            Logger.e("aaa","纬度:" + result.longitude);
+            Logger.e("aaa","经度:" + result.longitude);
+            Logger.e("aaa","纬度:" + result.latitude);
             latitude =  result.latitude;
             longitude =  result.longitude;
 
-            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "定位成功 经度:" + result.longitude+",纬度:" + result.latitude, Toast.LENGTH_SHORT).show();
 //            mjingdu.setText("经度:" + result.latitude);
 //            mWeidu.setText("纬度:" + result.longitude);
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
@@ -776,8 +777,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 thisSynchMaintenlogBeens = new ArrayList<>();
                                 thisSynchMaintenlogBeens.add(dialogSynchMaintenlogBeens.get(position));
-                                mAdapter.setData(thisSynchMaintenlogBeens);
-                                mAdapter.notifyDataSetChanged();
+                                if(!TextUtil.isListEmpty(thisSynchMaintenlogBeens)){
+                                    mAdapter.setData(thisSynchMaintenlogBeens.get(0).getMaintenlogDetailList());
+                                    mAdapter.notifyDataSetChanged();
+                                }
+
                                 if(maintenanceoforder_content_ev.getVisibility() == View.VISIBLE){
                                     maintenanceoforder_content_ev.setVisibility(View.GONE);
                                     maintenanceoforder_content_Listlayout.setVisibility(View.VISIBLE);
@@ -895,11 +899,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();
@@ -938,6 +942,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                             bean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
 
                         }
+                        bean.setUserid(BridgeDetectionApplication.mCurrentUser.getUserId());
 
 
                         Logger.e("aaa","maintenanceTableBean.toString()===="+bean.toString());
@@ -950,8 +955,8 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                         for (int j = 0; j < maintenanceOfOrderItemBeens.size(); j++) {
                             MaintenanceOfOrderItemBean  itemBean = maintenanceOfOrderItemBeens.get(j);
-                            itemBean.setTpjd(latitude+"");
-                            itemBean.setTpwd(longitude+"");
+                            itemBean.setTpjd(longitude+"");
+                            itemBean.setTpwd(latitude+"");
                             itemBean.setMaintenanceOfOrderBean(bean);
                             if (itemBean.getId() != 0) {
                                 maintenanceOfOrderDao.updateItem(itemBean);
@@ -1026,7 +1031,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -1051,7 +1056,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             try {
                 f = new File(new URI(mOutPutFileUri.toString()));
                 if (!f.exists()) {
-//                f.mkdirs();
+                f.mkdirs();
                 }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
@@ -1128,7 +1133,6 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
                 FileUtils.moveFileTo(srcfile, mPlayerFile);
 
-                super.onActivityResult(requestCode, resultCode, data);
             }
             catch(Exception e) {
 

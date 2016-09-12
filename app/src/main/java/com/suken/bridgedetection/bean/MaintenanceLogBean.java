@@ -93,6 +93,8 @@ public class MaintenanceLogBean implements Serializable{
     private String bytzidbytzid;
     @DatabaseField
     private String bytzno;
+    @DatabaseField
+    private String userid;
 
 
 
@@ -193,6 +195,14 @@ public class MaintenanceLogBean implements Serializable{
                 ", upkeepdiseaseList=" + upkeepdiseaseList +
                 ", maintenanceLogItemBeen=" + maintenanceLogItemBeen +
                 '}';
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public List<MaintenanceLogItemBean> getUpkeepdiseaseList() {

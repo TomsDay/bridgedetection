@@ -317,12 +317,12 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
         if (result.isSuccess) {
             mIsGpsSuccess = true;
-            Logger.e("aaa","经度:" + result.latitude);
-            Logger.e("aaa","纬度:" + result.longitude);
+            Logger.e("aaa","经度:" + result.longitude);
+            Logger.e("aaa","纬度:" + result.latitude);
             latitude =  result.latitude;
             longitude =  result.longitude;
 
-            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "定位成功 经度:" + result.longitude+",纬度:" + result.latitude, Toast.LENGTH_SHORT).show();
 //            mjingdu.setText("经度:" + result.latitude);
 //            mWeidu.setText("纬度:" + result.longitude);
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
@@ -404,11 +404,11 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
 
                         String gydw = projectacceptance_gydw_ev.getText().toString();
@@ -432,8 +432,8 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 //                        bean.setQrzs(content);
                         bean.setYsjg(returnContent);
                         bean.setYsrq(DateUtil.getDateEndDay2());
-                        bean.setTpjd(latitude+"");
-                        bean.setTpwd(longitude+"");
+                        bean.setTpjd(longitude+"");
+                        bean.setTpwd(latitude+"");
                         if (id != 0) {
                             bean.setId(id);
                             ProjectAcceptanceBean projectAcceptanceBean = projectAcceptanceBeen.get(0);
@@ -469,7 +469,9 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                             bean.setSgfzry(projacceptBean.getSgfzry());
                             bean.setSgfzdate(projacceptBean.getSgfzdate());
                             bean.setYsry(BridgeDetectionApplication.mCurrentUser.getUserName());
+
                         }
+                        bean.setUserid(BridgeDetectionApplication.mCurrentUser.getUserId());
 
 
                         Logger.e("aaa","maintenanceTableBean.toString()===="+bean.toString());
@@ -494,8 +496,8 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                         for (int j = 0; j < projacceptItemBeen.size(); j++) {
                             ProjacceptItemBean itemBean = projacceptItemBeen.get(j);
                             if (itemBean.getTpjd() != null) {
-                                itemBean.setTpjd(latitude+"");
-                                itemBean.setTpwd(longitude+"");
+                                itemBean.setTpjd(longitude+"");
+                                itemBean.setTpwd(latitude+"");
                             }
                             String fx = itemBean.getFx();
                             itemBean.setFx(fx != null ? fx : "上行内侧");
@@ -618,7 +620,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -648,7 +650,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             try {
                 f = new File(new URI(mOutPutFileUri.toString()));
                 if (!f.exists()) {
-//                f.mkdirs();
+                f.mkdirs();
                 }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
@@ -692,7 +694,6 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
 
                 FileUtils.moveFileTo(srcfile, mPlayerFile);
 
-                super.onActivityResult(requestCode, resultCode, data);
             }
             catch(Exception e) {;
 

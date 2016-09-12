@@ -89,11 +89,12 @@ public class MaintenanceActivity extends BaseActivity {
     }
 
     public void getDate(){
+        String userid = BridgeDetectionApplication.mCurrentUser.getUserId();
         ArrayList<String> list = new ArrayList<>();
-        list.add(maintenanceTableDao.queryAll().size()+"");
-        list.add(maintenanceLogDao.queryAll().size()+"");
-        list.add(maintenanceOfOrderDao.queryAll().size()+"");
-        list.add(projectAcceptanceDao.queryAll().size()+"");
+        list.add(maintenanceTableDao.queryByuserID(userid).size()+"");
+        list.add(maintenanceLogDao.queryByuserID(userid).size()+"");
+        list.add(maintenanceOfOrderDao.queryByuserID(userid).size()+"");
+        list.add(projectAcceptanceDao.queryByuserID(userid).size()+"");
         mAdapter.setData(list);
         mAdapter.notifyDataSetChanged();
     }

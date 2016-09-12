@@ -17,7 +17,7 @@ public class MaintenanceOfOrderBean implements Serializable {
     @DatabaseField(generatedId = true) //主键自增加
     private int id;
 
-//    @DatabaseField
+    //    @DatabaseField
 //    private String orgid;
 //    @DatabaseField
 //    private String versionno;
@@ -36,10 +36,13 @@ public class MaintenanceOfOrderBean implements Serializable {
 //    @DatabaseField
 //    private String flag;
     @DatabaseField
+    private String userid;
+    @DatabaseField
     private String gydwId;
+
     @DatabaseField
     private String gydwName;
-//    @DatabaseField
+    //    @DatabaseField
 //    private String bno;
     @DatabaseField
     private String yhrzid;
@@ -59,7 +62,7 @@ public class MaintenanceOfOrderBean implements Serializable {
     private String jcdate;
     @DatabaseField
     private String aqgly;
-//    @DatabaseField
+    //    @DatabaseField
 //    private String tjsj;
     @DatabaseField
     private String status = "2";
@@ -109,6 +112,14 @@ public class MaintenanceOfOrderBean implements Serializable {
                 ", safetycheckdetailList=" + safetycheckdetailList +
                 ", maintenanceOfOrderItemBeen=" + maintenanceOfOrderItemBeen +
                 '}';
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getClyj() {

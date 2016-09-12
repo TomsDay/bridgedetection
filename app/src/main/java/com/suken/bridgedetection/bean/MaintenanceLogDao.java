@@ -58,6 +58,16 @@ public class MaintenanceLogDao {
         }
         return null;
     }
+    public List<MaintenanceLogBean> queryByuserID(String userid){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("userid", userid);
+            return maintenanceLogBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public List<MaintenanceLogItemBean> queryItemAll(){
         try {
             List<MaintenanceLogItemBean> fileDescs = maintenanceLogItemBeen.queryForAll();
@@ -112,6 +122,18 @@ public class MaintenanceLogDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            maintenanceLogBeen.delete(queryAll());
+            maintenanceLogItemBeen.delete(queryItemAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

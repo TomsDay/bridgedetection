@@ -24,6 +24,13 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
     private String tpjd;
     private String tpwd;
 
+    private String clid;
+    private String clgg;
+    private String clxh;
+    private String cldw;
+    private String clsl;
+
+
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
     private List<IVDesc> mVideo = new ArrayList<IVDesc>();
 
@@ -59,9 +66,58 @@ public class MaintenanceLogUpLoadListBean implements Serializable{
                 ", state='" + state + '\'' +
                 ", tpjd='" + tpjd + '\'' +
                 ", tpwd='" + tpwd + '\'' +
+                ", tpjd='" + tpjd + '\'' +
+                ", tpwd='" + tpwd + '\'' +
+                ", clid='" + clid + '\'' +
+                ", clgg='" + clgg + '\'' +
+                ", clxh='" + clxh + '\'' +
+                ", cldw='" + cldw + '\'' +
+                ", clsl='" + clsl + '\'' +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
                 '}';
+    }
+
+
+
+    public String getClid() {
+        return clid;
+    }
+
+    public void setClid(String clid) {
+        this.clid = clid;
+    }
+
+    public String getClgg() {
+        return clgg;
+    }
+
+    public void setClgg(String clgg) {
+        this.clgg = clgg;
+    }
+
+    public String getClxh() {
+        return clxh;
+    }
+
+    public void setClxh(String clxh) {
+        this.clxh = clxh;
+    }
+
+    public String getCldw() {
+        return cldw;
+    }
+
+    public void setCldw(String cldw) {
+        this.cldw = cldw;
+    }
+
+    public String getClsl() {
+        return clsl;
+    }
+
+    public void setClsl(String clsl) {
+        this.clsl = clsl;
     }
 
     public String getTpjd() {

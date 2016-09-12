@@ -52,6 +52,7 @@ public class MaintenanceLogItemBean implements Serializable {
     private String fx;
     @DatabaseField
     private String yhzh;
+
     @DatabaseField
     private String dw;
     @DatabaseField
@@ -88,17 +89,22 @@ public class MaintenanceLogItemBean implements Serializable {
     private String dj;
     @DatabaseField
     private String wxsl;
+
     @DatabaseField
-    private String ggxh;
+    private String clid;
     @DatabaseField
-    private String clsl;
+    private String clgg;
+    @DatabaseField
+    private String clxh;
     @DatabaseField
     private String cldw;
+    @DatabaseField
+    private String clsl;
 
 
 
 
-
+    private List<GeteMaterialBean> geteMaterialBeens = new ArrayList<GeteMaterialBean>();
 
     private boolean isShow;
     private List<IVDesc> mImages = new ArrayList<IVDesc>();
@@ -160,9 +166,11 @@ public class MaintenanceLogItemBean implements Serializable {
                 ", tpwd='" + tpwd + '\'' +
                 ", dj='" + dj + '\'' +
                 ", wxsl='" + wxsl + '\'' +
-                ", ggxh='" + ggxh + '\'' +
-                ", clsl='" + clsl + '\'' +
+                ", clid='" + clid + '\'' +
+                ", clgg='" + clgg + '\'' +
+                ", clxh='" + clxh + '\'' +
                 ", cldw='" + cldw + '\'' +
+                ", clsl='" + clsl + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -207,12 +215,38 @@ public class MaintenanceLogItemBean implements Serializable {
         this.vDescs = vDescs;
     }
 
-    public String getGgxh() {
-        return ggxh;
+    public List<GeteMaterialBean> getGeteMaterialBeens() {
+        return geteMaterialBeens;
     }
 
-    public void setGgxh(String ggxh) {
-        this.ggxh = ggxh;
+    public void setGeteMaterialBeens(List<GeteMaterialBean> geteMaterialBeens) {
+        this.geteMaterialBeens = geteMaterialBeens;
+    }
+
+
+
+    public String getClid() {
+        return clid;
+    }
+
+    public void setClid(String clid) {
+        this.clid = clid;
+    }
+
+    public String getClgg() {
+        return clgg;
+    }
+
+    public void setClgg(String clgg) {
+        this.clgg = clgg;
+    }
+
+    public String getClxh() {
+        return clxh;
+    }
+
+    public void setClxh(String clxh) {
+        this.clxh = clxh;
     }
 
     public String getClsl() {

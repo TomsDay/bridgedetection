@@ -315,7 +315,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="表单编号"
+                                android:text="桩号"
                                 android:textSize="10dp" />
                             <View
                                 android:layout_width="1dp"
@@ -328,7 +328,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="维修部门"
+                                android:text="工程名称"
                                 android:textSize="10dp" />
                             <View
                                 android:layout_width="1dp"
@@ -340,7 +340,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="维修日期"
+                                android:text="单位"
                                 android:textSize="10dp" />
                             <View
                                 android:layout_width="1dp"
@@ -352,7 +352,7 @@
                                 android:layout_weight="1"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="负责人"
+                                android:text="数量"
                                 android:textSize="10dp" />
                             </LinearLayout>
                         <com.suken.bridgedetection.widget.ListViewForScrollView
@@ -362,7 +362,6 @@
                             android:divider="@null"
                             android:dividerHeight="0dp"
                             android:background="@color/transparent"
-
                             android:layout_below="@id/maintenanceoforder_content_rowLayout"/>
                         </RelativeLayout>
                         <EditText

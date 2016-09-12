@@ -122,4 +122,36 @@ public class GeteMaterialDao {
             e.printStackTrace();
         }
     }
+    public List<GeteMaterialBean> queryByYJML(String yjml){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("yjml", yjml);
+            return geteMaterialBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<GeteMaterialBean> queryByYjmlandEjml(String yjml ,String ejml){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("yjml", yjml);
+            map.put("ejml", ejml);
+            return geteMaterialBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public List<GeteMaterialBean> queryByClon(String bhmc){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("clmc", bhmc);
+            return geteMaterialBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

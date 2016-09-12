@@ -21,6 +21,8 @@ public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField
     private String yhzh;
     @DatabaseField
+    private String zhfw;
+    @DatabaseField
     private String bhid;
     @DatabaseField
     private String bhmc;
@@ -119,6 +121,14 @@ public class MaintenanceTableItemBean implements Serializable{
         this.maintenanceTableBean = maintenanceTableBean;
         this.iDescs = iDescs;
         this.vDescs = vDescs;
+    }
+
+    public String getZhfw() {
+        return zhfw;
+    }
+
+    public void setZhfw(String zhfw) {
+        this.zhfw = zhfw;
     }
 
     public boolean isShow() {

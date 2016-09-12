@@ -162,6 +162,7 @@
                 </RadioGroup>
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,6 +197,7 @@
                     android:layout_margin="5dp"
                     android:src="@drawable/menu" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -301,139 +303,261 @@
                     android:layout_margin="5dp"
                     android:src="@drawable/menu" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/cl_btn"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="添加材料"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_gravity="center"/>
+            <LinearLayout
+                android:id="@+id/cl_rowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:background="#80ffffff"
+                android:gravity="center"
                 android:layout_marginTop="5dp"
-                android:paddingRight="40dp" >
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="16dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="材料名称"
+                    android:textSize="10dp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#90808080" />
 
                 <TextView
-                    android:id="@+id/clmc_title"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:text="材料名称："
-                    android:textSize="9dp" />
-
-
-                <EditText
-                    android:id="@+id/cl_edit"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
                     android:layout_weight="1"
-                    android:background="@drawable/form_item_bg"
-                    android:gravity="top"
-                    android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
-
-                <ImageView
-                    android:id="@+id/clmc_menu"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/menu" />
+                    android:gravity="center"
+                    android:text="规格"
+                    android:textSize="10dp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#90808080" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="型号"
+                    android:textSize="10dp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#90808080" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="材料数量"
+                    android:textSize="10dp" />
+                <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#90808080" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="材料单位"
+                    android:textSize="10dp" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#90808080" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1.1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="10dp" />
             </LinearLayout>
-            <LinearLayout
+            <com.suken.bridgedetection.widget.ListViewForScrollView
+                android:id="@+id/cl_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingRight="40dp" >
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:background="@color/transparent"
+                android:layout_marginLeft="56dp"
+                android:layout_marginRight="16dp"/>
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="40dp" >-->
 
-                <TextView
-                    android:id="@+id/ggxh_title"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:text="规格型号："
-                    android:textSize="9dp" />
+                <!--<TextView-->
+                    <!--android:id="@+id/clmc_title"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="right"-->
+                    <!--android:text="材料名称："-->
+                    <!--android:textSize="9dp" />-->
 
-                <EditText
-                    android:id="@+id/ggxh_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/form_item_bg"
-                    android:gravity="top"
-                    android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
 
-                <ImageView
-                    android:id="@+id/ggxh_menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/menu" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingRight="40dp" >
+                <!--<EditText-->
+                    <!--android:id="@+id/cl_edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/form_item_bg"-->
+                    <!--android:gravity="top"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="9dp"-->
+                    <!--android:imeOptions="flagNoExtractUi"/>-->
 
-                <TextView
-                    android:id="@+id/clsl_title"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:text="材料数量："
-                    android:textSize="9dp" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/clmc_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/menu" />-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="40dp" >-->
 
-                <EditText
-                    android:id="@+id/clsl_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/form_item_bg"
-                    android:gravity="top"
-                    android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/gg_title"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="right"-->
+                    <!--android:text="规  格     ："-->
+                    <!--android:textSize="9dp" />-->
 
-                <ImageView
-                    android:id="@+id/clsl_menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/menu" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:paddingRight="40dp" >
+                <!--<EditText-->
+                    <!--android:id="@+id/gg_edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/form_item_bg"-->
+                    <!--android:gravity="top"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="9dp"-->
+                    <!--android:imeOptions="flagNoExtractUi"/>-->
 
-                <TextView
-                    android:id="@+id/cldw_title"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:text="材料单位："
-                    android:textSize="9dp" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/gg_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/menu" />-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="40dp" >-->
 
-                <EditText
-                    android:id="@+id/cldw_edit"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/form_item_bg"
-                    android:gravity="top"
-                    android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                <!--<TextView-->
+                    <!--android:id="@+id/xh_title"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="right"-->
+                    <!--android:text="型  号     ："-->
+                    <!--android:textSize="9dp" />-->
 
-                <ImageView
-                    android:id="@+id/cldw_menu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_margin="5dp"
-                    android:src="@drawable/menu" />
-            </LinearLayout>
+                <!--<EditText-->
+                    <!--android:id="@+id/xh_edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/form_item_bg"-->
+                    <!--android:gravity="top"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="9dp"-->
+                    <!--android:imeOptions="flagNoExtractUi"/>-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/xh_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/menu" />-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="40dp" >-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/clsl_title"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="right"-->
+                    <!--android:text="材料数量："-->
+                    <!--android:textSize="9dp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/clsl_edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/form_item_bg"-->
+                    <!--android:gravity="top"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="9dp"-->
+                    <!--android:imeOptions="flagNoExtractUi"/>-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/clsl_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/menu" />-->
+            <!--</LinearLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:paddingRight="40dp" >-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/cldw_title"-->
+                    <!--android:layout_width="100dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="right"-->
+                    <!--android:text="材料单位："-->
+                    <!--android:textSize="9dp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/cldw_edit"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="30dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/form_item_bg"-->
+                    <!--android:gravity="top"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:textSize="9dp"-->
+                    <!--android:imeOptions="flagNoExtractUi"/>-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/cldw_menu"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:src="@drawable/menu" />-->
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/item4_layout"

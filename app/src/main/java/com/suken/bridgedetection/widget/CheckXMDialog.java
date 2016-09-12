@@ -28,7 +28,7 @@ import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 /**
  * Created by gaofeng on 16/5/8.
  */
-public class CheckXMDialog implements View.OnClickListener {
+public class    CheckXMDialog implements View.OnClickListener {
 
     private int minYear = 1970;  //最小年份
     private int fontSize = 13;     //字体大小

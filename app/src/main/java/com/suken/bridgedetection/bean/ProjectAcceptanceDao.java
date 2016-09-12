@@ -62,6 +62,16 @@ public class ProjectAcceptanceDao {
         }
         return null;
     }
+    public List<ProjectAcceptanceBean> queryByuserID(String userid){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("userid", userid);
+            return projectAcceptanceBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public List<ProjacceptItemBean> queryItemAll(){
         try {
             List<ProjacceptItemBean> fileDescs = projacceptItemBeen.queryForAll();
@@ -130,4 +140,18 @@ public class ProjectAcceptanceDao {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            projectAcceptanceBeen.delete(queryAll());
+            projacceptItemBeen.delete(queryItemAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
