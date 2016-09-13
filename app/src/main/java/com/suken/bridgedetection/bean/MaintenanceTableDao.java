@@ -80,6 +80,16 @@ public class MaintenanceTableDao {
         }
         return null;
     }
+    public List<MaintenanceTableBean> queryByuserID(String userid){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("userid", userid);
+            return maintenanceTableBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public void update(MaintenanceTableBean bean){
         try {
             maintenanceTableBeen.update(bean);
@@ -116,6 +126,19 @@ public class MaintenanceTableDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            maintenanceTableBeen.delete(queryAll());
+            maintenanceTableItemBeen.delete(queryItemAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

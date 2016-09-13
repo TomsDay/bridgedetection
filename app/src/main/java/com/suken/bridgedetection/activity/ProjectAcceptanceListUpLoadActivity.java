@@ -201,7 +201,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
     }
 
     public void getAllData(){
-        projectAcceptanceBeen = projectAcceptanceDao.queryAll();
+        projectAcceptanceBeen = projectAcceptanceDao.queryByuserID(BridgeDetectionApplication.mCurrentUser.getUserId());
         for(int i = 0; i<projectAcceptanceBeen.size(); i++){
             ProjectAcceptanceBean bean = projectAcceptanceBeen.get(i);
             bean.setUpdator(null);

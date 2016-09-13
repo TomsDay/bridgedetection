@@ -37,14 +37,15 @@ public class CheckDiseaseDialog implements View.OnClickListener {
     MaintenanceDiseaseDao maintenanceDiseaseDao;
     private CheckDiseaseDialogReturn checkDiseaseDialogReturn;
 
-    ArrayList<String> proKinds = new ArrayList<String>();
+
     List<MaintenanceDiseaseBean> maintenanceDiseaseBeen;
 
     public CheckDiseaseDialog(Context context, CheckDiseaseDialogReturn checkXMDDialogReturn) {
         this.mContext = context;
         this.checkDiseaseDialogReturn = checkXMDDialogReturn;
         maintenanceDiseaseDao = new MaintenanceDiseaseDao();
-        initContent();
+        //在onclick里面调用
+//        initContent();
     }
 
     public void initContent() {
@@ -67,7 +68,9 @@ public class CheckDiseaseDialog implements View.OnClickListener {
 
         }
         xmlb = hourContent.get(0);
-
+        //需要清空list
+        minuteContent.clear();
+        secondContent.clear();
 
         List<MaintenanceDiseaseBean> listMC = maintenanceDiseaseDao.queryByYJML(hourContent.get(0));
         for (int i = 0; i < listMC.size(); i++){
@@ -97,32 +100,15 @@ public class CheckDiseaseDialog implements View.OnClickListener {
         ximmc = secondContent.get(0);
 
 
-//        String [] array = (String[]) list.toArray();
-//        for (int i = 0; i < 24; i++) {
-//            hourContent[i] = String.valueOf(i);
-//            if (hourContent[i].length() < 2) {
-//                hourContent[i] = "0" + hourContent[i];
-//            }
-//        }
-//
-//        for (int i = 0; i < 60; i++) {
-//            minuteContent[i] = String.valueOf(i);
-//            if (minuteContent[i].length() < 2) {
-//                minuteContent[i] = "0" + minuteContent[i];
-//            }
-//        }
-//        for (int i = 0; i < 60; i++) {
-//            secondContent[i] = String.valueOf(i);
-//            if (secondContent[i].length() < 2) {
-//                secondContent[i] = "0" + secondContent[i];
-//            }
-//        }
     }
 
 
     String xmlb, xmmc;
     String ximmc;
     public void onClick(View v) {
+
+        //初始化piker
+        initContent();
         if(TextUtil.isListEmpty(maintenanceDiseaseBeen)){
             ToastUtil.showMessage("暂无病害库数据");
             return;

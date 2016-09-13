@@ -36,7 +36,7 @@ public class HttpTask {
     public static String REQUEST_IP = "121.28.74.59";
 
 //    public static String REQUEST_PORT = "";
-    public static String REQUEST_PORT = "8080";
+    public static String REQUEST_PORT = "18080";
 
     private RequestType mRequestType = null;
 

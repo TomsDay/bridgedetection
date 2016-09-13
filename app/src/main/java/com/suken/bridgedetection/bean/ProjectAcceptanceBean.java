@@ -76,6 +76,8 @@ public class ProjectAcceptanceBean implements Serializable{
     private String updatetime;
     @DatabaseField
     private String versionno;
+    @DatabaseField
+    private String userid;
 
 
 
@@ -173,6 +175,14 @@ public class ProjectAcceptanceBean implements Serializable{
         this.projacceptItemBeen = projacceptItemBeen;
         this.mImages = mImages;
         this.iDescs = iDescs;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getUpdateBy() {

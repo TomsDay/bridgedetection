@@ -51,6 +51,17 @@ public class MaintenanceOfOrderDao {
         }
         return null;
     }
+    public List<MaintenanceOfOrderBean> queryByuserID(String userid){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("userid", userid);
+            return maintenanceOfOrderBeen.queryForFieldValues(map);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     public List<MaintenanceOfOrderItemBean> queryItemAll(){
         try {
@@ -108,6 +119,18 @@ public class MaintenanceOfOrderDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            maintenanceOfOrderBeen.delete(queryAll());
+            maintenanceOfOrderItemBeen.delete(queryItemAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

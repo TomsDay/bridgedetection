@@ -64,15 +64,20 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
         mGpsFragment = mFragManager.findFragmentById(R.id.gps_fragment);
         mIpFragment = mFragManager.findFragmentById(R.id.ip_fragment);
         if ((flag && needSync) || !BridgeDetectionApplication.mHasCacheUser) {
+            Logger.e("aaa","正常登录==");
             UiUtil.syncData(this, false, mHomeFragment);
             SharePreferenceManager.getInstance().updateString(BridgeDetectionApplication.mCurrentUser.getAccount() + "lastSyncTime", "" + System.currentTimeMillis());
         } else {
+            Logger.e("aaa","离线登录==");
             List<MaintenanceDiseaseBean> list = new MaintenanceDiseaseDao().queryAll();
 //            for(int i =0;i<list.size();i++) {
 //                Logger.e("aaa", "======="+list.get(i).toString());
 //            }
                     mHomeFragment.onSyncFinished(true);
-            UiUtil.synchronizationGxlxInfoData(this);
+            if(flag){//正常登录时，同步路段信息
+                UiUtil.synchronizationGxlxInfoData(this);
+            }
+
         }
 
         FragmentTransaction ft = mFragManager.beginTransaction();

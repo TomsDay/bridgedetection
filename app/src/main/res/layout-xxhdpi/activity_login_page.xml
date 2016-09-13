@@ -109,7 +109,7 @@
                         android:layout_height="25dp"
                         android:layout_weight="1"
                         android:background="#e76070"
-                        android:onClick="c"
+                        android:onClick="offlineLogin"
                         android:text="离线登录"
                         android:textColor="#ffffff"
                         android:textSize="10dp" />

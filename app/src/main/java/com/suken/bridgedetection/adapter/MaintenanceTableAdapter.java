@@ -103,6 +103,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.setTag(position);
         holder.item_checkTime_edit.setTag(position);
         holder.zh_edit.setTag(position);
+        holder.zhfw_edit.setTag(position);
 
 //        } else {
 //            holder = (HolderView) view.getTag();
@@ -120,6 +121,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
+        holder.zhfw_edit.addTextChangedListener(new Watcher(holder.zhfw_edit));
+
 
 
         if (bean.isShow()) {
@@ -145,6 +148,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getJcsj());
         holder.zh_edit.setText(bean.getYhzh());
+        holder.zhfw_edit.setText(bean.getZhfw());
         setDateTime(holder);
 
         String fx = bean.getFx();
@@ -201,13 +205,13 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                         boolean mIsGpsSuccess = false;
                         if (result.isSuccess) {
 //                            mIsGpsSuccess = true;
-                            list.get(position).setTpjd(result.latitude + "");
-                            list.get(position).setTpwd(result.longitude + "");
+                            list.get(position).setTpjd(result.longitude + "");
+                            list.get(position).setTpwd(result.latitude + "");
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa", "经度:" + result.latitude);
-                            Logger.e("aaa", "纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.longitude);
+                            Logger.e("aaa", "纬度:" + result.latitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
@@ -236,13 +240,13 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                         boolean mIsGpsSuccess = false;
                         if (result.isSuccess) {
 //                            mIsGpsSuccess = true;
-                            list.get(position).setTpjd(result.latitude + "");
-                            list.get(position).setTpwd(result.longitude + "");
+                            list.get(position).setTpjd(result.longitude + "");
+                            list.get(position).setTpwd(result.latitude + "");
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa", "经度:" + result.latitude);
-                            Logger.e("aaa", "纬度:" + result.longitude);
+                            Logger.e("aaa", "经度:" + result.longitude);
+                            Logger.e("aaa", "纬度:" + result.latitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
@@ -396,6 +400,10 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 case R.id.zh_edit:
                     list.get(position).setYhzh(content != null && !"".equals(content) ? content : "");
                     break;
+                case R.id.zhfw_edit:
+                    Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
+                    list.get(position).setZhfw(content!=null&&!"".equals(content)?content:"");
+                    break;
             }
         }
     }
@@ -442,6 +450,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 video_num;
 
         private EditText diseaseName_edit,
+                zhfw_edit,
                 unit_edit,
                 count_edit,
                 address_edit,
@@ -477,6 +486,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             address_edit = (EditText) view.findViewById(R.id.address_edit);
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
             zh_edit = (EditText) view.findViewById(R.id.zh_edit);
+            zhfw_edit = (EditText) view.findViewById(R.id.zhfw_edit);
 
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);

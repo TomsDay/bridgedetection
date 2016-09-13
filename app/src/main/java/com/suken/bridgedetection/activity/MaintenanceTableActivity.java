@@ -494,11 +494,11 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         String time = maintenancetable_time_ev.getText().toString();
                         String cxld = maintenancetable_cxld_ev.getText().toString();
@@ -515,6 +515,8 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
                         maintenanceTableBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
                         maintenanceTableBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+                        maintenanceTableBean.setUserid(BridgeDetectionApplication.mCurrentUser.getUserId());
+
 
 
                         maintenanceTableBean.setJcsj(date);
@@ -551,22 +553,22 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(q);
                             int num = q + 1;
                             //必填项限制
-                            if(TextUtil.isEmptyString(itemBean.getYhzh())){
-                                toast("第" + num + "条检查情况的“桩号”不可为空！");
-                                return;
-                            }
+//                            if(TextUtil.isEmptyString(itemBean.getYhzh())){
+//                                toast("第" + num + "条检查情况的“桩号”不可为空！");
+//                                return;
+//                            }
                             if(TextUtil.isEmptyString(itemBean.getBhmc())){
                                 toast("第" + num + "条检查情况的“病害名称”不可为空！");
                                 return;
                             }
-                            if(TextUtil.isEmptyString(itemBean.getDw())){
-                                toast("第" + num + "条检查情况的“单位”不可为空！");
-                                return;
-                            }
-                            if(TextUtil.isEmptyString(itemBean.getYgsl())){
-                                toast("第" + num + "条检查情况的“数量”不可为空！");
-                                return;
-                            }
+//                            if(TextUtil.isEmptyString(itemBean.getDw())){
+//                                toast("第" + num + "条检查情况的“单位”不可为空！");
+//                                return;
+//                            }
+//                            if(TextUtil.isEmptyString(itemBean.getYgsl())){
+//                                toast("第" + num + "条检查情况的“数量”不可为空！");
+//                                return;
+//                            }
                             if(TextUtil.isEmptyString(itemBean.getJcsj())){
                                 toast("第" + num + "条检查情况的“检查时间”不可为空！");
                                 return;
@@ -587,8 +589,8 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
                             itemBean.setYhzt("1");
                             if (itemBean.getTpjd() != null) {
-                                itemBean.setTpjd(latitude+"");
-                                itemBean.setTpwd(longitude+"");
+                                itemBean.setTpjd(longitude+"");
+                                itemBean.setTpwd(latitude+"");
                             }
 
                             String fx = itemBean.getFx();
@@ -675,7 +677,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -702,7 +704,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         try {
             f = new File(new URI(mOutPutFileUri.toString()));
             if (!f.exists()) {
-//                f.mkdirs();
+                f.mkdirs();
             }
         } catch (URISyntaxException e) {
             e.printStackTrace();
@@ -751,7 +753,6 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
                 FileUtils.moveFileTo(srcfile, mPlayerFile);
 
-                super.onActivityResult(requestCode, resultCode, data);
             } catch (Exception e) {
                 ;
 
@@ -888,12 +889,12 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
         if (result.isSuccess) {
             mIsGpsSuccess = true;
-            Logger.e("aaa","经度:" + result.latitude);
-            Logger.e("aaa","纬度:" + result.longitude);
+            Logger.e("aaa","经度:" + result.longitude);
+            Logger.e("aaa","纬度:" + result.latitude);
             latitude =  result.latitude;
             longitude =  result.longitude;
 
-            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "定位成功 经度:" + result.longitude+",纬度:" + result.latitude, Toast.LENGTH_SHORT).show();
 //            mjingdu.setText("经度:" + result.latitude);
 //            mWeidu.setText("纬度:" + result.longitude);
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);

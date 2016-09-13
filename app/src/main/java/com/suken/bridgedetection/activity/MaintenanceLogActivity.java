@@ -162,6 +162,8 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             if(maintenanceLogBeen.size()>0) {
                 MaintenanceLogBean bean = maintenanceLogBeen.get(0);
 
+
+
                 maintenancelog_gydw_ev.setText(bean.getGydwName()+"");
                 maintenancelog_bh_ev.setText(bean.getBno()+"");
                 maintenancelog_data_ev.setText(bean.getWxrq()+"");
@@ -182,7 +184,35 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 try {
                     while (iterator.hasNext()) {
                         MaintenanceLogItemBean b = iterator.next();
-
+                        String clmc = b.getClmc();
+                        String clgg = b.getClgg();
+                        String clxh = b.getClxh();
+                        String clsl = b.getClsl();
+                        String cldw = b.getCldw();
+                        if(clmc.contains(",")){
+                            String[] clmcArray = clmc.split(",");
+                            String[] clggArray = clgg.split(",");
+                            String[] clxhArray = clxh.split(",");
+                            String[] clslArray = clsl.split(",");
+                            String[] cldwArray = cldw.split(",");
+                            for(int i = 0; i < clmcArray.length; i++){
+                                GeteMaterialBean geteMaterialBean = new GeteMaterialBean();
+                                geteMaterialBean.setClmc(clmcArray[i]);
+                                geteMaterialBean.setGg(clggArray[i]);
+                                geteMaterialBean.setXh(clxhArray[i]);
+                                geteMaterialBean.setClsl(clslArray[i]);
+                                geteMaterialBean.setDw(cldwArray[i]);
+                                b.getGeteMaterialBeens().add(geteMaterialBean);
+                            }
+                        }else{
+                            GeteMaterialBean geteMaterialBean = new GeteMaterialBean();
+                            geteMaterialBean.setClmc(clmc);
+                            geteMaterialBean.setGg(clgg);
+                            geteMaterialBean.setXh(clxh);
+                            geteMaterialBean.setClsl(clsl);
+                            geteMaterialBean.setDw(cldw);
+                            b.getGeteMaterialBeens().add(geteMaterialBean);
+                        }
                         List<IVDesc> imageDesc = ivDescDao.getImageMaintenanceLogItemBeanByUserId(b.getIds());
                         b.setmImages(imageDesc);
 
@@ -220,6 +250,8 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
 
     }
+
+    String oldBhmc = "";
     public void initDate(){
         allMaintenanceLogBean = (MaintenanceLogBean) getIntent().getSerializableExtra("bean");
         Logger.e("aaa","allMaintenanceLogBean==="+allMaintenanceLogBean.toString());
@@ -242,6 +274,10 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
         maintenancelog_jcr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
         maintenanceLogItemBeen = (ArrayList<MaintenanceLogItemBean>) allMaintenanceLogBean.getUpkeepdiseaseList();
+        if(!TextUtil.isListEmpty(maintenanceLogItemBeen)){
+            oldBhmc = maintenanceLogItemBeen.get(0).getBhmc();
+        }
+
         Logger.e("aaa", "maintenanceLogItemBeen===" + maintenanceLogItemBeen.size());
         if(maintenanceLogItemBeen != null && maintenanceLogItemBeen.size() != 0){
             maintenanceLogItemBeen.get(0).setShow(true);
@@ -287,12 +323,12 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
         if (result.isSuccess) {
             mIsGpsSuccess = true;
-            Logger.e("aaa","经度:" + result.latitude);
-            Logger.e("aaa","纬度:" + result.longitude);
+            Logger.e("aaa","经度:" + result.longitude);
+            Logger.e("aaa","纬度:" + result.latitude);
             latitude =  result.latitude;
             longitude =  result.longitude;
 
-            Toast.makeText(this, "定位成功 经度:" + result.latitude+",纬度:" + result.longitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "定位成功 经度:" + result.longitude+",纬度:" + result.latitude, Toast.LENGTH_SHORT).show();
 //            mjingdu.setText("经度:" + result.latitude);
 //            mWeidu.setText("纬度:" + result.longitude);
 //            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
@@ -386,8 +422,9 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                             maintenanceLogBean = allMaintenanceLogBean;
                             maintenanceLogBean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
                             maintenanceLogBean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
-                        }
 
+                        }
+                        maintenanceLogBean.setUserid(BridgeDetectionApplication.mCurrentUser.getUserId());
 
                         maintenanceLogBean.setWeather(strWeather);
                         maintenanceLogBean.setWxrq(date);
@@ -415,14 +452,68 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                                 toast("第" + num + "条维修内容的“细目名称”不可为空！");
                                 return;
                             }
+                            Logger.e("aaa", "oldBhmc===" + oldBhmc);
+                            Logger.e("aaa", "itemBean.getBhmc()===" + itemBean.getBhmc());
+                            if(oldBhmc.equals(itemBean.getBhmc())){
+                                toast("第" + num + "条维修内容的“细目名称”不能不选择！");
+                                return;
+                            }
+
                             if(TextUtil.isEmptyString(itemBean.getClmc())){
                                 toast("第" + num + "条维修内容的“材料名称”不可为空！");
                                 return;
                             }
+                            Logger.e("aaa", "itemBean.getWxsl()===" + itemBean.getWxsl());
                             if(TextUtil.isEmptyString(itemBean.getWxsl())){
                                 toast("第" + num + "条维修内容的“数量”不可为空！");
                                 return;
                             }
+                            List<GeteMaterialBean> geteMaterialBeens = itemBean.getGeteMaterialBeens();
+                            if(!TextUtil.isListEmpty(geteMaterialBeens)){
+                                int size = geteMaterialBeens.size();
+                                if(size <= 1){
+                                    itemBean.setClid(geteMaterialBeens.get(0).getId());
+                                    itemBean.setClmc(geteMaterialBeens.get(0).getClmc());
+                                    itemBean.setClgg(geteMaterialBeens.get(0).getGg());
+                                    itemBean.setClxh(geteMaterialBeens.get(0).getXh());
+                                    itemBean.setClsl(geteMaterialBeens.get(0).getClsl());
+                                    itemBean.setCldw(geteMaterialBeens.get(0).getDw());
+                                }else{
+                                    StringBuilder clidSB = new StringBuilder();
+                                    StringBuilder clmcSB = new StringBuilder();
+                                    StringBuilder clggSB = new StringBuilder();
+                                    StringBuilder clxhSB = new StringBuilder();
+                                    StringBuilder clslSB = new StringBuilder();
+                                    StringBuilder cldwSB = new StringBuilder();
+                                    for (int w = 0; w < size; w++) {
+                                        clidSB.append(geteMaterialBeens.get(w).getId());
+                                        clmcSB.append(geteMaterialBeens.get(w).getClmc());
+                                        clggSB.append(geteMaterialBeens.get(w).getGg());
+                                        clxhSB.append(geteMaterialBeens.get(w).getXh());
+                                        clslSB.append(geteMaterialBeens.get(w).getClsl());
+                                        cldwSB.append(geteMaterialBeens.get(w).getDw());
+                                        if (w != (size - 1)) {
+                                            clidSB.append(",");
+                                            clmcSB.append(",");
+                                            clggSB.append(",");
+                                            clxhSB.append(",");
+                                            clslSB.append(",");
+                                            cldwSB.append(",");
+                                        }
+                                    }
+
+                                    itemBean.setClid(clidSB.toString());
+                                    itemBean.setClmc(clmcSB.toString());
+                                    itemBean.setClgg(clggSB.toString());
+                                    itemBean.setClxh(clxhSB.toString());
+                                    itemBean.setClsl(clslSB.toString());
+                                    itemBean.setCldw(cldwSB.toString());
+
+                                }
+
+                            }
+
+
 
                         }
 
@@ -446,8 +537,8 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
                             if (itemBean.getTpjd() != null) {
-                                itemBean.setTpjd(latitude+"");
-                                itemBean.setTpwd(longitude+"");
+                                itemBean.setTpjd(longitude+"");
+                                itemBean.setTpwd(latitude+"");
                             }
                             String fx = itemBean.getFx();
                             itemBean.setFx(fx != null ? fx : "上行内侧");
@@ -595,7 +686,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -620,7 +711,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             try {
                 f = new File(new URI(mOutPutFileUri.toString()));
                 if (!f.exists()) {
-//                f.mkdirs();
+                f.mkdirs();
                 }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
@@ -664,7 +755,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
                 FileUtils.moveFileTo(srcfile, mPlayerFile);
 
-                super.onActivityResult(requestCode, resultCode, data);
+
             }
             catch(Exception e) {;
 
@@ -694,7 +785,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa", "result.toString()" + result.toString());
 
-               List<CatalogueByUIDBean> catalogueByUIDBeens = JSON.parseArray(result.getString("datas"), CatalogueByUIDBean.class);
+                List<CatalogueByUIDBean> catalogueByUIDBeens = JSON.parseArray(result.getString("datas"), CatalogueByUIDBean.class);
 
                 Logger.e("aaa", catalogueByUIDBeens.toString());
 

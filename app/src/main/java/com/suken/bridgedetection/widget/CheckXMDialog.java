@@ -28,7 +28,7 @@ import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 /**
  * Created by gaofeng on 16/5/8.
  */
-public class CheckXMDialog implements View.OnClickListener {
+public class    CheckXMDialog implements View.OnClickListener {
 
     private int minYear = 1970;  //最小年份
     private int fontSize = 13;     //字体大小
@@ -49,11 +49,13 @@ public class CheckXMDialog implements View.OnClickListener {
         this.mContext = context;
         this.checkXMDDialogReturn = checkXMDDialogReturn;
         catalogueByUIDDao = new CatalogueByUIDDao();
-        initContent();
+//        initContent();
     }
 
     public void initContent() {
 
+        minuteContent.clear();
+        secondContent.clear();
         catalogueByUIDBeen = catalogueByUIDDao.queryAll();
         if(TextUtil.isListEmpty(catalogueByUIDBeen)){
             ToastUtil.showMessage("暂无细目库数据");
@@ -128,6 +130,7 @@ public class CheckXMDialog implements View.OnClickListener {
     String xmlb, xmmc;
     String ximmc;
     public void onClick(View v) {
+        initContent();
         if(TextUtil.isListEmpty(catalogueByUIDBeen)){
             ToastUtil.showMessage("暂无细目库数据");
             return;

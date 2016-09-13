@@ -116,13 +116,13 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
                         boolean mIsGpsSuccess = false;
                         if (result.isSuccess) {
 //                            mIsGpsSuccess = true;
-                            projacceptItemBeens.get(position).setTpjd(result.latitude + "");
-                            projacceptItemBeens.get(position).setTpwd(result.longitude + "");
+                            projacceptItemBeens.get(position).setTpjd(result.longitude + "");
+                            projacceptItemBeens.get(position).setTpwd(result.latitude + "");
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa","经度:" + result.longitude);
+                            Logger.e("aaa","纬度:" + result.latitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);
@@ -152,13 +152,13 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
                         boolean mIsGpsSuccess = false;
                         if (result.isSuccess) {
 //                            mIsGpsSuccess = true;
-                            projacceptItemBeens.get(position).setTpjd(result.latitude + "");
-                            projacceptItemBeens.get(position).setTpwd(result.longitude + "");
+                            projacceptItemBeens.get(position).setTpjd(result.longitude + "");
+                            projacceptItemBeens.get(position).setTpwd(result.latitude + "");
 //                            mjingdu.setText("经度:" + result.latitude);
 
 //                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.latitude);
-                            Logger.e("aaa","纬度:" + result.longitude);
+                            Logger.e("aaa","经度:" + result.longitude);
+                            Logger.e("aaa","纬度:" + result.latitude);
 //                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
                             Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
 //                            tv.setTextColor(Color.WHITE);

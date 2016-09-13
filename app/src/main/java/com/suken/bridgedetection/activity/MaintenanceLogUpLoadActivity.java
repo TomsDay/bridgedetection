@@ -19,10 +19,12 @@ import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.logger.Log;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogUpLoadAdapter;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
@@ -161,7 +163,7 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
     public void getAllData() {
         listBeen = new ArrayList<MaintenanceLogBean>();
         maintenanceLogUpLoadBeen = new ArrayList<MaintenanceLogUpLoadBean>();
-        listBeen = maintenanceLogDao.queryAll();
+        listBeen = maintenanceLogDao.queryByuserID(BridgeDetectionApplication.mCurrentUser.getUserId());
         if(listBeen.size()>0){
             for(int i = 0;i<listBeen.size();i++){
                 MaintenanceLogBean bean = listBeen.get(i);
@@ -207,55 +209,91 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                 bean.setByrzzt(maintenanceLogBean.getByrzzt());
                 bean.setBytzno(maintenanceLogBean.getBytzno());
                 bean.setBytzid(maintenanceLogBean.getBytzid());
+                Logger.e("aaa", "size=" + maintenanceLogBean.getMaintenlogdetailList().size());
                 for (int j = 0; j < maintenanceLogBean.getMaintenlogdetailList().size(); j++) {
                     MaintenanceLogItemBean maintenanceLogItemBean = maintenanceLogBean.getMaintenlogdetailList().get(j);
-                    MaintenanceLogUpLoadListBean beanList = new MaintenanceLogUpLoadListBean();
-                    beanList.setBhid(maintenanceLogItemBean.getBhid());
-                    beanList.setBhmc(maintenanceLogItemBean.getBhmc());
-                    beanList.setFx(maintenanceLogItemBean.getFx());
-                    beanList.setYhzh(maintenanceLogItemBean.getYhzh());
-                    beanList.setDw(maintenanceLogItemBean.getDw());
-                    beanList.setDj(maintenanceLogItemBean.getDj());
-                    beanList.setWxsl(maintenanceLogItemBean.getWxsl());
-
-                    beanList.setTpjd(maintenanceLogItemBean.getTpjd());
-                    beanList.setTpwd(maintenanceLogItemBean.getTpwd());
-
-                    beanList.setmImages(maintenanceLogItemBean.getmImages());
-                    beanList.setmVideo(maintenanceLogItemBean.getmVideo());
+                    String clid = maintenanceLogItemBean.getClid();
                     String clmc = maintenanceLogItemBean.getClmc();
-                    String ggxh = maintenanceLogItemBean.getGgxh();
+                    String clgg = maintenanceLogItemBean.getClgg();
+                    String clxh = maintenanceLogItemBean.getClxh();
                     String clsl = maintenanceLogItemBean.getClsl();
                     String cldw = maintenanceLogItemBean.getCldw();
-                    if(!TextUtil.isEmptyString(clmc)){
-                        if (clmc.indexOf(",") == -1) {
-                            beanList.setClmc(clmc + " " + ggxh.replace("-", " ") + " " + clsl + " " + cldw);
-                        }else{
-                            StringBuffer str = new StringBuffer();
-                            String[] clmcA = clmc.split(",");
-                            String[] ggxhA = ggxh.split(",");
-                            String[] clslA = clsl.split(",");
-                            String[] cldwA = cldw.split(",");
-                            for (int w = 0; w < clmcA.length; w++) {
-                                str.append(clmcA[w] + " " + ggxhA[w].replace("-", " ") + " " + clslA[w] + " " + cldwA[w]);
-                                if (clmcA.length - 1 != w) {
-                                    str.append(",");
-                                }
+                    String[] clidArray = clid.split(",");
+                    String[] clmcArray = clmc.split(",");
+                    String[] clggArray = clgg.split(",");
+                    String[] clxhArray = clxh.split(",");
+                    String[] clslArray = clsl.split(",");
+                    String[] cldwArray = cldw.split(",");
+                    if(clmc.contains(",")){
+                        for(int w = 0; w < clmcArray.length; w++){
+                            MaintenanceLogUpLoadListBean beanList = new MaintenanceLogUpLoadListBean();
+
+                            beanList.setBhid(maintenanceLogItemBean.getBhid());
+                            beanList.setBhmc(maintenanceLogItemBean.getBhmc());
+                            beanList.setFx(maintenanceLogItemBean.getFx());
+                            beanList.setYhzh(maintenanceLogItemBean.getYhzh());
+                            beanList.setDw(maintenanceLogItemBean.getDw());
+                            beanList.setDj(maintenanceLogItemBean.getDj());
+                            beanList.setWxsl(maintenanceLogItemBean.getWxsl());
+
+                            beanList.setTpjd(maintenanceLogItemBean.getTpjd());
+                            beanList.setTpwd(maintenanceLogItemBean.getTpwd());
+
+                            beanList.setmImages(maintenanceLogItemBean.getmImages());
+                            beanList.setmVideo(maintenanceLogItemBean.getmVideo());
+
+                            if(w != 0){
+                                beanList.setmImages(null);
+                                beanList.setmVideo(null);
+                                beanList.setWxsl("0");
+
                             }
-                            beanList.setClmc(str.toString());
+
+                            beanList.setClid(clidArray[w]);
+                            beanList.setClmc(clmcArray[w]);
+                            beanList.setClgg(clggArray[w]);
+                            beanList.setClxh(clxhArray[w]);
+                            beanList.setClsl(clslArray[w]);
+                            beanList.setCldw(cldwArray[w]);
+                            Logger.e("aaa", "clmc==" + clmcArray[w]);
+
+                            bean.getMaintenlogdetailList().add(beanList);
+
                         }
-                        maintenanceLogItemBean.setGgxh("");
-                        maintenanceLogItemBean.setClsl("");
-                        maintenanceLogItemBean.setCldw("");
+                    }else{
+                        MaintenanceLogUpLoadListBean beanList = new MaintenanceLogUpLoadListBean();
+                        beanList.setBhid(maintenanceLogItemBean.getBhid());
+                        beanList.setBhmc(maintenanceLogItemBean.getBhmc());
+                        beanList.setFx(maintenanceLogItemBean.getFx());
+                        beanList.setYhzh(maintenanceLogItemBean.getYhzh());
+                        beanList.setDw(maintenanceLogItemBean.getDw());
+                        beanList.setDj(maintenanceLogItemBean.getDj());
+                        beanList.setWxsl(maintenanceLogItemBean.getWxsl());
+
+                        beanList.setTpjd(maintenanceLogItemBean.getTpjd());
+                        beanList.setTpwd(maintenanceLogItemBean.getTpwd());
+
+                        beanList.setmImages(maintenanceLogItemBean.getmImages());
+                        beanList.setmVideo(maintenanceLogItemBean.getmVideo());
+
+                        beanList.setClid(maintenanceLogItemBean.getClid());
+                        beanList.setClmc(maintenanceLogItemBean.getClmc());
+                        beanList.setClgg(maintenanceLogItemBean.getClgg());
+                        beanList.setClxh(maintenanceLogItemBean.getClxh());
+                        beanList.setCldw(maintenanceLogItemBean.getCldw());
+                        beanList.setClsl(maintenanceLogItemBean.getClsl());
+
+                        bean.getMaintenlogdetailList().add(beanList);
                     }
+//
 
 
 
-                    bean.getMaintenlogdetailList().add(beanList);
+
                 }
                 maintenanceLogUpLoadBeen.add(bean);
             }
-            Logger.e("aaa", "===" + maintenanceLogUpLoadBeen.get(0).getMaintenlogdetailList().get(0).getClmc());
+            Logger.e("aaa", "===" + maintenanceLogUpLoadBeen.get(0).getMaintenlogdetailList());
 
         }
         mAdapter.setData(listBeen);
@@ -465,8 +503,6 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     List<IVDesc> images = logItemBean.getmImages();
                     List<IVDesc> videos = logItemBean.getmVideo();
 
-                    Logger.e("aaa","images===="+images.toString());
-                    Logger.e("aaa","videos===="+videos.toString());
 
                     if ((images == null && videos == null)||(images.size() ==0&&videos.size()==0)) {
                         Logger.e("aaa","无图！！！");

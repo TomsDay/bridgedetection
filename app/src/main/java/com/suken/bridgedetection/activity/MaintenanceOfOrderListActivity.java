@@ -162,7 +162,7 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
 
 
     public void getAllData(){
-        maintenanceOfOrderBeen = maintenanceOfOrderDao.queryAll();
+        maintenanceOfOrderBeen = maintenanceOfOrderDao.queryByuserID(BridgeDetectionApplication.mCurrentUser.getUserId());
         if(maintenanceOfOrderBeen.size()>0){
             for(int i = 0;i<maintenanceOfOrderBeen.size();i++){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(i);

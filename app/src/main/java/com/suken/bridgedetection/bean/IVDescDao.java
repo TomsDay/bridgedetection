@@ -170,4 +170,15 @@ public class IVDescDao {
             e.printStackTrace();
         }
     }
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            ivDescs.delete(queryAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

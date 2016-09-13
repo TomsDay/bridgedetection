@@ -64,7 +64,15 @@ public class GeteMaterialBean implements Serializable {
     /**型号 */
     @DatabaseField
     private String xh;
+    /**材料数量 */
+    private String clsl;
 
+    /**二级分类 */
+    @DatabaseField
+    private String ejml;
+    /**一级分类 */
+    @DatabaseField
+    private String yjml;
 
     public GeteMaterialBean() {
     }
@@ -88,6 +96,30 @@ public class GeteMaterialBean implements Serializable {
         this.updator = updator;
         this.versionno = versionno;
         this.xh = xh;
+    }
+
+    public String getEjml() {
+        return ejml;
+    }
+
+    public void setEjml(String ejml) {
+        this.ejml = ejml;
+    }
+
+    public String getYjml() {
+        return yjml;
+    }
+
+    public void setYjml(String yjml) {
+        this.yjml = yjml;
+    }
+
+    public String getClsl() {
+        return clsl;
+    }
+
+    public void setClsl(String clsl) {
+        this.clsl = clsl;
     }
 
     public int getIds() {

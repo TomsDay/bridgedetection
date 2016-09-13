@@ -15,10 +15,14 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
+import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceDao;
+import com.suken.bridgedetection.bean.MaintenanceLogDao;
+import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
+import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -28,6 +32,7 @@ import com.suken.bridgedetection.storage.UserInfoDao;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.NetWorkUtil;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.yuntongxun.ecdemo.common.CCPAppManager;
 import com.yuntongxun.ecdemo.common.utils.ToastUtil;
@@ -56,7 +61,7 @@ public class LoginActivity extends BaseActivity {
 	private EditText mPwdView = null;
 	private UserInfoDao mUserDao;
 	private TextView mTextView = null;
-
+	private String oldName;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,7 +72,7 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.activity_login_page);
 		mNameView = (EditText) findViewById(R.id.username);
 		mPwdView = (EditText) findViewById(R.id.userpwd);
-		mNameView.setText("qysjz-zyf");
+		mNameView.setText("zhangxuezhi");
 		mPwdView.setText("1");
 		mTextView = (TextView) findViewById(R.id.login_desc);
 		if(mUserInfos != null && mUserInfos.size() > 0){
@@ -81,7 +86,8 @@ public class LoginActivity extends BaseActivity {
 					}
 				}
 			}
-			mNameView.setText(info.getAccount());
+			oldName = info.getAccount();
+			mNameView.setText(oldName);
 			mPwdView.setText(info.getPassword());
 		}
 		PackageInfo info;
@@ -92,7 +98,7 @@ public class LoginActivity extends BaseActivity {
 		} catch (NameNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 		if(NetWorkUtil.getConnectType(this) == ConnectType.CONNECT_TYPE_WIFI){
 			long lastTime = Long.parseLong(SharePreferenceManager.getInstance().readString("updateCheckTime", "-1"));
 			if(System.currentTimeMillis() - lastTime > 24 * 60 * 60 *1000){
@@ -175,6 +181,19 @@ public class LoginActivity extends BaseActivity {
 			public void onRequestSuccess(RequestType type, JSONObject obj) {
 				final UserInfo info = obj.getObject("userInfo", UserInfo.class);
 				info.setPassword(pwd);
+ //				Logger.e("aaa", "getAccount list==" + mUserInfos.get(0).getAccount());
+//				Logger.e("aaa", "getAccount111==" + info.getAccount());
+//				Logger.e("aaa", "oldName==" + oldName);
+//				if (!TextUtil.isEmptyString(oldName) && !oldName.equals(info.getAccount())) {
+//					Logger.e("aaa", "11111111111");
+//					new IVDescDao().deleteAll();
+//					new MaintenanceLogDao().deleteAll();
+//					new MaintenanceTableDao().deleteAll();
+//					new MaintenanceOfOrderDao().deleteAll();
+//					new ProjectAcceptanceDao().deleteAll();
+//
+//				}
+
 				mUserDao.create(info);
 
 

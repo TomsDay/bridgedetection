@@ -28,5 +28,36 @@
             app:selectedTextColor="#ff000000"
             app:selectedTextSize="22sp"
             app:unitHeight="50dp" />
+        <com.jp.wheelview.WheelView
+            android:id="@+id/minutewheel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:itemNumber="3"
+            app:lineColor="@android:color/holo_blue_dark"
+            app:lineHeight="1.5dp"
+            app:maskHeight="48dp"
+            app:noEmpty="true"
+            app:normalTextColor="#777"
+            app:normalTextSize="14sp"
+            app:selectedTextColor="#ff000000"
+            app:selectedTextSize="22sp"
+            app:unitHeight="50dp" />
+
+        <com.jp.wheelview.WheelView
+            android:id="@+id/secondwheel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:itemNumber="3"
+            app:lineColor="@android:color/holo_blue_dark"
+            app:lineHeight="1.5dp"
+            app:maskHeight="48dp"
+            app:noEmpty="true"
+            app:normalTextColor="#777"
+            app:normalTextSize="14sp"
+            app:selectedTextColor="#ff000000"
+            app:selectedTextSize="22sp"
+            app:unitHeight="50dp" />
     </LinearLayout>
 </LinearLayout>

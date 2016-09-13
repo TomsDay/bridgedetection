@@ -32,6 +32,8 @@ public class MaintenanceTableBean implements Serializable {
     @DatabaseField
     private String weather;
     @DatabaseField
+    private String userid;
+    @DatabaseField
     private String gydwId;
     @DatabaseField
     private String gydwName;
@@ -102,6 +104,14 @@ public class MaintenanceTableBean implements Serializable {
         this.xcld = xcld;
         this.inspectLogDetailList = inspectLogDetailList;
         this.maintenanceTableItemBeen = maintenanceTableItemBeen;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getJcks() {
