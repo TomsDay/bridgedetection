@@ -28,6 +28,7 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
 import com.suken.bridgedetection.activity.MaintenanceActivity;
+import com.suken.bridgedetection.activity.QualityInspectionActivity;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
@@ -187,6 +188,11 @@ public class HomePageFragment extends BaseFragment implements OnClickListener, O
                 toast("无权限");
             }
 
+            return;
+        }
+        if(vid ==  R.drawable.zhiliangchoujian){//质量抽检的点击事件
+            Intent in = new Intent(getActivity(), QualityInspectionActivity.class);
+            startActivity(in);
             return;
         }
 

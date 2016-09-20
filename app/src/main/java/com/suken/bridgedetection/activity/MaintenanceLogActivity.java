@@ -686,7 +686,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -710,9 +710,9 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         if(resultCode == RESULT_OK) {
             try {
                 f = new File(new URI(mOutPutFileUri.toString()));
-                if (!f.exists()) {
-                f.mkdirs();
-                }
+//                if (!f.exists()) {
+//                f.mkdirs();
+//                }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

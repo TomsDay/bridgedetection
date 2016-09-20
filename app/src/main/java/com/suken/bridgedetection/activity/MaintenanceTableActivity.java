@@ -494,11 +494,11 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         String time = maintenancetable_time_ev.getText().toString();
                         String cxld = maintenancetable_cxld_ev.getText().toString();
@@ -677,7 +677,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -702,10 +702,11 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
 
         try {
+            Logger.e("aaa", "url==" + mOutPutFileUri.toString());
             f = new File(new URI(mOutPutFileUri.toString()));
-            if (!f.exists()) {
-                f.mkdirs();
-            }
+//            if (!f.exists()) {
+//                f.mkdirs();
+//            }
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -715,8 +716,8 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
             Logger.e("aaa", "resultCode=REQUEST_CODE_CAMERA=" + resultCode);
             IVDesc desc = new IVDesc();
-            desc.name = f.getName();
-            desc.path = f.getPath();
+            desc.name = mPlayerFile.getName();
+            desc.path = mPlayerFile.getPath();
             Logger.e("aaa", " desc.name===" + desc.name);
             Logger.e("aaa", " desc.path===" + desc.path);
             maintenanceTableItemBeen.get(mPosition).getmImages().add(desc);

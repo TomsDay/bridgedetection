@@ -899,11 +899,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();
@@ -1031,7 +1031,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         mPlayerFile = new File(name);
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
-//        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
         if (requestCode == Constants.REQUEST_CODE_CAMERA) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
@@ -1055,9 +1055,9 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         if(resultCode == RESULT_OK) {
             try {
                 f = new File(new URI(mOutPutFileUri.toString()));
-                if (!f.exists()) {
-                f.mkdirs();
-                }
+//                if (!f.exists()) {
+//                f.mkdirs();
+//                }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

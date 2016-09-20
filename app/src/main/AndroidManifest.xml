@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.suken.bridgedetection"
-    android:versionCode="30"
+    android:versionCode="50"
     android:versionName="1.5.0">
 
     <uses-sdk
@@ -61,8 +61,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:screenOrientation="landscape"
         android:largeHeap="true"
+        android:screenOrientation="landscape"
         android:theme="@style/AppTheme">
         // ================ 容联云通讯sdk ==========
         // SDK核心服务配置
@@ -96,7 +96,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
-
         // ============ end ==============
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
@@ -249,13 +248,11 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.SettingsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.GroupCardSelectUI"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.yuntongxun.ecdemo.ui.settings.EditConfigureActivity"
             android:label="@string/title_activity_edit_configure"
@@ -263,7 +260,6 @@
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.GroupMemberCardActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name="com.yuntongxun.ecdemo.ui.group.GroupNoticeActivity"
             android:configChanges="keyboardHidden|orientation"
@@ -459,14 +455,16 @@
         <activity
             android:name=".activity.MaintenanceLogUpLoadActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.ProjectAcceptanceListUpLoadActivity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".activity.ProjectAcceptanceListUpLoadActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".activity.ImagePagerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.QualityInspectionActivity"
             android:screenOrientation="landscape"/>
-
     </application>
 
 </manifest>

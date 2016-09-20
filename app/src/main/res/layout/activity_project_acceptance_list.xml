@@ -43,67 +43,78 @@
             android:paddingRight="8dp"/>
 
     </RelativeLayout>
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:background="#80ffffff"-->
+        <!--android:gravity="center">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/project_acceptance_row1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="工程验收单编号"-->
+            <!--android:textSize="10dp" />-->
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#90808080" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/project_acceptance_row2"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="维修保养单位"-->
+            <!--android:textSize="10dp" />-->
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#90808080" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/project_acceptance_row3"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="施工日期"-->
+            <!--android:textSize="10dp" />-->
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#90808080" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/project_acceptance_row4"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="施工负责人"-->
+            <!--android:textSize="10dp" />-->
+      <!---->
+
+    <!--</LinearLayout>-->
+    <!--<ListView-->
+        <!--android:id="@+id/project_acceptance_listView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="@null"-->
+        <!--android:dividerHeight="0dp"/>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="#80ffffff"
-        android:gravity="center">
-
-        <TextView
-            android:id="@+id/project_acceptance_row1"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="工程验收单编号"
-            android:textSize="10dp" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-
-        <TextView
-            android:id="@+id/project_acceptance_row2"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="维修保养单位"
-            android:textSize="10dp" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-        <TextView
-            android:id="@+id/project_acceptance_row3"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="施工日期"
-            android:textSize="10dp" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-        <TextView
-            android:id="@+id/project_acceptance_row4"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="施工负责人"
-            android:textSize="10dp" />
-      
-
+        android:visibility="visible">
+    <include
+        layout="@layout/layout_project_acceptance"/>
     </LinearLayout>
-    <ListView
-        android:id="@+id/project_acceptance_listView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:divider="@null"
-        android:dividerHeight="0dp"/>
 </LinearLayout>

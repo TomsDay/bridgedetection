@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    tools:context="com.suken.bridgedetection.activity.QualityInspectionActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/list_main_bg">
+    <RelativeLayout
+        android:id="@+id/qualityInspection_titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/qualityInspection_back"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+
+
+        <TextView
+            android:id="@+id/qualityInspection_save"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="保存"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+        
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:id="@+id/qualityInspection_expandableListView"
+        android:background="#80ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:groupIndicator="@null"
+        android:layout_below="@id/qualityInspection_titleLayout"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+
+    </ExpandableListView>
+
+</RelativeLayout>

@@ -404,6 +404,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 Logger.e("aaa","type====="+type.toString());
                 Logger.e("aaa","resultCode====="+resultCode);
                 Logger.e("aaa","result====="+result);
+//                getAllData();
+//                dismissLoading();
+//                toast("上传图片失败！");
 
             }
         };
