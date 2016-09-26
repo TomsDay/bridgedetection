@@ -1,6 +1,5 @@
 package com.suken.bridgedetection.activity;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.ContentResolver;
@@ -13,7 +12,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,9 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.j256.ormlite.dao.CloseableIterator;
 import com.j256.ormlite.dao.ForeignCollection;
@@ -37,7 +33,6 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableAdapter;
 import com.suken.bridgedetection.adapter.TestArrayAdapter;
-import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
@@ -45,8 +40,6 @@ import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
-import com.suken.bridgedetection.bean.UploadBean;
-import com.suken.bridgedetection.bean.UploadListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -54,12 +47,8 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.storage.GXLuXianInfo;
 import com.suken.bridgedetection.storage.GXLuXianInfoDao;
-import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
-import com.suken.bridgedetection.storage.SdxcFormData;
-import com.suken.bridgedetection.storage.SdxcFormDetail;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.FileUtils;
-import com.suken.bridgedetection.util.NetUtil;
 import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.DoubleDatePickerDialog;
 import com.suken.bridgedetection.widget.ListViewForScrollView;
@@ -72,7 +61,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.UUID;
 
 import com.suken.bridgedetection.util.Logger;
 import com.yuntongxun.ecdemo.common.utils.ToastUtil;
@@ -488,6 +476,8 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         builder.create().show();
     }
     public void saveDialog(){
+        Logger.e("aaa", "fx=" + mAdapter.getData().get(0).getFx());
+        Logger.e("aaa", "jcqk=" + mAdapter.getData().get(0).getCus1());
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
                 .setMessage("是否保存当前数据？")
@@ -552,15 +542,18 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                         for(int q = 0; q < maintenanceTableItemBeen.size(); q++){
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(q);
                             int num = q + 1;
-                            //必填项限制
+                            if(!"2".equals(itemBean.getYhzt())){
+
+
+                                //必填项限制
 //                            if(TextUtil.isEmptyString(itemBean.getYhzh())){
 //                                toast("第" + num + "条检查情况的“桩号”不可为空！");
 //                                return;
 //                            }
-                            if(TextUtil.isEmptyString(itemBean.getBhmc())){
-                                toast("第" + num + "条检查情况的“病害名称”不可为空！");
-                                return;
-                            }
+                                if(TextUtil.isEmptyString(itemBean.getBhmc())){
+                                    toast("第" + num + "条检查情况的“病害名称”不可为空！");
+                                    return;
+                                }
 //                            if(TextUtil.isEmptyString(itemBean.getDw())){
 //                                toast("第" + num + "条检查情况的“单位”不可为空！");
 //                                return;
@@ -569,9 +562,10 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 //                                toast("第" + num + "条检查情况的“数量”不可为空！");
 //                                return;
 //                            }
-                            if(TextUtil.isEmptyString(itemBean.getJcsj())){
-                                toast("第" + num + "条检查情况的“检查时间”不可为空！");
-                                return;
+                                if(TextUtil.isEmptyString(itemBean.getJcsj())){
+                                    toast("第" + num + "条检查情况的“检查时间”不可为空！");
+                                    return;
+                                }
                             }
                         }
 //
@@ -587,14 +581,20 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 //
                         for (int j = 0; j < maintenanceTableItemBeen.size(); j++) {
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(j);
-                            itemBean.setYhzt("1");
-                            if (itemBean.getTpjd() != null) {
+//                            itemBean.setYhzt("1");
+                            String tpjd = itemBean.getTpjd();
+                            String tpwd = itemBean.getTpwd();
+                            if (TextUtil.isEmptyString(tpjd)) {
                                 itemBean.setTpjd(longitude+"");
+
+                            }
+                            if(TextUtil.isEmptyString(tpwd)){
                                 itemBean.setTpwd(latitude+"");
                             }
 
+
                             String fx = itemBean.getFx();
-                            itemBean.setFx(fx != null ? fx : "上行内侧");
+                            itemBean.setFx(!TextUtil.isEmptyString(fx) ? fx : "上行");
 
 
 
@@ -667,7 +667,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
             path1.mkdirs();
         }
         String name = "";
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             name = path1 + File.separator + generateMediaName(true);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             name = desc.path;
@@ -678,7 +678,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -701,20 +701,20 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         if(resultCode == RESULT_OK){
 
 
-        try {
-            Logger.e("aaa", "url==" + mOutPutFileUri.toString());
-            f = new File(new URI(mOutPutFileUri.toString()));
+            try {
+                Logger.e("aaa", "url==" + mOutPutFileUri.toString());
+                f = new File(new URI(mOutPutFileUri.toString()));
 //            if (!f.exists()) {
 //                f.mkdirs();
 //            }
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
         }
-    }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE && resultCode == RESULT_OK) {
 
-            Logger.e("aaa", "resultCode=REQUEST_CODE_CAMERA=" + resultCode);
+            Logger.e("aaa", "resultCode=REQUEST_CODE_CAPTURE=" + resultCode);
             IVDesc desc = new IVDesc();
             desc.name = mPlayerFile.getName();
             desc.path = mPlayerFile.getPath();
@@ -816,7 +816,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
 
 
-//    public void uploadIV(){
+    //    public void uploadIV(){
 //        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
 //
 //            @Override

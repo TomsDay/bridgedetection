@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -197,15 +199,19 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         setDateTime(holder);
 
         String fx = bean.getFx();
+        if(!TextUtil.isEmptyString(fx)){
+            fx = fx.replace("内侧", "");
+            if (fx.contains("匝道")) {
+                holder.checkBox.setChecked(true);
+                fx = fx.replace("匝道", "");
+            }
+        }
+
         Logger.e("aaa","fx==="+fx);
-        if("上行内侧".equals(fx)){
+        if("上行".equals(fx)){
             holder.radioGroup.check(R.id.radioup);
-        }else if("下行内侧".equals(fx)){
+        }else if("下行".equals(fx)){
             holder.radioGroup.check(R.id.radiodown);
-        }else if("上行外侧".equals(fx)){
-            holder.radioGroup.check(R.id.radioleft);
-        }else if("下行外侧".equals(fx)){
-            holder.radioGroup.check(R.id.radioright);
         }else{
             holder.radioGroup.check(R.id.radioup);
         }
@@ -244,7 +250,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.xiangji.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
+                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAPTURE, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
@@ -314,23 +320,46 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                String fx = maintenanceLogItemBeen.get(position).getFx();
+                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
                 switch (i) {
                     case R.id.radioup:
-                        maintenanceLogItemBeen.get(position).setFx("上行内侧");
+
+                        if (!fx.contains("上行")) {
+                            maintenanceLogItemBeen.get(position).setFx(fx.replace("下行","上行"));
+                        }
+
                         break;
                     case R.id.radiodown:
-                        maintenanceLogItemBeen.get(position).setFx("下行内侧");
+                        maintenanceLogItemBeen.get(position).setFx("下行");
+                        if (!fx.contains("下行")) {
+                            maintenanceLogItemBeen.get(position).setFx(fx.replace("上行","下行"));
+                        }
+
                         break;
-                    case R.id.radioleft:
-                        maintenanceLogItemBeen.get(position).setFx("上行外侧");
-                        break;
-                    case R.id.radioright:
-                        maintenanceLogItemBeen.get(position).setFx("下行外侧");
-                        break;
+
 
                 }
             }
         });
+
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                String fx = maintenanceLogItemBeen.get(position).getFx();
+                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
+                if(b){
+                    if (!fx.contains("匝道")) {
+                        maintenanceLogItemBeen.get(position).setFx(fx + "匝道");
+                    }
+                }else{
+                    if (fx.contains("匝道")) {
+                        maintenanceLogItemBeen.get(position).setFx(fx.replace("匝道",""));
+                    }
+                }
+            }
+        });
+
 
         return view;
     }
@@ -534,6 +563,8 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
         private RadioGroup radioGroup;
 
+        private CheckBox checkBox;
+
         public HolderView(View view) {
             form_item_edit_layout = (LinearLayout) view.findViewById(R.id.form_item_edit_layout);
             from_topLayout = (LinearLayout) view.findViewById(R.id.from_topLayout);
@@ -572,6 +603,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             item_Line = view.findViewById(R.id.item_Line);
 
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+
+            checkBox = (CheckBox) view.findViewById(R.id.checkBox);
+
         }
     }
     class  Watcher implements TextWatcher {

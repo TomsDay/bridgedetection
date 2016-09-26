@@ -181,7 +181,7 @@ public class LoginActivity extends BaseActivity {
 			public void onRequestSuccess(RequestType type, JSONObject obj) {
 				final UserInfo info = obj.getObject("userInfo", UserInfo.class);
 				info.setPassword(pwd);
- //				Logger.e("aaa", "getAccount list==" + mUserInfos.get(0).getAccount());
+// 				Logger.e("aaa", "getAccount list==" + mUserInfos.get(0).getAccount());
 //				Logger.e("aaa", "getAccount111==" + info.getAccount());
 //				Logger.e("aaa", "oldName==" + oldName);
 //				if (!TextUtil.isEmptyString(oldName) && !oldName.equals(info.getAccount())) {

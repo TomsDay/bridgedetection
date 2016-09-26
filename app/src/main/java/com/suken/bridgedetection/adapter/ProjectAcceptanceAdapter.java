@@ -106,7 +106,7 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
             @Override
             public void onClick(View view) {
 //                ClickImagePositon = position;
-                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
+                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAPTURE, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {

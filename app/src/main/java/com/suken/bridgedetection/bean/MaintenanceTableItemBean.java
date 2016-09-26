@@ -47,7 +47,9 @@ public class MaintenanceTableItemBean implements Serializable{
     @DatabaseField
     private String tpwd;
     @DatabaseField
-    private String yhzt;
+    private String yhzt= "1";
+    @DatabaseField
+    private String cus1="";
 
     private boolean isShow;
 
@@ -74,6 +76,7 @@ public class MaintenanceTableItemBean implements Serializable{
                 "id=" + id +
                 ", fx='" + fx + '\'' +
                 ", yhzh='" + yhzh + '\'' +
+                ", zhfw='" + zhfw + '\'' +
                 ", bhid='" + bhid + '\'' +
                 ", bhmc='" + bhmc + '\'' +
                 ", bhwz='" + bhwz + '\'' +
@@ -87,6 +90,7 @@ public class MaintenanceTableItemBean implements Serializable{
                 ", tpjd='" + tpjd + '\'' +
                 ", tpwd='" + tpwd + '\'' +
                 ", yhzt='" + yhzt + '\'' +
+                ", cus1='" + cus1 + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -121,6 +125,14 @@ public class MaintenanceTableItemBean implements Serializable{
         this.maintenanceTableBean = maintenanceTableBean;
         this.iDescs = iDescs;
         this.vDescs = vDescs;
+    }
+
+    public String getCus1() {
+        return cus1;
+    }
+
+    public void setCus1(String cus1) {
+        this.cus1 = cus1;
     }
 
     public String getZhfw() {

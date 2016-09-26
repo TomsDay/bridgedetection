@@ -27,7 +27,7 @@
 	</style>
 	
     <style name="Theme.Translucent" parent="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
-        <item name="android:windowBackground">@drawable/translucent_background</item>
+        <!--<item name="android:windowBackground">@drawable/translucent_background</item>-->
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:colorForeground">#fff</item>

@@ -394,37 +394,37 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.maintenanceoforder_bzbf_xiangji:
-                    jumpToMedia(0, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(0, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_bzbf_video:
                     jumpToMedia(0, Constants.REQUEST_CODE_VIDEO, null);
                     break;
                 case R.id.maintenanceoforder_bzfm_xiangji:
-                    jumpToMedia(1, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(1, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_bzfm_video:
                     jumpToMedia(1, Constants.REQUEST_CODE_VIDEO, null);
                     break;
                 case R.id.maintenanceoforder_aqzy_xiangji:
-                    jumpToMedia(2, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(2, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_aqzy_video:
                     jumpToMedia(2, Constants.REQUEST_CODE_VIDEO, null);
                     break;
                 case R.id.maintenanceoforder_sgzy_xiangji:
-                    jumpToMedia(3, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(3, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_sgzy_video:
                     jumpToMedia(3, Constants.REQUEST_CODE_VIDEO, null);
                     break;
                 case R.id.maintenanceoforder_aqxs_xiangji:
-                    jumpToMedia(4, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(4, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_aqxs_video:
                     jumpToMedia(4, Constants.REQUEST_CODE_VIDEO, null);
                     break;
                 case R.id.maintenanceoforder_aqzgly_xiangji:
-                    jumpToMedia(5, Constants.REQUEST_CODE_CAMERA, null);
+                    jumpToMedia(5, Constants.REQUEST_CODE_CAPTURE, null);
                     break;
                 case R.id.maintenanceoforder_aqzgly_video:
                     jumpToMedia(5, Constants.REQUEST_CODE_VIDEO, null);
@@ -1021,7 +1021,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             path1.mkdirs();
         }
         String name = "";
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             name = path1 + File.separator + generateMediaName(true);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             name = desc.path;
@@ -1032,7 +1032,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -1063,7 +1063,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             }
         }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE && resultCode == RESULT_OK) {
             IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();

@@ -18,7 +18,7 @@ public class Constants {
 	public static final String INTERVAL = "interval";
 	public static final String GPS_SWITCH = "gps_switch";
 
-	public static final int REQUEST_CODE_CAMERA = 1;
+	public static final int REQUEST_CODE_CAPTURE = 1;
 	public static final int REQUEST_CODE_EDIT_IMG = 2;
 	public static final int REQUEST_CODE_VIDEO = 3;
 

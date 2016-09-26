@@ -218,13 +218,16 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
                     String clxh = maintenanceLogItemBean.getClxh();
                     String clsl = maintenanceLogItemBean.getClsl();
                     String cldw = maintenanceLogItemBean.getCldw();
+
                     String[] clidArray = clid.split(",");
                     String[] clmcArray = clmc.split(",");
                     String[] clggArray = clgg.split(",");
                     String[] clxhArray = clxh.split(",");
                     String[] clslArray = clsl.split(",");
                     String[] cldwArray = cldw.split(",");
+
                     if(clmc.contains(",")){
+
                         for(int w = 0; w < clmcArray.length; w++){
                             MaintenanceLogUpLoadListBean beanList = new MaintenanceLogUpLoadListBean();
 

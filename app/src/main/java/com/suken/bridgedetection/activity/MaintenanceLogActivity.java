@@ -185,18 +185,21 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                     while (iterator.hasNext()) {
                         MaintenanceLogItemBean b = iterator.next();
                         String clmc = b.getClmc();
+                        String clid = b.getClid();
                         String clgg = b.getClgg();
                         String clxh = b.getClxh();
                         String clsl = b.getClsl();
                         String cldw = b.getCldw();
                         if(clmc.contains(",")){
                             String[] clmcArray = clmc.split(",");
+                            String[] clidArray = clid.split(",");
                             String[] clggArray = clgg.split(",");
                             String[] clxhArray = clxh.split(",");
                             String[] clslArray = clsl.split(",");
                             String[] cldwArray = cldw.split(",");
                             for(int i = 0; i < clmcArray.length; i++){
                                 GeteMaterialBean geteMaterialBean = new GeteMaterialBean();
+                                geteMaterialBean.setId(clidArray[i]);
                                 geteMaterialBean.setClmc(clmcArray[i]);
                                 geteMaterialBean.setGg(clggArray[i]);
                                 geteMaterialBean.setXh(clxhArray[i]);
@@ -206,6 +209,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                             }
                         }else{
                             GeteMaterialBean geteMaterialBean = new GeteMaterialBean();
+                            geteMaterialBean.setId(clid);
                             geteMaterialBean.setClmc(clmc);
                             geteMaterialBean.setGg(clgg);
                             geteMaterialBean.setXh(clxh);
@@ -396,6 +400,8 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     }
 
     public void saveDialog(){
+//        Logger.e("aaa", "fx=" + mAdapter.getData().get(0).getFx());
+//        Logger.e("aaa", "fx=" + mAdapter.getData().get(1).getFx());
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
                 .setMessage("是否保存当前数据？")
@@ -536,12 +542,17 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
                         for (int j = 0; j < maintenanceLogItemBeen.size(); j++) {
                             MaintenanceLogItemBean itemBean = maintenanceLogItemBeen.get(j);
-                            if (itemBean.getTpjd() != null) {
+                            String tpjd = itemBean.getTpjd();
+                            String tpwd = itemBean.getTpwd();
+                            if (TextUtil.isEmptyString(tpjd)) {
                                 itemBean.setTpjd(longitude+"");
+
+                            }
+                            if(TextUtil.isEmptyString(tpwd)){
                                 itemBean.setTpwd(latitude+"");
                             }
                             String fx = itemBean.getFx();
-                            itemBean.setFx(fx != null ? fx : "上行内侧");
+                            itemBean.setFx(fx != null ? fx : "上行");
 
                             itemBean.setMaintenanceLogBean(maintenanceLogBean);
                             if (itemBean.getIds() != 0) {
@@ -676,7 +687,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             path1.mkdirs();
         }
         String name = "";
-        if (requestCode == Constants.REQUEST_CODE_CAMERA ) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE ) {
             name = path1 + File.separator + generateMediaName(true);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             name = desc.path;
@@ -687,7 +698,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -718,7 +729,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             }
         }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE && resultCode == RESULT_OK) {
             IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();

@@ -53,7 +53,9 @@
         android:layout_below="@id/qualityInspection_titleLayout"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:divider="@null"
+        android:dividerHeight="0dp">
 
 
     </ExpandableListView>

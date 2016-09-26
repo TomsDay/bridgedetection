@@ -21,6 +21,7 @@ import com.suken.bridgedetection.storage.SDBaseData;
 import com.suken.bridgedetection.storage.SDBaseDataDao;
 import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
 import com.suken.bridgedetection.storage.SdxcFormData;
+import com.suken.bridgedetection.util.OnSyncDataFinishedListener;
 import com.suken.bridgedetection.util.UiUtil;
 
 import android.app.AlertDialog;
@@ -61,6 +62,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	private TextView row3 = null;
 	private TextView row4 = null;
 	private TextView row5 = null;
+	private TextView row6 = null;
 
 	@Override
 	protected void onDestroy() {
@@ -94,6 +96,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		row3 = null;
 		row4 = null;
 		row5 = null;
+		row6 = null;
 	}
 
 	@Override
@@ -119,10 +122,20 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		mListTitleHd = findViewById(R.id.handong_base_title);
 		findViewById(R.id.back).setOnClickListener(this);
 		row1 = (TextView) findViewById(R.id.row1);
+		row1.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
+				if(adapter != null){
+					adapter.sortData();
+				}
+			}
+		});
 		row2 = (TextView) findViewById(R.id.row2);
 		row3 = (TextView) findViewById(R.id.row3);
 		row4 = (TextView) findViewById(R.id.row4);
 		row5 = (TextView) findViewById(R.id.row5);
+		row6 = (TextView) findViewById(R.id.row6);
 		loadData();
 	}
 
@@ -251,7 +264,8 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			row2.setText("巡查人员");
 			row3.setText("天气");
 			row4.setText("管养单位");
-			row5.setText("检查人");
+			row6.setText("检查人");
+			row5.setVisibility(View.GONE);
 			List<SdxcFormData> list = mListArray;
 			if (list != null && list.size() > 0) {
 				for (SdxcFormData bd : list) {
@@ -274,29 +288,16 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			}
 			mHdList.setVisibility(View.GONE);
 			mListTitleHd.setVisibility(View.GONE);
-			mQlListTitleText.setText(" 桥梁(" + mCurrentNum + "/" + data.size() + ")");
+			mQlListTitleText.setText(" 桥梁巡查(" + mCurrentNum + "/" + data.size() + ")");
 			switchPanel(mListTitleQl);
 			break;
 		}
 		case R.drawable.qiaoliangjiancha: {
-			List<ListBean> hdData = new ArrayList<ListBean>();
-			List<HDBaseData> hdBaseData = mListArray2;
-			if (hdBaseData != null && hdBaseData.size() > 0) {
-				for (HDBaseData bd : hdBaseData) {
-					ListBean bean = new ListBean();
-					bean.id = bd.getId();
-					bean.lxbm = bd.getLxbh();
-					bean.lxmc = bd.getLxmc();
-					bean.qhbs = bd.getHdbh();
-					bean.qhmc = bd.getHdmc();
-					bean.qhzh = bd.getZxzh();
-					bean.type = mType;
-					mHdCurrentNum = initStatus(bean, bd, bean.type);
-					hdData.add(bean);
-				}
-			}
-			mHdListTitleText.setText(" 涵洞(" + mHdCurrentNum + "/" + hdData.size() + ")");
-			mHdList.setAdapter(new ListPageAdapter(this, hdData, mType));
+//			List<ListBean> hdData = new ArrayList<ListBean>();
+
+//			mHdListTitleText.setText(" 涵洞(" + mHdCurrentNum + "/" + hdData.size() + ")");
+//			mHdList.setAdapter(new ListPageAdapter(this, hdData, mType));
+			mListTitleHd.setVisibility(View.GONE);
 			List<QLBaseData> qlBaseData = mListArray;
 			if (qlBaseData != null && qlBaseData.size() > 0) {
 				for (QLBaseData bd : qlBaseData) {
@@ -308,7 +309,24 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					bean.qhmc = bd.getQlmc();
 					bean.qhzh = bd.getZxzh();
 					bean.type = mType;
+					bean.mtimes = bd.getMtimes();
 					mCurrentNum = initStatus(bean, bd, bean.type);
+					data.add(bean);
+				}
+			}
+			List<HDBaseData> hdBaseData = mListArray2;
+			if (hdBaseData != null && hdBaseData.size() > 0) {
+				for (HDBaseData bd : hdBaseData) {
+					ListBean bean = new ListBean();
+					bean.id = bd.getId();
+					bean.lxbm = bd.getLxbh();
+					bean.lxmc = bd.getLxmc();
+					bean.qhbs = bd.getHdbh();
+					bean.qhmc = bd.getHdmc();
+					bean.qhzh = bd.getZxzh();
+					bean.type = mType;
+					bean.mtimes = bd.getMtimes();
+					mHdCurrentNum = initStatus(bean, bd, bean.type);
 					data.add(bean);
 				}
 			}
@@ -319,6 +337,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		case R.drawable.suidaojiancha:
 		case R.drawable.suidaoxuncha: {
 			row1.setText("隧道桩号");
+			row2.setText("隧道名称");
 			row3.setText("隧道标识");
 			List<SDBaseData> qlBaseData = mListArray;
 			if (qlBaseData != null && qlBaseData.size() > 0) {
@@ -331,6 +350,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					bean.qhmc = bd.getSdmc();
 					bean.qhzh = bd.getZxzh();
 					bean.type = mType;
+					bean.mtimes = bd.getMtimes();
 					mCurrentNum = initStatus(bean, bd, bean.type);
 					data.add(bean);
 				}
@@ -339,7 +359,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			mListTitleHd.setVisibility(View.GONE);
 			mListTitleQl.setSelected(true);
 			mListTitleQl.requestFocus();
-			mQlListTitleText.setText(" 隧道(" + mCurrentNum + "/" + data.size() + ")");
+			mQlListTitleText.setText(" 隧道"+ ((mType == R.drawable.suidaojiancha)? "检查":"巡查")+"(" + mCurrentNum + "/" + data.size() + ")");
 			break;
 		}
 		}
@@ -391,7 +411,14 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					UiUtil.syncData(BridgeDetectionListActivity.this, which == 1);
+					UiUtil.syncData(BridgeDetectionListActivity.this, which == 1, new OnSyncDataFinishedListener() {
+						@Override
+						public void onSyncFinished(boolean isSuccess) {
+							if(isSuccess){
+								loadData();
+							}
+						}
+					});
 				}
 			});
 			Dialog dialog = builder.create();
@@ -483,20 +510,24 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		updateAllList = new ArrayList<ListBean>();
 		if (mList.getVisibility() == View.VISIBLE) {
 			ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
-			List<ListBean> data = adapter.getSourceData();
-			for(ListBean bean : data){
-				if(TextUtils.equals(bean.status, Constants.STATUS_UPDATE)){
-					updateAllList.add(bean);
+			if(adapter != null) {
+				List<ListBean> data = adapter.getSourceData();
+				for (ListBean bean : data) {
+					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
+						updateAllList.add(bean);
+					}
 				}
 			}
 		}
 
 		if (mType == R.drawable.qiaoliangjiancha) {
 			ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
-			List<ListBean> data = adapter.getSourceData();
-			for(ListBean bean : data){
-				if(TextUtils.equals(bean.status, Constants.STATUS_UPDATE)){
-					updateAllList.add(bean);
+			if(adapter != null) {
+				List<ListBean> data = adapter.getSourceData();
+				for (ListBean bean : data) {
+					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
+						updateAllList.add(bean);
+					}
 				}
 			}
 		}

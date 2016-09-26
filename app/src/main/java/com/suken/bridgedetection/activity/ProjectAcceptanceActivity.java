@@ -404,11 +404,11 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
                 .setPositiveButton("保存", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
 
                         String gydw = projectacceptance_gydw_ev.getText().toString();
@@ -610,7 +610,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             path1.mkdirs();
         }
         String name = "";
-        if (requestCode == Constants.REQUEST_CODE_CAMERA ) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE ) {
             name = path1 + File.separator + generateMediaName(true);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
             name = desc.path;
@@ -621,7 +621,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
         mOutPutFileUri = Uri.fromFile(mPlayerFile);
         Intent intent = new Intent();
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(intent, requestCode);
         } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -657,7 +657,7 @@ public class ProjectAcceptanceActivity extends BaseActivity implements OnLocatio
             }
         }
         Logger.e("aaa", "requestCode===" + requestCode);
-        if (requestCode == Constants.REQUEST_CODE_CAMERA && resultCode == RESULT_OK) {
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE && resultCode == RESULT_OK) {
             IVDesc desc = new IVDesc();
             desc.name = f.getName();
             desc.path = f.getPath();

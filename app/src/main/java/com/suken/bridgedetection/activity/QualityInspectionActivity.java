@@ -2,16 +2,24 @@ package com.suken.bridgedetection.activity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
@@ -21,25 +29,39 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.gson.Gson;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.BridgeDetectionApplication;
+import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.ProjectAcceptanceListAdapter;
 import com.suken.bridgedetection.adapter.QualityInspectionExpandableListAdapter;
+import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.ProjacceptBean;
+import com.suken.bridgedetection.bean.ProjacceptItemBean;
+import com.suken.bridgedetection.bean.QualityInspectionBean;
+import com.suken.bridgedetection.bean.QualityInspectionItemBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
+import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.DeviceInfoUtil;
+import com.suken.bridgedetection.util.FileUtils;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.TextUtil;
+import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
+import com.suken.imageditor.ImageditorActivity;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.File;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -98,9 +120,61 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
         mAdapter = new QualityInspectionExpandableListAdapter(QualityInspectionActivity.this);
         qualityInspection_expandableListView.addHeaderView(view);
         qualityInspection_expandableListView.setAdapter(mAdapter);
+        showChliditem();
+        qualityInspection_expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+
+            @Override
+            public boolean onGroupClick(ExpandableListView parent, View v,
+                                        int groupPosition, long id) {
+                // TODO Auto-generated method stub
+                return true;//返回true 不可 ExpandableListView 收回/展开
+            }
+        });
+        qualityInspection_gydw_ev.setText(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+        qualityInspection_gydw_ev.setKeyListener(null);
+        qualityInspection_cjr_ev.setText(BridgeDetectionApplication.mCurrentUser.getUserName()+"");
+        setDateTime();
+
+    }
+
+    private String dateTime;
+    public void setDateTime(){
+        dateTime = DateUtil.getDate();
+        String time = qualityInspection_data_ev.toString();
+        if (time == null || time.indexOf("年") == -1) {
+            Logger.e("aaa", "111111111111111111111111111111111111111111111111111111111111");
+            qualityInspection_data_ev.setText(dateTime);
+        }
+
+        qualityInspection_data_ev.setKeyListener(null);
+        qualityInspection_data_ev.setKeyListener(null);
+        qualityInspection_data_ev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+                        QualityInspectionActivity.this, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+                    @Override
+                    public void getTime(String time) {
+                        dateTime = time;
+                        qualityInspection_data_ev.setText(dateTime);
+                    }
+                });
+            }
+        });
+    }
+    public String getTime(int year,int month,int day){
+        return  year + "年" + (month <= 9 ? ("0" + month) : month) + "月" + (day <= 9 ? ("0" + day) : day)+"日";
+    }
 
 
 
+    /**
+     * 显示子项
+     */
+    public void showChliditem(){
+        for(int i = 0; i < mAdapter.getGroupCount(); i++){
+            qualityInspection_expandableListView.expandGroup(i);
+        }
     }
 
     public void onClick(View view){
@@ -143,13 +217,47 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
+                        showLoading("正在上传数据...");
+                        QualityInspectionBean bean = new QualityInspectionBean();
+                        String cjr = qualityInspection_cjr_ev.getText().toString();
+                        String data = qualityInspection_data_ev.getText().toString();
+                        String gqzr = qualityInspection_gqzr_ev.getText().toString();
+                        String yhkz = qualityInspection_yhkz_ev.getText().toString();
+                        bean.setGydwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
+                        bean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
+                        bean.setCjr(cjr);
+                        bean.setCjrq(data);
+                        List<ProjacceptBean> listBean = mAdapter.getData();
+                        for (int q = 0; q < listBean.size(); q++) {
+                            List<ProjacceptItemBean> projacceptDetailList = listBean.get(q).getProjacceptDetailList();
+                            ProjacceptBean projacceptItemBean = listBean.get(q);
+                            for(int w = 0; w < listBean.size(); w++){
+
+                                ProjacceptItemBean itemBean = projacceptDetailList.get(w);
+                                QualityInspectionItemBean qualityInspectionItemBean = new QualityInspectionItemBean();
+                                qualityInspectionItemBean.setYsdid(projacceptItemBean.getId());
+                                qualityInspectionItemBean.setYsdno(projacceptItemBean.getBno());
+                                qualityInspectionItemBean.setSgdwid(projacceptItemBean.getSgdwid());
+                                qualityInspectionItemBean.setSgdwmc(projacceptItemBean.getSgdwmc());
+                                qualityInspectionItemBean.setSgks(projacceptItemBean.getSgks());
+                                qualityInspectionItemBean.setSgjs(projacceptItemBean.getSgjs());
+
+                                qualityInspectionItemBean.setYsjl(itemBean.getYsjg());
+                                qualityInspectionItemBean.setBhid(itemBean.getBhid());
+                                qualityInspectionItemBean.setBhmc(itemBean.getBhmc());
+                                qualityInspectionItemBean.setYhzh(itemBean.getYhzh()+itemBean.getFx());
+                                qualityInspectionItemBean.setDw(itemBean.getDw());
+                                qualityInspectionItemBean.setWxsl(itemBean.getWxsl());
+
+                                bean.getSamplingDetailList().add(qualityInspectionItemBean);
+                            }
                         }
-
-
+                        uploadData(bean);
 
 
                     }
@@ -195,6 +303,8 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
     }
     public final int SUCCESS_CODE = 0;
     public final int ERROR_CODE = 1;
+    public final int UPLOAD_SUCCESS_CODE = 2;
+    public final int UPLOAD_ERROR_CODE = 3;
     private void getYanShouData(){
 
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
@@ -233,7 +343,7 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.getProjacceptByUID).executePost(list);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.getProjacceptEdByUID).executePost(list);
 
 
             }
@@ -244,16 +354,24 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
     private Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
+            dismissLoading();
             switch (msg.what) {
+
                 case SUCCESS_CODE:
-                    dismissLoading();
                     toast("获取保养工程验收记录成功！");
                     showListDialog();
                     break;
                 case ERROR_CODE:
                     toast("获取保养工程验收记录失败！");
-                    dismissLoading();
                     break;
+                case UPLOAD_SUCCESS_CODE:
+                    toast("上传维修保养工程抽检单信息成功！");
+                    finish();
+                    break;
+                case UPLOAD_ERROR_CODE:
+                    toast("上传维修保养工程抽检单信息失败！");
+                    break;
+
             }
         }
     };
@@ -299,6 +417,7 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
                                 Logger.e("aaa","==="+projacceptBeens.toString());
                                 mAdapter.setData(projacceptBeens);
                                 mAdapter.notifyDataSetChanged();
+                                showChliditem();
 //                                if(!TextUtil.isListEmpty(thisSynchMaintenlogBeens)){
 //                                    mAdapter.setData(thisSynchMaintenlogBeens.get(0).getMaintenlogDetailList());
 //                                    mAdapter.notifyDataSetChanged();
@@ -321,6 +440,154 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
             }
         });
 
+    }
+    private int mGroupPosition,mChildPosition;
+    private Uri mOutPutFileUri = null;
+    File mPlayerFile;
+    //    private FormItemController mEditController;
+    public void jumpToMedia(int groupPosition, int childPosition, int requestCode, IVDesc desc) {
+//        mEditController = con;
+        mGroupPosition = groupPosition;
+        mChildPosition = childPosition;
+        String path = Environment.getExternalStorageDirectory().toString() + File.separator + getPackageName();
+        File path1 = new File(path);
+        if (!path1.exists()) {
+            path1.mkdirs();
+        }
+        String name = "";
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE ) {
+            name = path1 + File.separator + generateMediaName(true);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            name = desc.path;
+        } else {
+            name = path1 + File.separator + generateMediaName(false);
+        }
+        mPlayerFile = new File(name);
+        mOutPutFileUri = Uri.fromFile(mPlayerFile);
+        Intent intent = new Intent();
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
+            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            intent.setClass(this, ImageditorActivity.class);
+            startActivityForResult(intent, requestCode);
+        } else {
+            // intent.setClass(this, RecorderActivity.class);
+            intent.putExtra(MediaStore.EXTRA_VIDEO_QUALITY, 0);// 参数设置可以省略
+            intent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);
+            startActivityForResult(intent, requestCode);
+        }
+    }
+
+    String videofileName;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Logger.e("aaa", "requestCode===" + requestCode);
+        File f = null;
+        if(resultCode == RESULT_OK) {
+            try {
+                f = new File(new URI(mOutPutFileUri.toString()));
+//                if (!f.exists()) {
+//                f.mkdirs();
+//                }
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+        Logger.e("aaa", "requestCode===" + requestCode);
+        if (requestCode == Constants.REQUEST_CODE_CAPTURE && resultCode == RESULT_OK) {
+            IVDesc desc = new IVDesc();
+            desc.name = f.getName();
+            desc.path = f.getPath();
+            Logger.e("aaa", " desc.name===" + desc.name);
+            Logger.e("aaa", " desc.path===" + desc.path);
+            projacceptBeens.get(mGroupPosition).getProjacceptDetailList().get(mChildPosition).getmImages().add(desc);
+            mAdapter.setData(projacceptBeens);
+            mAdapter.notifyDataSetChanged();
+
+//            mEditController.updateImg(desc);
+        } else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
+            // 保存在原先的图片中所以不处理
+
+        } else if (requestCode == Constants.REQUEST_CODE_VIDEO && resultCode == RESULT_OK) {
+            String str = null;
+            IVDesc desc = new IVDesc();
+            try {
+                Log.e("aaa", "333333");
+                desc.name = mPlayerFile.getName();
+                desc.path = mPlayerFile.getPath();
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.name===" + desc.name);
+                Logger.e("aaa", " REQUEST_CODE_VIDEO  +====== desc.path===" + desc.path);
+                Uri uri = Uri.parse(data.getData().toString());
+
+                ContentResolver cr = this.getContentResolver();
+
+                Cursor cursor = cr.query(uri, null, null, null, null);
+                cursor.moveToFirst();
+                str = cursor.getString(1);
+                videofileName = cursor.getString(2);
+                cursor.close();
+
+                File srcfile = new File(str);
+
+                FileUtils.moveFileTo(srcfile, mPlayerFile);
+
+            }
+            catch(Exception e) {;
+
+            }
+            projacceptBeens.get(mGroupPosition).getProjacceptDetailList().get(mChildPosition).getmVideo().add(desc);
+            mAdapter.setData(projacceptBeens);
+            mAdapter.notifyDataSetChanged();
+//            mEditController.updateVideo(desc);
+        }
+    }
+    public String generateMediaName(boolean isImg) {
+        if (isImg) {
+            return "pic-" + System.currentTimeMillis() + "-image.png";
+        } else {
+            return "vdo-" + System.currentTimeMillis() + "-video.3gp";
+        }
+    }
+    public void uploadData(final QualityInspectionBean bean){
+        final Gson gson = new Gson();
+        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                Logger.e("aaa","111111111111"+ result.toString());
+                    Message message = new Message();
+                    message.what = UPLOAD_SUCCESS_CODE;
+                    mHandler.sendMessage(message);
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                Logger.e("aaa", result + "(" + resultCode + ")");
+                Message message = new Message();
+                message.what = UPLOAD_ERROR_CODE;
+                mHandler.sendMessage(message);
+            }
+        };
+
+
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+                list.add(pair);
+                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+                list.add(pair);
+                Logger.e("aaa", "gson======" + gson.toJson(bean));
+                pair = new BasicNameValuePair("json", gson.toJson(bean));
+                list.add(pair);
+                new HttpTask(onReceivedHttpResponseListener, RequestType.uploadSampling).executePost(list);
+            }
+        });
     }
 
 

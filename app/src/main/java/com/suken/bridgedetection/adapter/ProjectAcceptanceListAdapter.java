@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/6/8.
  */
-public class ProjectAcceptanceListAdapter extends BaseAdapter{
+public class    ProjectAcceptanceListAdapter extends BaseAdapter{
     private List<ProjectAcceptanceBean> list = new ArrayList<ProjectAcceptanceBean>();
 
     private List<ProjacceptBean> projacceptBeen = new ArrayList<ProjacceptBean>();

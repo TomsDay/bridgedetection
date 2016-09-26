@@ -106,7 +106,7 @@ public class DoubleDatePickerDialog extends AlertDialog implements OnClickListen
 
         mTimePicker_end.setCurrentMinute(endMinute);
         mTimePicker_end.setCurrentHour(endHour);
-
+        setCanceledOnTouchOutside(true);// 设置点击屏幕Dialog不消失
 
 
     }

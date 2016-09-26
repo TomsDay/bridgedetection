@@ -12,12 +12,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\push_empty_out.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\property_anim.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\property_anim.xml"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\buttomtip_in.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\buttomtip_in.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\property_anim.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\property_anim.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pop_out.xml",
@@ -36,20 +36,20 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\fade_in_property_anim.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_in.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\slide_right_in.xml"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\video_push_up_in.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\video_push_up_in.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_out.xml",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\slide_right_out.xml"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_in.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\slide_right_in.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\loading.xml",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\loading.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_right_out.xml",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\anim\\slide_right_out.xml"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\anim\\slide_left_out.xml",

@@ -1,8 +1,5 @@
 package com.suken.bridgedetection.adapter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,21 +8,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.BaseActivity;
-import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
-import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
@@ -34,9 +31,9 @@ import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.bridgedetection.widget.CheckDiseaseDialog;
-import com.suken.bridgedetection.widget.CheckXMDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
 import java.util.ArrayList;
@@ -153,16 +150,20 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 
         String fx = bean.getFx();
         Logger.e("aaa", "fx===" + fx);
-        if ("上行内侧".equals(fx)) {
+        if (!TextUtil.isEmptyString(fx) && fx.contains("匝道")) {
+            holder.checkBox.setChecked(true);
+            fx = fx.replace("匝道", "");
+        }
+        if ("上行".equals(fx)) {
             holder.radioGroup.check(R.id.radioup);
-        } else if ("下行内侧".equals(fx)) {
+        } else if ("下行".equals(fx)) {
             holder.radioGroup.check(R.id.radiodown);
-        } else if ("上行外侧".equals(fx)) {
-            holder.radioGroup.check(R.id.radioleft);
-        } else if ("下行外侧".equals(fx)) {
-            holder.radioGroup.check(R.id.radioright);
-        } else {
+        }else{
             holder.radioGroup.check(R.id.radioup);
+        }
+        String jcqk = bean.getCus1();
+        if (!TextUtil.isEmptyString(jcqk) && "无异常情况".equals(jcqk)) {
+            holder.checkBox_jcqi.setChecked(true);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
@@ -195,7 +196,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 ClickImagePositon = position;
-                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAMERA, null);
+                mActivity.jumpToMedia(position, Constants.REQUEST_CODE_CAPTURE, null);
                 LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
                     @Override
                     public void onLocationFinished(LocationResult result) {
@@ -283,21 +284,55 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                String fx = list.get(position).getFx();
+                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
                 switch (i) {
                     case R.id.radioup:
-                        list.get(position).setFx("上行内侧");
+
+                        if (!fx.contains("上行")) {
+                            list.get(position).setFx(fx.replace("下行","上行"));
+                        }
+
                         break;
                     case R.id.radiodown:
-                        list.get(position).setFx("下行内侧");
-                        break;
-                    case R.id.radioleft:
-                        list.get(position).setFx("上行外侧");
-                        break;
-                    case R.id.radioright:
-                        list.get(position).setFx("下行外侧");
+                        list.get(position).setFx("下行");
+                        if (!fx.contains("下行")) {
+                            list.get(position).setFx(fx.replace("上行","下行"));
+                        }
+
                         break;
 
+
                 }
+            }
+        });
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                String fx = list.get(position).getFx();
+                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
+                if(b){
+                    if (!fx.contains("匝道")) {
+                        list.get(position).setFx(fx + "匝道");
+                    }
+                }else{
+                    if (fx.contains("匝道")) {
+                        list.get(position).setFx(fx.replace("匝道",""));
+                    }
+                }
+            }
+        });
+        holder.checkBox_jcqi.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    list.get(position).setCus1("无异常情况");
+                    list.get(position).setYhzt("2");
+                }else{
+                    list.get(position).setCus1("");
+                    list.get(position).setYhzt("1");
+                }
+
             }
         });
 
@@ -415,13 +450,11 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             Logger.e("aaa", "111111111111111111111111111111111111111111111111111111111111");
             holder.item_checkTime_edit.setText(dateTime);
         }
-
-        holder.item_checkTime_edit.setKeyListener(null);
-        holder.item_checkTime_edit.setOnClickListener(new View.OnClickListener() {
+        holder.item_checkTime_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
-                        mActivity, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+                        mActivity, null, new DateTimePickDialogUtil.ReturnTime() {
                     @Override
                     public void getTime(String time) {
                         dateTime = time;
@@ -429,7 +462,22 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                     }
                 });
             }
-        });
+        } );
+//        holder.item_checkTime_edit.setKeyListener(null);
+//        holder.item_checkTime_edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+//                        mActivity, dateTime, new DateTimePickDialogUtil.ReturnTime() {
+//                    @Override
+//                    public void getTime(String time) {
+//                        dateTime = time;
+//                        holder.item_checkTime_edit.setText(dateTime);
+//                    }
+//                });
+//            }
+//        });
+
 
     }
 
@@ -457,11 +505,16 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 item_checkTime_edit,
                 zh_edit;
 
+        private Button item_checkTime_btn;
+
         private Spinner img_spinner;
 
         private View item_Line;
 
         private RadioGroup radioGroup;
+
+        private CheckBox checkBox,
+                checkBox_jcqi;
 
         public HolderView(View view) {
             form_item_edit_layout = (LinearLayout) view.findViewById(R.id.form_item_edit_layout);
@@ -488,13 +541,17 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             zh_edit = (EditText) view.findViewById(R.id.zh_edit);
             zhfw_edit = (EditText) view.findViewById(R.id.zhfw_edit);
 
-
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
-
 
             item_Line = view.findViewById(R.id.item_Line);
 
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+
+            item_checkTime_btn = (Button) view.findViewById(R.id.item_checkTime_btn);
+
+            checkBox = (CheckBox) view.findViewById(R.id.checkBox);
+
+            checkBox_jcqi = (CheckBox) view.findViewById(R.id.checkBox_jcqi);
         }
     }
 

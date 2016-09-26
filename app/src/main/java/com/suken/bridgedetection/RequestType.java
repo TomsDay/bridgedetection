@@ -36,8 +36,9 @@ public enum RequestType {
     uploadMaintenlog("上传维修保养日志记录信息","/m/daily/maintenlog/uploadMaintenlog.ht"),
     uploadProjaccept("上传保养工程验收记录信息","/m/daily/maintenlog/uploadProjaccept.ht"),
     uploadSafetycheck("上传施工安全检查记录信息","/m/daily/maintenlog/uploadSafetycheck.ht"),
-
-    uploadInspectlog("上传日常巡查日志记录信息","/m/daily/inspect/uploadInspectlog.ht");
+    uploadInspectlog("上传日常巡查日志记录信息","/m/daily/inspect/uploadInspectlog.ht"),
+    uploadSampling("上传维修保养工程抽检单信息","/m/daily/projaccept/uploadSampling.ht"),
+    getProjacceptEdByUID("获取已经验收保养工程验收记录信息","/m/daily/projaccept/getProjacceptEdByUID.ht");
 
 
     private String desc;

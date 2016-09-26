@@ -1,8 +1,10 @@
 package com.suken.bridgedetection.activity;
 
 import java.io.File;
+import java.math.RoundingMode;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -45,7 +47,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class  BridgeFormActivity extends BaseActivity implements OnClickListener {
+public class BridgeFormActivity extends BaseActivity implements OnClickListener {
 
 	private String[] detailNames = null;
 	private String[] mItemTexts = null;
@@ -253,6 +255,81 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 
 	}
 
+	public void onLocationSucess(LocationResult result){
+		if(this.isDestroyed() || this.isFinishing()){
+			return;
+		}
+		if(mGpsTv == null){
+			return;
+		}
+		mGpsTv.setText("gps定位成功!");
+		mGpsTv.setTextColor(Color.WHITE);
+		mIsGpsSuccess = true;
+		if (bean != null && mType == R.drawable.qiaoliangjiancha) {
+
+			String qhlx = "b";
+			double baseX = -1d;
+			double baseY = -1d;
+
+			int kjflInt = 4;
+			boolean needUpdateGps = false;
+			if (bean instanceof QLBaseData) {
+				qhlx = "b";
+				baseX = ((QLBaseData) bean).getGpsX();
+				baseY = ((QLBaseData) bean).getGpsY();
+				String kjfl = ((QLBaseData) bean).getQlkjfl();
+				if (!TextUtils.isEmpty(kjfl)) {
+					kjflInt = Integer.parseInt(kjfl);
+				}
+			} else if(bean instanceof HDBaseData){
+				qhlx = "c";
+				baseX = ((HDBaseData) bean).getGpsX();
+				baseY = ((HDBaseData) bean).getGpsY();
+			}
+				double distance = 50;
+				switch (kjflInt) {
+					case 1:
+						distance = 1000;
+						break;
+					case 2:
+						distance = 350;
+						break;
+					case 3:
+						distance = 100;
+						break;
+					case 4:
+						distance = 50;
+						break;
+					default:
+						break;
+				}
+
+				if (baseX <= 0 || baseY <= 0) {
+					needUpdateGps = true;
+				} else {
+					double distance1 = UiUtil.getDistance(baseX, baseY, result.longitude, result.latitude);
+					if (distance1 > distance && bean instanceof QLBaseData) {
+						needUpdateGps = true;
+						DecimalFormat formater = new DecimalFormat();
+						//保留几位小数
+						formater.setMaximumFractionDigits(2);
+						//模式  四舍五入
+						formater.setRoundingMode(RoundingMode.UP);
+						toast("当前误差为：" + formater.format(distance1) + "千米，允许误差范围为：" + distance + "米");
+					}
+				}
+				if (needUpdateGps) {
+					GpsData gpsData = new GpsData();
+					gpsData.setId(Long.parseLong(qhId));
+					gpsData.setQhlx(qhlx);
+					gpsData.setGpsX(result.longitude);
+					gpsData.setGpsY(result.latitude);
+					new GpsDataDao().create(gpsData);
+				}
+
+		}
+	}
+
 	private void syncLocation() {
 		LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
 
@@ -272,62 +349,7 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 						}
 					});
 				} else {
-					mGpsTv.setText("gps定位成功!");
-					mGpsTv.setTextColor(Color.WHITE);
-					mIsGpsSuccess = true;
-					if (bean != null && mType == R.drawable.qiaoliangjiancha) {
-
-						String qhlx = "b";
-						double baseX = -1d;
-						double baseY = -1d;
-
-						if (bean instanceof QLBaseData) {
-							qhlx = "b";
-							baseX = ((QLBaseData) bean).getGpsX();
-							baseY = ((QLBaseData) bean).getGpsY();
-							boolean needUpdateGps = false;
-							String kjfl = ((QLBaseData) bean).getQlkjfl();
-							int kjflInt = 4;
-							if (!TextUtils.isEmpty(kjfl)) {
-								kjflInt = Integer.parseInt(kjfl);
-							}
-							double distance = 50;
-							switch (kjflInt) {
-							case 1:
-								distance = 1000;
-								break;
-							case 2:
-								distance = 350;
-								break;
-							case 3:
-								distance = 100;
-								break;
-							case 4:
-								distance = 50;
-								break;
-							default:
-								break;
-							}
-
-							if (baseX <= 0 || baseY <= 0) {
-								needUpdateGps = true;
-							} else {
-								double distance1 = UiUtil.getDistance(baseX, baseY, result.latitude, result.longitude);
-								if (distance1 > distance) {
-									needUpdateGps = true;
-									toast("当前误差为：" + distance1 + "千米，允许误差范围为：" + distance + "米");
-								}
-							}
-							if (needUpdateGps) {
-								GpsData gpsData = new GpsData();
-								gpsData.setId(Long.parseLong(qhId));
-								gpsData.setQhlx(qhlx);
-								gpsData.setGpsX(result.longitude);
-								gpsData.setGpsY(result.latitude);
-								new GpsDataDao().create(gpsData);
-							}
-						}
-					}
+					onLocationSucess(result);
 				}
 			}
 		});
@@ -596,6 +618,13 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 		if (mType != R.drawable.qiaoliangjiancha) {
 			findViewById(R.id.pddj_layout).setVisibility(View.GONE);
 		}
+
+		if(BridgeDetectionApplication.mCurrentUser == null){
+			finish();
+			startActivity(new Intent(this, LoginActivity.class));
+			return;
+		}
+
 		jlr.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
 		List<YWDictionaryInfo> dinfos = new YWDictionaryDao().queryByTypeId(mIsHanDong?"10000003280009":"10000000240017");
 		lastPddj.setAdapter(new DictionarySpinnerAdapter(this, dinfos));
@@ -807,8 +836,12 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 				data.setQhmc(qlmcEv.getText().toString());
 				data.setQhid(qhId);
 				data.setQhbm(qlbhEv.getText().toString());
-				data.setPrePddj(((YWDictionaryInfo) lastPddj.getSelectedItem()).getItemValue() + "");
-				data.setPddj(((YWDictionaryInfo) pddj.getSelectedItem()).getItemValue() + "");
+				if(lastPddj != null && lastPddj.getSelectedItem() != null) {
+					data.setPrePddj(((YWDictionaryInfo) lastPddj.getSelectedItem()).getItemValue() + "");
+				}
+				if(pddj != null && pddj.getSelectedItem() != null) {
+					data.setPddj(((YWDictionaryInfo) pddj.getSelectedItem()).getItemValue() + "");
+				}
 				LocationResult re = LocationManager.getInstance().getLastLocationResult();
 				if(re != null){
 					data.setCus1(re.latitude + "");
@@ -872,7 +905,7 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 			path1.mkdirs();
 		}
 		String name = "";
-		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
 			name = path1 + File.separator + con.generateMediaName(true);
 		} else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
 			name = desc.path;
@@ -883,7 +916,7 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 		mOutPutFileUri = Uri.fromFile(file);
 		Intent intent = new Intent();
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, mOutPutFileUri);
-		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
 			intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
 			startActivityForResult(intent, requestCode);
 		} else if (requestCode == Constants.REQUEST_CODE_EDIT_IMG) {
@@ -909,7 +942,7 @@ public class  BridgeFormActivity extends BaseActivity implements OnClickListener
 		} catch (URISyntaxException e) {
 			e.printStackTrace();
 		}
-		if (requestCode == Constants.REQUEST_CODE_CAMERA) {
+		if (requestCode == Constants.REQUEST_CODE_CAPTURE) {
 			ImageDesc desc = new ImageDesc();
 			desc.name = f.getName();
 			desc.path = f.getPath();

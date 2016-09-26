@@ -3,9 +3,129 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/quality_inspection_groupitem_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="123"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:layout_marginLeft="15dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#80ffffff"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="桩号位置"
+            android:textSize="10dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="项目名称"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="施工单位"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="工程量"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="施工时间"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="验收时间"
+            android:textSize="10dp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="抽检结论"
+            android:textSize="10dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/xiangji" />
+        </LinearLayout>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/img_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sxj" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,6 +1,8 @@
 package com.suken.bridgedetection.activity;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import com.suken.bridgedetection.Constants;
@@ -100,27 +102,26 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
                         intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
                     }
                     intent.putExtra("type", mType);
-                    boolean flag = (TextUtils.equals(status, "0") && (mType == R.drawable.qiaoliangjiancha || mType == R.drawable.suidaojiancha || mType == R.drawable.suidaoxuncha));
-                    if (flag) {
-                        long localId = -1;
-                        if(mType != R.drawable.suidaoxuncha) {
-                            CheckFormData  a = new CheckFormAndDetailDao().queryLastUpdateByTypeAndId(bean.id, mType, qllx);
-                            if(a != null) {
-                                localId = a.getLocalId();
-                            }
-                            bean.mLastFormData = a;
-                        } else {
-                            SdxcFormData a = new SdxcFormAndDetailDao().queryLastUpdateByTypeAndId(bean.id, mType);
-                            if(a != null) {
-                                localId = a.getLocalId();
-                            }
-                            bean.mLastFormData = a;
+                    boolean flag = (mType == R.drawable.qiaoliangjiancha || mType == R.drawable.suidaojiancha || mType == R.drawable.suidaoxuncha);
+                    long localId = -1;
+                    if(mType != R.drawable.suidaoxuncha) {
+                        CheckFormData  a = new CheckFormAndDetailDao().queryLastUpdateByTypeAndId(bean.id, mType, qllx);
+                        if(a != null) {
+                            localId = a.getLocalId();
                         }
-                        if (bean.mLastFormData != null) {
-                            intent.putExtra("localId", localId);
-                            intent.putExtra("isCheckAgain", true);
-                            intent.putExtra("isLastUpdate", true);
+                        bean.mLastFormData = a;
+                    } else {
+                        SdxcFormData a = new SdxcFormAndDetailDao().queryLastUpdateByTypeAndId(bean.id, mType);
+                        if(a != null) {
+                            localId = a.getLocalId();
                         }
+                        bean.mLastFormData = a;
+                    }
+
+                    if (flag && bean.mLastFormData != null) {
+                        intent.putExtra("localId", localId);
+                        intent.putExtra("isCheckAgain", true);
+                        intent.putExtra("isLastUpdate", true);
                     } else if (TextUtils.equals(status, "2")) {
                         intent.putExtra("localId", bean.lastEditLocalId);
                         intent.putExtra("isCheckAgain", true);
@@ -143,7 +144,13 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
     private void changeView(String status, ViewHolder holder) {
         holder.operate.setVisibility(View.VISIBLE);
         holder.colorCircle.setVisibility(View.VISIBLE);
-        if (TextUtils.equals(status, Constants.STATUS_CHECK)) {
+        boolean isChecked = false;
+        if(holder.bean.realBean instanceof HDBaseData){
+            isChecked = holder.bean.mtimes > 1;
+        } else {
+            isChecked = holder.bean.mtimes > 0;
+        }
+        if (TextUtils.equals(status, Constants.STATUS_CHECK) && !isChecked) {
             holder.operate.setBackgroundColor(Color.parseColor("#c0c0c0"));
             holder.operate.setText(mType == R.drawable.suidaoxuncha ? "开始巡查" : "开始检查");
             holder.colorCircle.setBackgroundResource(R.drawable.circle_view_bg_gray);
@@ -151,7 +158,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             holder.operate.setBackgroundColor(Color.parseColor("#ff9900"));
             holder.operate.setText("上传");
             holder.colorCircle.setBackgroundResource(R.drawable.circle_view_bg_yellow);
-        } else if (TextUtils.equals(status, Constants.STATUS_AGAIN)) {
+        } else if (TextUtils.equals(status, Constants.STATUS_AGAIN) || isChecked) {
             holder.operate.setBackgroundColor(Color.parseColor("#199847"));
             if (mType == R.drawable.qiaoliangxuncha) {
                 holder.operate.setText("查看");
@@ -168,6 +175,8 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         super();
         this.mType = type;
         this.mContext = mContext;
+        System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+        Collections.sort(data, comparator);
         mSourceData = data;
         mUnfilteredData = data;
     }
@@ -194,6 +203,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         TextView lxbm;
         TextView lxmc;
         View colorCircle;
+        TextView times;
         Button operate;
         ListBean bean;
 
@@ -212,8 +222,15 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             holder.lxmc = (TextView) view.findViewById(R.id.lxmc);
             holder.operate = (Button) view.findViewById(R.id.operator);
             holder.colorCircle = view.findViewById(R.id.color_circle);
+            holder.times = (TextView) view.findViewById(R.id.times);
         } else {
             holder = (ViewHolder) view.getTag();
+        }
+
+
+        if(mType == R.drawable.qiaoliangxuncha){
+            holder.times.setVisibility(View.GONE);
+            view.findViewById(R.id.times_line).setVisibility(View.GONE);
         }
         holder.bean = getItem(position);
         view.setTag(holder);
@@ -238,7 +255,15 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         holder.operate.setTag(holder.bean);
         holder.operate.setOnClickListener(mItemClickListener);
         view.setOnLongClickListener(mItemLongClickListener);
-        if (!TextUtils.equals(holder.bean.status, "0")) {
+
+        boolean isChecked = false;
+        if(holder.bean.realBean instanceof HDBaseData){
+            isChecked = holder.bean.mtimes > 1;
+        } else {
+            isChecked = holder.bean.mtimes > 0;
+        }
+        holder.times.setText(holder.bean.mtimes + "次");
+        if (!TextUtils.equals(holder.bean.status, "0") || isChecked) {
             changeView(holder.bean.status, holder);
         } else {
             holder.operate.setVisibility(View.GONE);
@@ -309,6 +334,23 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             }
         }
 
+    }
+
+    boolean isUpSort = true;
+    Comparator<ListBean> comparator = new Comparator<ListBean>() {
+        @Override
+        public int compare(ListBean listBean, ListBean t1) {
+            int re = Double.valueOf(listBean.qhzh).compareTo(Double.valueOf(t1.qhzh));
+            return isUpSort ?  re : - re;
+        }
+    };
+
+    public void sortData(){
+        if(mSourceData != null && mSourceData.size() >0) {
+            isUpSort = !isUpSort;
+            Collections.sort(mSourceData, comparator);
+            notifyDataSetChanged();
+        }
     }
 
     public void addData(ListBean bean) {

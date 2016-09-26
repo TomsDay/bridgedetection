@@ -134,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="上行内侧"
+                        android:text="上行"
                         android:textSize="9dp" >
                     </RadioButton>
 
@@ -142,23 +142,16 @@
                         android:id="@+id/radiodown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="下行内侧"
+                        android:text="下行"
                         android:textSize="9dp" >
                     </RadioButton>
-                    <RadioButton
-                        android:id="@+id/radioleft"
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:text="是否匝道"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="上行外侧"
-                        android:textSize="9dp" >
-                    </RadioButton>
-                    <RadioButton
-                        android:id="@+id/radioright"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="下行外侧"
-                        android:textSize="9dp" >
-                    </RadioButton>
+                        android:textSize="9dp"/>
+
                 </RadioGroup>
 
             </LinearLayout>

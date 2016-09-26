@@ -16,6 +16,7 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.activity.BaseActivity;
+import com.suken.bridgedetection.activity.BridgeFormActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
@@ -120,6 +121,9 @@ public class LocationManager implements OnReceivedHttpResponseListener {
                             + "\t经度:" + longitude + "\n\t精度:" + accuracy
                             + "\n\t速度:" + speed + "\n\t更新时间:" + dateString);
                     mLastBDLocation = result;
+                    if(BridgeDetectionApplication.getInstance().mCurrentActivity instanceof BridgeFormActivity){
+                        ((BridgeFormActivity) BridgeDetectionApplication.getInstance().mCurrentActivity).onLocationSucess(result);
+                    }
                 } else {
                     Log.w("LocationManager", "syncLocation Failed!");
                 }
@@ -143,10 +147,11 @@ public class LocationManager implements OnReceivedHttpResponseListener {
             @Override
             public void run() {
                 ConnectType type = NetWorkUtil.getConnectType(BridgeDetectionApplication.getInstance());
+                NetWorkUtil.MobileNetworkType mtype = NetWorkUtil.getMobileNetworkType(BridgeDetectionApplication.getInstance());
                 count = mGpsDao.countQueryGpsData();
                 BridgeDetectionApplication.getInstance().write("触发上传:" + count + "   " + force);
 
-                if (type == ConnectType.CONNECT_TYPE_WIFI && count > 0 && (force || count > 50)) {
+                if ((type == ConnectType.CONNECT_TYPE_WIFI || mtype == NetWorkUtil.MobileNetworkType.MOBILE_NETWORK_TYPE_4G) && count > 0 && (force || count > 50)) {
                     List<NameValuePair> list = new ArrayList<NameValuePair>();
                     BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                     list.add(pair);

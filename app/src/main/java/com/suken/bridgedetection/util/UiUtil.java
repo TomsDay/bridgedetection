@@ -10,6 +10,8 @@ import android.os.Environment;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -77,21 +79,24 @@ public class UiUtil {
         height = dm.heightPixels;
     }
 
-    private static final double EARTH_RADIUS = 6378.137;
+    private static final double PI = 3.14159265358979323; //圆周率
+    private static final double R1 = 6371229;             //地球的半径
 
-    private static double rad(double d) {
-        return d * Math.PI / 180.0;
-    }
 
-    public static double getDistance(double lat1, double lng1, double lat2, double lng2) {
-        double radLat1 = rad(lat1);
-        double radLat2 = rad(lat2);
-        double a = radLat1 - radLat2;
-        double b = rad(lng1) - rad(lng2);
-        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)));
-        s = s * EARTH_RADIUS;
-        s = Math.round(s * 10000) / 10000;
-        return s;
+    /**
+     * 根据两个位置的经纬度，来计算两地的距离（单位为KM）
+     * 参数为String类型
+     *
+     * @return
+     */
+    public static double getDistance(double longt1, double lat1, double longt2, double lat2) {
+
+        double x, y, distance;
+        x = (longt2 - longt1) * PI * R1 * Math.cos(((lat1 + lat2) / 2) * PI / 180) / 180;
+        y = (lat2 - lat1) * PI * R1 / 180;
+        distance = Math.hypot(x, y) / 1000;
+
+        return distance;
     }
 
     public static void syncData(final BaseActivity activity) {
@@ -159,6 +164,9 @@ public class UiUtil {
                             for (CheckFormData data : list) {
                                 data.setType(type1);
                                 data.setLastUpdate(true);
+                                if (data.getZxzh().equals("0.02")) {
+                                    Log.e("", data.toString());
+                                }
                                 if (TextUtils.isEmpty(data.getGldwId())) {
                                     data.setGldwId(data.getYhjgId());
                                 }
@@ -721,7 +729,11 @@ public class UiUtil {
                         }
                     }
                 };
-                builder.setTitle("更新").setMessage("检测到新版本，是否更新？").setPositiveButton("确定", listener).setNegativeButton("取消", listener).show();
+                try {
+                    builder.setTitle("更新").setMessage("检测到新版本，是否更新？").setPositiveButton("确定", listener).setNegativeButton("取消", listener).show();
+                } catch (Throwable e) {
+
+                }
             }
         });
 
@@ -794,7 +806,7 @@ public class UiUtil {
         // 设定一个五秒后的时间
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.add(Calendar.SECOND, 50);
+        calendar.add(Calendar.MINUTE, 30);
         AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarm.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
     }

@@ -1,23 +1,23 @@
 [
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_setmode_voice_btn_pressed.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_voice_btn_pressed.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\round_selector_normal.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\round_selector_normal.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\type_select_btn_nor.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\type_select_btn_nor.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\round_selector_normal.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\round_selector_normal.png"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_btn_pressed.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_btn_pressed.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_setmode_voice_btn_pressed.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_voice_btn_pressed.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_to_bg_normal_alpha.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_bg_normal_alpha.9.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_btn_pressed.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_btn_pressed.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\input_bar_bg_normal.9.png",
@@ -38,6 +38,10 @@
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_bg_pressed.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_bg_pressed.9.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\forward_disable.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\forward_disable.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ccp_btn_grey_disable.9.png",
@@ -64,12 +68,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\jidianxuncha.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\msg_state_fail_resend.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\msg_state_fail_resend.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_top_bar_arrow_up.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\common_top_bar_arrow_up.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\msg_state_fail_resend.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\msg_state_fail_resend.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\suidaojiancha.png",
@@ -92,20 +96,24 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\qiaoliangxuncha.png"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\logo.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\logo.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\gps_global.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\gps_global.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\logo.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\logo.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\shang.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\shang.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\exit_color.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\exit_color.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\shang.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\shang.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\refresh_disable.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\refresh_disable.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\icon_topbar_back.png",
@@ -140,28 +148,28 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_voiceoff_focus.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_deletetext_icon_pressed.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_deletetext_icon_pressed.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_facefriend_icon.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_facefriend_icon.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_deletetext_icon_pressed.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_deletetext_icon_pressed.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\warning.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\warning.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_img_bg_pressed.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_img_bg_pressed.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\device_no.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\device_no.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_btn_talk_press.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_btn_talk_press.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\device_no.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\device_no.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_img_bg_pressed.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_img_bg_pressed.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\hd_black.png",
@@ -220,12 +228,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\wifi_red.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_deletetext_icon.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_deletetext_icon.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\tipbar_bg_red_pressed.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\tipbar_bg_red_pressed.9.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_deletetext_icon.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_deletetext_icon.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\jiahao.png",
@@ -236,12 +244,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\msg_state_fail_resend_pressed.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\bottombar_bg.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\bottombar_bg.9.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ccp_ofm_menu_bg.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ccp_ofm_menu_bg.9.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\bottombar_bg.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\bottombar_bg.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_top_bg_cover.9.png",
@@ -260,28 +268,28 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_keyboard_btn_pressed.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\to_read_tips_onbackbtn.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\to_read_tips_onbackbtn.9.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_to_img_bg_pressed.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_img_bg_pressed.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_setmode_voice_btn_normal.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_voice_btn_normal.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\to_read_tips_onbackbtn.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\to_read_tips_onbackbtn.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\home_color.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\home_color.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_bg_normal.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_bg_normal.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_setmode_voice_btn_normal.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_voice_btn_normal.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\app_panel_pic_icon_shade_normal.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\app_panel_pic_icon_shade_normal.9.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_bg_normal.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_bg_normal.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ccp_btn_grey_press.9.png",
@@ -296,12 +304,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\list_thicklinecell_bg.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatto_voice_playing.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatto_voice_playing.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\update_gray.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\update_gray.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatto_voice_playing.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatto_voice_playing.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ip_gray.png",
@@ -320,56 +328,64 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\gpsgjwarn.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatto_voice_playing_f1.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatto_voice_playing_f1.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\forward.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\forward.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_toast_bg.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_toast_bg.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatto_voice_playing_f1.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatto_voice_playing_f1.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_to_img_bg_normal_alpha.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_img_bg_normal_alpha.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_to_img_bg_normal.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_img_bg_normal.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_toast_bg.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_toast_bg.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\nav_bg.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\nav_bg.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\icon_update_point.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\icon_update_point.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_to_img_bg_normal.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_img_bg_normal.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\icon_list_fastscroll_selected_bg.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\icon_list_fastscroll_selected_bg.png"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\icon_update_point.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\icon_update_point.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_img_to_bg_mask_press.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_img_to_bg_mask_press.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\list_search.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\list_search.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\back.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\back.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_setmode_keyboard_btn_normal.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_setmode_keyboard_btn_normal.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\sxj.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\sxj.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\list_search.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\list_search.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_img_bg_normal.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_img_bg_normal.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ec_voip_camera_translate_pressed.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ec_voip_camera_translate_pressed.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_from_img_bg_normal.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_from_img_bg_normal.9.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\sxj.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\sxj.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\list_item_normal.9.png",
@@ -384,12 +400,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\spinner_48_outer_holo.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_btn_nor.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_btn_nor.9.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_biaoqing_btn_enable.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_btn_enable.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_btn_nor.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_btn_nor.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ql_white.png",
@@ -408,12 +424,12 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\icon_topbar_add_pressed.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\big_selecter_unselected_icon.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\big_selecter_unselected_icon.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatfrom_voice_playing_f3.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatfrom_voice_playing_f3.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\big_selecter_unselected_icon.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\big_selecter_unselected_icon.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\icon_topbar_back_pressed.png",
@@ -432,16 +448,20 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\video_color.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ql_black.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ql_black.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\type_select_btn_pressed.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\type_select_btn_pressed.png"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\ql_black.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ql_black.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\msg_state_failed.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\msg_state_failed.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\refresh.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\refresh.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\home_gray.png",
@@ -460,36 +480,40 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_cancel_bg.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_biaoqing_operation_enabled.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_operation_enabled.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\back_disable.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\back_disable.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\qiaoliangjiancha.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\qiaoliangjiancha.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_particular_icon.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_particular_icon.png"
-    },
-    {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_hint.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_hint.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_biaoqing_operation_enabled.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_operation_enabled.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\three_point.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\three_point.png"
     },
     {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\voice_rcd_hint.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\voice_rcd_hint.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_particular_icon.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_particular_icon.png"
+    },
+    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\actionbar_bg.9.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\actionbar_bg.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_mute_notify_title_icon.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_mute_notify_title_icon.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatto_voice_playing_f3.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatto_voice_playing_f3.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chat_mute_notify_title_icon.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_mute_notify_title_icon.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\last_login.png",
@@ -500,20 +524,24 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\ccp_btn_grey_normal.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\menu.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\menu.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\xia.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\xia.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\common_top_bar_arrow_down.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\common_top_bar_arrow_down.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\xia.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\xia.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\menu.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\menu.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\wifi_gray.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\wifi_gray.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_biaoqing_btn_normal.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_btn_normal.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\gps_red.png",
@@ -524,20 +552,16 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chat_to_bg_pressed.9.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatting_biaoqing_btn_normal.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_btn_normal.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\chatfrom_voice_playing.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatfrom_voice_playing.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\unread_count_bg.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\unread_count_bg.9.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\list_main_bg.jpg",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\list_main_bg.jpg"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\unread_count_bg.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\unread_count_bg.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\wifi.png",
@@ -552,20 +576,20 @@
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\chatting_biaoqing_operation_normal.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\input_bar_bg_active.9.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\input_bar_bg_active.9.png"
-    },
-    {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\gps_color.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\gps_color.png"
     },
     {
-        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\exit_gray.png",
-        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\exit_gray.png"
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\input_bar_bg_active.9.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\input_bar_bg_active.9.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\zhuanxianggongcheng.png",
         "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\zhuanxianggongcheng.png"
+    },
+    {
+        "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\exit_gray.png",
+        "source": "E:\\AndroidStudioProject\\Bridgedetection\\app\\src\\main\\res\\drawable-xxhdpi\\exit_gray.png"
     },
     {
         "merged": "E:\\AndroidStudioProject\\Bridgedetection\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4\\list_gps_red.png",
