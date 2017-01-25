@@ -45,14 +45,28 @@ public class FormItemController implements OnClickListener {
 	private EditText xczh;
 	private FormBaseDetail mFormBaseDetail;
 	private boolean mIsCheckAgain = false;
+	private String sdHimt="";//隧道提示
 
-	public FormItemController(Activity context, View view, OnClickListener listener, String text, int type, String defaultValue, String[] itemTexts,
-			 String blank1, String blank2, String qhId, boolean isHandong, FormBaseDetail detail,boolean isCheckAgain) {
+	public FormItemController(Activity context,
+							  View view,
+							  OnClickListener listener,
+							  String text,
+							  int type,
+							  String defaultValue,
+							  String[] itemTexts,
+							  String blank1,
+							  String blank2,
+							  String qhId,
+							  boolean isHandong,
+							  FormBaseDetail detail,
+							  boolean isCheckAgain,
+							  String sdString) {
 		this.mIsHandong = isHandong;
 		mFormBaseDetail = detail;
 		mContext = (BridgeFormActivity) context;
 		mFormItem = view;
 		mQhId = qhId;
+		sdHimt = sdString;
 		xczh = (EditText) view.findViewById(R.id.form_qlzh);
 		if (type == R.drawable.qiaoliangxuncha) {
 			xczh.setVisibility(View.VISIBLE);
@@ -250,6 +264,7 @@ public class FormItemController implements OnClickListener {
 			item4Rg = (RadioGroup) mFormItem.findViewById(R.id.item4Rg);
 			item5Ll = (LinearLayout) mFormItem.findViewById(R.id.item5_ll);
 			if (type == R.drawable.suidaojiancha) {
+				qsfwEv.setHint(sdHimt);
 				item4Ev.setVisibility(View.GONE);
 				item5Ev.setVisibility(View.GONE);
 				item4Rg.setVisibility(View.VISIBLE);

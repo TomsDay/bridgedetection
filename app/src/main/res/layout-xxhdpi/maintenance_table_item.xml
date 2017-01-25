@@ -17,11 +17,11 @@
         <LinearLayout
             android:id="@+id/from_topLayout"
             android:layout_width="match_parent"
-            android:layout_height="20dp" >
+            android:layout_height="40dp" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="right|center_vertical" >
 
                 <TextView
@@ -30,7 +30,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="检查情况："
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/content_markSice" />
 
 
 
@@ -39,10 +39,10 @@
 
             <CheckBox
                 android:id="@+id/checkBox_jcqi"
-                android:text="无异常情况"
+                android:text="未发现异常情况"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="9dp"/>
+                android:textSize="@dimen/content_markSice"/>
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
@@ -72,12 +72,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice" />
 
                     <Spinner
                         android:id="@+id/img_spinner"
                         android:layout_width="100dp"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:spinnerMode="dropdown" />
 
                     <ImageView
@@ -92,7 +92,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice" />
                 </LinearLayout>
 
                 <ImageView
@@ -125,7 +125,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="方  向     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
                 <RadioGroup
                     android:id="@+id/radioGroup"
                     android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="上行"
-                        android:textSize="9dp" >
+                        android:textSize="@dimen/content_markSice" >
                     </RadioButton>
 
                     <RadioButton
@@ -149,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="下行"
-                        android:textSize="9dp" >
+                        android:textSize="@dimen/content_markSice" >
                     </RadioButton>
                 </RadioGroup>
 
@@ -158,7 +158,7 @@
                     android:text="是否匝道"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="9dp"/>
+                    android:textSize="@dimen/content_markSice"/>
 
             </LinearLayout>
             <LinearLayout
@@ -172,8 +172,8 @@
                     android:layout_width="100dp"
                     android:layout_height="match_parent"
                     android:gravity="right"
-                    android:text="桩号范围："
-                    android:textSize="9dp" />
+                    android:text="检查范围："
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/zhfw_edit"
@@ -183,8 +183,9 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"
+                    android:hint="按此格式输入K120+191-K150+451"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
                 <ImageView
@@ -209,7 +210,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="桩  号     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/zh_edit"
@@ -219,8 +220,9 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:textSize="@dimen/input_contentSice"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="按此格式输入K560+120也可输入桩号范围"/>
 
 
 
@@ -246,7 +248,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="病害名称："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/diseaseName_edit"
@@ -256,7 +258,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
@@ -281,7 +283,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="单  位     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
 
                 <EditText
@@ -292,7 +294,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
@@ -316,7 +318,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="数  量     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/count_edit"
@@ -326,7 +328,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
@@ -352,7 +354,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="具体位置描述："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/address_edit"
@@ -362,7 +364,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"
                     android:hint="请填写车道位置、匝道出入口等具体描述信息"/>
 
@@ -392,7 +394,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="检查时间："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/item_checkTime_edit"
@@ -402,15 +404,15 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
-
+                    android:textSize="@dimen/input_contentSice"
+                    android:imeOptions="flagNoExtractUi"
                     />
                 <Button
                     android:id="@+id/item_checkTime_btn"
                     android:layout_width="wrap_content"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:text="选择时间"
-                    android:textSize="9dp"/>
+                    android:textSize="@dimen/btn_Sice"/>
 
                 <ImageView
                     android:id="@+id/item5_menu"

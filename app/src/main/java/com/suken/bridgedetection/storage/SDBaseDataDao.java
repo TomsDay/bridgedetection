@@ -59,5 +59,16 @@ public class SDBaseDataDao {
         }
         return 0;
     }
+    /**
+     * 删除全部
+     */
+    public void deleteAll() {
+        try {
+            mGXLuXianInfoDao.delete(queryAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

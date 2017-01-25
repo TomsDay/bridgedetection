@@ -8,6 +8,7 @@ import java.util.List;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.storage.*;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 
 import android.app.AlertDialog;
@@ -35,6 +36,11 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
 
     public List<ListBean> getSourceData() {
         return mUnfilteredData;
+    }
+
+    public void setSourceData(List<ListBean> list) {
+        mSourceData = list;
+        notifyDataSetChanged();
     }
 
     private OnLongClickListener mItemLongClickListener = new OnLongClickListener() {
@@ -131,6 +137,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
                 } else if (TextUtils.equals(status, "1")) {
                     // 去上传
                     UiUtil.updateSingle(bean.id, bean.type, true, mContext);
+
                 }
             } else {
                 ViewHolder holder = (ViewHolder) v.getTag();
@@ -336,10 +343,29 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
 
     }
 
+    public boolean isUpSortMtimes = true;
+    Comparator<ListBean> comparatorMtimes = new Comparator<ListBean>() {
+        @Override
+        public int compare(ListBean listBean, ListBean t1) {
+            int re =  Double.valueOf(listBean.mtimes).compareTo(Double.valueOf(t1.mtimes));
+//            int re = Double.valueOf(listBean.qhzh).compareTo(Double.valueOf(t1.qhzh));
+            return isUpSortMtimes ?  re : - re;
+        }
+    };
+
+    public void sortMtimes(){
+        if(!TextUtil.isListEmpty(mSourceData)) {
+            isUpSortMtimes = !isUpSortMtimes;
+            Collections.sort(mSourceData, comparatorMtimes);
+            notifyDataSetChanged();
+        }
+    }
+
     boolean isUpSort = true;
     Comparator<ListBean> comparator = new Comparator<ListBean>() {
         @Override
         public int compare(ListBean listBean, ListBean t1) {
+//            int re = listBean.qhzh.compareTo(t1.qhzh);
             int re = Double.valueOf(listBean.qhzh).compareTo(Double.valueOf(t1.qhzh));
             return isUpSort ?  re : - re;
         }
@@ -352,6 +378,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             notifyDataSetChanged();
         }
     }
+
 
     public void addData(ListBean bean) {
         mUnfilteredData.add(bean);

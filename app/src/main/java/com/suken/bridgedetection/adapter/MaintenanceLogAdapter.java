@@ -165,8 +165,8 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 maintenanceLogItemBeen.get(position).getGeteMaterialBeens().get(mPosition).setClsl(clsl);
                 Log.e("aaa", ",clsl==" + maintenanceLogItemBeen.get(position).getClsl());
                 String getclsl = maintenanceLogItemBeen.get(position).getClsl();
-                if(getclsl.contains(",")){
-                    String[] clslArray = getclsl.split(",");
+                if(getclsl.contains(",~")){
+                    String[] clslArray = getclsl.split(",~");
                     int length = clslArray.length;
                     if (length >= (mPosition + 1)) {
                         clslArray[mPosition] = clsl;
@@ -175,7 +175,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                             Log.e("aaa", "i==" + i + ",clsl==" + clslArray[i]);
                             sb.append(clslArray[i]);
                             if (i != (length - 1)) {
-                                sb.append(",");
+                                sb.append(",~");
                             }
                         }
                         maintenanceLogItemBeen.get(position).setClsl(sb.toString());
@@ -391,12 +391,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                         String cldw = clBean.getCldw();
                         String clsl = clBean.getClsl();
                         String clid = clBean.getClid();
-                        clBean.setClid(clid + "," + bean.getId());
-                        clBean.setClmc(clmc + "," + bean.getClmc());
-                        clBean.setClgg(gg + "," + bean.getGg());
-                        clBean.setClxh(xh + "," + bean.getXh());
-                        clBean.setClsl(clsl + "," + "0");
-                        clBean.setCldw(cldw + "," + bean.getDw());
+                        clBean.setClid(clid + ",~" + (TextUtil.isEmptyString(bean.getId())?" ":bean.getId()));
+                        clBean.setClmc(clmc + ",~" + (TextUtil.isEmptyString(bean.getClmc())?" ":bean.getClmc()));
+                        clBean.setClgg(gg + ",~" + (TextUtil.isEmptyString(bean.getGg())?" ":bean.getGg()));
+                        clBean.setClxh(xh + ",~" + (TextUtil.isEmptyString(bean.getXh())?" ":bean.getXh()));
+                        clBean.setClsl(clsl + ",~" + "0");
+                        clBean.setCldw(cldw + ",~" +(TextUtil.isEmptyString(bean.getDw())?" ":bean.getDw()));
                     }
                     clBean.getGeteMaterialBeens().add(bean);
 //                    clAdapter.setData(clBean.getGeteMaterialBeens());
@@ -548,7 +548,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                 count_edit,
                 address_edit,
                 item_checkTime_edit;
-        //                cl_edit,
+        //        cl_edit,
 //                gg_edit,
 //                xh_edit,
 //                clsl_edit,

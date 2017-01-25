@@ -99,80 +99,80 @@ public class QualityInspectionExpandableListAdapter extends BaseExpandableListAd
         }else{
             holderView.quality_inspection_childitem_row7.setText(projacceptItemBean.getYsjg());
         }
-        holderView.quality_inspection_childitem_row8.setText(projacceptItemBean.getmImages().size()+"");
-        holderView.quality_inspection_childitem_row9.setText(projacceptItemBean.getmVideo().size()+"");
-
-        holderView.quality_inspection_childitem_row8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                ClickImagePositon = position;
-                mActivity.jumpToMedia(groupPosition,childPosition, Constants.REQUEST_CODE_CAPTURE, null);
-                LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
-                    @Override
-                    public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
-                            return;
-                        }
-                        boolean mIsGpsSuccess = false;
-                        if (result.isSuccess) {
-//                            mIsGpsSuccess = true;
-                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpjd(result.longitude + "");
-                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpwd(result.latitude + "");
-//                            mjingdu.setText("经度:" + result.latitude);
-
-//                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.longitude);
-                            Logger.e("aaa","纬度:" + result.latitude);
-//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
-//                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
-                            Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
-//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-//                            tv.setText("定位失败");
-//                            tv.setTextColor(Color.RED);
-                        }
-
-                    }
-                });
-
-            }
-        });
-        holderView.quality_inspection_childitem_row9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mActivity.jumpToMedia(groupPosition,childPosition, Constants.REQUEST_CODE_VIDEO, null);
-//                mImageOrVideoClick.clickVideo(position);
-                LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
-                    @Override
-                    public void onLocationFinished(LocationResult result) {
-                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
-                            return;
-                        }
-                        boolean mIsGpsSuccess = false;
-                        if (result.isSuccess) {
-//                            mIsGpsSuccess = true;
-                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpjd(result.longitude + "");
-                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpwd(result.latitude + "");
-//                            mjingdu.setText("经度:" + result.latitude);
-
-//                            mWeidu.setText("纬度:" + result.longitude);
-                            Logger.e("aaa","经度:" + result.longitude);
-                            Logger.e("aaa","纬度:" + result.latitude);
-//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
-//                            tv.setTextColor(Color.WHITE);
-                        } else if(!mIsGpsSuccess){
-                            Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
-//                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
-//                            tv.setText("定位失败");
-//                            tv.setTextColor(Color.RED);
-                        }
-
-                    }
-                });
-            }
-        });
+//        holderView.quality_inspection_childitem_row8.setText(projacceptItemBean.getmImages().size()+"");
+//        holderView.quality_inspection_childitem_row9.setText(projacceptItemBean.getmVideo().size()+"");
+//
+//        holderView.quality_inspection_childitem_row8.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                ClickImagePositon = position;
+//                mActivity.jumpToMedia(groupPosition,childPosition, Constants.REQUEST_CODE_CAPTURE, null);
+//                LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
+//                    @Override
+//                    public void onLocationFinished(LocationResult result) {
+//                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+//                            return;
+//                        }
+//                        boolean mIsGpsSuccess = false;
+//                        if (result.isSuccess) {
+////                            mIsGpsSuccess = true;
+//                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpjd(result.longitude + "");
+//                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpwd(result.latitude + "");
+////                            mjingdu.setText("经度:" + result.latitude);
+//
+////                            mWeidu.setText("纬度:" + result.longitude);
+//                            Logger.e("aaa","经度:" + result.longitude);
+//                            Logger.e("aaa","纬度:" + result.latitude);
+////                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
+////                            tv.setTextColor(Color.WHITE);
+//                        } else if(!mIsGpsSuccess){
+//                            Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
+////                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+////                            tv.setText("定位失败");
+////                            tv.setTextColor(Color.RED);
+//                        }
+//
+//                    }
+//                });
+//
+//            }
+//        });
+//        holderView.quality_inspection_childitem_row9.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mActivity.jumpToMedia(groupPosition,childPosition, Constants.REQUEST_CODE_VIDEO, null);
+////                mImageOrVideoClick.clickVideo(position);
+//                LocationManager.getInstance().syncLocation(new OnLocationFinishedListener() {
+//                    @Override
+//                    public void onLocationFinished(LocationResult result) {
+//                        if(mActivity == null || ((BaseActivity)mActivity).isDestroyed() || mActivity.isFinishing()){
+//                            return;
+//                        }
+//                        boolean mIsGpsSuccess = false;
+//                        if (result.isSuccess) {
+////                            mIsGpsSuccess = true;
+//                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpjd(result.longitude + "");
+//                            projacceptBeens.get(groupPosition).getProjacceptDetailList().get(childPosition).setTpwd(result.latitude + "");
+////                            mjingdu.setText("经度:" + result.latitude);
+//
+////                            mWeidu.setText("纬度:" + result.longitude);
+//                            Logger.e("aaa","经度:" + result.longitude);
+//                            Logger.e("aaa","纬度:" + result.latitude);
+////                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+//                            Toast.makeText(mActivity, "定位成功", Toast.LENGTH_SHORT).show();
+////                            tv.setTextColor(Color.WHITE);
+//                        } else if(!mIsGpsSuccess){
+//                            Toast.makeText(mActivity, "定位失败", Toast.LENGTH_SHORT).show();
+////                            TextView tv = (TextView) getActivity().findViewById(R.id.syncLocationTv);
+////                            tv.setText("定位失败");
+////                            tv.setTextColor(Color.RED);
+//                        }
+//
+//                    }
+//                });
+//            }
+//        });
 
         setYsjgClick(holderView, groupPosition, childPosition);
         return convertView;
@@ -207,9 +207,9 @@ public class QualityInspectionExpandableListAdapter extends BaseExpandableListAd
                 quality_inspection_childitem_row4,
                 quality_inspection_childitem_row5,
                 quality_inspection_childitem_row6,
-                quality_inspection_childitem_row7,
-                quality_inspection_childitem_row8,
-                quality_inspection_childitem_row9;
+                quality_inspection_childitem_row7;
+//                quality_inspection_childitem_row8,
+//                quality_inspection_childitem_row9;
 
         public ChildHolderView(View convertView) {
             quality_inspection_childitem_row1 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row1);
@@ -219,8 +219,8 @@ public class QualityInspectionExpandableListAdapter extends BaseExpandableListAd
             quality_inspection_childitem_row5 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row5);
             quality_inspection_childitem_row6 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row6);
             quality_inspection_childitem_row7 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row7);
-            quality_inspection_childitem_row8 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row8);
-            quality_inspection_childitem_row9 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row9);
+//            quality_inspection_childitem_row8 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row8);
+//            quality_inspection_childitem_row9 = (TextView) convertView.findViewById(R.id.quality_inspection_childitem_row9);
         }
     }
 

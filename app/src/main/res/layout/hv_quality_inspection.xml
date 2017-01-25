@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="28dp"
             android:background="#3ea49d"
             android:gravity="center_vertical">
 
@@ -23,7 +23,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="高速公路质量抽检"
                 android:textColor="#ffffff"
-                android:textSize="10dp" />
+                android:textSize="@dimen/content_titleSice" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_centerVertical="true"
                     android:text="GPS定位中..."
                     android:textColor="#ffffff"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/content_titleSice" />
 
                 <ImageView
                     android:layout_width="10dp"
@@ -73,16 +73,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="管养单位："
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice"
+                        android:layout_gravity="center"/>
 
                     <EditText
                         android:id="@+id/qualityInspection_gydw_ev"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="9dp"
-                        android:imeOptions="flagNoExtractUi"/>
+                        android:textSize="@dimen/input_contentSice"
+                        android:imeOptions="flagNoExtractUi"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -95,16 +98,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="抽检人："
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice"
+                        android:layout_gravity="center"/>
 
                     <EditText
                         android:id="@+id/qualityInspection_cjr_ev"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="9dp"
-                        android:imeOptions="flagNoExtractUi"/>
+                        android:textSize="@dimen/input_contentSice"
+                        android:imeOptions="flagNoExtractUi"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -120,15 +127,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="抽检日期："
-                    android:textSize="9dp"/>
+                    android:textSize="@dimen/content_markSice"
+                    android:layout_gravity="center"/>
 
                 <EditText
                     android:id="@+id/qualityInspection_data_ev"
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/input_contentSice"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"/>
 
 
 
@@ -151,15 +161,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="工区主任："
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice"
+                        android:layout_gravity="center"/>
 
                     <EditText
                         android:id="@+id/qualityInspection_gqzr_ev"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="9dp"/>
+                        android:textSize="@dimen/input_contentSice"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -171,15 +184,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="养护科长："
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice"
+                        android:layout_gravity="center"/>
 
                     <EditText
                         android:id="@+id/qualityInspection_yhkz_ev"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
+                        android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="9dp"/>
+                        android:textSize="@dimen/input_contentSice"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -189,6 +205,7 @@
             android:layout_height="wrap_content"
             android:text="添加通知单"
             android:layout_gravity="center"
+            android:textSize="@dimen/btn_Sice"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"/>
     </LinearLayout>

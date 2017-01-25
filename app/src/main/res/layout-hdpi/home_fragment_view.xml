@@ -466,7 +466,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="版权所有 @ 河北省高速公路管理局"
+                    android:text="版权所有 @ 北京华成智慧交通科技有限公司"
                     android:textSize="13dp" />
 
                 <TextView

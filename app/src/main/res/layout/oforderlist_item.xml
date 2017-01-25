@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="20160613001"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"
             android:gravity="center"/>
         <View
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="G20"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"
             android:gravity="center"/>
         <View
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="青银高速公路"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"
             android:gravity="center"/>
         <View
@@ -57,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textSize="@dimen/list_textSice"
             android:text="8:30-11:00"
             android:textColor="@color/yuninfo_black_shadow"/>
         

@@ -60,6 +60,25 @@ public class ProjacceptItemBean implements Serializable{
     @DatabaseField
     private String byrzid;
 
+    /** 材料id */
+    @DatabaseField
+    private String clid;
+    /** 材料名称  */
+    @DatabaseField
+    private String clmc;
+    /** 材料规格 */
+    @DatabaseField
+    private String clgg;
+    /** 材料型号  */
+    @DatabaseField
+    private String clxh;
+    /** 材料单位  */
+    @DatabaseField
+    private String cldw;
+    /** 材料数量 */
+    @DatabaseField
+    private String clsl;
+
 
     private int state;
 
@@ -79,6 +98,7 @@ public class ProjacceptItemBean implements Serializable{
     @ForeignCollectionField
     private ForeignCollection<IVDesc> vDescs;
 
+    @Override
     public String toString() {
         return "ProjacceptItemBean{" +
                 "ids=" + ids +
@@ -94,6 +114,21 @@ public class ProjacceptItemBean implements Serializable{
                 ", vidattachment='" + vidattachment + '\'' +
                 ", tpjd='" + tpjd + '\'' +
                 ", tpwd='" + tpwd + '\'' +
+                ", versionno='" + versionno + '\'' +
+                ", createBy='" + createBy + '\'' +
+                ", createtime='" + createtime + '\'' +
+                ", creator='" + creator + '\'' +
+                ", flag='" + flag + '\'' +
+                ", gcysid='" + gcysid + '\'' +
+                ", bytzid='" + bytzid + '\'' +
+                ", xcbhid='" + xcbhid + '\'' +
+                ", byrzid='" + byrzid + '\'' +
+                ", clid='" + clid + '\'' +
+                ", clmc='" + clmc + '\'' +
+                ", clgg='" + clgg + '\'' +
+                ", clxh='" + clxh + '\'' +
+                ", cldw='" + cldw + '\'' +
+                ", clsl='" + clsl + '\'' +
                 ", state=" + state +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -128,6 +163,54 @@ public class ProjacceptItemBean implements Serializable{
         this.vDescs = vDescs;
     }
 
+
+    public String getClid() {
+        return clid;
+    }
+
+    public void setClid(String clid) {
+        this.clid = clid;
+    }
+
+    public String getClmc() {
+        return clmc;
+    }
+
+    public void setClmc(String clmc) {
+        this.clmc = clmc;
+    }
+
+    public String getClgg() {
+        return clgg;
+    }
+
+    public void setClgg(String clgg) {
+        this.clgg = clgg;
+    }
+
+    public String getClxh() {
+        return clxh;
+    }
+
+    public void setClxh(String clxh) {
+        this.clxh = clxh;
+    }
+
+    public String getCldw() {
+        return cldw;
+    }
+
+    public void setCldw(String cldw) {
+        this.cldw = cldw;
+    }
+
+    public String getClsl() {
+        return clsl;
+    }
+
+    public void setClsl(String clsl) {
+        this.clsl = clsl;
+    }
 
     public String getVersionno() {
         return versionno;

@@ -232,6 +232,8 @@ public class QualityInspectionActivity extends BaseActivity implements OnLocatio
                         bean.setGydwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
                         bean.setCjr(cjr);
                         bean.setCjrq(data);
+                        bean.setGqzr(gqzr);
+                        bean.setYhkz(yhkz);
                         List<ProjacceptBean> listBean = mAdapter.getData();
                         for (int q = 0; q < listBean.size(); q++) {
                             List<ProjacceptItemBean> projacceptDetailList = listBean.get(q).getProjacceptDetailList();

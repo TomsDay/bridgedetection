@@ -12,6 +12,8 @@ public class QualityInspectionBean implements Serializable{
     private String gydwName;
     private String cjr;
     private String cjrq;
+    private String gqzr;
+    private String yhkz;
     private List<QualityInspectionItemBean> samplingDetailList= new ArrayList<QualityInspectionItemBean>();
 
     public QualityInspectionBean() {
@@ -32,8 +34,26 @@ public class QualityInspectionBean implements Serializable{
                 ", gydwName='" + gydwName + '\'' +
                 ", cjr='" + cjr + '\'' +
                 ", cjrq='" + cjrq + '\'' +
+                ", gqzr='" + gqzr + '\'' +
+                ", yhkz='" + yhkz + '\'' +
                 ", samplingDetailList=" + samplingDetailList +
                 '}';
+    }
+
+    public String getGqzr() {
+        return gqzr;
+    }
+
+    public void setGqzr(String gqzr) {
+        this.gqzr = gqzr;
+    }
+
+    public String getYhkz() {
+        return yhkz;
+    }
+
+    public void setYhkz(String yhkz) {
+        this.yhkz = yhkz;
     }
 
     public String getGydwId() {

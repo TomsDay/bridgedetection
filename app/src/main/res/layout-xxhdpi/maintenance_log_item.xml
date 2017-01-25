@@ -17,7 +17,7 @@
         <LinearLayout
             android:id="@+id/from_topLayout"
             android:layout_width="match_parent"
-            android:layout_height="20dp" >
+            android:layout_height="40dp" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="维修内容："
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/content_markSice" />
 
 
             </LinearLayout>
@@ -65,7 +65,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:text="1"
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice" />
 
                     <Spinner
                         android:id="@+id/img_spinner"
@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:text="1"
-                        android:textSize="9dp" />
+                        android:textSize="@dimen/content_markSice" />
                 </LinearLayout>
 
                 <ImageView
@@ -119,7 +119,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="方  向     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
                 <RadioGroup
                     android:id="@+id/radioGroup"
                     android:layout_width="wrap_content"
@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="上行"
-                        android:textSize="9dp" >
+                        android:textSize="@dimen/content_markSice" >
                     </RadioButton>
 
                     <RadioButton
@@ -143,14 +143,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="下行"
-                        android:textSize="9dp" >
+                        android:textSize="@dimen/content_markSice" >
                     </RadioButton>
                     <CheckBox
                         android:id="@+id/checkBox"
                         android:text="是否匝道"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="9dp"/>
+                        android:textSize="@dimen/content_markSice"/>
 
                 </RadioGroup>
 
@@ -168,7 +168,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="桩  号     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/zh_edit"
@@ -178,7 +178,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
@@ -203,7 +203,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="工程名称："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/projectName_edit"
@@ -213,7 +213,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"
                     /><!--android:imeOptions="flagNoExtractUi" 可以不用弹出全屏的dialog-->
 
@@ -241,7 +241,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="数  量     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/count_edit"
@@ -251,8 +251,8 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:textSize="@dimen/input_contentSice"
+                    android:imeOptions="actionDone"/>
 
                 <ImageView
                     android:id="@+id/byyj_menu"
@@ -274,7 +274,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="单  位     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
 
                 <EditText
@@ -285,7 +285,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"/>
 
                 <ImageView
@@ -319,7 +319,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="材料名称"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -331,7 +331,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="规格"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -342,7 +342,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="型号"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -353,7 +353,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="材料数量"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
                 <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
@@ -364,7 +364,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="材料单位"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
                 <View
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
@@ -374,7 +374,7 @@
                     android:layout_weight="1.1"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="10dp" />
+                    android:textSize="@dimen/list_textSice" />
             </LinearLayout>
             <com.suken.bridgedetection.widget.ListViewForScrollView
                 android:id="@+id/cl_listview"
@@ -566,7 +566,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="位  置     ："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/address_edit"
@@ -576,7 +576,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
                     android:imeOptions="flagNoExtractUi"/>
 
 
@@ -604,7 +604,7 @@
                     android:layout_height="match_parent"
                     android:gravity="right"
                     android:text="检查时间："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice" />
 
                 <EditText
                     android:id="@+id/item_checkTime_edit"
@@ -614,7 +614,7 @@
                     android:background="@drawable/form_item_bg"
                     android:gravity="top"
                     android:padding="5dp"
-                    android:textSize="9dp"
+                    android:textSize="@dimen/input_contentSice"
 
                     />
 

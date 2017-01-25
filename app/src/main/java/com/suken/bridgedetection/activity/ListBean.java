@@ -2,7 +2,7 @@ package com.suken.bridgedetection.activity;
 
 import com.suken.bridgedetection.storage.CheckFormData;
 
-public class ListBean {
+public class ListBean  {
 	
 	public String qhzh;
 	public String qhmc;
@@ -19,5 +19,6 @@ public class ListBean {
 	public Object realBean;
 	public Object mLastFormData;
 	public long lastEditLocalId = -1l;
+
 
 }

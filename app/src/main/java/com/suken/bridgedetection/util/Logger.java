@@ -29,4 +29,6 @@ public class Logger {
         if(isDebug)
             Log.w(TAG, msg);
     }
+
+
 }

@@ -1,5 +1,7 @@
 package com.suken.bridgedetection.adapter;
 
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.suken.bridgedetection.Constants;
@@ -37,6 +40,7 @@ import com.suken.bridgedetection.widget.CheckDiseaseDialog;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -130,7 +134,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.form_item_edit_layout.setVisibility(View.GONE);
             holder.arrow_img.setImageResource(R.drawable.shang);
         }
-        setDateTime(holder);
+//        setDateTime(holder);
 
 //        private EditText diseaseName_edit,
 //                unit_edit,
@@ -146,7 +150,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.item_checkTime_edit.setText(bean.getJcsj());
         holder.zh_edit.setText(bean.getYhzh());
         holder.zhfw_edit.setText(bean.getZhfw());
-        setDateTime(holder);
+        setDateTime(holder,position);
 
         String fx = bean.getFx();
         Logger.e("aaa", "fx===" + fx);
@@ -162,7 +166,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.radioGroup.check(R.id.radioup);
         }
         String jcqk = bean.getCus1();
-        if (!TextUtil.isEmptyString(jcqk) && "无异常情况".equals(jcqk)) {
+        if (!TextUtil.isEmptyString(jcqk) && "未发现异常情况".equals(jcqk)) {
             holder.checkBox_jcqi.setChecked(true);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
@@ -326,7 +330,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    list.get(position).setCus1("无异常情况");
+                    list.get(position).setCus1("未发现异常情况");
                     list.get(position).setYhzt("2");
                 }else{
                     list.get(position).setCus1("");
@@ -413,7 +417,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         public void afterTextChanged(Editable editable) {
             String content = editable.toString();
             int position = (Integer) editTextID.getTag();
-
+            Logger.e("aaa", "content=111=" + content);
             switch (editTextID.getId()) {
 
 //                case R.id.diseaseName_edit:
@@ -424,43 +428,58 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //                    list.get(position).setUnit(content!=null&&!"".equals(content)?content:"");
 //                    break;
                 case R.id.count_edit:
-                    list.get(position).setYgsl(content != null && !"".equals(content) ? content : "");
+                    list.get(position).setYgsl(!TextUtil.isEmptyString(content)? content : "");
                     break;
                 case R.id.address_edit:
-                    list.get(position).setBhwz(content != null && !"".equals(content) ? content : "");
+                    list.get(position).setBhwz(!TextUtil.isEmptyString(content)? content : "");
                     break;
                 case R.id.item_checkTime_edit:
-                    list.get(position).setJcsj(content != null && !"".equals(content) ? content : "");
+                    Logger.e("aaa", "content=222222=" + content);
+                    list.get(position).setJcsj(!TextUtil.isEmptyString(content)? content : "");
                     break;
                 case R.id.zh_edit:
-                    list.get(position).setYhzh(content != null && !"".equals(content) ? content : "");
+                    list.get(position).setYhzh(!TextUtil.isEmptyString(content)? content : "");
                     break;
                 case R.id.zhfw_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
-                    list.get(position).setZhfw(content!=null&&!"".equals(content)?content:"");
+                    list.get(position).setZhfw(!TextUtil.isEmptyString(content)?content:"");
                     break;
             }
         }
     }
 
-    public void setDateTime(final HolderView holder) {
-        dateTime = DateUtil.getDate();
-        String time = holder.item_checkTime_edit.getText().toString();
-        if (time == null || time.indexOf("年") == -1) {
+    public void setDateTime(final HolderView holder,int position) {
+        Calendar c1 =  Calendar.getInstance();
+        dateTime = addZeroTime(c1.get(Calendar.HOUR_OF_DAY)) + ":" + addZeroTime(c1.get(Calendar.MINUTE));
+        final String time = holder.item_checkTime_edit.getText().toString();
+//        if (time == null || time.indexOf("年") == -1)
+        if(TextUtil.isEmptyString(time)&&TextUtil.isEmptyString(list.get(position).getTjsj())){
             Logger.e("aaa", "111111111111111111111111111111111111111111111111111111111111");
             holder.item_checkTime_edit.setText(dateTime);
         }
         holder.item_checkTime_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
-                        mActivity, null, new DateTimePickDialogUtil.ReturnTime() {
+//                DateTimePickDialogUtil dateTimePicKDialog = new DateTimePickDialogUtil(
+//                        mActivity, null, new DateTimePickDialogUtil.ReturnTime() {
+//                    @Override
+//                    public void getTime(String time) {
+//                        dateTime = time;
+//                        holder.item_checkTime_edit.setText(dateTime);
+//                    }
+//                });
+                Calendar c =  Calendar.getInstance();
+                int hour = c.get(Calendar.HOUR_OF_DAY);
+                int minute = c.get(Calendar.MINUTE);
+                TimePickerDialog dialog = new TimePickerDialog(mActivity, new TimePickerDialog.OnTimeSetListener() {
                     @Override
-                    public void getTime(String time) {
-                        dateTime = time;
+                    public void onTimeSet(TimePicker timePicker, int hour, int minute) {
+                        dateTime = (addZeroTime(hour)) + ":" + (addZeroTime(minute));
                         holder.item_checkTime_edit.setText(dateTime);
                     }
-                });
+                }, hour, minute, true);
+                dialog.show();
+
             }
         } );
 //        holder.item_checkTime_edit.setKeyListener(null);
@@ -479,6 +498,9 @@ public class MaintenanceTableAdapter extends BaseAdapter {
 //        });
 
 
+    }
+    public String addZeroTime(int num){
+        return (num < 10 ? "0" + num : num+"");
     }
 
     class HolderView {

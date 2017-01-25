@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:paddingBottom="5dp"
         android:paddingTop="5dp" >
 
@@ -20,70 +20,70 @@
             android:text="返回"
             android:textColor="#ffffff"
             android:textSize="10dp" />
-
         <LinearLayout
+            android:id="@+id/btn_synchronization_layout"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true" >
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/gps_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#95323d4b"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/list_gps" />
+
+            <View
+                android:layout_width="1px"
                 android:layout_height="match_parent"
-                android:background="@drawable/list_search_bg"
-                android:layout_marginRight="70dp"
-                android:paddingRight="2dp" >
+                android:background="#50000000" />
 
-                <EditText
-                    android:id="@+id/search_input"
-                    android:layout_width="300dp"
-                    android:textSize="12dp"
-                    android:layout_height="match_parent"
-                    android:background="@null"
-                    android:imeOptions="actionSearch"
-                    android:paddingLeft="5dp" />
-
-                <ImageView
-                    android:id="@+id/search_btn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/search_input"
-                    android:src="@drawable/list_search" />
-            </RelativeLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp" >
-
-                <ImageView
-                    android:id="@+id/gps_btn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="#95323d4b"
-                    android:paddingBottom="2dp"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:paddingTop="2dp"
-                    android:src="@drawable/list_gps" />
-
-                <View
-                    android:layout_width="1px"
-                    android:layout_height="match_parent"
-                    android:background="#50000000" />
-
-                <ImageView
-                    android:id="@+id/tongbu_btn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="#95323d4b"
-                    android:paddingBottom="2dp"
-                    android:paddingLeft="4dp"
-                    android:paddingRight="4dp"
-                    android:paddingTop="2dp"
-                    android:src="@drawable/tongbu" />
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/tongbu_btn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#95323d4b"
+                android:paddingBottom="2dp"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/tongbu" />
         </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/list_search_bg"
+            android:layout_toLeftOf="@id/btn_synchronization_layout"
+            android:layout_toRightOf="@id/back"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:textSize="12dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:imeOptions="actionSearch"
+                android:paddingLeft="5dp" />
+
+            <ImageView
+                android:id="@+id/search_btn"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignRight="@id/search_input"
+                android:src="@drawable/list_search"
+                android:layout_marginRight="8dp"/>
+        </RelativeLayout>
+
+
     </RelativeLayout>
 
     <LinearLayout
@@ -93,9 +93,33 @@
         android:background="#80ffffff"
         android:orientation="vertical" >
 
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_height="20dp" >
+
+            <LinearLayout
+                android:id="@+id/all_base_title"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/list_title_bg_selector"
+                android:gravity="center_vertical"
+                android:onClick="switchPanel"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="5dp" />
+
+                <TextView
+                    android:id="@+id/all_ql_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 全部[0/0]"
+                    android:textColor="@drawable/list_title_text_bg_selector"
+                    android:textSize="10dp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/qiaoliang_base_title"
@@ -124,7 +148,6 @@
                 android:id="@+id/handong_base_title"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="80dp"
                 android:background="@drawable/list_title_bg_selector"
                 android:gravity="center_vertical"
                 android:onClick="switchPanel" >
@@ -144,19 +167,16 @@
                     android:textSize="10dp" />
             </LinearLayout>
 
-            <View
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:layout_gravity="bottom"
-                android:background="#40000000" />
-
+                android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/update_all"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
                 android:background="#3ea49d"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical"
+                android:layout_alignParentRight="true">
 
                 <ImageView
                     android:layout_width="10dp"
@@ -171,7 +191,8 @@
                     android:textColor="#ffffff"
                     android:textSize="10dp" />
             </LinearLayout>
-        </FrameLayout>
+            </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -215,7 +236,7 @@
 
             <TextView
                     android:id="@+id/row5"
-                    android:layout_width="50dp"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="检查次数"

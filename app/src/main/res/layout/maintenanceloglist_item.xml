@@ -26,6 +26,7 @@
             android:layout_weight="1"
             android:text="201606130011"
             android:textColor="@color/yuninfo_black_shadow"
+            android:textSize="@dimen/list_textSice"
             android:gravity="center"/>
         <View
             android:layout_width="1dp"
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="XXX道路养护工程公司"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"
             android:gravity="center"/>
         <View
@@ -50,6 +52,7 @@
             android:layout_weight="1"
             android:text="2016-6-13"
             android:textColor="@color/yuninfo_black_shadow"
+            android:textSize="@dimen/list_textSice"
             android:gravity="center"/>
         <View
             android:layout_width="1dp"
@@ -63,6 +66,7 @@
             android:layout_weight="1.2"
             android:gravity="center"
             android:text="张学智"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"/>
 
 

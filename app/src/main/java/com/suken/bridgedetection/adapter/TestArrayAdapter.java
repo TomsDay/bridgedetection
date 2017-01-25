@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.suken.bridgedetection.R;
+
 /**
  * Created by Administrator on 2016/6/14.
  */
@@ -32,7 +34,7 @@ public class TestArrayAdapter extends ArrayAdapter<String> {
         //此处text1是Spinner默认的用来显示文字的TextView
         TextView tv = (TextView) convertView.findViewById(android.R.id.text1);
         tv.setText(mStringArray[position]);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 9);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 11);
         tv.setTextColor(Color.BLACK);
 
         return convertView;
@@ -50,7 +52,7 @@ public class TestArrayAdapter extends ArrayAdapter<String> {
         //此处text1是Spinner默认的用来显示文字的TextView
         TextView tv = (TextView) convertView.findViewById(android.R.id.text1);
         tv.setText(mStringArray[position]);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 9);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 11);
         tv.setTextColor(Color.BLACK);
         return convertView;
     }

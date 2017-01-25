@@ -26,7 +26,8 @@
             android:layout_weight="1"
             android:text="20160613001"
             android:textColor="@color/yuninfo_black_shadow"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textSize="@dimen/list_textSice"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -38,7 +39,8 @@
             android:layout_weight="1"
             android:text="G20"
             android:textColor="@color/yuninfo_black_shadow"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textSize="@dimen/list_textSice"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -50,7 +52,8 @@
             android:layout_weight="1"
             android:text="青银高速公路"
             android:textColor="@color/yuninfo_black_shadow"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textSize="@dimen/list_textSice"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -63,6 +66,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="8:30-11:00"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -75,6 +79,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="K559+210—K620+300"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -87,6 +92,7 @@
             android:gravity="center"
             android:layout_weight="1"
             android:text="张学智"
+            android:textSize="@dimen/list_textSice"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -100,6 +106,7 @@
             android:layout_weight="1.1"
             android:gravity="center"
             android:text="上传"
+            android:textSize="@dimen/btn_upLoadSice"
             android:textColor="@color/yuninfo_black_shadow"
             android:background="#ff9900"
             android:padding="4dp"/>

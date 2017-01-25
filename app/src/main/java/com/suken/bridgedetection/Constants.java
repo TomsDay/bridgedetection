@@ -49,7 +49,27 @@ public class Constants {
 			"注明清除时限和履行的报告情况", "出现渗水、缺口及时封塞填平", "注明清除时限和履行的报告情况", "注明清除时限和履行的报告情况" };
 	public static final String[] hdformDetailEt3Blanks = new String[] { "说明其他需要说明的问题" };
 
-	public static final String[] sdformDetailNames = new String[] { "洞口", "洞门", "衬砌", "路面", "检修道", "排水设施", "吊顶及各种预埋件", "标志标线轮廓标", "其它" };
+	public static final String[] sdformDetailNames = new String[] {
+			"洞口",
+			"洞门",
+			"衬砌",
+			"路面",
+			"检修道",
+			"排水设施",
+			"吊顶及各种预埋件",
+			"标志标线轮廓标",
+			"其它" };
+	public static final String[] sdformDetailNamesPrompt = new String[] {
+			"边(仰)坡有无危石、积水、积雪；洞口有无挂冰；边沟有无淤塞；构造有无开裂、倾斜、沉陷等",
+			"结构是否有开裂、倾斜、沉陷、错台、起层、剥落、渗漏水(挂冰)",
+			"结构是否存在裂缝、错台、起层、剥落、(施工缝)渗漏水、挂冰、冰柱",
+			"落物、油垢、滞水或结冰；路面拱起、坑洞、开裂、错台等",
+			"结构破损；盖板缺损；栏杆变形、损坏",
+			"破损、堵塞、积水、结冰",
+			"变形、破损、漏水(挂冰)",
+			"内装、脏污、变形、破损其他情况等",
+			 ""
+	};
 	public static final String[] sdformDetailItemTexts = new String[] { "里程桩号：", "缺损内容：", "异常描述：", "判定：", "保养措施意见：" };
 	public static final String[] sdxcformDetailNames = new String[] { "洞口边仰坡", "洞门结构", "内部衬砌", "洞内路面积水", "洞内路面撒落物", "洞顶预埋件和悬吊件", "供配电设施", "照明设施", "通风设施",
 			"消防设施", "监控和通信设施", "其他" };

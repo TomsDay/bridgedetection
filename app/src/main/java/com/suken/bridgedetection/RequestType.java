@@ -24,6 +24,7 @@ public enum RequestType {
     uploadFile("上传附件", "/m/file/upload.ht"),
     updateGps("更新gps", "/m/base/updateGPS.ht"),
     syncData("同步基础数据", "/m/base/synBaseData.ht"),
+    remainNotCheck("剩余还没检查", "/m/check/ofencheck/getTodoBrgCheck.ht"),
 
     geteDeseaseByUID("获取病害信息","/m/base/geteDeseaseByUID.ht"),
     getCatalogueByUID("获取细目基本信息","/m/base/getCatalogueByUID.ht"),

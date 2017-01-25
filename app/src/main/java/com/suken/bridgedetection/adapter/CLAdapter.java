@@ -1,10 +1,12 @@
 package com.suken.bridgedetection.adapter;
 
+import android.content.Context;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,6 +72,14 @@ public class CLAdapter extends BaseAdapter {
         holder.cl_item_tv5.setText(bean.getDw());
 
         holder.cl_item_tv4.setTag(position);
+//        holder.cl_item_tv4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                InputMethodManager imm = (InputMethodManager) mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+//                imm.toggleSoftInput(0,InputMethodManager.HIDE_NOT_ALWAYS);
+//
+//            }
+//        });
         holder.cl_item_tv4.addTextChangedListener(new Watcher(holder.cl_item_tv4));
         
         holder.cl_item_btn6.setOnClickListener(new View.OnClickListener() {

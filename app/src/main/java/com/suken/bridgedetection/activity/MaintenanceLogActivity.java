@@ -108,6 +108,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log);
+
         mContext = this;
         maintenanceLogDao = new MaintenanceLogDao();
         ivDescDao = new IVDescDao();
@@ -190,13 +191,13 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                         String clxh = b.getClxh();
                         String clsl = b.getClsl();
                         String cldw = b.getCldw();
-                        if(clmc.contains(",")){
-                            String[] clmcArray = clmc.split(",");
-                            String[] clidArray = clid.split(",");
-                            String[] clggArray = clgg.split(",");
-                            String[] clxhArray = clxh.split(",");
-                            String[] clslArray = clsl.split(",");
-                            String[] cldwArray = cldw.split(",");
+                        if(clmc.contains(",~")){
+                            String[] clmcArray = clmc.split(",~");
+                            String[] clidArray = clid.split(",~");
+                            String[] clggArray = clgg.split(",~");
+                            String[] clxhArray = clxh.split(",~");
+                            String[] clslArray = clsl.split(",~");
+                            String[] cldwArray = cldw.split(",~");
                             for(int i = 0; i < clmcArray.length; i++){
                                 GeteMaterialBean geteMaterialBean = new GeteMaterialBean();
                                 geteMaterialBean.setId(clidArray[i]);
@@ -400,7 +401,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
     }
 
     public void saveDialog(){
-//        Logger.e("aaa", "fx=" + mAdapter.getData().get(0).getFx());
+        Logger.e("aaa", "fx=" + mAdapter.getData());
 //        Logger.e("aaa", "fx=" + mAdapter.getData().get(1).getFx());
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
@@ -492,19 +493,19 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                                     StringBuilder clslSB = new StringBuilder();
                                     StringBuilder cldwSB = new StringBuilder();
                                     for (int w = 0; w < size; w++) {
-                                        clidSB.append(geteMaterialBeens.get(w).getId());
-                                        clmcSB.append(geteMaterialBeens.get(w).getClmc());
-                                        clggSB.append(geteMaterialBeens.get(w).getGg());
-                                        clxhSB.append(geteMaterialBeens.get(w).getXh());
-                                        clslSB.append(geteMaterialBeens.get(w).getClsl());
-                                        cldwSB.append(geteMaterialBeens.get(w).getDw());
+                                        clidSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getId())?" ":geteMaterialBeens.get(w).getId());
+                                        clmcSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getClmc())?" ":geteMaterialBeens.get(w).getClmc());
+                                        clggSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getGg())?" ":geteMaterialBeens.get(w).getGg());
+                                        clxhSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getXh())?" ":geteMaterialBeens.get(w).getXh());
+                                        clslSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getClsl())?" ":geteMaterialBeens.get(w).getClsl());
+                                        cldwSB.append(TextUtil.isEmptyString(geteMaterialBeens.get(w).getDw())?" ":geteMaterialBeens.get(w).getDw());
                                         if (w != (size - 1)) {
-                                            clidSB.append(",");
-                                            clmcSB.append(",");
-                                            clggSB.append(",");
-                                            clxhSB.append(",");
-                                            clslSB.append(",");
-                                            cldwSB.append(",");
+                                            clidSB.append(",~");
+                                            clmcSB.append(",~");
+                                            clggSB.append(",~");
+                                            clxhSB.append(",~");
+                                            clslSB.append(",~");
+                                            cldwSB.append(",~");
                                         }
                                     }
 
@@ -648,6 +649,10 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                 break;
             case R.id.operateDelete:
                 maintenanceLogItemBeen = mAdapter.getData();
+                if(TextUtil.isListEmpty(maintenanceLogItemBeen)){
+                    toast("无数据！");
+                    return;
+                }
                 maintenanceLogItemBeen.remove(maintenanceLogItemBeen.size() - 1);
                 mAdapter.setData(maintenanceLogItemBeen);
                 mAdapter.notifyDataSetChanged();

@@ -56,6 +56,7 @@ import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.SynchMaintenlogBean;
+import com.suken.bridgedetection.bean.SynchMaintenlogListBean;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.location.LocationManager;
@@ -778,7 +779,17 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                                 thisSynchMaintenlogBeens = new ArrayList<>();
                                 thisSynchMaintenlogBeens.add(dialogSynchMaintenlogBeens.get(position));
                                 if(!TextUtil.isListEmpty(thisSynchMaintenlogBeens)){
-                                    mAdapter.setData(thisSynchMaintenlogBeens.get(0).getMaintenlogDetailList());
+                                    List<SynchMaintenlogListBean> checkData = thisSynchMaintenlogBeens.get(0).getMaintenlogDetailList();
+                                    Logger.e("aaa","checkData=="+checkData.toString());
+                                    List<SynchMaintenlogListBean> deleteData = new ArrayList<SynchMaintenlogListBean>();
+                                    for (SynchMaintenlogListBean thisBean : checkData) {
+                                        String wxsl = thisBean.getWxsl();
+                                        if (TextUtil.isEmptyString(wxsl) || "0".equals(wxsl)) {
+                                            deleteData.add(thisBean);
+                                        }
+                                    }
+                                    checkData.removeAll(deleteData);
+                                    mAdapter.setData(checkData);
                                     mAdapter.notifyDataSetChanged();
                                 }
 
@@ -927,7 +938,9 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                         }
                         MaintenanceOfOrderBean bean = new MaintenanceOfOrderBean();
                         bean.setGydwName(gydw);
-                        bean.setJcsj(checkDate);
+                        bean.setJcsj(checkDate);//检查人员
+                        bean.setJcdate(checkDate);//检查人员签字日期
+                        bean.setAqgldate(checkDate);//安全管理员签字日期
                         bean.setWeather(strWeather);
 
                         bean.setXcnr(content);
@@ -1203,7 +1216,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             view.setText("照片：  " + (position + 1));
             view.setTag(desc);
             view.setTextColor(Color.RED);
-            view.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 9);
+            view.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 11);
             view.setHeight((int) (15 * UiUtil.getDp(mActivity)));
             view.setOnClickListener(new View.OnClickListener() {
 

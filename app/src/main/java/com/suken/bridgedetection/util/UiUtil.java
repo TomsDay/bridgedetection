@@ -7,6 +7,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
@@ -47,6 +48,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
@@ -102,6 +105,10 @@ public class UiUtil {
     public static void syncData(final BaseActivity activity) {
         syncData(activity, false);
     }
+
+
+
+
 
     public static void syncData(final BaseActivity activity, final boolean isJustLastUpdate, final OnSyncDataFinishedListener syncListener) {
 
@@ -199,21 +206,49 @@ public class UiUtil {
                         // tunnels 隧道
                         // dictionarys 系统字典的
                         // brgengineers 桥涵工程师的 tunengineers 隧道的
+                        GXLuXianInfoDao gxLuXianInfoDao =  new GXLuXianInfoDao();
+                        QLBaseDataDao qlBaseDataDao =  new QLBaseDataDao();
+                        HDBaseDataDao hdBaseDataDao =  new HDBaseDataDao();
+                        SDBaseDataDao sdBaseDataDao =  new SDBaseDataDao();
+                        QHYHZeRenInfoDao qhyhZeRenInfoDao =  new QHYHZeRenInfoDao();
+                        SDYHZeRenInfoDao sdyhZeRenInfoDao =  new SDYHZeRenInfoDao();
+                        YWDictionaryDao ywDictionaryDao =  new YWDictionaryDao();
+                        if(!TextUtil.isListEmpty(gxLuXianInfoDao.queryAll())){
+                            gxLuXianInfoDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(qlBaseDataDao.queryAll())){
+                            qlBaseDataDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(hdBaseDataDao.queryAll())){
+                            hdBaseDataDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(sdBaseDataDao.queryAll())){
+                            sdBaseDataDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(qhyhZeRenInfoDao.queryAll())){
+                            qhyhZeRenInfoDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(sdyhZeRenInfoDao.queryAll())){
+                            sdyhZeRenInfoDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(ywDictionaryDao.queryAll())){
+                            ywDictionaryDao.deleteAll();
+                        }
 
                         List<GXLuXianInfo> list = JSON.parseArray(obj.getString("luxians"), GXLuXianInfo.class);
-                        new GXLuXianInfoDao().create(list);
+                        gxLuXianInfoDao.create(list);
                         List<QLBaseData> list1 = JSON.parseArray(obj.getString("bridges"), QLBaseData.class);
-                        new QLBaseDataDao().create(list1);
+                        qlBaseDataDao.create(list1);
                         List<HDBaseData> list2 = JSON.parseArray(obj.getString("culverts"), HDBaseData.class);
-                        new HDBaseDataDao().create(list2);
+                        hdBaseDataDao.create(list2);
                         List<SDBaseData> list3 = JSON.parseArray(obj.getString("tunnels"), SDBaseData.class);
-                        new SDBaseDataDao().create(list3);
+                        sdBaseDataDao.create(list3);
                         List<QHYangHuZeRenInfo> list4 = JSON.parseArray(obj.getString("brgengineers"), QHYangHuZeRenInfo.class);
-                        new QHYHZeRenInfoDao().create(list4);
+                        qhyhZeRenInfoDao.create(list4);
                         List<SDYangHuZeRenInfo> list5 = JSON.parseArray(obj.getString("tunengineers"), SDYangHuZeRenInfo.class);
-                        new SDYHZeRenInfoDao().create(list5);
+                        sdyhZeRenInfoDao.create(list5);
                         List<YWDictionaryInfo> list6 = JSON.parseArray(obj.getString("dictionarys"), YWDictionaryInfo.class);
-                        new YWDictionaryDao().create(list6);
+                        ywDictionaryDao.create(list6);
                         break;
                     }
                     case geteDeseaseByUID:
@@ -285,9 +320,13 @@ public class UiUtil {
                         new HttpTask(listener, RequestType.lastsdxcinfo).executePost(list);
                     }
                 } else {
-                    new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
-                    new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
-                    new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
+                    if(activity instanceof  HomePageActivity){
+                        Logger.e("aaa","加载日常养护信息！");
+                        new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
+                        new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
+                        new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
+                    }
+
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
                 String msg = builder.toString();
@@ -315,6 +354,12 @@ public class UiUtil {
      * @param baseActivity
      */
     public static void synchronizationGxlxInfoData(final BaseActivity baseActivity){
+
+        ConnectType type = NetWorkUtil.getConnectType(baseActivity);
+        if (type == ConnectType.CONNECT_TYPE_DISCONNECT) {
+            baseActivity.toast("当前无网络，无法同步数据");
+            return;
+        }
         final GXLuXianInfoDao gxLuXianInfoDao = new GXLuXianInfoDao();
         final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
             @Override
@@ -357,6 +402,7 @@ public class UiUtil {
         });
 
     }
+
 
     public static void syncData(final BaseActivity activity, final boolean isJustLastUpdate) {
         syncData(activity, isJustLastUpdate, null);
@@ -580,6 +626,39 @@ public class UiUtil {
                                 }
                             }
                         });
+
+                        TimerTask task = new TimerTask(){
+                                 public void run(){
+                                     //execute the task
+                                     Logger.e("bbb","111111111");
+                                     UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
+                                         @Override
+                                         public void onSyncFinished(boolean isSuccess) {
+                                             if(isSuccess){
+                                                 ((BridgeDetectionListActivity) activity).loadData();
+                                             }
+                                         }
+                                     });
+                                     }
+                             };
+                         Timer timer = new Timer();
+                        timer.schedule(task, 1000);
+
+//                        new Handler().postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                Logger.e("bbb","111111111");
+//                                UiUtil.syncData(activity, true, new OnSyncDataFinishedListener() {
+//                                    @Override
+//                                    public void onSyncFinished(boolean isSuccess) {
+//                                        if(isSuccess){
+//                                            ((BridgeDetectionListActivity) activity).loadData();
+//                                        }
+//                                    }
+//                                });
+//                            }
+//                        }, 1000);
+
                         activity.toast("上传成功");
                     }
                 }

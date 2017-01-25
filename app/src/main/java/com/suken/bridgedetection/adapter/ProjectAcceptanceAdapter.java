@@ -85,16 +85,22 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
         holder.projaccept_item_tv4.setText(bean.getDw()+"");
         holder.projaccept_item_tv5.setText(bean.getWxsl()+"");
 
+        holder.projaccept_item_tv6.setText(bean.getClmc()+"");
+        holder.projaccept_item_tv7.setText(bean.getClgg()+"");
+        holder.projaccept_item_tv8.setText(bean.getClxh()+"");
+        holder.projaccept_item_tv9.setText(bean.getCldw()+"");
+        holder.projaccept_item_tv10.setText(bean.getClsl()+"");
+
         String ysjg = bean.getYsjg();
         if(ysjg == null){
-            holder.projaccept_item_tv6.setText("相符");
+            holder.projaccept_item_tv11.setText("相符");
             projacceptItemBeens.get(position).setYsjg("相符");
         }else {
             if(ysjg.length() == 0){
-                holder.projaccept_item_tv6.setText("相符");
+                holder.projaccept_item_tv11.setText("相符");
                 projacceptItemBeens.get(position).setYsjg("相符");
             }else{
-                holder.projaccept_item_tv6.setText(ysjg);
+                holder.projaccept_item_tv11.setText(ysjg);
             }
         }
         holder.img_num.setText(bean.getmImages().size()+"");
@@ -217,7 +223,7 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
 
 
     public void setYsjgClick(final HolderView holder,final int position){
-        holder.projaccept_item_tv6.setOnClickListener(new View.OnClickListener() {
+        holder.projaccept_item_tv11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String[] names = { "相符", "不符" };
@@ -230,7 +236,7 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
                                 Logger.e("aaa", "which++" + which);
                                 String str = names[which];
                                 projacceptItemBeens.get(position).setYsjg(str);
-                                holder.projaccept_item_tv6.setText(str);
+                                holder.projaccept_item_tv11.setText(str);
 
 
                             }
@@ -245,6 +251,11 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
                 projaccept_item_tv3,
                 projaccept_item_tv4,
                 projaccept_item_tv6,
+                projaccept_item_tv7,
+                projaccept_item_tv8,
+                projaccept_item_tv9,
+                projaccept_item_tv10,
+                projaccept_item_tv11,
                 img_num,
                 video_num;
 
@@ -260,6 +271,11 @@ public class ProjectAcceptanceAdapter extends BaseAdapter{
             projaccept_item_tv3 = (TextView) v.findViewById(R.id.projaccept_item_tv3);
             projaccept_item_tv4 = (TextView) v.findViewById(R.id.projaccept_item_tv4);
             projaccept_item_tv6 = (TextView) v.findViewById(R.id.projaccept_item_tv6);
+            projaccept_item_tv7 = (TextView) v.findViewById(R.id.projaccept_item_tv7);
+            projaccept_item_tv8 = (TextView) v.findViewById(R.id.projaccept_item_tv8);
+            projaccept_item_tv9 = (TextView) v.findViewById(R.id.projaccept_item_tv9);
+            projaccept_item_tv10 = (TextView) v.findViewById(R.id.projaccept_item_tv10);
+            projaccept_item_tv11 = (TextView) v.findViewById(R.id.projaccept_item_tv11);
 
             img_num = (TextView) v.findViewById(R.id.img_num);
             video_num = (TextView) v.findViewById(R.id.video_num);

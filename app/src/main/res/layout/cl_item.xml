@@ -21,7 +21,8 @@
             android:layout_weight="1"
             android:text="20160613001"
             android:textColor="@color/yuninfo_black_shadow"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textSize="@dimen/list_textSice"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -33,7 +34,9 @@
             android:layout_weight="1"
             android:text="G20"
             android:textColor="@color/yuninfo_black_shadow"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textSize="@dimen/list_textSice"
+            />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -45,6 +48,7 @@
             android:layout_weight="1"
             android:text="青银高速公路"
             android:textColor="@color/yuninfo_black_shadow"
+            android:textSize="@dimen/list_textSice"
             android:gravity="center"/>
         <View
             android:layout_width="1dp"
@@ -55,12 +59,13 @@
         <EditText
             android:id="@+id/cl_item_tv4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:background="@null"
-            android:textSize="14sp"
-            android:textColor="@color/yuninfo_black_shadow"/>
+            android:background="@drawable/form_item_bg"
+            android:gravity="top"
+            android:padding="5dp"
+            android:textSize="@dimen/input_contentSice"
+            android:imeOptions="actionDone"/>
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -72,6 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:textSize="@dimen/list_textSice"
             android:text="8:30-11:00"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
@@ -84,10 +90,11 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:layout_weight="1.1"
-            android:textSize="12dp"
+            android:textSize="@dimen/btn_Sice"
             android:gravity="center"
             android:text="删除"
-            android:textColor="@color/yuninfo_black_shadow"/>
+            android:textColor="@color/yuninfo_black_shadow"
+            />
      
 
 

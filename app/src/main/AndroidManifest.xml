@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.suken.bridgedetection"
-    android:versionCode="51"
-    android:versionName="1.5.1">
+    android:versionCode="55"
+    android:versionName="1.5.5">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -106,11 +106,13 @@
             android:configChanges="orientation"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            />
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -122,29 +124,34 @@
             android:name=".activity.BridgeFormActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.IpSettingActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.BridgeDetectionListActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name="com.suken.imageditor.ImageditorActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <!-- <activity -->
         <!-- android:name="com.suken.videoRecorder.RecorderActivity" -->
         <!-- android:screenOrientation="landscape" /> -->
         <activity
             android:name=".activity.UpdateAllActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/Theme.Translucent" />
+            android:theme="@style/Theme.Translucent"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
 
         <receiver android:name=".location.NetworkChangedReceiver">
             <intent-filter>
@@ -164,16 +171,20 @@
 
         <activity
             android:name=".activity.MaintenanceActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.WebViewActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceTableActivity"
-            android:screenOrientation="landscape" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".activity.VideoActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         // ================ 容联云通讯sdk ==========
 
         <!-- 登陆界面 -->
@@ -182,26 +193,30 @@
             android:label="@string/login_title_activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name="com.yuntongxun.ecdemo.ui.account.ECSetUpServerActivity"
             android:label="@string/login_title_activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <!-- 会话消息聊天主界面 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ChattingActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            />
 
         <!-- 手机系统联系人 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.contact.MobileContactActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            />
         <!-- 发送预览图片 -->
         <activity
             android:name="com.yuntongxun.ecdemo.ui.chatting.ImagePreviewActivity"
@@ -433,38 +448,50 @@
         // ============ end ==============
         <activity
             android:name=".activity.MaintenanceLogActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.ProjectAcceptanceActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceOfOrderActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceTableListActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceLogListActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceOfOrderListActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.ProjectAcceptanceListActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.MaintenanceLogUpLoadActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.ProjectAcceptanceListUpLoadActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity
             android:name=".activity.ImagePagerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.QualityInspectionActivity"
-            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".activity.QualityInspectionActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>

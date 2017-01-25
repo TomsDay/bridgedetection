@@ -25,7 +25,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="@dimen/btn_textSice" />
 
 
         <TextView
@@ -40,7 +40,7 @@
             android:onClick="onClick"
             android:text="保存"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="@dimen/btn_textSice" />
         <TextView
             android:id="@+id/maintenancelog_synchronizationData"
             android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
             android:onClick="onClick"
             android:text="同步细目数据"
             android:textColor="#ffffff"
-            android:textSize="10dp"
+            android:textSize="@dimen/btn_textSice"
             android:layout_toLeftOf="@id/maintenancelog_save"
             android:layout_marginRight="8dp"
             android:paddingLeft="8dp"
@@ -68,7 +68,7 @@
             android:onClick="onClick"
             android:text="同步材料数据"
             android:textColor="#ffffff"
-            android:textSize="10dp"
+            android:textSize="@dimen/btn_textSice"
             android:layout_toLeftOf="@id/maintenancelog_synchronizationData"
             android:layout_marginRight="8dp"
             android:paddingLeft="8dp"
@@ -89,28 +89,33 @@
             android:layout_marginRight="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="15dp"
-            android:background="#80ffffff">
+            android:background="#80ffffff"
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginBottom="2dp">
 
                 <TextView
                     android:id="@+id/maintenancelog_jcr_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="检查人："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice"
+                    android:layout_gravity="center"/>
 
                 <EditText
                     android:id="@+id/maintenancelog_jcr_ev"
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:textSize="@dimen/input_contentSice"
+                    android:imeOptions="flagNoExtractUi"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"/>
             </LinearLayout>
 
             <LinearLayout
@@ -123,16 +128,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="负责人："
-                    android:textSize="9dp" />
+                    android:textSize="@dimen/content_markSice"
+                    android:layout_gravity="center"/>
 
                 <EditText
                     android:id="@+id/maintenancelog_jlr_ev"
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="9dp"
-                    android:imeOptions="flagNoExtractUi"/>
+                    android:textSize="@dimen/input_contentSice"
+                    android:imeOptions="flagNoExtractUi"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -144,7 +152,8 @@
             android:text="保存"
             android:gravity="center"
             android:textColor="@color/white"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            android:textSize="@dimen/btn_bigSaveSice"/>
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -170,7 +179,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="28dp"
                     android:background="#3ea49d"
                     android:gravity="center_vertical">
 
@@ -181,7 +190,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="高速公路维修保养日志"
                         android:textColor="#ffffff"
-                        android:textSize="10dp" />
+                        android:textSize="@dimen/content_titleSice" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -196,7 +205,7 @@
                             android:layout_centerVertical="true"
                             android:text="GPS定位中..."
                             android:textColor="#ffffff"
-                            android:textSize="10dp" />
+                            android:textSize="@dimen/content_titleSice" />
 
                         <ImageView
                             android:layout_width="10dp"
@@ -219,7 +228,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="@dimen/line_marginTop">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -231,16 +241,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="管养单位："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/maintenancelog_gydw_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:textSize="@dimen/input_contentSice"
+                                android:imeOptions="flagNoExtractUi"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -253,16 +266,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="编号："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/maintenancelog_bh_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp"
-                                android:imeOptions="flagNoExtractUi"/>
+                                android:textSize="@dimen/input_contentSice"
+                                android:imeOptions="flagNoExtractUi"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -272,7 +288,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/line_marginTop">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -290,15 +307,17 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="天气："
-                                    android:textSize="9dp" />
+                                    android:textSize="@dimen/content_markSice"
+                                    android:layout_gravity="center"/>
                                 <Spinner
                                     android:id="@+id/maintenancelog_weather_spinner"
                                     android:layout_width="match_parent"
-                                    android:layout_height="30dp"
+                                    android:layout_height="40dp"
                                     android:textColor="#333333"
-                                    android:textSize="9dp"
+                                    android:textSize="@dimen/input_contentSice"
                                     android:entries="@array/spinnerWeather"
                                     android:spinnerMode="dropdown"
+                                    android:layout_gravity="center"
                                     />
                             </LinearLayout>
 
@@ -312,16 +331,19 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="日期："
-                                    android:textSize="9dp"
-                                    android:layout_marginTop="2dp"/>
+                                    android:textSize="@dimen/content_markSice"
+                                    android:layout_marginTop="2dp"
+                                    android:layout_gravity="center"/>
 
                                 <EditText
                                     android:id="@+id/maintenancelog_data_ev"
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
+                                    android:layout_height="40dp"
                                     android:background="@drawable/line"
                                     android:textColor="#333333"
-                                    android:textSize="9dp" />
+                                    android:textSize="@dimen/input_contentSice"
+                                    android:layout_gravity="center"
+                                    android:gravity="center_vertical"/>
                             </LinearLayout>
                         </LinearLayout>
 
@@ -336,15 +358,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="维修部门："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/maintenancelog_wxbm_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp"/>
+                                android:textSize="@dimen/input_contentSice"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -366,7 +391,7 @@
                         android:layout_marginRight="10dp"
                         android:onClick="operate"
                         android:text="添加"
-                        android:textSize="11dp" />
+                        android:textSize="@dimen/btn_Sice" />
 
                     <Button
                         android:id="@+id/operateDelete"
@@ -375,7 +400,7 @@
                         android:layout_marginLeft="10dp"
                         android:onClick="operate"
                         android:text="删除"
-                        android:textSize="11dp" />
+                        android:textSize="@dimen/btn_Sice" />
                 </LinearLayout>
 
                 <com.suken.bridgedetection.widget.ListViewForScrollView

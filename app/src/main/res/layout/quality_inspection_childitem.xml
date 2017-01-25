@@ -15,11 +15,12 @@
         android:background="#90808080" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="32dp"
+        android:layout_height="wrap_content"
         android:background="#80ffffff"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:gravity="center">
+        android:gravity="center"
+       >
 
         <TextView
             android:id="@+id/quality_inspection_childitem_row1"
@@ -27,7 +28,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -39,7 +42,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -51,7 +56,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -63,7 +70,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -75,7 +84,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -87,7 +98,9 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
         <View
             android:layout_width="1dp"
@@ -99,33 +112,35 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"/>
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-        <TextView
-            android:id="@+id/quality_inspection_childitem_row8"
-            android:layout_width="match_parent"
-            android:layout_weight="1.1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="0"
-            android:textSize="10dp" />
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#90808080" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/quality_inspection_childitem_row8"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1.1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="0"-->
+            <!--android:textSize="@dimen/list_textSice" />-->
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-        <TextView
-            android:id="@+id/quality_inspection_childitem_row9"
-            android:layout_width="match_parent"
-            android:layout_weight="1.1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="0"
-            android:textSize="10dp" />
+        <!--<View-->
+            <!--android:layout_width="1dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#90808080" />-->
+        <!--<TextView-->
+            <!--android:id="@+id/quality_inspection_childitem_row9"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_weight="1.1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:text="0"-->
+            <!--android:textSize="@dimen/list_textSice" />-->
 
         </LinearLayout>
 

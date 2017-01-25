@@ -21,12 +21,15 @@ import com.suken.bridgedetection.storage.SDBaseData;
 import com.suken.bridgedetection.storage.SDBaseDataDao;
 import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
 import com.suken.bridgedetection.storage.SdxcFormData;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.OnSyncDataFinishedListener;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -36,6 +39,7 @@ import android.view.View.OnKeyListener;
 import android.widget.EditText;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -57,12 +61,18 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	private ImageView mSearchButton;
 	private int mCurrentNum = 0;
 	private int mHdCurrentNum = 0;
+	private int mAllCurrentNum = 0;
 	private TextView row1 = null;
 	private TextView row2 = null;
 	private TextView row3 = null;
 	private TextView row4 = null;
 	private TextView row5 = null;
 	private TextView row6 = null;
+
+	private LinearLayout all_base_title;
+	private TextView all_ql_title;
+	private ListPageAdapter qlAdapter;
+
 
 	@Override
 	protected void onDestroy() {
@@ -97,6 +107,8 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		row4 = null;
 		row5 = null;
 		row6 = null;
+		all_base_title = null;
+		all_ql_title = null;
 	}
 
 	@Override
@@ -120,17 +132,30 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		mHdListTitleText = (TextView) findViewById(R.id.list_hd_title);
 		mListTitleQl = findViewById(R.id.qiaoliang_base_title);
 		mListTitleHd = findViewById(R.id.handong_base_title);
+
+		all_base_title = (LinearLayout) findViewById(R.id.all_base_title);
+		all_ql_title = (TextView) findViewById(R.id.all_ql_title);
+
 		findViewById(R.id.back).setOnClickListener(this);
 		row1 = (TextView) findViewById(R.id.row1);
 		row1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
-				if(adapter != null){
-					adapter.sortData();
+				if(mList.getVisibility() ==View.VISIBLE){
+					ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
+					if(adapter != null){
+						adapter.sortData();
+					}
+				}else{
+					ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
+					if(adapter != null){
+						adapter.sortData();
+					}
 				}
+
 			}
 		});
+
 		row2 = (TextView) findViewById(R.id.row2);
 		row3 = (TextView) findViewById(R.id.row3);
 		row4 = (TextView) findViewById(R.id.row4);
@@ -139,7 +164,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		loadData();
 	}
 
-	private void  loadData(){
+	public void  loadData(){
 		BackgroundExecutor.execute(new Runnable() {
 			@Override
 			public void run() {
@@ -151,7 +176,9 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					}
 					case R.drawable.qiaoliangjiancha: {
 						mListArray = new QLBaseDataDao().queryAll();
+						Logger.e("aaa","桥梁现在的数量："+(new QLBaseDataDao().queryAll().size()));
 						mListArray2 = new HDBaseDataDao().queryAll();
+						Logger.e("aaa","涵洞现在的数量："+(new HDBaseDataDao().queryAll().size()));
 						break;
 					}
 					case R.drawable.suidaojiancha:
@@ -177,28 +204,67 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	}
 
 	public void switchPanel(View view) {
-		if (view.getId() == R.id.qiaoliang_base_title) {
+		int id = view.getId();
+		if (id == R.id.qiaoliang_base_title) {
+			Logger.e("aaa","000000000000000");
 			mList.setVisibility(View.VISIBLE);
 			mHdList.setVisibility(View.GONE);
+
+			all_base_title.setSelected(false);
+			all_base_title.clearFocus();
+
 			mListTitleQl.setSelected(true);
 			mListTitleQl.requestFocus();
 			mListTitleHd.clearFocus();
 			mListTitleHd.setSelected(false);
-			if(mType == R.drawable.qiaoliangjiancha){
+
+			if (mType == R.drawable.qiaoliangjiancha) {
 				row2.setText("桥梁名称");
 				row3.setText("桥梁编码");
 			}
+			if(!TextUtil.isListEmpty(qlListBean)){
+				qlAdapter.setSourceData(qlListBean);
+			}
+
+		}else if(id == R.id.all_base_title){
+			selectAllType();
 		} else {
+			Logger.e("aaa","22222222222222222");
 			mList.setVisibility(View.GONE);
 			mHdList.setVisibility(View.VISIBLE);
+
+			all_base_title.setSelected(false);
+			all_base_title.clearFocus();
+
 			mListTitleQl.setSelected(false);
 			mListTitleQl.clearFocus();
 			mListTitleHd.requestFocus();
 			mListTitleHd.setSelected(true);
+
 			if(mType == R.drawable.qiaoliangjiancha){
 				row2.setText("涵洞名称");
 				row3.setText("涵洞编码");
 			}
+		}
+	}
+	public void selectAllType(){
+		Logger.e("aaa","111111111");
+		mList.setVisibility(View.VISIBLE);
+		mHdList.setVisibility(View.GONE);
+
+		all_base_title.setSelected(true);
+		all_base_title.requestFocus();
+
+		mListTitleQl.setSelected(false);
+		mListTitleQl.clearFocus();
+		mListTitleHd.clearFocus();
+		mListTitleHd.setSelected(false);
+		if (mType == R.drawable.qiaoliangjiancha) {
+			row2.setText("桥梁(涵洞)名称");
+			row3.setText("桥梁(涵洞)编码");
+		}
+		if(!TextUtil.isListEmpty(allListBean)&& qlAdapter!=null) {
+			qlAdapter.setSourceData(allListBean);
 		}
 	}
 
@@ -254,114 +320,149 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	private  List mListArray = null;
 	private List mListArray2 = null;
 
+	private List<ListBean> allListBean = new ArrayList<ListBean>();
+	private List<ListBean> qlListBean = new ArrayList<ListBean>();
+
 	private void init(boolean isReset) {
 		mCurrentNum = 0;
 		mHdCurrentNum = 0;
 		List<ListBean> data = new ArrayList<ListBean>();
 		switch (mType) {
-		case R.drawable.qiaoliangxuncha: {
-			row1.setText("检查时间");
-			row2.setText("巡查人员");
-			row3.setText("天气");
-			row4.setText("管养单位");
-			row6.setText("检查人");
-			row5.setVisibility(View.GONE);
-			List<SdxcFormData> list = mListArray;
-			if (list != null && list.size() > 0) {
-				for (SdxcFormData bd : list) {
-					ListBean bean = new ListBean();
-					bean.id = bd.getLocalId() + "";
-					bean.lxmc = bd.getJcry();
-					bean.lxbm = bd.getGydwName();
-					bean.qhbs = bd.getWeather();
-					bean.qhmc = bd.getXcry();
-					bean.qhzh = bd.getJcsj();
-					bean.type = mType;
-					bean.status = bd.getStatus();
-					bean.lastEditLocalId = bd.getLocalId();
-					
-					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
-						mCurrentNum++;
-					}
-					data.add(bean);
-				}
-			}
-			mHdList.setVisibility(View.GONE);
-			mListTitleHd.setVisibility(View.GONE);
-			mQlListTitleText.setText(" 桥梁巡查(" + mCurrentNum + "/" + data.size() + ")");
-			switchPanel(mListTitleQl);
-			break;
-		}
-		case R.drawable.qiaoliangjiancha: {
-//			List<ListBean> hdData = new ArrayList<ListBean>();
+			case R.drawable.qiaoliangxuncha: {
+				row1.setText("检查时间");
+				row2.setText("巡查人员");
+				row3.setText("天气");
+				row4.setText("管养单位");
+				row6.setText("检查人");
+				row5.setVisibility(View.GONE);
+				List<SdxcFormData> list = mListArray;
+				if (list != null && list.size() > 0) {
+					for (SdxcFormData bd : list) {
+						ListBean bean = new ListBean();
+						bean.id = bd.getLocalId() + "";
+						bean.lxmc = bd.getJcry();
+						bean.lxbm = bd.getGydwName();
+						bean.qhbs = bd.getWeather();
+						bean.qhmc = bd.getXcry();
+						bean.qhzh = bd.getJcsj();
+						bean.type = mType;
+						bean.status = bd.getStatus();
+						bean.lastEditLocalId = bd.getLocalId();
 
-//			mHdListTitleText.setText(" 涵洞(" + mHdCurrentNum + "/" + hdData.size() + ")");
-//			mHdList.setAdapter(new ListPageAdapter(this, hdData, mType));
-			mListTitleHd.setVisibility(View.GONE);
-			List<QLBaseData> qlBaseData = mListArray;
-			if (qlBaseData != null && qlBaseData.size() > 0) {
-				for (QLBaseData bd : qlBaseData) {
-					ListBean bean = new ListBean();
-					bean.id = bd.getId();
-					bean.lxbm = bd.getLxbh();
-					bean.lxmc = bd.getLxmc();
-					bean.qhbs = bd.getQlbh();
-					bean.qhmc = bd.getQlmc();
-					bean.qhzh = bd.getZxzh();
-					bean.type = mType;
-					bean.mtimes = bd.getMtimes();
-					mCurrentNum = initStatus(bean, bd, bean.type);
-					data.add(bean);
+						if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
+							mCurrentNum++;
+						}
+						data.add(bean);
+					}
 				}
+				mHdList.setVisibility(View.GONE);
+				mListTitleHd.setVisibility(View.GONE);
+				mQlListTitleText.setText(" 桥梁(" + mCurrentNum + "/" + data.size() + ")");
+				switchPanel(mListTitleQl);
+				break;
 			}
-			List<HDBaseData> hdBaseData = mListArray2;
-			if (hdBaseData != null && hdBaseData.size() > 0) {
-				for (HDBaseData bd : hdBaseData) {
-					ListBean bean = new ListBean();
-					bean.id = bd.getId();
-					bean.lxbm = bd.getLxbh();
-					bean.lxmc = bd.getLxmc();
-					bean.qhbs = bd.getHdbh();
-					bean.qhmc = bd.getHdmc();
-					bean.qhzh = bd.getZxzh();
-					bean.type = mType;
-					bean.mtimes = bd.getMtimes();
-					mHdCurrentNum = initStatus(bean, bd, bean.type);
-					data.add(bean);
+			case R.drawable.qiaoliangjiancha: {
+				if(all_base_title.getVisibility() == View.GONE){
+					all_base_title.setVisibility(View.VISIBLE);
 				}
-			}
-			mQlListTitleText.setText(" 桥梁(" + mCurrentNum + "/" + data.size() + ")");
-			mListTitleQl.performClick();
-			break;
-		}
-		case R.drawable.suidaojiancha:
-		case R.drawable.suidaoxuncha: {
-			row1.setText("隧道桩号");
-			row2.setText("隧道名称");
-			row3.setText("隧道标识");
-			List<SDBaseData> qlBaseData = mListArray;
-			if (qlBaseData != null && qlBaseData.size() > 0) {
-				for (SDBaseData bd : qlBaseData) {
-					ListBean bean = new ListBean();
-					bean.id = bd.getId();
-					bean.lxbm = bd.getLxbh();
-					bean.lxmc = bd.getLxmc();
-					bean.qhbs = bd.getSdbh();
-					bean.qhmc = bd.getSdmc();
-					bean.qhzh = bd.getZxzh();
-					bean.type = mType;
-					bean.mtimes = bd.getMtimes();
-					mCurrentNum = initStatus(bean, bd, bean.type);
-					data.add(bean);
+				Drawable drawable = getResources().getDrawable(R.drawable.sort_arrow);
+
+				drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+
+				row5.setCompoundDrawables(null, null, drawable, null);
+				row5.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View view) {
+
+						if(mList.getVisibility() ==View.VISIBLE){
+							if(qlAdapter != null){
+								qlAdapter.sortMtimes();
+							}
+						}else{
+							ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
+							if(adapter != null){
+								adapter.sortMtimes();
+							}
+						}
+					}
+				});
+
+				allListBean = new ArrayList<ListBean>();
+				qlListBean = new ArrayList<ListBean>();
+				List<QLBaseData> qlBaseData = mListArray;
+				if (qlBaseData != null && qlBaseData.size() > 0) {
+					for (QLBaseData bd : qlBaseData) {
+						ListBean bean = new ListBean();
+						bean.id = bd.getId();
+						bean.lxbm = bd.getLxbh();
+						bean.lxmc = bd.getLxmc();
+						bean.qhbs = bd.getQlbh();
+						bean.qhmc = bd.getQlmc();
+						bean.qhzh = bd.getZxzh();
+						bean.type = mType;
+						bean.mtimes = bd.getMtimes();
+						Logger.e("aaa","加载数据 巡查数量："+bean.mtimes);
+						mCurrentNum = initStatus(bean, bd, bean.type);
+						data.add(bean);
+						allListBean.add(bean);
+						qlListBean.add(bean);
+
+					}
 				}
+				mQlListTitleText.setText(" 桥梁(" + mCurrentNum + "/" + data.size() + ")");
+				selectAllType();
+
+				List<ListBean> hdData = new ArrayList<ListBean>();
+				List<HDBaseData> hdBaseData = mListArray2;
+				if (hdBaseData != null && hdBaseData.size() > 0) {
+					for (HDBaseData bd : hdBaseData) {
+						ListBean bean = new ListBean();
+						bean.id = bd.getId();
+						bean.lxbm = bd.getLxbh();
+						bean.lxmc = bd.getLxmc();
+						bean.qhbs = bd.getHdbh();
+						bean.qhmc = bd.getHdmc();
+						bean.qhzh = bd.getZxzh();
+						bean.type = mType;
+						bean.mtimes = bd.getMtimes();
+						mHdCurrentNum = initStatus(bean, bd, bean.type);
+						hdData.add(bean);
+						allListBean.add(bean);
+					}
+				}
+				mHdListTitleText.setText(" 涵洞(" + mHdCurrentNum + "/" + hdData.size() + ")");
+				mHdList.setAdapter(new ListPageAdapter(this, hdData, mType));
+				all_ql_title.setText(" 全部(" +mAllCurrentNum+ "/"+ allListBean.size()+")");
+				break;
 			}
-			mHdList.setVisibility(View.GONE);
-			mListTitleHd.setVisibility(View.GONE);
-			mListTitleQl.setSelected(true);
-			mListTitleQl.requestFocus();
-			mQlListTitleText.setText(" 隧道"+ ((mType == R.drawable.suidaojiancha)? "检查":"巡查")+"(" + mCurrentNum + "/" + data.size() + ")");
-			break;
-		}
+			case R.drawable.suidaojiancha:
+			case R.drawable.suidaoxuncha: {
+				row1.setText("隧道桩号");
+				row2.setText("隧道名称");
+				row3.setText("隧道标识");
+				List<SDBaseData> qlBaseData = mListArray;
+				if (qlBaseData != null && qlBaseData.size() > 0) {
+					for (SDBaseData bd : qlBaseData) {
+						ListBean bean = new ListBean();
+						bean.id = bd.getId();
+						bean.lxbm = bd.getLxbh();
+						bean.lxmc = bd.getLxmc();
+						bean.qhbs = bd.getSdbh();
+						bean.qhmc = bd.getSdmc();
+						bean.qhzh = bd.getZxzh();
+						bean.type = mType;
+						bean.mtimes = bd.getMtimes();
+						mCurrentNum = initStatus(bean, bd, bean.type);
+						data.add(bean);
+					}
+				}
+				mHdList.setVisibility(View.GONE);
+				mListTitleHd.setVisibility(View.GONE);
+				mListTitleQl.setSelected(true);
+				mListTitleQl.requestFocus();
+				mQlListTitleText.setText(" 隧道"+ ((mType == R.drawable.suidaojiancha)? "检查":"巡查")+"(" + mCurrentNum + "/" + data.size() + ")");
+				break;
+			}
 		}
 		gpsBtn = (ImageView) findViewById(R.id.gps_btn);
 		LocationManager.getInstance().syncLocation(this);
@@ -370,7 +471,8 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		if (mType == R.drawable.qiaoliangxuncha) {
 			syncBtn.setImageResource(R.drawable.jiahao);
 		}
-		mList.setAdapter(new ListPageAdapter(this, data, mType));
+		qlAdapter = new ListPageAdapter(this, data, mType);
+		mList.setAdapter(qlAdapter);
 		mSearchInput = (EditText) findViewById(R.id.search_input);
 		mSearchInput.setOnKeyListener(new OnKeyListener() {
 
@@ -496,13 +598,15 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
 			adapter.updateStatus(id, localId, status);
 			mQlListTitleText.setText(" 桥梁(" + (mCurrentNum + 1) + "/" + adapter.getCount() + ")");
+			all_ql_title.setText(" 全部(" + (mAllCurrentNum + 1) + "/" + allListBean.size() + ")");
 		} else if (mHdList.getVisibility() == View.VISIBLE) {
 			ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
 			adapter.updateStatus(id, localId, status);
 			mHdListTitleText.setText(" 涵洞(" + (mHdCurrentNum + 1) + "/" + adapter.getCount() + ")");
+			all_ql_title.setText(" 全部(" + (mAllCurrentNum + 1) + "/" + allListBean.size() + ")");
 		}
 	}
-	
+
 	public static List<ListBean> updateAllList = null;;
 
 	private void updateAll() {
@@ -512,8 +616,8 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
 			if(adapter != null) {
 				List<ListBean> data = adapter.getSourceData();
-				for (ListBean bean : data) {
-					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
+				for(ListBean bean : data){
+					if(TextUtils.equals(bean.status, Constants.STATUS_UPDATE)){
 						updateAllList.add(bean);
 					}
 				}
@@ -524,7 +628,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
 			if(adapter != null) {
 				List<ListBean> data = adapter.getSourceData();
-				for (ListBean bean : data) {
+				for(ListBean bean : data) {
 					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
 						updateAllList.add(bean);
 					}

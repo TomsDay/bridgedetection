@@ -19,7 +19,7 @@
             android:gravity="center"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="10dp"
+            android:textSize="@dimen/btn_textSice"
             android:onClick="onClick"
             android:clickable="true"
             android:layout_centerVertical="true"/>
@@ -31,7 +31,7 @@
             android:clickable="true"
             android:onClick="back"
             android:textColor="#ffffff"
-            android:textSize="14dp"
+            android:textSize="@dimen/title_contentSice"
             android:layout_centerInParent="true"
             />
     </RelativeLayout>

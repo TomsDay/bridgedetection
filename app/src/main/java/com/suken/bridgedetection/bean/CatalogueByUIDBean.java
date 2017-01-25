@@ -32,8 +32,10 @@ public class CatalogueByUIDBean implements Serializable{
      * xcms :
      */
     @DatabaseField(generatedId = true) //主键自增加
-    private Long id;
+    private Long ids;
 
+    @DatabaseField
+    private String id;
     @DatabaseField
     private String createBy;
     @DatabaseField
@@ -72,8 +74,8 @@ public class CatalogueByUIDBean implements Serializable{
     public CatalogueByUIDBean() {
     }
 
-    public CatalogueByUIDBean(Long id, String createBy, String createtime, String creator, String flag, String orgid, String updateBy, String updatetime, String updator, String versionno, String gydwId, String gydwName, String xmlb, String xmmc, String ximmc, String dj, String dw, String xcms) {
-        this.id = id;
+    public CatalogueByUIDBean(Long ids, String createBy, String createtime, String creator, String flag, String orgid, String updateBy, String updatetime, String updator, String versionno, String gydwId, String gydwName, String xmlb, String xmmc, String ximmc, String dj, String dw, String xcms) {
+        this.ids = ids;
         this.createBy = createBy;
         this.createtime = createtime;
         this.creator = creator;
@@ -93,10 +95,12 @@ public class CatalogueByUIDBean implements Serializable{
         this.xcms = xcms;
     }
 
+
     @Override
     public String toString() {
         return "CatalogueByUIDBean{" +
-                "id=" + id +
+                "ids=" + ids +
+                ", id='" + id + '\'' +
                 ", createBy='" + createBy + '\'' +
                 ", createtime='" + createtime + '\'' +
                 ", creator='" + creator + '\'' +
@@ -115,6 +119,14 @@ public class CatalogueByUIDBean implements Serializable{
                 ", dw='" + dw + '\'' +
                 ", xcms='" + xcms + '\'' +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCreateBy() {
@@ -205,12 +217,12 @@ public class CatalogueByUIDBean implements Serializable{
         this.gydwName = gydwName;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIds() {
+        return ids;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIds(Long id) {
+        this.ids = id;
     }
 
     public String getXmlb() {

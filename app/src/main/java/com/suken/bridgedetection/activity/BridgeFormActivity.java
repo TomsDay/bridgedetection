@@ -87,60 +87,62 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 
 	private Spinner lastPddj = null;
 	private Spinner pddj = null;
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		if(mDetailMaps != null){
-			for(FormItemController con: mDetailMaps){
-				con.destory();
-			}
-			mDetailMaps.clear();
-		}
-		detailNames = null;
-		detailValues = null;
-		mItemTexts = null;
-		et1blanks = null;
-		et2blanks = null;
-		bean = null;
-		mFormContent = null;
-		save1 = null;
-		save2 = null;
-		qlbhTv = null;
-		qlbhEv = null;
-		qlmcEv = null;
-		qlmcTv = null;
-		lxbhEv = null;
-		lxbhTv = null;
-		lxmcEv = null;
-		lxmcTv = null;
-		zxzhTv = null;
-		zxzhEv = null;
-		yhdwEv = null;
-		yhdwTv = null;
-		extra1Ev = null;
-		extra1Tv = null;
-		extra1Spinner = null;
-		extraLayout = null;
-		weatherEv = null;
-		weatherTv = null;
-		fzr = null;
-		jlr = null;
-		lastPddj = null;
-		pddj = null;
-		qlhz = null;
-		mFormTitle = null;
-		mOperateLayout = null;
-		mRadioGroup = null;
-		mDealWithEv = null;
-		mJcrEv = null;
-		mGpsTv = null;
-		lastEditForm = null;
-		lastEditBaseClass = null;
-		if(mFormBaseDetails != null){
-			mFormBaseDetails.clear();
-			mFormBaseDetails = null;
-		}
-	}
+
+//	@Override
+//	protected void onDestroy() {
+//		super.onDestroy();
+//		if(mDetailMaps != null){
+//			for(FormItemController con: mDetailMaps){
+//				con.destory();
+//			}
+//			mDetailMaps.clear();
+//		}
+//		detailNames = null;
+//		detailValues = null;
+//		mItemTexts = null;
+//		et1blanks = null;
+//		et2blanks = null;
+//		bean = null;
+//		mFormContent = null;
+//		save1 = null;
+//		save2 = null;
+//		qlbhTv = null;
+//		qlbhEv = null;
+//		qlmcEv = null;
+//		qlmcTv = null;
+//		lxbhEv = null;
+//		lxbhTv = null;
+//		lxmcEv = null;
+//		lxmcTv = null;
+//		zxzhTv = null;
+//		zxzhEv = null;
+//		yhdwEv = null;
+//		yhdwTv = null;
+//		extra1Ev = null;
+//		extra1Tv = null;
+//		extra1Spinner = null;
+//		extraLayout = null;
+//		weatherEv = null;
+//		weatherTv = null;
+//		fzr = null;
+//		jlr = null;
+//		lastPddj = null;
+//		pddj = null;
+//		qlhz = null;
+//		mFormTitle = null;
+//		mOperateLayout = null;
+//		mRadioGroup = null;
+//		mDealWithEv = null;
+//		mClqk_ev = null;
+//		mJcrEv = null;
+//		mGpsTv = null;
+//		lastEditForm = null;
+//		lastEditBaseClass = null;
+//		if(mFormBaseDetails != null){
+//			mFormBaseDetails.clear();
+//			mFormBaseDetails = null;
+//		}
+//	}
 	private CheckBox qlhz = null;
 	private TextView mFormTitle;
 	private int mType = -1;
@@ -149,6 +151,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 	private RadioGroup mRadioGroup = null;
 	// 仅为桥梁巡查
 	private EditText mDealWithEv = null;
+	private EditText mClqk_ev = null;
 
 	private EditText mJcrEv = null;
 
@@ -379,12 +382,14 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		findViewById(R.id.lastEditLayout).setVisibility(View.GONE);
 		findViewById(R.id.qlxcLayout).setVisibility(View.VISIBLE);
 		mDealWithEv = (EditText) findViewById(R.id.dealwithEv);
+		mClqk_ev = (EditText) findViewById(R.id.clqk_ev);
 		mJcrEv = (EditText) findViewById(R.id.jiancharenEv);
 		mJcrEv.setText(BridgeDetectionApplication.mCurrentUser.getUserName());
 		if ((isEdit || isCheckAgain) && lastEditBaseClass != null) {
 			qlhz.setChecked(TextUtils.equals(lastEditBaseClass.qlhz, "1"));
 			extra1Ev.setText(lastEditBaseClass.xcry);
 			mDealWithEv.setText(lastEditBaseClass.dealwith);
+			mClqk_ev.setText(lastEditBaseClass.clqk);
 			resetWeather();
 			mJcrEv.setText(lastEditBaseClass.jcr);
 			if (TextUtils.equals("b", lastEditBaseClass.qhlx)) {
@@ -426,6 +431,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		String dealwith;
 		String jcr;
 		String qlhz = "0";
+		String clqk;
 
 	}
 
@@ -448,6 +454,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				data.dealwith = ((SdxcFormData) lastEditForm).getDealwith();
 				data.jcr = ((SdxcFormData) lastEditForm).getJcry();
 				data.weather = ((SdxcFormData) lastEditForm).getWeather();
+				data.clqk = ((SdxcFormData) lastEditForm).getCus3();
 			}
 			return data;
 		}
@@ -700,7 +707,8 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 			detailName = detailNames[index];
 		}
 		FormItemController con = new FormItemController(this, view, this, detailName, mType, detailValues != null ? detailValues[index] : "", mItemTexts,
-				et1blanks != null ? et1blanks[index] : "", blank2, qhId, mIsHanDong, fbd, isCheckAgain);
+				et1blanks != null ? et1blanks[index] : "", blank2, qhId, mIsHanDong, fbd, isCheckAgain,
+				(mType == R.drawable.suidaojiancha ? Constants.sdformDetailNamesPrompt[index] : ""));
 		if (index == 0) {
 			con.show();
 		} else {
@@ -787,6 +795,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				SharePreferenceManager.getInstance().updateString(BridgeDetectionApplication.mCurrentUser.getUserId()+"qlxcxcry", data.getXcry());
 				data.setJcry(mJcrEv.getText().toString());
 				data.setDealWith(mDealWithEv.getText().toString());
+				data.setCus3(mClqk_ev.getText().toString());
 				data.setWeather(weatherEv.getSelectedItem().toString());
 				data.setJcsj(time);
 			}

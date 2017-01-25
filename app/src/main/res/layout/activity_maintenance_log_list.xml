@@ -24,7 +24,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="@dimen/btn_textSice" />
         <TextView
             android:id="@+id/maintenance_logList_getUpkeepnoticeByUID"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:onClick="onClick"
             android:text="同步通知单数据"
             android:textColor="#ffffff"
-            android:textSize="10dp"
+            android:textSize="@dimen/btn_textSice"
             android:layout_alignParentRight="true"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"/>
@@ -58,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="查询条件："
+            android:textSize="@dimen/content_markSice"
             />
         <TextView
             android:id="@+id/maintenance_logList_selectCondition_tv"
@@ -65,6 +66,7 @@
             android:layout_height="wrap_content"
             android:text="通知单编号 "
             android:layout_marginLeft="8dp"
+            android:textSize="@dimen/content_markSice"
             />
 
     </LinearLayout>
@@ -84,7 +86,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="通知单编号"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -97,7 +99,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="维修单位"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -109,7 +111,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="签发日期 "
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -121,7 +123,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="签发人"
-            android:textSize="10dp" />
+            android:textSize="@dimen/list_textSice" />
 
     </LinearLayout>
     <ListView

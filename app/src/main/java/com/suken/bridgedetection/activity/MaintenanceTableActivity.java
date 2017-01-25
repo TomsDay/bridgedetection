@@ -6,6 +6,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
@@ -122,6 +123,9 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
     }
 
     int selsctWeather;
+
+
+
     public void getData() {
         gxLuXianInfos = gxLuXianInfoDao.queryAll();
         if (id != 0) {
@@ -431,6 +435,10 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
                 break;
             case R.id.operateDelete:
                 maintenanceTableItemBeen = mAdapter.getData();
+                if(TextUtil.isListEmpty(maintenanceTableItemBeen)){
+                    toast("无数据！");
+                    return;
+                }
                 maintenanceTableItemBeen.remove(maintenanceTableItemBeen.size() - 1);
                 mAdapter.setData(maintenanceTableItemBeen);
                 mAdapter.notifyDataSetChanged();
@@ -476,8 +484,13 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
         builder.create().show();
     }
     public void saveDialog(){
+//        if(true){
+//            Logger.e("aaa", "jcsj=" + mAdapter.getData().get(0).getJcsj());
+//            return;
+//        }
+
         Logger.e("aaa", "fx=" + mAdapter.getData().get(0).getFx());
-        Logger.e("aaa", "jcqk=" + mAdapter.getData().get(0).getCus1());
+
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")
                 .setMessage("是否保存当前数据？")
@@ -540,6 +553,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 
                         maintenanceTableItemBeen = mAdapter.getData();
                         for(int q = 0; q < maintenanceTableItemBeen.size(); q++){
+
                             MaintenanceTableItemBean  itemBean = maintenanceTableItemBeen.get(q);
                             int num = q + 1;
                             if(!"2".equals(itemBean.getYhzt())){

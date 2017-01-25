@@ -24,7 +24,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="@dimen/btn_textSice" />
 
         <TextView
             android:id="@+id/projectacceptance_save"
@@ -38,7 +38,7 @@
             android:onClick="onClick"
             android:text="保存"
             android:textColor="#ffffff"
-            android:textSize="10dp" />
+            android:textSize="@dimen/btn_textSice" />
     </RelativeLayout>
 
     <LinearLayout
@@ -85,7 +85,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="20dp"
+                    android:layout_height="28dp"
                     android:background="#3ea49d"
                     android:gravity="center_vertical">
 
@@ -96,7 +96,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="高速公路维修保养工程验收单"
                         android:textColor="#ffffff"
-                        android:textSize="10dp" />
+                        android:textSize="@dimen/content_titleSice" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                             android:layout_centerVertical="true"
                             android:text="GPS定位中..."
                             android:textColor="#ffffff"
-                            android:textSize="10dp" />
+                            android:textSize="@dimen/content_titleSice" />
 
                         <ImageView
                             android:layout_width="10dp"
@@ -146,15 +146,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="管养单位："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/projectacceptance_gydw_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/input_contentSice"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -167,15 +170,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="编号："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/projectacceptance_bh_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/input_contentSice"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -187,15 +193,16 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="天气："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
 
                             <Spinner
                                 android:id="@+id/projectacceptance_weather_spinner"
                                 android:layout_width="match_parent"
-                                android:layout_height="30dp"
+                                android:layout_height="40dp"
                                 android:textColor="#333333"
-                                android:textSize="9dp"
+                                android:textSize="@dimen/input_contentSice"
                                 android:entries="@array/spinnerWeather"
                                 />
                         </LinearLayout>
@@ -206,7 +213,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="8dp">
 
 
 
@@ -215,15 +223,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="维修保养单位："
-                            android:textSize="9dp" />
+                            android:textSize="@dimen/content_markSice"
+                            android:layout_gravity="center"/>
 
                         <EditText
                             android:id="@+id/projectacceptance_wxbydw_ev"
                             android:layout_width="match_parent"
-                            android:layout_height="20dp"
+                            android:layout_height="40dp"
                             android:background="@drawable/line"
                             android:textColor="#333333"
-                            android:textSize="9dp" />
+                            android:textSize="@dimen/input_contentSice"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"/>
 
 
                     </LinearLayout>
@@ -247,15 +258,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="施工日期："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/projectacceptance_sgrqs_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/input_contentSice"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
 
 
                         </LinearLayout>
@@ -271,15 +285,18 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="至："
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/content_markSice"
+                                android:layout_gravity="center"/>
 
                             <EditText
                                 android:id="@+id/projectacceptance_sgrqe_ev"
                                 android:layout_width="match_parent"
-                                android:layout_height="20dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="9dp" />
+                                android:textSize="@dimen/input_contentSice"
+                                android:layout_gravity="center"
+                                android:gravity="center_vertical"/>
                         </LinearLayout>
                     </LinearLayout>
 
@@ -298,7 +315,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="工程内容："
-                            android:textSize="9dp"
+                            android:textSize="@dimen/content_markSice"
                             android:layout_marginTop="10dp"/>
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -318,7 +335,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="桩号"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -331,7 +348,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="方向"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -343,7 +360,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="养护工程名称"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -355,7 +372,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="单位"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -367,7 +384,62 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="维修数量"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="材料名称"
+                                    android:textSize="@dimen/list_textSice" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="材料规格"
+                                    android:textSize="@dimen/list_textSice" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="材料型号"
+                                    android:textSize="@dimen/list_textSice" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="材料单位"
+                                    android:textSize="@dimen/list_textSice" />
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="#90808080" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="材料数量"
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -379,7 +451,7 @@
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
                                     android:text="验收结果"
-                                    android:textSize="10dp" />
+                                    android:textSize="@dimen/list_textSice" />
                                 <View
                                     android:layout_width="1dp"
                                     android:layout_height="match_parent"
@@ -387,7 +459,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1.1"
+                                    android:layout_weight="1.02"
                                     android:gravity="center">
 
                                     <ImageView
@@ -403,7 +475,7 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="1.1"
+                                    android:layout_weight="1.02"
                                     android:gravity="center">
 
                                     <ImageView
@@ -442,7 +514,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="验收结果："
-                            android:textSize="9dp" />
+                            android:textSize="@dimen/content_markSice" />
 
                         <EditText
                             android:id="@+id/projectacceptance_return_ev"
@@ -450,7 +522,7 @@
                             android:layout_height="48dp"
                             android:background="@color/white"
                             android:textColor="#333333"
-                            android:textSize="9dp"
+                            android:textSize="@dimen/input_contentSice"
                             android:text="经检验，数量相符，质量合格"
                             android:layout_toRightOf="@+id/projectacceptance_return_tv"
                             android:imeOptions="flagNoExtractUi" />
@@ -471,7 +543,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="验收负责人："
-                            android:textSize="9dp" />
+                            android:textSize="@dimen/content_markSice" />
                         <ImageView
                             android:id="@+id/projectacceptance_xsfzr_sign"
                             android:layout_width="72dp"

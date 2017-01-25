@@ -105,6 +105,9 @@ public class SdxcFormData implements Serializable {
 	private String sdzh;
 	@DatabaseField
 	private String dealwith;
+	/* 材料情况 */
+	@DatabaseField
+	private String cus3;
 	@DatabaseField
 	private String xcry;
 	@DatabaseField
@@ -121,6 +124,14 @@ public class SdxcFormData implements Serializable {
 
 	@DatabaseField
 	private String userId;
+
+	public String getCus3() {
+		return cus3;
+	}
+
+	public void setCus3(String cus3) {
+		this.cus3 = cus3;
+	}
 
 	public boolean isLastUpdate() {
 		return lastUpdate;

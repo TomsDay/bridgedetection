@@ -12,6 +12,8 @@ import java.io.Serializable;
 @DatabaseTable(tableName = "tb_maintenancedisease")
 public class MaintenanceDiseaseBean implements Serializable{
     @DatabaseField(generatedId = true)
+    private long ids;
+    @DatabaseField
     private long id;//记录ID
     @DatabaseField
     private String bhmc;//病害名称
@@ -70,6 +72,14 @@ public class MaintenanceDiseaseBean implements Serializable{
                 ", dw='" + dw + '\'' +
                 ", xcms='" + xcms + '\'' +
                 '}';
+    }
+
+    public long getIds() {
+        return ids;
+    }
+
+    public void setIds(long ids) {
+        this.ids = ids;
     }
 
     public String getOrgid() {
