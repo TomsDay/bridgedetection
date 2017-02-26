@@ -81,6 +81,7 @@ public class MaintenanceTableBean implements Serializable {
                 ", xclx=" + xclx +
                 ", xcld='" + xcld + '\'' +
                 ", status='" + status + '\'' +
+                ", inspectLogDetailList='" + inspectLogDetailList + '\'' +
 
                 '}';
     }

@@ -199,8 +199,8 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
     }
 
     @Override
-    public long getItemId(int arg0) {
-        return arg0;
+    public long getItemId(int itemid) {
+        return itemid;
     }
 
     private class ViewHolder {
@@ -366,7 +366,13 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         @Override
         public int compare(ListBean listBean, ListBean t1) {
 //            int re = listBean.qhzh.compareTo(t1.qhzh);
-            int re = Double.valueOf(listBean.qhzh).compareTo(Double.valueOf(t1.qhzh));
+            int re = 0;
+            if(mType == R.drawable.qiaoliangxuncha){
+                re = listBean.qhzh.compareTo(t1.qhzh);
+            }else{
+                re = Double.valueOf(listBean.qhzh).compareTo(Double.valueOf(t1.qhzh));
+            }
+
             return isUpSort ?  re : - re;
         }
     };

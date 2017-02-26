@@ -25,6 +25,7 @@ import com.suken.bridgedetection.activity.MaintenanceTableActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceListActivity;
 import com.suken.bridgedetection.activity.ProjectAcceptanceListUpLoadActivity;
+import com.suken.bridgedetection.util.Logger;
 
 import java.util.ArrayList;
 
@@ -42,19 +43,18 @@ public class MaintenanceAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(mContext);
         getData();
     }
-
+    String str = "高速公路";
     public void getData() {
-        String str = "高速公路";
 
         list.add(str + "养护巡查日志");
-//        list.add(str + "养护下单");
+        list.add(str + "维修保养通知单");
 //        list.add(str + "维修保养通知单");
         list.add(str + "维修保养日志");
 
         list.add(str + "施工安全检查表");
-//        list.add(str + "验收申请");
-        list.add("日常维修保养工程验收");
-//        list.add(str + "综合查询页面");
+        list.add(str + "维修保养工程验收申请");
+
+        list.add(str + "维修保养工程现场验收");
     }
 
     public void setData(ArrayList<String> list) {
@@ -112,6 +112,8 @@ public class MaintenanceAdapter extends BaseAdapter {
                         return;
                     }
                 } else if (position == 1) {
+                    Logger.e("aaa",str + "维修保养通知单");
+                } else if (position == 2) {
                     if (roles.contains("highway_rcyhwxgcs")) {
                         in.setClass(mContext, MaintenanceLogListActivity.class);
                     } else {
@@ -120,7 +122,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                         toast.show();
                         return;
                     }
-                } else if (position == 2) {
+                } else if (position == 3) {
                     if (roles.contains("highway_rcyhaqjcy")
                             || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, MaintenanceOfOrderActivity.class);
@@ -130,7 +132,9 @@ public class MaintenanceAdapter extends BaseAdapter {
                         toast.show();
                         return;
                     }
-                } else if (position == 3) {
+                } else if (position == 4) {
+                    Logger.e("aaa",str + "维修保养工程验收申请");
+                } else if (position == 5) {
                     if (roles.contains("highway_rcyhysy")
                             || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, ProjectAcceptanceListActivity.class);

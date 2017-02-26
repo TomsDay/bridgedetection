@@ -50,6 +50,8 @@ public class MaintenanceTableItemBean implements Serializable{
     private String yhzt= "1";
     @DatabaseField
     private String cus1="";
+    @DatabaseField
+    private String isxd="1";
 
     private boolean isShow;
 
@@ -69,6 +71,33 @@ public class MaintenanceTableItemBean implements Serializable{
     @ForeignCollectionField
     private ForeignCollection<IVDesc> vDescs;
 
+    public MaintenanceTableItemBean(int id, String fx, String yhzh, String zhfw, String bhid, String bhmc, String bhwz, String dw, String ygsl, String jcsj, String remark, String picattachment, String vidattachment, String tjsj, String tpjd, String tpwd, String yhzt, String cus1, String isxd, String remark1, boolean isShow) {
+        this.id = id;
+        this.fx = fx;
+        this.yhzh = yhzh;
+        this.zhfw = zhfw;
+        this.bhid = bhid;
+        this.bhmc = bhmc;
+        this.bhwz = bhwz;
+        this.dw = dw;
+        this.ygsl = ygsl;
+        this.jcsj = jcsj;
+        this.remark = remark;
+        this.picattachment = picattachment;
+        this.vidattachment = vidattachment;
+        this.tjsj = tjsj;
+        this.tpjd = tpjd;
+        this.tpwd = tpwd;
+        this.yhzt = yhzt;
+        this.cus1 = cus1;
+        this.isxd = isxd;
+        this.remark = remark1;
+        this.isShow = isShow;
+    }
+
+
+    public MaintenanceTableItemBean() {
+    }
 
     @Override
     public String toString() {
@@ -91,6 +120,7 @@ public class MaintenanceTableItemBean implements Serializable{
                 ", tpwd='" + tpwd + '\'' +
                 ", yhzt='" + yhzt + '\'' +
                 ", cus1='" + cus1 + '\'' +
+                ", isxd='" + isxd + '\'' +
                 ", isShow=" + isShow +
                 ", mImages=" + mImages +
                 ", mVideo=" + mVideo +
@@ -100,31 +130,12 @@ public class MaintenanceTableItemBean implements Serializable{
                 '}';
     }
 
-    public MaintenanceTableItemBean() {
+    public String getIsxd() {
+        return isxd;
     }
 
-    public MaintenanceTableItemBean(int id, String fx, String yhzh, String bhid, String bhmc, String bhwz, String dw, String ygsl, String jcsj, String remark, String picattachment, String vidattachment, String tjsj, String tpjd, String tpwd, String yhzt, List<IVDesc> mImages, List<IVDesc> mVideo, MaintenanceTableBean maintenanceTableBean, ForeignCollection<IVDesc> iDescs, ForeignCollection<IVDesc> vDescs) {
-        this.id = id;
-        this.fx = fx;
-        this.yhzh = yhzh;
-        this.bhid = bhid;
-        this.bhmc = bhmc;
-        this.bhwz = bhwz;
-        this.dw = dw;
-        this.ygsl = ygsl;
-        this.jcsj = jcsj;
-        this.remark = remark;
-        this.picattachment = picattachment;
-        this.vidattachment = vidattachment;
-        this.tjsj = tjsj;
-        this.tpjd = tpjd;
-        this.tpwd = tpwd;
-        this.yhzt = yhzt;
-        this.mImages = mImages;
-        this.mVideo = mVideo;
-        this.maintenanceTableBean = maintenanceTableBean;
-        this.iDescs = iDescs;
-        this.vDescs = vDescs;
+    public void setIsxd(String isxd) {
+        this.isxd = isxd;
     }
 
     public String getCus1() {

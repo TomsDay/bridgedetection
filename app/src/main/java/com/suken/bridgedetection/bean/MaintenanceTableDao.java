@@ -27,6 +27,13 @@ public class MaintenanceTableDao {
             e.printStackTrace();
         }
     }
+    public  Dao<MaintenanceTableItemBean, String> getMaintenanceTableItemBeanDao(){
+        return maintenanceTableItemBeen;
+    }
+    public Dao<MaintenanceTableBean, String> getMaintenanceTableBean(){
+        return maintenanceTableBeen;
+    }
+
     public void add(MaintenanceTableBean bean){
         try {
             maintenanceTableBeen.createOrUpdate(bean);

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.SynchMaintenlogBean;
 
 import java.util.ArrayList;
@@ -20,19 +21,19 @@ import java.util.List;
 public class OfOrderListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater inflater;
-    List<SynchMaintenlogBean> synchMaintenlogBeen = new ArrayList<SynchMaintenlogBean>();
+    List<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
 
     public OfOrderListAdapter(Context context) {
         mContext = context;
         inflater = LayoutInflater.from(mContext);
     }
 
-    public void setData(List<SynchMaintenlogBean> list){
-        synchMaintenlogBeen = list;
+    public void setData(List<MaintenanceLogBean> list){
+        maintenanceLogBeen = list;
     }
     @Override
     public int getCount() {
-        return synchMaintenlogBeen.size();
+        return maintenanceLogBeen.size();
     }
 
     @Override
@@ -55,11 +56,11 @@ public class OfOrderListAdapter extends BaseAdapter {
         }else{
             holder = (HolderView) view.getTag();
         }
-        SynchMaintenlogBean bean = synchMaintenlogBeen.get(position);
+        MaintenanceLogBean bean = maintenanceLogBeen.get(position);
         holder.oforderlist_item_tv1.setText(bean.getBno());
         holder.oforderlist_item_tv2.setText(bean.getWxbmmc());
-        holder.oforderlist_item_tv3.setText(bean.getWxrq());
-        holder.oforderlist_item_tv4.setText(bean.getFzry());
+        holder.oforderlist_item_tv3.setText(bean.getQfrq());
+        holder.oforderlist_item_tv4.setText(bean.getQfry());
 
 
         return view;

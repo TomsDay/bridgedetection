@@ -104,6 +104,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.setTag(position);
         holder.item_checkTime_edit.setTag(position);
         holder.zh_edit.setTag(position);
+        holder.remark_edit.setTag(position);
         holder.zhfw_edit.setTag(position);
 
 //        } else {
@@ -122,6 +123,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.addTextChangedListener(new Watcher(holder.address_edit));
         holder.item_checkTime_edit.addTextChangedListener(new Watcher(holder.item_checkTime_edit));
         holder.zh_edit.addTextChangedListener(new Watcher(holder.zh_edit));
+        holder.remark_edit.addTextChangedListener(new Watcher(holder.remark_edit));
         holder.zhfw_edit.addTextChangedListener(new Watcher(holder.zhfw_edit));
 
 
@@ -149,6 +151,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.address_edit.setText(bean.getBhwz());
         holder.item_checkTime_edit.setText(bean.getJcsj());
         holder.zh_edit.setText(bean.getYhzh());
+        holder.remark_edit.setText(bean.getRemark());
         holder.zhfw_edit.setText(bean.getZhfw());
         setDateTime(holder,position);
 
@@ -162,12 +165,20 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             holder.radioGroup.check(R.id.radioup);
         } else if ("下行".equals(fx)) {
             holder.radioGroup.check(R.id.radiodown);
+        } else if ("双向".equals(fx)) {
+            holder.radioGroup.check(R.id.radioupdown);
         }else{
             holder.radioGroup.check(R.id.radioup);
         }
         String jcqk = bean.getCus1();
         if (!TextUtil.isEmptyString(jcqk) && "未发现异常情况".equals(jcqk)) {
             holder.checkBox_jcqi.setChecked(true);
+        }
+        String isxd = bean.getIsxd();
+        if (!TextUtil.isEmptyString(isxd) && "1".equals(isxd)) {
+            holder.checkBox_isxd.setChecked(false);
+        }else{
+            holder.checkBox_isxd.setChecked(true);
         }
 //        holder.img_video_layout.setVisibility(View.GONE); //隐藏拍照
 //        holder.form_column.setText("查看情况:"+(position+1));
@@ -288,24 +299,30 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                String fx = list.get(position).getFx();
-                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
+//                String fx = list.get(position).getFx();
+//                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
                 switch (i) {
                     case R.id.radioup:
-
-                        if (!fx.contains("上行")) {
-                            list.get(position).setFx(fx.replace("下行","上行"));
-                        }
+                        list.get(position).setFx("上行");
+//                        if (!fx.contains("上行")) {
+//                            list.get(position).setFx(fx.replace("下行","上行"));
+//                        }
 
                         break;
                     case R.id.radiodown:
                         list.get(position).setFx("下行");
-                        if (!fx.contains("下行")) {
-                            list.get(position).setFx(fx.replace("上行","下行"));
-                        }
+//                        if (!fx.contains("下行")) {
+//                            list.get(position).setFx(fx.replace("上行","下行"));
+//                        }
 
                         break;
+                    case R.id.radioupdown:
+                        list.get(position).setFx("双向");
+//                        if (!fx.contains("下行")) {
+//                            list.get(position).setFx(fx.replace("上行","下行"));
+//                        }
 
+                        break;
 
                 }
             }
@@ -337,6 +354,13 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                     list.get(position).setYhzt("1");
                 }
 
+            }
+        });
+        holder.checkBox_isxd.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                list.get(position).setIsxd(b?"2":"1");
+                Logger.e("aaa", "isxd==="+list.get(position).getIsxd());
             }
         });
 
@@ -440,6 +464,9 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 case R.id.zh_edit:
                     list.get(position).setYhzh(!TextUtil.isEmptyString(content)? content : "");
                     break;
+                case R.id.remark_edit:
+                    list.get(position).setRemark(!TextUtil.isEmptyString(content)? content : "");
+                    break;
                 case R.id.zhfw_edit:
                     Logger.e("aaa","diseaseName_edit="+content+"=====position"+position);
                     list.get(position).setZhfw(!TextUtil.isEmptyString(content)?content:"");
@@ -525,7 +552,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
                 count_edit,
                 address_edit,
                 item_checkTime_edit,
-                zh_edit;
+                zh_edit,
+                remark_edit;
 
         private Button item_checkTime_btn;
 
@@ -536,7 +564,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
         private RadioGroup radioGroup;
 
         private CheckBox checkBox,
-                checkBox_jcqi;
+                checkBox_jcqi,checkBox_isxd;
 
         public HolderView(View view) {
             form_item_edit_layout = (LinearLayout) view.findViewById(R.id.form_item_edit_layout);
@@ -562,6 +590,7 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             item_checkTime_edit = (EditText) view.findViewById(R.id.item_checkTime_edit);
             zh_edit = (EditText) view.findViewById(R.id.zh_edit);
             zhfw_edit = (EditText) view.findViewById(R.id.zhfw_edit);
+            remark_edit = (EditText) view.findViewById(R.id.remark_edit);
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
@@ -574,6 +603,8 @@ public class MaintenanceTableAdapter extends BaseAdapter {
             checkBox = (CheckBox) view.findViewById(R.id.checkBox);
 
             checkBox_jcqi = (CheckBox) view.findViewById(R.id.checkBox_jcqi);
+
+            checkBox_isxd = (CheckBox) view.findViewById(R.id.checkBox_isxd);
         }
     }
 

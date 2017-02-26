@@ -466,9 +466,15 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                                 return;
                             }
 
-                            if(TextUtil.isEmptyString(itemBean.getClmc())){
-                                toast("第" + num + "条维修内容的“材料名称”不可为空！");
-                                return;
+                            if(TextUtil.isEmptyString(itemBean.getClmc())){//这是为了材料不选择也可以运行的方法（如果不写upload页面会报空指针）
+//                                toast("第" + num + "条维修内容的“材料名称”不可为空！");
+                                itemBean.setClid("");
+                                itemBean.setClmc("");
+                                itemBean.setClgg("");
+                                itemBean.setClxh("");
+                                itemBean.setClsl("");
+                                itemBean.setCldw("");
+//                                return;
                             }
                             Logger.e("aaa", "itemBean.getWxsl()===" + itemBean.getWxsl());
                             if(TextUtil.isEmptyString(itemBean.getWxsl())){

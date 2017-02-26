@@ -26,6 +26,8 @@ import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceOfOrderListAdapter;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
+import com.suken.bridgedetection.bean.MaintenanceLogBean;
+import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
@@ -167,45 +169,51 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
             for(int i = 0;i<maintenanceOfOrderBeen.size();i++){
                 MaintenanceOfOrderBean bean = maintenanceOfOrderBeen.get(i);
                 String xcrz = bean.getXcnr();
-                List<SynchMaintenlogBean> synchMaintenlogBeans = JSON.parseArray(xcrz, SynchMaintenlogBean.class);
-                bean.setProjacceptDetailList(synchMaintenlogBeans);
+                List<MaintenanceLogBean> maintenanceLogBeen = JSON.parseArray(xcrz, MaintenanceLogBean.class);
+                bean.setProjacceptDetailList(maintenanceLogBeen);
                 bean.setXcnr("");
-                if(!TextUtil.isListEmpty(synchMaintenlogBeans)&&!TextUtil.isListEmpty(synchMaintenlogBeans.get(0).getMaintenlogDetailList())){
-                    SynchMaintenlogListBean listBean = synchMaintenlogBeans.get(0).getMaintenlogDetailList().get(0);
+                if(!TextUtil.isListEmpty(maintenanceLogBeen)&&!TextUtil.isListEmpty(maintenanceLogBeen.get(0).getUpkeepdiseaseList())){
+//                    MaintenanceLogItemBean listBean = maintenanceLogBeen.get(0).getUpkeepdiseaseList().get(0);
                     StringBuffer sb = new StringBuffer();
+                    for(MaintenanceLogItemBean listBean:maintenanceLogBeen.get(0).getUpkeepdiseaseList()){
+                        String zh = listBean.getYhzh();
+                        String bhmc = listBean.getBhmc();
+                        String remark = listBean.getRemark();
+                        String ygsl = listBean.getYgsl();
+                        String dw = listBean.getDw();
 
-                    String zh = listBean.getYhzh();
-                    String fx = listBean.getFx();
-                    String gcmc = listBean.getBhmc();
-                    String wxsl = listBean.getWxsl();
-                    String dw = listBean.getDw();
 
-                    if(!TextUtil.isEmptyString(zh)){
-                        sb.append(zh);
-                        sb.append(" ");
+                        if(!TextUtil.isEmptyString(zh)){
+                            sb.append(zh);
+                        }
+                        sb.append(",");
+                        if(!TextUtil.isEmptyString(bhmc)){
+                            sb.append(bhmc);
+                        }
+                        sb.append(",");
+                        if(!TextUtil.isEmptyString(remark)){
+                            sb.append(remark);
+                        }
+                        sb.append(",");
+                        if(!TextUtil.isEmptyString(ygsl)){
+                            sb.append(ygsl);
+                        }
+                        sb.append(",");
+                        if(!TextUtil.isEmptyString(dw)){
+                            sb.append(dw);
+                        }
+                        sb.append(";");
                     }
-                    if(!TextUtil.isEmptyString(fx)){
-                        sb.append(fx);
-                        sb.append(" ");
-                    }
-                    if(!TextUtil.isEmptyString(gcmc)){
-                        sb.append(gcmc);
-                        sb.append(" ");
-                    }
-                    if(!TextUtil.isEmptyString(wxsl)){
-                        sb.append(wxsl);
-                        sb.append(" ");
-                    }
-                    if(!TextUtil.isEmptyString(dw)){
-                        sb.append(dw);
-                    }
-                    bean.setXcnr(sb.toString());
+
+                    xcrz = sb.toString().substring(0, sb.toString().length() - 1);
+                    Logger.e("aaa", "xcrz===" + xcrz);
+                    bean.setXcnr(xcrz);
                 }
 
-                if(!TextUtil.isListEmpty(synchMaintenlogBeans)){
-                    bean.setSgdwmc(synchMaintenlogBeans.get(0).getWxbmmc());
+                if(!TextUtil.isListEmpty(maintenanceLogBeen)){
+                    bean.setSgdwmc(maintenanceLogBeen.get(0).getWxbmmc());
                 }
-                Logger.e("aaa","++++++++++======="+ synchMaintenlogBeans.toString());
+                Logger.e("aaa","++++++++++======="+ maintenanceLogBeen.toString());
                 ForeignCollection<MaintenanceOfOrderItemBean> orders = bean.getMaintenanceOfOrderItemBeen();
                 CloseableIterator<MaintenanceOfOrderItemBean> iterator = orders.closeableIterator();
                 List<MaintenanceOfOrderItemBean> itemBeanList = new ArrayList<MaintenanceOfOrderItemBean>();
@@ -305,11 +313,15 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                     }
                 StringBuffer StringID = new StringBuffer();
                 StringBuffer StringBNO = new StringBuffer();
+                StringBuffer StringSGDWID = new StringBuffer();
+                StringBuffer StringSGDWMC = new StringBuffer();
                 int proSice = bean.getProjacceptDetailList().size();
                 for (int i = 0; i < proSice; i++) {
-                    SynchMaintenlogBean synchMaintenlogBean = bean.getProjacceptDetailList().get(i);
-                    StringID.append(synchMaintenlogBean.getId());
-                    StringBNO.append(synchMaintenlogBean.getBno());
+                    MaintenanceLogBean maintenanceLogBean = bean.getProjacceptDetailList().get(i);
+                    StringID.append(maintenanceLogBean.getId());
+                    StringBNO.append(maintenanceLogBean.getBno());
+                    StringSGDWID.append(maintenanceLogBean.getWxbmid());
+                    StringSGDWMC.append(maintenanceLogBean.getWxbmmc());
                     if (i != proSice - 1) {
                         StringID.append(",");
                         StringBNO.append(",");
@@ -318,8 +330,12 @@ public class MaintenanceOfOrderListActivity extends BaseActivity {
                 }
                 Logger.e("aaa","StringID.toString()====="+StringID.toString());
                 Logger.e("aaa","StringBNO.toString()====="+StringBNO.toString());
+                Logger.e("aaa","StringSGDWID.toString()====="+StringSGDWID.toString());
+                Logger.e("aaa","StringSGDWMC.toString()====="+StringSGDWMC.toString());
                 bean.setYhrzid(StringID.toString());
                 bean.setYhrzbno(StringBNO.toString());
+                bean.setSgdwid(StringSGDWID.toString());
+                bean.setSgdwmc(StringSGDWMC.toString());
                 bean.setProjacceptDetailList(null);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));

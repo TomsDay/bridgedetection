@@ -634,7 +634,7 @@ public class UiUtil {
                                      UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
                                          @Override
                                          public void onSyncFinished(boolean isSuccess) {
-                                             if(isSuccess){
+                                             if(isSuccess && activity instanceof BridgeDetectionListActivity ){
                                                  ((BridgeDetectionListActivity) activity).loadData();
                                              }
                                          }

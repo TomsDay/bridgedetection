@@ -15,6 +15,7 @@ import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderItemBean;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
+import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
@@ -25,10 +26,11 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 
+	public final static int version = 10; // 数据库版本
 	private static final String TABLE_NAME = "bridgedetection.db";
 	private static SqliteOpenHelper instance;
 	private SqliteOpenHelper(Context context) {
-		super(context, TABLE_NAME, null, 9);
+		super(context, TABLE_NAME, null, version);
 	}
 
 	@Override
@@ -72,42 +74,49 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 
 	@Override
 	public void onUpgrade(SQLiteDatabase database, ConnectionSource connectionSource, int oldVersion, int newVersion) {
-		try {
-			TableUtils.dropTable(connectionSource, UserInfo.class, true);
-			TableUtils.dropTable(connectionSource, GXLuXianInfo.class, true);
-			TableUtils.dropTable(connectionSource, QLBaseData.class, true);
-			TableUtils.dropTable(connectionSource, HDBaseData.class, true);
-			TableUtils.dropTable(connectionSource, SDBaseData.class, true);
-			TableUtils.dropTable(connectionSource, YWDictionaryInfo.class, true);
-			TableUtils.dropTable(connectionSource, QHYangHuZeRenInfo.class, true);
-			TableUtils.dropTable(connectionSource, SDYangHuZeRenInfo.class, true);
-			TableUtils.dropTable(connectionSource, CheckFormData.class, true);
-			TableUtils.dropTable(connectionSource, CheckDetail.class, true);
-			TableUtils.dropTable(connectionSource, SdxcFormData.class, true);
-			TableUtils.dropTable(connectionSource, SdxcFormDetail.class, true);
-			TableUtils.dropTable(connectionSource, GpsData.class, true);
-			TableUtils.dropTable(connectionSource, GpsGjData.class, true);
-			TableUtils.dropTable(connectionSource, FileDesc.class, true);
-
-			TableUtils.dropTable(connectionSource, MaintenanceBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceTableBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceTableItemBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceDiseaseBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceLogBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceLogItemBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceOfOrderBean.class, true);
-			TableUtils.dropTable(connectionSource, MaintenanceOfOrderItemBean.class, true);
-			TableUtils.dropTable(connectionSource, ProjectAcceptanceBean.class, true);
-			TableUtils.dropTable(connectionSource, IVDesc.class, true);
-			TableUtils.dropTable(connectionSource, CatalogueByUIDBean.class, true);
-			TableUtils.dropTable(connectionSource, ProjacceptItemBean.class, true);
-			TableUtils.dropTable(connectionSource, GeteMaterialBean.class, true);
-//			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
-
-
-			onCreate(database, connectionSource);
-		} catch (SQLException e) {
-			e.printStackTrace();
+//		try {
+//			TableUtils.dropTable(connectionSource, UserInfo.class, true);
+//			TableUtils.dropTable(connectionSource, GXLuXianInfo.class, true);
+//			TableUtils.dropTable(connectionSource, QLBaseData.class, true);
+//			TableUtils.dropTable(connectionSource, HDBaseData.class, true);
+//			TableUtils.dropTable(connectionSource, SDBaseData.class, true);
+//			TableUtils.dropTable(connectionSource, YWDictionaryInfo.class, true);
+//			TableUtils.dropTable(connectionSource, QHYangHuZeRenInfo.class, true);
+//			TableUtils.dropTable(connectionSource, SDYangHuZeRenInfo.class, true);
+//			TableUtils.dropTable(connectionSource, CheckFormData.class, true);
+//			TableUtils.dropTable(connectionSource, CheckDetail.class, true);
+//			TableUtils.dropTable(connectionSource, SdxcFormData.class, true);
+//			TableUtils.dropTable(connectionSource, SdxcFormDetail.class, true);
+//			TableUtils.dropTable(connectionSource, GpsData.class, true);
+//			TableUtils.dropTable(connectionSource, GpsGjData.class, true);
+//			TableUtils.dropTable(connectionSource, FileDesc.class, true);
+//
+//			TableUtils.dropTable(connectionSource, MaintenanceBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceTableBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceTableItemBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceDiseaseBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceLogBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceLogItemBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceOfOrderBean.class, true);
+//			TableUtils.dropTable(connectionSource, MaintenanceOfOrderItemBean.class, true);
+//			TableUtils.dropTable(connectionSource, ProjectAcceptanceBean.class, true);
+//			TableUtils.dropTable(connectionSource, IVDesc.class, true);
+//			TableUtils.dropTable(connectionSource, CatalogueByUIDBean.class, true);
+//			TableUtils.dropTable(connectionSource, ProjacceptItemBean.class, true);
+//			TableUtils.dropTable(connectionSource, GeteMaterialBean.class, true);
+////			TableUtils.dropTable(connectionSource, MaintenanceItemBean.class, true);
+//
+//
+//			onCreate(database, connectionSource);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+		if (oldVersion <10) {
+			try {
+				new MaintenanceTableDao().getMaintenanceTableItemBeanDao().executeRaw("ALTER TABLE `tb_maintenancetableitem` ADD COLUMN isxd TEXT DEFAULT '1';");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

@@ -489,7 +489,7 @@ public class MaintenanceTableActivity extends BaseActivity implements OnLocation
 //            return;
 //        }
 
-        Logger.e("aaa", "fx=" + mAdapter.getData().get(0).getFx());
+//        Logger.e("aaa", "fx=" + mAdapter.getData().get(0));
 
         new AlertDialog.Builder(mContext)
                 .setTitle("保存数据")

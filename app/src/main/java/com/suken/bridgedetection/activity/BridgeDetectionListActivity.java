@@ -176,9 +176,11 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					}
 					case R.drawable.qiaoliangjiancha: {
 						mListArray = new QLBaseDataDao().queryAll();
-						Logger.e("aaa","桥梁现在的数量："+(new QLBaseDataDao().queryAll().size()));
+						Logger.e("aaa","桥梁现在的数量："+(
+								TextUtil.isListEmpty(new QLBaseDataDao().queryAll())?0:new QLBaseDataDao().queryAll().size()));
 						mListArray2 = new HDBaseDataDao().queryAll();
-						Logger.e("aaa","涵洞现在的数量："+(new HDBaseDataDao().queryAll().size()));
+						Logger.e("aaa","涵洞现在的数量："+(
+								TextUtil.isListEmpty(new HDBaseDataDao().queryAll())?0:new HDBaseDataDao().queryAll().size()));
 						break;
 					}
 					case R.drawable.suidaojiancha:

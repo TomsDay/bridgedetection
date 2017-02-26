@@ -11,6 +11,7 @@
         <item>日常巡查</item>
         <item>夜间巡查</item>
         <item>徒步巡查</item>
+        <item>特殊巡查</item>
     </string-array>
     <string-array name="maintenance_logList_selectCondition_str">
         <item>通知单编号</item>

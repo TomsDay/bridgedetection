@@ -202,6 +202,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
 
 
         }
+        Logger.e("aaa", "--------" + maintenanceTableDao.queryItemAll());
         mAdapter.setData(maintenanceTableBeanList);
         mAdapter.notifyDataSetChanged();
 
@@ -268,8 +269,9 @@ public class MaintenanceTableListActivity extends BaseActivity {
                 list.add(pair);
                 pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
                 list.add(pair);
+                bean.setXclx(bean.getXclx()+1);
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
-                bean.setXclx(bean.getXclx() + 1);
+
                 pair = new BasicNameValuePair("json", gson.toJson(bean));
                 list.add(pair);
                 new HttpTask(onReceivedHttpResponseListener, RequestType.uploadInspectlog).executePost(list);
