@@ -4,6 +4,9 @@ public class Constants {
 
 	public static boolean DEBUG = true;
 
+	public static final int SUCCESS_CODE = 0;
+	public static final int ERROR_CODE = 1;
+
 	public static final String FIRST_LOGIN = "first_login";
 	public static final String USER_INFO = "user_info";
 

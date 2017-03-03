@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import com.suken.bridgedetection.activity.MaintenanceLogActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogListActivity;
 import com.suken.bridgedetection.activity.MaintenanceLogUpLoadActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderListActivity;
+import com.suken.bridgedetection.activity.MaintenanceRequisitionListActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableListActivity;
 import com.suken.bridgedetection.activity.MaintenanceOfOrderActivity;
 import com.suken.bridgedetection.activity.MaintenanceTableActivity;
@@ -87,6 +89,9 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
+        if (position == 1 || position == 4) {
+            holder.maintenance_item_name.setTextColor(Color.RED);
+        }
 //        if (position == 1) {
 //            holder.maintenance_item_new.setText("查看");
 //        } else {
@@ -112,7 +117,17 @@ public class MaintenanceAdapter extends BaseAdapter {
                         return;
                     }
                 } else if (position == 1) {
+//                    if (roles.contains("highway_zxxdy")) {
+//                        in.setClass(mContext, MaintenanceTableActivity.class);
+                    in.setClass(mContext, MaintenanceRequisitionListActivity.class);
                     Logger.e("aaa",str + "维修保养通知单");
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+
                 } else if (position == 2) {
                     if (roles.contains("highway_rcyhwxgcs")) {
                         in.setClass(mContext, MaintenanceLogListActivity.class);
@@ -133,7 +148,16 @@ public class MaintenanceAdapter extends BaseAdapter {
                         return;
                     }
                 } else if (position == 4) {
+//                    if (roles.contains("highway_zxyssq")) {
+//                        in.setClass(mContext, MaintenanceTableActivity.class);
                     Logger.e("aaa",str + "维修保养工程验收申请");
+//                    } else {
+//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+//                        toast.setGravity(Gravity.CENTER, 0, 0);
+//                        toast.show();
+//                        return;
+//                    }
+
                 } else if (position == 5) {
                     if (roles.contains("highway_rcyhysy")
                             || roles.contains("highway_yhgcs")) {
@@ -152,13 +176,14 @@ public class MaintenanceAdapter extends BaseAdapter {
                 mContext.startActivity(in);
             }
         });
-        String submitNum = submitList.get(position);
-        if (submitNum.equals("0")) {
-            holder.maintenance_item_submit.setVisibility(View.GONE);
-        } else {
-            holder.maintenance_item_submit.setText("待提交：" + submitNum);
-            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
-        }
+        //判断是否有待提交的
+//        String submitNum = submitList.get(position);
+//        if (submitNum.equals("0")) {
+//            holder.maintenance_item_submit.setVisibility(View.GONE);
+//        } else {
+//            holder.maintenance_item_submit.setText("待提交：" + submitNum);
+//            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
+//        }
 
         holder.maintenance_item_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,10 +192,12 @@ public class MaintenanceAdapter extends BaseAdapter {
                 if (position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
                 } else if (position == 1) {
-                    in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
                 } else if (position == 2) {
-                    in.setClass(mContext, MaintenanceOfOrderListActivity.class);
+                    in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
                 } else if (position == 3) {
+                    in.setClass(mContext, MaintenanceOfOrderListActivity.class);
+                } else if (position == 4) {
+                } else if (position == 5) {
                     in.setClass(mContext, ProjectAcceptanceListUpLoadActivity.class);
                 } else {
                     return;
