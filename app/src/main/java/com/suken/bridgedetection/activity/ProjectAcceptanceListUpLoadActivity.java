@@ -217,6 +217,7 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
             try {
                 while(iterator.hasNext()){
                     ProjacceptItemBean b = iterator.next();
+
                     List<IVDesc> imageDesc = ivDescDao.getImageProjacceptItemBeanByUserId(b.getIds());
                     b.setmImages(imageDesc);
 
@@ -328,15 +329,19 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                     bean.getProjacceptDetailList().get(i).setProjectAcceptanceBean(null);
                     bean.getProjacceptDetailList().get(i).setiDescs(null);
                     bean.getProjacceptDetailList().get(i).setvDescs(null);
+                    bean.getProjacceptDetailList().get(i).setCreatetime(null);
 
                 }
                 bean.setProjacceptItemBeen(null);
                 bean.setiDescs(null);
                 bean.setmImages(null);
+                bean.setCreatetime(null);
                 long ids = Long.parseLong(bean.getIds());
                 long id = bean.getId();
                 bean.setId(ids);
                 bean.setIds(id+"");
+                //不加这个上传会出现问题17.03.23
+
 //                Logger.e("aaa", "bean123===" + bean.toString());
                 Logger.e("aaa", "gson======" + gson.toJson(bean));
                 pair = new BasicNameValuePair("json", gson.toJson(bean));

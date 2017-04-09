@@ -376,6 +376,7 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
 
     }
+
     public void setClick(){
 
         maintenanceoforder_bzbf_xiangji.setOnClickListener(listener);
@@ -873,12 +874,12 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             switch (msg.what) {
                 case SUCCESS_CODE:
                     dismissLoading();
-                    toast("获取维修保养日志成功！");
+                    toast("获取养护通知单成功！");
                     showListDialog();
                     break;
                 case ERROR_CODE:
                     dismissLoading();
-                    toast("获取维修保养日志失败！");
+                    toast("获取养护通知单失败！");
                     break;
             }
             dismissLoading();
@@ -974,11 +975,11 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-//                        if(!mIsGpsSuccess){
-//                            Toast.makeText(mContext, "正在定位...\n" +
-//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-//                            return;
-//                        }
+                        if(!mIsGpsSuccess){
+                            Toast.makeText(mContext, "正在定位...\n" +
+                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
 
                         String gydw = maintenanceoforder_gydw_ev.getText().toString();
                         String checkDate = maintenanceoforder_checkDate_ev.getText().toString();

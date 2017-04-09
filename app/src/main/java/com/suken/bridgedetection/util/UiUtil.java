@@ -25,12 +25,15 @@ import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.BridgeDetectionListActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
+import com.suken.bridgedetection.activity.UpdateAllActivity;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.GeteMaterialBean;
 import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
+import com.suken.bridgedetection.bean.SDXCBean;
+import com.suken.bridgedetection.bean.SDXCDao;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.storage.*;
@@ -144,8 +147,10 @@ public class UiUtil {
                         break;
                     }
                     case sdBaseData: {
-                        List<SDBaseData> list = JSON.parseArray(obj.getString("datas"), SDBaseData.class);
-                        new SDBaseDataDao().create(list);
+                        List<SDBaseData> sdBaseDatas = JSON.parseArray(obj.getString("datas"), SDBaseData.class);
+                        List<SDXCBean> sdxcBeanList = JSON.parseArray(obj.getString("datas"), SDXCBean.class);
+                        new SDBaseDataDao().create(sdBaseDatas);
+                        new SDXCDao().create(sdxcBeanList);
                         break;
                     }
                     case qhyhzrInfo: {
@@ -167,11 +172,19 @@ public class UiUtil {
                     case lastsdjcInfo: {
                         List<CheckFormData> list = JSON.parseArray(obj.getString("datas"), CheckFormData.class);
                         int type1 = type == RequestType.lastqhjcInfo ? R.drawable.qiaoliangjiancha : (type == RequestType.lastsdxcinfo ? R.drawable.suidaoxuncha : R.drawable.suidaojiancha);
+//                        int type1 = type == RequestType.lastqhjcInfo ? R.drawable.qiaoliangjiancha :R.drawable.suidaojiancha;
+
+//                        Logger.e("aaa","lastqhjcInfo="+RequestType.lastqhjcInfo);
+//                        Logger.e("aaa","qiaoliangjiancha="+R.drawable.qiaoliangjiancha);
+//                        Logger.e("aaa","suidaojiancha="+R.drawable.suidaojiancha);
+//                        Logger.e("aaa","type="+type);
+//                        Logger.e("aaa","type1="+type1);
                         if (list != null && list.size() > 0) {
                             for (CheckFormData data : list) {
                                 data.setType(type1);
                                 data.setLastUpdate(true);
-                                if (data.getZxzh().equals("0.02")) {
+                                //2017。04。09 修改隧道检查 获取上次检查记录获取不到的问题，这里为空！！！！！！！！！！！！MDZZ
+                                if ("0.02".equals(data.getZxzh())) {
                                     Log.e("", data.toString());
                                 }
                                 if (TextUtils.isEmpty(data.getGldwId())) {
@@ -210,6 +223,7 @@ public class UiUtil {
                         QLBaseDataDao qlBaseDataDao =  new QLBaseDataDao();
                         HDBaseDataDao hdBaseDataDao =  new HDBaseDataDao();
                         SDBaseDataDao sdBaseDataDao =  new SDBaseDataDao();
+                        SDXCDao sdxcDao = new SDXCDao();
                         QHYHZeRenInfoDao qhyhZeRenInfoDao =  new QHYHZeRenInfoDao();
                         SDYHZeRenInfoDao sdyhZeRenInfoDao =  new SDYHZeRenInfoDao();
                         YWDictionaryDao ywDictionaryDao =  new YWDictionaryDao();
@@ -224,6 +238,9 @@ public class UiUtil {
                         }
                         if(!TextUtil.isListEmpty(sdBaseDataDao.queryAll())){
                             sdBaseDataDao.deleteAll();
+                        }
+                        if(!TextUtil.isListEmpty(sdxcDao.queryAll())){
+                            sdxcDao.deleteAll();
                         }
                         if(!TextUtil.isListEmpty(qhyhZeRenInfoDao.queryAll())){
                             qhyhZeRenInfoDao.deleteAll();
@@ -241,8 +258,16 @@ public class UiUtil {
                         qlBaseDataDao.create(list1);
                         List<HDBaseData> list2 = JSON.parseArray(obj.getString("culverts"), HDBaseData.class);
                         hdBaseDataDao.create(list2);
+
+                        Logger.e("aaa", "sd1111=="+obj.getString("tunnels"));
                         List<SDBaseData> list3 = JSON.parseArray(obj.getString("tunnels"), SDBaseData.class);
+                        Logger.e("aaa", "sd222=="+list3.toString());
                         sdBaseDataDao.create(list3);
+
+                        Logger.e("aaa", "sdxc111=="+obj.getString("tunnels"));
+                        List<SDXCBean> list3_1 = JSON.parseArray(obj.getString("tunnels"), SDXCBean.class);
+                        Logger.e("aaa", "sdxc222=="+list3_1.toString());
+                        sdxcDao.create(list3_1);
                         List<QHYangHuZeRenInfo> list4 = JSON.parseArray(obj.getString("brgengineers"), QHYangHuZeRenInfo.class);
                         qhyhZeRenInfoDao.create(list4);
                         List<SDYangHuZeRenInfo> list5 = JSON.parseArray(obj.getString("tunengineers"), SDYangHuZeRenInfo.class);
@@ -320,12 +345,12 @@ public class UiUtil {
                         new HttpTask(listener, RequestType.lastsdxcinfo).executePost(list);
                     }
                 } else {
-                    if(activity instanceof  HomePageActivity){
-                        Logger.e("aaa","加载日常养护信息！");
-                        new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
-                        new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
-                        new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
-                    }
+//                    if(activity instanceof  HomePageActivity){
+//                        Logger.e("aaa","加载日常养护信息！");
+//                        new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
+//                        new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
+//                        new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
+//                    }
 
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
@@ -448,8 +473,8 @@ public class UiUtil {
         return "123";
     }
 
-    public static void updateSingleNotPost(final String qhId, final int type, final boolean handleDialog, final BaseActivity activity) {
-        if (handleDialog) {
+    public static void updateSingleNotPost(final String qhId, final int type, final boolean handleDialog, final BaseActivity activity,boolean isEnd) {
+        if (handleDialog && !activity.isLoadingDialogShow()) {
             activity.showLoading("上传中...");
         }
         List<NameValuePair> list = new ArrayList<NameValuePair>();
@@ -460,7 +485,7 @@ public class UiUtil {
         if (type == R.drawable.suidaoxuncha || type == R.drawable.qiaoliangxuncha) {
             updateXunchaData(qhId, type, list, activity);
         } else {
-            updateCheckData(qhId, type, list, activity);
+            updateCheckData(qhId, type, list, activity,isEnd);
         }
         if (handleDialog && !(activity.isFinishing() || activity.isDestroyed())) {
             activity.dismissLoading();
@@ -473,7 +498,7 @@ public class UiUtil {
         BackgroundExecutor.execute(new Runnable() {
             public void run() {
                 isUpdating = true;
-                updateSingleNotPost(qhId, type, handleDialog, activity);
+                updateSingleNotPost(qhId, type, handleDialog, activity,true);
                 isUpdating = false;
             }
         });
@@ -579,6 +604,25 @@ public class UiUtil {
                             }
                         }
                     });
+                    TimerTask task = new TimerTask(){
+                        public void run(){
+                            //execute the task
+                            Logger.e("bbb","111111111");
+                            UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
+                                @Override
+                                public void onSyncFinished(boolean isSuccess) {
+                                    if(isSuccess){
+                                        if(activity instanceof BridgeDetectionListActivity){
+                                            ((BridgeDetectionListActivity) activity).loadData();
+                                        }
+
+                                    }
+                                }
+                            });
+                        }
+                    };
+                    Timer timer = new Timer();
+                    timer.schedule(task, 100);
                     activity.toast("上传成功");
                 }
 
@@ -590,12 +634,13 @@ public class UiUtil {
             data.setStatus("2");
             data.setTjsj(UiUtil.formatNowTime());
             String json = new String(JSON.toJSONString(data));
+            Logger.e("add","upload111="+json);
             list.add(new BasicNameValuePair("json", json));
             new HttpTask(listener, type == R.drawable.suidaoxuncha ? RequestType.updatesdxcInfo : RequestType.updateqhxcInfo).executePost(list);
         }
     }
 
-    private static void updateCheckData(final String qhId, final int type, List<NameValuePair> list, final BaseActivity activity) {
+    private static void updateCheckData(final String qhId, final int type, List<NameValuePair> list, final BaseActivity activity, final boolean isEnd) {
         final CheckFormData data = new CheckFormAndDetailDao().queryByQHIdAndStatus(qhId, "1", type);
         if (data != null) {
             for (final CheckDetail detail : data.getOftenCheckDetailList()) {
@@ -626,23 +671,32 @@ public class UiUtil {
                                 }
                             }
                         });
+                        if(isEnd){
+                            TimerTask task = new TimerTask(){
+                                public void run(){
+                                    //execute the task
+                                    Logger.e("bbb","111111111");
+                                    UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
+                                        @Override
+                                        public void onSyncFinished(boolean isSuccess) {
+                                            if(isSuccess){
+                                                if(activity instanceof UpdateAllActivity){
+                                                    activity.finish();
+                                                }else if(activity instanceof BridgeDetectionListActivity){
+                                                    ((BridgeDetectionListActivity) activity).loadData();
+                                                }
 
-                        TimerTask task = new TimerTask(){
-                                 public void run(){
-                                     //execute the task
-                                     Logger.e("bbb","111111111");
-                                     UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
-                                         @Override
-                                         public void onSyncFinished(boolean isSuccess) {
-                                             if(isSuccess && activity instanceof BridgeDetectionListActivity ){
-                                                 ((BridgeDetectionListActivity) activity).loadData();
-                                             }
-                                         }
-                                     });
-                                     }
-                             };
-                         Timer timer = new Timer();
-                        timer.schedule(task, 1000);
+                                            }
+                                        }
+                                    });
+                                }
+                            };
+                            Timer timer = new Timer();
+                            timer.schedule(task, 100);
+                            activity.toast("上传成功");
+                        }
+
+
 
 //                        new Handler().postDelayed(new Runnable() {
 //                            @Override
@@ -659,7 +713,7 @@ public class UiUtil {
 //                            }
 //                        }, 1000);
 
-                        activity.toast("上传成功");
+
                     }
                 }
 
@@ -667,6 +721,7 @@ public class UiUtil {
                 public void onRequestFail(RequestType type, String resultCode, String result) {
                     if (type != RequestType.updateGps) {
                         activity.toast(result);
+                        activity.dismissLoading();
                     }
                 }
             };
@@ -682,6 +737,7 @@ public class UiUtil {
                     list.remove(jsonPair);
                 }
             }
+            Logger.e("aaa","upload222=="+json);
             list.add(new BasicNameValuePair("json", json));
             new HttpTask(listener, type == R.drawable.suidaojiancha ? RequestType.updatesdjcInfo : RequestType.updateqhjcInfo).executePost(list);
         }

@@ -281,17 +281,18 @@ public class FormItemController implements OnClickListener {
 							rb3.setChecked(true);
 						}
 					}
-					CheckBox cb1 = (CheckBox) item5Ll.findViewById(R.id.item5_1);
-					CheckBox cb2 = (CheckBox) item5Ll.findViewById(R.id.item5_2);
-					CheckBox cb3 = (CheckBox) item5Ll.findViewById(R.id.item5_3);
+					RadioGroup cbGroup = (RadioGroup) item5Ll.findViewById(R.id.item5_group);
+					RadioButton cb1 = (RadioButton) item5Ll.findViewById(R.id.item5_1);
+					RadioButton cb2 = (RadioButton) item5Ll.findViewById(R.id.item5_2);
+					RadioButton cb3 = (RadioButton) item5Ll.findViewById(R.id.item5_3);
 					if (!TextUtils.isEmpty(mFormBaseDetail.item5)) {
-						if (mFormBaseDetail.item5.contains("跟踪检查")) {
+						if (mFormBaseDetail.item5.contains("跟踪监测")) {
 							cb1.setChecked(true);
 						}
-						if (mFormBaseDetail.item5.contains("维修处理")) {
+						if (mFormBaseDetail.item5.contains("维修处置")) {
 							cb2.setChecked(true);
 						}
-						if (mFormBaseDetail.item5.contains("定期或专项检测")) {
+						if (mFormBaseDetail.item5.contains("定期或专项检查")) {
 							cb3.setChecked(true);
 						}
 					}
@@ -466,9 +467,9 @@ public class FormItemController implements OnClickListener {
 			int id = item4Rg.getCheckedRadioButtonId();
 			RadioButton rb = (RadioButton) item4Rg.findViewById(id);
 			detail.setPd(rb.getText().toString());
-			CheckBox cb1 = (CheckBox) item5Ll.findViewById(R.id.item5_1);
-			CheckBox cb2 = (CheckBox) item5Ll.findViewById(R.id.item5_2);
-			CheckBox cb3 = (CheckBox) item5Ll.findViewById(R.id.item5_3);
+			RadioButton cb1 = (RadioButton) item5Ll.findViewById(R.id.item5_1);
+			RadioButton cb2 = (RadioButton) item5Ll.findViewById(R.id.item5_2);
+			RadioButton cb3 = (RadioButton) item5Ll.findViewById(R.id.item5_3);
 			detail.setYhcsyj(
 					(cb1.isChecked() ? cb1.getText() + "," : "") + (cb2.isChecked() ? cb2.getText() + "," : "") + (cb3.isChecked() ? cb3.getText() : ""));
 			detail.setJgmc(mTitle);

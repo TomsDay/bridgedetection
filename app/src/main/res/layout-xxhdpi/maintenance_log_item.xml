@@ -145,14 +145,21 @@
                         android:text="下行"
                         android:textSize="@dimen/content_markSice" >
                     </RadioButton>
-                    <CheckBox
-                        android:id="@+id/checkBox"
-                        android:text="是否匝道"
+                    <RadioButton
+                        android:id="@+id/radioupdown"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/content_markSice"/>
+                        android:text="双向"
+                        android:textSize="@dimen/content_markSice" >
+                    </RadioButton>
 
                 </RadioGroup>
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:text="是否匝道"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/content_markSice"/>
 
             </LinearLayout>
 

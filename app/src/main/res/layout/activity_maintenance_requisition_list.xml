@@ -191,18 +191,6 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="病害名称"
-            android:textSize="@dimen/list_textSice" />
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
-        <TextView
-            android:id="@+id/maintenance_requisitionList_row9"
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="单位"
             android:textSize="@dimen/list_textSice" />
         <View
@@ -210,7 +198,7 @@
             android:layout_height="match_parent"
             android:background="#90808080" />
         <TextView
-            android:id="@+id/maintenance_requisitionList_row10"
+            android:id="@+id/maintenance_requisitionList_row9"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"

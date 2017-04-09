@@ -65,14 +65,13 @@ public class LoginActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//
 
 		mUserDao = new UserInfoDao();
 		mUserInfos = mUserDao.queryAll();
 		setContentView(R.layout.activity_login_page);
 		mNameView = (EditText) findViewById(R.id.username);
 		mPwdView = (EditText) findViewById(R.id.userpwd);
-		mNameView.setText("hdwt-cx");
+		mNameView.setText("cs-cs");
 		mPwdView.setText("1");
 		mTextView = (TextView) findViewById(R.id.login_desc);
 		if(mUserInfos != null && mUserInfos.size() > 0){

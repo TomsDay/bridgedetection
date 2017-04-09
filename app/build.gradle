@@ -36,8 +36,8 @@ android {
         applicationId "com.suken.bridgedetection"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 56
-        versionName "1.5.6"
+        versionCode 57
+        versionName "1.4.2"
     }
     sourceSets {
         main {
@@ -73,5 +73,4 @@ dependencies {
     compile files('libs/android-support-v4.jar')
     compile files('libs/locSDK_6.13.jar')
     compile 'com.google.code.gson:gson:2.3.1'
-    compile 'com.android.support:appcompat-v7:22.2.1'
 }

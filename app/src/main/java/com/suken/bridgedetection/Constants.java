@@ -73,6 +73,8 @@ public class Constants {
 			"内装、脏污、变形、破损其他情况等",
 			 ""
 	};
+	public static final String[] sdlxStr = new String[] {"未选择","短隧道","中隧道","长隧道","特长隧道"};
+	public static final String[] sdfxStr = new String[]{"上行洞","下行洞"};
 	public static final String[] sdformDetailItemTexts = new String[] { "里程桩号：", "缺损内容：", "异常描述：", "判定：", "保养措施意见：" };
 	public static final String[] sdxcformDetailNames = new String[] { "洞口边仰坡", "洞门结构", "内部衬砌", "洞内路面积水", "洞内路面撒落物", "洞顶预埋件和悬吊件", "供配电设施", "照明设施", "通风设施",
 			"消防设施", "监控和通信设施", "其他" };

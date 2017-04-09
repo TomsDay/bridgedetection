@@ -7,7 +7,9 @@ import java.util.List;
 
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.SDXCBean;
 import com.suken.bridgedetection.storage.*;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 
@@ -22,6 +24,7 @@ import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
@@ -40,6 +43,9 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
 
     public void setSourceData(List<ListBean> list) {
         mSourceData = list;
+        mUnfilteredData = list;
+        Logger.e("aaa","修改：111"+mSourceData.size());
+        Logger.e("aaa","修改：222"+mUnfilteredData.size());
         notifyDataSetChanged();
     }
 
@@ -68,7 +74,12 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
                                     intent.putExtra("qhInfo", (HDBaseData) bean.realBean);
                                 }
                             } else {
-                                intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
+                                if (bean.realBean instanceof SDBaseData) {
+                                    intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
+                                } else if (bean.realBean instanceof SDXCBean) {
+                                    intent.putExtra("qhInfo", (SDXCBean) bean.realBean);
+                                }
+//                                intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
                             }
                             mContext.startActivityForResult(intent, mType == R.drawable.qiaoliangxuncha ? 2 : 1);
                         } else {
@@ -105,13 +116,20 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
                             qllx = "c";
                         }
                     } else {
-                        intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
+                        if (bean.realBean instanceof SDBaseData) {
+                            intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
+                        } else if (bean.realBean instanceof SDXCBean) {
+                            intent.putExtra("qhInfo", (SDXCBean) bean.realBean);
+                        }
+//                        intent.putExtra("qhInfo", (SDBaseData) bean.realBean);
                     }
                     intent.putExtra("type", mType);
                     boolean flag = (mType == R.drawable.qiaoliangjiancha || mType == R.drawable.suidaojiancha || mType == R.drawable.suidaoxuncha);
                     long localId = -1;
                     if(mType != R.drawable.suidaoxuncha) {
                         CheckFormData  a = new CheckFormAndDetailDao().queryLastUpdateByTypeAndId(bean.id, mType, qllx);
+//                        List<CheckFormData> cflist = new CheckFormAndDetailDao().queryLastUpdateByTypeAndId2(bean.id, mType, qllx);
+//                        Logger.e("aaa",cflist.toString());
                         if(a != null) {
                             localId = a.getLocalId();
                         }
@@ -186,6 +204,8 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         Collections.sort(data, comparator);
         mSourceData = data;
         mUnfilteredData = data;
+        Logger.e("aaa","初始化：111"+mSourceData.size());
+        Logger.e("aaa","初始化：222"+mUnfilteredData.size());
     }
 
     @Override
@@ -209,6 +229,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
         TextView qhbs;
         TextView lxbm;
         TextView lxmc;
+        TextView sdfx;
         View colorCircle;
         TextView times;
         Button operate;
@@ -227,6 +248,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             holder.qhbs = (TextView) view.findViewById(R.id.qhbs);
             holder.lxbm = (TextView) view.findViewById(R.id.lxbm);
             holder.lxmc = (TextView) view.findViewById(R.id.lxmc);
+            holder.sdfx = (TextView) view.findViewById(R.id.sdfx);
             holder.operate = (Button) view.findViewById(R.id.operator);
             holder.colorCircle = view.findViewById(R.id.color_circle);
             holder.times = (TextView) view.findViewById(R.id.times);
@@ -252,6 +274,13 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             } else if(length - index == 1){
                 qhzh += "000";
             }
+        }
+        if (mType == R.drawable.suidaojiancha || mType == R.drawable.suidaoxuncha) {
+//            String sdlx = holder.bean.sdfx;
+//            //判断字符串是否为空并且是否是数字
+//            int sdlxIndex = TextUtil.isEmptyString(sdlx)?0:(sdlx.matches("[0-9]{1,}")?Integer.parseInt(sdlx):0);
+            holder.sdfx.setText(holder.bean.sdfx);
+            holder.sdfx.setVisibility(View.VISIBLE);
         }
         holder.zxzh.setText(qhzh);
         holder.qhmc.setText(holder.bean.qhmc);
@@ -312,6 +341,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
             } else {
                 String prefixString = prefix.toString().toLowerCase();
                 int count = mUnfilteredData.size();
+                Logger.e("aaa","开始："+mUnfilteredData.size());
                 List<ListBean> newValues = new ArrayList<ListBean>();
                 for (int i = 0; i < count; i++) {
                     ListBean bean = mUnfilteredData.get(i);
@@ -324,6 +354,7 @@ public class ListPageAdapter extends BaseAdapter implements Filterable {
                         newValues.add(bean);
                     }
                 }
+                Logger.e("aaa","结束："+newValues.size());
                 results.values = newValues;
                 results.count = newValues.size();
             }

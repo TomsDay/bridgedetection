@@ -90,7 +90,7 @@
             android:id="@+id/maintenanceoforder_item_tv6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.15"
+            android:layout_weight="1.1"
             android:gravity="center"
             android:text="上传"
             android:textColor="@color/yuninfo_black_shadow"

@@ -125,6 +125,67 @@ public class SdxcFormData implements Serializable {
 	@DatabaseField
 	private String userId;
 
+	@DatabaseField
+	private String sdlx;
+
+	public String getSdlx() {
+		return sdlx;
+	}
+
+	public void setSdlx(String sdlx) {
+		this.sdlx = sdlx;
+	}
+
+	@Override
+	public String toString() {
+		return "SdxcFormData{" +
+				"createBy='" + createBy + '\'' +
+				", createtime='" + createtime + '\'' +
+				", creator='" + creator + '\'' +
+				", flag=" + flag +
+				", fzry='" + fzry + '\'' +
+				", gldwId='" + gldwId + '\'' +
+				", gldwName='" + gldwName + '\'' +
+				", gydwId='" + gydwId + '\'' +
+				", gydwName='" + gydwName + '\'' +
+				", id=" + id +
+				", localId=" + localId +
+				", jcsd='" + jcsd + '\'' +
+				", jcsj='" + jcsj + '\'' +
+				", jlry='" + jlry + '\'' +
+				", lxbh='" + lxbh + '\'' +
+				", type=" + type +
+				", lxid='" + lxid + '\'' +
+				", lxmc='" + lxmc + '\'' +
+				", inspectLogDetailList=" + inspectLogDetailList +
+				", sdbh='" + sdbh + '\'' +
+				", sdid='" + sdid + '\'' +
+				", sdfx='" + sdfx + '\'' +
+				", sdmc='" + sdmc + '\'' +
+				", status='" + status + '\'' +
+				", updateBy='" + updateBy + '\'' +
+				", updatetime='" + updatetime + '\'' +
+				", updator='" + updator + '\'' +
+				", yhdwId='" + yhdwId + '\'' +
+				", yhdwName='" + yhdwName + '\'' +
+				", zxzh='" + zxzh + '\'' +
+				", yhjgName='" + yhjgName + '\'' +
+				", yhjgId='" + yhjgId + '\'' +
+				", weather='" + weather + '\'' +
+				", sdzh='" + sdzh + '\'' +
+				", dealwith='" + dealwith + '\'' +
+				", cus3='" + cus3 + '\'' +
+				", xcry='" + xcry + '\'' +
+				", jcry='" + jcry + '\'' +
+				", qhlx='" + qhlx + '\'' +
+				", tjsj='" + tjsj + '\'' +
+				", lastUpdate=" + lastUpdate +
+				", savedTime=" + savedTime +
+				", userId='" + userId + '\'' +
+				", sdlx='" + sdlx + '\'' +
+				'}';
+	}
+
 	public String getCus3() {
 		return cus3;
 	}
@@ -477,14 +538,5 @@ public class SdxcFormData implements Serializable {
 		this.savedTime = savedTime;
 	}
 
-	@Override
-	public String toString() {
-		return "SdxcFormData [createBy=" + createBy + ", createtime=" + createtime + ", creator=" + creator + ", flag=" + flag + ", fzry=" + fzry + ", gldwId="
-				+ gldwId + ", gldwName=" + gldwName + ", id=" + id + ", localId=" + localId + ", jcsd=" + jcsd + ", jlry=" + jlry + ", lxbh=" + lxbh + ", type="
-				+ type + ", lxid=" + lxid + ", lxmc=" + lxmc + ", inspectlogDetailList=" + inspectLogDetailList + ", sdbh=" + sdbh + ", sdid=" + sdid
-				+ ", sdfx=" + sdfx + ", sdmc=" + sdmc + ", status=" + status + ", updateBy=" + updateBy + ", updatetime=" + updatetime + ", updator=" + updator
-				+ ", yhdwId=" + yhdwId + ", yhdwName=" + yhdwName + ", zxzh=" + zxzh + ", yhjgName=" + yhjgName + ", yhjgId=" + yhjgId + ", weather=" + weather
-				+ ", sdzh=" + sdzh + "]";
-	}
 
 }

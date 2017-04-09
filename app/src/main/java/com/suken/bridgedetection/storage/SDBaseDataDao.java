@@ -18,6 +18,9 @@ public class SDBaseDataDao {
             e.printStackTrace();
         }
     }
+    public Dao<SDBaseData, String> getSDBaseDataDao(){
+        return mGXLuXianInfoDao;
+    }
 
     public void create(List<SDBaseData> list) {
         for (SDBaseData info : list) {

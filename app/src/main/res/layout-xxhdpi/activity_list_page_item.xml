@@ -6,8 +6,9 @@
     android:gravity="center_vertical" >
 
     <TextView
-		android:id="@+id/zxzh"
-        android:layout_width="100dp"
+        android:id="@+id/zxzh"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="1395.27"
@@ -19,7 +20,8 @@
         android:background="#90808080" />
 
     <LinearLayout
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="match_parent"
         android:gravity="center" >
 
@@ -41,7 +43,20 @@
             android:text="K41+25.18箱型通道"
             android:textSize="10dp" />
     </LinearLayout>
+    <View
+        android:layout_width="2px"
+        android:layout_height="match_parent"
+        android:background="#90808080" />
 
+    <TextView
+        android:id="@+id/sdfx"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="向上"
+        android:textSize="10dp"
+        android:visibility="gone"/>
     <View
         android:layout_width="2px"
         android:layout_height="match_parent"
@@ -49,7 +64,8 @@
 
     <TextView
         android:id="@+id/qhbs"
-        android:layout_width="100dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="G45131081H0650"
@@ -62,7 +78,8 @@
 
     <TextView
         android:id="@+id/lxbm"
-        android:layout_width="90dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="G45"
@@ -74,33 +91,35 @@
         android:background="#90808080" />
 
     <TextView
-            android:id="@+id/times"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="(2)"
-            android:textColor="#ff0000"
-            android:textSize="10dp" />
+        android:id="@+id/times"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="(2)"
+        android:textColor="#ff0000"
+        android:textSize="10dp" />
 
     <View
-            android:layout_width="2px"
-            android:id="@+id/times_line"
-            android:layout_height="match_parent"
-            android:background="#90808080" />
+        android:layout_width="2px"
+        android:id="@+id/times_line"
+        android:layout_height="match_parent"
+        android:background="#90808080" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:layout_weight="1" >
+        android:gravity="center"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:id="@+id/lxmc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
             android:layout_weight="1"
             android:text="大广高速公路"
+            android:gravity="center"
             android:textSize="10dp" />
 
         <Button

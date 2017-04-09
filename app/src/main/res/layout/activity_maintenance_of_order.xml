@@ -128,7 +128,9 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_below="@id/maintenanceoforder_titleLayout"
-        android:layout_above="@id/maintenanceoforder_bottomLayout">
+        android:layout_above="@id/maintenanceoforder_bottomLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"

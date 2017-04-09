@@ -49,12 +49,11 @@ public class MaintenanceAdapter extends BaseAdapter {
     public void getData() {
 
         list.add(str + "养护巡查日志");
-        list.add(str + "维修保养通知单");
 //        list.add(str + "维修保养通知单");
         list.add(str + "维修保养日志");
 
         list.add(str + "施工安全检查表");
-        list.add(str + "维修保养工程验收申请");
+//        list.add(str + "维修保养工程验收申请");
 
         list.add(str + "维修保养工程现场验收");
     }
@@ -89,14 +88,14 @@ public class MaintenanceAdapter extends BaseAdapter {
             holder = (HolderView) view.getTag();
         }
         holder.maintenance_item_name.setText(list.get(position));
-        if (position == 1 || position == 4) {
-            holder.maintenance_item_name.setTextColor(Color.RED);
-        }
-//        if (position == 1) {
-//            holder.maintenance_item_new.setText("查看");
-//        } else {
-//            holder.maintenance_item_new.setText("新建");
+//        if (position == 1 || position == 4) {
+//            holder.maintenance_item_name.setTextColor(Color.RED);
 //        }
+        if (position == 1) {
+            holder.maintenance_item_new.setText("查看");
+        } else {
+            holder.maintenance_item_new.setText("新建");
+        }
         holder.maintenance_item_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,19 +115,19 @@ public class MaintenanceAdapter extends BaseAdapter {
                         toast.show();
                         return;
                     }
-                } else if (position == 1) {
-//                    if (roles.contains("highway_zxxdy")) {
-//                        in.setClass(mContext, MaintenanceTableActivity.class);
-                    in.setClass(mContext, MaintenanceRequisitionListActivity.class);
-                    Logger.e("aaa",str + "维修保养通知单");
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+//                } else if (position == 1) {
+////                    if (roles.contains("highway_zxxdy")) {
+////                        in.setClass(mContext, MaintenanceTableActivity.class);
+//                    in.setClass(mContext, MaintenanceRequisitionListActivity.class);
+//                    Logger.e("aaa",str + "维修保养通知单");
+////                    } else {
+////                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+////                        toast.setGravity(Gravity.CENTER, 0, 0);
+////                        toast.show();
+////                        return;
+////                    }
 
-                } else if (position == 2) {
+                } else if (position == 1) {
                     if (roles.contains("highway_rcyhwxgcs")) {
                         in.setClass(mContext, MaintenanceLogListActivity.class);
                     } else {
@@ -137,7 +136,7 @@ public class MaintenanceAdapter extends BaseAdapter {
                         toast.show();
                         return;
                     }
-                } else if (position == 3) {
+                } else if (position == 2) {
                     if (roles.contains("highway_rcyhaqjcy")
                             || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, MaintenanceOfOrderActivity.class);
@@ -147,18 +146,18 @@ public class MaintenanceAdapter extends BaseAdapter {
                         toast.show();
                         return;
                     }
-                } else if (position == 4) {
-//                    if (roles.contains("highway_zxyssq")) {
-//                        in.setClass(mContext, MaintenanceTableActivity.class);
-                    Logger.e("aaa",str + "维修保养工程验收申请");
-//                    } else {
-//                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
-//                        toast.setGravity(Gravity.CENTER, 0, 0);
-//                        toast.show();
-//                        return;
-//                    }
+//                } else if (position == 4) {
+////                    if (roles.contains("highway_zxyssq")) {
+////                        in.setClass(mContext, MaintenanceTableActivity.class);
+//                    Logger.e("aaa",str + "维修保养工程验收申请");
+////                    } else {
+////                        Toast toast = Toast.makeText(mContext, "无权限", Toast.LENGTH_LONG);
+////                        toast.setGravity(Gravity.CENTER, 0, 0);
+////                        toast.show();
+////                        return;
+////                    }
 
-                } else if (position == 5) {
+                } else if (position == 3) {
                     if (roles.contains("highway_rcyhysy")
                             || roles.contains("highway_yhgcs")) {
                         in.setClass(mContext, ProjectAcceptanceListActivity.class);
@@ -177,13 +176,13 @@ public class MaintenanceAdapter extends BaseAdapter {
             }
         });
         //判断是否有待提交的
-//        String submitNum = submitList.get(position);
-//        if (submitNum.equals("0")) {
-//            holder.maintenance_item_submit.setVisibility(View.GONE);
-//        } else {
-//            holder.maintenance_item_submit.setText("待提交：" + submitNum);
-//            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
-//        }
+        String submitNum = submitList.get(position);
+        if (submitNum.equals("0")) {
+            holder.maintenance_item_submit.setVisibility(View.GONE);
+        } else {
+            holder.maintenance_item_submit.setText("待提交：" + submitNum);
+            holder.maintenance_item_submit.setVisibility(View.VISIBLE);
+        }
 
         holder.maintenance_item_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,13 +190,13 @@ public class MaintenanceAdapter extends BaseAdapter {
                 Intent in = new Intent();
                 if (position == 0) {
                     in.setClass(mContext, MaintenanceTableListActivity.class);
+//                } else if (position == 1) {
                 } else if (position == 1) {
-                } else if (position == 2) {
                     in.setClass(mContext, MaintenanceLogUpLoadActivity.class);
-                } else if (position == 3) {
+                } else if (position == 2) {
                     in.setClass(mContext, MaintenanceOfOrderListActivity.class);
-                } else if (position == 4) {
-                } else if (position == 5) {
+//                } else if (position == 4) {
+                } else if (position == 3) {
                     in.setClass(mContext, ProjectAcceptanceListUpLoadActivity.class);
                 } else {
                     return;

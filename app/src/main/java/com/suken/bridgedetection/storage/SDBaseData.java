@@ -5,11 +5,13 @@ import java.io.Serializable;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+
+/**
+ * 隧道检查的数据
+ */
 @DatabaseTable(tableName = "tb_sdbasedata")
 public class SDBaseData implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	@DatabaseField
 	private String cdfl;
@@ -61,6 +63,9 @@ public class SDBaseData implements Serializable{
 	private String zxzh;
 
 	@DatabaseField
+	private String sdfx;
+
+	@DatabaseField
 	private String userId;
 
 	@DatabaseField(id = true)
@@ -68,6 +73,51 @@ public class SDBaseData implements Serializable{
 
 	@DatabaseField
 	private int mtimes = 0;
+	@DatabaseField
+	private int inspecttimes = 0;
+
+	@Override
+	public String toString() {
+		return "SDBaseData{" +
+				"cdfl='" + cdfl + '\'' +
+				", createBy='" + createBy + '\'' +
+				", createtime='" + createtime + '\'' +
+				", creator='" + creator + '\'' +
+				", flag=" + flag +
+				", gpsX=" + gpsX +
+				", gpsY=" + gpsY +
+				", gydwId='" + gydwId + '\'' +
+				", gydwName='" + gydwName + '\'' +
+				", id='" + id + '\'' +
+				", lxbh='" + lxbh + '\'' +
+				", lxdj='" + lxdj + '\'' +
+				", lxid='" + lxid + '\'' +
+				", lxmc='" + lxmc + '\'' +
+				", orgid=" + orgid +
+				", sdbh='" + sdbh + '\'' +
+				", sdmc='" + sdmc + '\'' +
+				", sdwz='" + sdwz + '\'' +
+				", zgfzr='" + zgfzr + '\'' +
+				", updateBy='" + updateBy + '\'' +
+				", updatetime='" + updatetime + '\'' +
+				", updator='" + updator + '\'' +
+				", versionno='" + versionno + '\'' +
+				", zxzh='" + zxzh + '\'' +
+				", sdfx='" + sdfx + '\'' +
+				", userId='" + userId + '\'' +
+				", localId='" + localId + '\'' +
+				", mtimes=" + mtimes +
+				", inspecttimes=" + inspecttimes +
+				'}';
+	}
+
+	public int getInspecttimes() {
+		return inspecttimes;
+	}
+
+	public void setInspecttimes(int inspecttimes) {
+		this.inspecttimes = inspecttimes;
+	}
 
 	public int getMtimes() {
 		return mtimes;
@@ -92,6 +142,14 @@ public class SDBaseData implements Serializable{
 	public void setUserId(String userId) {
 		this.userId = userId;
 		setLocalId(id + userId);
+	}
+
+	public String getSdfx() {
+		return sdfx;
+	}
+
+	public void setSdfx(String sdfx) {
+		this.sdfx = sdfx;
 	}
 
 	public String getCdfl() {
@@ -286,10 +344,4 @@ public class SDBaseData implements Serializable{
 		this.zxzh = zxzh;
 	}
 
-	@Override
-	public String toString() {
-		return "SDBaseData [cdfl=" + cdfl + ", createBy=" + createBy + ", createtime=" + createtime + ", creator=" + creator + ", flag=" + flag + ", gpsX=" + gpsX + ", gpsY=" + gpsY + ", gydwId="
-				+ gydwId + ", gydwName=" + gydwName + ", id=" + id + ", lxbh=" + lxbh + ", lxdj=" + lxdj + ", lxid=" + lxid + ", lxmc=" + lxmc + ", orgid=" + orgid + ", sdbh=" + sdbh + ", sdmc="
-				+ sdmc + ", sdwz=" + sdwz + ", zgfzr=" + zgfzr + ", updateBy=" + updateBy + ", updatetime=" + updatetime + ", updator=" + updator + ", versionno=" + versionno + ", zxzh=" + zxzh + "]";
-	}
 }

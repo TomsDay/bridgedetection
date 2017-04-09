@@ -25,6 +25,13 @@ public class SdxcFormAndDetailDao {
         }
     }
 
+    public Dao<SdxcFormData, Long> getSdxcFormDataDao(){
+        return mFormDao;
+    }
+    public Dao<SdxcFormDetail, String> getSdxcFormDetailDao(){
+        return mDetailDao;
+    }
+
     public boolean create(List<SdxcFormData> list) {
         for (SdxcFormData formData : list) {
             create(formData);

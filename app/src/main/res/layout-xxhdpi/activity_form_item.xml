@@ -307,26 +307,32 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
+                <RadioGroup
+                    android:id="@+id/item5_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/item5_1"
+                        android:textSize="10dp"
+                        android:text="跟踪监测"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:id="@+id/item5_2"
+                        android:textSize="10dp"
+                        android:text="维修处置"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                <CheckBox
-                    android:id="@+id/item5_1"
-                    android:textSize="10dp"
-                    android:text="跟踪检查"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <CheckBox
-                    android:id="@+id/item5_2"
-                    android:textSize="10dp"
-                    android:text="维修处理"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                
-                <CheckBox
-                    android:id="@+id/item5_3"
-                    android:textSize="10dp"
-                    android:text="定期或专项检测"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <RadioButton
+                        android:id="@+id/item5_3"
+                        android:textSize="10dp"
+                        android:text="定期或专项检查"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </RadioGroup>
+
                 
             </LinearLayout>
 

@@ -8,6 +8,8 @@ import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.SDXCBean;
+import com.suken.bridgedetection.bean.SDXCDao;
 import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
@@ -68,6 +70,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	private TextView row4 = null;
 	private TextView row5 = null;
 	private TextView row6 = null;
+	private TextView row7 = null;
 
 	private LinearLayout all_base_title;
 	private TextView all_ql_title;
@@ -161,6 +164,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		row4 = (TextView) findViewById(R.id.row4);
 		row5 = (TextView) findViewById(R.id.row5);
 		row6 = (TextView) findViewById(R.id.row6);
+		row7 = (TextView) findViewById(R.id.row7);
 		loadData();
 	}
 
@@ -184,8 +188,10 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 						break;
 					}
 					case R.drawable.suidaojiancha:
-					case R.drawable.suidaoxuncha: {
 						mListArray = new SDBaseDataDao().queryAll();
+						break;
+					case R.drawable.suidaoxuncha: {
+						mListArray = new SDXCDao().queryAll();
 						break;
 					}
 				}
@@ -194,7 +200,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					public void run() {
 						init(false);
 						if(UiUtil.isUpdating){
-							showLoading("继续上传中...");
+//							showLoading("继续上传中...");
 						} else {
 							dismissLoading();
 						}
@@ -312,6 +318,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			a++;
 		} else if (has2) {
 			bean.status = Constants.STATUS_AGAIN;
+			a++;
 		} else {
 			bean.status = Constants.STATUS_CHECK;
 		}
@@ -412,7 +419,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 					}
 				}
 				mQlListTitleText.setText(" 桥梁(" + mCurrentNum + "/" + data.size() + ")");
-				selectAllType();
+
 
 				List<ListBean> hdData = new ArrayList<ListBean>();
 				List<HDBaseData> hdBaseData = mListArray2;
@@ -439,30 +446,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 			}
 			case R.drawable.suidaojiancha:
 			case R.drawable.suidaoxuncha: {
-				row1.setText("隧道桩号");
-				row2.setText("隧道名称");
-				row3.setText("隧道标识");
-				List<SDBaseData> qlBaseData = mListArray;
-				if (qlBaseData != null && qlBaseData.size() > 0) {
-					for (SDBaseData bd : qlBaseData) {
-						ListBean bean = new ListBean();
-						bean.id = bd.getId();
-						bean.lxbm = bd.getLxbh();
-						bean.lxmc = bd.getLxmc();
-						bean.qhbs = bd.getSdbh();
-						bean.qhmc = bd.getSdmc();
-						bean.qhzh = bd.getZxzh();
-						bean.type = mType;
-						bean.mtimes = bd.getMtimes();
-						mCurrentNum = initStatus(bean, bd, bean.type);
-						data.add(bean);
-					}
-				}
-				mHdList.setVisibility(View.GONE);
-				mListTitleHd.setVisibility(View.GONE);
-				mListTitleQl.setSelected(true);
-				mListTitleQl.requestFocus();
-				mQlListTitleText.setText(" 隧道"+ ((mType == R.drawable.suidaojiancha)? "检查":"巡查")+"(" + mCurrentNum + "/" + data.size() + ")");
+				setSDData(data);
 				break;
 			}
 		}
@@ -475,6 +459,9 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 		}
 		qlAdapter = new ListPageAdapter(this, data, mType);
 		mList.setAdapter(qlAdapter);
+		if(mType == R.drawable.qiaoliangjiancha){
+			selectAllType();
+		}
 		mSearchInput = (EditText) findViewById(R.id.search_input);
 		mSearchInput.setOnKeyListener(new OnKeyListener() {
 
@@ -497,6 +484,61 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 				}
 			}
 		});
+	}
+	public void setSDData(List<ListBean> data){
+		row1.setText("隧道桩号");
+		row2.setText("隧道名称");
+		row3.setText("隧道标识");
+		if(mType  == R.drawable.suidaojiancha){
+			List<SDBaseData> qlBaseData = mListArray;
+			if (!TextUtil.isListEmpty(qlBaseData)) {
+				for (SDBaseData bd : qlBaseData) {
+					ListBean bean = new ListBean();
+					bean.id = bd.getId();
+					bean.lxbm = bd.getLxbh();
+					bean.lxmc = bd.getLxmc();
+					bean.qhbs = bd.getSdbh();
+					bean.qhmc = bd.getSdmc();
+					bean.qhzh = bd.getZxzh();
+
+					bean.sdfx = bd.getSdfx();
+
+					bean.type = mType;
+					bean.mtimes = bd.getMtimes();
+					mCurrentNum = initStatus(bean, bd, bean.type);
+					data.add(bean);
+				}
+			}
+		}else if(mType == R.drawable.suidaoxuncha){
+			List<SDXCBean> qlBaseData = mListArray;
+			if (!TextUtil.isListEmpty(qlBaseData)) {
+				for (SDXCBean bd : qlBaseData) {
+					ListBean bean = new ListBean();
+					bean.id = bd.getId();
+					bean.lxbm = bd.getLxbh();
+					bean.lxmc = bd.getLxmc();
+					bean.qhbs = bd.getSdbh();
+					bean.qhmc = bd.getSdmc();
+					bean.qhzh = bd.getZxzh();
+
+					bean.sdfx = bd.getSdfx();
+
+					bean.type = mType;
+					bean.mtimes =  bd.getInspecttimes();
+					mCurrentNum = initStatus(bean, bd, bean.type);
+					data.add(bean);
+				}
+				Logger.e("aaa",data.get(1).toString());
+				Logger.e("aaa",qlBaseData.get(1).toString());
+			}
+		}
+
+		row7.setVisibility(View.VISIBLE);
+		mHdList.setVisibility(View.GONE);
+		mListTitleHd.setVisibility(View.GONE);
+		mListTitleQl.setSelected(true);
+		mListTitleQl.requestFocus();
+		mQlListTitleText.setText(" 隧道"+ ((mType == R.drawable.suidaojiancha)? "检查":"巡查")+"(" + mCurrentNum + "/" + data.size() + ")");
 	}
 
 	@Override
@@ -591,6 +633,7 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 
 			}
 		} else if (arg0 == 3) {
+			loadData();//从数据库加载数据
 			init(true);
 		}
 	}
@@ -614,8 +657,19 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 	private void updateAll() {
 		Intent intent = new Intent(this, UpdateAllActivity.class);
 		updateAllList = new ArrayList<ListBean>();
-		if (mList.getVisibility() == View.VISIBLE) {
-			ListPageAdapter adapter = (ListPageAdapter) mList.getAdapter();
+
+		if (mType == R.drawable.qiaoliangjiancha) {
+			getUpdateData(mList);
+			getUpdateData(mHdList);
+		}else{
+			getUpdateData(mList);
+		}
+		intent.putExtra("type", mType);
+		startActivityForResult(intent, 3);
+	}
+	public void getUpdateData(ListView listView){
+		if (listView.getVisibility() == View.VISIBLE) {
+			ListPageAdapter adapter = (ListPageAdapter) listView.getAdapter();
 			if(adapter != null) {
 				List<ListBean> data = adapter.getSourceData();
 				for(ListBean bean : data){
@@ -625,20 +679,6 @@ public class BridgeDetectionListActivity extends BaseActivity implements OnClick
 				}
 			}
 		}
-
-		if (mType == R.drawable.qiaoliangjiancha) {
-			ListPageAdapter adapter = (ListPageAdapter) mHdList.getAdapter();
-			if(adapter != null) {
-				List<ListBean> data = adapter.getSourceData();
-				for(ListBean bean : data) {
-					if (TextUtils.equals(bean.status, Constants.STATUS_UPDATE)) {
-						updateAllList.add(bean);
-					}
-				}
-			}
-		}
-		intent.putExtra("type", mType);
-		startActivityForResult(intent, 3);
 	}
 
 	@Override

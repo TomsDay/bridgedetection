@@ -6,6 +6,7 @@ import java.util.List;
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.SDXCBean;
 import com.suken.bridgedetection.storage.CheckFormAndDetailDao;
 import com.suken.bridgedetection.storage.CheckFormData;
 import com.suken.bridgedetection.storage.HDBaseData;
@@ -15,6 +16,7 @@ import com.suken.bridgedetection.storage.SdxcFormAndDetailDao;
 import com.suken.bridgedetection.storage.SdxcFormData;
 import com.suken.bridgedetection.util.NetWorkUtil;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 
 import android.content.Intent;
@@ -198,7 +200,12 @@ public class UpdateAllActivity extends BaseActivity {
 							intent.putExtra("qhInfo", (HDBaseData) listBean.realBean);
 						}
 					} else {
-						intent.putExtra("qhInfo", (SDBaseData) listBean.realBean);
+						if (listBean.realBean instanceof SDBaseData) {
+							intent.putExtra("qhInfo", (SDBaseData) listBean.realBean);
+						} else if (listBean.realBean instanceof SDXCBean) {
+							intent.putExtra("qhInfo", (SDXCBean) listBean.realBean);
+						}
+//						intent.putExtra("qhInfo", (SDBaseData) listBean.realBean);
 					}
 					startActivityForResult(intent, mType == R.drawable.qiaoliangxuncha ? 2 : 1);
 				
@@ -223,25 +230,45 @@ public class UpdateAllActivity extends BaseActivity {
 				
 				@Override
 				public void run() {
-					showLoading("上传中...");
+
+					List<UpdateBean> listBeans = new ArrayList<UpdateBean>();
 					for (UpdateBean bean : mSourceData) {
 						if (bean.isChecked) {
-							UiUtil.updateSingleNotPost(bean.id + "", bean.mType, false, UpdateAllActivity.this);
+							listBeans.add(bean);
 						}
 					}
+
+					if(TextUtil.isListEmpty(listBeans)){
+						toast("您没有选中上传的数据！");
+						return;
+					}else{
+//						showLoading("上传中...");
+						for (int i = 0; i < listBeans.size(); i++) {
+							UpdateBean bean = listBeans.get(i);
+							boolean isEnd = false;
+							if (i == listBeans.size() - 1) {
+								isEnd = true;
+							}
+							UiUtil.updateSingleNotPost(bean.id + "", bean.mType, true, UpdateAllActivity.this,isEnd);
+						}
+//						toast("可以上传，上传数量"+listBeans.size());
+					}
+
 					runOnUiThread(new Runnable() {
 						
 						@Override
 						public void run() {
 							updateInit(true);
-							if(mSourceData == null || mSourceData.size() == 0){
-								finish();
-							}
+//							if(mSourceData == null || mSourceData.size() == 0){
+//								finish();
+//							}
 						}
 					});
-					dismissLoading();
+//					dismissLoading();
 				}
 			});
+		}else{
+			toast("您没有可以上传的数据！");
 		}
 	}
 	

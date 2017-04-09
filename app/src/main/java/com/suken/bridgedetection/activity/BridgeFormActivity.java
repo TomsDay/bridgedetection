@@ -14,6 +14,8 @@ import java.util.Map;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.Constants;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.bean.SDXCBean;
+import com.suken.bridgedetection.bean.SDXCDao;
 import com.suken.bridgedetection.fragment.FormItemController;
 import com.suken.bridgedetection.fragment.FormItemController.ImageDesc;
 import com.suken.bridgedetection.fragment.FormItemController.VideoDesc;
@@ -21,6 +23,7 @@ import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.storage.*;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.imageditor.ImageditorActivity;
 
@@ -77,7 +80,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 
 	private TextView extra1Tv = null;
 	private EditText extra1Ev = null;
-	private Spinner extra1Spinner = null;
+//	private Spinner extra1Spinner = null;
 	private View extraLayout = null;
 	private TextView weatherTv = null;
 	private Spinner weatherEv = null;
@@ -207,9 +210,8 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		extraLayout = findViewById(R.id.extra_layout);
 		extra1Tv = (TextView) findViewById(R.id.form_extra1_tv);
 		extra1Ev = (EditText) findViewById(R.id.form_extra1_ev);
-		extra1Spinner = (Spinner) findViewById(R.id.form_extra1_spinner);
-		extra1Spinner.setAdapter(new ArrayAdapter<String>(this, R.layout.spinner_item, new String[]{"左洞","右洞"}));
-		extra1Spinner.setSelection(0);
+//		extra1Spinner = (Spinner) findViewById(R.id.form_extra1_spinner);
+
 		weatherTv = (TextView) findViewById(R.id.form_weather_tv);
 		weatherEv = (Spinner) findViewById(R.id.form_weather_sp);
 		weatherEv.setAdapter(new ArrayAdapter<String>(this, R.layout.spinner_item, Constants.weatherStrs));
@@ -585,30 +587,77 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 			lxmcEv.setText(((HDBaseData) bean).getLxmc());
 			zxzhEv.setText(((HDBaseData) bean).getZxzh());
 			yhdwEv.setText(((HDBaseData) bean).getGydwName());
-		} else if (bean instanceof SDBaseData) {
+		} else if (bean instanceof SDBaseData || bean instanceof SDXCBean) {
 			if (mType == R.drawable.suidaojiancha) {
 				mItemTexts = Constants.sdformDetailItemTexts;
 				detailNames = Constants.sdformDetailNames;
 				mFormTitle.setText("隧道经常检查记录表");
 				qlhz.setText("隧道会诊");
+				SDBaseData sdBaseData = (SDBaseData) bean;
+//				extra1Spinner.setAdapter(new ArrayAdapter<String>(this, R.layout.spinner_item, Constants.sdfxStr));
+//				if(Constants.sdfxStr[0].equals(sdBaseData.getSdfx())){
+//					extra1Spinner.setSelection(0);//隧道方向
+//				}else if(Constants.sdfxStr[0].equals(sdBaseData.getSdfx()){
+//					extra1Spinner.setSelection(0);//隧道方向
+//				}
+//				switch (sdBaseData.getSdfx()) {
+//					case "下行洞":
+//						extra1Spinner.setSelection(1);
+//						break;
+//					case "上行洞":
+//					default:
+//						extra1Spinner.setSelection(0);
+//						break;
+//				}
+				extra1Ev.setKeyListener(null);
+				extra1Ev.setText(sdBaseData.getSdfx());
 				extraLayout.setVisibility(View.VISIBLE);
-				extra1Spinner.setVisibility(View.VISIBLE);
-				extra1Ev.setVisibility(View.GONE);
+//				extra1Spinner.setVisibility(View.VISIBLE);
+				extra1Ev.setVisibility(View.VISIBLE);
 			} else {
 				mItemTexts = Constants.sdxcformDetailItemTexts;
 				detailNames = Constants.sdxcformDetailNames;
 				mFormTitle.setText("隧道日常巡查记录表");
+				findViewById(R.id.form_sdzl).setVisibility(View.VISIBLE);
+				String sdlx = ((SDXCBean) bean).getCdfl();
+				//判断字符串是否为空并且是否是数字	
+				int sdlxIndex = TextUtil.isEmptyString(sdlx) ? 0 : (sdlx.matches("[0-9]{1,}") ? Integer.parseInt(sdlx) : 0);
+				((EditText) findViewById(R.id.form_sdlx_ev)).setText(Constants.sdlxStr[sdlxIndex]);
+				((EditText) findViewById(R.id.form_sdlx_ev)).setKeyListener(null);
+				((EditText) findViewById(R.id.form_sdfx_ev)).setText(((SDXCBean) bean).getSdfx());
+				((EditText) findViewById(R.id.form_sdfx_ev)).setKeyListener(null);
 				qlhz.setVisibility(View.GONE);
+
 			}
 			qlbhTv.setText("隧道编号：");
 			qlmcTv.setText("隧道名称：");
-			qhId = ((SDBaseData) bean).getId();
-			qlbhEv.setText(((SDBaseData) bean).getSdbh());
-			qlmcEv.setText(((SDBaseData) bean).getSdmc());
-			lxbhEv.setText(((SDBaseData) bean).getLxbh());
-			lxmcEv.setText(((SDBaseData) bean).getLxmc());
-			zxzhEv.setText(((SDBaseData) bean).getZxzh());
-			yhdwEv.setText(((SDBaseData) bean).getGydwName());
+			if(bean instanceof SDBaseData){
+				SDBaseData data = (SDBaseData) bean;
+				qhId = data.getId();
+				qlbhEv.setText(data.getSdbh());
+				qlmcEv.setText(data.getSdmc());
+				lxbhEv.setText(data.getLxbh());
+				lxmcEv.setText(data.getLxmc());
+				zxzhEv.setText(data.getZxzh());
+				yhdwEv.setText(data.getGydwName());
+
+			}else if(bean instanceof SDXCBean){
+				SDXCBean sdxcBean = (SDXCBean) bean;
+				qhId = sdxcBean.getId();
+				qlbhEv.setText(sdxcBean.getSdbh());
+				qlmcEv.setText(sdxcBean.getSdmc());
+				lxbhEv.setText(sdxcBean.getLxbh());
+				lxmcEv.setText(sdxcBean.getLxmc());
+				zxzhEv.setText(sdxcBean.getZxzh());
+				yhdwEv.setText(sdxcBean.getGydwName());
+			}
+//			qhId = ((SDBaseData) bean).getId();
+//			qlbhEv.setText(((SDBaseData) bean).getSdbh());
+//			qlmcEv.setText(((SDBaseData) bean).getSdmc());
+//			lxbhEv.setText(((SDBaseData) bean).getLxbh());
+//			lxmcEv.setText(((SDBaseData) bean).getLxmc());
+//			zxzhEv.setText(((SDBaseData) bean).getZxzh());
+//			yhdwEv.setText(((SDBaseData) bean).getGydwName());
 		}
 		if (mType == R.drawable.qiaoliangjiancha) {
 			QHYangHuZeRenInfo qhyhzrInfo = new QHYHZeRenInfoDao().queryByQhId(qhId);
@@ -646,8 +695,8 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				jlr.setText(lastEditBaseClass.jlr);
 			}
 			if (mType == R.drawable.suidaojiancha) {
-				if(TextUtils.equals(lastEditBaseClass.sdfx, "右洞")){
-					extra1Spinner.setSelection(1);
+				if(TextUtils.equals(lastEditBaseClass.sdfx, "下行洞")){
+					extra1Ev.setText("下行洞");
 				}
 				resetWeather();
 			} else {
@@ -777,10 +826,12 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 			data.setGldwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
 			data.setYhdwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
 			data.setYhdwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
-			if (bean instanceof SDBaseData) {
-				data.setLxid(((SDBaseData) bean).getLxid());
-				data.setYhjgId(((SDBaseData) bean).getGydwId());
-				data.setYhjgName(((SDBaseData) bean).getGydwName());
+
+			if (bean instanceof SDXCBean) {
+				SDXCBean sdxcBean = (SDXCBean) bean;
+				data.setLxid(sdxcBean.getLxid());
+				data.setYhjgId(sdxcBean.getGydwId());
+				data.setYhjgName(sdxcBean.getGydwName());
 				data.setSdmc(qlmcEv.getText().toString());
 				data.setSdid(qhId);
 				data.setSdbh(qlbhEv.getText().toString());
@@ -788,6 +839,10 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				data.setLxmc(lxmcEv.getText().toString());
 				data.setZxzh(zxzhEv.getText().toString());
 				data.setLxbh(lxbhEv.getText().toString());
+
+				data.setSdfx(((SDXCBean) bean).getSdfx());
+				data.setSdlx(((SDXCBean) bean).getCdfl());
+
 				data.setJcsj(time.substring(0, 10));
 			} else {
 				data.setQhlx(mRadioGroup.getCheckedRadioButtonId() == R.id.radioql ? "b" : "c");
@@ -858,15 +913,17 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				}
 			} else if (mType == R.drawable.suidaojiancha) {
 				if (bean instanceof SDBaseData) {
-					data.setLxid(((SDBaseData) bean).getLxid());
-					data.setYhjgId(((SDBaseData) bean).getGydwId());
-					data.setYhjgName(((SDBaseData) bean).getGydwName());
+					SDBaseData sdBaseData = (SDBaseData) bean;
+					data.setLxid(sdBaseData.getLxid());
+					data.setYhjgId(sdBaseData.getGydwId());
+					data.setYhjgName(sdBaseData.getGydwName());
+					data.setSdfx(sdBaseData.getSdfx());
 				}
 				data.setSdmc(qlmcEv.getText().toString());
 				data.setSdid(qhId);
 				data.setSdbm(qlbhEv.getText().toString());
 				data.setSdzh(zxzhEv.getText().toString());
-				data.setSdfx(extra1Spinner.getSelectedItem().toString());
+//				data.setSdfx(extra1Spinner.getSelectedItem().toString());
 				data.setWeather(weatherEv.getSelectedItem().toString());
 			}
 			data.setType(mType);

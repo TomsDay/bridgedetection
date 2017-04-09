@@ -69,6 +69,10 @@ public class BridgeDetectionApplication extends Application {
                 write(exStr);
             }
         });
+
+
+
+
     }
 
     private void initImageLoader() {

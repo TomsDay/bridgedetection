@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.suken.bridgedetection"
-    android:versionCode="56"
-    android:versionName="1.5.6">
+    android:versionCode="57"
+    android:versionName="1.4.2">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -489,12 +489,15 @@
             android:name=".activity.QualityInspectionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
-        <activity android:name=".activity.MaintenanceRequisitionActivity"
+        <activity
+            android:name=".activity.MaintenanceRequisitionActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".activity.MaintenanceRequisitionListActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".activity.MaintenanceRequisitionListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape" />
+        <activity android:name=".activity.MaintenanceRequisitionUpActivity"></activity>
     </application>
 
 </manifest>

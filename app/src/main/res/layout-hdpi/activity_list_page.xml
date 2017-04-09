@@ -201,7 +201,8 @@
 
             <TextView
                 android:id="@+id/row1"
-                android:layout_width="150dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="中心桩号"
@@ -211,15 +212,26 @@
 
             <TextView
                 android:id="@+id/row2"
-                android:layout_width="180dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="桥梁名称"
                 android:textSize="13dp" />
+            <TextView
+                android:id="@+id/row7"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="隧道方向"
+                android:textSize="10dp"
+                android:visibility="gone"/>
 
             <TextView
                 android:id="@+id/row3"
-                android:layout_width="140dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="桥梁编码"
@@ -227,7 +239,8 @@
 
             <TextView
                 android:id="@+id/row4"
-                android:layout_width="130dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="路线编码"
@@ -235,7 +248,8 @@
 
             <TextView
                 android:id="@+id/row5"
-                android:layout_width="70dp"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="检查次数"

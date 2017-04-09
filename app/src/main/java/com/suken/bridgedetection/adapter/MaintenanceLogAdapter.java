@@ -19,6 +19,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -208,13 +209,19 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         }
 
         Logger.e("aaa","fx==="+fx);
+        holder.radioGroup.setEnabled(false);
         if("上行".equals(fx)){
             holder.radioGroup.check(R.id.radioup);
         }else if("下行".equals(fx)){
             holder.radioGroup.check(R.id.radiodown);
+        }else if("双向".equals(fx)){
+            holder.radioGroup.check(R.id.radioupdown);
         }else{
             holder.radioGroup.check(R.id.radioup);
         }
+        holder.radioup.setEnabled(false);
+        holder.radiodown.setEnabled(false);
+        holder.radioupdown.setEnabled(false);
 
 
         SpinnerAdapter mAdapter = new SpinnerAdapter();
@@ -320,21 +327,28 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         holder.radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                String fx = maintenanceLogItemBeen.get(position).getFx();
-                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
+//                String fx = maintenanceLogItemBeen.get(position).getFx();
+//                fx = TextUtil.isEmptyString(fx) ? "上行" : fx;
                 switch (i) {
                     case R.id.radioup:
-
-                        if (!fx.contains("上行")) {
-                            maintenanceLogItemBeen.get(position).setFx(fx.replace("下行","上行"));
-                        }
+                        maintenanceLogItemBeen.get(position).setFx("上行");
+//                        if (!fx.contains("上行")) {
+//                            maintenanceLogItemBeen.get(position).setFx(fx.replace("下行","上行"));
+//                        }
 
                         break;
                     case R.id.radiodown:
                         maintenanceLogItemBeen.get(position).setFx("下行");
-                        if (!fx.contains("下行")) {
-                            maintenanceLogItemBeen.get(position).setFx(fx.replace("上行","下行"));
-                        }
+//                        if (!fx.contains("下行")) {
+//                            maintenanceLogItemBeen.get(position).setFx(fx.replace("上行","下行"));
+//                        }
+
+                        break;
+                    case R.id.radioupdown:
+                        maintenanceLogItemBeen.get(position).setFx("双向");
+//                        if (!fx.contains("下行")) {
+//                            maintenanceLogItemBeen.get(position).setFx(fx.replace("上行","下行"));
+//                        }
 
                         break;
 
@@ -563,9 +577,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
         private RadioGroup radioGroup;
 
+        private RadioButton radioup,radiodown,radioupdown;
+
         private CheckBox checkBox;
 
         public HolderView(View view) {
+
             form_item_edit_layout = (LinearLayout) view.findViewById(R.id.form_item_edit_layout);
             from_topLayout = (LinearLayout) view.findViewById(R.id.from_topLayout);
             img_video_layout = (LinearLayout) view.findViewById(R.id.img_video_layout);
@@ -603,6 +620,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             item_Line = view.findViewById(R.id.item_Line);
 
             radioGroup = (RadioGroup) view.findViewById(R.id.radioGroup);
+            radioup = (RadioButton) view.findViewById(R.id.radioup);
+            radiodown = (RadioButton) view.findViewById(R.id.radiodown);
+            radioupdown = (RadioButton) view.findViewById(R.id.radioupdown);
 
             checkBox = (CheckBox) view.findViewById(R.id.checkBox);
 

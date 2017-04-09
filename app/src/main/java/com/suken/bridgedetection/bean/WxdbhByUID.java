@@ -60,43 +60,43 @@ public class WxdbhByUID implements Serializable {
      "xcld": "k0+100~k10+200"//巡查路段
      */
     private String ids;
-    private String id;
+//    private String id;
     private String bhid;
     private String bhmc;
     private String bhwz;
-    private String bno;
-    private String createBy;
-    private String createtime;
-    private String creator;
+//    private String bno;
+//    private String createBy;
+//    private String createtime;
+//    private String creator;
     private String dw;
-    private String flag;
+//    private String flag;
     private String fx;
-    private String gydwId;
+//    private String gydwId;
     private String gydwName;
-    private String isxd;
-    private String iszd;
+//    private String isxd;
+//    private String iszd;
     private String jcrq;
     private String jcsj;
 
-    private String lxbh;
-    private String lxid;
+//    private String lxbh;
+//    private String lxid;
     private String lxmc;
-    private String noticeId;
-    private String orgid;
-    private String picattachment;
-    private String remark;
-    private String rowIndex;
-    private String tpjd;
-    private String tpwd;
-    private String tzdzt;
-    private String updateBy;
-    private String updatetime;
-    private String updator;
-    private String versionno;
-    private String vidattachment;
+//    private String noticeId;
+//    private String orgid;
+//    private String picattachment;
+//    private String remark;
+//    private String rowIndex;
+//    private String tpjd;
+//    private String tpwd;
+//    private String tzdzt;
+//    private String updateBy;
+//    private String updatetime;
+//    private String updator;
+//    private String versionno;
+//    private String vidattachment;
     private String xcry;
     private String ygsl;
-    private String yhInspId;
+//    private String yhInspId;
     private String yhInspNo;
     private String yhzh;
     private String yhzt;
@@ -106,44 +106,19 @@ public class WxdbhByUID implements Serializable {
     public WxdbhByUID() {
     }
 
-    public WxdbhByUID(String ids, String id, String bhid, String bhmc, String bhwz, String bno, String createBy, String createtime, String creator, String dw, String flag, String fx, String gydwId, String gydwName, String isxd, String iszd, String jcrq, String jcsj, String lxbh, String lxid, String lxmc, String noticeId, String orgid, String picattachment, String remark, String rowIndex, String tpjd, String tpwd, String tzdzt, String updateBy, String updatetime, String updator, String versionno, String vidattachment, String xcry, String ygsl, String yhInspId, String yhInspNo, String yhzh, String yhzt, String zhfw, String xcld) {
+    public WxdbhByUID(String ids, String bhid, String bhmc, String bhwz, String dw, String fx, String gydwName, String jcrq, String jcsj, String lxmc, String xcry, String ygsl, String yhInspNo, String yhzh, String yhzt, String zhfw, String xcld) {
         this.ids = ids;
-        this.id = id;
         this.bhid = bhid;
         this.bhmc = bhmc;
         this.bhwz = bhwz;
-        this.bno = bno;
-        this.createBy = createBy;
-        this.createtime = createtime;
-        this.creator = creator;
         this.dw = dw;
-        this.flag = flag;
         this.fx = fx;
-        this.gydwId = gydwId;
         this.gydwName = gydwName;
-        this.isxd = isxd;
-        this.iszd = iszd;
         this.jcrq = jcrq;
         this.jcsj = jcsj;
-        this.lxbh = lxbh;
-        this.lxid = lxid;
         this.lxmc = lxmc;
-        this.noticeId = noticeId;
-        this.orgid = orgid;
-        this.picattachment = picattachment;
-        this.remark = remark;
-        this.rowIndex = rowIndex;
-        this.tpjd = tpjd;
-        this.tpwd = tpwd;
-        this.tzdzt = tzdzt;
-        this.updateBy = updateBy;
-        this.updatetime = updatetime;
-        this.updator = updator;
-        this.versionno = versionno;
-        this.vidattachment = vidattachment;
         this.xcry = xcry;
         this.ygsl = ygsl;
-        this.yhInspId = yhInspId;
         this.yhInspNo = yhInspNo;
         this.yhzh = yhzh;
         this.yhzt = yhzt;
@@ -155,42 +130,17 @@ public class WxdbhByUID implements Serializable {
     public String toString() {
         return "WxdbhByUID{" +
                 "ids='" + ids + '\'' +
-                ", id='" + id + '\'' +
                 ", bhid='" + bhid + '\'' +
                 ", bhmc='" + bhmc + '\'' +
                 ", bhwz='" + bhwz + '\'' +
-                ", bno='" + bno + '\'' +
-                ", createBy='" + createBy + '\'' +
-                ", createtime='" + createtime + '\'' +
-                ", creator='" + creator + '\'' +
                 ", dw='" + dw + '\'' +
-                ", flag='" + flag + '\'' +
                 ", fx='" + fx + '\'' +
-                ", gydwId='" + gydwId + '\'' +
                 ", gydwName='" + gydwName + '\'' +
-                ", isxd='" + isxd + '\'' +
-                ", iszd='" + iszd + '\'' +
                 ", jcrq='" + jcrq + '\'' +
                 ", jcsj='" + jcsj + '\'' +
-                ", lxbh='" + lxbh + '\'' +
-                ", lxid='" + lxid + '\'' +
                 ", lxmc='" + lxmc + '\'' +
-                ", noticeId='" + noticeId + '\'' +
-                ", orgid='" + orgid + '\'' +
-                ", picattachment='" + picattachment + '\'' +
-                ", remark='" + remark + '\'' +
-                ", rowIndex='" + rowIndex + '\'' +
-                ", tpjd='" + tpjd + '\'' +
-                ", tpwd='" + tpwd + '\'' +
-                ", tzdzt='" + tzdzt + '\'' +
-                ", updateBy='" + updateBy + '\'' +
-                ", updatetime='" + updatetime + '\'' +
-                ", updator='" + updator + '\'' +
-                ", versionno='" + versionno + '\'' +
-                ", vidattachment='" + vidattachment + '\'' +
                 ", xcry='" + xcry + '\'' +
                 ", ygsl='" + ygsl + '\'' +
-                ", yhInspId='" + yhInspId + '\'' +
                 ", yhInspNo='" + yhInspNo + '\'' +
                 ", yhzh='" + yhzh + '\'' +
                 ", yhzt='" + yhzt + '\'' +
@@ -205,14 +155,6 @@ public class WxdbhByUID implements Serializable {
 
     public void setIds(String ids) {
         this.ids = ids;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getBhid() {
@@ -239,52 +181,12 @@ public class WxdbhByUID implements Serializable {
         this.bhwz = bhwz;
     }
 
-    public String getBno() {
-        return bno;
-    }
-
-    public void setBno(String bno) {
-        this.bno = bno;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
     public String getDw() {
         return dw;
     }
 
     public void setDw(String dw) {
         this.dw = dw;
-    }
-
-    public String getFlag() {
-        return flag;
-    }
-
-    public void setFlag(String flag) {
-        this.flag = flag;
     }
 
     public String getFx() {
@@ -295,36 +197,12 @@ public class WxdbhByUID implements Serializable {
         this.fx = fx;
     }
 
-    public String getGydwId() {
-        return gydwId;
-    }
-
-    public void setGydwId(String gydwId) {
-        this.gydwId = gydwId;
-    }
-
     public String getGydwName() {
         return gydwName;
     }
 
     public void setGydwName(String gydwName) {
         this.gydwName = gydwName;
-    }
-
-    public String getIsxd() {
-        return isxd;
-    }
-
-    public void setIsxd(String isxd) {
-        this.isxd = isxd;
-    }
-
-    public String getIszd() {
-        return iszd;
-    }
-
-    public void setIszd(String iszd) {
-        this.iszd = iszd;
     }
 
     public String getJcrq() {
@@ -343,132 +221,12 @@ public class WxdbhByUID implements Serializable {
         this.jcsj = jcsj;
     }
 
-    public String getLxbh() {
-        return lxbh;
-    }
-
-    public void setLxbh(String lxbh) {
-        this.lxbh = lxbh;
-    }
-
-    public String getLxid() {
-        return lxid;
-    }
-
-    public void setLxid(String lxid) {
-        this.lxid = lxid;
-    }
-
     public String getLxmc() {
         return lxmc;
     }
 
     public void setLxmc(String lxmc) {
         this.lxmc = lxmc;
-    }
-
-    public String getNoticeId() {
-        return noticeId;
-    }
-
-    public void setNoticeId(String noticeId) {
-        this.noticeId = noticeId;
-    }
-
-    public String getOrgid() {
-        return orgid;
-    }
-
-    public void setOrgid(String orgid) {
-        this.orgid = orgid;
-    }
-
-    public String getPicattachment() {
-        return picattachment;
-    }
-
-    public void setPicattachment(String picattachment) {
-        this.picattachment = picattachment;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getRowIndex() {
-        return rowIndex;
-    }
-
-    public void setRowIndex(String rowIndex) {
-        this.rowIndex = rowIndex;
-    }
-
-    public String getTpjd() {
-        return tpjd;
-    }
-
-    public void setTpjd(String tpjd) {
-        this.tpjd = tpjd;
-    }
-
-    public String getTpwd() {
-        return tpwd;
-    }
-
-    public void setTpwd(String tpwd) {
-        this.tpwd = tpwd;
-    }
-
-    public String getTzdzt() {
-        return tzdzt;
-    }
-
-    public void setTzdzt(String tzdzt) {
-        this.tzdzt = tzdzt;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public String getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getVersionno() {
-        return versionno;
-    }
-
-    public void setVersionno(String versionno) {
-        this.versionno = versionno;
-    }
-
-    public String getVidattachment() {
-        return vidattachment;
-    }
-
-    public void setVidattachment(String vidattachment) {
-        this.vidattachment = vidattachment;
     }
 
     public String getXcry() {
@@ -485,14 +243,6 @@ public class WxdbhByUID implements Serializable {
 
     public void setYgsl(String ygsl) {
         this.ygsl = ygsl;
-    }
-
-    public String getYhInspId() {
-        return yhInspId;
-    }
-
-    public void setYhInspId(String yhInspId) {
-        this.yhInspId = yhInspId;
     }
 
     public String getYhInspNo() {

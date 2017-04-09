@@ -271,6 +271,32 @@ public class CheckFormAndDetailDao {
 		return null;
 	
 	}
+//	public List<CheckFormData>  queryLastUpdateByTypeAndId2(String id, int type, String qllx){
+
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		if(type == R.drawable.qiaoliangjiancha){
+//			map.put("qhid", id);
+//			map.put("qhlx", qllx);
+//		} else {
+////			map.put("sdid", id);
+//		}
+//		map.put("gldwId", BridgeDetectionApplication.mCurrentUser.getDefgqId());
+//		map.put("type", type);
+//		map.put("lastUpdate", true);
+//		try {
+//			List<CheckFormData> list = mFormDao.queryForAll();
+//			if(list != null && list.size() > 0){
+//				CheckFormData data = list.get(0);
+//				data.setOftenCheckDetailList(queryByFormId(data.getLocalId()));
+//				return list;
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//
+//	}
+
 	
 	
 	public boolean deleteAllLocalData(){

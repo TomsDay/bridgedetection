@@ -6,6 +6,8 @@ import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
+import com.suken.bridgedetection.bean.CooperationBean;
+import com.suken.bridgedetection.bean.CooperationDao;
 import com.suken.bridgedetection.bean.GeteMaterialBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceBean;
@@ -19,6 +21,9 @@ import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
 import com.suken.bridgedetection.bean.ProjacceptItemBean;
 import com.suken.bridgedetection.bean.ProjectAcceptanceBean;
+import com.suken.bridgedetection.bean.QualityDemandBean;
+import com.suken.bridgedetection.bean.QualityDemandDao;
+import com.suken.bridgedetection.bean.SDXCBean;
 import com.suken.bridgedetection.bean.SynchMaintenlogBean;
 
 import android.content.Context;
@@ -26,7 +31,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 
-	public final static int version = 10; // 数据库版本
+	public final static int version = 11; // 数据库版本
 	private static final String TABLE_NAME = "bridgedetection.db";
 	private static SqliteOpenHelper instance;
 	private SqliteOpenHelper(Context context) {
@@ -65,7 +70,10 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, CatalogueByUIDBean.class);
 			TableUtils.createTable(connectionSource, ProjacceptItemBean.class);
 			TableUtils.createTable(connectionSource, GeteMaterialBean.class);
+			TableUtils.createTable(connectionSource, SDXCBean.class);
+//			TableUtils.createTable(connectionSource, QualityDemandBean.class);
 //			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
+
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -113,16 +121,31 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 //		}
 		if (oldVersion <10) {
 			try {
+
 				new MaintenanceTableDao().getMaintenanceTableItemBeanDao().executeRaw("ALTER TABLE `tb_maintenancetableitem` ADD COLUMN isxd TEXT DEFAULT '1';");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+		if(oldVersion <11){//添加新的数据库
+
+			try {
+				new SDBaseDataDao().getSDBaseDataDao().executeRaw("ALTER TABLE `tb_sdbasedata` ADD COLUMN sdfx TEXT;");
+				new SDBaseDataDao().getSDBaseDataDao().executeRaw("ALTER TABLE `tb_sdbasedata` ADD COLUMN inspecttimes INT;");
+				new SdxcFormAndDetailDao().getSdxcFormDataDao().executeRaw("ALTER TABLE `tb_sdcheckform` ADD COLUMN sdlx TEXT;");
+				TableUtils.createTable(connectionSource, QualityDemandBean.class);
+				TableUtils.createTable(connectionSource, CooperationBean.class);
+				TableUtils.createTable(connectionSource, SDXCBean.class);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 	/**
 	 * 单例获取该Helper
-	 * 
+	 *
 	 * @param context
 	 * @return
 	 */

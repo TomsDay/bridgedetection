@@ -9,6 +9,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="#90808080" />
+
     <LinearLayout
         android:id="@+id/maintenancetablelist_item_Layout"
         android:layout_width="match_parent"
@@ -103,7 +104,7 @@
             android:id="@+id/maintenancetablelist_item_tv7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.1"
+            android:layout_weight="1.04"
             android:gravity="center"
             android:text="上传"
             android:textSize="@dimen/btn_upLoadSice"
