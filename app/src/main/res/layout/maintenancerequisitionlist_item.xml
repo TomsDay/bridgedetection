@@ -19,6 +19,15 @@
         android:layout_marginRight="10dp"
         android:background="#80ffffff"
         android:gravity="center">
+        <CheckBox
+            android:id="@+id/maintenancerequisitionlist_item_cb1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.06"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
         <TextView
             android:id="@+id/maintenancerequisitionlist_item_tv1"
             android:layout_width="match_parent"
@@ -26,7 +35,7 @@
             android:layout_weight="1"
             android:text="201606130011"
             android:textColor="@color/yuninfo_black_shadow"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:gravity="center"/>
         <View
             android:layout_width="1dp"
@@ -38,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="XXX道路养护工程公司"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"
             android:gravity="center"/>
         <View
@@ -52,7 +61,7 @@
             android:layout_weight="1"
             android:text="2016-6-13"
             android:textColor="@color/yuninfo_black_shadow"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:gravity="center"/>
 
         <View
@@ -67,7 +76,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -81,7 +90,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -95,7 +104,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -109,7 +118,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -123,7 +132,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
         <View
             android:layout_width="1dp"
@@ -137,7 +146,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="张学智"
-            android:textSize="@dimen/list_textSice"
+            android:textSize="@dimen/list_textSize"
             android:textColor="@color/yuninfo_black_shadow"/>
 
 

@@ -3,6 +3,7 @@ package com.suken.bridgedetection.bean;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.DeleteBuilder;
 import com.suken.bridgedetection.BridgeDetectionApplication;
+import com.suken.bridgedetection.storage.SDBaseData;
 import com.suken.bridgedetection.storage.SqliteOpenHelper;
 
 import java.sql.SQLException;
@@ -23,7 +24,9 @@ public class QualityDemandDao {
             e.printStackTrace();
         }
     }
-
+    public Dao<QualityDemandBean, String> getQualityDemandDao(){
+        return cooperationBeen;
+    }
 
     public void add(QualityDemandBean bean){
         try {

@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="桥梁检查移动办公采集系统"
+            android:text="高速公路日常养护移动办公软件"
             android:textColor="#ffffff"
             android:textSize="18dp" />
 
@@ -112,7 +112,8 @@
                         android:onClick="offlineLogin"
                         android:text="离线登录"
                         android:textColor="#ffffff"
-                        android:textSize="10dp" />
+                        android:textSize="10dp"
+                        android:id="@+id/button2" />
                 </LinearLayout>
                 <Button
                         android:layout_width="match_parent"

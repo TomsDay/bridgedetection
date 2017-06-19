@@ -2,10 +2,13 @@ package com.suken.bridgedetection.bean;
 
 import com.j256.ormlite.dao.Dao;
 import com.suken.bridgedetection.BridgeDetectionApplication;
+import com.suken.bridgedetection.storage.SDBaseData;
 import com.suken.bridgedetection.storage.SqliteOpenHelper;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by liangshuai on 2017/3/31.
@@ -45,6 +48,16 @@ public class SDXCDao {
     public List<SDXCBean> queryAll() {
         try {
             return mSDXCBean.queryBuilder().orderBy("zxzh", true).where().eq("userId", BridgeDetectionApplication.mCurrentUser.getUserId()).query();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public List<SDXCBean> getDataBybySDbh(String qhbh){
+        try {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("sdbh", qhbh);
+            return mSDXCBean.queryForFieldValues(map);
         } catch (SQLException e) {
             e.printStackTrace();
         }

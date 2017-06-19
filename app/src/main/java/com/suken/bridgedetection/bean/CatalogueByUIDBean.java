@@ -70,6 +70,13 @@ public class CatalogueByUIDBean implements Serializable{
     private String dw;
     @DatabaseField
     private String xcms;
+    /**提交次数*/
+    @DatabaseField
+    private int commitNum;
+
+    //2017。06。08
+    private String zmname;
+    private String sortLetters;
 
     public CatalogueByUIDBean() {
     }
@@ -95,6 +102,13 @@ public class CatalogueByUIDBean implements Serializable{
         this.xcms = xcms;
     }
 
+    public int getCommitNum() {
+        return commitNum;
+    }
+
+    public void setCommitNum(int commitNum) {
+        this.commitNum = commitNum;
+    }
 
     @Override
     public String toString() {
@@ -119,6 +133,22 @@ public class CatalogueByUIDBean implements Serializable{
                 ", dw='" + dw + '\'' +
                 ", xcms='" + xcms + '\'' +
                 '}';
+    }
+
+    public String getZmname() {
+        return zmname;
+    }
+
+    public void setZmname(String zmname) {
+        this.zmname = zmname;
+    }
+
+    public String getSortLetters() {
+        return sortLetters;
+    }
+
+    public void setSortLetters(String sortLetters) {
+        this.sortLetters = sortLetters;
     }
 
     public String getId() {

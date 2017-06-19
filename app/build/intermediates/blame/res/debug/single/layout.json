@@ -84,8 +84,16 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/ccppage_control_image.xml"
     },
     {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/cooperation_layout.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/cooperation_layout.xml"
+    },
+    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/ads_tops_view.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/ads_tops_view.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/cooperation_item.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/cooperation_item.xml"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/voice_meeting_item.xml",
@@ -108,12 +116,12 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/ccp_smile_panel.xml"
     },
     {
-        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/inter_phone_item.xml",
-        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/inter_phone_item.xml"
-    },
-    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/meeting_mic_anim.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/meeting_mic_anim.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/inter_phone_item.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/inter_phone_item.xml"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_launcher.xml",
@@ -356,6 +364,10 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/dialog_edit_context.xml"
     },
     {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/requisition_item.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/requisition_item.xml"
+    },
+    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/mobile_contacts_activity.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/mobile_contacts_activity.xml"
     },
@@ -384,12 +396,12 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/detaillist_item.xml"
     },
     {
-        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/base_search.xml",
-        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/base_search.xml"
-    },
-    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/fragment_launcher.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/fragment_launcher.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/base_search.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/base_search.xml"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/chatting_item_location_to.xml",
@@ -440,6 +452,10 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/video_conference_conversation.xml"
     },
     {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/quality_demand_layout.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/quality_demand_layout.xml"
+    },
+    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/activity_maintenance_requisition_list.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/activity_maintenance_requisition_list.xml"
     },
@@ -454,6 +470,10 @@
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/layout_contact_select.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/layout_contact_select.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/quality_demand_item.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/quality_demand_item.xml"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/quality_inspection_groupitem.xml",
@@ -766,6 +786,10 @@
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/loglist_dialog.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/loglist_dialog.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/reequisition_up_item.xml",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/layout/reequisition_up_item.xml"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/layout/contacts_activity.xml",

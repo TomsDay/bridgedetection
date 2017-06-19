@@ -34,6 +34,7 @@ public class BridgeDetectionApplication extends Application {
     public static String mDeviceId = "";
 
     public static UserInfo mCurrentUser = null;
+    //查看本地数据库中是否有数据，有就是true
     public static boolean mHasCacheUser = false;
     public static boolean mIsOffline = false;
     public static BaseActivity mCurrentActivity = null;
@@ -67,6 +68,8 @@ public class BridgeDetectionApplication extends Application {
                 String exStr = Log.getStackTraceString(ex);
                 ex.printStackTrace();
                 write(exStr);
+
+
             }
         });
 
@@ -76,6 +79,7 @@ public class BridgeDetectionApplication extends Application {
     }
 
     private void initImageLoader() {
+
         File cacheDir = StorageUtils.getOwnCacheDirectory(getApplicationContext(), "ECSDK_Demo/image");
         ImageLoaderConfiguration config = new ImageLoaderConfiguration
                 .Builder(this)

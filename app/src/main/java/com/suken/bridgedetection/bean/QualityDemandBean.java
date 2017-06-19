@@ -11,24 +11,24 @@ import java.io.Serializable;
 @DatabaseTable(tableName = "tb_qualitydemand")
 public class QualityDemandBean implements Serializable {
 //    {
-//        "createBy": 1, //记录创建人ID
+//         "createBy": 1, //记录创建人ID
 //            "createtime": {}, //记录创建时间
-//        "creator": "超级管理员", //记录创建人
+//            "creator": "超级管理员", //记录创建人
 //            "flag": 0, //记录是否有效 0 有效  1无效
 //            "orgid": 0, //归属组织机构，暂不用
 //            "updateBy": 10000000050039, //记录最后更新人ID
 //            "updatetime": {}, //记录最后更新时间
-//        "updator": "李兵", //记录最后更新人
+//            "updator": "李兵", //记录最后更新人
 //            "versionno": 3, //记录更新版本号
+
 //            "gydwId": 10000000220011, //管养单位ID
 //            "gydwName": "石家庄养护工区", //管养单位名称
+
 //            "id": 10000001220001, //记录ID
-//            "clno": "201608100001", //材料编号
-//            "clmc": "养护材料", //材料名称
-//            "gg": "25-1", //规格
-//            "xh": "AA", //型号
-//            "dw": "米"   //单位
-//    }
+//            "bhzl": "要求1", //病害种类
+//            "yqnr": "不得有遗漏，路面平整"//要求内容
+
+    //    }
 @DatabaseField(generatedId = true) //主键自增加
     private int ids;
 
@@ -54,19 +54,25 @@ public class QualityDemandBean implements Serializable {
     private String gydwId;
     @DatabaseField
     private String gydwName;
+//    @DatabaseField
+//    private String clno;
+//    @DatabaseField
+//    private String gg;
+//    @DatabaseField
+//    private String xh;
+//    @DatabaseField
+//    private String dw;
+     @DatabaseField
+    private String bhzl;
     @DatabaseField
-    private String clno;
-    @DatabaseField
-    private String gg;
-    @DatabaseField
-    private String xh;
-    @DatabaseField
-    private String dw;
+    private String yqnr;
+
+    private boolean isChecked;
 
     public QualityDemandBean() {
     }
 
-    public QualityDemandBean(int ids, String id, String createBy, String creator, String flag, String orgid, String updateBy, String updatetime, String updator, String versionno, String gydwId, String gydwName, String clno, String gg, String xh, String dw) {
+    public QualityDemandBean(int ids, String id, String createBy, String creator, String flag, String orgid, String updateBy, String updatetime, String updator, String versionno, String gydwId, String gydwName, String bhzl, String yqnr) {
         this.ids = ids;
         this.id = id;
         this.createBy = createBy;
@@ -79,10 +85,8 @@ public class QualityDemandBean implements Serializable {
         this.versionno = versionno;
         this.gydwId = gydwId;
         this.gydwName = gydwName;
-        this.clno = clno;
-        this.gg = gg;
-        this.xh = xh;
-        this.dw = dw;
+        this.bhzl = bhzl;
+        this.yqnr = yqnr;
     }
 
     @Override
@@ -100,10 +104,8 @@ public class QualityDemandBean implements Serializable {
                 ", versionno='" + versionno + '\'' +
                 ", gydwId='" + gydwId + '\'' +
                 ", gydwName='" + gydwName + '\'' +
-                ", clno='" + clno + '\'' +
-                ", gg='" + gg + '\'' +
-                ", xh='" + xh + '\'' +
-                ", dw='" + dw + '\'' +
+                ", bhzl='" + bhzl + '\'' +
+                ", yqnr='" + yqnr + '\'' +
                 '}';
     }
 
@@ -203,35 +205,27 @@ public class QualityDemandBean implements Serializable {
         this.gydwName = gydwName;
     }
 
-    public String getClno() {
-        return clno;
+    public String getBhzl() {
+        return bhzl;
     }
 
-    public void setClno(String clno) {
-        this.clno = clno;
+    public void setBhzl(String bhzl) {
+        this.bhzl = bhzl;
     }
 
-    public String getGg() {
-        return gg;
+    public String getYqnr() {
+        return yqnr;
     }
 
-    public void setGg(String gg) {
-        this.gg = gg;
+    public void setYqnr(String yqnr) {
+        this.yqnr = yqnr;
     }
 
-    public String getXh() {
-        return xh;
+    public boolean isChecked() {
+        return isChecked;
     }
 
-    public void setXh(String xh) {
-        this.xh = xh;
-    }
-
-    public String getDw() {
-        return dw;
-    }
-
-    public void setDw(String dw) {
-        this.dw = dw;
+    public void setChecked(boolean checked) {
+        isChecked = checked;
     }
 }

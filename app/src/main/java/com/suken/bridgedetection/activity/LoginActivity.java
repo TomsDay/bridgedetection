@@ -32,23 +32,17 @@ import com.suken.bridgedetection.storage.UserInfoDao;
 import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.NetWorkUtil;
 import com.suken.bridgedetection.util.NetWorkUtil.ConnectType;
-import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.yuntongxun.ecdemo.common.CCPAppManager;
-import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 import com.yuntongxun.ecdemo.core.ClientUser;
 import com.yuntongxun.ecdemo.ui.SDKCoreHelper;
-import com.yuntongxun.ecsdk.ECDevice;
-import com.yuntongxun.ecsdk.ECError;
 import com.yuntongxun.ecsdk.ECInitParams;
-import com.yuntongxun.ecsdk.SdkErrorCode;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -71,7 +65,7 @@ public class LoginActivity extends BaseActivity {
 		setContentView(R.layout.activity_login_page);
 		mNameView = (EditText) findViewById(R.id.username);
 		mPwdView = (EditText) findViewById(R.id.userpwd);
-		mNameView.setText("cs-cs");
+		mNameView.setText("cs-cs");//zslyb-cx
 		mPwdView.setText("1");
 		mTextView = (TextView) findViewById(R.id.login_desc);
 		if(mUserInfos != null && mUserInfos.size() > 0){
@@ -180,6 +174,7 @@ public class LoginActivity extends BaseActivity {
 			public void onRequestSuccess(RequestType type, JSONObject obj) {
 				final UserInfo info = obj.getObject("userInfo", UserInfo.class);
 				info.setPassword(pwd);
+				Logger.e("aaa","用户信息："+info.toString());
 // 				Logger.e("aaa", "getAccount list==" + mUserInfos.get(0).getAccount());
 //				Logger.e("aaa", "getAccount111==" + info.getAccount());
 //				Logger.e("aaa", "oldName==" + oldName);
@@ -195,13 +190,16 @@ public class LoginActivity extends BaseActivity {
 
 				mUserDao.create(info);
 
-
-				String mobile = "ooo";
-				String appKey = "20150314000000110000000000000010";
-				String token = "17E24E5AFDB6D0C1EF32F3533494502B";
+				//用户的id
+				String mobile = info.getUserId();
+				String name = info.getUserName();
+				String appKey = "8a216da85519f454015528c3ba900de2";
+				String token = "3042f056c51267c1a77e77adf4daf0f4";
+				
 				ClientUser clientUser = new ClientUser(mobile);
 				clientUser.setAppKey(appKey);
 				clientUser.setAppToken(token);
+				clientUser.setUserName(name);
 				clientUser.setLoginAuthType(ECInitParams.LoginAuthType.NORMAL_AUTH);
 				CCPAppManager.setClientUser(clientUser);
 				SDKCoreHelper.init(BridgeDetectionApplication.getInstance(), ECInitParams.LoginMode.FORCE_LOGIN);

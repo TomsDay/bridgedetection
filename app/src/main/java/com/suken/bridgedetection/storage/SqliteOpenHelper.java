@@ -6,12 +6,15 @@ import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
+import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.CooperationBean;
 import com.suken.bridgedetection.bean.CooperationDao;
 import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.MaintenanceBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
 import com.suken.bridgedetection.bean.MaintenanceLogItemBean;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderBean;
@@ -25,13 +28,15 @@ import com.suken.bridgedetection.bean.QualityDemandBean;
 import com.suken.bridgedetection.bean.QualityDemandDao;
 import com.suken.bridgedetection.bean.SDXCBean;
 import com.suken.bridgedetection.bean.SynchMaintenlogBean;
+import com.suken.bridgedetection.bean.UpkeepdiseaseListBean;
+import com.suken.bridgedetection.bean.UploadUpkeepnoticeBean;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 
-	public final static int version = 11; // 数据库版本
+	public final static int version = 13; // 数据库版本
 	private static final String TABLE_NAME = "bridgedetection.db";
 	private static SqliteOpenHelper instance;
 	private SqliteOpenHelper(Context context) {
@@ -71,7 +76,12 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 			TableUtils.createTable(connectionSource, ProjacceptItemBean.class);
 			TableUtils.createTable(connectionSource, GeteMaterialBean.class);
 			TableUtils.createTable(connectionSource, SDXCBean.class);
-//			TableUtils.createTable(connectionSource, QualityDemandBean.class);
+			TableUtils.createTable(connectionSource, QualityDemandBean.class);
+			TableUtils.createTable(connectionSource, CooperationBean.class);
+			TableUtils.createTable(connectionSource, UploadUpkeepnoticeBean.class);
+			TableUtils.createTable(connectionSource, UpkeepdiseaseListBean.class);
+
+
 //			TableUtils.createTable(connectionSource, MaintenanceItemBean.class);
 
 
@@ -140,6 +150,30 @@ public class SqliteOpenHelper extends OrmLiteSqliteOpenHelper {
 				e.printStackTrace();
 			}
 		}
+		if(oldVersion<12){
+			try {
+				new QualityDemandDao().getQualityDemandDao().executeRaw("alter table `tb_qualitydemand` drop column clno;");
+				new QualityDemandDao().getQualityDemandDao().executeRaw("alter table `tb_qualitydemand` drop column gg;");
+				new QualityDemandDao().getQualityDemandDao().executeRaw("alter table `tb_qualitydemand` drop column xh;");
+				new QualityDemandDao().getQualityDemandDao().executeRaw("alter table `tb_qualitydemand` drop column dw;");
+				new QualityDemandDao().getQualityDemandDao().executeRaw("ALTER TABLE `tb_qualitydemand` ADD COLUMN bhzl TEXT;");
+				new QualityDemandDao().getQualityDemandDao().executeRaw("ALTER TABLE `tb_qualitydemand` ADD COLUMN yqnr TEXT;");
+				new CheckFormAndDetailDao().getFormDao().executeRaw("ALTER TABLE `tb_checkform` ADD COLUMN qhbh TEXT;");
+				new CheckFormAndDetailDao().getDetailDao().executeRaw("ALTER TABLE `tb_checkform` ADD COLUMN sdbh TEXT;");
+
+//				new GeteMaterialDao().getGeteMaterialDao().executeRaw("ALTER TABLE `tb_getematerial` ADD COLUMN commitNum INT;");
+//				new MaintenanceDiseaseDao().getMaintenanceDiseaseBeen().executeRaw("ALTER TABLE `tb_maintenancedisease` ADD COLUMN commitNum INT;");
+//				new CatalogueByUIDDao().getCatalogueByUIDBeen().executeRaw("ALTER TABLE `tb_cataloguebyuid` ADD COLUMN commitNum INT;");
+
+
+				TableUtils.createTable(connectionSource, UploadUpkeepnoticeBean.class);
+				TableUtils.createTable(connectionSource, UpkeepdiseaseListBean.class);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+
 
 	}
 

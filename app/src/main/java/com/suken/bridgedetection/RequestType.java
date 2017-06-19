@@ -40,6 +40,7 @@ public enum RequestType {
     uploadInspectlog("上传日常巡查日志记录信息","/m/daily/inspect/uploadInspectlog.ht"),
     uploadSampling("上传维修保养工程抽检单信息","/m/daily/projaccept/uploadSampling.ht"),
     getProjacceptEdByUID("获取已经验收保养工程验收记录信息","/m/daily/projaccept/getProjacceptEdByUID.ht"),
+    uploadUpkeepnotice("上传养护通知单记录信息","/m/daily/inspect/uploadUpkeepnotice.ht"),
     getWxdbhByUID("获取巡查日志病害记录信息","/m/daily/inspect/getWxdbhByUID.ht");
 
 

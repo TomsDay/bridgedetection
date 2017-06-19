@@ -45,6 +45,24 @@ public class UserInfo implements Serializable {
 	@DatabaseField
 	private String roles;
 
+	@Override
+	public String toString() {
+		return "UserInfo{" +
+				"token='" + token + '\'' +
+				", account='" + account + '\'' +
+				", password='" + password + '\'' +
+				", userId='" + userId + '\'' +
+				", userName='" + userName + '\'' +
+				", deptId='" + deptId + '\'' +
+				", deptName='" + deptName + '\'' +
+				", defgqId='" + defgqId + '\'' +
+				", defgqName='" + defgqName + '\'' +
+				", defcompId='" + defcompId + '\'' +
+				", defcompName='" + defcompName + '\'' +
+				", roles='" + roles + '\'' +
+				'}';
+	}
+
 	public String getRoles() {
 		return roles;
 	}

@@ -6,15 +6,16 @@
     <dimen name="home_page_padding">15dp</dimen>
 
     <!--文字大小的设定-->
-    <dimen name="title_contentSice">16sp</dimen>     <!-- 适用于标题的内容， 比如 日常养护 -->
-    <dimen name="content_markSice">11sp</dimen>     <!-- 适用于内容中的标示， 比如 管养单位 -->
-    <dimen name="content_titleSice">12sp</dimen>   <!-- 适用于内容的标题， 比如 高速公里维修保养日志 -->
-    <dimen name="input_contentSice">11sp</dimen>    <!-- 适用于输入的文字大小 -->
-    <dimen name="btn_Sice">13sp</dimen>            <!-- 适用于按钮的文字大小 -->
-    <dimen name="btn_bigSaveSice">18sp</dimen>     <!-- 适用于底部的大的保存按钮 -->
-    <dimen name="btn_textSice">12sp</dimen>      <!-- 适用于标题，比如标题中的  返回 -->
-    <dimen name="btn_upLoadSice">16sp</dimen>      <!-- 适用于上传的按钮  -->
-    <dimen name="list_textSice">12sp</dimen>      <!-- 适用于列表的文字大小 -->
+    <dimen name="title_contentSize">16sp</dimen>     <!-- 适用于标题的内容， 比如 日常养护 -->
+    <dimen name="content_markSize">11sp</dimen>     <!-- 适用于内容中的标示， 比如 管养单位 -->
+    <dimen name="content_titleSize">12sp</dimen>   <!-- 适用于内容的标题， 比如 高速公里维修保养日志 -->
+    <dimen name="input_contentSize">11sp</dimen>    <!-- 适用于输入的文字大小 -->
+    <dimen name="btn_Size">13sp</dimen>            <!-- 适用于按钮的文字大小 -->
+    <dimen name="btn_bigSaveSize">18sp</dimen>     <!-- 适用于底部的大的保存按钮 -->
+    <dimen name="btn_textSize">12sp</dimen>      <!-- 适用于标题，比如标题中的  返回 -->
+    <dimen name="btn_upLoadSize">16sp</dimen>      <!-- 适用于上传的按钮  -->
+    <dimen name="list_textSize">12sp</dimen>      <!-- 适用于列表的文字大小 -->
+    <dimen name="radio_buttonSize">12sp</dimen>      <!-- 适用于列表的文字大小 -->
     <!--间距的设定-->
     <dimen name="line_marginTop">8dp</dimen>
 

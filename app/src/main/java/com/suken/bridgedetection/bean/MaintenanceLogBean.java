@@ -193,7 +193,6 @@ public class MaintenanceLogBean implements Serializable{
                 ", bytzno='" + bytzno + '\'' +
                 ", maintenlogdetailList=" + maintenlogdetailList +
                 ", upkeepdiseaseList=" + upkeepdiseaseList +
-                ", maintenanceLogItemBeen=" + maintenanceLogItemBeen +
                 '}';
     }
 

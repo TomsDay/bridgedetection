@@ -376,7 +376,6 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
 
 
     }
-
     public void setClick(){
 
         maintenanceoforder_bzbf_xiangji.setOnClickListener(listener);
@@ -874,12 +873,12 @@ public class MaintenanceOfOrderActivity extends BaseActivity implements OnLocati
             switch (msg.what) {
                 case SUCCESS_CODE:
                     dismissLoading();
-                    toast("获取养护通知单成功！");
+                    toast("获取维修保养日志成功！");
                     showListDialog();
                     break;
                 case ERROR_CODE:
                     dismissLoading();
-                    toast("获取养护通知单失败！");
+                    toast("获取维修保养日志失败！");
                     break;
             }
             dismissLoading();

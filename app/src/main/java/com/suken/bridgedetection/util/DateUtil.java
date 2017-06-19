@@ -378,6 +378,8 @@ public class DateUtil {
     }
 
 
+
+
     public static Calendar strToCalendarLong(String strDate) {
         Calendar c = Calendar.getInstance();
         try {
@@ -395,6 +397,48 @@ public class DateUtil {
             e.printStackTrace();
         }
         return c;
+    }
+    public static Calendar strToCalendarLongall(String strDate) {
+        Calendar c = Calendar.getInstance();
+        try {
+            c.setTime(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(strDate));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return c;
+    }
+
+    /**
+     * 将yyyy-MM-dd HH:mm转换为yyyy年MM月dd日 HH:mm
+     * @param time
+     */
+    public static String timeTransform1(String time){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date = null;//有异常要捕获
+        try {
+            date = format.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        format = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+        String newD = format.format(date);
+        return newD;
+    }
+    /**
+     * 将yyyy年MM月dd日 HH:mm转换为yyyy-MM-dd HH:mm
+     * @param time
+     */
+    public static String timeTransform2(String time){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
+        Date date = null;//有异常要捕获
+        try {
+            date = format.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String newD = format.format(date);
+        return newD;
     }
 
     @SuppressLint("SimpleDateFormat")

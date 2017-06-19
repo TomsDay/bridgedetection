@@ -24,7 +24,10 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceLogUpLoadAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
+import com.suken.bridgedetection.bean.CatalogueByUIDDao;
 import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
 import com.suken.bridgedetection.bean.MaintenanceLogBean;
@@ -56,12 +59,17 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
     private Context mContext;
     private LinearLayout update_all;
 
+    private GeteMaterialDao geteMaterialDao;
+    private CatalogueByUIDDao catalogueByUIDDao;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_log_up_load);
         maintenanceLogDao = new MaintenanceLogDao();
+        geteMaterialDao = new GeteMaterialDao();
+        catalogueByUIDDao = new CatalogueByUIDDao();
         ivDescDao = new IVDescDao();
         mContext = this;
         initView();
@@ -310,9 +318,43 @@ public class MaintenanceLogUpLoadActivity extends BaseActivity {
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa","111111111111"+ result.toString());
                 Logger.e("aaa","position===="+ position);
+
+                //或得所有的材料数据
+                List<MaintenanceLogUpLoadListBean> upLoadListBeen =bean.getMaintenlogdetailList();
+                //因为材料数据是分开的 （多条可能在一个订单上），需要加一个重复判断
+                boolean once = false;
+                String firstBhid = upLoadListBeen.get(0).getBhid();
+                for(MaintenanceLogUpLoadListBean b:upLoadListBeen){
+
+                    String thisBhid = b.getBhid();
+                    //如果和上次的项目名称不一样。那么就可以再次添加数量
+                    if(!firstBhid.equals(thisBhid)){
+                        firstBhid = thisBhid;
+                        once = false;
+                    }
+                    if(!once){
+                        CatalogueByUIDBean catalogueByUIDBean = catalogueByUIDDao.getDataByClid(b.getBhid());
+                        Logger.e("aaa","befor=="+catalogueByUIDBean.getCommitNum());
+                        catalogueByUIDDao.updateData((catalogueByUIDBean.getCommitNum() + 1)+"", b.getBhid());
+                        once =true;
+                        CatalogueByUIDBean catalogueByUIDBean2 = catalogueByUIDDao.getDataByClid(b.getBhid());
+                        Logger.e("aaa","after=="+catalogueByUIDBean2.getCommitNum());
+                    }
+                    GeteMaterialBean geteMaterialBean = geteMaterialDao.getDataByClid(b.getClid());
+                    Logger.e("aaa","修改之前的数量=="+geteMaterialBean.getCommitNum());
+                    if(!TextUtil.isEmptyObjects(geteMaterialBean)){
+                        geteMaterialDao.updateData((geteMaterialBean.getCommitNum() + 1)+"", b.getClid());
+                    }
+                }
+
+
+
+//                GeteMaterialBean bean2 = dao.getDataByClid("10000014558384");
+//
+//                Logger.e("aaa","修改之(后)的数量=="+bean2.getCommitNum());
                 maintenanceLogDao.delete(listBeen.get(position).getId());
                 for(int i = 0;i<listBeen.get(position).getMaintenlogdetailList().size();i++){
-                    maintenanceLogDao.deleteItem(listBeen.get(position).getMaintenlogdetailList().get(i).getId());
+                    maintenanceLogDao.deleteItem(listBeen.get(position).getMaintenlogdetailList().get(i).getIds());
                 }
                 if(isAll){
                     if (position != listBeen.size() - 1) {

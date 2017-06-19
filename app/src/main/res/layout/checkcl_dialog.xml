@@ -5,7 +5,19 @@
     android:layout_marginTop="12dp"
     android:background="#ffffff"
     android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/cc_seach_ev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入要查询材料名称的首字母"
+            android:imeOptions="flagNoExtractUi|actionDone"
+            android:singleLine="true"
+            />
 
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,6 +58,21 @@
 
         <com.jp.wheelview.WheelView
             android:id="@+id/secondwheel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:itemNumber="3"
+            app:lineColor="@android:color/holo_blue_dark"
+            app:lineHeight="1.5dp"
+            app:maskHeight="48dp"
+            app:noEmpty="true"
+            app:normalTextColor="#777"
+            app:normalTextSize="14sp"
+            app:selectedTextColor="#ff000000"
+            app:selectedTextSize="22sp"
+            app:unitHeight="50dp" />
+        <com.jp.wheelview.WheelView
+            android:id="@+id/dw_wheel"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

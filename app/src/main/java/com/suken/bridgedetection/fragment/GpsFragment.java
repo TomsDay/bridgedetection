@@ -5,7 +5,10 @@ import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.activity.BaseActivity;
 import com.suken.bridgedetection.activity.HomePageActivity;
 import com.suken.bridgedetection.location.LocationManager;
+import com.suken.bridgedetection.storage.GpsGjData;
+import com.suken.bridgedetection.storage.GpsGjDataDao;
 import com.suken.bridgedetection.storage.SharePreferenceManager;
+import com.suken.bridgedetection.util.Logger;
 
 import android.os.Bundle;
 import android.text.InputType;
@@ -18,6 +21,8 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Switch;
+
+import java.util.List;
 
 public class GpsFragment extends BaseFragment {
 
@@ -41,6 +46,7 @@ public class GpsFragment extends BaseFragment {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 				if (isChecked) {
+//					List<GpsGjData> gpsGjDatas = new GpsGjDataDao().queryGpsData();
 					LocationManager.getInstance().startRecordLocation();
 				} else {
 					LocationManager.getInstance().stopRecordLocation();

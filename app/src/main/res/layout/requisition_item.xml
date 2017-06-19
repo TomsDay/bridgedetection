@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#90808080"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#80ffffff"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/maintenancerequisition_fx_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+
+        <TextView
+            android:id="@+id/maintenancerequisition_zh_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="k85.400"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenancerequisition_bhmc_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="松散"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenancerequisition_bhxq_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="k85.400超车道、行车道"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenancerequisition_dw_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="㎡"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenancerequisition_ygsl_tv"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="5.0"
+            android:textSize="@dimen/list_textSize" />
+
+    </LinearLayout>
+
+</LinearLayout>

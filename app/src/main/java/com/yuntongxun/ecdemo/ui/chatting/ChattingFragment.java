@@ -1379,22 +1379,23 @@ public class ChattingFragment extends CCPFragment implements
     }
     /**
      * 聊天插件功能实现
+	 * 2017。06。17就是聊天界面最下面的窗口
      */
     private class OnOnChattingPanelImpl implements CCPChattingFooter2.OnChattingPanelClickListener {
-
+		//拍照
 		@Override
 		public void OnTakingPictureRequest() {
 			
 			showTakeStyle(getActivity());
 			hideBottomPanel();
 		}
-
+		//图片
 		@Override
 		public void OnSelectImageReuqest() {
 			handleSelectImageIntent();
 			hideBottomPanel();
 		}
-
+		//文件
 		@Override
 		public void OnSelectFileRequest() {
 			startActivityForResult(new Intent(getActivity(),
@@ -1405,7 +1406,7 @@ public class ChattingFragment extends CCPFragment implements
 		private void hideBottomPanel() {
 			mChattingFooter.hideBottomPanel();
 		}
-
+		// 语音通话
 		@Override
 		public void OnSelectVoiceRequest() {
 
@@ -1413,7 +1414,7 @@ public class ChattingFragment extends CCPFragment implements
 			hideBottomPanel();
 
 		}
-
+		//视频通话
 		@Override
 		public void OnSelectVideoRequest() {
 			handleVideoCall();

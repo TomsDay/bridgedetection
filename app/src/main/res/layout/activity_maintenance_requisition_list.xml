@@ -24,7 +24,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice" />
+            android:textSize="@dimen/btn_textSize" />
         <TextView
             android:id="@+id/maintenance_requisitionList_getUpkeepnoticeByUID"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:onClick="onClick"
             android:text="同步巡查病害记录"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice"
+            android:textSize="@dimen/btn_textSize"
             android:layout_alignParentRight="true"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"/>
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="查询条件："
-                android:textSize="@dimen/content_markSice"
+                android:textSize="@dimen/content_markSize"
                 />
             <TextView
                 android:id="@+id/maintenance_requisitionList_selectCondition_tv"
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:text="病害名称"
                 android:layout_marginLeft="8dp"
-                android:textSize="@dimen/content_markSice"
+                android:textSize="@dimen/content_markSize"
                 />
 
         </LinearLayout>
@@ -84,7 +84,7 @@
             android:onClick="onClick"
             android:text="生成维修通知单"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice"
+            android:textSize="@dimen/btn_textSize"
             android:layout_alignParentRight="true"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -99,7 +99,18 @@
         android:layout_marginTop="10dp"
         android:background="#80ffffff"
         android:gravity="center">
-
+        <TextView
+            android:id="@+id/maintenance_requisitionList_row"
+            android:layout_width="match_parent"
+            android:layout_weight="1.06"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="操作"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
         <TextView
             android:id="@+id/maintenance_requisitionList_row1"
             android:layout_width="match_parent"
@@ -107,7 +118,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="病害编号"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -120,7 +131,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="巡查日志单号"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -132,7 +143,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="病害名称 "
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -144,7 +155,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="巡查人员"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -156,7 +167,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="巡查日期"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -168,7 +179,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="路线名称"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -180,7 +191,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="桩号"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -192,7 +203,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="单位"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -204,7 +215,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="预估数量"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
 
     </LinearLayout>
 

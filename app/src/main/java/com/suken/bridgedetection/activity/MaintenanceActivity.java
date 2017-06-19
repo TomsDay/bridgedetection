@@ -18,15 +18,19 @@ import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceAdapter;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.GeteMaterialBean;
+import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.bean.MaintenanceLogDao;
 import com.suken.bridgedetection.bean.MaintenanceOfOrderDao;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.ProjectAcceptanceDao;
+import com.suken.bridgedetection.bean.UploadUpkeepnoticeDao;
 import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.CheckXMDialog;
 
 import org.apache.http.NameValuePair;
@@ -45,6 +49,8 @@ public class MaintenanceActivity extends BaseActivity {
     private MaintenanceOfOrderDao maintenanceOfOrderDao;
     private ProjectAcceptanceDao projectAcceptanceDao;
 
+//    private UploadUpkeepnoticeDao uploadUpkeepnoticeDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +60,13 @@ public class MaintenanceActivity extends BaseActivity {
         maintenanceLogDao = new MaintenanceLogDao();
         maintenanceOfOrderDao = new MaintenanceOfOrderDao();
         projectAcceptanceDao = new ProjectAcceptanceDao();
+//        uploadUpkeepnoticeDao = new UploadUpkeepnoticeDao();
         initView();
         Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
         Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
         Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
+
+
 //        syncYangHuData();
     }
     private void initView(){
@@ -92,6 +101,7 @@ public class MaintenanceActivity extends BaseActivity {
         String userid = BridgeDetectionApplication.mCurrentUser.getUserId();
         ArrayList<String> list = new ArrayList<>();
         list.add(maintenanceTableDao.queryByuserID(userid).size()+"");
+//        list.add(uploadUpkeepnoticeDao.queryByuserID(userid).size()+"");
         list.add(maintenanceLogDao.queryByuserID(userid).size()+"");
         list.add(maintenanceOfOrderDao.queryByuserID(userid).size()+"");
         list.add(projectAcceptanceDao.queryByuserID(userid).size()+"");

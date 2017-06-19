@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#90808080"/>
+    <LinearLayout
+        android:id="@+id/requisition_up_item_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="#80ffffff"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/requisition_up_item_tx1"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+        android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx2"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx3"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx4"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx5"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx6"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx7"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="下行"
+            android:textSize="@dimen/list_textSize" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/requisition_up_item_tx8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.04"
+            android:gravity="center"
+            android:text="上传"
+            android:textSize="@dimen/btn_upLoadSize"
+            android:textColor="@color/yuninfo_black_shadow"
+            android:background="#ff9900"
+            android:padding="4dp"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

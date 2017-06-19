@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:2:1-503:12
+ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:2:1-505:12
 	package
 		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:3:5-40
 		INJECTED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml
@@ -110,7 +110,7 @@ ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/
 	android:name
 		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:57:22-62
 application
-ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:59:5-501:19
+ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:59:5-503:19
 	android:screenOrientation
 		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:65:9-46
 	android:label
@@ -802,6 +802,10 @@ ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/
 	android:name
 		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:497:13-72
 activity#com.suken.bridgedetection.activity.MaintenanceRequisitionUpActivity
-ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:500:9-88
+ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:500:9-502:52
+	android:screenOrientation
+		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:502:13-50
+	android:configChanges
+		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:501:13-74
 	android:name
 		ADDED from /Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/AndroidManifest.xml:500:19-76

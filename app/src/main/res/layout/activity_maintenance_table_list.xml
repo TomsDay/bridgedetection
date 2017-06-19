@@ -25,7 +25,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice"
+            android:textSize="@dimen/btn_textSize"
            />
 
         <LinearLayout
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text=" 全部上传"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/btn_textSice" />
+                android:textSize="@dimen/btn_textSize" />
         </LinearLayout>
 
 
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="巡查单号"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="路线编号"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="路线名称"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="时间段"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -120,7 +120,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="巡查路段"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -132,7 +132,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="巡查人"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
         <View
             android:layout_width="1dp"
             android:layout_height="match_parent"
@@ -143,7 +143,7 @@
             android:layout_weight="1.04"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="@dimen/list_textSice" />
+            android:textSize="@dimen/list_textSize" />
     </LinearLayout>
     <ListView
         android:id="@+id/maintenance_table_listView"

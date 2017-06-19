@@ -27,7 +27,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice" />
+            android:textSize="@dimen/btn_textSize" />
 
         <TextView
             android:id="@+id/maintenancetable_save"
@@ -41,7 +41,7 @@
             android:onClick="onClick"
             android:text="保存"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice" />
+            android:textSize="@dimen/btn_textSize" />
         <TextView
             android:id="@+id/maintenancetable_synchronizationData"
             android:layout_width="wrap_content"
@@ -53,79 +53,20 @@
             android:onClick="onClick"
             android:text="同步病害数据"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice"
+            android:textSize="@dimen/btn_textSize"
             android:layout_toLeftOf="@id/maintenancetable_save"
             android:layout_marginRight="8dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/maintenancetable_bottomLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        >
-        <LinearLayout
-            android:id="@+id/maintenancetable_jcry"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="15dp"
-            android:background="#80ffffff">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginBottom="2dp">
-
-                <TextView
-                    android:id="@+id/maintenancetable_xcr_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="巡查人："
-                    android:textSize="@dimen/content_markSice"
-                    android:layout_gravity="center"/>
-
-                <EditText
-                    android:id="@+id/maintenancetable_xcr_ev"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/line"
-                    android:textColor="#333333"
-                    android:textSize="@dimen/input_contentSice"
-                    android:imeOptions="flagNoExtractUi"
-                    android:layout_gravity="center"
-                    android:gravity="center_vertical"/>
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/saveBtn"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:background="#40A59F"
-            android:text="保存"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:layout_marginTop="4dp"
-            android:onClick="onClick"
-            android:textSize="@dimen/btn_bigSaveSice"/>
-    </LinearLayout>
-
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:layout_below="@id/maintenancetable_titleLayout"
-        android:layout_above="@id/maintenancetable_bottomLayout">
+        android:layout_below="@+id/maintenancetable_titleLayout"
+        android:layout_above="@+id/maintenancetable_bottomLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,7 +96,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="高速公路养护巡查日志"
                         android:textColor="#ffffff"
-                        android:textSize="@dimen/content_titleSice" />
+                        android:textSize="@dimen/content_titleSize" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -170,7 +111,7 @@
                             android:layout_centerVertical="true"
                             android:text="GPS定位中..."
                             android:textColor="#ffffff"
-                            android:textSize="@dimen/content_titleSice" />
+                            android:textSize="@dimen/content_titleSize" />
 
                         <ImageView
                             android:layout_width="10dp"
@@ -207,7 +148,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="管养单位："
                                 android:layout_gravity="center"
-                                android:textSize="@dimen/content_markSice" />
+                                android:textSize="@dimen/content_markSize" />
 
                             <EditText
                                 android:id="@+id/maintenancetable_gydw_ev"
@@ -215,7 +156,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:imeOptions="flagNoExtractUi"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
@@ -232,7 +173,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="巡查路段："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
                             <RelativeLayout
@@ -244,7 +185,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:imeOptions="flagNoExtractUi"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
@@ -278,7 +219,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="时间段："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
                             <EditText
@@ -287,7 +228,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"/>
                         </LinearLayout>
@@ -302,7 +243,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="日期："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
                             <EditText
@@ -311,7 +252,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:imeOptions="flagNoExtractUi"
                                 android:layout_gravity="center"/>
                         </LinearLayout>
@@ -337,14 +278,14 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="天气："
-                                    android:textSize="@dimen/content_markSice" />
+                                    android:textSize="@dimen/content_markSize" />
 
                                 <Spinner
                                     android:id="@+id/maintenancetable_weather_spinner"
                                     android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:textColor="#333333"
-                                    android:textSize="@dimen/input_contentSice"
+                                    android:textSize="@dimen/input_contentSize"
                                     android:entries="@array/spinnerWeather"
                                     />
 
@@ -361,14 +302,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="巡查类型："
-                                android:textSize="@dimen/content_markSice" />
+                                android:textSize="@dimen/content_markSize" />
 
                             <Spinner
                                 android:id="@+id/maintenancetable_searchType_spinner"
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:entries="@array/spinnerWeather"
                                 />
                         </LinearLayout>
@@ -392,7 +333,7 @@
                         android:layout_marginRight="10dp"
                         android:onClick="operate"
                         android:text="添加"
-                        android:textSize="@dimen/btn_Sice" />
+                        android:textSize="@dimen/btn_Size" />
 
                     <Button
                         android:id="@+id/operateDelete"
@@ -401,7 +342,7 @@
                         android:layout_marginLeft="10dp"
                         android:onClick="operate"
                         android:text="删除"
-                        android:textSize="@dimen/btn_Sice" />
+                        android:textSize="@dimen/btn_Size" />
                 </LinearLayout>
 
                 <com.suken.bridgedetection.widget.ListViewForScrollView
@@ -418,6 +359,66 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/maintenancetable_bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:id="@+id/maintenancetable_jcry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:background="#80ffffff">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:id="@+id/maintenancetable_xcr_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="巡查人："
+                    android:textSize="@dimen/content_markSize"
+                    android:layout_gravity="center"/>
+
+                <EditText
+                    android:id="@+id/maintenancetable_xcr_ev"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/line"
+                    android:textColor="#333333"
+                    android:textSize="@dimen/input_contentSize"
+                    android:imeOptions="flagNoExtractUi"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/saveBtn"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#40A59F"
+            android:text="保存"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="4dp"
+            android:onClick="onClick"
+            android:textSize="@dimen/btn_bigSaveSize"/>
+    </LinearLayout>
 
 
 </RelativeLayout>

@@ -141,6 +141,14 @@ public class CheckFormData implements Serializable {
 	private boolean lastUpdate;
 	@DatabaseField
 	private long saveTime = System.currentTimeMillis();
+	@DatabaseField
+	private String qhbh;
+	@DatabaseField
+	private String sdbh;
+
+
+
+
 
 	// "status": "1", //状态 1 草稿 2 已提交，参考业务字典分类ID：10000000690004
 	// "tjsj": null, //提交时间
@@ -152,6 +160,22 @@ public class CheckFormData implements Serializable {
 	// "yhdwName": "青银高速石家庄养护工区", //养护单位名称
 	// "zxzh": 595.844 //中心桩号
 	// }
+
+	public String getSdbh() {
+		return sdbh;
+	}
+
+	public void setSdbh(String sdbh) {
+		this.sdbh = sdbh;
+	}
+
+	public String getQhbh() {
+		return qhbh;
+	}
+
+	public void setQhbh(String qhbh) {
+		this.qhbh = qhbh;
+	}
 
 	public String getBno() {
 		return bno;

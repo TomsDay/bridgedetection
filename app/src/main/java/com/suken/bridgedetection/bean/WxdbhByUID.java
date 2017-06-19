@@ -60,7 +60,7 @@ public class WxdbhByUID implements Serializable {
      "xcld": "k0+100~k10+200"//巡查路段
      */
     private String ids;
-//    private String id;
+    private String id;
     private String bhid;
     private String bhmc;
     private String bhwz;
@@ -84,7 +84,7 @@ public class WxdbhByUID implements Serializable {
 //    private String noticeId;
 //    private String orgid;
 //    private String picattachment;
-//    private String remark;
+    private String remark;
 //    private String rowIndex;
 //    private String tpjd;
 //    private String tpwd;
@@ -102,6 +102,8 @@ public class WxdbhByUID implements Serializable {
     private String yhzt;
     private String zhfw;
     private String xcld;
+
+    private boolean isChecked;
 
     public WxdbhByUID() {
     }
@@ -147,6 +149,30 @@ public class WxdbhByUID implements Serializable {
                 ", zhfw='" + zhfw + '\'' +
                 ", xcld='" + xcld + '\'' +
                 '}';
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
     }
 
     public String getIds() {

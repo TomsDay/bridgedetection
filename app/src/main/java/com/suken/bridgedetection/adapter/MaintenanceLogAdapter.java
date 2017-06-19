@@ -19,6 +19,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -189,6 +191,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
             }
         });
         holder.cl_listview.setAdapter(mCLAdapter);
+        setListViewHeightBasedOnChildren(holder.cl_listview);
         setcCl(holder, position,mCLAdapter);
 //        holder.cl_edit.setText(bean.getClmc());
 //        holder.gg_edit.setText(bean.getClgg());
@@ -219,9 +222,12 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         }else{
             holder.radioGroup.check(R.id.radioup);
         }
-        holder.radioup.setEnabled(false);
-        holder.radiodown.setEnabled(false);
-        holder.radioupdown.setEnabled(false);
+        if(!"-1".equals(bean.getId()+"")){
+            holder.radioup.setEnabled(false);
+            holder.radiodown.setEnabled(false);
+            holder.radioupdown.setEnabled(false);
+        }
+
 
 
         SpinnerAdapter mAdapter = new SpinnerAdapter();
@@ -381,6 +387,9 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
     public void setcCl(final HolderView holder, final int position, final CLAdapter clAdapter){
 
+
+
+
         holder.cl_btn.setOnClickListener(new CheckClDialog(mActivity, new CheckClDialog.CheckClDialogReturn(){
             @Override
             public void returnBean(List<GeteMaterialBean> geteMaterialBeen) {
@@ -415,6 +424,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
                     clBean.getGeteMaterialBeens().add(bean);
 //                    clAdapter.setData(clBean.getGeteMaterialBeens());
                     clAdapter.notifyDataSetChanged();
+                    setListViewHeightBasedOnChildren(holder.cl_listview);
 //                    if(TextUtil.isEmptyString(clmc)){
 //                        maintenanceLogItemBeen.get(position).setClmc(bean.getClmc());
 //                    }else{
@@ -569,7 +579,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 //                cldw_edit;
         private Button cl_btn;
 
-        private ListViewForScrollView cl_listview;
+        private ListView cl_listview;
 
         private Spinner img_spinner;
 
@@ -615,7 +625,7 @@ public class MaintenanceLogAdapter extends BaseAdapter {
 
             img_spinner = (Spinner) view.findViewById(R.id.img_spinner);
 
-            cl_listview = (ListViewForScrollView) view.findViewById(R.id.cl_listview);
+            cl_listview = (ListView) view.findViewById(R.id.cl_listview);
 
             item_Line = view.findViewById(R.id.item_Line);
 
@@ -797,5 +807,26 @@ public class MaintenanceLogAdapter extends BaseAdapter {
         }
 
 
+    }
+    /**
+     * 动态设置ListView的高度
+     * @param listView
+     */
+    public static void setListViewHeightBasedOnChildren(ListView listView) {//2017.04.19为了适配键盘不出的问题
+        if(listView == null) return;
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 }

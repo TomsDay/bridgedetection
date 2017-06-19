@@ -35,6 +35,7 @@ import com.suken.bridgedetection.http.HttpTask;
 import com.suken.bridgedetection.http.OnReceivedHttpResponseListener;
 import com.suken.bridgedetection.util.DateUtil;
 import com.suken.bridgedetection.util.Logger;
+import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.widget.DateTimePickDialogUtil;
 
 import org.apache.http.NameValuePair;
@@ -151,22 +152,26 @@ public class MaintenanceLogListActivity extends BaseActivity {
                         StringBuffer str = new StringBuffer();
                         if (tzdbh.length() != 0) {
                             str.append("通知单编号：");
-                            str.append(tzdbh);
+                            str.append(tzdbh+",");
                         }
                         if (wxbm.length() != 0) {
                             str.append("维修单位：");
-                            str.append(wxbm);
+                            str.append(wxbm+",");
                         }
                         if (qfrq.length() != 0) {
                             str.append("签发日期：");
-                            str.append(qfrq);
+                            str.append(qfrq+",");
                         }
                         if (qfr.length() != 0) {
                             str.append("签发人：");
-                            str.append(qfr);
+                            str.append(qfr+",");
                         }
-                        maintenance_logList_selectCondition_tv.setText(str);
-                        if (str.length() != 0) {
+
+
+                        String content = str.toString();
+                        if (!TextUtil.isEmptyString(content)) {
+                            content = content.substring(0,content.lastIndexOf(","));
+                            maintenance_logList_selectCondition_tv.setText(content);
                             loadDate();
                         }
 

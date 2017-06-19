@@ -1,13 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_maintenance_requisition_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.suken.bridgedetection.activity.MaintenanceRequisitionUpActivity">
+    android:background="@drawable/list_main_bg"
+    android:orientation="vertical"
+    tools:context=".activity.MaintenanceTableListActivity">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/maintenance_trequisition_up_titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_back"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:background="#95323d4b"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:text="返回"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/btn_textSize"
+            />
+
+        <LinearLayout
+            android:id="@+id/update_all"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:background="#3ea49d"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp">
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/qbsc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 全部上传"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/btn_textSize" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#80ffffff"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row1"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="通知单编号"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row2"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="维修类型"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row4"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="维修部门"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="维修期限开始"
+            android:textSize="@dimen/list_textSize" />
+        <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="维修期限结束"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="签发人"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_requisition_up_row8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="签发日期"
+            android:textSize="@dimen/list_textSize" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#90808080" />
+        <TextView
+            android:id="@+id/maintenance_trequisition_up_row9"
+            android:layout_width="match_parent"
+            android:layout_weight="1.04"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/list_textSize" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/maintenance_requisition_up_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+</LinearLayout>

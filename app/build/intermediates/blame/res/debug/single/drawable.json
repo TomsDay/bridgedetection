@@ -84,12 +84,12 @@
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/drawable/forward_selector.xml"
     },
     {
-        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/drawable/ccp_trans.9.png",
-        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/drawable/ccp_trans.9.png"
-    },
-    {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/drawable/ec_keyboard_middle_03_selector.xml",
         "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/drawable/ec_keyboard_middle_03_selector.xml"
+    },
+    {
+        "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/drawable/ccp_trans.9.png",
+        "source": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/src/main/res/drawable/ccp_trans.9.png"
     },
     {
         "merged": "/Users/liangshuai/Documents/AndroidStudioProject/bridgedetection/app/build/intermediates/res/merged/debug/drawable/video_button_cancle.xml",

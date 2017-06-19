@@ -25,8 +25,11 @@ import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
 import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.adapter.MaintenanceTableListAdapter;
+import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.IVDesc;
 import com.suken.bridgedetection.bean.IVDescDao;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
+import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
 import com.suken.bridgedetection.bean.MaintenanceTableBean;
 import com.suken.bridgedetection.bean.MaintenanceTableDao;
 import com.suken.bridgedetection.bean.MaintenanceTableItemBean;
@@ -58,7 +61,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
     private Context mContext;
     private LinearLayout update_all;
 
-
+    private MaintenanceDiseaseDao maintenanceDiseaseDao;
 
 
     @Override
@@ -67,6 +70,7 @@ public class MaintenanceTableListActivity extends BaseActivity {
         setContentView(R.layout.activity_maintenance_table_list);
         mContext = MaintenanceTableListActivity.this;
         maintenanceTableDao = new MaintenanceTableDao();
+        maintenanceDiseaseDao = new MaintenanceDiseaseDao();
         ivDescDao = new IVDescDao();
         initView();
     }
@@ -223,8 +227,15 @@ public class MaintenanceTableListActivity extends BaseActivity {
             public void onRequestSuccess(RequestType type, JSONObject result) {
                 Logger.e("aaa","111111111111"+ result.toString());
                 Logger.e("aaa","position===="+ position);
+
+
+
                 maintenanceTableDao.delete(bean.getId());
                 for(int i = 0;i<bean.getInspectLogDetailList().size();i++){
+                    MaintenanceTableItemBean b = bean.getInspectLogDetailList().get(i);
+                    MaintenanceDiseaseBean maintenanceDiseaseBean = maintenanceDiseaseDao.getDataByClid(b.getBhid());
+                    maintenanceDiseaseDao.updateData((maintenanceDiseaseBean.getCommitNum() + 1)+"", b.getBhid());
+
                     maintenanceTableDao.deleteItem(bean.getInspectLogDetailList().get(i).getId());
                 }
                 if(isAll){

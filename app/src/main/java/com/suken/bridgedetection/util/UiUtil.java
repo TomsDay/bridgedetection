@@ -28,10 +28,14 @@ import com.suken.bridgedetection.activity.HomePageActivity;
 import com.suken.bridgedetection.activity.UpdateAllActivity;
 import com.suken.bridgedetection.bean.CatalogueByUIDBean;
 import com.suken.bridgedetection.bean.CatalogueByUIDDao;
+import com.suken.bridgedetection.bean.CooperationBean;
+import com.suken.bridgedetection.bean.CooperationDao;
 import com.suken.bridgedetection.bean.GeteMaterialBean;
 import com.suken.bridgedetection.bean.GeteMaterialDao;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseBean;
 import com.suken.bridgedetection.bean.MaintenanceDiseaseDao;
+import com.suken.bridgedetection.bean.QualityDemandBean;
+import com.suken.bridgedetection.bean.QualityDemandDao;
 import com.suken.bridgedetection.bean.SDXCBean;
 import com.suken.bridgedetection.bean.SDXCDao;
 import com.suken.bridgedetection.http.HttpTask;
@@ -110,9 +114,6 @@ public class UiUtil {
     }
 
 
-
-
-
     public static void syncData(final BaseActivity activity, final boolean isJustLastUpdate, final OnSyncDataFinishedListener syncListener) {
 
         ConnectType type = NetWorkUtil.getConnectType(activity);
@@ -174,13 +175,17 @@ public class UiUtil {
                         int type1 = type == RequestType.lastqhjcInfo ? R.drawable.qiaoliangjiancha : (type == RequestType.lastsdxcinfo ? R.drawable.suidaoxuncha : R.drawable.suidaojiancha);
 //                        int type1 = type == RequestType.lastqhjcInfo ? R.drawable.qiaoliangjiancha :R.drawable.suidaojiancha;
 
+
 //                        Logger.e("aaa","lastqhjcInfo="+RequestType.lastqhjcInfo);
 //                        Logger.e("aaa","qiaoliangjiancha="+R.drawable.qiaoliangjiancha);
 //                        Logger.e("aaa","suidaojiancha="+R.drawable.suidaojiancha);
 //                        Logger.e("aaa","type="+type);
 //                        Logger.e("aaa","type1="+type1);
                         if (list != null && list.size() > 0) {
-                            for (CheckFormData data : list) {
+                            for (CheckFormData data : list) {//2017.04.18 桥梁检查负责人找不到的问题修改
+                                if (type1 == R.drawable.qiaoliangjiancha) {
+                                    data.setJcry(data.getFzry());
+                                }
                                 data.setType(type1);
                                 data.setLastUpdate(true);
                                 //2017。04。09 修改隧道检查 获取上次检查记录获取不到的问题，这里为空！！！！！！！！！！！！MDZZ
@@ -197,7 +202,7 @@ public class UiUtil {
                         }
                         break;
                     }
-                    case lastsdxcinfo:{
+                    case lastsdxcinfo: {
                         List<SdxcFormData> list = JSON.parseArray(obj.getString("datas"), SdxcFormData.class);
                         if (list != null && list.size() > 0) {
                             for (SdxcFormData data : list) {
@@ -219,55 +224,73 @@ public class UiUtil {
                         // tunnels 隧道
                         // dictionarys 系统字典的
                         // brgengineers 桥涵工程师的 tunengineers 隧道的
-                        GXLuXianInfoDao gxLuXianInfoDao =  new GXLuXianInfoDao();
-                        QLBaseDataDao qlBaseDataDao =  new QLBaseDataDao();
-                        HDBaseDataDao hdBaseDataDao =  new HDBaseDataDao();
-                        SDBaseDataDao sdBaseDataDao =  new SDBaseDataDao();
-                        SDXCDao sdxcDao = new SDXCDao();
-                        QHYHZeRenInfoDao qhyhZeRenInfoDao =  new QHYHZeRenInfoDao();
-                        SDYHZeRenInfoDao sdyhZeRenInfoDao =  new SDYHZeRenInfoDao();
-                        YWDictionaryDao ywDictionaryDao =  new YWDictionaryDao();
-                        if(!TextUtil.isListEmpty(gxLuXianInfoDao.queryAll())){
+                        GXLuXianInfoDao gxLuXianInfoDao = new GXLuXianInfoDao();
+
+                        QHYHZeRenInfoDao qhyhZeRenInfoDao = new QHYHZeRenInfoDao();
+                        SDYHZeRenInfoDao sdyhZeRenInfoDao = new SDYHZeRenInfoDao();
+                        YWDictionaryDao ywDictionaryDao = new YWDictionaryDao();
+
+
+                        String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+                        Logger.e("aaa","roles==="+roles);
+                        //在线登录时，用户角色非 “qlxc”的不能同步桥梁、涵洞基础数据和上次检查数据17.5.19
+                        if (roles.contains("qlxc")) {
+
+                            QLBaseDataDao qlBaseDataDao = new QLBaseDataDao();
+                            HDBaseDataDao hdBaseDataDao = new HDBaseDataDao();
+                            if (!TextUtil.isListEmpty(qlBaseDataDao.queryAll())) {
+                                qlBaseDataDao.deleteAll();
+                            }
+                            if (!TextUtil.isListEmpty(hdBaseDataDao.queryAll())) {
+                                hdBaseDataDao.deleteAll();
+                            }
+                            List<QLBaseData> list1 = JSON.parseArray(obj.getString("bridges"), QLBaseData.class);
+                            qlBaseDataDao.create(list1);
+                            List<HDBaseData> list2 = JSON.parseArray(obj.getString("culverts"), HDBaseData.class);
+                            hdBaseDataDao.create(list2);
+                        }
+                        //用户角色非“sdxc”不能同步隧道基础数据和隧道检查数据17.5.19
+                        if (roles.contains("sdxc")) {
+
+                            SDBaseDataDao sdBaseDataDao = new SDBaseDataDao();
+                            SDXCDao sdxcDao = new SDXCDao();
+                            if (!TextUtil.isListEmpty(sdBaseDataDao.queryAll())) {
+                                sdBaseDataDao.deleteAll();
+                            }
+                            if (!TextUtil.isListEmpty(sdxcDao.queryAll())) {
+                                sdxcDao.deleteAll();
+                            }
+                            Logger.e("aaa", "sd1111==" + obj.getString("tunnels"));
+                            List<SDBaseData> list3 = JSON.parseArray(obj.getString("tunnels"), SDBaseData.class);
+                            Logger.e("aaa", "sd222==" + list3.toString());
+                            sdBaseDataDao.create(list3);
+
+                            Logger.e("aaa", "sdxc111==" + obj.getString("tunnels"));
+                            List<SDXCBean> list3_1 = JSON.parseArray(obj.getString("tunnels"), SDXCBean.class);
+                            Logger.e("aaa", "sdxc222==" + list3_1.toString());
+                            sdxcDao.create(list3_1);
+                        }
+
+
+                        if (!TextUtil.isListEmpty(gxLuXianInfoDao.queryAll())) {
                             gxLuXianInfoDao.deleteAll();
                         }
-                        if(!TextUtil.isListEmpty(qlBaseDataDao.queryAll())){
-                            qlBaseDataDao.deleteAll();
-                        }
-                        if(!TextUtil.isListEmpty(hdBaseDataDao.queryAll())){
-                            hdBaseDataDao.deleteAll();
-                        }
-                        if(!TextUtil.isListEmpty(sdBaseDataDao.queryAll())){
-                            sdBaseDataDao.deleteAll();
-                        }
-                        if(!TextUtil.isListEmpty(sdxcDao.queryAll())){
-                            sdxcDao.deleteAll();
-                        }
-                        if(!TextUtil.isListEmpty(qhyhZeRenInfoDao.queryAll())){
+
+
+                        if (!TextUtil.isListEmpty(qhyhZeRenInfoDao.queryAll())) {
                             qhyhZeRenInfoDao.deleteAll();
                         }
-                        if(!TextUtil.isListEmpty(sdyhZeRenInfoDao.queryAll())){
+                        if (!TextUtil.isListEmpty(sdyhZeRenInfoDao.queryAll())) {
                             sdyhZeRenInfoDao.deleteAll();
                         }
-                        if(!TextUtil.isListEmpty(ywDictionaryDao.queryAll())){
+                        if (!TextUtil.isListEmpty(ywDictionaryDao.queryAll())) {
                             ywDictionaryDao.deleteAll();
                         }
 
                         List<GXLuXianInfo> list = JSON.parseArray(obj.getString("luxians"), GXLuXianInfo.class);
                         gxLuXianInfoDao.create(list);
-                        List<QLBaseData> list1 = JSON.parseArray(obj.getString("bridges"), QLBaseData.class);
-                        qlBaseDataDao.create(list1);
-                        List<HDBaseData> list2 = JSON.parseArray(obj.getString("culverts"), HDBaseData.class);
-                        hdBaseDataDao.create(list2);
 
-                        Logger.e("aaa", "sd1111=="+obj.getString("tunnels"));
-                        List<SDBaseData> list3 = JSON.parseArray(obj.getString("tunnels"), SDBaseData.class);
-                        Logger.e("aaa", "sd222=="+list3.toString());
-                        sdBaseDataDao.create(list3);
 
-                        Logger.e("aaa", "sdxc111=="+obj.getString("tunnels"));
-                        List<SDXCBean> list3_1 = JSON.parseArray(obj.getString("tunnels"), SDXCBean.class);
-                        Logger.e("aaa", "sdxc222=="+list3_1.toString());
-                        sdxcDao.create(list3_1);
                         List<QHYangHuZeRenInfo> list4 = JSON.parseArray(obj.getString("brgengineers"), QHYangHuZeRenInfo.class);
                         qhyhZeRenInfoDao.create(list4);
                         List<SDYangHuZeRenInfo> list5 = JSON.parseArray(obj.getString("tunengineers"), SDYangHuZeRenInfo.class);
@@ -277,18 +300,53 @@ public class UiUtil {
                         break;
                     }
                     case geteDeseaseByUID:
-                        List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
-                        new MaintenanceDiseaseDao().addList(list);
+                        String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+                        //用户角色非“yhxcy”则不能同步病害数据17.5.19
+                        if (roles.contains("yhxcy")) {
+
+                            new MaintenanceDiseaseDao().deleteAll();
+                            List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
+                            new MaintenanceDiseaseDao().addList(list);
+                        }
+
+//                        new MaintenanceDiseaseDao().deleteAll();
+//                        List<MaintenanceDiseaseBean> list = JSON.parseArray(obj.getString("datas"), MaintenanceDiseaseBean.class);
+//                        new MaintenanceDiseaseDao().addList(list);
                         break;
                     case getCatalogueByUID:
+
+                        String roles1 = BridgeDetectionApplication.mCurrentUser.getRoles();
+                        //用户角色非“rcyhwxgcs”则不能同步细目数据17.5.19
+                        if ( roles1.contains("rcyhwxgcs")) {
+
+                            new CatalogueByUIDDao().deleteAll();
+                            Logger.e("aaa", "细目数据：" + obj.toString());
+                            List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
+                            new CatalogueByUIDDao().addList(catalogueByUIDBeen);
+                        }
+
+                        new CatalogueByUIDDao().deleteAll();
                         Logger.e("aaa", "细目数据：" + obj.toString());
                         List<CatalogueByUIDBean> catalogueByUIDBeen = JSON.parseArray(obj.getString("datas"), CatalogueByUIDBean.class);
                         new CatalogueByUIDDao().addList(catalogueByUIDBeen);
                         break;
                     case geteMaterialByUID:
+                        new GeteMaterialDao().deleteAll();
                         Logger.e("aaa", "材料基本信息：" + obj.toString());
                         List<GeteMaterialBean> geteMaterialBeen = JSON.parseArray(obj.getString("datas"), GeteMaterialBean.class);
                         new GeteMaterialDao().addList(geteMaterialBeen);
+                        break;
+                    case geteQualityDemandByUID:
+                        new QualityDemandDao().deleteAll();
+                        Logger.e("aaa", "材料基本信息：" + obj.toString());
+                        List<QualityDemandBean> qualityDemandBeen = JSON.parseArray(obj.getString("datas"), QualityDemandBean.class);
+                        new QualityDemandDao().addList(qualityDemandBeen);
+                        break;
+                    case geteCooperationByUID:
+                        new CooperationDao().deleteAll();
+                        Logger.e("aaa", "材料基本信息：" + obj.toString());
+                        List<CooperationBean> cooperationBeen = JSON.parseArray(obj.getString("datas"), CooperationBean.class);
+                        new CooperationDao().addList(cooperationBeen);
                         break;
                     default:
                         break;
@@ -297,7 +355,7 @@ public class UiUtil {
 
             @Override
             public void onRequestFail(RequestType type, String resultCode, String result) {
-                builder.append(result + "("+ resultCode + "),");
+                builder.append(result + "(" + resultCode + "),");
             }
         };
         BackgroundExecutor.execute(new Runnable() {
@@ -332,6 +390,11 @@ public class UiUtil {
                 // RequestType.lastqhjcInfo).executePost(list);
                 // new HttpTask(listener,
                 // RequestType.lastsdjcInfo).executePost(list);
+//                String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+//                if(!TextUtil.isEmptyString(roles)&&roles.contains("qlxc")){
+//
+//                    return ;
+//                }
                 if (isJustLastUpdate) {
                     int currentType = R.drawable.qiaoliangjiancha;
                     if (BridgeDetectionApplication.mCurrentActivity instanceof BridgeDetectionListActivity) {
@@ -345,12 +408,22 @@ public class UiUtil {
                         new HttpTask(listener, RequestType.lastsdxcinfo).executePost(list);
                     }
                 } else {
-//                    if(activity instanceof  HomePageActivity){
-//                        Logger.e("aaa","加载日常养护信息！");
-//                        new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
-//                        new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
-//                        new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
-//                    }
+                    if (activity instanceof HomePageActivity) {
+                        Logger.e("aaa", "加载日常养护信息！");
+                        String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+                        if ( roles.contains("yhxcy")) {
+                            new HttpTask(listener, RequestType.geteDeseaseByUID).executePost(list);
+                        }
+
+                        if (roles.contains("rcyhwxgcs")) {
+                            new HttpTask(listener, RequestType.getCatalogueByUID).executePost(list);
+                        }
+                        new HttpTask(listener, RequestType.geteMaterialByUID).executePost(list);
+                        if (roles.contains("zlcjy")) {
+                            new HttpTask(listener, RequestType.geteQualityDemandByUID).executePost(list);
+                        }
+                        new HttpTask(listener, RequestType.geteCooperationByUID).executePost(list);
+                    }
 
                     new HttpTask(listener, RequestType.syncData).executePost(list);
                 }
@@ -376,9 +449,10 @@ public class UiUtil {
 
     /**
      * 每次登录获取路线数据
+     *
      * @param baseActivity
      */
-    public static void synchronizationGxlxInfoData(final BaseActivity baseActivity){
+    public static void synchronizationGxlxInfoData(final BaseActivity baseActivity) {
 
         ConnectType type = NetWorkUtil.getConnectType(baseActivity);
         if (type == ConnectType.CONNECT_TYPE_DISCONNECT) {
@@ -393,7 +467,7 @@ public class UiUtil {
 
                 List<GXLuXianInfo> list = JSON.parseArray(result.getString("datas"), GXLuXianInfo.class);
 
-                Logger.e("aaa", "size=="+list.size());
+                Logger.e("aaa", "size==" + list.size());
 
                 gxLuXianInfoDao.create(list);
 
@@ -473,7 +547,7 @@ public class UiUtil {
         return "123";
     }
 
-    public static void updateSingleNotPost(final String qhId, final int type, final boolean handleDialog, final BaseActivity activity,boolean isEnd) {
+    public static void updateSingleNotPost(final String qhId, final int type, final boolean handleDialog, final BaseActivity activity, boolean isEnd) {
         if (handleDialog && !activity.isLoadingDialogShow()) {
             activity.showLoading("上传中...");
         }
@@ -483,9 +557,9 @@ public class UiUtil {
         pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
         list.add(pair);
         if (type == R.drawable.suidaoxuncha || type == R.drawable.qiaoliangxuncha) {
-            updateXunchaData(qhId, type, list, activity);
+            updateXunchaData(qhId, type, list, activity, isEnd);
         } else {
-            updateCheckData(qhId, type, list, activity,isEnd);
+            updateCheckData(qhId, type, list, activity, isEnd);
         }
         if (handleDialog && !(activity.isFinishing() || activity.isDestroyed())) {
             activity.dismissLoading();
@@ -498,7 +572,7 @@ public class UiUtil {
         BackgroundExecutor.execute(new Runnable() {
             public void run() {
                 isUpdating = true;
-                updateSingleNotPost(qhId, type, handleDialog, activity,true);
+                updateSingleNotPost(qhId, type, handleDialog, activity, true);
                 isUpdating = false;
             }
         });
@@ -557,7 +631,7 @@ public class UiUtil {
         }
         String[] attaches = UiUtil.concat(pics, vdos);
 
-        Logger.e("aaa","===================="+attaches.toString());
+        Logger.e("aaa", "====================" + attaches.toString());
         for (int i = 0; i < attaches.length; i++) {
 
             Logger.e("aaa", "i====================" + attaches[i]);
@@ -570,7 +644,7 @@ public class UiUtil {
 
     }
 
-    private static void updateXunchaData(final String qhId, final int type, List<NameValuePair> list, final BaseActivity activity) {
+    private static void updateXunchaData(final String qhId, final int type, List<NameValuePair> list, final BaseActivity activity, final boolean isEnd) {
         final SdxcFormData data = new SdxcFormAndDetailDao().queryByQHIdAndStatus(qhId, "1", type);
         if (data != null) {
             for (final SdxcFormDetail detail : data.getInspectLogDetailList()) {
@@ -604,26 +678,33 @@ public class UiUtil {
                             }
                         }
                     });
-                    TimerTask task = new TimerTask(){
-                        public void run(){
-                            //execute the task
-                            Logger.e("bbb","111111111");
-                            UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
-                                @Override
-                                public void onSyncFinished(boolean isSuccess) {
-                                    if(isSuccess){
-                                        if(activity instanceof BridgeDetectionListActivity){
-                                            ((BridgeDetectionListActivity) activity).loadData();
-                                        }
+                    if (type == R.drawable.suidaoxuncha) {
+                        getSDdDataByBh(data.getSdbh(), false, isEnd, activity);
+                    } else {
+                        if (isEnd) {
+                            TimerTask task = new TimerTask() {
+                                public void run() {
+                                    //execute the task
+                                    Logger.e("bbb", "111111111");
+                                    UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
+                                        @Override
+                                        public void onSyncFinished(boolean isSuccess) {
+                                            if (isSuccess) {
+                                                if (activity instanceof BridgeDetectionListActivity) {
+                                                    ((BridgeDetectionListActivity) activity).loadData();
+                                                }
 
-                                    }
+                                            }
+                                        }
+                                    });
                                 }
-                            });
+                            };
+
+                            Timer timer = new Timer();
+                            timer.schedule(task, 100);
+                            activity.toast("上传成功");
                         }
-                    };
-                    Timer timer = new Timer();
-                    timer.schedule(task, 100);
-                    activity.toast("上传成功");
+                    }
                 }
 
                 @Override
@@ -634,7 +715,7 @@ public class UiUtil {
             data.setStatus("2");
             data.setTjsj(UiUtil.formatNowTime());
             String json = new String(JSON.toJSONString(data));
-            Logger.e("add","upload111="+json);
+            Logger.e("add", "upload111=" + json);
             list.add(new BasicNameValuePair("json", json));
             new HttpTask(listener, type == R.drawable.suidaoxuncha ? RequestType.updatesdxcInfo : RequestType.updateqhxcInfo).executePost(list);
         }
@@ -653,7 +734,11 @@ public class UiUtil {
                 @Override
                 public void onRequestSuccess(RequestType type1, JSONObject obj) {
                     if (type1 != RequestType.updateGps) {
+//                        List<CheckFormData> getQHBH1 = new CheckFormAndDetailDao().getDataBybyqhbh(data.getQhbh());
+//                        Logger.e("aaa","getQHBH==="+getQHBH1.toString());
                         new CheckFormAndDetailDao().create(data);
+//                        List<CheckFormData> getQHBH2 = new CheckFormAndDetailDao().getDataBybyqhbh(data.getQhbh());
+//                        Logger.e("aaa","getQHBH==="+getQHBH2.toString());
                         activity.runOnUiThread(new Runnable() {
                             public void run() {
                                 if (activity instanceof BridgeDetectionListActivity) {
@@ -671,31 +756,37 @@ public class UiUtil {
                                 }
                             }
                         });
-                        if(isEnd){
-                            TimerTask task = new TimerTask(){
-                                public void run(){
-                                    //execute the task
-                                    Logger.e("bbb","111111111");
-                                    UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
-                                        @Override
-                                        public void onSyncFinished(boolean isSuccess) {
-                                            if(isSuccess){
-                                                if(activity instanceof UpdateAllActivity){
-                                                    activity.finish();
-                                                }else if(activity instanceof BridgeDetectionListActivity){
-                                                    ((BridgeDetectionListActivity) activity).loadData();
-                                                }
-
-                                            }
-                                        }
-                                    });
-                                }
-                            };
-                            Timer timer = new Timer();
-                            timer.schedule(task, 100);
-                            activity.toast("上传成功");
+                        if (type == R.drawable.qiaoliangjiancha) {
+                            getQHDataBybh(data.getQhbh(), "b".equals(data.getQhlx()), isEnd, activity);
+                        } else {
+                            getSDdDataByBh(data.getSdbh(), true, isEnd, activity);
+//                            if(isEnd){
+//                                TimerTask task = new TimerTask(){
+//                                    public void run(){
+//                                        //execute the task
+//                                        Logger.e("bbb","111111111");
+//                                        UiUtil.syncData(activity, false, new OnSyncDataFinishedListener() {
+//                                            @Override
+//                                            public void onSyncFinished(boolean isSuccess) {
+//                                                if(isSuccess){
+//
+//                                                    if(isEnd){
+//                                                        if(activity instanceof UpdateAllActivity){
+//                                                            activity.finish();
+//                                                        }else if(activity instanceof BridgeDetectionListActivity){
+//                                                            ((BridgeDetectionListActivity) activity).loadData();
+//                                                        }
+//                                                    }
+//                                                }
+//                                            }
+//                                        });
+//                                    }
+//                                };
+//                                Timer timer = new Timer();
+//                                timer.schedule(task, 100);
+//                                activity.toast("上传成功");
+//                            }
                         }
-
 
 
 //                        new Handler().postDelayed(new Runnable() {
@@ -737,10 +828,106 @@ public class UiUtil {
                     list.remove(jsonPair);
                 }
             }
-            Logger.e("aaa","upload222=="+json);
+            Logger.e("aaa", "upload222==" + json);
             list.add(new BasicNameValuePair("json", json));
             new HttpTask(listener, type == R.drawable.suidaojiancha ? RequestType.updatesdjcInfo : RequestType.updateqhjcInfo).executePost(list);
         }
+    }
+
+    /**
+     * @param qhbh     桥涵编号
+     * @param isql     是不是桥梁 true 桥梁 boolean涵洞
+     * @param isEnd    是否是最后一条
+     * @param activity 调用的activity
+     */
+    public static void getQHDataBybh(final String qhbh, final boolean isql, final Boolean isEnd, final BaseActivity activity) {
+        OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                if (isql) {
+//                    List<QLBaseData> l1 = new QLBaseDataDao().getDataBybyqhbh(qhbh);
+                    List<QLBaseData> list = JSON.parseArray(result.getString("datas"), QLBaseData.class);
+                    new QLBaseDataDao().create(list);
+//                    List<QLBaseData> l2 = new QLBaseDataDao().getDataBybyqhbh(qhbh);
+                    Logger.e("aaa", "通过qhbh获得的桥梁===" + list.toString());
+//                    new QLBaseDataDao().create(list);
+                } else {
+                    List<HDBaseData> l1 = new HDBaseDataDao().getDataBybyqhbh(qhbh);
+                    List<HDBaseData> list = JSON.parseArray(result.getString("datas"), HDBaseData.class);
+                    new HDBaseDataDao().create(list);
+                    List<HDBaseData> l2 = new HDBaseDataDao().getDataBybyqhbh(qhbh);
+                    Logger.e("aaa", "通过qhbh获得的涵洞===" + list.toString());
+                }
+                if (isEnd) {
+                    if (activity instanceof UpdateAllActivity) {
+                        activity.finish();
+                    } else if (activity instanceof BridgeDetectionListActivity) {
+                        ((BridgeDetectionListActivity) activity).loadData();
+                    }
+                }
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+
+            }
+        };
+        List<NameValuePair> list = new ArrayList<NameValuePair>();
+        BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+        list.add(pair);
+        pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+        list.add(pair);
+        pair = new BasicNameValuePair("qhbm", qhbh);
+        list.add(pair);
+        new HttpTask(listener, isql ? RequestType.qlBaseData : RequestType.hdBaseData).executePost(list);
+    }
+
+    /**
+     * @param sdbm     隧道编号
+     * @param isql     true隧道检查  false隧道巡查
+     * @param isEnd    是否是最后一条
+     * @param activity 调用的activity
+     */
+    public static void getSDdDataByBh(final String sdbm, final boolean isql, final Boolean isEnd, final BaseActivity activity) {
+        OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject result) {
+                if (isql) {
+                    List<SDBaseData> l1 = new SDBaseDataDao().getDataBybySDbh(sdbm);
+                    List<SDBaseData> list = JSON.parseArray(result.getString("datas"), SDBaseData.class);
+                    new SDBaseDataDao().create(list);
+                    List<SDBaseData> l2 = new SDBaseDataDao().getDataBybySDbh(sdbm);
+                    Logger.e("aaa", "通过sdbh获得的隧道检查===" + list.toString());
+//                    new QLBaseDataDao().create(list);
+                } else {
+                    List<SDXCBean> l1 = new SDXCDao().getDataBybySDbh(sdbm);
+                    List<SDXCBean> list = JSON.parseArray(result.getString("datas"), SDXCBean.class);
+                    new SDXCDao().create(list);
+                    List<SDXCBean> l2 = new SDXCDao().getDataBybySDbh(sdbm);
+                    Logger.e("aaa", "通过sdbh获得的隧道巡查===" + list.toString());
+                }
+                if (isEnd) {
+                    if (activity instanceof UpdateAllActivity) {
+                        activity.finish();
+                    } else if (activity instanceof BridgeDetectionListActivity) {
+                        ((BridgeDetectionListActivity) activity).loadData();
+                    }
+                }
+            }
+
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+
+            }
+        };
+        List<NameValuePair> list = new ArrayList<NameValuePair>();
+        BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
+        list.add(pair);
+        pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
+        list.add(pair);
+        pair = new BasicNameValuePair("sdbm", sdbm);
+        list.add(pair);
+        new HttpTask(listener, RequestType.sdBaseData).executePost(list);
     }
 
     public static byte[] toGzip(byte[] content) throws IOException {

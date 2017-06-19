@@ -330,12 +330,14 @@ public class ProjectAcceptanceListUpLoadActivity extends BaseActivity {
                     bean.getProjacceptDetailList().get(i).setiDescs(null);
                     bean.getProjacceptDetailList().get(i).setvDescs(null);
                     bean.getProjacceptDetailList().get(i).setCreatetime(null);
+                    bean.setTjsj(null);//2017.05.25提交时间的问题导致上传不了信息 
 
                 }
                 bean.setProjacceptItemBeen(null);
                 bean.setiDescs(null);
                 bean.setmImages(null);
                 bean.setCreatetime(null);
+                bean.setTjsj(null);//2017.05.25提交时间的问题导致上传不了信息
                 long ids = Long.parseLong(bean.getIds());
                 long id = bean.getId();
                 bean.setId(ids);

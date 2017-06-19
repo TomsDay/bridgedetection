@@ -23,7 +23,7 @@
                 android:layout_marginLeft="10dp"
                 android:text="高速公路质量抽检"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/content_titleSice" />
+                android:textSize="@dimen/content_titleSize" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_centerVertical="true"
                     android:text="GPS定位中..."
                     android:textColor="#ffffff"
-                    android:textSize="@dimen/content_titleSice" />
+                    android:textSize="@dimen/content_titleSize" />
 
                 <ImageView
                     android:layout_width="10dp"
@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="管养单位："
-                        android:textSize="@dimen/content_markSice"
+                        android:textSize="@dimen/content_markSize"
                         android:layout_gravity="center"/>
 
                     <EditText
@@ -82,7 +82,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="@dimen/input_contentSice"
+                        android:textSize="@dimen/input_contentSize"
                         android:imeOptions="flagNoExtractUi"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"/>
@@ -98,7 +98,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="抽检人："
-                        android:textSize="@dimen/content_markSice"
+                        android:textSize="@dimen/content_markSize"
                         android:layout_gravity="center"/>
 
                     <EditText
@@ -107,7 +107,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="@dimen/input_contentSice"
+                        android:textSize="@dimen/input_contentSize"
                         android:imeOptions="flagNoExtractUi"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="抽检日期："
-                    android:textSize="@dimen/content_markSice"
+                    android:textSize="@dimen/content_markSize"
                     android:layout_gravity="center"/>
 
                 <EditText
@@ -136,7 +136,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="@dimen/input_contentSice"
+                    android:textSize="@dimen/input_contentSize"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"/>
 
@@ -161,7 +161,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="工区主任："
-                        android:textSize="@dimen/content_markSice"
+                        android:textSize="@dimen/content_markSize"
                         android:layout_gravity="center"/>
 
                     <EditText
@@ -170,7 +170,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="@dimen/input_contentSice"
+                        android:textSize="@dimen/input_contentSize"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"/>
                 </LinearLayout>
@@ -184,7 +184,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="养护科长："
-                        android:textSize="@dimen/content_markSice"
+                        android:textSize="@dimen/content_markSize"
                         android:layout_gravity="center"/>
 
                     <EditText
@@ -193,7 +193,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/line"
                         android:textColor="#333333"
-                        android:textSize="@dimen/input_contentSice"
+                        android:textSize="@dimen/input_contentSize"
                         android:layout_gravity="center"
                         android:gravity="center_vertical"/>
                 </LinearLayout>
@@ -205,7 +205,7 @@
             android:layout_height="wrap_content"
             android:text="添加通知单"
             android:layout_gravity="center"
-            android:textSize="@dimen/btn_Sice"
+            android:textSize="@dimen/btn_Size"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"/>
     </LinearLayout>

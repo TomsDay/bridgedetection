@@ -69,7 +69,7 @@ import java.util.List;
 /**
  * 高速公路维修保养日志
  */
-public class MaintenanceLogActivity extends BaseActivity implements OnLocationFinishedListener {
+public class    MaintenanceLogActivity extends BaseActivity implements OnLocationFinishedListener {
     ListViewForScrollView mListView;
     private ArrayList<MaintenanceLogBean> maintenanceLogBeen = new ArrayList<MaintenanceLogBean>();
     private ArrayList<MaintenanceLogItemBean> maintenanceLogItemBeen = new ArrayList<MaintenanceLogItemBean>();
@@ -379,26 +379,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
     }
 
-    public void back() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("提醒");
-        builder.setMessage("返回将丢失当前未保存信息");
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        builder.create().show();
-    }
 
     public void saveDialog(){
         Logger.e("aaa", "fx=" + mAdapter.getData());
@@ -410,11 +391,11 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
 
-                        if(!mIsGpsSuccess){
-                            Toast.makeText(mContext, "正在定位...\n" +
-                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
-                            return;
-                        }
+//                        if(!mIsGpsSuccess){
+//                            Toast.makeText(mContext, "正在定位...\n" +
+//                                    "请您到空旷的地点从新定位，绝就不要在室内", Toast.LENGTH_SHORT).show();
+//                            return;
+//                        }
 
                         Logger.e("aaa","itemlist===="+ maintenanceLogItemBeen.toString());
 
@@ -648,6 +629,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
             case R.id.operateAdd:
                 maintenanceLogItemBeen = mAdapter.getData();
                 MaintenanceLogItemBean bean = new MaintenanceLogItemBean();
+                bean.setId(-1);
                 maintenanceLogItemBeen.add(bean);
                 mAdapter.setData(maintenanceLogItemBeen);
                 mAdapter.notifyDataSetChanged();
@@ -880,7 +862,7 @@ public class MaintenanceLogActivity extends BaseActivity implements OnLocationFi
 
             @Override
             public void run() {
-                catalogueByUIDDao.deleteAll();
+                geteMaterialDao.deleteAll();
                 List<NameValuePair> list = new ArrayList<NameValuePair>();
                 BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
                 list.add(pair);

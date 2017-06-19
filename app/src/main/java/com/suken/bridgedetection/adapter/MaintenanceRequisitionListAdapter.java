@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ import com.suken.bridgedetection.util.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.suken.bridgedetection.R.id.checkBox;
 import static com.suken.bridgedetection.R.id.view;
 
 /**
@@ -29,6 +32,12 @@ import static com.suken.bridgedetection.R.id.view;
 public class MaintenanceRequisitionListAdapter extends BaseAdapter {
     private MaintenanceRequisitionListActivity mActivity;
     private LayoutInflater inflater;
+
+    public List<WxdbhByUID> getCommitData() {
+        return commitData;
+    }
+
+    private List<WxdbhByUID> commitData = new ArrayList<WxdbhByUID>();
     public MaintenanceRequisitionListAdapter(MaintenanceRequisitionListActivity content){
         mActivity = content;
         inflater = mActivity.getLayoutInflater();
@@ -69,7 +78,7 @@ public class MaintenanceRequisitionListAdapter extends BaseAdapter {
         }else{
             holder = (HolderView) convertView.getTag();
         }
-        WxdbhByUID bean = listBean.get(position);
+        final WxdbhByUID bean = listBean.get(position);
 
         holder.maintenancerequisitionlist_item_tv1.setText(bean.getBhid());
         holder.maintenancerequisitionlist_item_tv2.setText(bean.getYhInspNo());
@@ -81,37 +90,45 @@ public class MaintenanceRequisitionListAdapter extends BaseAdapter {
         holder.maintenancerequisitionlist_item_tv8.setText(bean.getDw());
         holder.maintenancerequisitionlist_item_tv9.setText(bean.getYgsl());
 
+        holder.maintenancerequisitionlist_item_cb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                boolean isHave = commitData.contains(bean);
+                bean.setChecked(isChecked);
+                if(isChecked){
+                    if(!isHave){
+                        commitData.add(bean);
+                    }
+                }else{
+                    if(isHave){
+                        commitData.remove(bean);
+                    }
+                }
+
+            }
+        });
+        setClickItem(bean,holder);
+
+        return convertView;
+    }
+    public void setClickItem(final WxdbhByUID bean,final HolderView holder){
         holder.maintenancerequisitionlist_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String[] names = { "生成维修通知单", "取消" };
-                new AlertDialog.Builder(mActivity,R.style.NOmengceng_dialog)
-                        .setItems(names, new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                Logger.e("aaa", "which++" + which);
-                                switch (which) {
-                                    case 0:
-                                        Intent in = new Intent(mActivity, MaintenanceRequisitionActivity.class);
-                                        in.putExtra("bean", listBean.get(position));
-                                        mActivity.startActivity(in);
-                                        break;
-                                    default:
-                                        break;
-                                }
-
-
-                            }
-                        })
-                        .show();
+                boolean ischecked =bean.isChecked();
+                if(ischecked){
+                    holder.maintenancerequisitionlist_item_cb1.setChecked(false);
+                }else{
+                    holder.maintenancerequisitionlist_item_cb1.setChecked(true);
+                }
+                bean.setChecked(!ischecked);
             }
         });
-        return convertView;
     }
 
     class HolderView{
+
+        CheckBox maintenancerequisitionlist_item_cb1;
         TextView maintenancerequisitionlist_item_tv1,
                 maintenancerequisitionlist_item_tv2,
                 maintenancerequisitionlist_item_tv3,
@@ -136,6 +153,8 @@ public class MaintenanceRequisitionListAdapter extends BaseAdapter {
             maintenancerequisitionlist_item_tv9 = (TextView) v.findViewById(R.id.maintenancerequisitionlist_item_tv9);
 
             maintenancerequisitionlist_layout = (LinearLayout) v.findViewById(R.id.maintenancerequisitionlist_layout);
+
+            maintenancerequisitionlist_item_cb1 = (CheckBox) v.findViewById(R.id.maintenancerequisitionlist_item_cb1);
 
         }
 

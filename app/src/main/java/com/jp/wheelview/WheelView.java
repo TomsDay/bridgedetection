@@ -17,6 +17,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.util.TextUtil;
 
 import java.util.ArrayList;
 
@@ -321,8 +322,12 @@ public class WheelView extends View {
      * 不能为空，必须有选项
      */
     private void noEmpty() {
-        if (!noEmpty)
+        if (!noEmpty) {
             return;
+        }
+        if(TextUtil.isListEmpty(itemList)){
+            return;
+        }
         for (ItemObject item : itemList) {
             if (item.isSelected())
                 return;
@@ -335,7 +340,8 @@ public class WheelView extends View {
                     .moveToSelected());
         }
         for (ItemObject item : itemList) {
-            if (item.isSelected()) {
+            if (item.isSelected()&& !TextUtil.isEmptyObjects(item)) {
+
                 if (onSelectListener != null)
                     onSelectListener.endSelect(item.id, item.itemText);
                 break;
@@ -380,9 +386,10 @@ public class WheelView extends View {
             for (int i = 0; i < itemList.size(); i++) {
                 if (itemList.get(i).isSelected()) {
                     newMove = (int) itemList.get(i).moveToSelected();
-                    if (onSelectListener != null)
+                    if (onSelectListener != null ) {
                         onSelectListener.endSelect(itemList.get(i).id,
                                 itemList.get(i).itemText);
+                    }
                     break;
                 }
             }

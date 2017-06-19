@@ -77,14 +77,16 @@
 
                     <View
                             android:layout_width="@dimen/home_page_padding"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                        />
 
                     <include
                             android:id="@drawable/qiaoliangjiancha"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            layout="@layout/home_item_view"/>
+                            layout="@layout/home_item_view"
+                        />
 
                     <View
                             android:layout_width="@dimen/home_page_padding"
@@ -113,14 +115,16 @@
 
                     <View
                             android:layout_width="@dimen/home_page_padding"
-                            android:layout_height="match_parent"/>
+                            android:layout_height="match_parent"
+                        />
 
                     <include
                             android:id="@drawable/suidaoxuncha"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            layout="@layout/home_item_view"/>
+                            layout="@layout/home_item_view"
+                        />
 
                     <View
                             android:layout_width="@dimen/home_page_padding"
@@ -468,7 +472,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="技术支持 @ 北京华成智慧交通科技有限公司"
+                        android:text="技术支持 @ 河北省高速公路管理局"
                         android:textSize="10dp"/>
 
                 <TextView

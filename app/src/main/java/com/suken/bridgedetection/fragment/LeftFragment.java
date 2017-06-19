@@ -1,7 +1,11 @@
 package com.suken.bridgedetection.fragment;
 
+import com.suken.bridgedetection.BridgeDetectionApplication;
 import com.suken.bridgedetection.R;
+import com.suken.bridgedetection.RequestType;
 import com.suken.bridgedetection.activity.HomePageActivity;
+import com.suken.bridgedetection.http.HttpTask;
+import com.suken.bridgedetection.util.TextUtil;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -40,7 +44,7 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 		mHomeItem.setSelected();
 		mIpItem = new LeftFragmentItemController(this, mContentView, R.id.left_frag_ip, "通讯设置",
 				R.drawable.left_frag_ip_img_selector);
-		mVideoItem = new LeftFragmentItemController(this, mContentView, R.id.left_frag_video, "视频监控",
+		mVideoItem = new LeftFragmentItemController(this, mContentView, R.id.left_frag_video, "视频对讲",
 				R.drawable.left_frag_video_img_selector);
 		mGpsItem = new LeftFragmentItemController(this, mContentView, R.id.left_frag_gps, "GPS设置",
 				R.drawable.left_frag_gps_img_selector);
@@ -59,6 +63,13 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 //		if(view.getId() == R.id.left_frag_video){
 //			return;
 //		}
+		int id = view.getId();
+		String roles = BridgeDetectionApplication.mCurrentUser.getRoles();
+
+//		if (id==R.id.left_frag_video&&!roles.contains("highway-sphz")) {
+//			toast("无视频对讲权限");
+//			return ;
+//		}
 		HomePageActivity activity = (HomePageActivity) getActivity();
 		mHomeItem.clearFocus();
 		mIpItem.clearFocus();
@@ -66,7 +77,7 @@ public class LeftFragment extends BaseFragment implements OnClickListener {
 		mGpsItem.clearFocus();
 		mUpdateItem.clearFocus();
 		mExitItem.clearFocus();
-		int id = view.getId();
+
 		activity.updateFragment(id);
 		switch (id) {
 		case R.id.left_frag_home:

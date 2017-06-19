@@ -3,6 +3,7 @@ package com.suken.bridgedetection.activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -36,6 +37,7 @@ import com.yuntongxun.ecdemo.common.utils.ToastUtil;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -45,7 +47,8 @@ public class MaintenanceRequisitionListActivity extends BaseActivity {
     MaintenanceRequisitionListAdapter adapter;
     ListView maintenance_requisitionList_listView;
     LinearLayout maintenance_requisitionList_selectCondition_layout;
-    TextView maintenance_requisitionList_selectCondition_tv;
+    TextView maintenance_requisitionList_selectCondition_tv,
+            maintenance_requisitionList_getMaintenanceTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,7 @@ public class MaintenanceRequisitionListActivity extends BaseActivity {
             }
         });
         maintenance_requisitionList_selectCondition_tv = (TextView) findViewById(R.id.maintenance_requisitionList_selectCondition_tv);
+        maintenance_requisitionList_getMaintenanceTable = (TextView) findViewById(R.id.maintenance_requisitionList_getMaintenanceTable);
         maintenance_requisitionList_listView = (ListView) findViewById(R.id.maintenance_requisitionList_listView);
         adapter = new MaintenanceRequisitionListAdapter(this);
         maintenance_requisitionList_listView.setAdapter(adapter);
@@ -158,6 +162,16 @@ public class MaintenanceRequisitionListActivity extends BaseActivity {
             case R.id.maintenance_requisitionList_back:
                 finish();
                 break;
+            case R.id.maintenance_requisitionList_getMaintenanceTable:
+                List<WxdbhByUID> beanList= adapter.getCommitData();
+                if(TextUtil.isListEmpty(beanList)){
+                    toast("您需要选择病害信息！");
+                    return;
+                }
+                Intent intent = new Intent(this,MaintenanceRequisitionActivity.class);
+                intent.putExtra("list", (Serializable) beanList);
+                startActivity(intent);
+                break;
             case R.id.maintenance_requisitionList_getUpkeepnoticeByUID:
 //                loadDate();
                 toast("同步");
@@ -190,11 +204,11 @@ public class MaintenanceRequisitionListActivity extends BaseActivity {
 
         ((LinearLayout) loglistDialog.findViewById(R.id.maintenancelog_qfrqend_layout)).setVisibility(View.VISIBLE);
 
-        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_tzdbh_tv)).setText("病害名称");
-        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_wxdw_tv)).setText("巡查日志单号");
-        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfrq_tv)).setText("巡查日期开始");
-        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfrqend_tv)).setText("巡查日期结束");
-        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfr_tv)).setText("巡查人");
+        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_tzdbh_tv)).setText("病害名称：");
+        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_wxdw_tv)).setText("巡查日志单号：");
+        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfrq_tv)).setText("巡查日期开始：");
+        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfrqend_tv)).setText("巡查日期结束：");
+        ((TextView) loglistDialog.findViewById(R.id.maintenancelog_qfr_tv)).setText("巡查人：");
 
 
 
@@ -294,135 +308,46 @@ public class MaintenanceRequisitionListActivity extends BaseActivity {
                         jcsjend_str = maintenancelog_qfrqend_ev.getText().toString();
                         xcry_str = maintenancelog_qfr_ev.getText().toString();
                         StringBuffer str = new StringBuffer();
-                        if (bhmc_str.length() != 0) {
+                        if (!TextUtil.isEmptyString(bhmc_str)) {
                             str.append("病害名称：");
-                            str.append(bhmc_str);
+                            str.append(bhmc_str).append(",");
                         }
-                        if (yhInspNo_str.length() != 0) {
+                        if (!TextUtil.isEmptyString(yhInspNo_str)) {
                             str.append("巡查日志单号：");
-                            str.append(yhInspNo_str);
+                            str.append(yhInspNo_str).append(",");
                         }
-                        if (jcsjstart_str.length() != 0) {
+                        if (!TextUtil.isEmptyString(jcsjstart_str)) {
                             str.append("巡查日期开始：");
-                            str.append(jcsjstart_str);
+                            str.append(jcsjstart_str).append(",");
                         }
-                        if (jcsjend_str.length() != 0) {
+                        if (!TextUtil.isEmptyString(jcsjend_str)) {
                             str.append("巡查日期结束：");
-                            str.append(jcsjend_str);
+                            str.append(jcsjend_str).append(",");
                         }
-                        if (xcry_str.length() != 0) {
+                        if (!TextUtil.isEmptyString(xcry_str)) {
                             str.append("巡查人：");
-                            str.append(xcry_str);
+                            str.append(xcry_str).append(",");
                         }
-                        maintenance_requisitionList_selectCondition_tv.setText(str);
-//                        if (str.length() != 0) {
-                            loadDate();
-//                        }
 
+                        String content = str.toString();
+                        if (!TextUtil.isEmptyString(content)) {
+                            content = content.substring(0,content.lastIndexOf(","));
+                            maintenance_requisitionList_selectCondition_tv.setText(content);
+                            loadDate();
+                        }
                     }
                 })
                 .show();
 //        //创建一个复选框对话框
 //        AlertDialog dialog = builder.show();
-        WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
-        params.width = 500;
+//        WindowManager.LayoutParams params = dialog.getWindow().getAttributes();
+//        params.width = 500;
 //                params.height = 200 ;
 
-        dialog.getWindow().setAttributes(params);
+//        dialog.getWindow().setAttributes(params);
         dialog.setCanceledOnTouchOutside(true);
 
     }
 // geteCooperationByUID  geteQualityDemandByUID
-    public void synchronizationCooperation(){
-        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-            @Override
-            public void onRequestSuccess(RequestType type, JSONObject result) {
-                Logger.e("aaa", "result.toString()" + result.toString());
 
-                List<CooperationBean> maintenanceDiseaseBeens = JSON.parseArray(result.getString("datas"), CooperationBean.class);
-
-                Logger.e("aaa", "size=="+maintenanceDiseaseBeens.size());
-
-//                maintenanceDiseaseDao.addList(maintenanceDiseaseBeens);
-
-                dismissLoading();
-                toast("同步质量要求库成功！");
-                if(TextUtil.isListEmpty(maintenanceDiseaseBeens)){
-                    ToastUtil.showMessage("暂无质量要求库数据");
-                }
-            }
-
-            @Override
-            public void onRequestFail(RequestType type, String resultCode, String result) {
-                Logger.e("aaa", result + "===(" + resultCode + ")");
-                Logger.e("aaa", "type===" + type);
-
-                dismissLoading();
-                toast("同步质量要求库失败！");
-            }
-        };
-
-        BackgroundExecutor.execute(new Runnable() {
-
-            @Override
-            public void run() {
-//                maintenanceDiseaseDao.deleteAll();
-                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                list.add(pair);
-                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteCooperationByUID).executePost(list);
-
-
-            }
-        });
-
-    }
-    public void synchronizationQualityDemand(){
-        final OnReceivedHttpResponseListener onReceivedHttpResponseListener = new OnReceivedHttpResponseListener() {
-            @Override
-            public void onRequestSuccess(RequestType type, JSONObject result) {
-                Logger.e("aaa", "result.toString()" + result.toString());
-
-                List<QualityDemandBean> qualityDemandBeens = JSON.parseArray(result.getString("datas"), QualityDemandBean.class);
-
-                Logger.e("aaa", "size=="+qualityDemandBeens.size());
-
-//                maintenanceDiseaseDao.addList(maintenanceDiseaseBeens);
-
-                dismissLoading();
-                toast("同步外协单位库成功！");
-                if(TextUtil.isListEmpty(qualityDemandBeens)){
-                    ToastUtil.showMessage("暂无外协单位库数据");
-                }
-            }
-
-            @Override
-            public void onRequestFail(RequestType type, String resultCode, String result) {
-                Logger.e("aaa", result + "===(" + resultCode + ")");
-                Logger.e("aaa", "type===" + type);
-
-                dismissLoading();
-                toast("同步外协单位库失败！");
-            }
-        };
-
-        BackgroundExecutor.execute(new Runnable() {
-
-            @Override
-            public void run() {
-//                maintenanceDiseaseDao.deleteAll();
-                List<NameValuePair> list = new ArrayList<NameValuePair>();
-                BasicNameValuePair pair = new BasicNameValuePair("userId", BridgeDetectionApplication.mCurrentUser.getUserId());
-                list.add(pair);
-                pair = new BasicNameValuePair("token", BridgeDetectionApplication.mCurrentUser.getToken());
-                list.add(pair);
-                new HttpTask(onReceivedHttpResponseListener, RequestType.geteQualityDemandByUID).executePost(list);
-
-
-            }
-        });
-
-    }
 }

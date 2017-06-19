@@ -51,6 +51,15 @@ public class MaintenanceDiseaseBean implements Serializable{
     private String versionno;//记录版本号
     @DatabaseField
     private String xcms;//现场描述
+    /**提交次数*/
+    @DatabaseField
+    private int commitNum;
+
+    //2017。06。08
+    private String zmname;
+    private String sortLetters;
+
+
     @Override
     public String toString() {
         return "MaintenanceDiseaseBean{" +
@@ -72,6 +81,30 @@ public class MaintenanceDiseaseBean implements Serializable{
                 ", dw='" + dw + '\'' +
                 ", xcms='" + xcms + '\'' +
                 '}';
+    }
+
+    public int getCommitNum() {
+        return commitNum;
+    }
+
+    public void setCommitNum(int commitNum) {
+        this.commitNum = commitNum;
+    }
+
+    public String getZmname() {
+        return zmname;
+    }
+
+    public void setZmname(String zmname) {
+        this.zmname = zmname;
+    }
+
+    public String getSortLetters() {
+        return sortLetters;
+    }
+
+    public void setSortLetters(String sortLetters) {
+        this.sortLetters = sortLetters;
     }
 
     public long getIds() {

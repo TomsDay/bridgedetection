@@ -19,7 +19,7 @@ android {
 //        }
 //    }
     compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '25.0.0'
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'//
         exclude 'META-INF/LICENSE.txt'//
@@ -36,8 +36,8 @@ android {
         applicationId "com.suken.bridgedetection"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 57
-        versionName "1.4.2"
+        versionCode 58
+        versionName "1.5.8"
     }
     sourceSets {
         main {
@@ -74,3 +74,4 @@ dependencies {
     compile files('libs/locSDK_6.13.jar')
     compile 'com.google.code.gson:gson:2.3.1'
 }
+

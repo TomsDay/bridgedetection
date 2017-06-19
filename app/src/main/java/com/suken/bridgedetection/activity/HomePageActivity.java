@@ -54,7 +54,7 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
         boolean flag = getIntent().getBooleanExtra("isOnline", true);
         String time = SharePreferenceManager.getInstance().readString(BridgeDetectionApplication.mCurrentUser.getAccount() + "lastSyncTime", "");
         boolean needSync = true;
-        if (!TextUtils.isEmpty(time)) {
+        if (!TextUtils.isEmpty(time)) {//如果上次同步时间没有超过一天同步时间，needSync为false
             if (System.currentTimeMillis() - Long.parseLong(time) < 24 * 60 * 60 * 1000) {
                 needSync = false;
             }
@@ -65,6 +65,8 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
         mIpFragment = mFragManager.findFragmentById(R.id.ip_fragment);
         if ((flag && needSync) || !BridgeDetectionApplication.mHasCacheUser) {
             Logger.e("aaa","正常登录==");
+            Logger.e("aaa","userid=="+BridgeDetectionApplication.mCurrentUser.getUserId());
+            Logger.e("aaa","token=="+BridgeDetectionApplication.mCurrentUser.getToken());
             UiUtil.syncData(this, false, mHomeFragment);
             SharePreferenceManager.getInstance().updateString(BridgeDetectionApplication.mCurrentUser.getAccount() + "lastSyncTime", "" + System.currentTimeMillis());
         } else {
@@ -110,12 +112,14 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
 //
 //                Intent in = new Intent(HomePageActivity.this, LauncherActivity.class);
 //                HomePageActivity.this.startActivity(in);
-                Intent intent = new Intent(HomePageActivity.this, ChattingActivity.class);
+                toast("敬请期待。");
+                //2017.06.19 修改视屏  只能pc端请求app
+//                Intent intent = new Intent(HomePageActivity.this, ChattingActivity.class);
 
-                intent.putExtra(ChattingFragment.RECIPIENTS, "qpqp");
-                intent.putExtra(ChattingFragment.CONTACT_USER, "昵称");
-                intent.putExtra(ChattingFragment.CUSTOMER_SERVICE, false);
-                HomePageActivity.this.startActivity(intent);
+//                intent.putExtra(ChattingFragment.RECIPIENTS, "10000010070010");
+//                intent.putExtra(ChattingFragment.CONTACT_USER, "陈旭");
+//                intent.putExtra(ChattingFragment.CUSTOMER_SERVICE, false);
+//                HomePageActivity.this.startActivity(intent);
                 break;
             case R.id.left_frag_update:
                 UiUtil.update(this);

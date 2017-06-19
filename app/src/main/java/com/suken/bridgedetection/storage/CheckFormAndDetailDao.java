@@ -25,6 +25,12 @@ public class CheckFormAndDetailDao {
 			e.printStackTrace();
 		}
 	}
+	public Dao<CheckFormData, Long> getFormDao(){
+		return mFormDao;
+	}
+	public Dao<CheckDetail, Long> getDetailDao(){
+		return mDetailDao;
+	}
 
 	public boolean create(List<CheckFormData> list) {
 		for (CheckFormData formData : list) {
@@ -48,6 +54,16 @@ public class CheckFormAndDetailDao {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	public List<CheckFormData> getDataBybyqhbh(String qhbh){
+		try {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("qhbh", qhbh);
+			return mFormDao.queryForFieldValues(map);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public void createDetails(List<CheckDetail> details) {

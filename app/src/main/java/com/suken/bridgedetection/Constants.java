@@ -45,7 +45,7 @@ public class Constants {
 			"注明继续观察或修复时限或向上级报告情况（手工填写）", "注明继续观察或修复时限或向上级报告情况（手工填写）", "注明继续观察或修复时限或向上级报告情况（手工填写）" };
 
 	public static final String[] hdformDetailItemTexts = new String[] { "情况描述：", "保养措施意见：", "备注：" };
-	public static final String[] hdformDetailNames = new String[] { "进（水）口", "出（水）口", "沉砂井", "涵洞内部", "洞口周围", "涵附近填土", "涵洞结构", "其它" };
+	public static final String[] hdformDetailNames = new String[] { "进（水）口", "出（水）口", "沉砂井", "涵洞内部", "洞口周围", "涵附近填土", "涵洞结构", "其他" };
 	public static final String[] hdformDetailValues = new String[] { "完好或进（水）口是否堵塞", "完好或出（水）口是否堵塞", "完好或有无淤积", "完好或有无淤塞、排水不畅、是否清洁、漏水。", "完好或是否有杂物堆积。",
 			"路基填土是否稳定和完整", "完好或结构有裂缝等病害，有无异常变形，异常的竖向振动、横向摆动，各部件病害情况。", "通道性质参考桥梁填写" };
 	public static final String[] hdformDetailEt2Blanks = new String[] { "注明清除时限和履行的报告情况", "注明清除时限和履行的报告情况", "注明清除时限和履行的报告情况", "注明清除时限和履行的报告情况",
@@ -61,7 +61,7 @@ public class Constants {
 			"排水设施",
 			"吊顶及各种预埋件",
 			"标志标线轮廓标",
-			"其它" };
+			"其他" };
 	public static final String[] sdformDetailNamesPrompt = new String[] {
 			"边(仰)坡有无危石、积水、积雪；洞口有无挂冰；边沟有无淤塞；构造有无开裂、倾斜、沉陷等",
 			"结构是否有开裂、倾斜、沉陷、错台、起层、剥落、渗漏水(挂冰)",
@@ -73,6 +73,8 @@ public class Constants {
 			"内装、脏污、变形、破损其他情况等",
 			 ""
 	};
+
+	public static final String[] hdlxStr = new String[] {"管涵","拱涵","箱涵","板涵","其他"};
 	public static final String[] sdlxStr = new String[] {"未选择","短隧道","中隧道","长隧道","特长隧道"};
 	public static final String[] sdfxStr = new String[]{"上行洞","下行洞"};
 	public static final String[] sdformDetailItemTexts = new String[] { "里程桩号：", "缺损内容：", "异常描述：", "判定：", "保养措施意见：" };

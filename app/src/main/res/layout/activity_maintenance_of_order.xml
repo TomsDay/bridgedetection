@@ -25,7 +25,7 @@
             android:onClick="onClick"
             android:text="返回"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice" />
+            android:textSize="@dimen/btn_textSize" />
 
         <TextView
             android:id="@+id/maintenanceoforder_save"
@@ -39,7 +39,7 @@
             android:onClick="onClick"
             android:text="保存"
             android:textColor="#ffffff"
-            android:textSize="@dimen/btn_textSice" />
+            android:textSize="@dimen/btn_textSize" />
     </RelativeLayout>
 
     <LinearLayout
@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="检查人："
-                    android:textSize="@dimen/content_markSice"
+                    android:textSize="@dimen/content_markSize"
                     android:layout_gravity="center"/>
 
                 <EditText
@@ -80,7 +80,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="@dimen/content_markSice"
+                    android:textSize="@dimen/content_markSize"
                     android:imeOptions="flagNoExtractUi"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"/>
@@ -96,7 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="安全管理员："
-                    android:textSize="@dimen/content_markSice"
+                    android:textSize="@dimen/content_markSize"
                     android:layout_gravity="center"/>
 
                 <EditText
@@ -105,7 +105,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/line"
                     android:textColor="#333333"
-                    android:textSize="@dimen/content_markSice"
+                    android:textSize="@dimen/content_markSize"
                     android:imeOptions="flagNoExtractUi"
                     android:layout_gravity="center"
                     android:gravity="center_vertical"/>
@@ -128,9 +128,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_below="@id/maintenanceoforder_titleLayout"
-        android:layout_above="@id/maintenanceoforder_bottomLayout"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_above="@id/maintenanceoforder_bottomLayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -160,7 +158,7 @@
                         android:layout_marginLeft="10dp"
                         android:text="高速公路施工安全检查表"
                         android:textColor="#ffffff"
-                        android:textSize="@dimen/content_titleSice" />
+                        android:textSize="@dimen/content_titleSize" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -175,7 +173,7 @@
                             android:layout_centerVertical="true"
                             android:text="GPS定位中..."
                             android:textColor="#ffffff"
-                            android:textSize="@dimen/content_titleSice" />
+                            android:textSize="@dimen/content_titleSize" />
 
                         <ImageView
                             android:layout_width="10dp"
@@ -211,7 +209,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="管养单位："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
                             <EditText
@@ -220,7 +218,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:imeOptions="flagNoExtractUi"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"/>
@@ -237,7 +235,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="检查时间："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
                             <EditText
@@ -246,7 +244,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/line"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"/>
                         </LinearLayout>
@@ -260,7 +258,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="天气："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:layout_gravity="center"/>
 
 
@@ -269,7 +267,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="40dp"
                                 android:textColor="#333333"
-                                android:textSize="@dimen/input_contentSice"
+                                android:textSize="@dimen/input_contentSize"
                                 android:entries="@array/spinnerWeather"
                                 />
                         </LinearLayout>
@@ -289,7 +287,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="施工项目及内容："
-                            android:textSize="@dimen/content_markSice" />
+                            android:textSize="@dimen/content_markSize" />
                         <LinearLayout
                             android:id="@+id/maintenanceoforder_select_logLayout"
                             android:layout_width="wrap_content"
@@ -308,7 +306,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="养护通知单："
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                />
                         </LinearLayout>
 
@@ -333,7 +331,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="桩号"
-                                android:textSize="@dimen/list_textSice" />
+                                android:textSize="@dimen/list_textSize" />
                             <View
                                 android:layout_width="1dp"
                                 android:layout_height="match_parent"
@@ -346,7 +344,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="工程名称"
-                                android:textSize="@dimen/list_textSice" />
+                                android:textSize="@dimen/list_textSize" />
                             <View
                                 android:layout_width="1dp"
                                 android:layout_height="match_parent"
@@ -358,7 +356,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="单位"
-                                android:textSize="@dimen/list_textSice" />
+                                android:textSize="@dimen/list_textSize" />
                             <View
                                 android:layout_width="1dp"
                                 android:layout_height="match_parent"
@@ -370,7 +368,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:text="数量"
-                                android:textSize="@dimen/list_textSice" />
+                                android:textSize="@dimen/list_textSize" />
                             </LinearLayout>
                         <com.suken.bridgedetection.widget.ListViewForScrollView
                             android:id="@+id/maintenanceoforder_content_listview"
@@ -387,7 +385,7 @@
                             android:layout_height="48dp"
                             android:background="@color/white"
                             android:textColor="#333333"
-                            android:textSize="@dimen/input_contentSice"
+                            android:textSize="@dimen/input_contentSize"
                             android:layout_toRightOf="@+id/maintenanceoforder_content_tv"
                             android:imeOptions="flagNoExtractUi" />
                     </RelativeLayout>
@@ -398,7 +396,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="施工安全检查情况："
-                        android:textSize="@dimen/content_markSice"
+                        android:textSize="@dimen/content_markSize"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="15dp"
                         android:layout_marginTop="4dp"/>
@@ -416,7 +414,7 @@
                             android:id="@+id/maintenanceoforder_bzbf_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工标志摆放正确"
                             android:layout_centerVertical="true"
                             />
@@ -437,7 +435,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -445,7 +443,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -471,7 +469,7 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
                                 android:text="0"
-                                android:textSize="@dimen/content_markSice" />
+                                android:textSize="@dimen/content_markSize" />
 
                             <Spinner
                                 android:id="@+id/maintenanceoforder_bzbf_imgSpinner"
@@ -492,7 +490,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -509,7 +507,7 @@
                             android:id="@+id/maintenanceoforder_bzfm_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工人员标志服、标志帽"
                             android:layout_centerVertical="true"/>
                         <RadioGroup
@@ -529,7 +527,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -537,7 +535,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -562,7 +560,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
 
                             <Spinner
@@ -583,7 +581,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -600,7 +598,7 @@
                             android:id="@+id/maintenanceoforder_aqzy_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工程序符合安全作业规程"
                             android:layout_centerVertical="true"/>
                         <RadioGroup
@@ -620,7 +618,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -628,7 +626,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -653,7 +651,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
 
                             <Spinner
@@ -674,7 +672,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -691,7 +689,7 @@
                             android:id="@+id/maintenanceoforder_sgzy_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工车辆有明显施工作业标志"
                             android:layout_centerVertical="true"/>
                         <RadioGroup
@@ -711,7 +709,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -719,7 +717,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -744,7 +742,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
 
                             <Spinner
@@ -765,7 +763,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -782,7 +780,7 @@
                             android:id="@+id/maintenanceoforder_aqxs_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工车辆安全行驶"
                             android:layout_centerVertical="true"/>
                         <RadioGroup
@@ -802,7 +800,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -810,7 +808,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -836,7 +834,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
 
                             <Spinner
@@ -857,7 +855,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -874,7 +872,7 @@
                             android:id="@+id/maintenanceoforder_aqzgly_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="@dimen/content_markSice"
+                            android:textSize="@dimen/content_markSize"
                             android:text="施工现场有安全管理员"
                             android:layout_centerVertical="true"/>
                         <RadioGroup
@@ -894,7 +892,7 @@
                                 android:layout_height="wrap_content"
                                 android:checked="true"
                                 android:text="是"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
 
                             <RadioButton
@@ -902,7 +900,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="否"
-                                android:textSize="@dimen/content_markSice" >
+                                android:textSize="@dimen/content_markSize" >
                             </RadioButton>
                         </RadioGroup>
 
@@ -927,7 +925,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginRight="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
 
                             <Spinner
@@ -948,7 +946,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
-                                android:textSize="@dimen/content_markSice"
+                                android:textSize="@dimen/content_markSize"
                                 android:text="0"/>
                         </LinearLayout>
                     </RelativeLayout>
@@ -966,7 +964,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="其它情况："
-                            android:textSize="@dimen/content_markSice" />
+                            android:textSize="@dimen/content_markSize" />
 
                         <EditText
                             android:id="@+id/maintenanceoforder_qtqk_ev"
@@ -974,7 +972,7 @@
                             android:layout_height="48dp"
                             android:background="@color/white"
                             android:textColor="#333333"
-                            android:textSize="@dimen/input_contentSice"
+                            android:textSize="@dimen/input_contentSize"
                             android:layout_toRightOf="@+id/maintenanceoforder_qtqk_tv"
                             android:imeOptions="flagNoExtractUi"/>
                     </RelativeLayout>
@@ -992,7 +990,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="对出现安全隐患处理意见："
-                            android:textSize="@dimen/content_markSice" />
+                            android:textSize="@dimen/content_markSize" />
 
                         <EditText
                             android:id="@+id/maintenanceoforder_yj_ev"
@@ -1000,7 +998,7 @@
                             android:layout_height="48dp"
                             android:background="@color/white"
                             android:textColor="#333333"
-                            android:textSize="@dimen/input_contentSice"
+                            android:textSize="@dimen/input_contentSize"
                             android:layout_toRightOf="@+id/maintenanceoforder_yj_tv"
                             android:imeOptions="flagNoExtractUi" />
                     </RelativeLayout>

@@ -33,6 +33,19 @@ public class GpsGjData {
 
 	}
 
+	@Override
+	public String toString() {
+		return "GpsGjData{" +
+				"localId=" + localId +
+				", sjbs='" + sjbs + '\'' +
+				", gpsX='" + gpsX + '\'' +
+				", gpsY='" + gpsY + '\'' +
+				", userId='" + userId + '\'' +
+				", gpsZ='" + gpsZ + '\'' +
+				", wz='" + wz + '\'' +
+				'}';
+	}
+
 	public String getUserId() {
 		return userId;
 	}

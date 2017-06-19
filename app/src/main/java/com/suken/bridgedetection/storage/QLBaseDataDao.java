@@ -1,7 +1,9 @@
 package com.suken.bridgedetection.storage;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.j256.ormlite.dao.Dao;
 import com.suken.bridgedetection.BridgeDetectionApplication;
@@ -32,6 +34,16 @@ public class QLBaseDataDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	public List<QLBaseData> getDataBybyqhbh(String qhbh){
+		try {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("qlbh", qhbh);
+			return mGXLuXianInfoDao.queryForFieldValues(map);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	public List<QLBaseData> queryAll() {

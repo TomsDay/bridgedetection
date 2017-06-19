@@ -86,6 +86,7 @@ public class CheckDetail implements Serializable {
 	@DatabaseField
 	private String yhcsyj;
 
+
 	public String getBjmc() {
 		return bjmc;
 	}

@@ -60,6 +60,26 @@ public class BaseActivity extends FragmentActivity {
 			}
 		});
 	}
+	public void back() {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("提醒");
+		builder.setMessage("返回将丢失当前未保存信息");
+		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				finish();
+			}
+		});
+		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+			}
+		});
+		builder.create().show();
+	}
 
 	/**
 	 * 得到自定义的progressDialog
@@ -97,7 +117,10 @@ public class BaseActivity extends FragmentActivity {
 						LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));// 设置布局
 				mLoadingDialog = loadingDialog;
 				try {
-					loadingDialog.show();
+					if(!loadingDialog.isShowing()){
+						loadingDialog.show();
+					}
+
 				} catch (Throwable e){
 					e.printStackTrace();
 				}

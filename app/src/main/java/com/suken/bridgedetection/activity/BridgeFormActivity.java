@@ -23,6 +23,7 @@ import com.suken.bridgedetection.location.LocationManager;
 import com.suken.bridgedetection.location.LocationResult;
 import com.suken.bridgedetection.location.OnLocationFinishedListener;
 import com.suken.bridgedetection.storage.*;
+import com.suken.bridgedetection.util.Logger;
 import com.suken.bridgedetection.util.TextUtil;
 import com.suken.bridgedetection.util.UiUtil;
 import com.suken.imageditor.ImageditorActivity;
@@ -178,6 +179,9 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_form_page);
+		Logger.e("aaa", "token === " + BridgeDetectionApplication.mCurrentUser.getToken());
+		Logger.e("aaa", "userId === " + BridgeDetectionApplication.mCurrentUser.getUserId());
+		Logger.e("aaa", "username === " + BridgeDetectionApplication.mCurrentUser.getUserName());
 		init();
 	}
 
@@ -229,7 +233,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		syncLocation();
 		if (mType == R.drawable.suidaojiancha) {
 			TextView fzrTv = (TextView) findViewById(R.id.fzrtv);
-			fzrTv.setText("检查人员：");
+			fzrTv.setText("检查人：");
 		}
 		if (isEdit || isCheckAgain) {
 			localId = getIntent().getLongExtra("localId", -1l);
@@ -441,7 +445,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 		LastEditBaseClass data = new LastEditBaseClass();
 		if (lastEditForm != null) {
 			if (lastEditForm instanceof CheckFormData) {
-				data.fzr = ((CheckFormData) lastEditForm).getFzry();
+				data.fzr = ((CheckFormData) lastEditForm).getJcry();
 				data.jlr = ((CheckFormData) lastEditForm).getJlry();
 				data.prepddj = ((CheckFormData) lastEditForm).getPrePddj();
 				data.pddj = ((CheckFormData) lastEditForm).getPddj();
@@ -574,7 +578,11 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				extraLayout.setVisibility(View.VISIBLE);
 				extra1Tv.setText("涵洞类型：");
 				extra1Ev.setEnabled(false);
-				extra1Ev.setText(((HDBaseData) bean).getHdlx());
+				String lx = ((HDBaseData) bean).getHdlx();
+				Logger.e("aaa","hdlx===="+lx+"==");
+				String hdlx = TextUtil.isEmptyString(lx)?"其他":
+						("9".equals(lx)?"其他":Constants.hdlxStr[Integer.parseInt(lx)]);
+				extra1Ev.setText(hdlx);
 				findViewById(R.id.form_weather_layout).setVisibility(View.INVISIBLE);
 			}
 			qlbhTv.setText("涵洞编号：");
@@ -884,6 +892,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 			if (isEdit) {
 				data.setLocalId(localId);
 			}
+
 			data.setGldwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
 			data.setGldwName(BridgeDetectionApplication.mCurrentUser.getDefgqName());
 			data.setYhdwId(BridgeDetectionApplication.mCurrentUser.getDefgqId());
@@ -892,10 +901,12 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 				if (bean instanceof QLBaseData) {
 					data.setQhlx("b");
 					data.setLxid(((QLBaseData) bean).getLxid());
+					data.setQhbh(((QLBaseData) bean).getQlbh());
 				} else if (bean instanceof HDBaseData) {
 					data.setQhlx("c");
 					data.setLxid(((HDBaseData) bean).getLxid());
 					data.setCus2(((HDBaseData) bean).getHdlx());
+					data.setQhbh(((HDBaseData) bean).getHdbh());
 				}
 				data.setQhmc(qlmcEv.getText().toString());
 				data.setQhid(qhId);

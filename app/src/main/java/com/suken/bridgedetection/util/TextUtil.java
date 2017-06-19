@@ -60,7 +60,22 @@ public class TextUtil {
         }
         return false;
     }
+    /**
+     * 验证某对象是否为空
+     *
+     * @return
+     */
+    public static boolean isEmptyObjects(Object... objs) {
+        if (objs == null)
+            return true;
+        for (Object obj : objs) {
+            if (obj == null || "".equals(obj)) {
+                return true;
+            }
+        }
 
+        return false;
+    }
 
 
     public static void setResourceSiteIcon(ImageView iv_source, String source_name) {
@@ -174,6 +189,8 @@ public class TextUtil {
         }
         return false;
     }
+
+
 
 
 }

@@ -73,6 +73,13 @@ public class GeteMaterialBean implements Serializable {
     /**一级分类 */
     @DatabaseField
     private String yjml;
+    /**提交次数*/
+    @DatabaseField
+    private int commitNum;
+
+    //2017。06。08
+    private String zmname;
+    private String sortLetters;
 
     public GeteMaterialBean() {
     }
@@ -96,6 +103,30 @@ public class GeteMaterialBean implements Serializable {
         this.updator = updator;
         this.versionno = versionno;
         this.xh = xh;
+    }
+
+    public int getCommitNum() {
+        return commitNum;
+    }
+
+    public void setCommitNum(int commitNum) {
+        this.commitNum = commitNum;
+    }
+
+    public String getZmname() {
+        return zmname;
+    }
+
+    public void setZmname(String zmname) {
+        this.zmname = zmname;
+    }
+
+    public String getSortLetters() {
+        return sortLetters;
+    }
+
+    public void setSortLetters(String sortLetters) {
+        this.sortLetters = sortLetters;
     }
 
     public String getEjml() {
@@ -287,6 +318,12 @@ public class GeteMaterialBean implements Serializable {
                 ", updator='" + updator + '\'' +
                 ", versionno='" + versionno + '\'' +
                 ", xh='" + xh + '\'' +
+                ", clsl='" + clsl + '\'' +
+                ", ejml='" + ejml + '\'' +
+                ", yjml='" + yjml + '\'' +
+                ", commitNum='" + commitNum + '\'' +
+                ", zmname='" + zmname + '\'' +
+                ", sortLetters='" + sortLetters + '\'' +
                 '}';
     }
 }
