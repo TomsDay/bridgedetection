@@ -220,8 +220,8 @@ public class SDKCoreHelper implements ECDevice.InitListener , ECDevice.OnECDevic
 
     @Override
     public void onConnectState(ECDevice.ECConnectState state, ECError error) {
-        Log.i(TAG, "onConnectState: state ======"+state+"   error ========= "+error);
-        Log.i(TAG, "onConnectState: state ======"+state+"   error ========= "+error);
+        Log.i("aaa", "onConnectState: state ======"+state+"   error ========= "+error);
+        Log.i("aaa", "onConnectState: state ======"+state+"   error ========= "+error);
         if(state == ECDevice.ECConnectState.CONNECT_FAILED && error.errorCode == SdkErrorCode.SDK_KICKED_OFF) {
             try {
                 ECPreferences.savePreference(ECPreferenceSettings.SETTINGS_REGIST_AUTO, "", true);

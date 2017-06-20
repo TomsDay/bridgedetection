@@ -19,130 +19,13 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="aaa" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c42931-ddb4-47cf-b73f-b9635dab60b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/CooperationListAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/CatalogueByUIDDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/CheckClDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/CheckDiseaseDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/CheckXMDialog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/GeteMaterialDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/MaintenanceDiseaseDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/checkcl_dialog.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备份代码/20170612dialog/checkcm_dialog.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/logo.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/接口文档/APP接口_API.pages" afterPath="$PROJECT_DIR$/接口文档/APP接口_API.pages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bridgedetection.iml" afterPath="$PROJECT_DIR$/Bridgedetection.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/jp/wheelview/WheelView.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/jp/wheelview/WheelView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/BridgeDetectionApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/RequestType.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/RequestType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BridgeDetectionListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BridgeDetectionListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BridgeFormActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/BridgeFormActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogUpLoadActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceLogUpLoadActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceOfOrderActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceOfOrderActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceRequisitionUpActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceTableActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceTableActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceTableListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/MaintenanceTableListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/ProjectAcceptanceListUpLoadActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/ProjectAcceptanceListUpLoadActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceLogAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceLogAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceRequisitionListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/adapter/MaintenanceRequisitionListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/CatalogueByUIDBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/CatalogueByUIDBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/CatalogueByUIDDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/CatalogueByUIDDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/GeteMaterialBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/GeteMaterialBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/GeteMaterialDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/GeteMaterialDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceDiseaseBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceDiseaseBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceDiseaseDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceDiseaseDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceLogBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/MaintenanceLogBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/QualityDemandBean.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/QualityDemandBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/QualityDemandDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/QualityDemandDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/SDXCDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/SDXCDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/WxdbhByUID.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean/WxdbhByUID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/GpsFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/GpsFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/LeftFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/LeftFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckDetail.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckDetail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckFormAndDetailDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckFormAndDetailDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckFormData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/CheckFormData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/GpsGjData.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/GpsGjData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/HDBaseDataDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/HDBaseDataDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/QLBaseDataDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/QLBaseDataDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/SDBaseDataDao.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/SDBaseDataDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/SqliteOpenHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/SqliteOpenHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/UserInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/storage/UserInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/DateUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/DateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/TextUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/TextUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/UiUtil.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/util/UiUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckClDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckClDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckDiseaseDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckDiseaseDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckXMDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckXMDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/activity_login_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/activity_login_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/activity_maintenance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/activity_maintenance.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/home_fragment_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-hdpi/home_fragment_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/activity_login_page.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/activity_login_page.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/home_fragment_view.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/home_fragment_view.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/maintenance_log_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/maintenance_log_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/maintenance_table_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout-xxhdpi/maintenance_table_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log_up_load.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_log_up_load.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_of_order_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition_up.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_requisition_up.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_table.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_table.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_table_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_maintenance_table_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_acceptance_list_up_load.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_quality_inspection.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_quality_inspection.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/checkcl_dialog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/checkcl_dialog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/checkcm_dialog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/checkcm_dialog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/cl_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/cl_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/hv_quality_inspection.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/hv_quality_inspection.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_project_acceptance.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_project_acceptance.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/loglist_dialog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/loglist_dialog.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/maintenanceloglist_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/maintenanceloglist_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/maintenancelogupload_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/maintenancelogupload_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/maintenanceoforder_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/maintenanceoforder_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/maintenancerequisitionlist_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/maintenancerequisitionlist_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/maintenancetablelist_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/maintenancetablelist_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/oforderlist_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/oforderlist_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/projaccept_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/projaccept_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/projectacceptancelist_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/projectacceptancelist_item.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/quality_inspection_childitem.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/quality_inspection_childitem.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/quality_inspection_groupitem.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/quality_inspection_groupitem.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradlew.bat" afterPath="$PROJECT_DIR$/gradlew.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/备份代码/新安全检查表/MaintenanceOfOrderActivity.java" afterPath="$PROJECT_DIR$/备份代码/新安全检查表/MaintenanceOfOrderActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java" />
     </list>
     <ignored path="bridgedetection.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -194,30 +77,55 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="SDKCoreHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="221" column="21" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LeftFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/LeftFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="1122">
               <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePageActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePageActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
+            <state relative-caret-position="374">
+              <caret line="123" column="39" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ChattingFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="544">
               <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
               <folding />
             </state>
@@ -227,9 +135,12 @@
       <file leaf-file-name="CCPAppManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/common/CCPAppManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="359" column="64" selection-start-line="359" selection-start-column="45" selection-end-line="359" selection-end-column="64" />
-              <folding />
+            <state relative-caret-position="392">
+              <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+              <folding>
+                <element signature="e#4538#4539#0" expanded="true" />
+                <element signature="e#4572#4573#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1582,7 +1493,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4480971638000" />
+        <entry key="$PROJECT_DIR$" value="4491778108000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1932,6 +1843,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckClDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget/CheckDiseaseDialog.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java" />
       </list>
     </option>
   </component>
@@ -1964,11 +1876,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2045,205 +1956,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecdemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecdemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ui" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chatting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecdemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fragment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bridgedetection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activity" />
+              <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2297,7 +2010,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2318,19 +2032,19 @@
     <property name="DEBUGGER_ID" value="Auto" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.suken.bridgedetection.util" />
-      <recent name="com.suken.bridgedetection.bean" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/widget" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/bean" />
       <recent name="$PROJECT_DIR$/备份代码/20170612dialog" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-hdpi" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.suken.bridgedetection.util" />
+      <recent name="com.suken.bridgedetection.bean" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -2664,10 +2378,10 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.502442" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43410042" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40376568" sideWeight="0.503663" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.04288703" sideWeight="0.496337" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.497558" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2677,8 +2391,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18498169" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48012552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48012552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2793,20 +2507,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/app/libs/Yuntx_FullLib_v5.2.0r2.jar!/com/yuntongxun/ecsdk/ECInitParams.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Yuntx_FullLib_v5.2.0r2.jar!/com/yuntongxun/ecsdk/ECDevice.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/android-sdk-macosx/sources/android-22/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -2829,13 +2529,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_setting_persion_info.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/settings/SettingPersionInfoActivity.java">
@@ -2888,13 +2588,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chattingui_activity_container.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingActivity.java">
@@ -2905,13 +2605,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ec_video_call.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/interphone/InterPhoneChatActivity.java">
@@ -2964,13 +2664,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/layout_chat_videorecord.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/VideoRecordActivity.java">
@@ -2981,13 +2681,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chat_voice_normal.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/view/PageView.java">
@@ -2998,66 +2698,60 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ec_gridview_changevoice_item.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/loading_view.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/base/ECPullDownView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="223" column="19" selection-start-line="223" selection-start-column="19" selection-end-line="223" selection-end-column="19" />
-          <folding>
-            <element signature="e#5049#5050#0" expanded="false" />
-            <element signature="e#5090#5091#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8026#8027#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chat_voice_biansheng.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chatting_activity.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/chatting_activity.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="60" column="54" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="54" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ccp_chatting_footer2.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/ccp_chatting_footer2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4165">
           <caret line="245" column="51" selection-start-line="245" selection-start-column="51" selection-end-line="245" selection-end-column="51" />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
@@ -3107,7 +2801,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3115,7 +2808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5576">
           <caret line="392" column="51" selection-start-line="392" selection-start-column="51" selection-end-line="392" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3139,7 +2831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7259">
           <caret line="454" column="13" selection-start-line="454" selection-start-column="13" selection-end-line="454" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3151,20 +2842,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/common/CCPAppManager.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="359" column="64" selection-start-line="359" selection-start-column="45" selection-end-line="359" selection-end-column="64" />
+        <state relative-caret-position="544">
+          <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/LeftFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="91" column="23" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
+        <state relative-caret-position="1122">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="123" column="39" selection-start-line="123" selection-start-column="39" selection-end-line="123" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/common/CCPAppManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4538#4539#0" expanded="true" />
+            <element signature="e#4572#4573#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3177,27 +2901,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/chatting/ChattingFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/yuntongxun/ecdemo/ui/SDKCoreHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="129" column="31" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/fragment/LeftFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/suken/bridgedetection/activity/HomePageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="114" column="28" selection-start-line="114" selection-start-column="28" selection-end-line="114" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="278">
+          <caret line="221" column="21" selection-start-line="221" selection-start-column="21" selection-end-line="221" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
