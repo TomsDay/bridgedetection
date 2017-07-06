@@ -1,5 +1,6 @@
 package com.suken.bridgedetection.storage;
 
+import com.google.gson.Gson;
 import com.suken.bridgedetection.BridgeDetectionApplication;
 
 import android.content.Context;
@@ -56,5 +57,22 @@ public class SharePreferenceManager {
 	public void updateInt(String key, int value) {
 		getEditablePreference().putInt(key, value).commit();
 	}
+	/**
+	 * 修改user的数据
+	 * 2017。7。6
+	 * @param user
+	 */
+	public void updateUserInfo(UserInfo user){
+		getEditablePreference().putString("userinfo", new Gson().toJson(user)).commit();
+	}
+	/**
+	 * 读取user
+	 * 2017。7。6
+	 */
+	public UserInfo readUser(){
+		String jsonData = getPreference().getString("userinfo", null);
+		return new Gson().fromJson(jsonData,UserInfo.class);
+	}
+
 
 }

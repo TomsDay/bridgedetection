@@ -49,132 +49,133 @@ import android.widget.TextView;
 
 public class LoginActivity extends BaseActivity {
 
-	private List<UserInfo> mUserInfos = null;
+    private List<UserInfo> mUserInfos = null;
 
-	private EditText mNameView = null;
-	private EditText mPwdView = null;
-	private UserInfoDao mUserDao;
-	private TextView mTextView = null;
-	private String oldName;
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    private EditText mNameView = null;
+    private EditText mPwdView = null;
+    private UserInfoDao mUserDao;
+    private TextView mTextView = null;
+    private String oldName;
 
-		mUserDao = new UserInfoDao();
-		mUserInfos = mUserDao.queryAll();
-		setContentView(R.layout.activity_login_page);
-		mNameView = (EditText) findViewById(R.id.username);
-		mPwdView = (EditText) findViewById(R.id.userpwd);
-		mNameView.setText("cs-cs");//zslyb-cx
-		mPwdView.setText("1");
-		mTextView = (TextView) findViewById(R.id.login_desc);
-		if(mUserInfos != null && mUserInfos.size() > 0){
-			BridgeDetectionApplication.mHasCacheUser = true;
-			UserInfo info = mUserInfos.get(0);
-			String lastUserId = SharePreferenceManager.getInstance().readString("lastloginuser", info.getUserId());
-			if(!TextUtils.equals(lastUserId, info.getUserId())){
-				for(UserInfo ui : mUserInfos){
-					if(TextUtils.equals(ui.getUserId(), lastUserId)){
-						info = ui;
-					}
-				}
-			}
-			oldName = info.getAccount();
-			mNameView.setText(oldName);
-			mPwdView.setText(info.getPassword());
-		}
-		PackageInfo info;
-		try {
-			info = getPackageManager().getPackageInfo(getPackageName(), 0);
-			String versionName = info.versionName;
-			mTextView.setText("当前版本：" + versionName + "   " + "设备号：" + UiUtil.genDeviceId());
-		} catch (NameNotFoundException e) {
-			e.printStackTrace();
-		}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-		if(NetWorkUtil.getConnectType(this) == ConnectType.CONNECT_TYPE_WIFI){
-			long lastTime = Long.parseLong(SharePreferenceManager.getInstance().readString("updateCheckTime", "-1"));
-			if(System.currentTimeMillis() - lastTime > 24 * 60 * 60 *1000){
-				UiUtil.update(this);
-			}
-			SharePreferenceManager.getInstance().updateString("updateCheckTime", System.currentTimeMillis() + "");
-		}
-	}
+        mUserDao = new UserInfoDao();
+        mUserInfos = mUserDao.queryAll();
+        setContentView(R.layout.activity_login_page);
+        mNameView = (EditText) findViewById(R.id.username);
+        mPwdView = (EditText) findViewById(R.id.userpwd);
+        mNameView.setText("cs-cs");//zslyb-cx
+        mPwdView.setText("1");
+        mTextView = (TextView) findViewById(R.id.login_desc);
+        if (mUserInfos != null && mUserInfos.size() > 0) {
+            BridgeDetectionApplication.mHasCacheUser = true;
+            UserInfo info = mUserInfos.get(0);
+            String lastUserId = SharePreferenceManager.getInstance().readString("lastloginuser", info.getUserId());
+            if (!TextUtils.equals(lastUserId, info.getUserId())) {
+                for (UserInfo ui : mUserInfos) {
+                    if (TextUtils.equals(ui.getUserId(), lastUserId)) {
+                        info = ui;
+                    }
+                }
+            }
+            oldName = info.getAccount();
+            mNameView.setText(oldName);
+            mPwdView.setText(info.getPassword());
+        }
+        PackageInfo info;
+        try {
+            info = getPackageManager().getPackageInfo(getPackageName(), 0);
+            String versionName = info.versionName;
+            mTextView.setText("当前版本：" + versionName + "   " + "设备号：" + UiUtil.genDeviceId());
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
 
-	public void onlineLogin(View view) {
-		String name = mNameView.getText().toString();
-		String pwd = mPwdView.getText().toString();
-		if (TextUtils.isEmpty(name)) {
-			toast("用户名不能为空");
-			return;
-		}
-		if (TextUtils.isEmpty(pwd)) {
-			toast("密码不能为空");
-			return;
-		}
-		login(name, pwd);
-	}
+        if (NetWorkUtil.getConnectType(this) == ConnectType.CONNECT_TYPE_WIFI) {
+            long lastTime = Long.parseLong(SharePreferenceManager.getInstance().readString("updateCheckTime", "-1"));
+            if (System.currentTimeMillis() - lastTime > 24 * 60 * 60 * 1000) {
+                UiUtil.update(this);
+            }
+            SharePreferenceManager.getInstance().updateString("updateCheckTime", System.currentTimeMillis() + "");
+        }
+    }
+
+    public void onlineLogin(View view) {
+        String name = mNameView.getText().toString();
+        String pwd = mPwdView.getText().toString();
+        if (TextUtils.isEmpty(name)) {
+            toast("用户名不能为空");
+            return;
+        }
+        if (TextUtils.isEmpty(pwd)) {
+            toast("密码不能为空");
+            return;
+        }
+        login(name, pwd);
+    }
 
 
-	public void setIp(View view){
-		startActivity(new Intent(this, IpSettingActivity.class));
-	}
+    public void setIp(View view) {
+        startActivity(new Intent(this, IpSettingActivity.class));
+    }
 
-	public void offlineLogin(View view) {
-		if (mUserInfos == null || mUserInfos.size() == 0) {
-			toast("请先联网登陆一次");
-			return;
-		}
-		String name = mNameView.getText().toString();
-		String pwd = mPwdView.getText().toString();
-		if (TextUtils.isEmpty(name)) {
-			toast("用户名不能为空");
-			return;
-		}
-		if (TextUtils.isEmpty(pwd)) {
-			toast("密码不能为空");
-			return;
-		}
-		UserInfo info = null;
-		for (UserInfo user : mUserInfos) {
-			if (TextUtils.equals(name, user.getAccount()) && TextUtils.equals(pwd, user.getPassword())) {
-				info = user;
-				break;
-			}
-		}
-		if (info != null) {
-			jumpToHome(info, false);
-		} else {
-			toast("用户名或密码不正确");
-		}
-	}
+    public void offlineLogin(View view) {
+        if (mUserInfos == null || mUserInfos.size() == 0) {
+            toast("请先联网登陆一次");
+            return;
+        }
+        String name = mNameView.getText().toString();
+        String pwd = mPwdView.getText().toString();
+        if (TextUtils.isEmpty(name)) {
+            toast("用户名不能为空");
+            return;
+        }
+        if (TextUtils.isEmpty(pwd)) {
+            toast("密码不能为空");
+            return;
+        }
+        UserInfo info = null;
+        for (UserInfo user : mUserInfos) {
+            if (TextUtils.equals(name, user.getAccount()) && TextUtils.equals(pwd, user.getPassword())) {
+                info = user;
+                break;
+            }
+        }
+        if (info != null) {
+            jumpToHome(info, false);
+        } else {
+            toast("用户名或密码不正确");
+        }
+    }
 
-	private void jumpToHome(UserInfo info, boolean isOnline) {
-		if(isOnline){
-			SharePreferenceManager.getInstance().updateString("lastLogin", UiUtil.formatNowTime("yyyy-MM-dd"));
-		}
-		BridgeDetectionApplication.mCurrentUser = info;
-		BridgeDetectionApplication.mIsOffline = !isOnline;
-		SharePreferenceManager.getInstance().updateString("lastloginuser", info.getUserId());
-		boolean flag = SharePreferenceManager.getInstance().readBoolean(Constants.GPS_SWITCH, false);
-		if(flag){
-			LocationManager.getInstance().startRecordLocation();
-		}
-		Intent intent = new Intent(this, HomePageActivity.class);
-		intent.putExtra("userInfo", info);
-		intent.putExtra("isOnline", isOnline);
-		startActivity(intent);
-		finish();
-	}
+    private void jumpToHome(UserInfo info, boolean isOnline) {
+        if (isOnline) {
+            SharePreferenceManager.getInstance().updateString("lastLogin", UiUtil.formatNowTime("yyyy-MM-dd"));
+        }
+        BridgeDetectionApplication.mCurrentUser = info;
+        BridgeDetectionApplication.mIsOffline = !isOnline;
+        SharePreferenceManager.getInstance().updateString("lastloginuser", info.getUserId());
+        boolean flag = SharePreferenceManager.getInstance().readBoolean(Constants.GPS_SWITCH, false);
+        if (flag) {
+            LocationManager.getInstance().startRecordLocation();
+        }
+        Intent intent = new Intent(this, HomePageActivity.class);
+        intent.putExtra("userInfo", info);
+        intent.putExtra("isOnline", isOnline);
+        startActivity(intent);
+        finish();
+    }
 
-	private void login(final String name, final String pwd) {
-		final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
+    private void login(final String name, final String pwd) {
+        final OnReceivedHttpResponseListener listener = new OnReceivedHttpResponseListener() {
 
-			@Override
-			public void onRequestSuccess(RequestType type, JSONObject obj) {
-				final UserInfo info = obj.getObject("userInfo", UserInfo.class);
-				info.setPassword(pwd);
-				Logger.e("aaa","用户信息："+info.toString());
+            @Override
+            public void onRequestSuccess(RequestType type, JSONObject obj) {
+                final UserInfo info = obj.getObject("userInfo", UserInfo.class);
+                info.setPassword(pwd);
+                Logger.e("aaa", "用户信息：" + info.toString());
 // 				Logger.e("aaa", "getAccount list==" + mUserInfos.get(0).getAccount());
 //				Logger.e("aaa", "getAccount111==" + info.getAccount());
 //				Logger.e("aaa", "oldName==" + oldName);
@@ -188,21 +189,21 @@ public class LoginActivity extends BaseActivity {
 //
 //				}
 
-				mUserDao.create(info);
+                mUserDao.create(info);
 
-				//用户的id
-				String mobile = info.getUserId();
-				String name = info.getUserName();
-				String appKey = "8a216da85519f454015528c3ba900de2";
-				String token = "3042f056c51267c1a77e77adf4daf0f4";
-				
-				ClientUser clientUser = new ClientUser(mobile);
-				clientUser.setAppKey(appKey);
-				clientUser.setAppToken(token);
-				clientUser.setUserName(name);
-				clientUser.setLoginAuthType(ECInitParams.LoginAuthType.NORMAL_AUTH);
-				CCPAppManager.setClientUser(clientUser);
-				SDKCoreHelper.init(BridgeDetectionApplication.getInstance(), ECInitParams.LoginMode.FORCE_LOGIN);
+                //用户的id
+                String mobile = info.getUserId();
+                String name = info.getUserName();
+                String appKey = "8a216da85519f454015528c3ba900de2";
+                String token = "3042f056c51267c1a77e77adf4daf0f4";
+
+                ClientUser clientUser = new ClientUser(mobile);
+                clientUser.setAppKey(appKey);
+                clientUser.setAppToken(token);
+                clientUser.setUserName(name);
+                clientUser.setLoginAuthType(ECInitParams.LoginAuthType.NORMAL_AUTH);
+                CCPAppManager.setClientUser(clientUser);
+                SDKCoreHelper.init(BridgeDetectionApplication.getInstance(), ECInitParams.LoginMode.FORCE_LOGIN);
 
 //
 //				06-18 21:27:05.687 31571-31571/com.yuntongxun.ecdemo I/aaa: appKey: 20150314000000110000000000000010
@@ -210,37 +211,41 @@ public class LoginActivity extends BaseActivity {
 //				06-18 21:27:05.690 31571-31571/com.yuntongxun.ecdemo I/aaa: mLoginAuthType: NORMAL_AUTH
 //				06-18 21:27:05.691 31571-31571/com.yuntongxun.ecdemo I/aaa: mobile: qpqp
 
-				jumpToHome(info, true);
-				finish();
+                //2017。07。06 userid为空的 不确定型解决的方案
+                SharePreferenceManager.getInstance().updateUserInfo(info);
 
-			}
 
-			@Override
-			public void onRequestFail(RequestType type, String resultCode, String result) {
-				toast(result + "(" + resultCode + ")");
-			}
-		};
+                jumpToHome(info, true);
+                finish();
 
-		BackgroundExecutor.execute(new Runnable() {
+            }
 
-			@Override
-			public void run() {
-				showLoading("登录中...");
-				List<NameValuePair> list = new ArrayList<NameValuePair>();
-				BasicNameValuePair pair = new BasicNameValuePair("account", name);
-				list.add(pair);
-				pair = new BasicNameValuePair("password", pwd);
-				list.add(pair);
-				pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
-				list.add(pair);
-				new HttpTask(listener, RequestType.login).executePost(list);
-				dismissLoading();
-			}
-		});
-	}
+            @Override
+            public void onRequestFail(RequestType type, String resultCode, String result) {
+                toast(result + "(" + resultCode + ")");
+            }
+        };
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-	}
+        BackgroundExecutor.execute(new Runnable() {
+
+            @Override
+            public void run() {
+                showLoading("登录中...");
+                List<NameValuePair> list = new ArrayList<NameValuePair>();
+                BasicNameValuePair pair = new BasicNameValuePair("account", name);
+                list.add(pair);
+                pair = new BasicNameValuePair("password", pwd);
+                list.add(pair);
+                pair = new BasicNameValuePair("did", BridgeDetectionApplication.mDeviceId);
+                list.add(pair);
+                new HttpTask(listener, RequestType.login).executePost(list);
+                dismissLoading();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

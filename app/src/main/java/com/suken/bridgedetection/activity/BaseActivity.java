@@ -151,6 +151,16 @@ public class BaseActivity extends FragmentActivity {
 			}
 		}catch (Throwable e){ e.printStackTrace();}
 	}
+	public void dismissLoading(boolean isClose) {
+		try {
+			if(isClose){
+				mLoadingDialog.dismiss();
+				mLoadingDialog = null;
+			}
+
+		}catch (Throwable e){ e.printStackTrace();}
+	}
+
 	protected  boolean mIsNeedTerminal = false;
 
 	@Override

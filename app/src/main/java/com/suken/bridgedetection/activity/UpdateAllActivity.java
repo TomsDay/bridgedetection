@@ -1,7 +1,9 @@
 package com.suken.bridgedetection.activity;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.googlecode.androidannotations.api.BackgroundExecutor;
 import com.suken.bridgedetection.Constants;
@@ -86,6 +88,69 @@ public class UpdateAllActivity extends BaseActivity {
 		int mType;
 		ListBean listBean;
 		boolean isChecked = true;
+
+		private UpdateAllActivity getOuterType() {
+			return UpdateAllActivity.this;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getOuterType().hashCode();
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + (isChecked ? 1231 : 1237);
+			result = prime * result + ((jlr == null) ? 0 : jlr.hashCode());
+			result = prime * result + ((listBean == null) ? 0 : listBean.hashCode());
+			result = prime * result + mType;
+			result = prime * result + ((mc == null) ? 0 : mc.hashCode());
+			result = prime * result + ((sj == null) ? 0 : sj.hashCode());
+			return result;
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			UpdateBean other = (UpdateBean) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
+			if (id == null) {
+				if (other.id != null)
+					return false;
+			} else if (!id.equals(other.id))
+				return false;
+			if (isChecked != other.isChecked)
+				return false;
+			if (jlr == null) {
+				if (other.jlr != null)
+					return false;
+			} else if (!jlr.equals(other.jlr))
+				return false;
+			if (listBean == null) {
+				if (other.listBean != null)
+					return false;
+			} else if (!listBean.equals(other.listBean))
+				return false;
+			if (mType != other.mType)
+				return false;
+			if (mc == null) {
+				if (other.mc != null)
+					return false;
+			} else if (!mc.equals(other.mc))
+				return false;
+			if (sj == null) {
+				if (other.sj != null)
+					return false;
+			} else if (!sj.equals(other.sj))
+				return false;
+			return true;
+		}
+
+
 	}
 
 	private void updateInit(boolean isReset) {
@@ -224,6 +289,25 @@ public class UpdateAllActivity extends BaseActivity {
 
 	}
 
+
+	/**
+	 *	2017.07.06 添加去重复的逻辑（数据重复上传的问题）
+	 */
+	public List<UpdateBean> deleteRepetition(List<UpdateBean> list){
+		Set<UpdateBean> set = new HashSet<UpdateBean>();
+		List<UpdateBean> listTemp = new ArrayList<UpdateBean>();
+		for (UpdateBean cd:list) {
+			if(set.add(cd)){
+				listTemp.add(cd);
+			}
+		}
+//		for (UpdateBean i : listTemp) {
+//			System.out.println(i);
+//		}
+//		System.out.println("111");
+		return listTemp;
+	}
+
 	public void toUpdate(View view) {
 		if (mSourceData.size() > 0) {
 			BackgroundExecutor.execute(new Runnable() {
@@ -242,6 +326,7 @@ public class UpdateAllActivity extends BaseActivity {
 						toast("您没有选中上传的数据！");
 						return;
 					}else{
+						listBeans = deleteRepetition(listBeans);
 //						showLoading("上传中...");
 						for (int i = 0; i < listBeans.size(); i++) {
 							UpdateBean bean = listBeans.get(i);

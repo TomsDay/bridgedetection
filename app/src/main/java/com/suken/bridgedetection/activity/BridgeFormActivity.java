@@ -161,7 +161,7 @@ public class BridgeFormActivity extends BaseActivity implements OnClickListener 
 
 	private TextView mGpsTv = null;
 
-	private boolean mIsGpsSuccess = false;
+	private boolean mIsGpsSuccess = true;
 
 	private Object lastEditForm = null;
 	private LastEditBaseClass lastEditBaseClass;

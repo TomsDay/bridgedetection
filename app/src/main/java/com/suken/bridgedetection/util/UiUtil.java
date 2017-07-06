@@ -471,7 +471,10 @@ public class UiUtil {
 
                 gxLuXianInfoDao.create(list);
 
-                baseActivity.dismissLoading();
+                //2017。07。06 强制关闭加载框
+                baseActivity.dismissLoading(true);
+//                baseActivity.dismissLoading();
+//                baseActivity.dismissLoading();
             }
 
             @Override
@@ -487,6 +490,7 @@ public class UiUtil {
 
             @Override
             public void run() {
+                Logger.e("aaa","11111");
                 baseActivity.showLoading("同步数据中...");
                 gxLuXianInfoDao.deleteAll();
                 List<NameValuePair> list = new ArrayList<NameValuePair>();

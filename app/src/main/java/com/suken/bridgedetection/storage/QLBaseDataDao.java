@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.j256.ormlite.dao.Dao;
 import com.suken.bridgedetection.BridgeDetectionApplication;
+import com.suken.bridgedetection.util.TextUtil;
 
 public class QLBaseDataDao {
 
@@ -29,7 +30,18 @@ public class QLBaseDataDao {
 
 	public void create(QLBaseData info) {
 		try {
-			info.setUserId(BridgeDetectionApplication.mCurrentUser.getUserId());
+			//如果application的user为空，那么就去sharePreference中取 2017。7。6
+			String userid = BridgeDetectionApplication.mCurrentUser.getUserId();
+			if (TextUtil.isEmptyObjects(BridgeDetectionApplication.mCurrentUser)&& TextUtil.isEmptyString(userid)) {
+				UserInfo user = SharePreferenceManager.getInstance().readUser();
+				if (!TextUtil.isEmptyObjects(user) && !TextUtil.isEmptyString(user.getUserId())) {
+					userid = user.getUserId();
+				}
+			}
+
+			info.setUserId(userid);
+
+			info.setUserId(userid);
 			mGXLuXianInfoDao.createOrUpdate(info);
 		} catch (SQLException e) {
 			e.printStackTrace();

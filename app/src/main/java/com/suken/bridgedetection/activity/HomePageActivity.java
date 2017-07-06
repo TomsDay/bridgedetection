@@ -75,7 +75,7 @@ public class HomePageActivity extends BaseActivity implements DialogInterface.On
 //            for(int i =0;i<list.size();i++) {
 //                Logger.e("aaa", "======="+list.get(i).toString());
 //            }
-                    mHomeFragment.onSyncFinished(true);
+            mHomeFragment.onSyncFinished(true);
             if(flag){//正常登录时，同步路段信息
                 UiUtil.synchronizationGxlxInfoData(this);
             }
